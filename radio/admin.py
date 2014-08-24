@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import (NewsShow, RadioShow, ProjectShow,
+                     NewsPodcast, RadioPodcast, ProjectPodcast,
+                     Playlist)
+
+
+for model in (NewsShow, RadioShow, ProjectShow,
+              NewsPodcast, RadioPodcast, ProjectPodcast,
+              Playlist):
+    admin.site.register(model)

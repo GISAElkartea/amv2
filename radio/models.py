@@ -111,7 +111,6 @@ class Playlist(models.Model):
 
     user = models.ForeignKey(User)
     title = models.CharField(max_length=100)
-    podcasts = models.ManyToManyField(Podcast, through='PlaylistPosition')
 
 
 class PlaylistPosition(models.Model):
@@ -119,6 +118,7 @@ class PlaylistPosition(models.Model):
         verbose_name = _('Playlist position')
         verbose_name_plural = _('Playlist positions')
 
+    playlist = models.ForeignKey(Playlist, related_name='ordering')
     podcast_content_type = models.ForeignKey(ContentType)
     podcast_id = models.PositiveIntegerField()
     podcast = GenericForeignKey('podcast_content_type', 'podcast_id')
