@@ -1,4 +1,5 @@
 django
+django-admin-sortable2
 django-ckeditor-updated
 django-positions
 djangorestframework

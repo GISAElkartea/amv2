@@ -5,6 +5,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from ckeditor.fields import RichTextField
+from positions.fields import PositionField
 from sorl.thumbnail import ImageField
 from taggit.managers import TaggableManager
 
@@ -140,6 +141,7 @@ class Playlist(models.Model):
 
 class PlaylistPosition(models.Model):
     class Meta:
+        ordering = ('position',)
         verbose_name = _('Playlist position')
         verbose_name_plural = _('Playlist positions')
 
@@ -147,11 +149,10 @@ class PlaylistPosition(models.Model):
     podcast_content_type = models.ForeignKey(ContentType)
     podcast_id = models.PositiveIntegerField()
     podcast = GenericForeignKey('podcast_content_type', 'podcast_id')
-    # django-positions
-    # position = PositionField()
+    position = PositionField(default=0)
 
     def __str__(self):
-        return '#{self.position} - {self.podcast}'.format(self)
+        return '#{self.position} - {self.podcast}'.format(self=self)
 
 
 class UserPreferences(models.Model):
