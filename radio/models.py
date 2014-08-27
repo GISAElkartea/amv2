@@ -2,16 +2,18 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
+
+from ckeditor.fields import RichTextField
+from sorl.thumbnail import ImageField
+from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
     class Meta:
-        verbose_name = _('Category')
-        verbose_name_plural = _('Categories')
+        abstract = True
 
-    name = models.CharField(max_length=50, verbose_name=_('name'))
-    related = models.ManyToManyField('self', verbose_name=_('related categories'))
+    name = models.CharField(max_length=100, verbose_name=_('name'))
 
     def __str__(self):
         return self.name
@@ -22,10 +24,9 @@ class Show(models.Model):
         abstract = True
 
     name = models.CharField(max_length=100, verbose_name=_('name'))
-    # description
-    # image
-    categories = models.ManyToManyField(Category)
-    # tags
+    description = RichTextField(blank=True)
+    image = ImageField(upload_to='shows', blank=True)
+    tags = TaggableManager(blank=True)
 
     def __str__(self):
         return self.name
@@ -36,9 +37,9 @@ class Podcast(models.Model):
         abstract = True
 
     title = models.CharField(max_length=250, verbose_name=_('title'))
-    # description
-    # image
-    # tags
+    description = RichTextField(blank=True)
+    image = ImageField(upload_to='podcasts', blank=True)
+    tags = TaggableManager(blank=True)
 
     # file
     # license
@@ -61,22 +62,18 @@ class Podcast(models.Model):
         return self.title
 
 
+class NewsCategory(Category):
+    class Meta:
+        verbose_name = _('News category')
+        verbose_name_plural = _('News categories')
+
+
 class NewsShow(Show):
     class Meta:
         verbose_name = _('News show')
         verbose_name_plural = _('News shows')
 
-
-class RadioShow(Show):
-    class Meta:
-        verbose_name = _('Radio show')
-        verbose_name_plural = _('Radio shows')
-
-
-class ProjectShow(Show):
-    class Meta:
-        verbose_name = _('Project show')
-        verbose_name_plural = _('Project shows')
+    categories = models.ManyToManyField(NewsCategory, blank=True)
 
 
 class NewsPodcast(Podcast):
@@ -87,12 +84,40 @@ class NewsPodcast(Podcast):
     show = models.ForeignKey(NewsShow, verbose_name=_('show'))
 
 
+class RadioCategory(Category):
+    class Meta:
+        verbose_name = _('Radio category')
+        verbose_name_plural = _('Radio categories')
+
+
+class RadioShow(Show):
+    class Meta:
+        verbose_name = _('Radio show')
+        verbose_name_plural = _('Radio shows')
+
+    categories = models.ManyToManyField(RadioCategory, blank=True)
+
+
 class RadioPodcast(Podcast):
     class Meta:
         verbose_name = _('Radio podcast')
         verbose_name_plural = _('Radio podcasts')
 
     show = models.ForeignKey(RadioShow, verbose_name=_('show'))
+
+
+class ProjectCategory(Category):
+    class Meta:
+        verbose_name = _('Project category')
+        verbose_name_plural = _('Project categories')
+
+
+class ProjectShow(Show):
+    class Meta:
+        verbose_name = _('Project show')
+        verbose_name_plural = _('Project shows')
+
+    categories = models.ManyToManyField(ProjectCategory, blank=True)
 
 
 class ProjectPodcast(Podcast):

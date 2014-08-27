@@ -37,6 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ckeditor',
+    'sorl.thumbnail',
+    'taggit',
+
     'radio',
 )
 
@@ -83,3 +87,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'amv2/media')
+
+CKEDITOR_UPLOAD_PATH = 'editor/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'

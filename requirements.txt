@@ -1,0 +1,7 @@
+django
+django-ckeditor-updated
+django-positions
+djangorestframework
+django-taggit
+sorl-thumbnail
+pillow
