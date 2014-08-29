@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'sorl.thumbnail',
     'taggit',
+    'rest_framework',
 
     'radio',
 )

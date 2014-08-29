@@ -4,8 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 urlpatterns = patterns('',
-    # url(r'^$', 'amv2.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^radio/', include('radio.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
