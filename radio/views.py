@@ -3,7 +3,8 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import (NewsCategory, RadioCategory, ProjectCategory,
                      NewsShow, RadioShow, ProjectShow,
-                     NewsPodcast, RadioPodcast, ProjectPodcast)
+                     NewsPodcast, RadioPodcast, ProjectPodcast,
+                     Playlist)
 
 from .serializers import (NewsCategorySerializer,
                           RadioCategorySerializer,
@@ -13,7 +14,8 @@ from .serializers import (NewsCategorySerializer,
                           ProjectShowSerializer,
                           NewsPodcastSerializer,
                           RadioPodcastSerializer,
-                          ProjectPodcastSerializer)
+                          ProjectPodcastSerializer,
+                          PlaylistSerializer)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -71,3 +73,8 @@ class RadioPodcastViewSet(PodcastViewSet):
 class ProjectPodcastViewSet(PodcastViewSet):
     queryset = ProjectPodcast.objects.all()
     serializer_class = ProjectPodcastSerializer
+
+
+class PlaylistViewSet(viewsets.ModelViewSet):
+    queryset = Playlist.objects.all()
+    serializer_class = PlaylistSerializer

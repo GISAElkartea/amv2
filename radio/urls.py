@@ -19,6 +19,7 @@ router.register(r'projects/categories', views.ProjectCategoryViewSet)
 router.register(r'projects/shows', views.ProjectShowViewSet)
 router.register(r'projects/podcasts', views.ProjectPodcastViewSet)
 
+router.register(r'playlists', views.PlaylistViewSet)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),

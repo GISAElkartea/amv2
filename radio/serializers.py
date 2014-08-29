@@ -2,7 +2,19 @@ from rest_framework import serializers
 
 from .models import (NewsCategory, RadioCategory, ProjectCategory,
                      NewsShow, RadioShow, ProjectShow,
-                     NewsPodcast, RadioPodcast, ProjectPodcast)
+                     NewsPodcast, RadioPodcast, ProjectPodcast,
+                     Playlist, PlaylistPosition)
+
+
+class GenericObjectRelatedField(serializers.RelatedField):
+    def __init__(self, *args, **kwargs):
+        self.related_serializers = kwargs.pop('related_serializers', None)
+        super(GenericObjectRelatedField, self).__init__(*args, **kwargs)
+
+    def to_native(self, value):
+        Serializer = self.related_serializers[value.__class__]
+        serialized = Serializer(value)
+        return serialized.data
 
 
 class TagListSerializer(serializers.WritableField):
@@ -79,3 +91,23 @@ class RadioPodcastSerializer(PodcastSerializer):
 class ProjectPodcastSerializer(PodcastSerializer):
     class Meta(PodcastSerializer.Meta):
         model = ProjectPodcast
+
+
+class PlaylistPositionSerializer(serializers.ModelSerializer):
+    podcast = GenericObjectRelatedField(related_serializers={
+        NewsPodcast: NewsPodcastSerializer,
+        RadioPodcast: RadioPodcastSerializer,
+        ProjectPodcast: ProjectPodcastSerializer,
+    })
+
+    class Meta:
+        model = PlaylistPosition
+        fields = ('id', 'podcast', 'position')
+
+
+class PlaylistSerializer(serializers.ModelSerializer):
+    ordering = PlaylistPositionSerializer(many=True)
+
+    class Meta:
+        model = Playlist
+        fields = ('id', 'title', 'user', 'ordering')
