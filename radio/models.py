@@ -151,9 +151,6 @@ class PlaylistPosition(models.Model):
     podcast = GenericForeignKey('podcast_content_type', 'podcast_id')
     position = PositionField(default=0)
 
-    def __str__(self):
-        return '#{self.position} - {self.podcast}'.format(self=self)
-
 
 class UserPreferences(models.Model):
     user = models.OneToOneField(User)

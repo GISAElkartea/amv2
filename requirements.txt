@@ -6,3 +6,4 @@ djangorestframework
 django-taggit
 sorl-thumbnail
 pillow
+model_mommy

@@ -1,20 +1,10 @@
 from rest_framework import serializers
+from rest_framework.exceptions import ParseError
 
 from .models import (NewsCategory, RadioCategory, ProjectCategory,
                      NewsShow, RadioShow, ProjectShow,
                      NewsPodcast, RadioPodcast, ProjectPodcast,
                      Playlist, PlaylistPosition)
-
-
-class GenericObjectRelatedField(serializers.RelatedField):
-    def __init__(self, *args, **kwargs):
-        self.related_serializers = kwargs.pop('related_serializers', None)
-        super(GenericObjectRelatedField, self).__init__(*args, **kwargs)
-
-    def to_native(self, value):
-        Serializer = self.related_serializers[value.__class__]
-        serialized = Serializer(value)
-        return serialized.data
 
 
 class TagListSerializer(serializers.WritableField):
@@ -93,21 +83,23 @@ class ProjectPodcastSerializer(PodcastSerializer):
         model = ProjectPodcast
 
 
-class PlaylistPositionSerializer(serializers.ModelSerializer):
-    podcast = GenericObjectRelatedField(related_serializers={
-        NewsPodcast: NewsPodcastSerializer,
-        RadioPodcast: RadioPodcastSerializer,
-        ProjectPodcast: ProjectPodcastSerializer,
-    })
+class PlaylistPodcastSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(source='podcast.id')
+    title = serializers.CharField(source='podcast.title')
+    description = serializers.CharField(source='podcast.description',
+                                        required=False)
+    image = serializers.ImageField(source='podcast.image', required=False)
+    tags = TagListSerializer(source='podcast.tags', blank=True)
 
     class Meta:
         model = PlaylistPosition
-        fields = ('id', 'podcast', 'position')
+        fields = ('position', 'id', 'title', 'description', 'image', 'tags')
 
 
 class PlaylistSerializer(serializers.ModelSerializer):
-    ordering = PlaylistPositionSerializer(many=True)
+    podcasts = PlaylistPodcastSerializer(source='ordering', many=True,
+                                         required=False)
 
     class Meta:
         model = Playlist
-        fields = ('id', 'title', 'user', 'ordering')
+        fields = ('id', 'title', 'podcasts')
