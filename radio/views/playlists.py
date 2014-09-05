@@ -1,35 +1,42 @@
-from django.shortcuts import get_object_or_404
+from rest_framework import viewsets, permissions, filters
 
-from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+from ..models import Playlist, PlaylistElement
+from ..serializers import PlaylistSerializer, PlaylistElementSerializer
 
-from ..models import Playlist, PlaylistPosition
-from ..serializers import PlaylistSerializer, PlaylistPodcastSerializer
+
+class OwnerPermissionPlaylist(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return request.user == obj.user
+
+
+class OwnerFilterPlaylist(filters.BaseFilterBackend):
+    def filter_queryset(self, request, queryset, view):
+        return queryset.filter(user=request.user)
 
 
 class UserPlaylists(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
+    model = Playlist
     serializer_class = PlaylistSerializer
-
-    def get_queryset(self):
-        user = self.request.user
-        return Playlist.objects.filter(user=user)
+    permission_classes = (OwnerPermissionPlaylist,)
+    filter_backends = (OwnerFilterPlaylist,)
 
     def pre_save(self, obj):
         obj.user = self.request.user
 
 
-class PlaylistPositions(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = PlaylistPodcastSerializer
+class OwnerPermissionElement(permissions.BasePermission):
+    def has_permission(self, request, view):
+        playlist = view.kwargs.get('playlist')
+        return Playlist.objects.filter(pk=playlist, user=request.user).exists()
 
-    def get_playlist(self):
-        playlist = self.request.QUERY_PARAMS.get('playlist')
-        return get_object_or_404(Playlist, pk=playlist, user=self.request.user)
+    def has_object_permission(self, request, view, obj):
+        return request.user == obj.playlist.user
 
-    def get_queryset(self):
-        return PlaylistPosition.objects.filter(playlist=self.get_playlist())
+
+class PlaylistElements(viewsets.ModelViewSet):
+    model = PlaylistElement
+    serializer_class = PlaylistElementSerializer
+    permission_classes = (OwnerPermissionElement,)
 
     def pre_save(self, obj):
-        obj.playlist = self.get_playlist()
-        obj.user = self.request.user
+        obj.playlist.user = self.request.user

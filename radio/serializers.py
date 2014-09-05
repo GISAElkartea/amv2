@@ -4,7 +4,7 @@ from rest_framework.exceptions import ParseError
 from .models import (NewsCategory, RadioCategory, ProjectCategory,
                      NewsShow, RadioShow, ProjectShow,
                      NewsPodcast, RadioPodcast, ProjectPodcast,
-                     Playlist, PlaylistPosition)
+                     Playlist, PlaylistElement)
 
 
 class TagListSerializer(serializers.WritableField):
@@ -83,7 +83,7 @@ class ProjectPodcastSerializer(PodcastSerializer):
         model = ProjectPodcast
 
 
-class PlaylistPodcastSerializer(serializers.ModelSerializer):
+class PlaylistElementSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(source='podcast.id')
     title = serializers.CharField(source='podcast.title')
     description = serializers.CharField(source='podcast.description',
@@ -92,12 +92,12 @@ class PlaylistPodcastSerializer(serializers.ModelSerializer):
     tags = TagListSerializer(source='podcast.tags', blank=True)
 
     class Meta:
-        model = PlaylistPosition
+        model = PlaylistElement
         fields = ('position', 'id', 'title', 'description', 'image', 'tags')
 
 
 class PlaylistSerializer(serializers.ModelSerializer):
-    podcasts = PlaylistPodcastSerializer(source='ordering', many=True,
+    podcasts = PlaylistElementSerializer(source='elements', many=True,
                                          required=False)
 
     class Meta:

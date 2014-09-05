@@ -6,7 +6,7 @@ from adminsortable.admin import SortableInlineAdminMixin
 from .models import (NewsShow, RadioShow, ProjectShow,
                      NewsPodcast, RadioPodcast, ProjectPodcast,
                      NewsCategory, RadioCategory, ProjectCategory,
-                     Playlist, PlaylistPosition)
+                     Playlist, PlaylistElement)
 
 
 class ShowAdmin(AdminImageMixin, admin.ModelAdmin):
@@ -33,12 +33,12 @@ for model in NewsCategory, RadioCategory, ProjectCategory:
     admin.site.register(model, CategoryAdmin)
 
 
-class PlaylistPositionAdmin(SortableInlineAdminMixin, admin.TabularInline):
-    model = PlaylistPosition
+class PlaylistElementAdmin(SortableInlineAdminMixin, admin.TabularInline):
+    model = PlaylistElement
 
 
 class PlaylistAdmin(admin.ModelAdmin):
-    inlines = [PlaylistPositionAdmin]
+    inlines = [PlaylistElementAdmin]
 
 
 admin.site.register(Playlist, PlaylistAdmin)

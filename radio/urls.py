@@ -19,10 +19,10 @@ router = routers.DefaultRouter()
 #router.register(r'projects/shows', views.ProjectShowViewSet)
 #router.register(r'projects/podcasts', views.ProjectPodcastViewSet)
 
-router.register(r'playlists/user', playlists.UserPlaylists,
+router.register(r'playlists', playlists.UserPlaylists,
                 base_name='playlist')
-router.register(r'playlists/positions', playlists.PlaylistPositions,
-                base_name='playlist-position')
+router.register(r'playlists/(?P<playlist>[^/.]+)/podcasts', playlists.PlaylistElements,
+                base_name='playlist-element')
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),

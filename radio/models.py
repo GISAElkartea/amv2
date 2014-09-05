@@ -138,18 +138,41 @@ class Playlist(models.Model):
     user = models.ForeignKey(User)
     title = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
 
-class PlaylistPosition(models.Model):
+    @models.permalink
+    def get_list_url(self):
+        return 'playlist-list', (), {}
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'playlist-detail', (), {'pk': self.pk}
+
+    @models.permalink
+    def get_podcasts_url(self):
+        return 'playlist-element-list', (), {'playlist': self.pk}
+
+
+class PlaylistElement(models.Model):
     class Meta:
         ordering = ('position',)
-        verbose_name = _('Playlist position')
-        verbose_name_plural = _('Playlist positions')
+        verbose_name = _('Playlist element')
+        verbose_name_plural = _('Playlist element')
 
-    playlist = models.ForeignKey(Playlist, related_name='ordering')
+    playlist = models.ForeignKey(Playlist, related_name='elements')
     podcast_content_type = models.ForeignKey(ContentType)
     podcast_id = models.PositiveIntegerField()
     podcast = GenericForeignKey('podcast_content_type', 'podcast_id')
     position = PositionField(default=0)
+
+    def get_list_url(self):
+        return self.playlist.get_podcasts_url()
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'playlist-element-detail', (), {'playlist': self.playlist.pk,
+                                               'pk': self.pk}
 
 
 class UserPreferences(models.Model):
