@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -141,17 +142,15 @@ class Playlist(models.Model):
     def __str__(self):
         return self.title
 
-    @models.permalink
     def get_list_url(self):
-        return 'playlist-list', (), {}
+        return reverse('playlist-list')
 
-    @models.permalink
     def get_absolute_url(self):
-        return 'playlist-detail', (), {'pk': self.pk}
+        return reverse('playlist-detail', kwargs={'pk': self.pk})
 
-    @models.permalink
     def get_podcasts_url(self):
-        return 'playlist-element-list', (), {'playlist': self.pk}
+        return reverse('playlist-element-list', kwargs={
+            'parent_lookup_playlist': self.pk})
 
 
 class PlaylistElement(models.Model):
@@ -169,10 +168,9 @@ class PlaylistElement(models.Model):
     def get_list_url(self):
         return self.playlist.get_podcasts_url()
 
-    @models.permalink
     def get_absolute_url(self):
-        return 'playlist-element-detail', (), {'playlist': self.playlist.pk,
-                                               'pk': self.pk}
+        return reverse('playlist-element-detail', kwargs={
+            'parent_lookup_playlist': self.playlist.pk, 'pk': self.pk})
 
 
 class UserPreferences(models.Model):

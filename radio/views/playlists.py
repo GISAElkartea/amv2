@@ -1,4 +1,5 @@
 from rest_framework import viewsets, permissions, filters
+from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from ..models import Playlist, PlaylistElement
 from ..serializers import PlaylistSerializer, PlaylistElementSerializer
@@ -14,7 +15,7 @@ class OwnerFilterPlaylist(filters.BaseFilterBackend):
         return queryset.filter(user=request.user)
 
 
-class UserPlaylists(viewsets.ModelViewSet):
+class UserPlaylists(NestedViewSetMixin, viewsets.ModelViewSet):
     model = Playlist
     serializer_class = PlaylistSerializer
     permission_classes = (OwnerPermissionPlaylist,)
@@ -26,14 +27,14 @@ class UserPlaylists(viewsets.ModelViewSet):
 
 class OwnerPermissionElement(permissions.BasePermission):
     def has_permission(self, request, view):
-        playlist = view.kwargs.get('playlist')
+        playlist = view.kwargs.get('parent_lookup_playlist')
         return Playlist.objects.filter(pk=playlist, user=request.user).exists()
 
     def has_object_permission(self, request, view, obj):
         return request.user == obj.playlist.user
 
 
-class PlaylistElements(viewsets.ModelViewSet):
+class PlaylistElements(NestedViewSetMixin, viewsets.ModelViewSet):
     model = PlaylistElement
     serializer_class = PlaylistElementSerializer
     permission_classes = (OwnerPermissionElement,)
