@@ -7,7 +7,7 @@ from rest_framework import status
 from model_mommy import mommy
 
 from ..models import Playlist
-from ..serializers import PlaylistElementSerializer
+from .serializers import PlaylistElementSerializer
 
 
 class UserTestCase(APITestCase):

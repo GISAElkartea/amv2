@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from ..models import Playlist, PlaylistElement
-from ..serializers import PlaylistSerializer, PlaylistElementSerializer
+from .serializers import PlaylistSerializer, PlaylistElementSerializer
 
 
 class OwnerPermissionPlaylist(permissions.BasePermission):
