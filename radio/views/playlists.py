@@ -1,4 +1,5 @@
 from rest_framework import viewsets, permissions, filters
+from rest_framework.permissions import IsAuthenticated
 from rest_framework_extensions.mixins import NestedViewSetMixin
 
 from ..models import Playlist, PlaylistElement
@@ -18,7 +19,7 @@ class OwnerFilterPlaylist(filters.BaseFilterBackend):
 class UserPlaylists(NestedViewSetMixin, viewsets.ModelViewSet):
     model = Playlist
     serializer_class = PlaylistSerializer
-    permission_classes = (OwnerPermissionPlaylist,)
+    permission_classes = (IsAuthenticated, OwnerPermissionPlaylist)
     filter_backends = (OwnerFilterPlaylist,)
 
     def pre_save(self, obj):
@@ -37,7 +38,7 @@ class OwnerPermissionElement(permissions.BasePermission):
 class PlaylistElements(NestedViewSetMixin, viewsets.ModelViewSet):
     model = PlaylistElement
     serializer_class = PlaylistElementSerializer
-    permission_classes = (OwnerPermissionElement,)
+    permission_classes = (IsAuthenticated, OwnerPermissionElement,)
 
     def pre_save(self, obj):
         obj.playlist.user = self.request.user

@@ -14,7 +14,7 @@ class Router(ExtendedRouterMixin, DefaultRouter):
 router = Router()
 playlist_router = router.register(r'playlists', playlists.UserPlaylists,
                                   base_name='playlist')
-playlist_router.register(r'podcasts', playlists.PlaylistElements,
+playlist_router.register(r'elements', playlists.PlaylistElements,
                          base_name='playlist-element',
                          parents_query_lookups=['playlist'])
 

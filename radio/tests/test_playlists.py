@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AnonymousUser
 from django.core.urlresolvers import reverse
 from django.utils.six import text_type as str
 
@@ -12,7 +13,13 @@ from ..serializers import PlaylistElementSerializer
 class UserTestCase(APITestCase):
     def setUp(self):
         self.user = mommy.make('User')
-        self.client.force_authenticate(user=self.user)
+        self.authenticate()
+
+    def authenticate(self):
+        self.client.force_authenticate(self.user)
+
+    def deauthenticate(self):
+        self.client.force_authenticate(AnonymousUser())
 
     def tearDown(self):
         self.client.logout()
@@ -29,6 +36,11 @@ class UsersPlaylistListTestCase(UserTestCase):
         self.podcasts = [self.news_podcasts,
                          self.radio_podcasts,
                          self.project_podcast]
+
+    def test_forbidden_for_anonymous(self):
+        self.deauthenticate()
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_no_playlists(self):
         response = self.client.get(self.url)
@@ -98,6 +110,11 @@ class UsersPlaylistListTestCase(UserTestCase):
 class UserPlaylistCreateTestCase(UserTestCase):
     url = reverse('playlist-list')
 
+    def test_forbidden_for_anonymous(self):
+        self.deauthenticate()
+        response = self.client.post(self.url, {'title': 'example'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
     def test_successful_playlist_creation(self):
         response = self.client.post(self.url, {'title': 'example'})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -109,6 +126,13 @@ class UserPlaylistCreateTestCase(UserTestCase):
 
 
 class UserPlaylistUpdateTestCase(UserTestCase):
+    def test_forbidden_for_anonymous(self):
+        self.deauthenticate()
+        playlist = mommy.make('Playlist', user=self.user)
+        url = playlist.get_absolute_url()
+        response = self.client.put(url, {'title': 'example'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
     def test_other_users_can_not_modify(self):
         owner = mommy.make('User')
         playlist = mommy.make('Playlist', user=owner)
@@ -126,6 +150,13 @@ class UserPlaylistUpdateTestCase(UserTestCase):
 
 
 class UserPlaylistDeleteTestCase(UserTestCase):
+    def test_forbidden_for_anonymous(self):
+        self.deauthenticate()
+        playlist = mommy.make('Playlist', user=self.user)
+        url = playlist.get_absolute_url()
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
     def test_other_users_can_not_delete(self):
         owner = mommy.make('User')
         playlist = mommy.make('Playlist', user=owner)
@@ -145,6 +176,13 @@ class PodcastListTestCase(UserTestCase):
         super(PodcastListTestCase, self).setUp()
         self.playlist = mommy.make('Playlist', user=self.user)
         self.url = self.playlist.get_absolute_url()
+
+    def test_forbidden_for_anonymous(self):
+        self.deauthenticate()
+        playlist = mommy.make('Playlist', user=self.user)
+        url = playlist.get_podcasts_url()
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_other_users_can_not_list(self):
         owner = mommy.make('User')
