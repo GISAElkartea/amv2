@@ -1,11 +1,11 @@
-=================
-Antxetamedia.info
-=================
+=============================
+Antxetamedia.info: aurkezpena
+=============================
 
 Antxetamediako webgune berriak aurreko webgunearen atal berdinak mantenduko
 ditu:
 
-- Portada
+- Azala
 - Albisteak
 - Irratsaioak
 - Proiektuak
@@ -14,7 +14,7 @@ ditu:
 - Hemeroteka
 - Orri lauak (Guri buruz)
 
-Aldaketak beraz atal bakoitzaren barruan emango dira, nabarmenenak portadan,
+Aldaketak beraz atal bakoitzaren barruan emango dira, nabarmenenak azalean,
 albistetan, irratsaioetan, proiektuetan eta hemerotekan emanik.
 
 Diseinu garbiagoa eta eguneratuagoa edukitzeaz gain, erabiltzaileen nabigazioa
@@ -26,33 +26,51 @@ atalak bat egingo dira "irratia" deituko diogun atalean.
 Ongietorria
 ===========
 
+.. image:: sketches/ongietorria.png
+   :width: 100%
+
 Erabiltzaile bat gunera lehenengo aldiz sartzean, pantaila osora zabaldutako
-ongietorri orri bat ikusiko du. Bertan, Antxetamediaren portadarako logoa,
+ongietorri orri bat ikusiko du. Bertan, Antxetamediaren azalerako logoa,
 zuzenean entzuteko aukera eta erregistratu edo saioa hasteko aukera emango
 dizkioten estekak edukiko ditu.
 
 Erabiltzailea jada saioa hasita badu edo gunera aurretik sartu dela detektatzen
-bada ez da ongietorri orririk azalduko eta zuzenean portadara bidaliko zaio.
+bada ez da ongietorri orririk azalduko eta zuzenean azalera bidaliko zaio.
 
-Portada
-=======
+Azala
+=====
 
-Portadan lau multzo ikusi ahal izango ditugu:
+Azalean lau multzo ikusi ahal izango ditugu:
 
 - ezkerreko zutabe nagusian, albisteak.
 - erdiko zutabearen goialdean, agendako gertakariak.
 - erdiko zutabearen behealdean, irratsaioak.
 - eskubiko zutabean, widgetak.
 
+.. image:: sketches/azala.png
+   :width: 100%
+
 Bai albisteak eta bai irratsaioak dataren arabera agertuko dira, azkenekoak
-lehen. Erabiltzailea erregistratua badago, albiste eta irratsaio hauek zer
-albistegi eta programetatik hartuko diren aukeratu ahalko dezake.
+lehen.
 
 Gertakariak ere dataren arabera agertuko dira. Bakarrik etorkizuneko gertakariak
 azalduko dira, lehen datorrena lehen.
 
 Widgetak kudeaketa gunetik sortu ahalko dira HTML pertsonalizatua txertatzeko.
 Widget hauek nahi den eran ordenatu ahalko dira.
+
+Erabiltzailea erregistratua badago, albiste eta irratsaio hauek zer albistegi
+eta programetatik hartuko diren aukeratu ahalko dezake eta "Nire Antxetamedia"
+sortuko du.
+
+.. image:: sketches/azala_nireantxetamedia.png
+   :width: 100%
+
+Erabiltzaile erregistratuek ere azal estandarrera itzuli ahalko dute logoaren
+ondoan dagoen botoia sakatuz.
+
+.. image:: sketches/azala_erabiltzailea.png
+   :width: 100%
 
 Irrati atala
 ============
@@ -76,39 +94,40 @@ diegu.
 Honen arrazoia webgunean atal ezberdinak edukiko dituzten arren, haien
 funtzionalitatea berdin berdina izango dela da.
 
-HTTP REST APIa
---------------
-
-Aplikazio honek nabigatzaileei alde batetik datu gordinak eta bestetik datu
-horiek kudeatzeko logika bidaliko die. Horrela, nabigatzailearen aldeko logika
-behin bakarrik bidalia izango da nahiz eta eskaera ezberdinak gauzatu. Horrek
-nabigatzeko garaian abiadura azkarragoa edukitzea eta aurrerantzean beste
-aplikazio motak (mugikorretarako esaterako) egiteko erraztasun handiagoa izateak
-ekarriko du.
-
 Egitura
 -------
 
 *Show* guztiek (bai albistegiek, bai irratsaioek eta bai proiektuek, denek)
 ezaugarri berdinak edukiko dituzte: izena, deskribapena (estekak, irudiak eta
 bideoak sartzeko ahalmenarekin), irudi esanguratsu bat, barneratzen duen
-kategoria eta erlazionaturiko hitz klabeak.
+kategoria eta erlazionaturiko hitz klabeak. Azkenik, irratsaioen nabigatzailean
+nabarmendua bezala markatzeko aukera izango dute.
 
 Albistegi, irratsaio eta proiektu hauetako bakoitzak bere audio edo podcastak
 ditu. Podcast horietako bakoitzak bere izenburua, deskribapena (estekak, irudiak
 eta bideoak sartzeko ahalmenarekin), irudi esanguratsu bat, audioaren lizentzia
 eta podcastaren audioa bera edukiko du.
 
-Archive.org-ekin sinkronizazioa
--------------------------------
+Nabigazioa
+----------
 
-Audio fitxategiak kudeaketa gunetik igoko dira zerbitzarira. Ondoren, modu
-asinkronoan, zerbitzariak datuak automatikoki archive.org-era igoko ditu.
-Kudeaketa gunean archive.org-erako igoera guztiak eta haien egoerak ikusi ahalko
-dira.
+.. image:: sketches/irratsaioak.png
+   :width: 100%
+
+Irratsaioek nabigatzaile berezia izango dute. Bertan bilaketa kaxa bat egongo
+da, idazten den ahala irratsaioak filtratuko dituena. Eskubian kategorien
+zerrenda agertuko da eta bertako kategoriak aktibatuz edo desaktibatuz,
+irratsaioak ere filtratu egingo dira.
+
+Erdian eta goian, kudeatzailetik nabarmenduak izan diren irratsaioak agertuko
+dira. Haien azpian, bilaketaren emaitzak diren irratsaioak agertuko dira
+alfabetikoki ordenatuta.
 
 Erreproduktorea
 ---------------
+
+.. image:: sketches/azala_erreproduzitzailea.png
+   :width: 100%
 
 Erabiltzaileek show bakoitzeko hiru aukera izango dituzte:
 
@@ -128,6 +147,9 @@ Erabiltzaileek podcast bakoitzeko lau aukera izango dituzte:
   - gordeta dituen beste zerrendetako batera (erregistratua badago).
 - podcastaren partekatze kodea kopiatu
 - podcasta jaitsi.
+
+.. image:: sketches/erreproduzitzailea.png
+   :width: 40%
 
 Erreprodukzio zerrenda hauek erabiltzaile guztiek edukiko dituzte, bai anonimoak
 eta bai gunean erregistratu direnak. Erreprodukzio zerrenda honek erabiltzaileei
@@ -151,6 +173,24 @@ Erabiltzaile erregistratuek beraien erreprodukzio zerrendak gorde ahal izango
 dituzte. Horrela, menu nagagusian esteka bat edukiko dute non haien
 erreprodukzio zerrenda guztiak ikusi ahalko dituzten. Horiek entzun, jaitsi,
 partekatu edota ezabatu ahal izango dituzte.
+
+HTTP REST APIa
+--------------
+
+Aplikazio honek nabigatzaileei alde batetik datu gordinak eta bestetik datu
+horiek kudeatzeko logika bidaliko die. Horrela, nabigatzailearen aldeko logika
+behin bakarrik bidalia izango da nahiz eta eskaera ezberdinak gauzatu. Horrek
+nabigatzeko garaian abiadura azkarragoa edukitzea eta aurrerantzean beste
+aplikazio motak (mugikorretarako esaterako) egiteko erraztasun handiagoa izateak
+ekarriko du.
+
+Archive.org-ekin sinkronizazioa
+-------------------------------
+
+Audio fitxategiak kudeaketa gunetik igoko dira zerbitzarira. Ondoren, modu
+asinkronoan, zerbitzariak datuak automatikoki archive.org-era igoko ditu.
+Kudeaketa gunean archive.org-erako igoera guztiak eta haien egoerak ikusi ahalko
+dira.
 
 Agenda
 ======
