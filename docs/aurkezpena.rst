@@ -18,7 +18,9 @@ Aldaketak beraz atal bakoitzaren barruan emango dira, nabarmenenak azalean,
 albistetan, irratsaioetan, proiektuetan eta hemerotekan emanik.
 
 Diseinu garbiagoa eta eguneratuagoa edukitzeaz gain, erabiltzaileen nabigazioa
-hobetzeko asmoz, webgunetik mugitzeko modua aldatu egingo da guztiz.
+hobetzeko asmoz, webgunetik mugitzeko modua aldatu egingo da guztiz eta pantaila
+konfigurazio ezberdinetara zuzendutako diseinua (*responsive design*) garatuko
+da.
 
 Haien harteko antzekotasuna dela eta, albisteen, irratsaioen eta proiektuen
 atalak bat egingo dira "irratia" deituko diogun atalean.
@@ -72,8 +74,8 @@ ondoan dagoen botoia sakatuz.
 .. image:: sketches/azala_erabiltzailea.png
    :width: 100%
 
-Irrati atala
-============
+Irratia
+=======
 
 Irrati aplikazioa gaur egungo webgunearen albiste, irratsaio eta proiektuen
 atalak bilduko ditu. Aplikazio hau izango da webgunearen aplikazio nagusia eta
