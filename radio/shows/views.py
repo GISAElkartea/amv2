@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 from ..models import (NewsCategory, RadioCategory, ProjectCategory,
@@ -45,6 +45,8 @@ class ProjectCategories(Categories):
 
 class Shows(viewsets.ModelViewSet):
     permission_classes = (ReadOnlyPermission,)
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('categories',)
 
 
 class NewsShows(Shows):

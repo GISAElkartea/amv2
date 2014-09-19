@@ -4,6 +4,7 @@ django-ckeditor-updated
 django-positions
 djangorestframework
 drf-extensions
+django-filter
 django-taggit
 sorl-thumbnail>=11.12.1b
 pillow
