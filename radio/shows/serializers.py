@@ -70,7 +70,7 @@ class PodcastSerializer(serializers.ModelSerializer):
     tags = TagListSerializer(blank=True)
 
     class Meta:
-        fields = ('id', 'title', 'description', 'image', 'tags')
+        fields = ('id', 'title', 'description', 'image', 'tags', 'show')
 
 
 class NewsPodcastSerializer(PodcastSerializer):
