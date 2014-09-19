@@ -5,6 +5,6 @@ django-positions
 djangorestframework
 drf-extensions
 django-taggit
-sorl-thumbnail
+sorl-thumbnail>=11.12.1b
 pillow
 model_mommy
