@@ -95,3 +95,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'amv2/media')
 
 CKEDITOR_UPLOAD_PATH = 'editor/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'amv2/templates')]
