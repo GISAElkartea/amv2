@@ -46,7 +46,7 @@ class ProjectCategories(Categories):
 class Shows(viewsets.ModelViewSet):
     permission_classes = (ReadOnlyPermission,)
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('categories',)
+    filter_fields = ('categories', 'featured')
 
 
 class NewsShows(Shows):

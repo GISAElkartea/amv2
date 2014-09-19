@@ -42,7 +42,8 @@ class ShowSerializer(serializers.ModelSerializer):
     tags = TagListSerializer(blank=True)
 
     class Meta:
-        fields = ('id', 'name', 'description', 'image', 'categories', 'tags')
+        fields = ('id', 'name', 'description', 'image', 'categories', 'tags',
+                  'featured')
 
 
 class NewsShowSerializer(ShowSerializer):

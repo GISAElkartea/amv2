@@ -29,6 +29,7 @@ class Show(models.Model):
     description = RichTextField(blank=True)
     image = ImageField(upload_to='shows', blank=True)
     tags = TaggableManager(blank=True)
+    featured = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
