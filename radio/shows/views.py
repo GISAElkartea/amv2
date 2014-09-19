@@ -1,10 +1,9 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import BasePermission, SAFE_METHODS
 
-from .models import (NewsCategory, RadioCategory, ProjectCategory,
-                     NewsShow, RadioShow, ProjectShow,
-                     NewsPodcast, RadioPodcast, ProjectPodcast,
-                     Playlist)
+from ..models import (NewsCategory, RadioCategory, ProjectCategory,
+                      NewsShow, RadioShow, ProjectShow,
+                      NewsPodcast, RadioPodcast, ProjectPodcast)
 
 from .serializers import (NewsCategorySerializer,
                           RadioCategorySerializer,
@@ -14,67 +13,69 @@ from .serializers import (NewsCategorySerializer,
                           ProjectShowSerializer,
                           NewsPodcastSerializer,
                           RadioPodcastSerializer,
-                          ProjectPodcastSerializer,
-                          PlaylistSerializer)
+                          ProjectPodcastSerializer)
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+class ReadOnlyPermission(BasePermission):
+    def has_permission(self, request, view):
+        return request.method in SAFE_METHODS
+
+    def has_object_permission(self, request, view, obj):
+        return request.method in SAFE_METHODS
 
 
-class NewsCategoryViewSet(CategoryViewSet):
+class Categories(viewsets.ModelViewSet):
+    permission_classes = (ReadOnlyPermission,)
+
+
+class NewsCategories(Categories):
     queryset = NewsCategory.objects.all()
     serializer_class = NewsCategorySerializer
 
 
-class RadioCategoryViewSet(CategoryViewSet):
+class RadioCategories(Categories):
     queryset = RadioCategory.objects.all()
     serializer_class = RadioCategorySerializer
 
 
-class ProjectCategoryViewSet(CategoryViewSet):
+class ProjectCategories(Categories):
     queryset = ProjectCategory.objects.all()
     serializer_class = ProjectCategorySerializer
 
 
-class ShowViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+class Shows(viewsets.ModelViewSet):
+    permission_classes = (ReadOnlyPermission,)
 
 
-class NewsShowViewSet(ShowViewSet):
+class NewsShows(Shows):
     queryset = NewsShow.objects.all()
     serializer_class = NewsShowSerializer
 
 
-class RadioShowViewSet(ShowViewSet):
+class RadioShows(Shows):
     queryset = RadioShow.objects.all()
     serializer_class = RadioShowSerializer
 
 
-class ProjectShowViewSet(ShowViewSet):
+class ProjectShows(Shows):
     queryset = ProjectShow.objects.all()
     serializer_class = ProjectShowSerializer
 
 
-class PodcastViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+class Podcasts(viewsets.ModelViewSet):
+    permission_classes = (ReadOnlyPermission,)
 
 
-class NewsPodcastViewSet(PodcastViewSet):
+class NewsPodcasts(Podcasts):
     queryset = NewsPodcast.objects.all()
     serializer_class = NewsPodcastSerializer
 
 
-class RadioPodcastViewSet(PodcastViewSet):
+class RadioPodcasts(Podcasts):
     queryset = RadioPodcast.objects.all()
     serializer_class = RadioPodcastSerializer
 
 
-class ProjectPodcastViewSet(PodcastViewSet):
+class ProjectPodcasts(Podcasts):
     queryset = ProjectPodcast.objects.all()
     serializer_class = ProjectPodcastSerializer
-
-
-class PlaylistViewSet(viewsets.ModelViewSet):
-    queryset = Playlist.objects.all()
-    serializer_class = PlaylistSerializer
