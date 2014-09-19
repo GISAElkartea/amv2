@@ -46,16 +46,22 @@ class ShowSerializer(serializers.ModelSerializer):
 
 
 class NewsShowSerializer(ShowSerializer):
+    categories = NewsCategorySerializer(many=True)
+
     class Meta(ShowSerializer.Meta):
         model = NewsShow
 
 
 class RadioShowSerializer(ShowSerializer):
+    categories = RadioCategorySerializer(many=True)
+
     class Meta(ShowSerializer.Meta):
         model = RadioShow
 
 
 class ProjectShowSerializer(ShowSerializer):
+    categories = ProjectCategorySerializer(many=True)
+
     class Meta(ShowSerializer.Meta):
         model = ProjectShow
 
