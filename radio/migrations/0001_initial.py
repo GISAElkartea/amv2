@@ -6,13 +6,14 @@ import sorl.thumbnail.fields
 import ckeditor.fields
 from django.conf import settings
 import taggit.managers
+import positions.fields
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('taggit', '0002_auto_20140827_2109'),
+        ('taggit', '0002_auto_20140919_1037'),
         ('contenttypes', '0001_initial'),
     ]
 
@@ -34,9 +35,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=250, verbose_name='title')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts', blank=True)),
             ],
             options={
                 'verbose_name': 'News podcast',
@@ -49,22 +49,16 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100, verbose_name='name')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows')),
-                ('categories', models.ManyToManyField(to='radio.NewsCategory')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows', blank=True)),
+                ('categories', models.ManyToManyField(to='radio.NewsCategory', blank=True)),
+                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags')),
             ],
             options={
                 'verbose_name': 'News show',
                 'verbose_name_plural': 'News shows',
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='newspodcast',
-            name='show',
-            field=models.ForeignKey(verbose_name='show', to='radio.NewsShow'),
-            preserve_default=True,
         ),
         migrations.CreateModel(
             name='Playlist',
@@ -79,21 +73,19 @@ class Migration(migrations.Migration):
             },
             bases=(models.Model,),
         ),
-        migrations.AlterUniqueTogether(
-            name='playlist',
-            unique_together=set([('user', 'title')]),
-        ),
         migrations.CreateModel(
-            name='PlaylistPosition',
+            name='PlaylistElement',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('podcast_id', models.PositiveIntegerField()),
-                ('playlist', models.ForeignKey(related_name=b'ordering', to='radio.Playlist')),
+                ('position', positions.fields.PositionField(default=0)),
+                ('playlist', models.ForeignKey(related_name=b'elements', to='radio.Playlist')),
                 ('podcast_content_type', models.ForeignKey(to='contenttypes.ContentType')),
             ],
             options={
-                'verbose_name': 'Playlist position',
-                'verbose_name_plural': 'Playlist positions',
+                'ordering': ('position',),
+                'verbose_name': 'Playlist element',
+                'verbose_name_plural': 'Playlist element',
             },
             bases=(models.Model,),
         ),
@@ -114,9 +106,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=250, verbose_name='title')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts', blank=True)),
             ],
             options={
                 'verbose_name': 'Project podcast',
@@ -129,22 +120,16 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100, verbose_name='name')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows')),
-                ('categories', models.ManyToManyField(to='radio.ProjectCategory')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows', blank=True)),
+                ('categories', models.ManyToManyField(to='radio.ProjectCategory', blank=True)),
+                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags')),
             ],
             options={
                 'verbose_name': 'Project show',
                 'verbose_name_plural': 'Project shows',
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='projectpodcast',
-            name='show',
-            field=models.ForeignKey(verbose_name='show', to='radio.ProjectShow'),
-            preserve_default=True,
         ),
         migrations.CreateModel(
             name='RadioCategory',
@@ -163,9 +148,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=250, verbose_name='title')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'podcasts', blank=True)),
             ],
             options={
                 'verbose_name': 'Radio podcast',
@@ -178,22 +162,16 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100, verbose_name='name')),
-                ('description', ckeditor.fields.RichTextField()),
-                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows')),
-                ('categories', models.ManyToManyField(to='radio.RadioCategory')),
-                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', help_text='A comma-separated list of tags.', verbose_name='Tags')),
+                ('description', ckeditor.fields.RichTextField(blank=True)),
+                ('image', sorl.thumbnail.fields.ImageField(upload_to=b'shows', blank=True)),
+                ('categories', models.ManyToManyField(to='radio.RadioCategory', blank=True)),
+                ('tags', taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags')),
             ],
             options={
                 'verbose_name': 'Radio show',
                 'verbose_name_plural': 'Radio shows',
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='radiopodcast',
-            name='show',
-            field=models.ForeignKey(verbose_name='show', to='radio.RadioShow'),
-            preserve_default=True,
         ),
         migrations.CreateModel(
             name='UserPreferences',
@@ -206,5 +184,45 @@ class Migration(migrations.Migration):
             options={
             },
             bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='radiopodcast',
+            name='show',
+            field=models.ForeignKey(verbose_name='show', to='radio.RadioShow'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='radiopodcast',
+            name='tags',
+            field=taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='projectpodcast',
+            name='show',
+            field=models.ForeignKey(verbose_name='show', to='radio.ProjectShow'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='projectpodcast',
+            name='tags',
+            field=taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags'),
+            preserve_default=True,
+        ),
+        migrations.AlterUniqueTogether(
+            name='playlist',
+            unique_together=set([('user', 'title')]),
+        ),
+        migrations.AddField(
+            model_name='newspodcast',
+            name='show',
+            field=models.ForeignKey(verbose_name='show', to='radio.NewsShow'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='newspodcast',
+            name='tags',
+            field=taggit.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags'),
+            preserve_default=True,
         ),
     ]
