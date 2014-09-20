@@ -64,10 +64,6 @@ exports.config = {
 	}
     },
 
-    server: {
-	path: 'jst-server.js'
-    },
-
     conventions: {
 	assets: /app(\\|\/)assets(\\|\/)/
     },
