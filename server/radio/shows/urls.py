@@ -13,27 +13,27 @@ class Router(ExtendedRouterMixin, DefaultRouter):
 
 
 news_router = Router()
-news_router.register(r'categories', NewsCategories, base_name='news_category')
-news_show_router = news_router.register(r'shows', NewsShows,
+news_router.register(r'/categories', NewsCategories, base_name='news_category')
+news_show_router = news_router.register(r'/shows', NewsShows,
                                         base_name='news_show')
-news_show_router.register(r'podcasts', NewsPodcasts, base_name='news_podcasts',
+news_show_router.register(r'/podcasts', NewsPodcasts, base_name='news_podcasts',
                           parents_query_lookups=['show'])
 
 radio_router = Router()
-radio_router.register(r'categories', RadioCategories,
+radio_router.register(r'/categories', RadioCategories,
                       base_name='radio_category')
-radio_show_router = radio_router.register(r'shows', RadioShows,
+radio_show_router = radio_router.register(r'/shows', RadioShows,
                                           base_name='radio_show')
-radio_show_router.register(r'podcasts', RadioPodcasts,
+radio_show_router.register(r'/podcasts', RadioPodcasts,
                            base_name='radio_podcasts',
                            parents_query_lookups=['show'])
 
 project_router = Router()
-project_router.register(r'categories', ProjectCategories,
+project_router.register(r'/categories', ProjectCategories,
                         base_name='project_category')
-project_show_router = project_router.register(r'shows', ProjectShows,
+project_show_router = project_router.register(r'/shows', ProjectShows,
                                               base_name='project_show')
-project_show_router.register(r'podcasts', ProjectPodcasts,
+project_show_router.register(r'/podcasts', ProjectPodcasts,
                              base_name='project_podcasts',
                              parents_query_lookups=['show'])
 
