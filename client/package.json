@@ -1,0 +1,54 @@
+{
+  "author": "Unai Zalakain <unai@gisa-elkartea.org>",
+  "name": "antxetamedia",
+  "description": "",
+  "version": "0.0.1",
+  "homepage": "https://github.com/GISAElkartea/amv2/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GISAElkartea/amv2/"
+  },
+  "engines": {
+    "node": "~0.8 || ~0.9 || ~0.10"
+  },
+  "scripts": {
+    "install": "webdriver-manager update",
+    "postinstall": "bower install",
+    "start": "brunch watch --server",
+    "dev": "brunch watch",
+    "prod": "brunch build -P",
+    "test": "karma start test/karma.conf.js",
+    "test-e2e": "protractor test/protractor-conf.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "sass-brunch": "~1.8.1",
+    "javascript-brunch": "~1.7.1",
+    "css-brunch": "~1.7.0",
+    "clean-css-brunch": "~1.7.1",
+    "uglify-js-brunch": "~1.7.7",
+    "auto-reload-brunch": "~1.7.3",
+    "brunch": "~1.7.13",
+    "express": "~4.1.1",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-chrome-launcher": "0.1.3",
+    "karma-safari-launcher": "0.1.1",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-requirejs": "~0.2.1",
+    "karma-jasmine": "0.1.5",
+    "karma": "~0.12.14",
+    "karma-cli": "0.0.4",
+    "bower": "~1.3.3",
+    "node-bourbon": "~1.2.2",
+    "body-parser": "~1.0.2",
+    "compression": "~1.0.2",
+    "errorhandler": "~1.0.1",
+    "morgan": "~1.0.0",
+    "method-override": "~1.0.0",
+    "protractor": "~0.22.0",
+    "selenium-webdriver": "~2.41.0"
+  }
+}

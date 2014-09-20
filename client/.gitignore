@@ -4,7 +4,6 @@ npm-debug.log
 docs
 vendor
 bower_components
-package.json
 
 test/test-results.xml
 test-results.xml
