@@ -9,3 +9,4 @@ django-taggit
 sorl-thumbnail>=11.12.1b
 pillow
 model_mommy
+django-cors-headers
