@@ -3,11 +3,8 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from .views import Frontpage
-
 
 urlpatterns = patterns('',
-    url(r'^$', Frontpage.as_view(), name='frontpage'),
     url(r'^radio/', include('radio.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
