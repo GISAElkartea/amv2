@@ -6,6 +6,7 @@ var App = angular.module('app', [
     'ngResource',
     'ui.router',
 
+    'app.config',
     'radio',
 ])
 

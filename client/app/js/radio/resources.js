@@ -6,5 +6,5 @@ angular.module('radio.resources', ['app.config'])
         'featured': {params: {'featured': 'True'}, isArray: true},
         'nonfeatured': {params: {'featured': 'False'}, isArray: true},
         'categories': {isArray: true},
-    }, {stripTrailingSlashes: false});
+    });
 }]);
