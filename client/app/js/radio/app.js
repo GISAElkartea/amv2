@@ -10,6 +10,6 @@ angular.module('radio', [
                 url: '/radio',
                 data: {pageTitle: 'Radio'},
                 templateUrl: 'partials/radio.html',
-                controller: 'RadioShowsCtrl',
+                controller: 'RadioShowsController',
             });
 }])
