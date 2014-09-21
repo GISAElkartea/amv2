@@ -1,3 +1,20 @@
 <ul>
   <li><a ui-sref="radio">Irratia</a></li>
+  <li>
+    <div ng-controller="AuthController">
+      <div ng-show="user">
+        <input type="submit" ng-click="logout()" value="Logout" />
+      </div>
+      <div ng-hide="user">
+        <form ng-submit="login()">
+          <input ng-model="username" required name="username" type="text"
+          placeholder="username" />
+          <input ng-model="password" required name="password" type="password"
+          placeholder="password" />
+          <input type="submit" value="login" />
+          <input type="submit" value="register" ng-click="register($event)" />
+        </form>
+      </div>
+    </div>
+  </li>
 </ul>
