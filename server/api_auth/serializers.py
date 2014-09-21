@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import UserPreferences
+from .model import APIUser
 
 
 class UserSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username')
 
     class Meta:
-        model = UserPreferences
+        model = APIUser
