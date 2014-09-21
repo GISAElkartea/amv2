@@ -172,9 +172,3 @@ class PlaylistElement(models.Model):
     def get_absolute_url(self):
         return reverse('playlist-element-detail', kwargs={
             'parent_lookup_playlist': self.playlist.pk, 'pk': self.pk})
-
-
-class UserPreferences(models.Model):
-    user = models.OneToOneField(User)
-    favorite_radio_shows = models.ManyToManyField(RadioShow)
-    favorite_news_shows = models.ManyToManyField(NewsShow)
