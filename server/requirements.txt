@@ -3,6 +3,7 @@ django-admin-sortable2
 django-ckeditor-updated
 django-positions
 djangorestframework
+djangorestframework-jwt
 drf-extensions
 django-filter
 django-taggit
