@@ -105,3 +105,10 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'amv2/templates')]
 CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_USER_MODEL = 'api_auth.APIUser'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
