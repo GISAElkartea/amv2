@@ -1,10 +1,13 @@
-from rest_framework import serializers
+from django.contrib.auth import get_user_model
 
-from .models import APIUser
+from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
-    username = serializers.CharField(source='user.username')
-
     class Meta:
-        model = APIUser
+        model = get_user_model()
+
+    def save_object(self, obj):
+        obj.set_password(self.init_data['password'])
+        obj.is_staff = True
+        obj.save()
