@@ -12,7 +12,7 @@ angular.module('app.auth', ['app.config'])
         // as per HTTP authentication spec [1], credentials must be
         // encoded in base64. Lets use window.btoa [2]
         var headers = headersGetter();
-        var auth = data.username + ':' + data.password;
+        var auth = data.email + ':' + data.password;
         auth = 'Basic ' + window.btoa(auth);
         headers['Authorization'] = auth;
     }
@@ -20,25 +20,24 @@ angular.module('app.auth', ['app.config'])
         auth: $resource(baseUrl + '/auth/auth/', {}, {
             login: {method: 'POST', transformRequest: add_auth_header},
             logout: {method: 'DELETE'}
-        }, {stripTrailingSlashes: false}),
-        users: $resource(baseUrl + '/auth/users/', {}, {
+        }),
+        users: $resource(baseUrl + '/auth/user/', {}, {
             create: {method: 'POST'},
             delete: {method: 'DELETE'}
-        }, {stripTrailingSlashes: false})
+        })
     };
 }])
 
 .controller('AuthController', ['$scope', 'api', function($scope, api) {
     $scope.getCredentials = function() {
-        return {username: $scope.username, password: $scope.password};
+        return {email: $scope.email, password: $scope.password};
     };
 
     $scope.login = function() {
         api.auth.login($scope.getCredentials())
             .$promise
                 .then(function(data) {
-                    console.log(data);
-                    $scope.user = data.username;
+                    $scope.user = data;
                 })
                 .catch(function(data) {
                     alert(data.data.detail);
@@ -57,7 +56,7 @@ angular.module('app.auth', ['app.config'])
             .$promise
                 .then($scope.login)
                 .catch(function(data) {
-                    alert(data.data.username);
+                    alert(data.data.email);
                 });
     };
 }]);
