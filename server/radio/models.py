@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.core.urlresolvers import reverse
@@ -137,7 +137,7 @@ class Playlist(models.Model):
         verbose_name = _('Playlist')
         verbose_name_plural = _('Playlists')
 
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
 
     def __str__(self):

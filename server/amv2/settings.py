@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'taggit',
     'rest_framework',
     'corsheaders',
+    'custom_user',
 
     'api_auth',
     'radio',
@@ -102,3 +103,5 @@ CKEDITOR_IMAGE_BACKEND = 'pillow'
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'amv2/templates')]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+AUTH_USER_MODEL = 'api_auth.APIUser'

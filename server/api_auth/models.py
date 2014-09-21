@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+
+from custom_user.models import AbstractEmailUser
 
 
-class UserPreferences(models.Model):
-    user = models.OneToOneField(User)
+class APIUser(AbstractEmailUser):
     favorite_radio_shows = models.ManyToManyField('radio.RadioShow')
     favorite_news_shows = models.ManyToManyField('radio.NewsShow')
