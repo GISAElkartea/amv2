@@ -6,7 +6,7 @@ from django.contrib import admin
 
 urlpatterns = patterns(
     '',
-    url(r'^auth/', include('auth.urls')),
+    url(r'^auth/', include('api_auth.urls')),
     url(r'^radio/', include('radio.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
