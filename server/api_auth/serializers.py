@@ -9,5 +9,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     def save_object(self, obj):
         obj.set_password(self.init_data['password'])
-        obj.is_staff = True
         obj.save()
