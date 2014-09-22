@@ -2,10 +2,10 @@
   <li><a ui-sref="radio">Irratia</a></li>
   <li>
     <div ng-controller="AuthController">
-      <div ng-show="user">
+      <div ng-show="isAuthenticated()">
         <input type="submit" ng-click="logout()" value="Logout" />
       </div>
-      <div ng-hide="user">
+      <div ng-hide="isAuthenticated()">
         <form ng-submit="login()">
           <input ng-model="email" required name="email" type="text"
           placeholder="email" />

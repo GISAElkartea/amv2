@@ -7,7 +7,7 @@ var App = angular.module('app', [
     'ui.router',
 
     'app.config',
-    'app.auth',
+    'auth',
     'radio',
 ])
 
