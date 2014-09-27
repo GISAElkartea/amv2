@@ -1,0 +1,23 @@
+<section ng-controller="AuthController">
+  <h2>Login</h2>
+  <form ng-submit="login()">
+    <input ng-model="email" required name="email" type="text"
+    placeholder="email" />
+    <input ng-model="password" required name="password" type="password"
+    placeholder="password" />
+    <input type="submit" value="login" />
+  </form>
+</section>
+
+<section ng-controller="AuthController">
+  <h2>Register</h2>
+  <form ng-submit="register($event)">
+    <input ng-model="email" required name="email" type="text"
+    placeholder="email" />
+    <input ng-model="password" required name="password" type="password"
+    placeholder="password" />
+    <input ng-model="password_check" required name="password_check"
+    type="password" placeholder="password_check" />
+    <input type="submit" value="register" />
+  </form>
+</section>

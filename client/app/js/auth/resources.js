@@ -44,7 +44,7 @@ angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
         responseError: function(response) {
             if (response.status === 401 || response.status === 403) {
                 localStorageService.unset('auth_token');
-                $injector.get('$state').go('anon.login');
+                $injector.get('$state').go('auth.login');
             }
             return $q.reject(response);
         }
