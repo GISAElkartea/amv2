@@ -1,0 +1,8 @@
+Hi {{ user }},
+
+You seem to have registered or issued a password recovery at
+https://antxetamedia.info/. Please continue to the link below:
+
+https://antxetamedia.info/#/auth/{{ token }}
+
+Have a nice day!
