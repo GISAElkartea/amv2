@@ -1,7 +1,6 @@
 angular.module('auth.controllers', ['auth.resources', 'ui.router'])
 
-.controller('AuthController', [
-    '$scope', 'Auth', '$state',
+.controller('AuthController',
     function($scope, Auth, $state) {
         $scope.isAuthenticated = function() {
             return Auth.isAuthenticated();
@@ -32,4 +31,4 @@ angular.module('auth.controllers', ['auth.resources', 'ui.router'])
                     alert(data.data.email);
                 });
         };
-}]);
+});

@@ -1,6 +1,6 @@
 angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
 
-.factory('Auth', ['baseUrl', '$http', 'localStorageService',
+.factory('Auth',
          function(baseUrl, $http, localStorageService) {
              return {
                  getToken: function() {
@@ -29,9 +29,9 @@ angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
                      });
                  },
              };
-}])
+})
 
-.factory('AuthInterceptor', ['$q', '$injector', function($q, $injector) {
+.factory('AuthInterceptor', function($q, $injector) {
     var localStorageService = $injector.get('localStorageService');
     return {
         request: function(config) {
@@ -49,4 +49,4 @@ angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
             return $q.reject(response);
         }
     };
-}]);
+});

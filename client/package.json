@@ -20,7 +20,9 @@
     "test": "karma start test/karma.conf.js",
     "test-e2e": "protractor test/protractor-conf.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ng-annotate-uglify-js-brunch": "^1.7.4"
+  },
   "devDependencies": {
     "sass-brunch": "~1.8.1",
     "javascript-brunch": "~1.7.1",

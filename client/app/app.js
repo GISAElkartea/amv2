@@ -11,17 +11,12 @@ var App = angular.module('app', [
     'radio',
 ])
 
-.config([
-    '$locationProvider',
-    '$urlRouterProvider',
-    '$resourceProvider',
-    '$httpProvider',
-    function($locationProvider, $urlRouterProvider, $resourceProvider,
-             $httpProvider) {
+.config(
+    function($locationProvider, $urlRouterProvider, $resourceProvider, $httpProvider) {
 	// Server side support is needed
 	$locationProvider.html5Mode(false);
         $resourceProvider.defaults.stripTrailingSlashes = false;
         $httpProvider.interceptors.push('AuthInterceptor');
 	$urlRouterProvider.otherwise('/radio');
     }
-]);
+);

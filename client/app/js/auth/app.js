@@ -1,6 +1,6 @@
 angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
 
-.config(['$stateProvider', function($stateProvider) {
+.config(function($stateProvider) {
     $stateProvider
         .state('auth', {
             url: '/auth',
@@ -13,4 +13,4 @@ angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
                 Auth.confirm($stateParams.token);
             },
         })
-}]);
+});

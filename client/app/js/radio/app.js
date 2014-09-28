@@ -4,12 +4,12 @@ angular.module('radio', [
     'radio.controllers'
 ])
 
-.config(['$stateProvider',
-        function($stateProvider) {
-            $stateProvider.state('radio', {
-                url: '/radio',
-                data: {pageTitle: 'Radio'},
-                templateUrl: 'partials/radio.html',
-                controller: 'RadioShowsController',
-            });
-}])
+.config(
+    function($stateProvider) {
+        $stateProvider.state('radio', {
+            url: '/radio',
+            data: {pageTitle: 'Radio'},
+            templateUrl: 'partials/radio.html',
+            controller: 'RadioShowsController',
+        });
+})
