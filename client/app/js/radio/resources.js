@@ -1,6 +1,6 @@
 angular.module('radio.resources', ['app.config'])
 
-.factory('RadioShow', function(baseUrl, $resource) {
+.factory('RadioShowService', function(baseUrl, $resource) {
     var url = baseUrl + '/radio/radio/shows/:id/';
     return $resource(url, {'id': '@id'}, {
         'featured': {params: {'featured': 'True'}, isArray: true},

@@ -1,9 +1,9 @@
 angular.module('auth.controllers', ['auth.resources', 'ui.router'])
 
 .controller('AuthController',
-    function($scope, Auth, $state) {
+    function($scope, $state, AuthService) {
         $scope.isAuthenticated = function() {
-            return Auth.isAuthenticated();
+            return AuthService.isAuthenticated();
         };
 
         $scope.getCredentials = function() {
@@ -11,7 +11,7 @@ angular.module('auth.controllers', ['auth.resources', 'ui.router'])
         };
 
         $scope.login = function() {
-            Auth.login($scope.getCredentials())
+            AuthService.login($scope.getCredentials())
                 .then(function(data) {
                     $state.go('frontpage');
                 })
@@ -21,12 +21,12 @@ angular.module('auth.controllers', ['auth.resources', 'ui.router'])
         };
 
         $scope.logout = function() {
-            Auth.logout();
+            AuthService.logout();
         };
 
         $scope.register = function($event) {
             $event.preventDefault();
-            Auth.register($scope.getCredentials())
+            AuthService.register($scope.getCredentials())
                 .catch(function(data) {
                     alert(data.data.email);
                 });

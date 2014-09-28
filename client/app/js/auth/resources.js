@@ -1,6 +1,6 @@
 angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
 
-.factory('Auth',
+.factory('AuthService',
          function(baseUrl, $http, localStorageService) {
              return {
                  getToken: function() {

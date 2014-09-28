@@ -9,8 +9,8 @@ angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
         .state('auth.confirmation', {
             url: '/:token',
             templateUrl: 'partials/auth.confirmation.html',
-            onEnter: function($stateParams, Auth) {
-                Auth.confirm($stateParams.token);
+            onEnter: function($stateParams, AuthService) {
+                AuthService.confirm($stateParams.token);
             },
         })
 });
