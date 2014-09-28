@@ -10,10 +10,11 @@ angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
                      return this.getToken() != null;
                  },
                  login: function(credentials) {
-                     $http.post(baseUrl + '/auth/token/', credentials)
-                     .success(function(result) {
+                     var promise = $http.post(baseUrl + '/auth/token/', credentials);
+                     promise.success(function(result) {
                          localStorageService.set('auth_token', result.token);
                      });
+                     return promise;
                  },
                  logout: function() {
                      localStorageService.remove('auth_token');
@@ -23,10 +24,11 @@ angular.module('auth.resources', ['LocalStorageModule', 'app.config'])
                      return $http.post(baseUrl + '/auth/user/', data);
                  },
                  confirm: function(token) {
-                     $http.put(baseUrl + '/auth/reset/', {'token': token})
-                     .success(function(result) {
+                     var promise = $http.put(baseUrl + '/auth/reset/', {'token': token});
+                     promise.success(function(result) {
                          localStorageService.set('auth_token', token);
                      });
+                     return promise;
                  },
              };
 })
