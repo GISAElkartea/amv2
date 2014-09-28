@@ -15,10 +15,13 @@ var App = angular.module('app', [
     '$locationProvider',
     '$urlRouterProvider',
     '$resourceProvider',
-    function($locationProvider, $urlRouterProvider, $resourceProvider) {
+    '$httpProvider',
+    function($locationProvider, $urlRouterProvider, $resourceProvider,
+             $httpProvider) {
 	// Server side support is needed
 	$locationProvider.html5Mode(false);
-	$urlRouterProvider.otherwise('/radio');
         $resourceProvider.defaults.stripTrailingSlashes = false;
+        $httpProvider.interceptors.push('AuthInterceptor');
+	$urlRouterProvider.otherwise('/radio');
     }
 ]);
