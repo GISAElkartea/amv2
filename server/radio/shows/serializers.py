@@ -6,6 +6,12 @@ from ..models import (NewsCategory, RadioCategory, ProjectCategory,
                       NewsPodcast, RadioPodcast, ProjectPodcast)
 
 
+class HyperlinkedFileField(serializers.FileField):
+    def to_native(self, value):
+        request = self.context.get('request', None)
+        return request.build_absolute_uri(value.url)
+
+
 class TagListSerializer(serializers.WritableField):
     def from_native(self, data):
         if type(data) is not list:
@@ -40,6 +46,7 @@ class ProjectCategorySerializer(CategorySerializer):
 
 class ShowSerializer(serializers.ModelSerializer):
     tags = TagListSerializer(blank=True)
+    image = HyperlinkedFileField(source='image')
 
     class Meta:
         fields = ('id', 'name', 'description', 'image', 'categories', 'tags',
@@ -69,6 +76,7 @@ class ProjectShowSerializer(ShowSerializer):
 
 class PodcastSerializer(serializers.ModelSerializer):
     tags = TagListSerializer(blank=True)
+    image = HyperlinkedFileField(source='image')
 
     class Meta:
         fields = ('id', 'title', 'description', 'image', 'tags', 'show')
