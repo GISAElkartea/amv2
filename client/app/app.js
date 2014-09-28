@@ -3,8 +3,8 @@
 // Declare app level module which depends on filters, and services
 var App = angular.module('app', [
     'ngSanitize',
-    'ngResource',
     'ui.router',
+    'restangular',
 
     'app.config',
     'auth',
@@ -12,10 +12,10 @@ var App = angular.module('app', [
 ])
 
 .config(
-    function($locationProvider, $urlRouterProvider, $resourceProvider, $httpProvider) {
+    function($locationProvider, $urlRouterProvider, $httpProvider, RestangularProvider, baseUrl) {
 	// Server side support is needed
 	$locationProvider.html5Mode(false);
-        $resourceProvider.defaults.stripTrailingSlashes = false;
+        RestangularProvider.setBaseUrl(baseUrl);
         $httpProvider.interceptors.push('AuthInterceptor');
 	$urlRouterProvider.otherwise('/radio');
     }

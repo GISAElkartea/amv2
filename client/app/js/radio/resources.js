@@ -1,9 +1,9 @@
-angular.module('radio.resources', ['app.$resource'])
+angular.module('radio.resources', ['restangular'])
 
-.factory('RadioShowService', function($resource) {
-    return $resource('/radio/radio/shows/:id/', {'id': '@id'}, {
-        'featured': {params: {'featured': 'True'}, isArray: true},
-        'nonfeatured': {params: {'featured': 'False'}, isArray: true},
-        'categories': {isArray: true},
-    });
+.factory('RadioShowService', function(Restangular) {
+    return Restangular.all('radio').all('radio').all('shows');
+})
+
+.factory('RadioCategoryService', function(Restangular) {
+    return Restangular.all('radio').all('radio').all('categories');
 });
