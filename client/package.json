@@ -17,8 +17,8 @@
     "start": "brunch watch --server",
     "dev": "brunch watch",
     "prod": "brunch build -P",
-    "test": "karma start test/karma.conf.js",
-    "test-e2e": "protractor test/protractor-conf.js"
+    "test": "PHANTOMJS_BIN=node_modules/phantomjs/bin/phantomjs karma start test/karma.conf.js",
+    "test-e2e": "./node_modules/protractor/bin/protractor test/protractor-conf.js"
   },
   "dependencies": {
     "ng-annotate-uglify-js-brunch": "^1.7.4"
@@ -51,6 +51,7 @@
     "morgan": "~1.0.0",
     "method-override": "~1.0.0",
     "protractor": "~0.22.0",
-    "selenium-webdriver": "~2.41.0"
+    "selenium-webdriver": "~2.41.0",
+    "phantomjs": "~1.9.10"
   }
 }
