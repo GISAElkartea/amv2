@@ -5,6 +5,7 @@ var App = angular.module('app', [
     'ngSanitize',
     'ui.router',
     'restangular',
+    'ngFitText',
 
     'app.config',
     'welcome',
