@@ -1,11 +1,17 @@
 <div>
   <h2>Featured</h2>
   <ul ng-repeat="show in featured">
-    <li>{{ show.name }}</li>
+    <li>
+      <p>{{ show.name }}</p>
+      <img src="{{ show.image }}" />
+    </li>
   </ul>
   <h2>Shows</h2>
   <ul ng-repeat="show in unfeatured">
-    <li>{{ show.name }}</li>
+    <li>
+      <p>{{ show.name }}</p>
+      <img src="{{ show.image }}" />
+    </li>
   </ul>
   <h2>Categories</h2>
   <ul ng-repeat="category in categories">
