@@ -7,6 +7,7 @@ var App = angular.module('app', [
     'restangular',
 
     'app.config',
+    'welcome',
     'auth',
     'radio',
 ])
@@ -23,6 +24,6 @@ var App = angular.module('app', [
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         // Default route
-	$urlRouterProvider.otherwise('/radio');
+	$urlRouterProvider.otherwise('/');
     }
 );
