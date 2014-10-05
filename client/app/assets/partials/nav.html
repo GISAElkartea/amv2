@@ -4,7 +4,7 @@
 	</ul>
 </nav>
 <div ng-controller="AuthController">
-	<nav id="user">
+	<nav class="user">
 		<ul>
 			<li ng-hide="isAuthenticated()"><a ui-sref="auth">Login | Register</a></li>
 			<li ng-show="isAuthenticated()"><a href="" ng-click="logout()">Logout</a></li>
