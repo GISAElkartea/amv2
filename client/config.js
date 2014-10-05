@@ -34,8 +34,6 @@ exports.config = {
                             case 'bower_components/angular-decorate/angular-decorate.js':
 			    case 'bower_components/ocModal/ocModal.js':
 
-			    // bootstrap
-			    case 'bower_components/sass-boostrap3/dist/js/bootstrap.js':
 			    return true;
 			default:
 			    return false;
