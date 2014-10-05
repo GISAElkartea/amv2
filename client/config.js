@@ -32,7 +32,6 @@ exports.config = {
 			    case 'bower_components/angular-ui-router/release/angular-ui-router.js':
 			    case 'bower_components/angular-local-storage/angular-local-storage.js':
                             case 'bower_components/angular-decorate/angular-decorate.js':
-			    case 'bower_components/ocModal/ocModal.js':
 
 			    return true;
 			default:
