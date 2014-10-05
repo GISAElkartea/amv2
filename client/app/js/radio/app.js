@@ -8,7 +8,7 @@ angular.module('radio', [
     function($stateProvider) {
         $stateProvider.state('radio', {
             url: '/radio',
-            data: {pageTitle: 'Radio'},
+            title: 'Irratsaioak',
             templateUrl: 'partials/radio.html',
             controller: 'RadioShowsController',
         });

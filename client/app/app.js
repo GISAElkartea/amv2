@@ -26,4 +26,12 @@ var App = angular.module('app', [
         // Default route
 	$urlRouterProvider.otherwise('/');
     }
-);
+)
+
+.run(function($location, $rootScope) {
+    $rootScope.$on('$stateChangeSuccess', function(event, current, previous) {
+        $rootScope.title = current.title;
+    });
+})
+
+;

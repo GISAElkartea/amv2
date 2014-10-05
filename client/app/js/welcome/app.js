@@ -6,7 +6,7 @@ angular.module('welcome', [
 function config($stateProvider) {
     $stateProvider.state('welcome', {
         url: '/',
-        data: {pageTitle: 'Welcome'},
+        title: 'Ongietorri!',
         templateUrl: 'partials/welcome.html',
         controller: 'AuthController',
     });
