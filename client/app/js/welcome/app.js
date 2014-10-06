@@ -7,8 +7,12 @@ function config($stateProvider) {
     $stateProvider.state('welcome', {
         url: '/',
         title: 'Ongietorri!',
-        templateUrl: 'partials/welcome.html',
-        controller: 'AuthController',
+        views: {
+            'body': {
+                templateUrl: 'partials/welcome.html',
+                controller: 'AuthController',
+            },
+        }
     });
 };
 
