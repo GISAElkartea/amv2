@@ -2,18 +2,30 @@ nav
     display: none
 
 section#welcome
+    display: relative
     header
         height: 100vh
         width: 100%
         +outer-container()
         div#logo
             +vertical-align
-            +span-columns(3)
-            +shift(4.5)
+            +span-columns(2.5)
+            +shift(4.75)
+            +media(max-width 769px)
+                +span-columns(4)
+                +shift(4)
+            +media(max-width 480px)
+                +span-columns(6)
+                +shift(3)
     nav
         display: block
         position: absolute
         bottom: 0
-        width: 20%
-        color: white
-        margin-left: 40%
+        width: 100%
+        text-align: center
+        ul
+            padding: 0
+            a
+                color: white
+                text-size: .9rem
+
