@@ -13,9 +13,7 @@ angular.module('auth.controllers', ['auth.resources', 'ui.router'])
         $scope.login = function() {
             AuthService.login($scope.getCredentials())
                 .success(function(data) {
-                    // FIXME
-                    //$state.go('frontpage');
-                    $location.url('/');
+                    $state.go('frontpage');
                 })
                 .error(function(data) {
                     alert(data.data.non_field_errors);

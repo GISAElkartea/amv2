@@ -1,19 +1,15 @@
 angular.module('welcome', [
     'ui.router',
-    'auth.controllers'
 ])
 
-function config($stateProvider) {
+function welcomeConfig($stateProvider) {
     $stateProvider.state('welcome', {
-        url: '/',
+        url: '/welcome',
         title: 'Ongietorri!',
         views: {
-            'body': {
-                templateUrl: 'partials/welcome.html',
-                controller: 'AuthController',
-            },
+            'body': {templateUrl: 'partials/welcome.html'},
         }
     });
 };
 
-angular.module('welcome').config(config);
+angular.module('welcome').config(welcomeConfig);

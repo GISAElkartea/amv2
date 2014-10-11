@@ -9,12 +9,14 @@ var App = angular.module('app', [
 
     'app.config',
     'welcome',
+    'frontpage',
     'auth',
     'radio',
 ])
 
 .config(
-    function($locationProvider, $urlRouterProvider, $httpProvider, RestangularProvider, baseUrl) {
+    function($locationProvider, $urlRouterProvider, $httpProvider,
+             RestangularProvider, baseUrl) {
 	// Server side support is needed
 	$locationProvider.html5Mode(false);
         // Set base url for the API
@@ -25,14 +27,18 @@ var App = angular.module('app', [
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         // Default route
-	$urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/');
     }
 )
 
-.run(function($location, $rootScope) {
+.run(function($location, $rootScope, $state, AuthService) {
     $rootScope.$on('$stateChangeSuccess', function(event, current, previous) {
         $rootScope.title = current.title;
     });
+    // User hits the frontpage and is not authenticated
+    if ($location.$$path == '/' && !AuthService.isAuthenticated()) {
+        $state.go('welcome');
+    };
 })
 
 ;
