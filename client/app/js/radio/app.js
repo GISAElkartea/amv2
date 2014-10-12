@@ -6,10 +6,12 @@ angular.module('radio', [
 
 .config(
     function($stateProvider) {
-        $stateProvider.state('radio', {
+        $stateProvider.state('nav.radio', {
             url: '/radio',
             title: 'Irratsaioak',
-            templateUrl: 'partials/radio.html',
-            controller: 'RadioShowsController',
+            views: {
+                '': {templateUrl: 'partials/radio.html',
+                     controller: 'RadioShowsController'},
+            },
         });
 })

@@ -3,7 +3,7 @@ angular.module('frontpage', [
 ])
 
 function frontpageConfig($stateProvider) {
-    $stateProvider.state('yeah', {
+    $stateProvider.state('nav.frontpage', {
         url: '/',
         title: 'Azala',
         template: '<h1>Frontpage</h1>',
