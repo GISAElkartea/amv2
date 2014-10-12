@@ -3,6 +3,12 @@ div#welcome
     header
         height: 100vh
         width: 100%
+        background-image: url(/images/debian_radio.jpg)
+        background-repeat: no-repeat
+        background-size: 90%
+        background-position: center top
+        +media(max-width 769px)
+            background-size: 100%
         +outer-container()
         div#logo
             +vertical-align
