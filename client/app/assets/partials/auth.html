@@ -1,21 +1,24 @@
 <section ng-controller="LoginController">
   <h2>Login</h2>
   <wizard>
-    <wz-step>
+    <wz-step title="Hasi">
       <p>Saioa hasi</p>
       <a href="" wz-next>Jarraitu</a>
     </wz-step>
-    <wz-step>
+    <wz-step title="Eposta">
       <input ng-model="login.email" required name="email" type="text"
       placeholder="eposta helbidea" />
+      <a href="" wz-next>Jarraitu</a>
+    </wz-step>
+    <wz-step title="Pasahitza">
       <input ng-model="login.password" required name="password" type="password"
       placeholder="pasahitza" />
-      <input type="submit" wz-next="login()" value="hasi saioa" />
-      <div ng-repeat="error in login.errors">
-        <p>{{ error }}</p>
-      </div>
+      <a href="" wz-next="login()">Hasi saioa</a>
     </wz-step>
   </wizard>
+  <div ng-repeat="error in login.errors">
+    <p>{{ error }}</p>
+  </div>
 </section>
 
 <section ng-controller="RegistrationController">
@@ -28,14 +31,20 @@
     <wz-step>
       <input ng-model="registration.email" required name="email" type="text"
       placeholder="eposta helbidea" />
+      <a href="" wz-next>Jarraitu</a>
+    </wz-step>
+    <wz-step>
       <input ng-model="registration.password" required name="password" type="password"
       placeholder="pasahitza" />
+      <a href="" wz-next>Jarraitu</a>
+    </wz-step>
+    <wz-step>
       <input ng-model="registration.password_check" required name="password_check"
       type="password" placeholder="errepikatu pasahitza" />
-      <input type="submit" wz-next="register()" value="Sortu kontua" />
-      <div ng-repeat="error in registration.errors">
-        <p>{{ error }}</p>
-      </div>
+      <a href="" wz-next="register()">Sortu kontua</a>
     </wz-step>
   </wizard>
+  <div ng-repeat="error in registration.errors">
+    <p>{{ error }}</p>
+  </div>
 </section>

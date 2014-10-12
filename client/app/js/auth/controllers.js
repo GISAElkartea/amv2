@@ -1,4 +1,8 @@
-angular.module('auth.controllers', ['auth.resources', 'ui.router'])
+angular.module('auth.controllers', [
+    'ui.router',
+    'mgo-angular-wizard',
+    'auth.resources',
+])
 
 
 function mergeErrors(errorTypes) {
@@ -9,7 +13,8 @@ function mergeErrors(errorTypes) {
     return allErrors;
 };
 
-function LoginController($scope, $state, AuthService) {
+
+function LoginController($scope, $state, WizardHandler, AuthService) {
     $scope.login = {};
 
     $scope.getCredentials = function() {
@@ -27,11 +32,15 @@ function LoginController($scope, $state, AuthService) {
             })
             .error(function(data) {
                 $scope.login.errors = mergeErrors(data);
+                WizardHandler.wizard().goTo(0);
             });
     };
 
     $scope.logout = function() {
         AuthService.logout();
+    };
+
+    $scope.goBack = function() {
     };
 };
 
@@ -55,9 +64,11 @@ function RegistrationController($scope, AuthService) {
                 })
                 .error(function(data) {
                     $scope.registration.errors = mergeErrors(data);
+                    WizardHandler.wizard().goTo(0);
                 });
         } else {
             $scope.registration.errors = ['Passwords do not match'];
+            WizardHandler.wizard().goTo(1);
         };
     };
 };
