@@ -6,11 +6,12 @@ header
     background-image: url(/images/debian_radio.jpg)
     background-repeat: no-repeat
     background-size: 90%
-    background-position: center -50%
+    background-position: center 60%
+    +outer-container()
     +media(max-width 769px)
         background-size: 100%
     div#logo
-        margin: 2% 0
+        margin: 3% 0
         +span-columns(1.5)
         +shift(5.25)
         +media(max-width 769px)
