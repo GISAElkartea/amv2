@@ -9,11 +9,11 @@ angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
                 '': {templateUrl: 'partials/auth.html'},
             },
         })
-        .state('header.auth.confirmation', {
-            url: '/:token',
+        .state('header.auth_confirmation', {
+            url: '/auth/:token',
             title: 'Kontuaren baieztapena',
             views: {
-                '': {templateUrl: 'partials/auth.confirmation.html'},
+                '': {templateUrl: 'partials/auth_confirmation.html'},
             },
             onEnter: function($stateParams, AuthService) {
                 AuthService.confirm($stateParams.token);
