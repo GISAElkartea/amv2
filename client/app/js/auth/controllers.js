@@ -1,34 +1,67 @@
 angular.module('auth.controllers', ['auth.resources', 'ui.router'])
 
-.controller('AuthController',
-    function($scope, $state, $location, AuthService) {
-        $scope.isAuthenticated = function() {
-            return AuthService.isAuthenticated();
-        };
 
-        $scope.getCredentials = function() {
-            return {email: $scope.email, password: $scope.password};
-        };
+function mergeErrors(errorTypes) {
+    var allErrors = [];
+    _(errorTypes).forEach(function(errors) {
+        allErrors = _.union(allErrors, errors);
+    });
+    return allErrors;
+};
 
-        $scope.login = function() {
-            AuthService.login($scope.getCredentials())
+function LoginController($scope, $state, AuthService) {
+    $scope.login = {};
+
+    $scope.getCredentials = function() {
+        return {email: $scope.login.email, password: $scope.login.password};
+    };
+
+    $scope.isAuthenticated = function() {
+        return AuthService.isAuthenticated();
+    };
+
+    $scope.login = function() {
+        AuthService.login($scope.getCredentials())
+            .success(function(data) {
+                $state.go('header.frontpage');
+            })
+            .error(function(data) {
+                $scope.login.errors = mergeErrors(data);
+            });
+    };
+
+    $scope.logout = function() {
+        AuthService.logout();
+    };
+};
+
+
+function RegistrationController($scope, AuthService) {
+    $scope.registration = {};
+
+    $scope.getCredentials = function() {
+        return {email: $scope.registration.email, password: $scope.registration.password};
+    };
+
+    $scope.validate = function() {
+        return $scope.registration.password == $scope.registration.password_check;
+    };
+
+    $scope.register = function() {
+        if ($scope.validate()) {
+            AuthService.register($scope.getCredentials())
                 .success(function(data) {
-                    $state.go('frontpage');
+                    $state.go('header.frontpage');
                 })
                 .error(function(data) {
-                    alert(data.data.non_field_errors);
+                    $scope.registration.errors = mergeErrors(data);
                 });
+        } else {
+            $scope.registration.errors = ['Passwords do not match'];
         };
+    };
+};
 
-        $scope.logout = function() {
-            AuthService.logout();
-        };
 
-        $scope.register = function($event) {
-            $event.preventDefault();
-            AuthService.register($scope.getCredentials())
-                .error(function(data) {
-                    alert(data.data.email);
-                });
-        };
-});
+angular.module('auth.controllers').controller('LoginController', LoginController);
+angular.module('auth.controllers').controller('RegistrationController', RegistrationController);

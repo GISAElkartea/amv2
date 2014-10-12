@@ -1,6 +1,11 @@
-angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
+angular.module('auth', [
+    'ui.router',
+    'mgo-angular-wizard',
+    'auth.controllers',
+    'auth.resources'
+]);
 
-.config(function($stateProvider) {
+function authConfig($stateProvider) {
     $stateProvider
         .state('header.auth', {
             url: '/auth',
@@ -19,4 +24,6 @@ angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
                 AuthService.confirm($stateParams.token);
             },
         })
-});
+};
+
+angular.module('auth').config(authConfig);

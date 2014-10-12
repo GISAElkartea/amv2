@@ -31,6 +31,7 @@ function AuthService(baseUrl, $http, localStorageService) {
             return promise;
         },
     };
+};
 
 
 function AuthInterceptor($q, $injector) {

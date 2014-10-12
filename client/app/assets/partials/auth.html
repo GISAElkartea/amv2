@@ -1,23 +1,41 @@
-<section ng-controller="AuthController">
+<section ng-controller="LoginController">
   <h2>Login</h2>
-  <form ng-submit="login()">
-    <input ng-model="email" required name="email" type="text"
-    placeholder="eposta helbidea" />
-    <input ng-model="password" required name="password" type="password"
-    placeholder="pasahitza" />
-    <input type="submit" value="hasi saioa" />
-  </form>
+  <wizard>
+    <wz-step>
+      <p>Saioa hasi</p>
+      <a href="" wz-next>Jarraitu</a>
+    </wz-step>
+    <wz-step>
+      <input ng-model="login.email" required name="email" type="text"
+      placeholder="eposta helbidea" />
+      <input ng-model="login.password" required name="password" type="password"
+      placeholder="pasahitza" />
+      <input type="submit" wz-next="login()" value="hasi saioa" />
+      <div ng-repeat="error in login.errors">
+        <p>{{ error }}</p>
+      </div>
+    </wz-step>
+  </wizard>
 </section>
 
-<section ng-controller="AuthController">
+<section ng-controller="RegistrationController">
   <h2>Register</h2>
-  <form ng-submit="register($event)">
-    <input ng-model="email" required name="email" type="text"
-    placeholder="eposta helbidea" />
-    <input ng-model="password" required name="password" type="password"
-    placeholder="pasahitza" />
-    <input ng-model="password_check" required name="password_check"
-    type="password" placeholder="errepikatu pasahitza" />
-    <input type="submit" value="Sortu kontua" />
-  </form>
+  <wizard>
+    <wz-step>
+      <p>Kontua sortu</p>
+      <a href="" wz-next>Jarraitu</a>
+    </wz-step>
+    <wz-step>
+      <input ng-model="registration.email" required name="email" type="text"
+      placeholder="eposta helbidea" />
+      <input ng-model="registration.password" required name="password" type="password"
+      placeholder="pasahitza" />
+      <input ng-model="registration.password_check" required name="password_check"
+      type="password" placeholder="errepikatu pasahitza" />
+      <input type="submit" wz-next="register()" value="Sortu kontua" />
+      <div ng-repeat="error in registration.errors">
+        <p>{{ error }}</p>
+      </div>
+    </wz-step>
+  </wizard>
 </section>
