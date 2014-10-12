@@ -6,7 +6,7 @@ angular.module('radio', [
 
 .config(
     function($stateProvider) {
-        $stateProvider.state('nav.radio', {
+        $stateProvider.state('header.radio', {
             url: '/radio',
             title: 'Irratsaioak',
             views: {

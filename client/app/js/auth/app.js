@@ -2,14 +2,14 @@ angular.module('auth', ['ui.router', 'auth.controllers', 'auth.resources'])
 
 .config(function($stateProvider) {
     $stateProvider
-        .state('nav.auth', {
+        .state('header.auth', {
             url: '/auth',
             title: 'Hasi saioa',
             views: {
                 '': {templateUrl: 'partials/auth.html'},
             },
         })
-        .state('nav.auth.confirmation', {
+        .state('header.auth.confirmation', {
             url: '/:token',
             title: 'Kontuaren baieztapena',
             views: {

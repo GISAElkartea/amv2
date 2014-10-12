@@ -31,10 +31,10 @@ function appConfig($locationProvider, $urlRouterProvider, $httpProvider,
 
 function appStates($stateProvider) {
     $stateProvider
-        .state('nav', {
+        .state('header', {
             abstract: true,
             views: {
-                'nav': {templateUrl: 'partials/nav.html'},
+                'header': {templateUrl: 'partials/header.html'},
                 '': {template: '<ui-view></ui-view>'},
             },
         })
