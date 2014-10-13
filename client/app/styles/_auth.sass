@@ -3,7 +3,9 @@ section.auth
     +span-columns(4 of 8)
     div.authForm
         width: 100%
-        background: tint(black, 80%)
+        div.steps, div.ng-isolate-scope
+            height: 3.5em
+            background: tint(black, 80%)
         h2, a.authNext, input
             display: inline-block
             box-sizing: border-box
@@ -27,20 +29,36 @@ section.auth
         input
             border: none
             background: none
+            height: 3.5em
+            padding-left: 1em
+            font-family: $text
+            font-size: 1rem
+            &:required
+                border: 0
         input [required]
             border: none
         ul.steps-indicator
             width: 100%
             padding: 0
-            background: tint(black, 70%)
             margin: 0
-            height: .5em
+            height: .5rem
+            background: tint(black, 70%)
+            font-size: 0
             li
+                height: .5rem
                 display: inline-block
                 a
                     display: none
+            li:last-child
+                display: none
+            li.done
+                background: $green
     div#authLogin
-        ul.steps-indicator
-            li
-                width: 33%
+        li
+            width: (100%/2)
+    div#authRegister
+        li
+            width: (100%/3)
 
+p.authError
+    color: $red
