@@ -1,0 +1,36 @@
+section.auth
+    margin-bottom: 2rem
+    div.authForm
+        background: tint(black, 80%)
+        h2, a.authNext, input
+            display: inline-block
+            box-sizing: border-box
+            padding: .5em
+        h2, input
+            width: 85%
+            margin: 0
+        a
+            color: $green
+            text-decoration: none
+        a.authNext
+            width: 10%
+        input
+            border: none
+            background: none
+        input [required]
+            border: none
+        ul.steps-indicator
+            width: 100%
+            padding: 0
+            background: tint(black, 70%)
+            margin: 0
+            height: .5em
+            li
+                display: inline-block
+                a
+                    display: none
+    div#authLogin
+        ul.steps-indicator
+            li
+                width: 33%
+
