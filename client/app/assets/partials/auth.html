@@ -1,47 +1,46 @@
 <div class="auth" id="authLogin" ng-controller="LoginController">
-  <wizard>
+  <wizard name="login">
     <wz-step title="Hasi">
       <h2><a href="" wz-next>Hasi saioa</a></h2>
-      <a class="authNext" href="" wz-next><span class="triangle"></span></a>
+      <a class="authNext" href="" wz-next span class="triangle"></span></a>
     </wz-step>
     <wz-step title="Eposta">
       <input ng-model="login.email" required name="email" type="text"
       placeholder="Eposta helbidea" />
-      <a class="authNext" href="" wz-next><span class="triangle"></span></a>
+      <a class="authNext" href="" wz-next><div class="triangle"></div></a>
     </wz-step>
     <wz-step title="Pasahitza">
       <input ng-model="login.password" required name="password" type="password"
       placeholder="Pasahitza" />
-      <a fittext class="authNext" href="" wz-next="login()">Saioa hasi</a>
+      <a class="authNext" href="" wz-next="login()">Saioa hasi<span
+          class="triangle"></span></a>
     </wz-step>
   </wizard>
   <div ng-repeat="error in login.errors">
     <p class="authError">{{ error }}</p>
   </div>
 </div>
+
 <div class="auth" id="authRegister" ng-controller="RegistrationController">
-  <wizard>
+  <wizard name="registration">
     <wz-step>
-      <h2><a href="" wz-next>Kontua sortu</a></h2>
-      <a class="authNext" href="" wz-next><span class="triangle"></span></a>
+      <h2><a href="" wz-next>Ez dut konturik, berria sortu</a></h2>
+      <a class="authNext" href="" wz-next><div class="triangle"></div></a>
     </wz-step>
     <wz-step>
       <input ng-model="registration.email" required name="email" type="text"
       placeholder="Eposta helbidea" />
-      <a class="authNext" href="" wz-next><span class="triangle"></span></a>
+      <a class="authNext" href="" wz-next><div class="triangle"></div></a>
     </wz-step>
     <wz-step>
       <input ng-model="registration.password" required name="password" type="password"
       placeholder="Pasahitza" />
-      <a class="authNext" href="" wz-next><span class="triangle"></span></a>
+      <a class="authNext" href="" wz-next><div class="triangle"></div></a>
     </wz-step>
     <wz-step>
       <input ng-model="registration.password_check" required name="password_check"
       type="password" placeholder="Errepikatu pasahitza" />
-      <a class="authNext" href="" wz-next="register()">Sortu kontua</a>
+      <a class="authNext" href="" wz-next="register()">Sortu kontua<div class="triangle"></div></a>
     </wz-step>
   </wizard>
-  <div ng-repeat="error in registration.errors">
-    <p class="authError">{{ error }}</p>
-  </div>
 </div>

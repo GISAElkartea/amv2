@@ -16,6 +16,7 @@ function mergeErrors(errorTypes) {
 
 function LoginController($scope, $state, WizardHandler, AuthService) {
     $scope.login = {};
+    $scope.wizard = WizardHandler.wizard('login');
 
     $scope.getCredentials = function() {
         return {email: $scope.login.email, password: $scope.login.password};
@@ -32,20 +33,18 @@ function LoginController($scope, $state, WizardHandler, AuthService) {
             })
             .error(function(data) {
                 $scope.login.errors = mergeErrors(data);
-                WizardHandler.wizard().goTo(0);
+                $scope.wizard.cancel();
+                WizardHandler.wizard('login').cancel();
             });
     };
 
     $scope.logout = function() {
         AuthService.logout();
     };
-
-    $scope.goBack = function() {
-    };
 };
 
 
-function RegistrationController($scope, AuthService) {
+function RegistrationController($scope, WizardHandler, AuthService) {
     $scope.registration = {};
 
     $scope.getCredentials = function() {
@@ -64,11 +63,13 @@ function RegistrationController($scope, AuthService) {
                 })
                 .error(function(data) {
                     $scope.registration.errors = mergeErrors(data);
-                    WizardHandler.wizard().goTo(0);
+                    WizardHandler.wizard('registration').cancel();
                 });
         } else {
-            $scope.registration.errors = ['Passwords do not match'];
-            WizardHandler.wizard().goTo(1);
+            $scope.registration.errors = ['Passwords do not match.'];
+            $scope.registration.password = null;
+            $scope.registration.password_check = null;
+            WizardHandler.wizard('registration').goTo(1);
         };
     };
 };
