@@ -16,7 +16,6 @@ function mergeErrors(errorTypes) {
 
 function LoginController($scope, $state, WizardHandler, AuthService) {
     $scope.login = {};
-    $scope.wizard = WizardHandler.wizard('login');
 
     $scope.getCredentials = function() {
         return {email: $scope.login.email, password: $scope.login.password};
@@ -33,7 +32,6 @@ function LoginController($scope, $state, WizardHandler, AuthService) {
             })
             .error(function(data) {
                 $scope.login.errors = mergeErrors(data);
-                $scope.wizard.cancel();
                 WizardHandler.wizard('login').cancel();
             });
     };
