@@ -1,19 +1,29 @@
 section.auth
     margin-bottom: 2rem
+    +span-columns(4 of 8)
     div.authForm
+        width: 100%
         background: tint(black, 80%)
         h2, a.authNext, input
             display: inline-block
             box-sizing: border-box
             padding: .5em
+            vertical-align: middle
         h2, input
-            width: 85%
+            width: 73%
             margin: 0
         a
             color: $green
             text-decoration: none
         a.authNext
-            width: 10%
+            width: 25%
+            font-size: .9rem
+            text-align: right
+        .triangle
+            vertical-align: middle
+            margin-left: .5em
+            display: inline-block
+            +triangle(1em, 0, 1em, 1em)
         input
             border: none
             background: none
