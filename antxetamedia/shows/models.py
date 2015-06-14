@@ -4,6 +4,7 @@ from django.utils.translation import ugettext as _
 from django.utils.timezone import now
 
 from autoslug import AutoSlugField
+from antxetamedia.blobs.fields import RelatedBlobField
 
 
 @python_2_unicode_compatible
@@ -52,6 +53,7 @@ class AbstractPodcast(models.Model):
     description = models.TextField(_('Description'), blank=True)  # TODO: Markup, CKEditor?
     pub_date = models.DateTimeField(_('Publication date'), default=now)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
+    blob = RelatedBlobField()
 
     def __str__(self):
         return self.title

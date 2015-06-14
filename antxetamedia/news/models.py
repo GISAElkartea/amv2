@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.translation import ugettext as _
 
 from antxetamedia.shows.models import AbstractCategory, AbstractShow, AbstractPodcast
-from antxetamedia.blobs.fields import RelatedBlobField
 
 
 class NewsCategory(AbstractCategory):
@@ -25,4 +24,3 @@ class NewsPodcast(AbstractPodcast):
         verbose_name_plural = _('News podcasts')
 
     show = models.ForeignKey(NewsShow, verbose_name=_('Show'))
-    blob = RelatedBlobField()
