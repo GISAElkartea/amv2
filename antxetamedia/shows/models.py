@@ -53,7 +53,7 @@ class AbstractPodcast(models.Model):
         abstract = True
 
     title = models.CharField(_('Title'), max_length=512)
-    slug = AutoSlugField(_('Slug'), populate_from='title', editable=True, unique_with='show')
+    slug = AutoSlugField(_('Slug'), populate_from='title', editable=False, unique_with='show')
     description = models.TextField(_('Description'), blank=True)  # TODO: Markup, CKEditor?
     pub_date = models.DateTimeField(_('Publication date'), default=now)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?

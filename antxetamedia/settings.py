@@ -38,9 +38,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'adminsortable2',
+
     'antxetamedia.blobs',
     'antxetamedia.shows',
     'antxetamedia.news',
+    'antxetamedia.radio',
+    'antxetamedia.projects',
+    'antxetamedia.playlists',
 )
 
 MIDDLEWARE_CLASSES = (
