@@ -1,8 +1,8 @@
-from django.db import models
+from django.db import models, transaction
 from django.db.models.fields.related import SingleRelatedObjectDescriptor
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.six import python_2_unicode_compatible
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 
 @python_2_unicode_compatible
@@ -58,3 +58,44 @@ class Blob(models.Model):
 
     def __str__(self):
         return _('Blob for {}').format(self.content_object)
+
+
+@python_2_unicode_compatible
+class BlobUpload(models.Model):
+    PENDING = 0
+    UPLOADING = 1
+    SUCCEEDED = 2
+    FAILED = 3
+    STATES = [
+        (PENDING, _('Pending')),
+        (UPLOADING, _('Uploading')),
+        (SUCCEEDED, _('Succeeded')),
+        (FAILED, _('Failed')),
+    ]
+
+    class Meta:
+        verbose_name = _('Blob upload')
+        verbose_name_plural = _('Blob uploads')
+
+    blob = models.ForeignKey(Blob, verbose_name=_('Blob'))
+    state = models.PositiveSmallIntegerField(_('State'), choices=STATES, default=PENDING)
+    result = models.TextField(_('Result'), blank=True)  # JSONField?
+
+    def __str__(self):
+        return _('{blob} upload').format(blob=self.blob)
+
+    def upload(self):
+        self.state = self.UPLOADING
+        self.save()
+        try:
+            # Do whatever needs to be done
+            remote = None
+        except:  # Some uploading exception
+            self.state = self.FAILED
+            self.save()
+        else:
+            with transaction.atomic():
+                self.state = self.SUCCEEDED
+                self.save()
+                self.blob.remote = remote
+                self.blob.save()
