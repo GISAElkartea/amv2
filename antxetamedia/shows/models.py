@@ -20,14 +20,22 @@ class AbstractCategory(models.Model):
 
 
 @python_2_unicode_compatible
+class AbstractProducer(models.Model):
+    class Meta:
+        abstract = True
+
+    name = models.CharField(_('Name'), max_length=128)
+    slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
 class AbstractShow(models.Model):
     class Meta:
         abstract = True
         unique_together = [('category', 'slug')]
-
-    @property
-    def category(self):
-        raise NotImplemented("This class must define a 'category' field.")
 
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique_with='category')
@@ -43,10 +51,6 @@ class AbstractShow(models.Model):
 class AbstractPodcast(models.Model):
     class Meta:
         abstract = True
-
-    @property
-    def show(self):
-        raise NotImplemented("This class must define a 'show' field.")
 
     title = models.CharField(_('Title'), max_length=512)
     slug = AutoSlugField(_('Slug'), populate_from='title', editable=True, unique_with='show')
