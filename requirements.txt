@@ -2,5 +2,8 @@ django==1.8.2
 
 Pillow
 
+# Admin
+django-admin-sortable2
+
 # Fields
 django-autoslug
