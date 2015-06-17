@@ -27,7 +27,7 @@ class PlaylistElement(models.Model):
 
     playlist = models.ForeignKey(Playlist, verbose_name=_('Playlist'))
     blob = models.ForeignKey('blobs.Blob', verbose_name=_('Blob'))
-    position = models.PositiveIntegerField(_('Position'), default=0)
+    position = models.PositiveIntegerField(_('Position'), default=0)  # Should be PositionField
 
     def __str__(self):
         return '#{self.position}: {self.blob.content_type}'.format(self=self)
