@@ -31,8 +31,18 @@ class AbstractProducer(models.Model):
         return self.name
 
 
+class ShowQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(pub_date__lte=now())
+
+    def unpublished(self):
+        return self.filter(pub_date__gt=now())
+
+
 @python_2_unicode_compatible
 class AbstractShow(models.Model):
+    objects = ShowQuerySet.as_manager()
+
     class Meta:
         abstract = True
         unique_together = [('category', 'slug')]
@@ -50,6 +60,7 @@ class AbstractShow(models.Model):
 @python_2_unicode_compatible
 class AbstractPodcast(models.Model):
     class Meta:
+        ordering = ['pub_date']
         abstract = True
 
     title = models.CharField(_('Title'), max_length=512)
