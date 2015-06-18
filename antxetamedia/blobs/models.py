@@ -90,7 +90,7 @@ class BlobUpload(models.Model):
 
     blob = models.ForeignKey(Blob, verbose_name=_('Blob'))
     state = models.PositiveSmallIntegerField(_('State'), choices=STATES, default=PENDING)
-    result = models.TextField(_('Result'), blank=True)  # JSONField?
+    exception = models.TextField(_('exception'), blank=True)
 
     def __str__(self):
         return _('{blob} upload').format(blob=self.blob)
