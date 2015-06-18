@@ -40,14 +40,14 @@ class UniqueGenericForeignKey(GenericForeignKey):
 @python_2_unicode_compatible
 class Blob(models.Model):
     class Meta:
-        # Effectively a OneToOne relationship
-        unique_together = [('content_type', 'object_id')]
+        unique_together = [('content_type', 'object_id', 'counter')]
         verbose_name = _('Blob')
         verbose_name_plural = _('Blobs')
 
     content_type = models.ForeignKey('contenttypes.contenttype')
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
+    counter = models.PositiveIntegerField(default=0, editable=False)
 
     local = models.FileField(_('Local file'), upload_to='podcasts', null=True, blank=True,
                              help_text=_("If set, the file will be uploaded to the remote storage and the link will "
@@ -57,7 +57,18 @@ class Blob(models.Model):
     license = models.ForeignKey(License, verbose_name=_('License'))
 
     def __str__(self):
-        return _('Blob for {}').format(self.content_object)
+        return '{self.content_object} - #{self.counter}'.format(self=self)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            qs = Blob.objects.filter(content_type=self.content_type, object_id=self.object_id)
+            latest = qs.aggregate(latest=models.Max('counter'))['latest']
+            self.counter = latest + 1
+        return super(Blob, self).save(*args, **kwargs)
+
+    @property
+    def blob(self):
+        return self.local or self.remote
 
 
 @python_2_unicode_compatible

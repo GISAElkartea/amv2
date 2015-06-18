@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext as _
 from django.utils.timezone import now
 
 from autoslug import AutoSlugField
-from antxetamedia.blobs.fields import RelatedBlobField
+
+from antxetamedia.blobs.models import Blob
 
 
 @python_2_unicode_compatible
@@ -68,7 +70,7 @@ class AbstractPodcast(models.Model):
     description = models.TextField(_('Description'), blank=True)  # TODO: Markup, CKEditor?
     pub_date = models.DateTimeField(_('Publication date'), default=now)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
-    blob = RelatedBlobField()
+    blob_set = GenericRelation(Blob, content_type_field='content_type', object_id_field='object_id')
 
     def __str__(self):
         return self.title

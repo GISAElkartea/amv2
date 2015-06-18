@@ -12,10 +12,10 @@ class BlobInline(GenericTabularInline):
     ct_field = 'content_type'
     ct_fk_field = 'object_id'
     extra = 1
-    max_num = 1
 
 
 class BlobAdmin(admin.ModelAdmin):
+    list_display = ['blob', ]
     readonly_fields = ['content_object']
     fields = ['content_object', 'account', 'license', 'local', 'remote']
 
@@ -26,6 +26,9 @@ class BlobAdmin(admin.ModelAdmin):
     content_object.short_description = _('Podcast')
     content_object.allow_tags = True
 
+
+class BlobUploadAdmin(admin.ModelAdmin):
+    pass
 
 admin.site.register(Account)
 admin.site.register(License)
