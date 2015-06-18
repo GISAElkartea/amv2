@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
+import pickle
+
 from django.db import models, transaction
 from django.db.models.fields.related import SingleRelatedObjectDescriptor
 from django.contrib.contenttypes.fields import GenericForeignKey
@@ -94,6 +100,19 @@ class BlobUpload(models.Model):
 
     def __str__(self):
         return _('{blob} upload').format(blob=self.blob)
+
+    def has_succeeded(self):
+        if self.state in (self.SUCCEEDED, self.FAILED):
+            return self.state == self.SUCCEEDED
+        return None
+
+    def get_exception_display(self):
+        try:
+            loaded = pickle.loads(self.exception)
+        except:  # more concrete?
+            return self.exception
+        else:
+            return repr(loaded)
 
     def upload(self):
         self.state = self.UPLOADING
