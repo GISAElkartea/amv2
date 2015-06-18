@@ -44,8 +44,10 @@ Bestelakoak
 Architecture
 ============
 
-App layout
-----------
+Layout
+------
+
+![Design](structure.png)
 
 - shows:
   - AbstractProducer
@@ -80,8 +82,6 @@ App layout
 
 Design decisions
 ----------------
-
-![Design](structure.png)
 
 ### No nested categories
 
