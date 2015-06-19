@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'antxetamedia.projects',
     'antxetamedia.playlists',
     'antxetamedia.schedule',
+    'antxetamedia.widgets',
 )
 
 MIDDLEWARE_CLASSES = (
