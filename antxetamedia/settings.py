@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'compressor',
     'adminsortable2',
 
+    'antxetamedia.frontpage',
     'antxetamedia.blobs',
     'antxetamedia.shows',
     'antxetamedia.news',
