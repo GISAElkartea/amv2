@@ -2,6 +2,9 @@ django==1.8.2
 
 Pillow
 
+# Static files
+django-libsass
+
 # Admin
 django-admin-sortable2
 
