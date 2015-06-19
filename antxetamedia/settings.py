@@ -38,8 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'compressor',
     'adminsortable2',
+    'ckeditor',
+    'compressor',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
@@ -123,3 +124,18 @@ STATICFILES_FINDERS = [
 COMPRESS_PRECOMPILERS = (
     ('text/x-sass', 'django_libsass.SassCompiler'),
 )
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Bold', 'Italic', 'Underline', 'StrikeThrough', '-', 'Undo', 'Redo', '-',
+             'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Outdent', 'Indent', '-', 'Print'],
+            ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Image', 'Link', 'TextColor', 'BGColor', 'Source'],
+            '/',
+            ['Styles', 'Format', 'Font', 'FontSize'],
+        ],
+    }
+}

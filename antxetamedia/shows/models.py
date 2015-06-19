@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 from django.utils.timezone import now
 
 from autoslug import AutoSlugField
+from ckeditor.fields import RichTextField
 
 from antxetamedia.blobs.models import Blob
 
@@ -51,7 +52,7 @@ class AbstractShow(models.Model):
 
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique_with='category')
-    description = models.TextField(_('Description'), blank=True)  # TODO: Markup, CKEditor?
+    description = RichTextField(_('Description'), blank=True)
     featured = models.BooleanField(_('Featured'), default=False)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
 
@@ -67,7 +68,7 @@ class AbstractPodcast(models.Model):
 
     title = models.CharField(_('Title'), max_length=512)
     slug = AutoSlugField(_('Slug'), populate_from='title', editable=False, unique_with='show')
-    description = models.TextField(_('Description'), blank=True)  # TODO: Markup, CKEditor?
+    description = RichTextField(_('Description'), blank=True)
     pub_date = models.DateTimeField(_('Publication date'), default=now)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
     blob_set = GenericRelation(Blob, content_type_field='content_type', object_id_field='object_id')
