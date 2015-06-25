@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'adminsortable2',
     'ckeditor',
     'compressor',
+    'recurrence',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
@@ -30,6 +31,7 @@ INSTALLED_APPS = (
     'antxetamedia.playlists',
     'antxetamedia.schedule',
     'antxetamedia.widgets',
+    'antxetamedia.events',
 )
 
 MIDDLEWARE_CLASSES = (
