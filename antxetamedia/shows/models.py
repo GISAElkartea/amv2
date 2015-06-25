@@ -34,24 +34,13 @@ class AbstractProducer(models.Model):
         return self.name
 
 
-class ShowQuerySet(models.QuerySet):
-    def published(self):
-        return self.filter(pub_date__lte=now())
-
-    def unpublished(self):
-        return self.filter(pub_date__gt=now())
-
-
 @python_2_unicode_compatible
 class AbstractShow(models.Model):
-    objects = ShowQuerySet.as_manager()
-
     class Meta:
         abstract = True
-        unique_together = [('category', 'slug')]
 
     name = models.CharField(_('Name'), max_length=256)
-    slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique_with='category')
+    slug = AutoSlugField(_('Slug'), unique=True, populate_from='name', editable=True)
     description = RichTextField(_('Description'), blank=True)
     featured = models.BooleanField(_('Featured'), default=False)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
@@ -60,8 +49,18 @@ class AbstractShow(models.Model):
         return self.name
 
 
+class PodcastQuerySet(models.QuerySet):
+    def published(self):
+        return self.filter(pub_date__lte=now())
+
+    def unpublished(self):
+        return self.filter(pub_date__gt=now())
+
+
 @python_2_unicode_compatible
 class AbstractPodcast(models.Model):
+    objects = PodcastQuerySet.as_manager()
+
     class Meta:
         ordering = ['pub_date']
         abstract = True

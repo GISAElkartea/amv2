@@ -15,8 +15,6 @@ class NewsShow(AbstractShow):
         verbose_name = _('News show')
         verbose_name_plural = _('News shows')
 
-    category = models.ForeignKey(NewsCategory, verbose_name=_('Category'))
-
 
 class NewsPodcast(AbstractPodcast):
     class Meta:
@@ -24,3 +22,4 @@ class NewsPodcast(AbstractPodcast):
         verbose_name_plural = _('News podcasts')
 
     show = models.ForeignKey(NewsShow, verbose_name=_('Show'))
+    categories = models.ManyToManyField(NewsCategory, blank=True, verbose_name=_('Categories'))
