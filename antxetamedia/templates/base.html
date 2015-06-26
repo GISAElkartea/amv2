@@ -19,16 +19,52 @@
   </head>
   <body>
     {% block body %}
-    <h1>Antxetamedia</h1>
-    <h2>Here go the most common things</h2>
-    <nav>
-      <ul>
-        <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
-        <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
-      </ul>
-    </nav>
-    {% block content %}
-    {% endblock content %}
+    <header>
+      <section id="mainNav">
+        <nav id="menu">
+          <ul>
+            <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
+            <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
+          </ul>
+        </nav>
+        <nav class="user">
+          <ul>
+            <li>
+              <a>Sortu kontua / Saioa hasi</a>
+            </li>
+            <li>
+              <a href="">Logout</a>
+            </li>
+            <li>
+              <img src="/images/rss.svg" alt="rss"/>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <div id="logo">
+        <a href="/"><img src="/images/antxetamedia.svg" alt="antxetamedia" /></a>
+        <div class="zero">
+          <div id="live"><a fittext>ZUZENEAN</a></div>
+          <div id="broadcast"><a fittext>90.5/89.7</a></div>
+        </div>
+      </div>
+    </header>
+
+    <div id="wrap">
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
+      <aside>
+        <div id="player"></div>
+      </aside>
+    </div>
+
+    <footer>
+      <div id="licenses">Hemen lizentziak jarriko dira</div>
+      <div id="sponsors">Hemen laguntzaileak jarriko dira</div>
+    </footer>
+
     {% endblock body %}
   </body>
 </html>
