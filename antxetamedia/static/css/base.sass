@@ -1,0 +1,35 @@
+body
+    margin: 0
+    background-color: black
+    font-family: $text
+header
+    background-image: url(/images/debian_radio.jpg)
+    background-repeat: no-repeat
+    background-size: 90%
+    background-position: center 60%
+    +outer-container()
+    +media(max-width 769px)
+        background-size: 100%
+    div#logo
+        margin: 3% 0
+        +span-columns(1.5)
+        +shift(5.25)
+        +media(max-width 769px)
+            +span-columns(4)
+            +shift(4)
+        +media(max-width 480px)
+            +span-columns(6)
+            +shift(3)
+
+div#wrap
+    background: tint(black, 85%)
+    min-height: 75vh
+    padding: 3rem 3%
+    +outer-container
+    main
+        +span-columns(8)
+    aside
+        //+span-columns(4)
+        background: tint(black, 80%)
+
+

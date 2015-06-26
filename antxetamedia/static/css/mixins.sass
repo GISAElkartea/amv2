@@ -1,0 +1,25 @@
+=vertical-align
+    position: absolute
+    top: 50%
+    -webkit-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    transform: translateY(-50%)
+
+=triangle($top, $right, $bottom, $left, $color)
+    width: 0
+    height: 0
+    border-top: $top solid transparent
+    border-right: $right solid $color
+    border-bottom: $bottom solid transparent
+    border-left: $left solid $color
+=rectangle($width, $height, $color)
+    width: $width
+    height: $height
+    background: $color
+=waves($width, $height, $border-width, $border-radius, $color)
+    width: $width
+    height: $height
+    border: $border-width $color double
+    border-width: $border-width $border-width 0 0
+    border-radius: 0 $border-radius 0 0
+    transform: rotate(45deg)

@@ -1,0 +1,62 @@
+div.auth
+    margin-bottom: 2rem
+    +span-columns(4 of 8)
+    div.steps, div.ng-isolate-scope
+        height: 3.5em
+        background: tint(black, 80%)
+    h2, a.authNext, input
+        display: inline-block
+        box-sizing: border-box
+        padding: .5em
+        vertical-align: middle
+    h2, input
+        width: 73%
+        margin: 0
+    a
+        color: $green
+        text-decoration: none
+    a.authNext
+        width: 25%
+        font-size: .9rem
+        text-align: right
+    .triangle
+        vertical-align: middle
+        margin-left: .5em
+        display: inline-block
+        +triangle(1em, 0, 1em, 1em, $green)
+    input
+        border: none
+        background: none
+        height: 3.5em
+        padding-left: 1em
+        font-family: $text
+        font-size: 1rem
+        &:required
+            border: 0
+    input:required
+        box-shadow: none
+    ul.steps-indicator
+        width: 100%
+        padding: 0
+        margin: 0
+        height: .5rem
+        background: tint(black, 70%)
+        font-size: 0
+        li
+            height: .5rem
+            display: inline-block
+            a
+                display: none
+        li:last-child
+            display: none
+        li.done
+            background: $green
+div#authLogin
+    li
+        width: (100%/2)
+div#authRegister
+    li
+        width: (100%/3)
+
+p.authError
+    color: $red

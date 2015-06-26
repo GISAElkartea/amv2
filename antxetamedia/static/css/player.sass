@@ -1,0 +1,58 @@
+div#player
+    background: tint(black, 10%)
+    color: tint(black, 80%)
+    font-size: 0
+    div#playerProgress
+        width: 100%
+        height: .3rem
+        background: $green
+    div#podcastImage
+        width: 20%
+        margin: 2%
+        display: inline-block
+        img
+            width: 100%
+    div#playerDetails
+        width: 76%
+        display: inline-block
+        h1
+            font-size: 1.1rem
+            font-weight: normal
+        div#playerControls
+            div
+                margin: .4rem
+                display: inline-block
+                vertical-align: middle
+                .triangle, .rectangle, .waves
+                    display: inline-block
+                    vertical-align: middle
+            div#playerPrev, div#playerNext, div#playerPause
+                .rectangle
+                    +rectangle(.2rem, 1.4rem, tint(black, 80%))
+            div#playerPrev
+                .triangle
+                    +triangle(.7rem, 1rem, .7rem, 0, tint(black, 80%))
+            div#playerNext, div#playerPlay
+                .triangle
+                    +triangle(.7rem, 0, .7rem, 1rem, tint(black, 80%))
+            div#playerPause
+                .rectangle:first-child
+                    margin-right: .3rem
+            div#playerTimer
+                color: $green
+                font-size: .9rem
+            div#playerVolume
+                div#volumeIcon
+                    display: inline-block
+                    .rectangle
+                        +rectangle(.3rem, .6rem, tint(black, 60%))
+                    .triangle
+                        margin-left: -.3rem
+                        +triangle(.7rem, .7rem, .7rem, 0, tint(black, 60%))
+                    .waves
+                        +waves(1rem, 1rem, .4rem, 2.5rem, tint(black, 60%))
+                div#volumeSlide
+                    display: inline-block
+                    background: tint(black, 60%)
+                    width: 3rem
+                    height: .2rem
