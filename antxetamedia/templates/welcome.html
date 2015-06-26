@@ -2,7 +2,21 @@
 {% load i18n static compress %}
 
 {% block body %}
-Complete body replacement
-
-<a href="{% url 'frontpage' %}">Frontpage</a>
+<div id="welcome">
+  <header>
+    <div id="logo">
+      <a href="/"><img src="images/antxetamedia.svg" alt="antxetamedia" /></a>
+      <div class="zero">
+        <div id="live"><a fittext>ZUZENEAN</a></div>
+        <div id="broadcast"><a fittext>90.5/89.7</a></div>
+      </div>
+    </div>
+  </header>
+  <nav class="user">
+    <ul>
+      <li><a >Saioa hasi / Sortu kontua</a></li>
+      <li><a href="{% url 'frontpage' %}">Sartu</a></li>
+    </ul>
+  </nav>
+</div>
 {% endblock body %}
