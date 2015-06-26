@@ -9,6 +9,6 @@
 </form>
 
 {% for newspodcast in newspodcast_list %}
-{{ newspodcast }}
+<a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a>
 {% endfor %}
 {% endblock content %}
