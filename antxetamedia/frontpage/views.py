@@ -35,9 +35,21 @@ class FrontPage(TemplateView):
             return HttpResponseRedirect(reverse('welcomepage'))
         return super(FrontPage, self).dispatch(request, *args, **kwargs)
 
+    def get_newspodcasts(self):
+        qs = NewsPodcast.objects.published()
+        if self.request.user.is_authenticated() and self.request.user.favouritenewsshow_set.exists():
+            qs = qs.filter(favouritenewsshow__user=self.request.user)
+        return qs
+
+    def get_radiopodcasts(self):
+        qs = RadioPodcast.objects.published()
+        if self.request.user.is_authenticated() and self.request.user.favouriteradioshow_set.exists():
+            qs = qs.filter(favouriteradioshow__user=self.request.user)
+        return qs
+
     def get_context_data(self, *args, **kwargs):
-        kwargs['newspodcast_list'] = NewsPodcast.objects.all()
-        kwargs['radiopodcast_list'] = RadioPodcast.objects.all()
+        kwargs['newspodcast_list'] = self.get_newspodcasts()
+        kwargs['radiopodcast_list'] = self.get_radiopodcasts()
         kwargs['event_list'] = Event.objects.all()
         kwargs['widget_list'] = Widget.objects.all()
         return super(FrontPage, self).get_context_data(*args, **kwargs)
