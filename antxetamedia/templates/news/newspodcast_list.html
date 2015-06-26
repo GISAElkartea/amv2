@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<form method="get" action=".">
+  {{ form }}
+  <input type="submit" value="{% trans 'Refresh' %}" />
+</form>
+
+{% for newspodcast in newspodcast_list %}
+{{ newspodcast }}
+{% endfor %}
+{% endblock content %}
