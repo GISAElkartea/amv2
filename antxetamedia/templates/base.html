@@ -30,10 +30,10 @@
         <nav class="user">
           <ul>
             <li>
-              <a>Sortu kontua / Saioa hasi</a>
+                <a>{% trans 'Create account / Login' %}</a>
             </li>
             <li>
-              <a href="">Logout</a>
+                <a href="">{% trans 'Logout' %}</a>
             </li>
             <li>
               <img src="{% static 'images/rss.svg' %}" alt="rss"/>
@@ -44,8 +44,8 @@
       <div id="logo">
         <a href="/"><img src="{% static 'images/antxetamedia.svg' %}" alt="antxetamedia" /></a>
         <div class="zero">
-          <div id="live"><a fittext>ZUZENEAN</a></div>
-          <div id="broadcast"><a fittext>90.5/89.7</a></div>
+          <div id="live"><a>{% trans 'LIVE' %}</a></div>
+          <div id="broadcast"><a>90.5/89.7</a></div>
         </div>
       </div>
     </header>
