@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<form method="get" action=".">
+  {{ form }}
+  <input type="submit" value="{% trans 'Refresh' %}" />
+</form>
+
+{% for radioshow in radioshow_list %}
+<a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a>
+{% endfor %}
+{% endblock content %}

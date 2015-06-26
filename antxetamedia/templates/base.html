@@ -21,6 +21,12 @@
     {% block body %}
     <h1>Antxetamedia</h1>
     <h2>Here go the most common things</h2>
+    <nav>
+      <ul>
+        <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
+        <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
+      </ul>
+    </nav>
     {% block content %}
     {% endblock content %}
     {% endblock body %}
