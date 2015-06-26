@@ -103,9 +103,10 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
-COMPRESS_PRECOMPILERS = (
-    ('text/x-sass', 'django_libsass.SassCompiler'),
-)
+COMPRESS_PRECOMPILERS = (('text/x-sass', 'django_libsass.SassCompiler'),)
+COMPRESS_ENABLED = True  # If not enabled filters do not apply
+COMPRESS_CSS_FILTERS = ['compressor.filters.template.TemplateFilter']
+COMPRESS_TEMPLATE_FILTER_CONTEXT = {'STATIC_URL': STATIC_URL}
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
 CKEDITOR_JQUERY_URL = static('bower_components/jquery/dist/jquery.min.js')
