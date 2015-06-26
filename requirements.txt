@@ -12,3 +12,4 @@ django-admin-sortable2
 django-autoslug
 django-ckeditor
 django-recurrence
+django-colorful
