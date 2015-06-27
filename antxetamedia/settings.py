@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'antxetamedia.schedule',
     'antxetamedia.widgets',
     'antxetamedia.events',
+    'antxetamedia.favourites',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -123,4 +124,9 @@ CKEDITOR_CONFIGS = {
             ['Styles', 'Format', 'Font', 'FontSize'],
         ],
     }
+}
+
+from model_mommy.generators import gen_slug
+MOMMY_CUSTOM_FIELDS_GEN = {
+    'autoslug.fields.AutoSlugField': gen_slug,
 }
