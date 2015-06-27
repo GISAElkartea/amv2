@@ -6,6 +6,7 @@ from antxetamedia.news.models import NewsPodcast
 from antxetamedia.radio.models import RadioPodcast
 from antxetamedia.events.models import Event
 from antxetamedia.widgets.models import Widget
+from antxetamedia.favourites.models import FavouriteNewsShow, FavouriteRadioShow
 
 
 VISITED_COOKIE = 'welcome_page'
@@ -37,14 +38,14 @@ class FrontPage(TemplateView):
 
     def get_newspodcasts(self):
         qs = NewsPodcast.objects.published()
-        if self.request.user.is_authenticated() and self.request.user.favouritenewsshow_set.exists():
-            qs = qs.filter(favouritenewsshow__user=self.request.user)
+        if self.request.user.is_authenticated() and FavouriteNewsShow.objects.filter(user=self.request.user).exists():
+            qs = qs.filter(show__favouritenewsshow__user=self.request.user)
         return qs
 
     def get_radiopodcasts(self):
         qs = RadioPodcast.objects.published()
-        if self.request.user.is_authenticated() and self.request.user.favouriteradioshow_set.exists():
-            qs = qs.filter(favouriteradioshow__user=self.request.user)
+        if self.request.user.is_authenticated() and FavouriteRadioShow.objects.filter(user=self.request.user).exists():
+            qs = qs.filter(show__favouriteradioshow__user=self.request.user)
         return qs
 
     def get_context_data(self, *args, **kwargs):
