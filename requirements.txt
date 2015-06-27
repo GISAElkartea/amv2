@@ -13,3 +13,6 @@ django-autoslug
 django-ckeditor
 django-recurrence
 django-colorful
+
+# Tests
+model-mommy

@@ -2,6 +2,8 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.contrib.auth import get_user_model
 
+from model_mommy import mommy
+
 from .views import VISITED_COOKIE, VISITED_COOKIE_VALUE
 
 
@@ -42,3 +44,43 @@ class FrontPageTestCase(TestCase):
         self.assertIn('radiopodcast_list', response.context)
         self.assertIn('event_list', response.context)
         self.assertIn('widget_list', response.context)
+
+    def test_no_other_users_favourite_newspodcasts(self):
+        normal = mommy.make('news.NewsShow')
+        favourite = mommy.make('favourites.FavouriteNewsShow')
+        normal_podcast = mommy.make('news.NewsPodcast', show=normal)
+        favourite_podcast = mommy.make('news.NewsPodcast', show=favourite.show)
+        self.client.login(**self.credentials)
+        response = self.client.get(self.url)
+        self.assertIn(normal_podcast, response.context['newspodcast_list'])
+        self.assertIn(favourite_podcast, response.context['newspodcast_list'])
+
+    def test_users_favourite_newspodcasts(self):
+        normal = mommy.make('news.NewsShow')
+        favourite = mommy.make('favourites.FavouriteNewsShow', user=self.user)
+        normal_podcast = mommy.make('news.NewsPodcast', show=normal)
+        favourite_podcast = mommy.make('news.NewsPodcast', show=favourite.show)
+        self.client.login(**self.credentials)
+        response = self.client.get(self.url)
+        self.assertNotIn(normal_podcast, response.context['newspodcast_list'])
+        self.assertIn(favourite_podcast, response.context['newspodcast_list'])
+
+    def test_no_other_users_favourite_radiopodcasts(self):
+        normal = mommy.make('radio.RadioShow')
+        favourite = mommy.make('favourites.FavouriteRadioShow')
+        normal_podcast = mommy.make('radio.RadioPodcast', show=normal)
+        favourite_podcast = mommy.make('radio.RadioPodcast', show=favourite.show)
+        self.client.login(**self.credentials)
+        response = self.client.get(self.url)
+        self.assertIn(normal_podcast, response.context['radiopodcast_list'])
+        self.assertIn(favourite_podcast, response.context['radiopodcast_list'])
+
+    def test_users_favourite_radiopodcasts(self):
+        normal = mommy.make('radio.RadioShow')
+        favourite = mommy.make('favourites.FavouriteRadioShow', user=self.user)
+        normal_podcast = mommy.make('radio.RadioPodcast', show=normal)
+        favourite_podcast = mommy.make('radio.RadioPodcast', show=favourite.show)
+        self.client.login(**self.credentials)
+        response = self.client.get(self.url)
+        self.assertNotIn(normal_podcast, response.context['radiopodcast_list'])
+        self.assertIn(favourite_podcast, response.context['radiopodcast_list'])
