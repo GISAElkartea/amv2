@@ -2,19 +2,48 @@
 {% load i18n static compress %}
 
 {% block content %}
-<h1>Frontpage</h1>
 
-{% for newspodcast in newspodcast_list %}
-{{ newspodcast }}
-{% endfor %}
+<ul id="news">
+  <li class="flag">
+    <img src="{% static 'images/beard.jpg' %}"/>
+    <div class="text">
+      <h2>Category</h2>
+      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+      <p>Vivamus vitae odio vitae elit rhoncus vulputate. Mauris sit amet
+        hendrerit nibh, gravida scelerisque lectus. Mauris cursus in elit sed
+        lacinia.</p>
+    </div>
+  </li>
+  {% for newspodcast in newspodcast_list %}
+  {% endfor %}
+</ul>
 
-{% for radiopodcast in radiopodcast_list %}
-{{ radiopodcast }}
-{% endfor %}
+<div id="right">
+  <ul id="agenda">
+    <li>
+      <time datetime="2015-03-15">Ira. 8</time>
+      <h1>Agenda izenburua</h1>
+      <h2>Lekua</h2>
+    </li>
+    {% for date, event in event_list.upcoming %}
+    <li>{{ date }} {{ event }}</li>
+    {% endfor %}
+  </ul>
 
-{% for date, event in event_list.upcoming %}
-{{ date }} {{ event }}
-{% endfor %}
+  <ul id="radio">
+    <li class="flag">
+      <img src="{% static 'images/bearda.jpg' %}"/>
+      <div class="text">
+        <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+        <h2>Show</h2>
+      </div>
+    </li>
+    {% for radiopodcast in radiopodcast_list %}
+    <li>{{ radiopodcast }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
 
 {% for widget in widget_list %}
 {{ widget.content | safe }}

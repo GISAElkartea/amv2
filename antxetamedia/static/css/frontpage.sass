@@ -1,0 +1,60 @@
+ul#news, ul#agenda, ul#radio
+  padding: 0
+
+ul#news
+  +span-columns(4.5 of 8)
+  li
+    background: tint(black, 70%)
+    p
+      font-size: 1rem
+
+div#right
+  +span-columns(3.5 of 8)
+  ul#agenda
+    li
+      background: tint(black, 90%)
+      list-style: none
+      font-size: 0
+      time, h1, h2
+        display: inline-block
+        margin: 0
+        padding: 1%
+        font-weight: normal
+      time
+        width: 15%
+        background: tint(black, 85%)
+        font-size: 1rem
+        text-align: center
+      h1
+        font-size: 1rem
+        width: 50%
+        padding-left: 2%
+      h2
+        font-size: .8rem
+        width: 35%
+        text-align: right
+        padding-right: 2%
+        color: tint(black, 25%)
+  ul#radio
+    li
+      background: tint(black, 80%)
+
+li.flag
+  list-style: none
+  color: tint(black, 5%)
+  font-size: 0
+  img
+    width: 30%
+    display: inline-block
+    vertical-align: top
+  div.text
+    display: inline-block
+    width: 70%
+    padding: 3%
+  h1
+    font-size: 1.4rem
+    margin-top: .1em
+  h2
+    font-size: .8rem
+    margin: 0
+    color: tint(black, 25%)
