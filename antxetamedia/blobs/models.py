@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import pickle
 
 from django.db import models, transaction
-from django.db.models.fields.related import SingleRelatedObjectDescriptor
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -39,10 +38,6 @@ class License(models.Model):
         return self.name
 
 
-class UniqueGenericForeignKey(GenericForeignKey):
-    related_accessor_class = SingleRelatedObjectDescriptor
-
-
 @python_2_unicode_compatible
 class Blob(models.Model):
     class Meta:
@@ -58,7 +53,7 @@ class Blob(models.Model):
     local = models.FileField(_('Local file'), upload_to='podcasts', null=True, blank=True,
                              help_text=_("If set, the file will be uploaded to the remote storage and the link will "
                                          "be set at the remote field."))
-    remote = models.URLField(_('Remote file'), null=True, blank=True)
+    remote = models.CharField(_('Remote file'), max_length=512, null=True, blank=True)
     account = models.ForeignKey(Account, verbose_name=_('Account'))
     license = models.ForeignKey(License, verbose_name=_('License'))
 
@@ -68,7 +63,7 @@ class Blob(models.Model):
     def save(self, *args, **kwargs):
         if not self.pk:
             qs = Blob.objects.filter(content_type=self.content_type, object_id=self.object_id)
-            latest = qs.aggregate(latest=models.Max('counter'))['latest']
+            latest = qs.aggregate(latest=models.Max('counter'))['latest'] or 0
             self.counter = latest + 1
         return super(Blob, self).save(*args, **kwargs)
 
@@ -114,18 +109,19 @@ class BlobUpload(models.Model):
         else:
             return repr(loaded)
 
-    def upload(self):
+    def is_uploading(self):
         self.state = self.UPLOADING
         self.save()
-        try:
-            # Do whatever needs to be done
-            remote = None
-        except:  # Some uploading exception
-            self.state = self.FAILED
+
+    def is_successful(self, remote):
+        with transaction.atomic():
+            self.state = self.SUCCEEDED
             self.save()
-        else:
-            with transaction.atomic():
-                self.state = self.SUCCEEDED
-                self.save()
-                self.blob.remote = remote
-                self.blob.save()
+            self.blob.remote = remote
+            self.blob.local.delete()
+            self.blob.save()
+
+    def is_unsuccessful(self, exception=None):
+        self.state = self.FAILED
+        self.exception = exception
+        self.save()
