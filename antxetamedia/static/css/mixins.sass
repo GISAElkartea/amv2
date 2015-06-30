@@ -1,6 +1,14 @@
 =vertical-align
-    position: absolute
-    top: 50%
-    -webkit-transform: translateY(-50%)
-    -ms-transform: translateY(-50%)
-    transform: translateY(-50%)
+  position: absolute
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+=triangle($top, $right, $bottom, $left, $color)
+  width: 0
+  height: 0
+  border-top: $top solid transparent
+  border-right: $right solid $color
+  border-bottom: $bottom solid transparent
+  border-left: $left solid $color
