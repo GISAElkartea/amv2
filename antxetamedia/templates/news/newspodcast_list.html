@@ -8,7 +8,31 @@
   <input type="submit" value="{% trans 'Refresh' %}" />
 </form>
 
-{% for newspodcast in newspodcast_list %}
+<ul id="newsList">
+  <li class="flag">
+    <img src=""/>
+    <div class="text">
+      <p class="date">Eka. 26, 2015</p>
+      <h2>Category</h2>
+      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+      <p>Vivamus vitae odio vitae elit rhoncus vulputate. Mauris sit amet
+        hendrerit nibh, gravida scelerisque lectus. Mauris cursus in elit sed
+        lacinia.</p>
+    </div>
+  </li>
+  <li class="flag">
+    <img src=""/>
+    <div class="text">
+      <p class="date">Eka. 26, 2015</p>
+      <h2>Category</h2>
+      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+      <p>Vivamus vitae odio vitae elit rhoncus vulputate. Mauris sit amet
+        hendrerit nibh, gravida scelerisque lectus. Mauris cursus in elit sed
+        lacinia.</p>
+    </div>
+  </li>
+</ul>
 <a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a>
+{% for newspodcast in newspodcast_list %}
 {% endfor %}
 {% endblock content %}
