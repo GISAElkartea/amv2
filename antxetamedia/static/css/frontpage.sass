@@ -1,19 +1,21 @@
-ul#news, ul#agenda, ul#radio, ul#newsList
+ul#newsFront, ul#agenda, ul#radioFront, ul#newsList
   padding: 0
 
-ul#news, ul#newsList
+ul#newsFront
   +span-columns(5 of 9)
-  li
-    background: tint(black, 70%)
-    p
-      font-size: 1rem
-    p.date
-      margin: 0
-      display: inline
-      padding-right: .5em
-      font-size: .8rem
-    h2
-      display: inline
+li.new
+  background: tint(black, 70%)
+  p
+    font-size: 1rem
+  p.date
+    margin: 0
+    display: inline
+    padding-right: .5em
+    font-size: .8rem
+  h2
+    display: inline
+li.radio
+  background: tint(black, 80%)
 
 div#right
   +span-columns(4 of 9)
@@ -42,9 +44,6 @@ div#right
         text-align: right
         padding-right: 2%
         color: tint(black, 25%)
-  ul#radio
-    li
-      background: tint(black, 80%)
 
 li.flag
   list-style: none

@@ -1,14 +1,28 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block content %}
 
-<form method="get" action=".">
+{% block aside %}
+<form class="aside" method="get" action=".">
   {{ form }}
   <input type="submit" value="{% trans 'Refresh' %}" />
 </form>
+{% endblock aside %}
 
+{% block content %}
 {% for radioshow in radioshow_list %}
-<a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a>
 {% endfor %}
+<ul class="list">
+  <li class="flag radio">
+    <img src=""/>
+    <div class="text">
+      <a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a>
+      <h2>Show</h2>
+      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+    </div>
+  </li>
+  {% for radiopodcast in radiopodcast_list %}
+  <li>{{ radiopodcast }}</li>
+  {% endfor %}
+</ul>
 {% endblock content %}

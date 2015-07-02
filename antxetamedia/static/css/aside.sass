@@ -1,5 +1,4 @@
 form.aside
-  padding: 0 5%
   margin: 3em 0
   label
     font-size: 1.2rem
@@ -11,13 +10,12 @@ form.aside
       label
         font-size: 1rem
         padding: 1em
-      input
-        display: none
-    li.active
-      background: $green
       label
         color: white
-    li.inactive
+      input
+    li:checked
+      background: red
+    //li
       color: grey
       text-decoration: line-through
   input
