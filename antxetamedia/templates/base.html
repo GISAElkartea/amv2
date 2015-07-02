@@ -56,28 +56,7 @@
         {% endblock content %}
       </main>
       <aside>
-        {% block player %}
-        <div id="player">
-          <div id="playerProgress"></div>
-          <div id="podcastImage"><img src="images/example.png"/></div>
-          <div id="playerDetails">
-            <h1>Hau momentuan erreproduzitzen den podcastaren izenburua da</h1>
-            <div id="playerControls">
-              <div id="playerPrev"><span class="rectangle"></span><span  class="triangle"></span></div>
-              <div id="playerPlay"><span class="triangle"></span></div>
-              <div id="playerPause"><span class="rectangle"></span><span class="rectangle"></span></div>
-              <div id="playerNext"><span class="triangle"></span><span  class="rectangle"></span></div>
-              <div id="playerTimer">01:34</div>
-              <div id="playerVolume">
-                <div id="volumeIcon"><span class="rectangle"></span><span class="triangle"></span><span class="waves"></span></div>
-                <div id="volumeSlide"></div>
-              </div>
-              <div class="podcastShare"></div>
-              <div class="podcastDownload"></div>
-            </div>
-          </div>
-        </div>
-        {% endblock player %}
+        {% include "player.html" %}
       </aside>
     </div>
 
