@@ -1,8 +1,9 @@
 {% load i18n static compress %}
 <html>
   <head>
-    <title></title>
+    <title>Antxetamedia</title>
 
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="{% static 'css/main.sass' %}" />
     {% block extra_css %}
