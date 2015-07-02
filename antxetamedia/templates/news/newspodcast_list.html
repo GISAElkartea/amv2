@@ -3,10 +3,12 @@
 
 {% block content %}
 
-<form method="get" action=".">
+{% block aside %}
+<form class="aside" method="get" action=".">
   {{ form }}
   <input type="submit" value="{% trans 'Refresh' %}" />
 </form>
+{% endblock aside %}
 
 <ul id="newsList">
   <li class="flag">
