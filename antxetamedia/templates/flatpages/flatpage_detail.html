@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>{{ flatpage }}</h1>
+
+{{ flatpage.content | safe }}
+
+{% endblock content %}

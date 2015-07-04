@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'antxetamedia.widgets',
     'antxetamedia.events',
     'antxetamedia.favourites',
+    'antxetamedia.flatpages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,6 +60,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'antxetamedia.flatpages.context_processors.menu_flatpage_list',
             ],
         },
     },

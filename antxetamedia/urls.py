@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^', include('antxetamedia.frontpage.urls')),
     url(r'^news/', include('antxetamedia.news.urls')),
     url(r'^radio/', include('antxetamedia.radio.urls')),
+    url(r'^f/', include('antxetamedia.flatpages.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
