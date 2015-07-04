@@ -4,43 +4,44 @@
 {% block content %}
 
 <ul id="newsFront">
-  <li class="flag new">
-    <img src="{% static 'images/beard.jpg' %}"/>
+  {% for newspodcast in newspodcast_list %}
+  <li class="flag news">
+    {% if newspodcast.image %}
+    <img src="{{ newspodcast.image.url }}"/>
+    {% endif %}
     <div class="text">
-      <p class="date">Eka. 26, 2015</p>
-      <h2>Category</h2>
-      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
-      <p>Vivamus vitae odio vitae elit rhoncus vulputate. Mauris sit amet
-        hendrerit nibh, gravida scelerisque lectus. Mauris cursus in elit sed
-        lacinia.</p>
+      <p class="date">{{ newspodcast.pub_date }}</p>
+      <h2>{{ newspodcast.categories.all | join:"," }}</h2>
+      <h1>{{ newspodcast }}</h1>
+      <p>{{ newspodcast.description | striptags | truncatewords:25 }}</p>
     </div>
   </li>
-  {% for newspodcast in newspodcast_list %}
   {% endfor %}
 </ul>
 
 <div id="right">
   <ul id="agenda">
-    <li>
-      <time datetime="2015-03-15">Ira. 8</time>
-      <h1>Agenda izenburua</h1>
-      <h2>Lekua</h2>
-    </li>
     {% for date, event in event_list.upcoming %}
-    <li>{{ date }} {{ event }}</li>
+    <li>
+      <time datetime="{{ date }}">{{ date }} - {{ event.time }}</time>
+      {% if event.image %}
+      <img src="{{ event.image.url }}" />
+      {% endif %}
+      <h1>{{ event.title }}</h1>
+      <h2>{{ event.location }}</h2>
+    </li>
     {% endfor %}
   </ul>
 
   <ul id="radioFront">
+    {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
-      <img src="{% static 'images/bearda.jpg' %}"/>
+      <img src="{{ radiopodcast.image.url }}"/>
       <div class="text">
-        <h2>Show</h2>
-        <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+        <h2>{{ radiopodcast.show }}</h2>
+        <h1>{{ radiopodcast }}</h1>
       </div>
     </li>
-    {% for radiopodcast in radiopodcast_list %}
-    <li>{{ radiopodcast }}</li>
     {% endfor %}
   </ul>
 </div>
