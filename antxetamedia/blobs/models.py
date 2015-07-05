@@ -8,6 +8,7 @@ from django.db import models, transaction
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
 
 
 @python_2_unicode_compatible
@@ -91,6 +92,8 @@ class BlobUpload(models.Model):
 
     blob = models.ForeignKey(Blob, verbose_name=_('Blob'))
     state = models.PositiveSmallIntegerField(_('State'), choices=STATES, default=PENDING)
+    started = models.DateTimeField(_('Start time'), null=True, blank=True)
+    ended = models.DateTimeField(_('End time'), null=True, blank=True)
     exception = models.TextField(_('exception'), blank=True)
 
     def __str__(self):
@@ -110,11 +113,13 @@ class BlobUpload(models.Model):
             return repr(loaded)
 
     def is_uploading(self):
+        self.started = timezone.now()
         self.state = self.UPLOADING
         self.save()
 
     def is_successful(self, remote):
         with transaction.atomic():
+            self.ended = timezone.now()
             self.state = self.SUCCEEDED
             self.save()
             self.blob.remote = remote
@@ -122,6 +127,7 @@ class BlobUpload(models.Model):
             self.blob.save()
 
     def is_unsuccessful(self, exception=None):
+        self.ended = timezone.now()
         self.state = self.FAILED
         self.exception = exception
         self.save()
