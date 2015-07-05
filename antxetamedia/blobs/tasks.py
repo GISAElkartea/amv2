@@ -1,4 +1,5 @@
 from urllib import quote
+import traceback
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -43,6 +44,6 @@ def upload_blob(sender, instance, **kwargs):
             #url = key.generate_url(expires_in=0, query_auth=False)
             url = 'https://archive.org/download/{bucket}/{key}'.format(bucket=quote(bucket.name), key=quote(key.key))
         except Exception as exp:
-            upload.is_unsuccessful(exp)
+            upload.is_unsuccessful(traceback.format_exc())
         else:
             upload.is_successful(url)

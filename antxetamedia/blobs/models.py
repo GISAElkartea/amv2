@@ -94,7 +94,7 @@ class BlobUpload(models.Model):
     state = models.PositiveSmallIntegerField(_('State'), choices=STATES, default=PENDING)
     started = models.DateTimeField(_('Start time'), null=True, blank=True)
     ended = models.DateTimeField(_('End time'), null=True, blank=True)
-    exception = models.TextField(_('exception'), blank=True)
+    traceback = models.TextField(_('Traceback'), blank=True)
 
     def __str__(self):
         return _('{blob} upload').format(blob=self.blob)
@@ -104,11 +104,11 @@ class BlobUpload(models.Model):
             return self.state == self.SUCCEEDED
         return None
 
-    def get_exception_display(self):
+    def get_traceback_display(self):
         try:
-            loaded = pickle.loads(self.exception)
-        except:  # more concrete?
-            return self.exception
+            loaded = pickle.loads(self.traceback)
+        except pickle.UnpicklingError:
+            return self.traceback
         else:
             return repr(loaded)
 
@@ -126,8 +126,8 @@ class BlobUpload(models.Model):
             self.blob.local.delete()
             self.blob.save()
 
-    def is_unsuccessful(self, exception=None):
+    def is_unsuccessful(self, traceback=None):
         self.ended = timezone.now()
         self.state = self.FAILED
-        self.exception = exception
+        self.traceback = traceback
         self.save()

@@ -30,7 +30,7 @@ class BlobAdmin(admin.ModelAdmin):
 
 class BlobUploadAdmin(admin.ModelAdmin):
     list_display_links = ['get_content_object']
-    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'get_exception_display']
+    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'get_traceback_display']
     list_filter = ['state']
 
     def get_content_object(self, instance):
@@ -50,9 +50,9 @@ class BlobUploadAdmin(admin.ModelAdmin):
         return instance.get_state_display()
     get_state_display.short_description = _('State')
 
-    def get_exception_display(self, instance):
-        return instance.get_exception_display()
-    get_exception_display.short_description = _('Exception')
+    def get_traceback_display(self, instance):
+        return instance.get_traceback_display()
+    get_traceback_display.short_description = _('Traceback')
 
     # Remove the delete Admin Action for this Model
     actions = None
