@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.functions import Lower
 from django.contrib.contenttypes.fields import GenericRelation
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext as _
@@ -10,11 +11,17 @@ from ckeditor.fields import RichTextField
 from antxetamedia.blobs.models import Blob
 
 
+class CategoryManager(models.Manager):
+    def get_queryset(self, *args, **kwargs):
+        return super(CategoryManager, self).get_queryset(*args, **kwargs).order_by(Lower('name'))
+
+
 @python_2_unicode_compatible
 class AbstractCategory(models.Model):
+    objects = CategoryManager()
+
     class Meta:
         abstract = True
-        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=128)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique=True)
@@ -23,11 +30,17 @@ class AbstractCategory(models.Model):
         return self.name
 
 
+class ProducerManager(models.Manager):
+    def get_queryset(self, *args, **kwargs):
+        return super(ProducerManager, self).get_queryset(*args, **kwargs).order_by(Lower('name'))
+
+
 @python_2_unicode_compatible
 class AbstractProducer(models.Model):
+    objects = ProducerManager()
+
     class Meta:
         abstract = True
-        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=128)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique=True)
@@ -41,13 +54,17 @@ class ShowQuerySet(models.QuerySet):
         return self.filter(featured=True)
 
 
+class ShowManager(models.Manager):
+    def get_queryset(self, *args, **kwargs):
+        return ShowQuerySet(self.model, using=self._db).order_by(Lower('name'))
+
+
 @python_2_unicode_compatible
 class AbstractShow(models.Model):
-    objects = ShowQuerySet.as_manager()
+    objects = ShowManager()
 
     class Meta:
         abstract = True
-        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), unique=True, populate_from='name', editable=True)
@@ -67,12 +84,14 @@ class PodcastQuerySet(models.QuerySet):
         return self.filter(pub_date__gt=now())
 
 
+PodcastManager = PodcastQuerySet.as_manager
+
+
 @python_2_unicode_compatible
 class AbstractPodcast(models.Model):
-    objects = PodcastQuerySet.as_manager()
+    objects = PodcastManager()
 
     class Meta:
-        ordering = ['pub_date']
         abstract = True
 
     title = models.CharField(_('Title'), max_length=512)
