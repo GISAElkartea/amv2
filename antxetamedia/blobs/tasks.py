@@ -6,14 +6,23 @@ from django.dispatch import receiver
 
 from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 from boto.exception import S3ResponseError
+from celery import shared_task
 
 from .models import Blob, BlobUpload
 
 
 @receiver(post_save, sender=Blob)
-def upload_blob(sender, instance, **kwargs):
-    # TODO: All this needs to be moved into a celery task
-    blob = instance
+def queue_blob_upload(sender, instance, **kwargs):
+    upload_blob.apply_async([instance], retry_policy={
+        'max_retries': 5,
+        'interval_start': 0,
+        'interval_step': 5*60,
+        'interval_max': 60*60,
+    })
+
+
+@shared_task
+def upload_blob(blob):
     if blob.local:
         upload = BlobUpload.objects.create(blob=blob)
         upload.is_uploading()
@@ -36,7 +45,7 @@ def upload_blob(sender, instance, **kwargs):
                 bucket = connection.create_bucket(bucket, metadata=metadata)
 
             # Create key
-            key = bucket.new_key(str(blob))
+            key = bucket.new_key(str(blob))  # Guaranteed to be unique
 
             # Upload contents
             key.set_contents_from_file(blob.local.file)

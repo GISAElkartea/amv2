@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'compressor',
     'recurrence',
+    'kombu.transport.django',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
@@ -105,6 +106,9 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+BROKER_URL = 'django://'
+CELERY_ALWAYS_EAGER = True
 
 COMPRESS_PRECOMPILERS = (('text/x-sass', 'django_libsass.SassCompiler'),)
 
