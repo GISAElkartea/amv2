@@ -19,20 +19,30 @@ li.flag
     color: tint(black, 35%)
     font-variant: small-caps
     text-transform: lowercase
+  p
+    font-size: 1rem
   .date
     margin: 0
     padding-right: .5em
     font-size: .8rem
-
-ul#newsFront
-  +span-columns(5 of 9)
-
-div#right
-  +span-columns(4 of 9)
+    display: inline
 
 main
   ul
     padding: 0
+
+ul#newsFront
+  +span-columns(5 of 9)
+
+ul#agendaFront, ul#radioFront
+  h1
+    font-size: 1.2rem
+
+ul#agendaFront
+
+div#right
+  +span-columns(4 of 9)
+
 
 ul.list
   padding: 0
@@ -46,16 +56,19 @@ ul.list
 
 li.news
   background: tint(black, 70%)
-  p
-    font-size: 1rem
-  h2
-    display: inline
 
 li.radio
   background: tint(black, 80%)
 
 li.agenda
   background: tint(black, 90%)
+  h1
+    margin: .1em 0
+  h2
+    margin: 0 0 .1em 0
+    padding-right: .5em
+    font-size: 1.2rem
+    display: inline
   img
-    width: 15%
+    width: 20%
 

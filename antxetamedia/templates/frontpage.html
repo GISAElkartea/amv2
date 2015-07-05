@@ -27,8 +27,8 @@
       <img src="{{ event.image.url }}" />
       {% endif %}
       <div class="text">
-        <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
         <h2>{{ event.location }}</h2>
+        <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
         <h1>{{ event.title }}</h1>
       </div>
     </li>
