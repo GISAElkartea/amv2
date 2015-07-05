@@ -14,6 +14,7 @@ from antxetamedia.blobs.models import Blob
 class AbstractCategory(models.Model):
     class Meta:
         abstract = True
+        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=128)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique=True)
@@ -26,6 +27,7 @@ class AbstractCategory(models.Model):
 class AbstractProducer(models.Model):
     class Meta:
         abstract = True
+        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=128)
     slug = AutoSlugField(_('Slug'), populate_from='name', editable=True, unique=True)
@@ -38,6 +40,7 @@ class AbstractProducer(models.Model):
 class AbstractShow(models.Model):
     class Meta:
         abstract = True
+        ordering = ['name']
 
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), unique=True, populate_from='name', editable=True)
