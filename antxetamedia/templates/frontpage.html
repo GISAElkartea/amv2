@@ -11,7 +11,7 @@
     {% endif %}
     <div class="text">
       <p class="date">{{ newspodcast.pub_date }}</p>
-      <h2>{{ newspodcast.categories.all | join:"," }}</h2>
+      <h2>{{ newspodcast.categories.all | join:", " }}</h2>
       <h1>{{ newspodcast }}</h1>
       <p>{{ newspodcast.description | striptags | truncatewords:25 }}</p>
     </div>
@@ -22,13 +22,15 @@
 <div id="right">
   <ul id="agenda">
     {% for date, event in event_list.upcoming %}
-    <li>
-      <time datetime="{{ date }}">{{ date }} - {{ event.time }}</time>
+    <li class="flag">
       {% if event.image %}
       <img src="{{ event.image.url }}" />
       {% endif %}
-      <h1>{{ event.title }}</h1>
-      <h2>{{ event.location }}</h2>
+      <div class="text">
+        <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
+        <h2>{{ event.location }}</h2>
+        <h1>{{ event.title }}</h1>
+      </div>
     </li>
     {% endfor %}
   </ul>

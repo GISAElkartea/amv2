@@ -7,11 +7,6 @@ li.news
   background: tint(black, 70%)
   p
     font-size: 1rem
-  p.date
-    margin: 0
-    display: inline
-    padding-right: .5em
-    font-size: .8rem
   h2
     display: inline
 li.radio
@@ -19,32 +14,11 @@ li.radio
 
 div#right
   +span-columns(4 of 9)
-  ul#agenda
-    li
-      background: tint(black, 90%)
-      list-style: none
-      font-size: 0
-      time, h1, h2
-        display: inline-block
-        margin: 0
-        padding: 1%
-        font-weight: normal
-      time
-        width: 15%
-        background: tint(black, 85%)
-        font-size: 1rem
-        text-align: center
-      h1
-        font-size: 1rem
-        width: 50%
-        padding-left: 2%
-      h2
-        font-size: .8rem
-        width: 35%
-        text-align: right
-        padding-right: 2%
-        color: tint(black, 25%)
-
+ul#agenda
+  li
+    background: tint(black, 90%)
+  img
+    width: 15%
 li.flag
   list-style: none
   color: tint(black, 5%)
@@ -66,3 +40,9 @@ li.flag
     color: tint(black, 35%)
     font-variant: small-caps
     text-transform: lowercase
+    display: inline
+  .date
+    margin: 0
+    padding-right: .5em
+    font-size: .8rem
+    display: inline
