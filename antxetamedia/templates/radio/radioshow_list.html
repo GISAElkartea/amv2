@@ -10,12 +10,12 @@
 
 {% block content %}
 <ul class="list">
-  {% for radiopodcast in radiopodcast_list %}
+  {% for radioshow in radioshow_list %}
   <li class="flag radio">
-    <img src="{{ radiopodcast.image.url }}"/>
+    <img src="{{ radioshow.image.url }}"/>
     <div class="text">
-      <h2>{{ radiopodcast.show }}</h2>
-      <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
+      <h2>{{ radioshow.show }}</h2>
+      <h1><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h1>
     </div>
   </li>
   {% endfor %}
