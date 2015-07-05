@@ -4,20 +4,22 @@ form.aside
     font-size: 1.2rem
   ul
     padding: 0 0 1rem 0
+    margin: 0
     li
       list-style: none
-      padding: .3em
+      padding: .3em 0
+      margin: .5em 0
       label
         font-size: 1rem
-        padding: 1em
-      label
+        padding: .3em
+        color: grey
+        text-decoration: line-through
+      label.checked
+        background: $green
         color: white
+        text-decoration: none
       input
-    li:checked
-      background: red
-    //li
-      color: grey
-      text-decoration: line-through
+        display: none
   input
     background: none
     border: $green solid .2rem
@@ -25,3 +27,4 @@ form.aside
     color: $green
     font-weight: bold
     font-size: .9rem
+    cursor: pointer
