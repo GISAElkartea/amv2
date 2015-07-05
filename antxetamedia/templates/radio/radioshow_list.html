@@ -9,19 +9,15 @@
 {% endblock aside %}
 
 {% block content %}
-{% for radioshow in radioshow_list %}
-{% endfor %}
 <ul class="list">
+  {% for radiopodcast in radiopodcast_list %}
   <li class="flag radio">
-    <img src=""/>
+    <img src="{{ radiopodcast.image.url }}"/>
     <div class="text">
-      <a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a>
-      <h2>Show</h2>
-      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
+      <h2>{{ radiopodcast.show }}</h2>
+      <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
     </div>
   </li>
-  {% for radiopodcast in radiopodcast_list %}
-  <li>{{ radiopodcast }}</li>
   {% endfor %}
 </ul>
 {% endblock content %}

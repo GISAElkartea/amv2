@@ -15,19 +15,18 @@
 
 {% block content %}
 <ul class="list">
+  {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    <img src=""/>
+    {% if newspodcast.image %}
+    <img src="{{ newspodcast.image.url }}"/>
+    {% endif %}
     <div class="text">
-      <p class="date">Eka. 26, 2015</p>
-      <h2>Category</h2>
-      <h1>Hau izenburu bat da{{ newspodcast }}</h1>
-      <p>Vivamus vitae odio vitae elit rhoncus vulputate. Mauris sit amet
-        hendrerit nibh, gravida scelerisque lectus. Mauris cursus in elit sed
-        lacinia.</p>
+      <p class="date">{{ newspodcast.pub_date }}</p>
+      <h2>{{ newspodcast.categories.all | join:", " }}</h2>
+      <h1><a href="{{ newspodcats.get_absolute_url }}">{{ newspodcast }}</a></h1>
+      <p>{{ newspodcast.description | striptags | truncatewords:25 }}</p>
     </div>
   </li>
+  {% endfor %}
 </ul>
-<a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a>
-{% for newspodcast in newspodcast_list %}
-{% endfor %}
 {% endblock content %}
