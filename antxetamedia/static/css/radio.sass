@@ -1,3 +1,22 @@
 ul#radioShows
-  li
-    color: $green
+  +outer-container
+  li.radio.list
+    background: none
+    +span-columns(4)
+    +omega(3n)
+    h1
+      color: $green
+      text-transform: lowercase
+      font-size: 2.5rem
+      border-bottom: solid $green .04em
+      display: block
+      width: 50%
+  a
+    text-decoration: none
+  ul
+    li
+      list-style: none
+      padding-left: 1em
+      h2
+        font-weight: normal
+        font-size: 1rem
