@@ -1,0 +1,61 @@
+li.flag
+  list-style: none
+  color: tint(black, 5%)
+  font-size: 0
+  img
+    width: 30%
+    display: inline-block
+    vertical-align: top
+  div.text
+    display: inline-block
+    width: 70%
+    padding: 3%
+  h1
+    font-size: 1.3rem
+    margin: .3em 0
+  h2
+    font-size: 1rem
+    margin: 0
+    color: tint(black, 35%)
+    font-variant: small-caps
+    text-transform: lowercase
+  .date
+    margin: 0
+    padding-right: .5em
+    font-size: .8rem
+
+ul#newsFront
+  +span-columns(5 of 9)
+
+div#right
+  +span-columns(4 of 9)
+
+main
+  ul
+    padding: 0
+
+ul.list
+  padding: 0
+  +span-columns(9 of 9)
+  img
+    width: 20%
+  li
+    margin-bottom: 2%
+  div.text
+    width: 80%
+
+li.news
+  background: tint(black, 70%)
+  p
+    font-size: 1rem
+  h2
+    display: inline
+
+li.radio
+  background: tint(black, 80%)
+
+li.agenda
+  background: tint(black, 90%)
+  img
+    width: 15%
+

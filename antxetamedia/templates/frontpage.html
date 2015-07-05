@@ -20,9 +20,9 @@
 </ul>
 
 <div id="right">
-  <ul id="agenda">
+  <ul id="agendaFront">
     {% for date, event in event_list.upcoming %}
-    <li class="flag">
+    <li class="flag agenda">
       {% if event.image %}
       <img src="{{ event.image.url }}" />
       {% endif %}
