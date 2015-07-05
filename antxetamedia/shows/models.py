@@ -36,8 +36,15 @@ class AbstractProducer(models.Model):
         return self.name
 
 
+class ShowQuerySet(models.QuerySet):
+    def featured(self):
+        return self.filter(featured=True)
+
+
 @python_2_unicode_compatible
 class AbstractShow(models.Model):
+    objects = ShowQuerySet.as_manager()
+
     class Meta:
         abstract = True
         ordering = ['name']

@@ -9,6 +9,11 @@
 {% endblock aside %}
 
 {% block content %}
+<h2>{% trans 'Featured' %}</h2>
+{% for radioshow in radioshow_list.featured %}
+{{ radioshow }}
+{% endfor %}
+
 <ul class="list">
   {% regroup radioshow_list by name.0.upper as radioshow_list_by_first_letter %}
   {% for radioshow_first_letter in radioshow_list_by_first_letter %}
