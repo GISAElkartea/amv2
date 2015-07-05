@@ -32,7 +32,8 @@ def upload_blob(sender, instance, **kwargs):
             except S3ResponseError as exp:
                 if not exp.status == 404:
                     raise
-                bucket = connection.create_bucket(bucket)
+                metadata = getattr(blob.content_object, 'metadata', {})
+                bucket = connection.create_bucket(bucket, metadata=metadata)
 
             # Create key
             key = bucket.new_key(str(blob))
@@ -41,7 +42,6 @@ def upload_blob(sender, instance, **kwargs):
             key.set_contents_from_file(blob.local.file)
 
             # Build remote url
-            #url = key.generate_url(expires_in=0, query_auth=False)
             url = 'https://archive.org/download/{bucket}/{key}'.format(bucket=quote(bucket.name), key=quote(key.key))
         except Exception as exp:
             upload.is_unsuccessful(traceback.format_exc())

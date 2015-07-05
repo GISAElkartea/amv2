@@ -74,3 +74,15 @@ class AbstractPodcast(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def metadata(self):
+        return {
+            'x-archive-meta-mediatype': 'audio',
+            'x-archive-meta-collection': 'opensource_audio',
+            'x-archive-meta-title': str(self),
+            'x-archive-meta-creator': str(self.show),
+            'x-archive-meta-description': self.description,
+            'x-archive-meta-date': self.pub_date.strftime('%Y-%m-%d'),
+            'x-archive-meta-language': 'eu',
+        }
