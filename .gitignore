@@ -5,3 +5,4 @@ amv2/media
 cache
 *.swp
 .assets
+.media

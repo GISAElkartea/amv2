@@ -1,5 +1,8 @@
+from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+
 
 js_info_dict = {'packages': ['recurrence']}
 
@@ -13,3 +16,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),  # needed by django-recurrence
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
