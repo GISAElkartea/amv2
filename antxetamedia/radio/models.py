@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
 from antxetamedia.shows.models import (AbstractCategory, AbstractProducer, AbstractShow, AbstractPodcast,
@@ -30,6 +31,9 @@ class RadioShow(AbstractShow):
 
     category = models.ForeignKey(RadioCategory, verbose_name=_('Category'))
     producer = models.ForeignKey(RadioProducer, verbose_name=_('Producer'))
+
+    def get_absolute_url(self):
+        return reverse('radio:detail', kwargs={'slug': self.slug})
 
 
 class RadioPodcast(AbstractPodcast):

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+{{ radioshow }}
+{% for radiopodcast in radioshow.radiopodcast_set.select_related %}
+{{ radiopodcast }}
+{% endfor %}
+{% endblock content %}
