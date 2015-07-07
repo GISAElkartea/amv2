@@ -6,9 +6,17 @@
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    {% if newspodcast.image %}
-    <img src="{{ newspodcast.image.url }}"/>
-    {% endif %}
+    <div class="detail">
+      {% if newspodcast.image %}
+      <img src="{{ newspodcast.image.url }}"/>
+      {% endif %}
+      <div class="downloadShare">
+        <i class="fa fa-play"></i>
+        <i class="fa fa-plus"></i>
+        <i class="fa fa-share"></i>
+        <i class="fa fa-download"></i>
+      </div>
+    </div>
     <div class="text">
       <p class="date">{{ newspodcast.pub_date }}</p>
       <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
@@ -23,9 +31,17 @@
   <ul id="agendaFront">
     {% for date, event in event_list.upcoming %}
     <li class="flag agenda">
-      {% if event.image %}
-      <img src="{{ event.image.url }}" />
-      {% endif %}
+      <div class="detail">
+        {% if event.image %}
+        <img src="{{ event.image.url }}" />
+        {% endif %}
+        <div class="downloadShare">
+          <i class="fa fa-play"></i>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-share"></i>
+          <i class="fa fa-download"></i>
+        </div>
+      </div>
       <div class="text">
         <h2 class="category">{{ event.location }}</h2>
         <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
@@ -38,7 +54,17 @@
   <ul id="radioFront">
     {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
-      <img src="{{ radiopodcast.image.url }}"/>
+      <div class="detail">
+        {% if radiopodcast.image %}
+        <img src="{{ radiopodcast.image.url }}"/>
+        {% endif %}
+        <div class="downloadShare">
+          <i class="fa fa-play"></i>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-share"></i>
+          <i class="fa fa-download"></i>
+        </div>
+      </div>
       <div class="text">
         <h2 class="category">{{ radiopodcast.show }}</h2>
         <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>

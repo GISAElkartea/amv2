@@ -2,10 +2,14 @@ li.flag
   list-style: none
   color: tint(black, 5%)
   font-size: 0
-  img
+  div.detail
     width: 30%
     display: inline-block
     vertical-align: top
+    //div.downloadShare
+      display: none
+    //&:hover
+      display: -moz-flex
   div.text
     display: inline-block
     width: 70%
@@ -32,7 +36,8 @@ ul#agendaFront, ul#radioFront
   h1
     font-size: 1.15rem
 
-ul#agendaFront
+ul#newsFront, ul#agendaFront
+  margin-top: 0
 
 div#right
   +span-columns(4 of 9)
@@ -63,6 +68,5 @@ li.agenda
     padding-right: .5em
     font-size: 1.2rem
     display: inline
-  img
-    width: 20%
-
+  .detail
+    width: 20% !important
