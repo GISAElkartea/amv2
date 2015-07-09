@@ -11,6 +11,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -24,6 +25,7 @@ INSTALLED_APPS = (
     'registration',
     'kombu.transport.django',
 
+    'antxetamedia.authentication',
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
     'antxetamedia.shows',
@@ -49,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+SITE_ID = 1
 ROOT_URLCONF = 'antxetamedia.urls'
 
 TEMPLATES = [
@@ -113,6 +116,11 @@ STATICFILES_FINDERS = [
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+AUTHENTICATION_BACKENDS = [
+    'antxetamedia.authentication.backends.EmailModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True
