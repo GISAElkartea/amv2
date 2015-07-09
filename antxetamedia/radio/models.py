@@ -31,6 +31,7 @@ class RadioShow(AbstractShow):
 
     category = models.ForeignKey(RadioCategory, verbose_name=_('Category'))
     producer = models.ForeignKey(RadioProducer, verbose_name=_('Producer'))
+    featured = models.BooleanField(_('Featured'), default=False)
 
     def get_absolute_url(self):
         return reverse('radio:detail', kwargs={'slug': self.slug})

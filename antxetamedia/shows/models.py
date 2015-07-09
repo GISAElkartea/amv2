@@ -69,7 +69,6 @@ class AbstractShow(models.Model):
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), unique=True, populate_from='name', editable=True)
     description = RichTextField(_('Description'), blank=True)
-    featured = models.BooleanField(_('Featured'), default=False)
     image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
 
     def __str__(self):
