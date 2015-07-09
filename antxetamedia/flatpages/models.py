@@ -19,9 +19,10 @@ class Flatpage(models.Model):
         verbose_name = _('Flatpage')
         verbose_name_plural = _('Flatpages')
 
-    on_menu = models.BooleanField(_('One menu'), default=False)
+    on_menu = models.BooleanField(_('On menu'), default=False)
     name = models.CharField(_('Name'), max_length=128)
-    path = models.SlugField(_('Path'), max_length=128, unique=True)
+    path = models.SlugField(_('Path'), max_length=128, unique=True,
+                            help_text=_('Will be available at /f/your_path'))
     content = RichTextField(_('Content'))
 
     def __str__(self):
