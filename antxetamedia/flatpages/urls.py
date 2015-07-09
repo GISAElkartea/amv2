@@ -4,7 +4,7 @@ from .views import FlatpageDetail
 
 
 expressions = {
-    'flatpage': r'(?P<slug>(\w|\d|-)+)',
+    'flatpage': r'(?P<slug>[\w-]+)',
 }
 
 news = [

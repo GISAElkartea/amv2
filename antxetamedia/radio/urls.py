@@ -4,9 +4,9 @@ from .views import RadioShowList, RadioShowDetail
 
 
 expressions = {
-    'radioshow': r'(?P<slug>(\w|\d|-)+)',
-    'category': r'(?P<slug>(\w|\d|-)+)',
-    'producer': r'(?P<slug>(\w|\d|-)+)',
+    'radioshow': r'(?P<slug>[\w-]+)',
+    'category': r'(?P<slug>[\w-]+)',
+    'producer': r'(?P<slug>[\w-]+)',
 }
 
 radio = [

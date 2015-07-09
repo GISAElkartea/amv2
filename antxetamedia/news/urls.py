@@ -4,9 +4,9 @@ from .views import NewsPodcastList, NewsPodcastDetail
 
 
 expressions = {
-    'newspodcast': r'(?P<slug>(\w|\d|-)+)',
-    'show': r'(?P<slug>(\w|\d|-)+)',
-    'category': r'(?P<slug>(\w|\d|-)+)',
+    'newspodcast': r'(?P<slug>[\w-]+)',
+    'show': r'(?P<slug>[\w-]+)',
+    'category': r'(?P<slug>[\w-]+)',
 }
 
 news = [
