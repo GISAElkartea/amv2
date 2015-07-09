@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'compressor',
     'recurrence',
+    'registration',
     'kombu.transport.django',
 
     'antxetamedia.frontpage',
@@ -108,10 +109,10 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-AUTHENTICATION_BACKENDS = [
-    'antxetamedia.auth.backends.EmailOrUsernameModelBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
+
+ACCOUNT_ACTIVATION_DAYS = 1
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/'
 
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True

@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^radio/', include('antxetamedia.radio.urls')),
     url(r'^projects/', include('antxetamedia.projects.urls')),
     url(r'^f/', include('antxetamedia.flatpages.urls')),
+    url(r'^accounts/', include('antxetamedia.auth.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
