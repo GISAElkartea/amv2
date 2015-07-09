@@ -108,6 +108,10 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+AUTHENTICATION_BACKENDS = [
+    'antxetamedia.auth.backends.EmailOrUsernameModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True
