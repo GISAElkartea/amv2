@@ -18,6 +18,7 @@
           <ul>
             <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
             <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
+            <li><a href="{% url 'projects:list' %}">{% trans 'Projects' %}</a></li>
             {% for flatpage in menu_flatpage_list %}
             <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
             {% endfor %}

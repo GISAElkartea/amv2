@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
 from antxetamedia.shows.models import (AbstractProducer, AbstractShow, AbstractPodcast,
@@ -21,6 +22,9 @@ class ProjectShow(AbstractShow):
         verbose_name_plural = _('Project shows')
 
     producer = models.ForeignKey(ProjectProducer, verbose_name=_('Producer'))
+
+    def get_absolute_url(self):
+        return reverse('projects:detail', kwargs={'slug': self.slug})
 
 
 class ProjectPodcast(AbstractPodcast):

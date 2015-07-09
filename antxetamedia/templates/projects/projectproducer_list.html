@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+<ul id="projectShows">
+  {% for projectproducer in projectproducer_list %}
+  <li>
+    <h1>{{ projectproducer }}</h1>
+    <ul>
+      {% for projectshow in projectproducer.projectshow_set.select_related %}
+      <li>
+        <h2><a href="{{ projectshow.get_absolute_url }}">{{ projectshow }}</a></h2>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
