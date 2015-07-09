@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load static i18n %}
+
+{% block extra_js %}
+<script src="{% static 'js/radio_filter.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endblock extra_js %}
 
 {% block aside %}
 <form class="aside" method="get" action=".">
   {{ form }}
-  <input type="submit" value="{% trans 'Refresh' %}" />
 </form>
 {% endblock aside %}
 
 {% block content %}
-<h2 id="featured">{% trans 'Featured' %}</h2>
 <ul id="featuredShows">
   {% for radioshow in radioshow_list.featured %}
   <li>{{ radioshow }}</li>
@@ -23,7 +25,7 @@
     <h1>{{ radioshow_first_letter.grouper }}</h1>
     <ul>
       {% for radioshow in radioshow_first_letter.list %}
-      <li>
+      <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
         <h2><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h2>
       </li>
       {% endfor %}
