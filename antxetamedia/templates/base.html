@@ -1,7 +1,13 @@
 {% load i18n static compress %}
 <html>
   <head>
-    <title>Antxetamedia</title>
+    <title>{% block title %}{% trans 'Frontpage' %}{% endblock title %} - Antxetamedia</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Antxeta Irratia">
+    <meta name="description" content="Antxeta Irratia Euskara hutsez emititzen
+    duen Bidasoaldeko irratia da, Hendaian egoitza duena.">
+    <meta name="keywords" content="antxeta, irratia, euskara, hendaia,
+    bidasoaldea">
 
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     {% compress css %}

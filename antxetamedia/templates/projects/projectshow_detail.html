@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block content %}
+{% block title %}{{ projectshow }}{% endblock title %}
 
+{% block content %}
 {{ projectshow }}
 {% for projectpodcast in projectshow.projectpodcast_set.select_related %}
 {{ projectpodcast }}

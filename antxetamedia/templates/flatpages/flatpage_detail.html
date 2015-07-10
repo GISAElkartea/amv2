@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 
+{% block title %}{{ flatpage.name }}{% endblock title %}
+
 {% block content %}
 <h1>{{ flatpage }}</h1>
-
 {{ flatpage.content | safe }}
-
 {% endblock content %}

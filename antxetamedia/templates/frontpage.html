@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n static compress %}
 
-{% block content %}
+{% block title %}{% trans 'Frontpage' %}{% endblock title %}
 
+{% block content %}
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">

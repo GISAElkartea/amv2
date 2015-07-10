@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block content %}
+{% block title %}{{ radioshow }}{% endblock title %}
 
+{% block content %}
 {{ radioshow }}
 {% for radiopodcast in radioshow.radiopodcast_set.select_related %}
 {{ radiopodcast }}

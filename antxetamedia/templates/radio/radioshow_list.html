@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
+{% block title %}
+{% trans 'Radio Shows' %}
+{% endblock title %}
+
 {% block extra_js %}
 <script src="{% static 'js/radio_filter.js' %}" type="text/javascript" charset="utf-8"></script>
 {% endblock extra_js %}

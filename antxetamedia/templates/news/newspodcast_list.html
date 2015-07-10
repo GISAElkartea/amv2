@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n static %}
 
+{% block title %}{% trans 'News' %}{% endblock title %}
 
 {% block extra_js %}
 <script src="{% static 'js/news_filter.js' %}" type="text/javascript" charset="utf-8"></script>
