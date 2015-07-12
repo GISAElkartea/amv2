@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Configure your frontpage' %}{% endblock title %}
+
+{% block content %}
+<form method="post" action=".">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="{% trans 'Configure' %}" />
+</form>
+<form method="post" action="{% url 'reset-frontpage-configuration' %}">
+  {% csrf_token %}
+  <input type="submit" value="{% trans 'Reset' %}" />
+</form>
+{% endblock content %}
