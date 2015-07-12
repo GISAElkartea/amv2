@@ -6,10 +6,15 @@ li.flag
     width: 30%
     display: inline-block
     vertical-align: top
-    //div.downloadShare
+    div.downloadShare
       display: none
-    //&:hover
-      display: -moz-flex
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+  div.detail:hover
+    div.downloadShare
+      display: initial
   div.text
     display: inline-block
     width: 70%
@@ -70,3 +75,5 @@ li.agenda
     display: inline
   .detail
     width: 20% !important
+    i
+      font-size: .6rem
