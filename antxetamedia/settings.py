@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'antxetamedia.schedule',
     'antxetamedia.widgets',
     'antxetamedia.events',
-    'antxetamedia.favourites',
     'antxetamedia.flatpages',
 )
 
