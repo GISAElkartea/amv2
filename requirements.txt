@@ -2,7 +2,6 @@ django==1.8.3
 
 Pillow
 celery
-django-registration-redux
 
 # Static files
 django-libsass

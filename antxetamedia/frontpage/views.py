@@ -1,7 +1,6 @@
 import json
 
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
 from django.views.generic import RedirectView, TemplateView, FormView
 
 from antxetamedia.news.models import NewsPodcast, NewsCategory
@@ -12,36 +11,12 @@ from antxetamedia.widgets.models import Widget
 from .forms import ConfigureFrontPageForm
 
 
-VISITED_COOKIE = 'welcome_page'
-VISITED_COOKIE_VALUE = 'visited'
-
 NEWSCATEGORIES_COOKIE = 'newscategories'
 RADIOSHOWS_COOKIE = 'radioshows'
 
 
-class WelcomePage(TemplateView):
-    template_name = 'frontpage/welcome.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        """
-        Set a cookie whenever a user visits this page.
-        """
-        response = super(WelcomePage, self).dispatch(request, *args, **kwargs)
-        response.set_cookie(VISITED_COOKIE, VISITED_COOKIE_VALUE)
-        return response
-
-
 class FrontPage(TemplateView):
     template_name = 'frontpage/frontpage.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        """
-        Redirect to the welcome page if the user isn't authenticated and it's their first visit.
-        """
-        print self.request.COOKIES
-        if request.COOKIES.get(VISITED_COOKIE, None) != VISITED_COOKIE_VALUE:
-            return HttpResponseRedirect(reverse('welcomepage'))
-        return super(FrontPage, self).dispatch(request, *args, **kwargs)
 
     def get_newspodcasts(self):
         qs = NewsPodcast.objects.published()
