@@ -18,9 +18,14 @@
 <ul class="list">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    {% if newspodcast.image %}
-    <img src="{{ newspodcast.image.url }}"/>
-    {% endif %}
+    <div class="detail" {% if newspodcast.image %} style="background-image: url('{{ newspodcast.image.url }}');"{% endif %}/>
+      <div class="downloadShare">
+        <i class="fa fa-play"></i>
+        <i class="fa fa-plus"></i>
+        <i class="fa fa-share"></i>
+        <i class="fa fa-download"></i>
+      </div>
+    </div>
     <div class="text">
       <p class="date">{{ newspodcast.pub_date }}</p>
       <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
