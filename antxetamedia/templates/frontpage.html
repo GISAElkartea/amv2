@@ -7,10 +7,7 @@
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    <div class="detail">
-      {% if newspodcast.image %}
-      <img src="{{ newspodcast.image.url }}"/>
-      {% endif %}
+    <div class="detail" {% if newspodcast.image %} style="background-image: url('{{ newspodcast.image.url }}');"{% endif %}/>
       <div class="downloadShare">
         <i class="fa fa-play"></i>
         <i class="fa fa-plus"></i>
@@ -32,10 +29,7 @@
   <ul id="agendaFront">
     {% for date, event in event_list.upcoming %}
     <li class="flag agenda">
-      <div class="detail">
-        {% if event.image %}
-        <img src="{{ event.image.url }}" />
-        {% endif %}
+      <div class="detail" {% if event.image %} style="background-image: url('{{ event.image.url }}');"{% endif %} />
         <div class="downloadShare">
           <i class="fa fa-play"></i>
           <i class="fa fa-plus"></i>
@@ -55,10 +49,7 @@
   <ul id="radioFront">
     {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
-      <div class="detail">
-        {% if radiopodcast.image %}
-        <img src="{{ radiopodcast.image.url }}"/>
-        {% endif %}
+      <div class="detail" {% if radiopodcast.image %} style="background-image: url('{{ radiopodcast.image.url }}');"{% endif %}/>
         <div class="downloadShare">
           <i class="fa fa-play"></i>
           <i class="fa fa-plus"></i>

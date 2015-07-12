@@ -6,6 +6,10 @@ li.flag
     width: 30%
     display: inline-block
     vertical-align: top
+    display: table-cell
+    height: auto
+    background-size: cover
+    background-position: center center
     div.downloadShare
       display: none
       position: absolute
@@ -16,9 +20,9 @@ li.flag
     div.downloadShare
       display: initial
   div.text
-    display: inline-block
     width: 70%
     padding: 3%
+    display: table-cell
   h1
     margin: .3em 0
   h2.category
@@ -51,8 +55,6 @@ div#right
 ul.list
   padding: 0
   +span-columns(9 of 9)
-  img
-    width: 20%
   li
     margin-bottom: 2%
   div.text
