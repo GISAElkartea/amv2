@@ -36,7 +36,7 @@ class NewsPodcast(AbstractPodcast):
         verbose_name_plural = _('News podcasts')
 
     show = models.ForeignKey(NewsShow, verbose_name=_('Show'))
-    categories = models.ManyToManyField(NewsCategory, blank=True, verbose_name=_('Categories'))
+    categories = models.ManyToManyField(NewsCategory, verbose_name=_('Categories'))
 
     def get_absolute_url(self):
         return reverse('news:detail', kwargs={'slug': self.slug})
