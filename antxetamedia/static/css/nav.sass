@@ -1,33 +1,30 @@
 section#mainNav
-    background: rgba(0,0,0,.5)
-    width: 100%
-    font-size: 0
-    nav
+  background: rgba(0,0,0,.5)
+  width: 100%
+  font-size: 0
+  nav
+    display: inline-block
+    font-size: .8rem
+    ul
+      padding: 0
+      margin: 0
+      li
+        list-style: none
+        padding: .5em 1em
         display: inline-block
-        font-size: .8rem
-        +media(max-width 769px)
-            display: block
-            text-align: center
-        ul
-            padding: 0
-            margin: 0
-            li
-                list-style: none
-                padding: .5em 1em
-                display: inline-block
-                vertical-align: middle
-                a
-                    color: white
-                    text-decoration: none
-                img
-                    width: 1.5em
-    nav#menu
-        width: 65%
-        +media(max-width 769px)
-            width: 100%
-    nav.user
-        width: 35%
-        text-align: right
-        +media(max-width 769px)
-            width: 100%
-            text-align: center
+        vertical-align: middle
+        a
+          color: white
+          text-decoration: none
+        img
+          width: 1.5em
+  nav#menu
+    width: 85%
+  nav#rss
+    width: 15%
+    text-align: right
+    i
+      color: tint(black, 95%)
+      font-size: 1.2rem !important
+      padding-right: .5em
+      vertical-align: middle

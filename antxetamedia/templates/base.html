@@ -30,19 +30,8 @@
             {% endfor %}
           </ul>
         </nav>
-        <nav class="user">
-          <ul>
-            <li>
-              {% if request.user.is_authenticated %}
-              <a href="{% url 'auth_logout' %}">{% trans 'Logout' %}</a>
-              {% else %}
-              <a href="{% url 'auth_login' %}">{% trans 'Create account / Login' %}</a>
-              {% endif %}
-            </li>
-            <li>
-              <img src="{% static 'images/rss.svg' %}" alt="rss"/>
-            </li>
-          </ul>
+        <nav id="rss">
+          <i class="fa fa-rss"></i>
         </nav>
       </section>
       <div id="logo">
