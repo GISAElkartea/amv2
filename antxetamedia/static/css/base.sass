@@ -22,6 +22,7 @@ div#wrap
   padding: 3rem 3%
   +outer-container
   main
+    position: relative
     +span-columns(9)
   aside
     margin: -7% 0
@@ -31,3 +32,17 @@ div#wrap
       width: 30%
       float: left
       margin: 0 1em 1em 0
+  a#configureFrontpage
+    position: absolute
+    top: -2em
+    right: 0
+    color: white
+    background: tint($green, 85%)
+    text-decoration: none
+    padding: 0 0 0 .5em
+    i
+      background: $green
+      padding: .2em
+      margin-left: .3em
+    &:hover
+      background: $green

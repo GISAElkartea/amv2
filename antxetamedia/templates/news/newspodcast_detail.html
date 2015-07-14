@@ -4,9 +4,17 @@
 
 {% block content %}
 <article>
-  {% if newspodcast.image %}
-  <img src="{{ newspodcast.image.url }}"/>
-  {% endif %}
+  <div class="articleDetails">
+    {% if newspodcast.image %}
+    <img src="{{ newspodcast.image.url }}"/>
+    {% endif %}
+    <div class="downloadShare">
+      <i class="fa fa-play"></i>
+      <i class="fa fa-plus"></i>
+      <i class="fa fa-share"></i>
+      <i class="fa fa-download"></i>
+    </div>
+  </div>
   <p class="date">{{ newspodcast.pub_date }}</p>
   <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
   <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>

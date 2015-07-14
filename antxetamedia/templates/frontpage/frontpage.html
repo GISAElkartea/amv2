@@ -4,7 +4,7 @@
 {% block title %}{% trans 'Frontpage' %}{% endblock title %}
 
 {% block content %}
-<a href="{% url 'configure-frontpage' %}">{% trans 'Configure' %}</a>
+<a id="configureFrontpage" href="{% url 'configure-frontpage' %}">{% trans 'Configure' %}<i class="fa fa-cogs"></i></a>
 
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
