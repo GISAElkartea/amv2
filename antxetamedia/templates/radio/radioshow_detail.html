@@ -4,8 +4,33 @@
 {% block title %}{{ radioshow }}{% endblock title %}
 
 {% block content %}
-{{ radioshow }}
-{% for radiopodcast in radioshow.radiopodcast_set.select_related %}
-{{ radiopodcast }}
-{% endfor %}
+<article>
+  <div class="articleDetails">
+    {% if radioshow.image %}
+    <img src="{{ radioshow.image.url }}"/>
+    {% endif %}
+  </div>
+  <p class="date">{{ radioshow.producer }}</p>
+  <h2 class="category">{{ radioshow.category }}</h2>
+  <h1>{{ radioshow }}</h1>
+  <p>{{ radioshow.description | striptags }}</p>
+  <table class="podcastList">
+    <tr>
+      <th>{% trans 'Podcast' %}</th>
+      <th></th>
+      <th>{% trans 'Date' %}</th>
+    </tr>
+    {% for radiopodcast in radioshow.radiopodcast_set.select_related %}
+    <tr>
+      <td>{{ radiopodcast }}</td>
+      <td id="podcastPlay">
+        <i class="fa fa-play"></i>
+        <i class="fa fa-plus"></i>
+        <i class="fa fa-share"></i>
+        <i class="fa fa-download"></i>
+      </td>
+      <td>{{ radiopodcast.date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 {% endblock content %}

@@ -34,3 +34,29 @@ ul#radioShows
       h2
         font-weight: normal
         font-size: 1rem
+
+table.podcastList
+  width: 100%
+  tr
+    border-bottom: .15em solid tint(black, 95%)
+    th
+      background: tint(black, 50%)
+      color: white
+      text-align: left
+      padding: .2em 1em
+      border: none
+    td
+      background: tint(black, 80%)
+      padding: .3em 1em
+      &#podcastPlay
+        width: 10%
+        i
+          display: none
+          color: tint(black, 30%)
+  tr:hover
+    td#podcastPlay
+      i
+        display: inline
+
+table
+  border-collapse: collapse
