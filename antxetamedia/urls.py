@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from .feeds import BlobFeed
 
 js_info_dict = {'packages': ['recurrence']}
 
@@ -12,7 +13,7 @@ urlpatterns = [
     url(r'^radio/', include('antxetamedia.radio.urls')),
     url(r'^projects/', include('antxetamedia.projects.urls')),
     url(r'^f/', include('antxetamedia.flatpages.urls')),
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^feed/$', BlobFeed(), name='feed'),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
