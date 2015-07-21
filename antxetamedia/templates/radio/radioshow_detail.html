@@ -34,7 +34,7 @@
     <tr id="podcastDescription">
       <td colspan="3">{% if radiopodcast.image %}<img id="podcastImage"
         src="{{ radiopodcast.image.ul }}"/>{% endif %}
-        <p>{{ radiopodcast.description | striptags }}</p></td>
+        <p>{{ radiopodcast.description | safe }}</p></td>
     </tr>
     {% endfor %}
   </table>
