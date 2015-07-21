@@ -9,6 +9,7 @@ from .models import Account, License, Blob, BlobUpload
 class BlobInline(GenericTabularInline):
     model = Blob
     fields = ['account', 'license', 'local', 'remote']
+    readonly_fields = ['remote']
     ct_field = 'content_type'
     ct_fk_field = 'object_id'
     extra = 1
@@ -16,7 +17,7 @@ class BlobInline(GenericTabularInline):
 
 class BlobAdmin(admin.ModelAdmin):
     list_display = ['blob', ]
-    readonly_fields = ['get_content_object']
+    readonly_fields = ['get_content_object', 'remote']
     fields = ['get_content_object', 'account', 'license', 'local', 'remote']
 
     def get_content_object(self, instance):
