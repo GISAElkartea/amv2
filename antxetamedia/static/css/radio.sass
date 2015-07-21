@@ -53,10 +53,26 @@ table.podcastList
         i
           display: none
           color: tint(black, 30%)
+
   tr:hover
     td#podcastPlay
       i
         display: inline
+  tr#podcastDescription
+    td
+      width: 100%
+      padding: 1em
+      background: tint(black, 90%)
+    img#podcastImage
+      width: 10%
+      display: inline-block
+      vertical-align: top
+      margin-right: 2%
+    p
+      display: inline-block
+      width: 87%
+      margin-top: 0
+      font-size: .9rem
 
 table
   border-collapse: collapse
