@@ -70,7 +70,9 @@ class Blob(models.Model):
 
     @property
     def blob(self):
-        return self.local or self.remote
+        if self.local:
+            return self.local.url
+        return self.remote
 
 
 @python_2_unicode_compatible
