@@ -1,9 +1,15 @@
+import json
+
 from django.db import models
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
 from antxetamedia.shows.models import (AbstractCategory, AbstractShow, AbstractPodcast,
-                                       CategoryManager, ShowManager, PodcastManager)
+                                       CategoryManager, ShowManager, PodcastQuerySet)
+
+
+NEWSCATEGORIES_COOKIE = getattr(settings, 'NEWSCATEGORIES_COOKIE', 'newscategories')
 
 
 class NewsCategory(AbstractCategory):
@@ -28,8 +34,18 @@ class NewsShow(AbstractShow):
         return reverse('news:show', kwargs={'slug': self.slug})
 
 
+class NewsPodcastQuerySet(PodcastQuerySet):
+    def favourites(self, request):
+        qs = self
+        newscategories = request.COOKIES.get(NEWSCATEGORIES_COOKIE)
+        if newscategories:
+            newscategories = json.loads(newscategories)
+            qs = qs.filter(categories__pk__in=newscategories)
+        return qs
+
+
 class NewsPodcast(AbstractPodcast):
-    objects = PodcastManager()
+    objects = NewsPodcastQuerySet.as_manager()
 
     class Meta:
         verbose_name = _('News podcast')

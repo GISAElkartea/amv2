@@ -136,3 +136,6 @@ from model_mommy.generators import gen_slug
 MOMMY_CUSTOM_FIELDS_GEN = {
     'autoslug.fields.AutoSlugField': gen_slug,
 }
+
+NEWSCATEGORIES_COOKIE = 'newscategories'
+RADIOSHOWS_COOKIE = 'radioshows'
