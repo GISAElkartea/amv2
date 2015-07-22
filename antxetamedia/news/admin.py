@@ -16,7 +16,7 @@ class NewsShowAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     fieldsets = [
         (None, {
-            'fields': ['name', 'slug']}),
+            'fields': [('name', 'slug')]}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]

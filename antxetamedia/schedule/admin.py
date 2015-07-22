@@ -7,7 +7,9 @@ from .models import Label, Broadcast
 
 
 class LabelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'colour']
+    fields = [('name', 'colour')]
+    search_fields = ['name']
 
 
 class BroadcastAdmin(admin.ModelAdmin):
@@ -15,7 +17,12 @@ class BroadcastAdmin(admin.ModelAdmin):
     list_display_links = ['name', 'foreground', 'background']
     list_filter = ['weekday', 'beginning', 'ending', 'foreground', 'background']
     search_fields = ['name']
-    fields = [('name', 'link'), ('weekday', 'beginning', 'ending'), ('foreground', 'background')]
+    fieldsets = [
+        (None, {
+            'fields': [('name', 'link'), ('foreground', 'background')]}),
+        (_('When'), {
+            'fields': [('weekday', 'beginning', 'ending')]}),
+    ]
 
     def get_link(self, obj):
         if obj.link:

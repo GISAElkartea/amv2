@@ -6,6 +6,7 @@ from .models import Widget
 
 
 class WidgetAdmin(SortableAdminMixin, admin.ModelAdmin):
+    fields = ['name', 'content']
     search_fields = ['content']
 
 

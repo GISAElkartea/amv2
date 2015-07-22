@@ -25,7 +25,7 @@ class RadioShowAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     fieldsets = [
         (None, {
-            'fields': ['name', 'featured', 'slug', 'category', 'producer']}),
+            'fields': [('name', 'slug'), 'featured', 'category', 'producer']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]

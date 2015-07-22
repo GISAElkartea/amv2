@@ -18,7 +18,7 @@ class ProjectShowAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     fieldsets = [
         (None, {
-            'fields': ['name', 'slug', 'producer']}),
+            'fields': [('name', 'slug'), 'producer']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]
