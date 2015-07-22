@@ -10,10 +10,6 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = (
-    'grappelli.dashboard',
-    'grappelli',
-
-    'django.contrib.admin',
     'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,6 +17,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'grappelli.dashboard',
+    'grappelli',
+    'django.contrib.admin',
     'adminsortable2',
     'ckeditor',
     'compressor',

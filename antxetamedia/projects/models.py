@@ -18,8 +18,8 @@ class ProjectShow(AbstractShow):
     objects = ShowManager()
 
     class Meta:
-        verbose_name = _('Project show')
-        verbose_name_plural = _('Project shows')
+        verbose_name = _('Project')
+        verbose_name_plural = _('Projects')
 
     producer = models.ForeignKey(ProjectProducer, verbose_name=_('Producer'))
 

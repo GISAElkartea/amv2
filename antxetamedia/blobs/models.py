@@ -43,8 +43,8 @@ class License(models.Model):
 class Blob(models.Model):
     class Meta:
         unique_together = [('content_type', 'object_id', 'counter')]
-        verbose_name = _('Blob')
-        verbose_name_plural = _('Blobs')
+        verbose_name = _('Audio blob')
+        verbose_name_plural = _('Audio blobs')
 
     content_type = models.ForeignKey('contenttypes.contenttype')
     object_id = models.PositiveIntegerField()
