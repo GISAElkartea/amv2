@@ -45,6 +45,9 @@ class RadioPodcastAdmin(admin.ModelAdmin):
             'fields': ['image', 'description']}),
     ]
 
+    def get_changeform_initial_data(self, request):
+        return {'title': _('Complete program')}
+
 
 admin.site.register(RadioCategory, RadioCategoryAdmin)
 admin.site.register(RadioProducer, RadioProducerAdmin)
