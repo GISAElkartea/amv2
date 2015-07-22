@@ -10,6 +10,9 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = (
+    'grappelli.dashboard',
+    'grappelli',
+
     'django.contrib.admin',
     'django.contrib.sites',
     'django.contrib.auth',
@@ -125,7 +128,7 @@ CKEDITOR_CONFIGS = {
             ['Format', 'Bold', 'Italic', 'Underline', 'StrikeThrough', '-',
              'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Image', 'Link', 'Source'],
-            ['Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace','-', 'Print'],
+            ['Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Print'],
         ],
     }
 }
@@ -134,6 +137,11 @@ from model_mommy.generators import gen_slug
 MOMMY_CUSTOM_FIELDS_GEN = {
     'autoslug.fields.AutoSlugField': gen_slug,
 }
+
+GRAPPELLI_INDEX_DASHBOARD = 'antxetamedia.dashboard.AntxetamediaDashboard'
+GRAPPELLI_ADMIN_TITLE = 'Antxetamedia'
+GRAPPELLI_SWITCH_USER = True
+GRAPPELLI_CLEAN_INPUT_TYPES = False
 
 NEWSCATEGORIES_COOKIE = 'newscategories'
 RADIOSHOWS_COOKIE = 'radioshows'

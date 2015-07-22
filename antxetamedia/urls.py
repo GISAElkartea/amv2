@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^f/', include('antxetamedia.flatpages.urls')),
     url(r'^feed/$', BlobFeed(), name='feed'),
 
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),  # needed by django-recurrence
