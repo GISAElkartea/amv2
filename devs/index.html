@@ -102,19 +102,23 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#important-factors">Important factors</a></li>
+        <li class="main active"><a href="#development-setup">Development setup</a></li>
         
-            <li><a href="#erreproduktorea">Erreproduktorea</a></li>
+    
+        <li class="main "><a href="#running-tests">Running tests</a></li>
         
-            <li><a href="#kontu-pertsonalak">Kontu pertsonalak</a></li>
+    
+        <li class="main "><a href="#general-features">General features</a></li>
         
-            <li><a href="#nabigazioa">Nabigazioa</a></li>
+            <li><a href="#frontpage">Frontpage</a></li>
         
-            <li><a href="#portada">Portada</a></li>
+            <li><a href="#player">Player</a></li>
         
-            <li><a href="#archiveorg">Archive.org</a></li>
+            <li><a href="#navigation">Navigation</a></li>
         
-            <li><a href="#bestelakoak">Bestelakoak</a></li>
+            <li><a href="#integration-with-archiveorg">Integration with archive.org</a></li>
+        
+            <li><a href="#other-things">Other things</a></li>
         
     
         <li class="main "><a href="#architecture">Architecture</a></li>
@@ -130,92 +134,95 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="important-factors">Important factors</h1>
-<h2 id="erreproduktorea">Erreproduktorea</h2>
+<h1 id="development-setup">Development setup</h1>
+<pre><code># Install python dependencies
+pip install -r requirements.txt
+
+# Install javascript dependencies
+cd antxetamedia/static
+bower install
+cd ../..
+
+# Setup the database
+python manage.py migrate
+
+# Start development server
+python manage.py runserver
+</code></pre>
+
+<p>Additionally, if you want some sample data, you can get it by checking out the
+<code>sample_data</code> branch and loading the <code>sample_data.json</code> json file into the
+database:</p>
+<pre><code>python manage.py loaddata sample_data.json
+</code></pre>
+
+<h1 id="running-tests">Running tests</h1>
+<pre><code>python manage.py test
+</code></pre>
+
+<h1 id="general-features">General features</h1>
+<h2 id="frontpage">Frontpage</h2>
 <ul>
-<li>playlistak</li>
-<li>playlista jaitsi</li>
-<li>audioak gehitu, mugitu ahal izan, etb</li>
-<li>konpartitu (podcastaren helbidea)</li>
-<li>streamingarekin integrazioa</li>
+<li>customized frontpage</li>
+<li>user selects favourite news categories and radio shows</li>
+<li>user selections stored as cookies</li>
 </ul>
-<h2 id="kontu-pertsonalak">Kontu pertsonalak</h2>
+<h2 id="player">Player</h2>
 <ul>
-<li>gogoko irratsaioak</li>
-<li>feed pertsonalizatua</li>
-<li><em>sartutako azken alditik zer da berria</em></li>
-<li>playlistak</li>
+<li>single playlist per user</li>
+<li>playlist stored in local storage</li>
+<li>download entire playlist</li>
+<li>add, move and delete podcasts from playlist</li>
+<li>share podcasts</li>
+<li>integration with the radio stream</li>
 </ul>
-<h2 id="nabigazioa">Nabigazioa</h2>
+<h2 id="navigation">Navigation</h2>
 <ul>
-<li>bilatzaile hobea</li>
-<li>irratsaioaetara errazago sartu</li>
+<li>news podcast searcher (per category, per producer)</li>
+<li>radio show searcher (per category, per producer)</li>
 </ul>
-<h2 id="portada">Portada</h2>
+<h2 id="integration-with-archiveorg">Integration with archive.org</h2>
 <ul>
-<li>azkeneko 5ak beharrean, atzotik berria dena</li>
-<li>portada eta menu eraikitzailea?</li>
+<li>asynchronous uploads</li>
+<li>queue visualization system</li>
 </ul>
-<h2 id="archiveorg">Archive.org</h2>
-<ul>
-<li>igoera asinkronoak, queuea igoera guztiekin</li>
-</ul>
-<pre><code>ARCHIVE.ORG TEST ACCOUNT
-username: archive.org-test
+<h3 id="test-account">Test account</h3>
+<pre><code>username: archive.org-test
 password: archive.org-test
 access key: VSh9SgRkxTYIaZUs
 secret key: GsQjQ6KLtx63Sktr
 </code></pre>
 
-<h2 id="bestelakoak">Bestelakoak</h2>
+<h2 id="other-things">Other things</h2>
 <ul>
-<li>lizentzia argiagoak</li>
+<li>licenses should be easy to see</li>
 </ul>
 <h1 id="architecture">Architecture</h1>
 <h2 id="layout">Layout</h2>
 <p><img alt="Design" src="./structure.png" /></p>
-<ul>
-<li>shows:</li>
-<li>AbstractProducer</li>
-<li>AbstractCategory</li>
-<li>AbstractShow</li>
-<li>AbstractPodcast</li>
-<li>news:</li>
-<li>NewsShow</li>
-<li>NewsCategory</li>
-<li>NewsPodcast</li>
-<li>radio</li>
-<li>RadioProducer</li>
-<li>RadioCategory</li>
-<li>RadioShow</li>
-<li>RadioPodcast</li>
-<li>projects</li>
-<li>ProjectProducer</li>
-<li>ProjectShow</li>
-<li>ProjectPodcast</li>
-<li>blobs</li>
-<li>Blob</li>
-<li>BlobUpload</li>
-<li>playlists</li>
-<li>favourites</li>
-<li>events</li>
-<li>archives</li>
-<li>schedule</li>
-<li>Label</li>
-<li>Broadcast</li>
-<li>pages</li>
-<li>widgets</li>
-</ul>
+<h3 id="news">News</h3>
+<p>Each podcast has a category and a producer.</p>
+<h3 id="radio">Radio</h3>
+<p>Each podcast has a show. Each show has a category and a producer.</p>
+<h3 id="projects">Projects</h3>
+<p>Each podcast has a project. Each project has a producer.</p>
+<h3 id="blobs">Blobs</h3>
+<p>Each blob has a GFK to a podcast.</p>
+<h3 id="events">Events</h3>
+<h3 id="archives">Archives</h3>
+<h3 id="schedule">Schedule</h3>
+<h3 id="flat-pages">Flat pages</h3>
+<h3 id="widgets">Widgets</h3>
 <h2 id="design-decisions">Design decisions</h2>
 <h3 id="no-nested-categories">No nested categories</h3>
 <p>They do not use them currently.</p>
 <ul>
 <li>NewsShows do not need to be categorized.</li>
 <li>RadioShows can be categorized in RadioCategories and RadioProducers.</li>
-<li>ProjectShows can be categorized in ProjectProcuers.</li>
+<li>ProjectShows can be categorized in ProjectProducers.</li>
 </ul>
 <h3 id="no-embeded-multimedia-models">No embeded multimedia models</h3>
-<p>If they want to use some external embed, they can use the description text.</p>
+<p>If they want to use some external embed code, they can use the description text.</p>
 <h3 id="multiple-audios-per-podcast">Multiple audios per podcast</h3>
 <p>They use this feature nowadays. It's true that it makes it somewhat more
 difficult to manage the playlist buttons but this can be solved by:</p>
@@ -227,9 +234,8 @@ difficult to manage the playlist buttons but this can be solved by:</p>
 <h3 id="only-radioshows-have-the-featured-boolean">Only RadioShows have the "featured" boolean</h3>
 <h2 id="user-views">User views</h2>
 <ul>
-<li>welcome page</li>
 <li>frontpage</li>
-<li>user frontpage</li>
+<li>frontpage configuration</li>
 <li>news<ul>
 <li>newspodcast_list: filtered by NewsShow and NewsCategory</li>
 <li>newspodcast_detail</li>
@@ -246,14 +252,6 @@ difficult to manage the playlist buttons but this can be solved by:</p>
 <li>projectshow_detail</li>
 </ul>
 </li>
-<li>favourites<ul>
-<li>favourite_list</li>
-<li>create_favourite</li>
-<li>delete_favourite</li>
-</ul>
-</li>
-<li>playlists</li>
-<li>settings</li>
 <li>archive</li>
 <li>events<ul>
 <li>event_list</li>
