@@ -2,13 +2,8 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Antxetamedia.info webgunearen dokumentaziora\n\n\nAurrean duzun dokumentazio hau \nantxetamedia.info\n\nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.\n\n\nKudeaketa\n\n\nantxetamedia.info/admin\n helbidean aurkitu\ndaiteken kudeaketa gunearen \ndokumentazioa hemen duzu\n.\n\n\nGarapena\n\n\nGarapenaren inguruko \ndokumentazioa hemen duzu\n.", 
+            "text": "Aurrean duzun dokumentazio hau \nantxetamedia.info\n\nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.\n\n\nKudeaketa\n\n\nantxetamedia.info/admin\n helbidean aurkitu\ndaiteken kudeaketa gunearen \ndokumentazioa hemen duzu\n.\n\n\nGarapena\n\n\nGarapenaren inguruko \ndokumentazioa hemen duzu\n.", 
             "title": "Ongietorri"
-        }, 
-        {
-            "location": "/#antxetamediainfo-webgunearen-dokumentaziora", 
-            "text": "Aurrean duzun dokumentazio hau  antxetamedia.info \nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.", 
-            "title": "Antxetamedia.info webgunearen dokumentaziora"
         }, 
         {
             "location": "/#kudeaketa", 
