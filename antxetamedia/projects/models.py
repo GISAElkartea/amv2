@@ -31,6 +31,7 @@ class ProjectPodcast(AbstractPodcast):
     objects = PodcastManager()
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = _('Project podcast')
         verbose_name_plural = _('Project podcasts')
 

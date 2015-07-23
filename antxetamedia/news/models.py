@@ -48,6 +48,7 @@ class NewsPodcast(AbstractPodcast):
     objects = NewsPodcastQuerySet.as_manager()
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = _('News podcast')
         verbose_name_plural = _('News podcasts')
 

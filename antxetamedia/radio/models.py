@@ -57,6 +57,7 @@ class RadioPodcast(AbstractPodcast):
     objects = RadioPodcastQuerySet.as_manager()
 
     class Meta:
+        ordering = ['-pub_date']
         verbose_name = _('Radio podcast')
         verbose_name_plural = _('Radio podcasts')
 
