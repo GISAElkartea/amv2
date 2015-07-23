@@ -18,15 +18,15 @@
       </div>
     </div>
     <div class="text">
-      <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h2 class="category">
         {% for category in newspodcast.categories.all %}
         <a href="{{ category.get_absolute_url }}">{{ category }}</a>
         {% if not forloop.last %}, {% endif %}
         {% endfor %}
       </h2>
+      <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
-      <p>{{ newspodcast.description | truncatewords_html:25 | safe }}</p>
+      {{ newspodcast.description | truncatewords_html:25 | safe }}
     </div>
   </li>
   {% endfor %}
@@ -65,8 +65,8 @@
         </div>
       </div>
       <div class="text">
-        <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
         <h2 class="category">{{ radiopodcast.show }}</h2>
+        <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
         <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
       </div>
     </li>

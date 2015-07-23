@@ -1,8 +1,32 @@
+main
+  ul
+    padding: 0
+
+ul.list
+  padding: 0
+  +span-columns(9 of 9)
+  li
+    margin-bottom: 2%
+  div.text
+    width: 80%
+
+div#right
+  +span-columns(4 of 9)
+
+ul#newsFront
+  +span-columns(5 of 9)
+
+ul#newsFront, ul#agendaFront
+  margin-top: 0
+
+ul#agendaFront
+  margin-bottom: 2rem
+
 li.flag
   list-style: none
   color: tint(black, 5%)
   font-size: 0
-  margin-bottom: .5rem
+  margin-bottom: .7rem
   display: table
   width: 100%
   div.detail
@@ -20,41 +44,14 @@ li.flag
     padding: 3%
     display: table-cell
   h1
-    margin: .3em 0
+    margin: .1em 0 .5em 0
   h2.category
     margin: 0
   p
-    margin-top: .2em
+    margin: .2em 0 0 0
   .date
     margin: 0
     padding-right: .5em
-
-
-main
-  ul
-    padding: 0
-
-ul#newsFront
-  +span-columns(5 of 9)
-
-ul#agendaFront, ul#radioFront
-  h1
-    font-size: 1rem
-
-ul#newsFront, ul#agendaFront
-  margin-top: 0
-
-div#right
-  +span-columns(4 of 9)
-
-
-ul.list
-  padding: 0
-  +span-columns(9 of 9)
-  li
-    margin-bottom: 2%
-  div.text
-    width: 80%
 
 li.news
   background: tint(black, 70%)
@@ -65,17 +62,23 @@ li.radio
   background: tint(black, 80%)
   .detail
     width: 20% !important
+  h1
+    font-size: 1rem
+    margin-bottom: 0
 
 li.agenda
   background: tint(black, 90%)
-  h1
-    margin: .1em 0
-  h2
-    margin: 0 0 .1em 0
-    padding-right: .5em
-    font-size: 1.2rem
-    display: inline
-    i
-      font-size: .6rem
+  div.text
+    padding: .3rem 3%
+    h1
+      margin: .1em 0
+      font-size: .95rem
+    h2
+      margin: 0 0 .1em 0
+      padding-right: .5em
+      font-size: 1rem
+      display: inline
+      i
+        font-size: .6rem
   .detail
     width: 10% !important
