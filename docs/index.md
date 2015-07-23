@@ -1,5 +1,3 @@
-# Antxetamedia.info webgunearen dokumentaziora
-
 Aurrean duzun dokumentazio hau [antxetamedia.info](https://antxetamedia.info)
 webgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.
 

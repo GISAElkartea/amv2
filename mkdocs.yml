@@ -1,4 +1,5 @@
 site_name: Antxetamedia
+theme: readthedocs
 pages:
     - Ongietorri: index.md
     - Erabiltzaileak: users/index.md
