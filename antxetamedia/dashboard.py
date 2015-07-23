@@ -32,12 +32,19 @@ class AntxetamediaDashboard(Dashboard):
                     models=('antxetamedia.projects.*',),
                 ),
                 modules.ModelList(
+                    _('Events'),
+                    collapsible=True,
+                    column=1,
+                    css_classes=('grp-collapse grp-closed',),
+                    models=('antxetamedia.events.*',),
+                ),
+                modules.ModelList(
                     _('Flatpages'),
                     collapsible=True,
                     column=1,
                     css_classes=('grp-collapse grp-closed',),
                     models=('antxetamedia.flatpages.*',),
-                )
+                ),
             ]
         ))
 
