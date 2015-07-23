@@ -13,7 +13,7 @@
   <p class="date">{{ radioshow.producer }}</p>
   <h2 class="category">{{ radioshow.category }}</h2>
   <h1>{{ radioshow }}</h1>
-  <p>{{ radioshow.description | striptags }}</p>
+  {{ radioshow.description | striptags }}
   <table class="podcastList">
     <tr>
       <th>{% trans 'Podcast' %}</th>
@@ -34,7 +34,7 @@
     <tr id="podcastDescription">
       <td colspan="3">{% if radiopodcast.image %}<img id="podcastImage"
         src="{{ radiopodcast.image.ul }}"/>{% endif %}
-        <p>{{ radiopodcast.description | safe }}</p></td>
+        <span id="podcastText">{{ radiopodcast.description | safe }}</span></td>
     </tr>
     {% endfor %}
   </table>
