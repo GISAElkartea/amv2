@@ -9,259 +9,1173 @@
 },
 {
     "fields": {
-        "model": "logentry",
-        "app_label": "admin"
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 1
 },
 {
     "fields": {
-        "model": "site",
-        "app_label": "sites"
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 2
 },
 {
     "fields": {
-        "model": "permission",
-        "app_label": "auth"
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 3
 },
 {
     "fields": {
-        "model": "group",
-        "app_label": "auth"
+        "codename": "add_site",
+        "name": "Can add site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 4
 },
 {
     "fields": {
-        "model": "user",
-        "app_label": "auth"
+        "codename": "change_site",
+        "name": "Can change site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 5
 },
 {
     "fields": {
-        "model": "contenttype",
-        "app_label": "contenttypes"
+        "codename": "delete_site",
+        "name": "Can delete site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 6
 },
 {
     "fields": {
-        "model": "session",
-        "app_label": "sessions"
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 7
 },
 {
     "fields": {
-        "model": "recurrence",
-        "app_label": "recurrence"
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 8
 },
 {
     "fields": {
-        "model": "rule",
-        "app_label": "recurrence"
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 9
 },
 {
     "fields": {
-        "model": "date",
-        "app_label": "recurrence"
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 10
 },
 {
     "fields": {
-        "model": "param",
-        "app_label": "recurrence"
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 11
 },
 {
     "fields": {
-        "model": "queue",
-        "app_label": "kombu_transport_django"
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 12
 },
 {
     "fields": {
-        "model": "message",
-        "app_label": "kombu_transport_django"
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 13
 },
 {
     "fields": {
-        "model": "account",
-        "app_label": "blobs"
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 14
 },
 {
     "fields": {
-        "model": "license",
-        "app_label": "blobs"
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 15
 },
 {
     "fields": {
-        "model": "blob",
-        "app_label": "blobs"
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 16
 },
 {
     "fields": {
-        "model": "blobupload",
-        "app_label": "blobs"
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 17
 },
 {
     "fields": {
-        "model": "newscategory",
-        "app_label": "news"
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 18
 },
 {
     "fields": {
-        "model": "newsshow",
-        "app_label": "news"
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 19
 },
 {
     "fields": {
-        "model": "newspodcast",
-        "app_label": "news"
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 20
 },
 {
     "fields": {
-        "model": "radiocategory",
-        "app_label": "radio"
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 21
 },
 {
     "fields": {
-        "model": "radioproducer",
-        "app_label": "radio"
+        "codename": "add_recurrence",
+        "name": "Can add recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 22
 },
 {
     "fields": {
-        "model": "radioshow",
-        "app_label": "radio"
+        "codename": "change_recurrence",
+        "name": "Can change recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 23
 },
 {
     "fields": {
-        "model": "radiopodcast",
-        "app_label": "radio"
+        "codename": "delete_recurrence",
+        "name": "Can delete recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 24
 },
 {
     "fields": {
-        "model": "projectproducer",
-        "app_label": "projects"
+        "codename": "add_rule",
+        "name": "Can add rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 25
 },
 {
     "fields": {
-        "model": "projectshow",
-        "app_label": "projects"
+        "codename": "change_rule",
+        "name": "Can change rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 26
 },
 {
     "fields": {
-        "model": "projectpodcast",
-        "app_label": "projects"
+        "codename": "delete_rule",
+        "name": "Can delete rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 27
 },
 {
     "fields": {
-        "model": "label",
-        "app_label": "schedule"
+        "codename": "add_date",
+        "name": "Can add date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 28
 },
 {
     "fields": {
-        "model": "broadcast",
-        "app_label": "schedule"
+        "codename": "change_date",
+        "name": "Can change date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 29
 },
 {
     "fields": {
-        "model": "widget",
-        "app_label": "widgets"
+        "codename": "delete_date",
+        "name": "Can delete date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 30
 },
 {
     "fields": {
-        "model": "event",
-        "app_label": "events"
+        "codename": "add_param",
+        "name": "Can add param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 31
 },
 {
     "fields": {
-        "model": "flatpage",
-        "app_label": "flatpages"
+        "codename": "change_param",
+        "name": "Can change param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.permission",
     "pk": 32
+},
+{
+    "fields": {
+        "codename": "delete_param",
+        "name": "Can delete param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 33
+},
+{
+    "fields": {
+        "codename": "add_queue",
+        "name": "Can add queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 34
+},
+{
+    "fields": {
+        "codename": "change_queue",
+        "name": "Can change queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 35
+},
+{
+    "fields": {
+        "codename": "delete_queue",
+        "name": "Can delete queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 36
+},
+{
+    "fields": {
+        "codename": "add_message",
+        "name": "Can add message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 37
+},
+{
+    "fields": {
+        "codename": "change_message",
+        "name": "Can change message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 38
+},
+{
+    "fields": {
+        "codename": "delete_message",
+        "name": "Can delete message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 39
+},
+{
+    "fields": {
+        "codename": "add_account",
+        "name": "Can add Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 40
+},
+{
+    "fields": {
+        "codename": "change_account",
+        "name": "Can change Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 41
+},
+{
+    "fields": {
+        "codename": "delete_account",
+        "name": "Can delete Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 42
+},
+{
+    "fields": {
+        "codename": "add_license",
+        "name": "Can add License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 43
+},
+{
+    "fields": {
+        "codename": "change_license",
+        "name": "Can change License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 44
+},
+{
+    "fields": {
+        "codename": "delete_license",
+        "name": "Can delete License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 45
+},
+{
+    "fields": {
+        "codename": "add_blob",
+        "name": "Can add Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 46
+},
+{
+    "fields": {
+        "codename": "change_blob",
+        "name": "Can change Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 47
+},
+{
+    "fields": {
+        "codename": "delete_blob",
+        "name": "Can delete Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 48
+},
+{
+    "fields": {
+        "codename": "add_blobupload",
+        "name": "Can add Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 49
+},
+{
+    "fields": {
+        "codename": "change_blobupload",
+        "name": "Can change Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 50
+},
+{
+    "fields": {
+        "codename": "delete_blobupload",
+        "name": "Can delete Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 51
+},
+{
+    "fields": {
+        "codename": "add_newscategory",
+        "name": "Can add News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 52
+},
+{
+    "fields": {
+        "codename": "change_newscategory",
+        "name": "Can change News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 53
+},
+{
+    "fields": {
+        "codename": "delete_newscategory",
+        "name": "Can delete News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 54
+},
+{
+    "fields": {
+        "codename": "add_newsshow",
+        "name": "Can add News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 55
+},
+{
+    "fields": {
+        "codename": "change_newsshow",
+        "name": "Can change News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 56
+},
+{
+    "fields": {
+        "codename": "delete_newsshow",
+        "name": "Can delete News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 57
+},
+{
+    "fields": {
+        "codename": "add_newspodcast",
+        "name": "Can add News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 58
+},
+{
+    "fields": {
+        "codename": "change_newspodcast",
+        "name": "Can change News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 59
+},
+{
+    "fields": {
+        "codename": "delete_newspodcast",
+        "name": "Can delete News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 60
+},
+{
+    "fields": {
+        "codename": "add_radiocategory",
+        "name": "Can add Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 61
+},
+{
+    "fields": {
+        "codename": "change_radiocategory",
+        "name": "Can change Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 62
+},
+{
+    "fields": {
+        "codename": "delete_radiocategory",
+        "name": "Can delete Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 63
+},
+{
+    "fields": {
+        "codename": "add_radioproducer",
+        "name": "Can add Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 64
+},
+{
+    "fields": {
+        "codename": "change_radioproducer",
+        "name": "Can change Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 65
+},
+{
+    "fields": {
+        "codename": "delete_radioproducer",
+        "name": "Can delete Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 66
+},
+{
+    "fields": {
+        "codename": "add_radioshow",
+        "name": "Can add Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 67
+},
+{
+    "fields": {
+        "codename": "change_radioshow",
+        "name": "Can change Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 68
+},
+{
+    "fields": {
+        "codename": "delete_radioshow",
+        "name": "Can delete Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 69
+},
+{
+    "fields": {
+        "codename": "add_radiopodcast",
+        "name": "Can add Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 70
+},
+{
+    "fields": {
+        "codename": "change_radiopodcast",
+        "name": "Can change Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 71
+},
+{
+    "fields": {
+        "codename": "delete_radiopodcast",
+        "name": "Can delete Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 72
+},
+{
+    "fields": {
+        "codename": "add_projectproducer",
+        "name": "Can add Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 73
+},
+{
+    "fields": {
+        "codename": "change_projectproducer",
+        "name": "Can change Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 74
+},
+{
+    "fields": {
+        "codename": "delete_projectproducer",
+        "name": "Can delete Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 75
+},
+{
+    "fields": {
+        "codename": "add_projectshow",
+        "name": "Can add Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 76
+},
+{
+    "fields": {
+        "codename": "change_projectshow",
+        "name": "Can change Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 77
+},
+{
+    "fields": {
+        "codename": "delete_projectshow",
+        "name": "Can delete Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 78
+},
+{
+    "fields": {
+        "codename": "add_projectpodcast",
+        "name": "Can add Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 79
+},
+{
+    "fields": {
+        "codename": "change_projectpodcast",
+        "name": "Can change Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 80
+},
+{
+    "fields": {
+        "codename": "delete_projectpodcast",
+        "name": "Can delete Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 81
+},
+{
+    "fields": {
+        "codename": "add_label",
+        "name": "Can add Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 82
+},
+{
+    "fields": {
+        "codename": "change_label",
+        "name": "Can change Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 83
+},
+{
+    "fields": {
+        "codename": "delete_label",
+        "name": "Can delete Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 84
+},
+{
+    "fields": {
+        "codename": "add_broadcast",
+        "name": "Can add Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 85
+},
+{
+    "fields": {
+        "codename": "change_broadcast",
+        "name": "Can change Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 86
+},
+{
+    "fields": {
+        "codename": "delete_broadcast",
+        "name": "Can delete Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 87
+},
+{
+    "fields": {
+        "codename": "add_widget",
+        "name": "Can add Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 88
+},
+{
+    "fields": {
+        "codename": "change_widget",
+        "name": "Can change Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 89
+},
+{
+    "fields": {
+        "codename": "delete_widget",
+        "name": "Can delete Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 90
+},
+{
+    "fields": {
+        "codename": "add_event",
+        "name": "Can add Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 91
+},
+{
+    "fields": {
+        "codename": "change_event",
+        "name": "Can change Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 92
+},
+{
+    "fields": {
+        "codename": "delete_event",
+        "name": "Can delete Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 93
+},
+{
+    "fields": {
+        "codename": "add_flatpage",
+        "name": "Can add Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 94
+},
+{
+    "fields": {
+        "codename": "change_flatpage",
+        "name": "Can change Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 95
+},
+{
+    "fields": {
+        "codename": "delete_flatpage",
+        "name": "Can delete Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 96
+},
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-07-23T15:58:12.458Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$dEIpCZPm3qNo$9dzc5slCGY1aXU1UJ++TKCmFgdj6OSG/bHpn3QY1fqI=",
+        "email": "admin@admin.admin",
+        "date_joined": "2015-07-22T11:57:57.101Z"
+    },
+    "model": "auth.user",
+    "pk": 1
 },
 {
     "fields": {
@@ -278,6 +1192,1734 @@
     },
     "model": "sessions.session",
     "pk": "lwysw412sy0jkm15umc6jul7buizmk5f"
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:02:42.786Z",
+        "object_repr": "Kirolak",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:03:08.116Z",
+        "object_repr": "Pausumedia",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:03:12.356Z",
+        "object_repr": "Kiroletik",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:05:01.817Z",
+        "object_repr": "Antxetamedia",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:06:16.101Z",
+        "object_repr": "Antxeta",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:15:47.318Z",
+        "object_repr": "cc-by-sa",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:16:06.513Z",
+        "object_repr": "cc-by",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:16:31.851Z",
+        "object_repr": "Real Unionen zelai erdia indartuko du Martinsek",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:38:05.077Z",
+        "object_repr": "Lurra",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:38:22.718Z",
+        "object_repr": "Antxetamedia",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:41:30.746Z",
+        "object_repr": "Txingurri hotsak",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "action_flag": 3,
+        "action_time": "2015-07-22T12:42:41.689Z",
+        "object_repr": "Antxetamedia",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:42:52.654Z",
+        "object_repr": "Saio osoa",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:55:00.683Z",
+        "object_repr": "Feminismoa",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:55:06.760Z",
+        "object_repr": "Gonekin ero bero",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T12:55:16.422Z",
+        "object_repr": "Saio osoa",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-22T12:55:33.404Z",
+        "object_repr": "Saio osoa",
+        "object_id": "3",
+        "change_message": "Added Blob \"Feminismoa - #2\".",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-22T12:55:46.066Z",
+        "object_repr": "Saio osoa",
+        "object_id": "3",
+        "change_message": "Added Blob \"Feminismoa - #3\".",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:00:19.885Z",
+        "object_repr": "Aitzurra",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:01:11.461Z",
+        "object_repr": "Saio osoa",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 20
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:02:50.589Z",
+        "object_repr": "Amapola morea",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 21
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:03:27.855Z",
+        "object_repr": "Anarirekin elkarrizketa",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 22
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:10:09.694Z",
+        "object_repr": "Kazeta",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 23
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:10:28.164Z",
+        "object_repr": "Zebra bidea",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 24
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:11:05.828Z",
+        "object_repr": "EHKZ",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 25
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:12:56.269Z",
+        "object_repr": "Hari gorria",
+        "object_id": "7",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 26
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:13:08.415Z",
+        "object_repr": "Martxoak 8rako saio berezia",
+        "object_id": "7",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 27
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:16:36.962Z",
+        "object_repr": "Gazteak",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 28
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:16:43.245Z",
+        "object_repr": "Ezker gantxoa",
+        "object_id": "8",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 29
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:16:55.080Z",
+        "object_repr": "Saio osoa",
+        "object_id": "8",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 30
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:20:16.674Z",
+        "object_repr": "Berriak",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 31
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:20:36.915Z",
+        "object_repr": "Kirola",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 32
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:20:45.276Z",
+        "object_repr": "Aisialdia",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 33
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:21:08.152Z",
+        "object_repr": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 34
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:22:06.878Z",
+        "object_repr": "Kultura",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 35
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:22:21.782Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 36
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:26:53.660Z",
+        "object_repr": "Pausu auzoko bestak martxan",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 37
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:28:01.905Z",
+        "object_repr": "Ingurugiroa",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 38
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:28:22.843Z",
+        "object_repr": "Beheko auzoko hainbat arazo konpontzeko zita",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 39
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:31:03.727Z",
+        "object_repr": "Aldarrikapenak",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 40
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:31:14.165Z",
+        "object_repr": "Kataluniatik Euskal Herrira txirrindan, kirola eta aldarrikapena!",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 41
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:32:05.670Z",
+        "object_repr": "Dena prest Hondarribian, Blues doinuak hartzeko",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 42
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:33:59.065Z",
+        "object_repr": "Politika",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 43
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:34:01.875Z",
+        "object_repr": "Herria eraikitzeko konpromisoa berritsi da Ficoban",
+        "object_id": "7",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 44
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:35:14.699Z",
+        "object_repr": "EHan bakea lortzearen aldeko giza konferentzia",
+        "object_id": "8",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 45
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:48:42.352Z",
+        "object_repr": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz?",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 46
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T13:53:56.773Z",
+        "object_repr": "Kale zinema",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 47
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-22T14:01:44.373Z",
+        "object_repr": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz?",
+        "object_id": "1",
+        "change_message": "Changed recurrences.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 48
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:06:29.908Z",
+        "object_repr": "Musikirun maketa lehiaketa",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 49
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:07:53.095Z",
+        "object_repr": "Kontzertua",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 50
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:08:44.234Z",
+        "object_repr": "Dantza ikuskizuna",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 51
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-22T14:09:33.056Z",
+        "object_repr": "Dantza ikuskizuna",
+        "object_id": "5",
+        "change_message": "Changed recurrences.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 52
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:23:59.588Z",
+        "object_repr": "Metal garrasia",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 53
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:25:08.392Z",
+        "object_repr": "Hari gorria",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 54
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-22T14:25:24.569Z",
+        "object_repr": "Hari gorria",
+        "object_id": "2",
+        "change_message": "Changed content.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 55
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-22T14:26:19.127Z",
+        "object_repr": "Amapola morea",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 56
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:48:59.438Z",
+        "object_repr": "Gorria",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 57
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:49:15.381Z",
+        "object_repr": "Beltza",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 58
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:49:24.965Z",
+        "object_repr": "Beltza",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 59
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:49:36.971Z",
+        "object_repr": "Gorria",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 60
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:49:42.002Z",
+        "object_repr": "Kiroletik",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 61
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:52:23.365Z",
+        "object_repr": "Berdea",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 62
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:52:36.369Z",
+        "object_repr": "Txingurri hotsak",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 63
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:53:07.355Z",
+        "object_repr": "Morea",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 64
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:53:21.174Z",
+        "object_repr": "Gonekin ero bero",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 65
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:53:47.721Z",
+        "object_repr": "Txuria",
+        "object_id": "7",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 66
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:54:09.578Z",
+        "object_repr": "Berde iluna",
+        "object_id": "8",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 67
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:54:27.283Z",
+        "object_repr": "Aitzurra",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 68
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:55:03.751Z",
+        "object_repr": "More iluna",
+        "object_id": "9",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 69
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:55:12.738Z",
+        "object_repr": "Amapola morea",
+        "object_id": "5",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 70
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:55:43.240Z",
+        "object_repr": "Zebra bidea",
+        "object_id": "6",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 71
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:56:32.300Z",
+        "object_repr": "Hari gorria",
+        "object_id": "7",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 72
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:57:06.334Z",
+        "object_repr": "Ezker gantxoa",
+        "object_id": "8",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 73
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:58:48.988Z",
+        "object_repr": "Arroxa",
+        "object_id": "10",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 74
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:59:00.617Z",
+        "object_repr": "Aiako harrikada",
+        "object_id": "9",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 75
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:59:28.443Z",
+        "object_repr": "Horia",
+        "object_id": "11",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 76
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T10:59:37.724Z",
+        "object_repr": "Bazkalaurrekoa",
+        "object_id": "10",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 77
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:00:11.440Z",
+        "object_repr": "urdina",
+        "object_id": "12",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 78
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:00:20.879Z",
+        "object_repr": "Bidasoaldeko Efemerideak",
+        "object_id": "11",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 79
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:00:54.502Z",
+        "object_repr": "Urdin iluna",
+        "object_id": "13",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 80
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:01:05.918Z",
+        "object_repr": "Donostiko 59. Zinemaldia",
+        "object_id": "12",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 81
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:01:37.294Z",
+        "object_repr": "Urdin fosfi",
+        "object_id": "14",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 82
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:01:57.002Z",
+        "object_repr": "Elkarrizketak / Erreportaiak / Kolaborazioak",
+        "object_id": "13",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 83
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:02:30.407Z",
+        "object_repr": "Herri pilulak",
+        "object_id": "14",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 84
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:03:04.970Z",
+        "object_repr": "Kale kantoian",
+        "object_id": "15",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 85
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:03:33.472Z",
+        "object_repr": "Musika klik",
+        "object_id": "16",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 86
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T11:04:18.391Z",
+        "object_repr": "Gure kunka",
+        "object_id": "17",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 87
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-23T12:38:01.416Z",
+        "object_repr": "Urdin fosfi",
+        "object_id": "14",
+        "change_message": "No fields changed.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 88
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T12:59:28.297Z",
+        "object_repr": "Kaixo",
+        "object_id": "9",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 89
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-23T17:19:35.688Z",
+        "object_repr": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
+        "object_id": "1",
+        "change_message": "No fields changed.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 90
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-23T17:50:07.443Z",
+        "object_repr": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
+        "object_id": "1",
+        "change_message": "No fields changed.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 91
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-23T17:51:16.538Z",
+        "object_repr": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
+        "object_id": "1",
+        "change_message": "No fields changed.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 92
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T18:09:14.570Z",
+        "object_repr": "Saio osoa",
+        "object_id": "9",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 93
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T18:10:46.480Z",
+        "object_repr": "Button libre ekimenari buruzko saioa",
+        "object_id": "10",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 94
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-23T18:11:10.366Z",
+        "object_repr": "Button libre ekimenari buruzko saioa",
+        "object_id": "10",
+        "change_message": "Added Audio blob \"Button libre ekimenari buruzko saioa - #2\". Added Audio blob \"Button libre ekimenari buruzko saioa - #3\".",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 95
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-23T18:13:28.320Z",
+        "object_repr": "Herri harresian egondako erasoei buruzko saioa",
+        "object_id": "11",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 96
 },
 {
     "fields": {
@@ -311,7 +2953,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 1,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-16-08.3gpp"
     },
     "model": "blobs.blob",
@@ -324,7 +2969,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 2,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-16-24.3gpp"
     },
     "model": "blobs.blob",
@@ -337,7 +2985,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 3,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-16-41.3gpp"
     },
     "model": "blobs.blob",
@@ -350,7 +3001,10 @@
         "license": 1,
         "counter": 2,
         "object_id": 3,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-17-00.3gpp"
     },
     "model": "blobs.blob",
@@ -363,7 +3017,10 @@
         "license": 1,
         "counter": 3,
         "object_id": 3,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-17-29.3gpp"
     },
     "model": "blobs.blob",
@@ -376,7 +3033,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 4,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-17-29_dY3N4zY.3gpp"
     },
     "model": "blobs.blob",
@@ -389,7 +3049,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 5,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-18-20.3gpp"
     },
     "model": "blobs.blob",
@@ -402,7 +3065,10 @@
         "license": 2,
         "counter": 2,
         "object_id": 5,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-19-39.3gpp"
     },
     "model": "blobs.blob",
@@ -415,7 +3081,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 7,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-17-35.3gpp"
     },
     "model": "blobs.blob",
@@ -428,7 +3097,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 8,
-        "content_type": 21,
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
         "local": "podcasts/2013-02-19_20-18-20_IWi06yw.3gpp"
     },
     "model": "blobs.blob",
@@ -441,7 +3113,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 1,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-18-33.3gpp"
     },
     "model": "blobs.blob",
@@ -454,7 +3129,10 @@
         "license": 2,
         "counter": 2,
         "object_id": 1,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-18-33_R5gQUWv.3gpp"
     },
     "model": "blobs.blob",
@@ -467,7 +3145,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 2,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-18-20_9DiTmy3.3gpp"
     },
     "model": "blobs.blob",
@@ -480,7 +3161,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 3,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-18-33_wr6CYfY.3gpp"
     },
     "model": "blobs.blob",
@@ -493,7 +3177,10 @@
         "license": 2,
         "counter": 2,
         "object_id": 3,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-20-14.3gpp"
     },
     "model": "blobs.blob",
@@ -506,7 +3193,10 @@
         "license": 2,
         "counter": 1,
         "object_id": 4,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-19-39_Wb38LcV.3gpp"
     },
     "model": "blobs.blob",
@@ -519,7 +3209,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 5,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-20-14_CrBhkr6.3gpp"
     },
     "model": "blobs.blob",
@@ -532,7 +3225,10 @@
         "license": 1,
         "counter": 1,
         "object_id": 6,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-18-00.3gpp"
     },
     "model": "blobs.blob",
@@ -545,7 +3241,10 @@
         "license": 2,
         "counter": 2,
         "object_id": 6,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": "podcasts/2013-02-19_20-20-14_E9iJ8D8.3gpp"
     },
     "model": "blobs.blob",
@@ -558,11 +3257,94 @@
         "license": 1,
         "counter": 1,
         "object_id": 7,
-        "content_type": 20,
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
         "local": ""
     },
     "model": "blobs.blob",
     "pk": 20
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 9,
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-17-35.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 21
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 10,
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-20-14.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 22
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 2,
+        "object_id": 10,
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-19-39.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 23
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 2,
+        "counter": 3,
+        "object_id": 10,
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-19-17.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 24
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 11,
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-18-00.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 25
 },
 {
     "fields": {
@@ -772,6 +3554,61 @@
     },
     "model": "blobs.blobupload",
     "pk": 19
+},
+{
+    "fields": {
+        "started": "2015-07-23T18:09:11.435Z",
+        "ended": "2015-07-23T18:09:14.569Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 21
+    },
+    "model": "blobs.blobupload",
+    "pk": 20
+},
+{
+    "fields": {
+        "started": "2015-07-23T18:10:43.842Z",
+        "ended": "2015-07-23T18:10:46.479Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 22
+    },
+    "model": "blobs.blobupload",
+    "pk": 21
+},
+{
+    "fields": {
+        "started": "2015-07-23T18:11:06.682Z",
+        "ended": "2015-07-23T18:11:09.755Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 23
+    },
+    "model": "blobs.blobupload",
+    "pk": 22
+},
+{
+    "fields": {
+        "started": "2015-07-23T18:11:09.758Z",
+        "ended": "2015-07-23T18:11:10.364Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 24
+    },
+    "model": "blobs.blobupload",
+    "pk": 23
+},
+{
+    "fields": {
+        "started": "2015-07-23T18:13:25.602Z",
+        "ended": "2015-07-23T18:13:28.318Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 25
+    },
+    "model": "blobs.blobupload",
+    "pk": 24
 },
 {
     "fields": {
@@ -1227,6 +4064,42 @@
 },
 {
     "fields": {
+        "description": "<p>Kaixo entzuleok!! Gaurkoan zuekin <strong>Mikel Button</strong> izango dugu, bera madrilen epaitua izaten hari den gazteetako bat dugu eta bere egoera eta sentsazioak azalduko dizkigu. Ondoren <strong>hauteskundeen</strong> inguruko analisi bat egingo digu Bixargorrik. <strong>9ak LIBRE!!</strong></p>\r\n",
+        "show": 8,
+        "image": "shows/p006_f01.jpg",
+        "title": "Saio osoa",
+        "pub_date": "2015-07-01T18:08:02Z",
+        "slug": "saio-osoa-2"
+    },
+    "model": "radio.radiopodcast",
+    "pk": 9
+},
+{
+    "fields": {
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas rhoncus. Morbi porta velit iaculis nisi convallis, non accumsan nisi egestas. Mauris nisl nisl, ullamcorper ut turpis vel, sollicitudin rutrum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras eleifend ornare pharetra. Quisque nec egestas ligula, a maximus neque. Sed sapien arcu, feugiat et ipsum id, gravida laoreet sem. Nullam at justo turpis. Vestibulum nec maximus neque. Donec nisl elit, scelerisque sit amet lectus sed, lobortis vulputate ipsum. Aenean dignissim erat vitae metus venenatis, tempus sagittis sapien sollicitudin. Suspendisse potenti. Duis ultrices eros id ligula malesuada tristique. Nunc sed lectus sed justo commodo vehicula. Fusce ornare nunc quam, eget sagittis massa cursus egestas.</p>\r\n",
+        "show": 8,
+        "image": "shows/p006_f01_XWLdng2.jpg",
+        "title": "Button libre ekimenari buruzko saioa",
+        "pub_date": "2015-06-30T18:09:18Z",
+        "slug": "button-libre-ekimenari-buruzko-saioa"
+    },
+    "model": "radio.radiopodcast",
+    "pk": 10
+},
+{
+    "fields": {
+        "description": "<p>Kaixo!! Gaurkoan Herri harresian egondako erasoaren inguruan mintzatu gara, analisi eta guzti.</p>\r\n",
+        "show": 8,
+        "image": "shows/mosaikoa.jpg",
+        "title": "Herri harresian egondako erasoei buruzko saioa",
+        "pub_date": "2015-06-16T18:11:10Z",
+        "slug": "herri-harresian-egondako-erasoei-buruzko-saioa"
+    },
+    "model": "radio.radiopodcast",
+    "pk": 11
+},
+{
+    "fields": {
         "colour": "#ff0000",
         "name": "Gorria"
     },
@@ -1654,2044 +4527,5 @@
     },
     "model": "events.event",
     "pk": 5
-},
-{
-    "fields": {
-        "codename": "add_logentry",
-        "name": "Can add log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 1
-},
-{
-    "fields": {
-        "codename": "change_logentry",
-        "name": "Can change log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 2
-},
-{
-    "fields": {
-        "codename": "delete_logentry",
-        "name": "Can delete log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 3
-},
-{
-    "fields": {
-        "codename": "add_site",
-        "name": "Can add site",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 4
-},
-{
-    "fields": {
-        "codename": "change_site",
-        "name": "Can change site",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 5
-},
-{
-    "fields": {
-        "codename": "delete_site",
-        "name": "Can delete site",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 6
-},
-{
-    "fields": {
-        "codename": "add_permission",
-        "name": "Can add permission",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 7
-},
-{
-    "fields": {
-        "codename": "change_permission",
-        "name": "Can change permission",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 8
-},
-{
-    "fields": {
-        "codename": "delete_permission",
-        "name": "Can delete permission",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 9
-},
-{
-    "fields": {
-        "codename": "add_group",
-        "name": "Can add group",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 10
-},
-{
-    "fields": {
-        "codename": "change_group",
-        "name": "Can change group",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 11
-},
-{
-    "fields": {
-        "codename": "delete_group",
-        "name": "Can delete group",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 12
-},
-{
-    "fields": {
-        "codename": "add_user",
-        "name": "Can add user",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 13
-},
-{
-    "fields": {
-        "codename": "change_user",
-        "name": "Can change user",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 14
-},
-{
-    "fields": {
-        "codename": "delete_user",
-        "name": "Can delete user",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 15
-},
-{
-    "fields": {
-        "codename": "add_contenttype",
-        "name": "Can add content type",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 16
-},
-{
-    "fields": {
-        "codename": "change_contenttype",
-        "name": "Can change content type",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 17
-},
-{
-    "fields": {
-        "codename": "delete_contenttype",
-        "name": "Can delete content type",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 18
-},
-{
-    "fields": {
-        "codename": "add_session",
-        "name": "Can add session",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 19
-},
-{
-    "fields": {
-        "codename": "change_session",
-        "name": "Can change session",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 20
-},
-{
-    "fields": {
-        "codename": "delete_session",
-        "name": "Can delete session",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 21
-},
-{
-    "fields": {
-        "codename": "add_recurrence",
-        "name": "Can add recurrence",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 22
-},
-{
-    "fields": {
-        "codename": "change_recurrence",
-        "name": "Can change recurrence",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 23
-},
-{
-    "fields": {
-        "codename": "delete_recurrence",
-        "name": "Can delete recurrence",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 24
-},
-{
-    "fields": {
-        "codename": "add_rule",
-        "name": "Can add rule",
-        "content_type": 9
-    },
-    "model": "auth.permission",
-    "pk": 25
-},
-{
-    "fields": {
-        "codename": "change_rule",
-        "name": "Can change rule",
-        "content_type": 9
-    },
-    "model": "auth.permission",
-    "pk": 26
-},
-{
-    "fields": {
-        "codename": "delete_rule",
-        "name": "Can delete rule",
-        "content_type": 9
-    },
-    "model": "auth.permission",
-    "pk": 27
-},
-{
-    "fields": {
-        "codename": "add_date",
-        "name": "Can add date",
-        "content_type": 10
-    },
-    "model": "auth.permission",
-    "pk": 28
-},
-{
-    "fields": {
-        "codename": "change_date",
-        "name": "Can change date",
-        "content_type": 10
-    },
-    "model": "auth.permission",
-    "pk": 29
-},
-{
-    "fields": {
-        "codename": "delete_date",
-        "name": "Can delete date",
-        "content_type": 10
-    },
-    "model": "auth.permission",
-    "pk": 30
-},
-{
-    "fields": {
-        "codename": "add_param",
-        "name": "Can add param",
-        "content_type": 11
-    },
-    "model": "auth.permission",
-    "pk": 31
-},
-{
-    "fields": {
-        "codename": "change_param",
-        "name": "Can change param",
-        "content_type": 11
-    },
-    "model": "auth.permission",
-    "pk": 32
-},
-{
-    "fields": {
-        "codename": "delete_param",
-        "name": "Can delete param",
-        "content_type": 11
-    },
-    "model": "auth.permission",
-    "pk": 33
-},
-{
-    "fields": {
-        "codename": "add_queue",
-        "name": "Can add queue",
-        "content_type": 12
-    },
-    "model": "auth.permission",
-    "pk": 34
-},
-{
-    "fields": {
-        "codename": "change_queue",
-        "name": "Can change queue",
-        "content_type": 12
-    },
-    "model": "auth.permission",
-    "pk": 35
-},
-{
-    "fields": {
-        "codename": "delete_queue",
-        "name": "Can delete queue",
-        "content_type": 12
-    },
-    "model": "auth.permission",
-    "pk": 36
-},
-{
-    "fields": {
-        "codename": "add_message",
-        "name": "Can add message",
-        "content_type": 13
-    },
-    "model": "auth.permission",
-    "pk": 37
-},
-{
-    "fields": {
-        "codename": "change_message",
-        "name": "Can change message",
-        "content_type": 13
-    },
-    "model": "auth.permission",
-    "pk": 38
-},
-{
-    "fields": {
-        "codename": "delete_message",
-        "name": "Can delete message",
-        "content_type": 13
-    },
-    "model": "auth.permission",
-    "pk": 39
-},
-{
-    "fields": {
-        "codename": "add_account",
-        "name": "Can add Account",
-        "content_type": 14
-    },
-    "model": "auth.permission",
-    "pk": 40
-},
-{
-    "fields": {
-        "codename": "change_account",
-        "name": "Can change Account",
-        "content_type": 14
-    },
-    "model": "auth.permission",
-    "pk": 41
-},
-{
-    "fields": {
-        "codename": "delete_account",
-        "name": "Can delete Account",
-        "content_type": 14
-    },
-    "model": "auth.permission",
-    "pk": 42
-},
-{
-    "fields": {
-        "codename": "add_license",
-        "name": "Can add License",
-        "content_type": 15
-    },
-    "model": "auth.permission",
-    "pk": 43
-},
-{
-    "fields": {
-        "codename": "change_license",
-        "name": "Can change License",
-        "content_type": 15
-    },
-    "model": "auth.permission",
-    "pk": 44
-},
-{
-    "fields": {
-        "codename": "delete_license",
-        "name": "Can delete License",
-        "content_type": 15
-    },
-    "model": "auth.permission",
-    "pk": 45
-},
-{
-    "fields": {
-        "codename": "add_blob",
-        "name": "Can add Blob",
-        "content_type": 16
-    },
-    "model": "auth.permission",
-    "pk": 46
-},
-{
-    "fields": {
-        "codename": "change_blob",
-        "name": "Can change Blob",
-        "content_type": 16
-    },
-    "model": "auth.permission",
-    "pk": 47
-},
-{
-    "fields": {
-        "codename": "delete_blob",
-        "name": "Can delete Blob",
-        "content_type": 16
-    },
-    "model": "auth.permission",
-    "pk": 48
-},
-{
-    "fields": {
-        "codename": "add_blobupload",
-        "name": "Can add Blob upload",
-        "content_type": 17
-    },
-    "model": "auth.permission",
-    "pk": 49
-},
-{
-    "fields": {
-        "codename": "change_blobupload",
-        "name": "Can change Blob upload",
-        "content_type": 17
-    },
-    "model": "auth.permission",
-    "pk": 50
-},
-{
-    "fields": {
-        "codename": "delete_blobupload",
-        "name": "Can delete Blob upload",
-        "content_type": 17
-    },
-    "model": "auth.permission",
-    "pk": 51
-},
-{
-    "fields": {
-        "codename": "add_newscategory",
-        "name": "Can add News category",
-        "content_type": 18
-    },
-    "model": "auth.permission",
-    "pk": 52
-},
-{
-    "fields": {
-        "codename": "change_newscategory",
-        "name": "Can change News category",
-        "content_type": 18
-    },
-    "model": "auth.permission",
-    "pk": 53
-},
-{
-    "fields": {
-        "codename": "delete_newscategory",
-        "name": "Can delete News category",
-        "content_type": 18
-    },
-    "model": "auth.permission",
-    "pk": 54
-},
-{
-    "fields": {
-        "codename": "add_newsshow",
-        "name": "Can add News show",
-        "content_type": 19
-    },
-    "model": "auth.permission",
-    "pk": 55
-},
-{
-    "fields": {
-        "codename": "change_newsshow",
-        "name": "Can change News show",
-        "content_type": 19
-    },
-    "model": "auth.permission",
-    "pk": 56
-},
-{
-    "fields": {
-        "codename": "delete_newsshow",
-        "name": "Can delete News show",
-        "content_type": 19
-    },
-    "model": "auth.permission",
-    "pk": 57
-},
-{
-    "fields": {
-        "codename": "add_newspodcast",
-        "name": "Can add News podcast",
-        "content_type": 20
-    },
-    "model": "auth.permission",
-    "pk": 58
-},
-{
-    "fields": {
-        "codename": "change_newspodcast",
-        "name": "Can change News podcast",
-        "content_type": 20
-    },
-    "model": "auth.permission",
-    "pk": 59
-},
-{
-    "fields": {
-        "codename": "delete_newspodcast",
-        "name": "Can delete News podcast",
-        "content_type": 20
-    },
-    "model": "auth.permission",
-    "pk": 60
-},
-{
-    "fields": {
-        "codename": "add_radiocategory",
-        "name": "Can add Radio category",
-        "content_type": 21
-    },
-    "model": "auth.permission",
-    "pk": 61
-},
-{
-    "fields": {
-        "codename": "change_radiocategory",
-        "name": "Can change Radio category",
-        "content_type": 21
-    },
-    "model": "auth.permission",
-    "pk": 62
-},
-{
-    "fields": {
-        "codename": "delete_radiocategory",
-        "name": "Can delete Radio category",
-        "content_type": 21
-    },
-    "model": "auth.permission",
-    "pk": 63
-},
-{
-    "fields": {
-        "codename": "add_radioproducer",
-        "name": "Can add Radio producer",
-        "content_type": 22
-    },
-    "model": "auth.permission",
-    "pk": 64
-},
-{
-    "fields": {
-        "codename": "change_radioproducer",
-        "name": "Can change Radio producer",
-        "content_type": 22
-    },
-    "model": "auth.permission",
-    "pk": 65
-},
-{
-    "fields": {
-        "codename": "delete_radioproducer",
-        "name": "Can delete Radio producer",
-        "content_type": 22
-    },
-    "model": "auth.permission",
-    "pk": 66
-},
-{
-    "fields": {
-        "codename": "add_radioshow",
-        "name": "Can add Radio show",
-        "content_type": 23
-    },
-    "model": "auth.permission",
-    "pk": 67
-},
-{
-    "fields": {
-        "codename": "change_radioshow",
-        "name": "Can change Radio show",
-        "content_type": 23
-    },
-    "model": "auth.permission",
-    "pk": 68
-},
-{
-    "fields": {
-        "codename": "delete_radioshow",
-        "name": "Can delete Radio show",
-        "content_type": 23
-    },
-    "model": "auth.permission",
-    "pk": 69
-},
-{
-    "fields": {
-        "codename": "add_radiopodcast",
-        "name": "Can add Radio podcast",
-        "content_type": 24
-    },
-    "model": "auth.permission",
-    "pk": 70
-},
-{
-    "fields": {
-        "codename": "change_radiopodcast",
-        "name": "Can change Radio podcast",
-        "content_type": 24
-    },
-    "model": "auth.permission",
-    "pk": 71
-},
-{
-    "fields": {
-        "codename": "delete_radiopodcast",
-        "name": "Can delete Radio podcast",
-        "content_type": 24
-    },
-    "model": "auth.permission",
-    "pk": 72
-},
-{
-    "fields": {
-        "codename": "add_projectproducer",
-        "name": "Can add Project producer",
-        "content_type": 25
-    },
-    "model": "auth.permission",
-    "pk": 73
-},
-{
-    "fields": {
-        "codename": "change_projectproducer",
-        "name": "Can change Project producer",
-        "content_type": 25
-    },
-    "model": "auth.permission",
-    "pk": 74
-},
-{
-    "fields": {
-        "codename": "delete_projectproducer",
-        "name": "Can delete Project producer",
-        "content_type": 25
-    },
-    "model": "auth.permission",
-    "pk": 75
-},
-{
-    "fields": {
-        "codename": "add_projectshow",
-        "name": "Can add Project show",
-        "content_type": 26
-    },
-    "model": "auth.permission",
-    "pk": 76
-},
-{
-    "fields": {
-        "codename": "change_projectshow",
-        "name": "Can change Project show",
-        "content_type": 26
-    },
-    "model": "auth.permission",
-    "pk": 77
-},
-{
-    "fields": {
-        "codename": "delete_projectshow",
-        "name": "Can delete Project show",
-        "content_type": 26
-    },
-    "model": "auth.permission",
-    "pk": 78
-},
-{
-    "fields": {
-        "codename": "add_projectpodcast",
-        "name": "Can add Project podcast",
-        "content_type": 27
-    },
-    "model": "auth.permission",
-    "pk": 79
-},
-{
-    "fields": {
-        "codename": "change_projectpodcast",
-        "name": "Can change Project podcast",
-        "content_type": 27
-    },
-    "model": "auth.permission",
-    "pk": 80
-},
-{
-    "fields": {
-        "codename": "delete_projectpodcast",
-        "name": "Can delete Project podcast",
-        "content_type": 27
-    },
-    "model": "auth.permission",
-    "pk": 81
-},
-{
-    "fields": {
-        "codename": "add_label",
-        "name": "Can add Label",
-        "content_type": 28
-    },
-    "model": "auth.permission",
-    "pk": 82
-},
-{
-    "fields": {
-        "codename": "change_label",
-        "name": "Can change Label",
-        "content_type": 28
-    },
-    "model": "auth.permission",
-    "pk": 83
-},
-{
-    "fields": {
-        "codename": "delete_label",
-        "name": "Can delete Label",
-        "content_type": 28
-    },
-    "model": "auth.permission",
-    "pk": 84
-},
-{
-    "fields": {
-        "codename": "add_broadcast",
-        "name": "Can add Broadcast",
-        "content_type": 29
-    },
-    "model": "auth.permission",
-    "pk": 85
-},
-{
-    "fields": {
-        "codename": "change_broadcast",
-        "name": "Can change Broadcast",
-        "content_type": 29
-    },
-    "model": "auth.permission",
-    "pk": 86
-},
-{
-    "fields": {
-        "codename": "delete_broadcast",
-        "name": "Can delete Broadcast",
-        "content_type": 29
-    },
-    "model": "auth.permission",
-    "pk": 87
-},
-{
-    "fields": {
-        "codename": "add_widget",
-        "name": "Can add Widget",
-        "content_type": 30
-    },
-    "model": "auth.permission",
-    "pk": 88
-},
-{
-    "fields": {
-        "codename": "change_widget",
-        "name": "Can change Widget",
-        "content_type": 30
-    },
-    "model": "auth.permission",
-    "pk": 89
-},
-{
-    "fields": {
-        "codename": "delete_widget",
-        "name": "Can delete Widget",
-        "content_type": 30
-    },
-    "model": "auth.permission",
-    "pk": 90
-},
-{
-    "fields": {
-        "codename": "add_event",
-        "name": "Can add Event",
-        "content_type": 31
-    },
-    "model": "auth.permission",
-    "pk": 91
-},
-{
-    "fields": {
-        "codename": "change_event",
-        "name": "Can change Event",
-        "content_type": 31
-    },
-    "model": "auth.permission",
-    "pk": 92
-},
-{
-    "fields": {
-        "codename": "delete_event",
-        "name": "Can delete Event",
-        "content_type": 31
-    },
-    "model": "auth.permission",
-    "pk": 93
-},
-{
-    "fields": {
-        "codename": "add_flatpage",
-        "name": "Can add Flatpage",
-        "content_type": 32
-    },
-    "model": "auth.permission",
-    "pk": 94
-},
-{
-    "fields": {
-        "codename": "change_flatpage",
-        "name": "Can change Flatpage",
-        "content_type": 32
-    },
-    "model": "auth.permission",
-    "pk": 95
-},
-{
-    "fields": {
-        "codename": "delete_flatpage",
-        "name": "Can delete Flatpage",
-        "content_type": 32
-    },
-    "model": "auth.permission",
-    "pk": 96
-},
-{
-    "fields": {
-        "username": "admin",
-        "first_name": "",
-        "last_name": "",
-        "is_active": true,
-        "is_superuser": true,
-        "is_staff": true,
-        "last_login": "2015-07-23T15:58:12.458Z",
-        "groups": [],
-        "user_permissions": [],
-        "password": "pbkdf2_sha256$20000$dEIpCZPm3qNo$9dzc5slCGY1aXU1UJ++TKCmFgdj6OSG/bHpn3QY1fqI=",
-        "email": "admin@admin.admin",
-        "date_joined": "2015-07-22T11:57:57.101Z"
-    },
-    "model": "auth.user",
-    "pk": 1
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:02:42.786Z",
-        "object_repr": "Kirolak",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 1
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:03:08.116Z",
-        "object_repr": "Pausumedia",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 22
-    },
-    "model": "admin.logentry",
-    "pk": 2
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:03:12.356Z",
-        "object_repr": "Kiroletik",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 3
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:05:01.817Z",
-        "object_repr": "Antxetamedia",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 11
-    },
-    "model": "admin.logentry",
-    "pk": 4
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:06:16.101Z",
-        "object_repr": "Antxeta",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 11
-    },
-    "model": "admin.logentry",
-    "pk": 5
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:15:47.318Z",
-        "object_repr": "cc-by-sa",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 12
-    },
-    "model": "admin.logentry",
-    "pk": 6
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:16:06.513Z",
-        "object_repr": "cc-by",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 12
-    },
-    "model": "admin.logentry",
-    "pk": 7
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:16:31.851Z",
-        "object_repr": "Real Unionen zelai erdia indartuko du Martinsek",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 8
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:38:05.077Z",
-        "object_repr": "Lurra",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 9
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:38:22.718Z",
-        "object_repr": "Antxetamedia",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 22
-    },
-    "model": "admin.logentry",
-    "pk": 10
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:41:30.746Z",
-        "object_repr": "Txingurri hotsak",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 11
-},
-{
-    "fields": {
-        "action_flag": 3,
-        "action_time": "2015-07-22T12:42:41.689Z",
-        "object_repr": "Antxetamedia",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 11
-    },
-    "model": "admin.logentry",
-    "pk": 12
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:42:52.654Z",
-        "object_repr": "Saio osoa",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 13
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:55:00.683Z",
-        "object_repr": "Feminismoa",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 14
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:55:06.760Z",
-        "object_repr": "Gonekin ero bero",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 15
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T12:55:16.422Z",
-        "object_repr": "Saio osoa",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 16
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-22T12:55:33.404Z",
-        "object_repr": "Saio osoa",
-        "object_id": "3",
-        "change_message": "Added Blob \"Feminismoa - #2\".",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 17
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-22T12:55:46.066Z",
-        "object_repr": "Saio osoa",
-        "object_id": "3",
-        "change_message": "Added Blob \"Feminismoa - #3\".",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 18
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:00:19.885Z",
-        "object_repr": "Aitzurra",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 19
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:01:11.461Z",
-        "object_repr": "Saio osoa",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 20
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:02:50.589Z",
-        "object_repr": "Amapola morea",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 21
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:03:27.855Z",
-        "object_repr": "Anarirekin elkarrizketa",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 22
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:10:09.694Z",
-        "object_repr": "Kazeta",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 23
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:10:28.164Z",
-        "object_repr": "Zebra bidea",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 24
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:11:05.828Z",
-        "object_repr": "EHKZ",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 25
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:12:56.269Z",
-        "object_repr": "Hari gorria",
-        "object_id": "7",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 26
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:13:08.415Z",
-        "object_repr": "Martxoak 8rako saio berezia",
-        "object_id": "7",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 27
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:16:36.962Z",
-        "object_repr": "Gazteak",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 28
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:16:43.245Z",
-        "object_repr": "Ezker gantxoa",
-        "object_id": "8",
-        "change_message": "",
-        "user": 1,
-        "content_type": 23
-    },
-    "model": "admin.logentry",
-    "pk": 29
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:16:55.080Z",
-        "object_repr": "Saio osoa",
-        "object_id": "8",
-        "change_message": "",
-        "user": 1,
-        "content_type": 21
-    },
-    "model": "admin.logentry",
-    "pk": 30
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:20:16.674Z",
-        "object_repr": "Berriak",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 19
-    },
-    "model": "admin.logentry",
-    "pk": 31
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:20:36.915Z",
-        "object_repr": "Kirola",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 32
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:20:45.276Z",
-        "object_repr": "Aisialdia",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 33
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:21:08.152Z",
-        "object_repr": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 34
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:22:06.878Z",
-        "object_repr": "Kultura",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 35
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:22:21.782Z",
-        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 36
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:26:53.660Z",
-        "object_repr": "Pausu auzoko bestak martxan",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 37
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:28:01.905Z",
-        "object_repr": "Ingurugiroa",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 38
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:28:22.843Z",
-        "object_repr": "Beheko auzoko hainbat arazo konpontzeko zita",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 39
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:31:03.727Z",
-        "object_repr": "Aldarrikapenak",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 40
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:31:14.165Z",
-        "object_repr": "Kataluniatik Euskal Herrira txirrindan, kirola eta aldarrikapena!",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 41
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:32:05.670Z",
-        "object_repr": "Dena prest Hondarribian, Blues doinuak hartzeko",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 42
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:33:59.065Z",
-        "object_repr": "Politika",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 18
-    },
-    "model": "admin.logentry",
-    "pk": 43
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:34:01.875Z",
-        "object_repr": "Herria eraikitzeko konpromisoa berritsi da Ficoban",
-        "object_id": "7",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 44
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:35:14.699Z",
-        "object_repr": "EHan bakea lortzearen aldeko giza konferentzia",
-        "object_id": "8",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 45
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:48:42.352Z",
-        "object_repr": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz?",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 46
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T13:53:56.773Z",
-        "object_repr": "Kale zinema",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 47
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-22T14:01:44.373Z",
-        "object_repr": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz?",
-        "object_id": "1",
-        "change_message": "Changed recurrences.",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 48
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:06:29.908Z",
-        "object_repr": "Musikirun maketa lehiaketa",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 49
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:07:53.095Z",
-        "object_repr": "Kontzertua",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 50
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:08:44.234Z",
-        "object_repr": "Dantza ikuskizuna",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 51
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-22T14:09:33.056Z",
-        "object_repr": "Dantza ikuskizuna",
-        "object_id": "5",
-        "change_message": "Changed recurrences.",
-        "user": 1,
-        "content_type": 31
-    },
-    "model": "admin.logentry",
-    "pk": 52
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:23:59.588Z",
-        "object_repr": "Metal garrasia",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 30
-    },
-    "model": "admin.logentry",
-    "pk": 53
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:25:08.392Z",
-        "object_repr": "Hari gorria",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 30
-    },
-    "model": "admin.logentry",
-    "pk": 54
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-22T14:25:24.569Z",
-        "object_repr": "Hari gorria",
-        "object_id": "2",
-        "change_message": "Changed content.",
-        "user": 1,
-        "content_type": 30
-    },
-    "model": "admin.logentry",
-    "pk": 55
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-22T14:26:19.127Z",
-        "object_repr": "Amapola morea",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 30
-    },
-    "model": "admin.logentry",
-    "pk": 56
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:48:59.438Z",
-        "object_repr": "Gorria",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 57
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:15.381Z",
-        "object_repr": "Beltza",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 58
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:24.965Z",
-        "object_repr": "Beltza",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 59
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:36.971Z",
-        "object_repr": "Gorria",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 60
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:42.002Z",
-        "object_repr": "Kiroletik",
-        "object_id": "1",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 61
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:52:23.365Z",
-        "object_repr": "Berdea",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 62
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:52:36.369Z",
-        "object_repr": "Txingurri hotsak",
-        "object_id": "2",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 63
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:53:07.355Z",
-        "object_repr": "Morea",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 64
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:53:21.174Z",
-        "object_repr": "Gonekin ero bero",
-        "object_id": "3",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 65
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:53:47.721Z",
-        "object_repr": "Txuria",
-        "object_id": "7",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 66
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:54:09.578Z",
-        "object_repr": "Berde iluna",
-        "object_id": "8",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 67
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:54:27.283Z",
-        "object_repr": "Aitzurra",
-        "object_id": "4",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 68
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:55:03.751Z",
-        "object_repr": "More iluna",
-        "object_id": "9",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 69
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:55:12.738Z",
-        "object_repr": "Amapola morea",
-        "object_id": "5",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 70
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:55:43.240Z",
-        "object_repr": "Zebra bidea",
-        "object_id": "6",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 71
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:56:32.300Z",
-        "object_repr": "Hari gorria",
-        "object_id": "7",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 72
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:57:06.334Z",
-        "object_repr": "Ezker gantxoa",
-        "object_id": "8",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 73
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:58:48.988Z",
-        "object_repr": "Arroxa",
-        "object_id": "10",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 74
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:59:00.617Z",
-        "object_repr": "Aiako harrikada",
-        "object_id": "9",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 75
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:59:28.443Z",
-        "object_repr": "Horia",
-        "object_id": "11",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 76
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:59:37.724Z",
-        "object_repr": "Bazkalaurrekoa",
-        "object_id": "10",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 77
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:00:11.440Z",
-        "object_repr": "urdina",
-        "object_id": "12",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 78
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:00:20.879Z",
-        "object_repr": "Bidasoaldeko Efemerideak",
-        "object_id": "11",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 79
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:00:54.502Z",
-        "object_repr": "Urdin iluna",
-        "object_id": "13",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 80
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:01:05.918Z",
-        "object_repr": "Donostiko 59. Zinemaldia",
-        "object_id": "12",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 81
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:01:37.294Z",
-        "object_repr": "Urdin fosfi",
-        "object_id": "14",
-        "change_message": "",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 82
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:01:57.002Z",
-        "object_repr": "Elkarrizketak / Erreportaiak / Kolaborazioak",
-        "object_id": "13",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 83
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:02:30.407Z",
-        "object_repr": "Herri pilulak",
-        "object_id": "14",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 84
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:03:04.970Z",
-        "object_repr": "Kale kantoian",
-        "object_id": "15",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 85
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:03:33.472Z",
-        "object_repr": "Musika klik",
-        "object_id": "16",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 86
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:04:18.391Z",
-        "object_repr": "Gure kunka",
-        "object_id": "17",
-        "change_message": "",
-        "user": 1,
-        "content_type": 29
-    },
-    "model": "admin.logentry",
-    "pk": 87
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-23T12:38:01.416Z",
-        "object_repr": "Urdin fosfi",
-        "object_id": "14",
-        "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 28
-    },
-    "model": "admin.logentry",
-    "pk": 88
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T12:59:28.297Z",
-        "object_repr": "Kaixo",
-        "object_id": "9",
-        "change_message": "",
-        "user": 1,
-        "content_type": 20
-    },
-    "model": "admin.logentry",
-    "pk": 89
 }
 ]
