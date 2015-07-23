@@ -1,0 +1,5 @@
+site_name: Antxetamedia
+pages:
+    - Ongietorri: index.md
+    - Erabiltzaileak: users/index.md
+    - Garatzaileak: devs/index.md

@@ -35,6 +35,15 @@ Archive.org
 
 - igoera asinkronoak, queuea igoera guztiekin
 
+```
+ARCHIVE.ORG TEST ACCOUNT
+username: archive.org-test
+password: archive.org-test
+access key: VSh9SgRkxTYIaZUs
+secret key: GsQjQ6KLtx63Sktr
+```
+
+
 Bestelakoak
 -----------
 
