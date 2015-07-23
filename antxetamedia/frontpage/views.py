@@ -66,6 +66,8 @@ class ConfigureFrontPage(FormView):
 
 
 class ResetFrontPageConfiguration(RedirectView):
+    permanent = False
+
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
 
