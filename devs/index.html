@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Garatzaileak - Antxetamedia</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Antxetamedia</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Ongietorri</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../users/">Erabiltzaileak</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Garatzaileak</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../users/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#important-factors">Important factors</a></li>
+        
+            <li><a href="#erreproduktorea">Erreproduktorea</a></li>
+        
+            <li><a href="#kontu-pertsonalak">Kontu pertsonalak</a></li>
+        
+            <li><a href="#nabigazioa">Nabigazioa</a></li>
+        
+            <li><a href="#portada">Portada</a></li>
+        
+            <li><a href="#archiveorg">Archive.org</a></li>
+        
+            <li><a href="#bestelakoak">Bestelakoak</a></li>
+        
+    
+        <li class="main "><a href="#architecture">Architecture</a></li>
+        
+            <li><a href="#layout">Layout</a></li>
+        
+            <li><a href="#design-decisions">Design decisions</a></li>
+        
+            <li><a href="#user-views">User views</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="important-factors">Important factors</h1>
+<h2 id="erreproduktorea">Erreproduktorea</h2>
+<ul>
+<li>playlistak</li>
+<li>playlista jaitsi</li>
+<li>audioak gehitu, mugitu ahal izan, etb</li>
+<li>konpartitu (podcastaren helbidea)</li>
+<li>streamingarekin integrazioa</li>
+</ul>
+<h2 id="kontu-pertsonalak">Kontu pertsonalak</h2>
+<ul>
+<li>gogoko irratsaioak</li>
+<li>feed pertsonalizatua</li>
+<li><em>sartutako azken alditik zer da berria</em></li>
+<li>playlistak</li>
+</ul>
+<h2 id="nabigazioa">Nabigazioa</h2>
+<ul>
+<li>bilatzaile hobea</li>
+<li>irratsaioaetara errazago sartu</li>
+</ul>
+<h2 id="portada">Portada</h2>
+<ul>
+<li>azkeneko 5ak beharrean, atzotik berria dena</li>
+<li>portada eta menu eraikitzailea?</li>
+</ul>
+<h2 id="archiveorg">Archive.org</h2>
+<ul>
+<li>igoera asinkronoak, queuea igoera guztiekin</li>
+</ul>
+<pre><code>ARCHIVE.ORG TEST ACCOUNT
+username: archive.org-test
+password: archive.org-test
+access key: VSh9SgRkxTYIaZUs
+secret key: GsQjQ6KLtx63Sktr
+</code></pre>
+
+<h2 id="bestelakoak">Bestelakoak</h2>
+<ul>
+<li>lizentzia argiagoak</li>
+</ul>
+<h1 id="architecture">Architecture</h1>
+<h2 id="layout">Layout</h2>
+<p><img alt="Design" src="./structure.png" /></p>
+<ul>
+<li>shows:</li>
+<li>AbstractProducer</li>
+<li>AbstractCategory</li>
+<li>AbstractShow</li>
+<li>AbstractPodcast</li>
+<li>news:</li>
+<li>NewsShow</li>
+<li>NewsCategory</li>
+<li>NewsPodcast</li>
+<li>radio</li>
+<li>RadioProducer</li>
+<li>RadioCategory</li>
+<li>RadioShow</li>
+<li>RadioPodcast</li>
+<li>projects</li>
+<li>ProjectProducer</li>
+<li>ProjectShow</li>
+<li>ProjectPodcast</li>
+<li>blobs</li>
+<li>Blob</li>
+<li>BlobUpload</li>
+<li>playlists</li>
+<li>favourites</li>
+<li>events</li>
+<li>archives</li>
+<li>schedule</li>
+<li>Label</li>
+<li>Broadcast</li>
+<li>pages</li>
+<li>widgets</li>
+</ul>
+<h2 id="design-decisions">Design decisions</h2>
+<h3 id="no-nested-categories">No nested categories</h3>
+<p>They do not use them currently.</p>
+<ul>
+<li>NewsShows do not need to be categorized.</li>
+<li>RadioShows can be categorized in RadioCategories and RadioProducers.</li>
+<li>ProjectShows can be categorized in ProjectProcuers.</li>
+</ul>
+<h3 id="no-embeded-multimedia-models">No embeded multimedia models</h3>
+<p>If they want to use some external embed, they can use the description text.</p>
+<h3 id="multiple-audios-per-podcast">Multiple audios per podcast</h3>
+<p>They use this feature nowadays. It's true that it makes it somewhat more
+difficult to manage the playlist buttons but this can be solved by:</p>
+<ul>
+<li>making the add button add all the audios of the podcast to the playlist.</li>
+<li>making the play button play all the adios of the podcast.</li>
+<li>making the share button share the podcast link.</li>
+</ul>
+<h3 id="only-radioshows-have-the-featured-boolean">Only RadioShows have the "featured" boolean</h3>
+<h2 id="user-views">User views</h2>
+<ul>
+<li>welcome page</li>
+<li>frontpage</li>
+<li>user frontpage</li>
+<li>news<ul>
+<li>newspodcast_list: filtered by NewsShow and NewsCategory</li>
+<li>newspodcast_detail</li>
+</ul>
+</li>
+<li>radio<ul>
+<li>radioshow_list: filtered by RadioProducer and RadioCategory</li>
+<li>radiopodcast_list</li>
+<li>radiopodcast_detail</li>
+</ul>
+</li>
+<li>projects<ul>
+<li>projectproducer_list</li>
+<li>projectshow_detail</li>
+</ul>
+</li>
+<li>favourites<ul>
+<li>favourite_list</li>
+<li>create_favourite</li>
+<li>delete_favourite</li>
+</ul>
+</li>
+<li>playlists</li>
+<li>settings</li>
+<li>archive</li>
+<li>events<ul>
+<li>event_list</li>
+<li>event_detail</li>
+</ul>
+</li>
+<li>schedule<ul>
+<li>broadcast_list</li>
+</ul>
+</li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Antxetamedia.info webgunearen dokumentaziora\n\n\nAurrean duzun dokumentazio hau \nantxetamedia.info\n\nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.\n\n\nKudeaketa\n\n\nantxetamedia.info/admin\n helbidean aurkitu\ndaiteken kudeaketa gunearen \ndokumentazioa hemen duzu\n.\n\n\nGarapena\n\n\nGarapenaren inguruko \ndokumentazioa hemen duzu\n.", 
+            "title": "Ongietorri"
+        }, 
+        {
+            "location": "/#antxetamediainfo-webgunearen-dokumentaziora", 
+            "text": "Aurrean duzun dokumentazio hau  antxetamedia.info \nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.", 
+            "title": "Antxetamedia.info webgunearen dokumentaziora"
+        }, 
+        {
+            "location": "/#kudeaketa", 
+            "text": "antxetamedia.info/admin  helbidean aurkitu\ndaiteken kudeaketa gunearen  dokumentazioa hemen duzu .", 
+            "title": "Kudeaketa"
+        }, 
+        {
+            "location": "/#garapena", 
+            "text": "Garapenaren inguruko  dokumentazioa hemen duzu .", 
+            "title": "Garapena"
+        }, 
+        {
+            "location": "/users/", 
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Erabiltzaileak"
+        }, 
+        {
+            "location": "/users/#welcome-to-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/users/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/users/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/devs/", 
+            "text": "Important factors\n\n\nErreproduktorea\n\n\n\n\nplaylistak\n\n\nplaylista jaitsi\n\n\naudioak gehitu, mugitu ahal izan, etb\n\n\nkonpartitu (podcastaren helbidea)\n\n\nstreamingarekin integrazioa\n\n\n\n\nKontu pertsonalak\n\n\n\n\ngogoko irratsaioak\n\n\nfeed pertsonalizatua\n\n\nsartutako azken alditik zer da berria\n\n\nplaylistak\n\n\n\n\nNabigazioa\n\n\n\n\nbilatzaile hobea\n\n\nirratsaioaetara errazago sartu\n\n\n\n\nPortada\n\n\n\n\nazkeneko 5ak beharrean, atzotik berria dena\n\n\nportada eta menu eraikitzailea?\n\n\n\n\nArchive.org\n\n\n\n\nigoera asinkronoak, queuea igoera guztiekin\n\n\n\n\nARCHIVE.ORG TEST ACCOUNT\nusername: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr\n\n\n\n\nBestelakoak\n\n\n\n\nlizentzia argiagoak\n\n\n\n\nArchitecture\n\n\nLayout\n\n\n\n\n\n\nshows:\n\n\nAbstractProducer\n\n\nAbstractCategory\n\n\nAbstractShow\n\n\nAbstractPodcast\n\n\nnews:\n\n\nNewsShow\n\n\nNewsCategory\n\n\nNewsPodcast\n\n\nradio\n\n\nRadioProducer\n\n\nRadioCategory\n\n\nRadioShow\n\n\nRadioPodcast\n\n\nprojects\n\n\nProjectProducer\n\n\nProjectShow\n\n\nProjectPodcast\n\n\nblobs\n\n\nBlob\n\n\nBlobUpload\n\n\nplaylists\n\n\nfavourites\n\n\nevents\n\n\narchives\n\n\nschedule\n\n\nLabel\n\n\nBroadcast\n\n\npages\n\n\nwidgets\n\n\n\n\nDesign decisions\n\n\nNo nested categories\n\n\nThey do not use them currently.\n\n\n\n\nNewsShows do not need to be categorized.\n\n\nRadioShows can be categorized in RadioCategories and RadioProducers.\n\n\nProjectShows can be categorized in ProjectProcuers.\n\n\n\n\nNo embeded multimedia models\n\n\nIf they want to use some external embed, they can use the description text.\n\n\nMultiple audios per podcast\n\n\nThey use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:\n\n\n\n\nmaking the add button add all the audios of the podcast to the playlist.\n\n\nmaking the play button play all the adios of the podcast.\n\n\nmaking the share button share the podcast link.\n\n\n\n\nOnly RadioShows have the \"featured\" boolean\n\n\nUser views\n\n\n\n\nwelcome page\n\n\nfrontpage\n\n\nuser frontpage\n\n\nnews\n\n\nnewspodcast_list: filtered by NewsShow and NewsCategory\n\n\nnewspodcast_detail\n\n\n\n\n\n\nradio\n\n\nradioshow_list: filtered by RadioProducer and RadioCategory\n\n\nradiopodcast_list\n\n\nradiopodcast_detail\n\n\n\n\n\n\nprojects\n\n\nprojectproducer_list\n\n\nprojectshow_detail\n\n\n\n\n\n\nfavourites\n\n\nfavourite_list\n\n\ncreate_favourite\n\n\ndelete_favourite\n\n\n\n\n\n\nplaylists\n\n\nsettings\n\n\narchive\n\n\nevents\n\n\nevent_list\n\n\nevent_detail\n\n\n\n\n\n\nschedule\n\n\nbroadcast_list", 
+            "title": "Garatzaileak"
+        }, 
+        {
+            "location": "/devs/#important-factors", 
+            "text": "", 
+            "title": "Important factors"
+        }, 
+        {
+            "location": "/devs/#erreproduktorea", 
+            "text": "playlistak  playlista jaitsi  audioak gehitu, mugitu ahal izan, etb  konpartitu (podcastaren helbidea)  streamingarekin integrazioa", 
+            "title": "Erreproduktorea"
+        }, 
+        {
+            "location": "/devs/#kontu-pertsonalak", 
+            "text": "gogoko irratsaioak  feed pertsonalizatua  sartutako azken alditik zer da berria  playlistak", 
+            "title": "Kontu pertsonalak"
+        }, 
+        {
+            "location": "/devs/#nabigazioa", 
+            "text": "bilatzaile hobea  irratsaioaetara errazago sartu", 
+            "title": "Nabigazioa"
+        }, 
+        {
+            "location": "/devs/#portada", 
+            "text": "azkeneko 5ak beharrean, atzotik berria dena  portada eta menu eraikitzailea?", 
+            "title": "Portada"
+        }, 
+        {
+            "location": "/devs/#archiveorg", 
+            "text": "igoera asinkronoak, queuea igoera guztiekin   ARCHIVE.ORG TEST ACCOUNT\nusername: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr", 
+            "title": "Archive.org"
+        }, 
+        {
+            "location": "/devs/#bestelakoak", 
+            "text": "lizentzia argiagoak", 
+            "title": "Bestelakoak"
+        }, 
+        {
+            "location": "/devs/#architecture", 
+            "text": "", 
+            "title": "Architecture"
+        }, 
+        {
+            "location": "/devs/#layout", 
+            "text": "shows:  AbstractProducer  AbstractCategory  AbstractShow  AbstractPodcast  news:  NewsShow  NewsCategory  NewsPodcast  radio  RadioProducer  RadioCategory  RadioShow  RadioPodcast  projects  ProjectProducer  ProjectShow  ProjectPodcast  blobs  Blob  BlobUpload  playlists  favourites  events  archives  schedule  Label  Broadcast  pages  widgets", 
+            "title": "Layout"
+        }, 
+        {
+            "location": "/devs/#design-decisions", 
+            "text": "No nested categories  They do not use them currently.   NewsShows do not need to be categorized.  RadioShows can be categorized in RadioCategories and RadioProducers.  ProjectShows can be categorized in ProjectProcuers.   No embeded multimedia models  If they want to use some external embed, they can use the description text.  Multiple audios per podcast  They use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:   making the add button add all the audios of the podcast to the playlist.  making the play button play all the adios of the podcast.  making the share button share the podcast link.   Only RadioShows have the \"featured\" boolean", 
+            "title": "Design decisions"
+        }, 
+        {
+            "location": "/devs/#user-views", 
+            "text": "welcome page  frontpage  user frontpage  news  newspodcast_list: filtered by NewsShow and NewsCategory  newspodcast_detail    radio  radioshow_list: filtered by RadioProducer and RadioCategory  radiopodcast_list  radiopodcast_detail    projects  projectproducer_list  projectshow_detail    favourites  favourite_list  create_favourite  delete_favourite    playlists  settings  archive  events  event_list  event_detail    schedule  broadcast_list", 
+            "title": "User views"
+        }
+    ]
+}
