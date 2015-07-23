@@ -1,4 +1,5 @@
 import json
+from itertools import islice
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -16,9 +17,12 @@ class FrontPage(TemplateView):
     template_name = 'frontpage/frontpage.html'
 
     def get_context_data(self, *args, **kwargs):
-        kwargs['newspodcast_list'] = NewsPodcast.objects.favourites(self.request)
-        kwargs['radiopodcast_list'] = RadioPodcast.objects.favourites(self.request)
-        kwargs['event_list'] = Event.objects.all()
+        NEWSPODCASTS = getattr(settings, 'FRONTPAGE_NEWSPODCASTS', 10)
+        RADIOPODCASTS = getattr(settings, 'FRONTPAGE_RADIOPODCASTS', 5)
+        EVENTS = getattr(settings, 'FRONTPAGE_EVENTS', 5)
+        kwargs['newspodcast_list'] = NewsPodcast.objects.favourites(self.request)[:NEWSPODCASTS]
+        kwargs['radiopodcast_list'] = RadioPodcast.objects.favourites(self.request)[:RADIOPODCASTS]
+        kwargs['event_list'] = islice(Event.objects.upcoming(), EVENTS)
         kwargs['widget_list'] = Widget.objects.all()
         return super(FrontPage, self).get_context_data(*args, **kwargs)
 
