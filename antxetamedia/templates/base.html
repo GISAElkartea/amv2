@@ -18,22 +18,22 @@
   </head>
   <body>
     {% block body %}
+    <section id="mainNav">
+      <nav id="menu">
+        <ul>
+          <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
+          <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
+          <li><a href="{% url 'projects:list' %}">{% trans 'Projects' %}</a></li>
+          {% for flatpage in menu_flatpage_list %}
+          <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <nav id="rss">
+        <i class="fa fa-rss"></i>
+      </nav>
+    </section>
     <header>
-      <section id="mainNav">
-        <nav id="menu">
-          <ul>
-            <li><a href="{% url 'news:list' %}">{% trans 'News' %}</a></li>
-            <li><a href="{% url 'radio:list' %}">{% trans 'Radio' %}</a></li>
-            <li><a href="{% url 'projects:list' %}">{% trans 'Projects' %}</a></li>
-            {% for flatpage in menu_flatpage_list %}
-            <li><a href="{{ flatpage.get_absolute_url }}">{{ flatpage }}</a></li>
-            {% endfor %}
-          </ul>
-        </nav>
-        <nav id="rss">
-          <i class="fa fa-rss"></i>
-        </nav>
-      </section>
       <div id="logo">
         <a href="/"><img src="{% static 'images/antxetamedia.svg' %}" alt="antxetamedia" /></a>
         <div id="subtitle">
