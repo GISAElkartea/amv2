@@ -29,7 +29,7 @@
         <i class="fa fa-share"></i>
         <i class="fa fa-download"></i>
       </td>
-      <td>{{ radiopodcast.date }}</td>
+      <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
     </tr>
     <tr id="podcastDescription">
       <td colspan="3">{% if radiopodcast.image %}<img id="podcastImage"
