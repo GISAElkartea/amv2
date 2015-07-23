@@ -20,4 +20,5 @@ django-colorful
 boto
 
 # Tests
-model-mommy
+hypothesis
+hypothesis-django
