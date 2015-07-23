@@ -72,6 +72,14 @@ class AntxetamediaDashboard(Dashboard):
             models=('antxetamedia.widgets.*',),
         ))
 
+        self.children.append(modules.ModelList(
+            _('Admin'),
+            collapsible=True,
+            column=1,
+            css_classes=('grp-collapse grp-closed',),
+            models=('django.contrib.auth.*',),
+        ))
+
         self.children.append(modules.LinkList(
             _('Support'),
             column=2,
