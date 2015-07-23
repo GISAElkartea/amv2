@@ -1,96 +1,109 @@
-Important factors
-=================
-
-Erreproduktorea
----------------
-
-- playlistak
-- playlista jaitsi
-- audioak gehitu, mugitu ahal izan, etb
-- konpartitu (podcastaren helbidea)
-- streamingarekin integrazioa
-
-Kontu pertsonalak
------------------
-
-- gogoko irratsaioak
-- feed pertsonalizatua
-- *sartutako azken alditik zer da berria*
-- playlistak
-
-Nabigazioa
-----------
-
-- bilatzaile hobea
-- irratsaioaetara errazago sartu
-
-Portada
--------
-
-- azkeneko 5ak beharrean, atzotik berria dena
-- portada eta menu eraikitzailea?
-
-Archive.org
------------
-
-- igoera asinkronoak, queuea igoera guztiekin
+# Development setup
 
 ```
-ARCHIVE.ORG TEST ACCOUNT
+# Install python dependencies
+pip install -r requirements.txt
+
+# Install javascript dependencies
+cd antxetamedia/static
+bower install
+cd ../..
+
+# Setup the database
+python manage.py migrate
+
+# Start development server
+python manage.py runserver
+```
+
+Additionally, if you want some sample data, you can get it by checking out the
+`sample_data` branch and loading the `sample_data.json` json file into the
+database:
+
+```
+python manage.py loaddata sample_data.json
+```
+
+# Running tests
+
+```
+python manage.py test
+```
+
+# General features
+
+## Frontpage
+
+- customized frontpage
+- user selects favourite news categories and radio shows
+- user selections stored as cookies
+
+## Player
+
+- single playlist per user
+- playlist stored in local storage
+- download entire playlist
+- add, move and delete podcasts from playlist
+- share podcasts
+- integration with the radio stream
+
+## Navigation
+
+- news podcast searcher (per category, per producer)
+- radio show searcher (per category, per producer)
+
+## Integration with archive.org
+
+- asynchronous uploads
+- queue visualization system
+
+### Test account
+
+```
 username: archive.org-test
 password: archive.org-test
 access key: VSh9SgRkxTYIaZUs
 secret key: GsQjQ6KLtx63Sktr
 ```
 
+## Other things
 
-Bestelakoak
------------
-
-- lizentzia argiagoak
+- licenses should be easy to see
 
 
-Architecture
-============
+# Architecture
 
-Layout
-------
+## Layout
 
 ![Design](structure.png)
 
-- shows:
-  - AbstractProducer
-  - AbstractCategory
-  - AbstractShow
-  - AbstractPodcast
-- news:
-  - NewsShow
-  - NewsCategory
-  - NewsPodcast
-- radio
-  - RadioProducer
-  - RadioCategory
-  - RadioShow
-  - RadioPodcast
-- projects
-  - ProjectProducer
-  - ProjectShow
-  - ProjectPodcast
-- blobs
-  - Blob
-  - BlobUpload
-- playlists
-- favourites
-- events
-- archives
-- schedule
-  - Label
-  - Broadcast
-- pages
-- widgets
+### News
 
-Design decisions
-----------------
+Each podcast has a category and a producer.
+
+### Radio
+
+Each podcast has a show. Each show has a category and a producer.
+
+### Projects
+
+Each podcast has a project. Each project has a producer.
+
+### Blobs
+
+Each blob has a GFK to a podcast.
+
+### Events
+
+### Archives
+
+### Schedule
+
+### Flat pages
+
+### Widgets
+
+## Design decisions
 
 ### No nested categories
 
@@ -98,11 +111,11 @@ They do not use them currently.
 
 - NewsShows do not need to be categorized.
 - RadioShows can be categorized in RadioCategories and RadioProducers.
-- ProjectShows can be categorized in ProjectProcuers.
+- ProjectShows can be categorized in ProjectProducers.
 
 ### No embeded multimedia models
 
-If they want to use some external embed, they can use the description text.
+If they want to use some external embed code, they can use the description text.
 
 ### Multiple audios per podcast
 
@@ -115,13 +128,10 @@ difficult to manage the playlist buttons but this can be solved by:
 
 ### Only RadioShows have the "featured" boolean
 
+## User views
 
-User views
-----------
-
-- welcome page
 - frontpage
-- user frontpage
+- frontpage configuration
 - news
     - newspodcast_list: filtered by NewsShow and NewsCategory
     - newspodcast_detail
@@ -132,12 +142,6 @@ User views
 - projects
     - projectproducer_list
     - projectshow_detail
-- favourites
-    - favourite_list
-    - create_favourite
-    - delete_favourite
-- playlists
-- settings
 - archive
 - events
     - event_list
