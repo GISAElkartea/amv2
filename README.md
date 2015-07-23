@@ -1,16 +1,7 @@
-Development
------------
+# Development
 
-    # Install python dependencies
-    pip install -r requirements.txt
+Development documentation [can be found here](https://gisaelkartea.github.io/amv2/devs/)
 
-    # Install javascript dependencies
-    cd antxetamedia/static
-    bower install
-    cd ../..
+# Administration
 
-    # Setup the database
-    python manage.py migrate
-
-    # Start development server
-    python manage.py runserver
+Admin documentation [can be found (in basque) here](https://gisaelkartea.github.io/amv2/users/).
