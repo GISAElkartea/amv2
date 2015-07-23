@@ -52,6 +52,9 @@
         {% include "player.html" %}
         {% block aside %}
         {% endblock aside %}
+        {% for widget in widget_list %}
+        <div class="widget">{{ widget.content | safe }}</div>
+        {% endfor %}
       </aside>
     </div>
 
