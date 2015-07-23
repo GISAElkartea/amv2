@@ -77,11 +77,23 @@ class AntxetamediaDashboard(Dashboard):
             column=2,
             children=[
                 {
+                    'title': _('User documentation'),
+                    'url': 'https://gisaelkartea.github.io/amv2/users/',
+                    'external': True,
+                },
+                {
                     'title': _('Contact'),
                     'url': 'mailto:unai@gisa-elkartea.org',
                     'external': True,
                 },
             ]
+        ))
+
+        self.children.append(modules.Feed(
+            title=_('Latest development changes'),
+            column=2,
+            feed_url='https://github.com/GISAElkartea/amv2/commits/master.atom',
+            limit=5,
         ))
 
         self.children.append(modules.RecentActions(

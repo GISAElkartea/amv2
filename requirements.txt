@@ -9,6 +9,7 @@ django-libsass
 # Admin
 django-admin-sortable2
 django-grappelli
+feedparser
 
 # Fields
 django-autoslug
