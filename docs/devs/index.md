@@ -24,6 +24,15 @@ database:
 python manage.py loaddata sample_data.json
 ```
 
+To get the media files (images mainly) while working on the `master` branch, you
+can checkout the `.media` directory (which is ignored by git by default) from
+`sample_data`:
+
+```
+git checkout .media -- sample_data
+git reset HEAD .media
+```
+
 # Running tests
 
 ```
