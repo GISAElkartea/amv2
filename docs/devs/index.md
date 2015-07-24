@@ -30,6 +30,22 @@ python manage.py loaddata sample_data.json
 python manage.py test
 ```
 
+# Production
+
+## Checklist
+
+- Database
+- Security
+- I18N
+- Static files
+- Media files
+- Logging
+- Error reporting
+- Initial data
+- Stats
+- User docs
+- CI
+
 # General features
 
 ## Frontpage
