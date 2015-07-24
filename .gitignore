@@ -4,6 +4,7 @@ db.sqlite3
 amv2/media
 cache
 *.swp
+*.mo
 .assets
 .media
 .hypothesis
