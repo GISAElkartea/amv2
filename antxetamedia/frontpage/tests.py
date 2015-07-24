@@ -85,7 +85,7 @@ class EventsInFrontPage(TestCase):
             response = self.client.get(self.url)
             expected = list(islice(Event.objects.upcoming(), limit))
             actual = list(response.context['event_list'])
-            self.assertEqual(len(actual), len(expected))
+            self.assertLessEqual(len(actual), len(expected))
 
     @given(st.lists(event))
     def test_correct_order_of_events(self, events):
