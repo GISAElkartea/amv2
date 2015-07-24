@@ -75,6 +75,11 @@
                 <li class="toctree-l3"><a href="#running-tests">Running tests</a></li>
                 
             
+                <li class="toctree-l3"><a href="#production">Production</a></li>
+                
+                    <li><a class="toctree-l4" href="#checklist">Checklist</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#general-features">General features</a></li>
                 
                     <li><a class="toctree-l4" href="#frontpage">Frontpage</a></li>
@@ -156,10 +161,32 @@ database:</p>
 <pre><code>python manage.py loaddata sample_data.json
 </code></pre>
 
+<p>To get the media files (images mainly) while working on the <code>master</code> branch, you
+can checkout the <code>.media</code> directory (which is ignored by git by default) from
+<code>sample_data</code>:</p>
+<pre><code>git checkout .media -- sample_data
+git reset HEAD .media
+</code></pre>
+
 <h1 id="running-tests">Running tests</h1>
 <pre><code>python manage.py test
 </code></pre>
 
+<h1 id="production">Production</h1>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>Database</li>
+<li>Security</li>
+<li>I18N</li>
+<li>Static files</li>
+<li>Media files</li>
+<li>Logging</li>
+<li>Error reporting</li>
+<li>Initial data</li>
+<li>Stats</li>
+<li>User docs</li>
+<li>CI</li>
+</ul>
 <h1 id="general-features">General features</h1>
 <h2 id="frontpage">Frontpage</h2>
 <ul>
