@@ -1,4 +1,5 @@
 from django.db.models import ImageField, URLField
+from django.conf import settings
 
 from hypothesis import Settings
 from hypothesis import strategies as st
@@ -15,7 +16,7 @@ from antxetamedia.events.models import Event
 from antxetamedia.widgets.models import Widget
 
 
-Settings.default.max_examples = 1
+Settings.default.max_examples = getattr(settings, 'HYPOTHESIS_MAX_EXAMPLES', 10)
 
 
 add_default_field_mapping(AutoSlugField, st.just('some-slug'))
