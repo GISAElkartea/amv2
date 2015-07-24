@@ -132,11 +132,6 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-from model_mommy.generators import gen_slug
-MOMMY_CUSTOM_FIELDS_GEN = {
-    'autoslug.fields.AutoSlugField': gen_slug,
-}
-
 GRAPPELLI_INDEX_DASHBOARD = 'antxetamedia.dashboard.AntxetamediaDashboard'
 GRAPPELLI_ADMIN_TITLE = 'Antxetamedia'
 GRAPPELLI_SWITCH_USER = True
