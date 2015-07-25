@@ -25,6 +25,7 @@ INSTALLED_APPS = (
     'compressor',
     'recurrence',
     'kombu.transport.django',
+    'watson',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
