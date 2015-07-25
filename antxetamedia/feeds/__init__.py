@@ -1,12 +1,12 @@
 import itertools
 from operator import attrgetter
 
-from django.contrib.syndication.views import Feed
+from django.contrib.syndication.views import Feed, add_domain
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
-from news.models import NewsPodcast
-from radio.models import RadioPodcast
+from antxetamedia.news.models import NewsPodcast
+from antxetamedia.radio.models import RadioPodcast
 
 
 class BlobFeed(Feed):
@@ -25,8 +25,6 @@ class BlobFeed(Feed):
     def items(self):
         # Blobs do not have a creation timestamp. We must therefore get the
         # podcasts, order them, and get their related blobs
-
-        # We must get the user's favourite podcasts here
         newspodcasts = NewsPodcast.objects.published().favourites(self.request)[:10]
         radiopodcasts = RadioPodcast.objects.published().favourites(self.request)[:10]
         items = itertools.chain(newspodcasts, radiopodcasts)
@@ -53,7 +51,8 @@ class BlobFeed(Feed):
         return item.content_object.show.get_absolute_url()
 
     def item_enclosure_url(self, item):
-        return item.blob
+        if item.blob:
+            return add_domain(self.request.get_host(), item.blob, self.request.is_secure())
 
     def item_enclosure_length(self, item):
         # Is this really needed?

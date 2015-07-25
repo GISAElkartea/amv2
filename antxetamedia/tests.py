@@ -15,6 +15,7 @@ from antxetamedia.news.models import NewsPodcast, NewsShow
 from antxetamedia.radio.models import RadioPodcast, RadioShow, RadioCategory, RadioProducer
 from antxetamedia.events.models import Event
 from antxetamedia.widgets.models import Widget
+from antxetamedia.blobs.models import Account, License, Blob
 
 
 Settings.default.max_examples = getattr(settings, 'HYPOTHESIS_MAX_EXAMPLES', 10)
@@ -36,3 +37,6 @@ radioshow = models(RadioShow, category=radiocategory, producer=radioproducer)
 radiopodcast = models(RadioPodcast, show=radioshow)
 event = models(Event)
 widget = models(Widget)
+account = models(Account)
+license = models(License)
+blob = models(Blob, content_object=st.one_of(newspodcast, radiopodcast), account=account, license=license)
