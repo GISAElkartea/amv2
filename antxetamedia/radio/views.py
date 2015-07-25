@@ -28,7 +28,7 @@ class RadioShowList(RadioShowMixin, ListView):
             producers = producers.filter(slug__in=selected_producers)
         return {
             'category': categories.values_list('slug', flat=True),
-            'producers': producers.values_list('slug', flat=True),
+            'producer': producers.values_list('slug', flat=True),
         }
 
     def get_context_data(self, *args, **kwargs):
