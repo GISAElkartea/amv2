@@ -36,3 +36,6 @@ class ProjectPodcast(AbstractPodcast):
         verbose_name_plural = _('Project podcasts')
 
     show = models.ForeignKey(ProjectShow, verbose_name=_('Show'))
+
+    def get_absolute_url(self):
+        return reverse('projects:detail', kwargs={'slug': self.slug})

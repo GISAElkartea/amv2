@@ -62,3 +62,6 @@ class RadioPodcast(AbstractPodcast):
         verbose_name_plural = _('Radio podcasts')
 
     show = models.ForeignKey(RadioShow, verbose_name=_('Show'))
+
+    def get_absolute_url(self):
+        return reverse('radio:detail', kwargs={'slug': self.slug})
