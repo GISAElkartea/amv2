@@ -18,27 +18,24 @@ python manage.py runserver
 
 ## Sample data
 
-Additionally, if you want some sample data, you can get it by checking out the
-`sample_data` branch and loading the `sample_data.json` json file into the
-database:
+Additionally, if you want some sample data, you can import it from the
+`sample_data` branch:
+
+```
+git checkout sample_data -- sample_data.json .media
+git reset HEAD
+```
+
+Then you can load it into the database:
 
 ```
 python manage.py loaddata sample_data.json
 ```
 
-You may want to index this data into the search engine with:
+You may want to index this data into the search engine too:
 
 ```
 python manage.py buildwatson
-```
-
-To get the media files (images mainly) while working on the `master` branch, you
-can checkout the `.media` directory (which is ignored by git by default) from
-`sample_data`:
-
-```
-git checkout sample_data -- .media
-git reset HEAD .media
 ```
 
 # Running tests
