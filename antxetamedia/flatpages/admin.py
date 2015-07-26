@@ -8,7 +8,7 @@ class FlatpageAdmin(admin.ModelAdmin):
     list_editable = ['on_menu']
     list_filter = ['on_menu']
     search_fields = ['name', 'content']
-    fields = [('name', 'slug'), 'on_menu', 'content']
+    fields = [('name', 'path'), 'on_menu', 'content']
 
 
 admin.site.register(Flatpage, FlatpageAdmin)
