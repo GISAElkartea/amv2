@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'antxetamedia.widgets',
     'antxetamedia.events',
     'antxetamedia.flatpages',
+    'antxetamedia.archive',
 )
 
 MIDDLEWARE_CLASSES = (

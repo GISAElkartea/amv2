@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}
+{% trans 'Archive' %}
+{% endblock title %}
+
+{% block aside %}
+{% endblock aside %}
+
+{% block content %}
+<h2>{% trans 'Site-wide search' %}</h2>
+
+<form method="get" action=".">
+  <input name="q" value="{{ request.GET.q }}" />
+  <input type="submit" value="{% trans 'Search' %}" />
+</form>
+
+<ul>
+  {% for result in search_results %}
+  <li>
+    <article>
+      <h1>
+        {% if result.url %}
+        <a href="{{ result.url }}">{{ result }}</a>
+        {% else %}
+        {{ result }}
+        {% endif %}
+      </h1>
+
+      {% if result.meta.image %}
+      <img src="{{ result.meta.image }}" />
+      {% endif %}
+
+      {% if result.description %}
+      {{ result.description | truncatewords_html:25 | safe }}
+      {% endif %}
+    </article>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
