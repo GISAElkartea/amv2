@@ -16,12 +16,20 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Sample data
+
 Additionally, if you want some sample data, you can get it by checking out the
 `sample_data` branch and loading the `sample_data.json` json file into the
 database:
 
 ```
 python manage.py loaddata sample_data.json
+```
+
+You may want to index this data into the search engine with:
+
+```
+python manage.py buildwatson
 ```
 
 To get the media files (images mainly) while working on the `master` branch, you
