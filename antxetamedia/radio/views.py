@@ -16,7 +16,7 @@ class RadioShowList(RadioShowMixin, ListView):
         producers = self.request.GET.getlist('producer')
         if categories or producers:
             query = Q(category__slug__in=categories) | Q(producer__slug__in=producers)
-        return super(RadioShowList, self).get_queryset().filter(query)
+        return super(RadioShowList, self).get_queryset().filter(query).distinct()
 
     def get_initial_data(self):
         categories = RadioCategory.objects.all()
