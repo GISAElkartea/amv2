@@ -3375,5 +3375,15 @@
     },
     "model": "events.event",
     "pk": 5
+},
+{
+    "fields": {
+        "on_menu": true,
+        "path": "about",
+        "content": "<p>Antxetamedia Antxeta Irratiak ekoiztutako gunea da.</p>\r\n",
+        "name": "Gure inguruan"
+    },
+    "model": "flatpages.flatpage",
+    "pk": 1
 }
 ]
