@@ -59,3 +59,6 @@ python manage.py test
 - Stats
 - User docs
 - CI
+- Site
+- Groups
+- Users
