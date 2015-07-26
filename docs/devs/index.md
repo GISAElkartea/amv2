@@ -37,7 +37,7 @@ can checkout the `.media` directory (which is ignored by git by default) from
 `sample_data`:
 
 ```
-git checkout .media -- sample_data
+git checkout sample_data -- .media
 git reset HEAD .media
 ```
 
