@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Architecture - Antxetamedia</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Architecture";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Antxetamedia</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Ongietorri</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../users/">Erabiltzaileak</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Garatzaileak</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Setup</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../description/">Description</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Architecture</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#layout">Layout</a></li>
+                
+                    <li><a class="toctree-l4" href="#news">News</a></li>
+                
+                    <li><a class="toctree-l4" href="#radio">Radio</a></li>
+                
+                    <li><a class="toctree-l4" href="#projects">Projects</a></li>
+                
+                    <li><a class="toctree-l4" href="#blobs">Blobs</a></li>
+                
+                    <li><a class="toctree-l4" href="#events">Events</a></li>
+                
+                    <li><a class="toctree-l4" href="#archives">Archives</a></li>
+                
+                    <li><a class="toctree-l4" href="#schedule">Schedule</a></li>
+                
+                    <li><a class="toctree-l4" href="#flat-pages">Flat pages</a></li>
+                
+                    <li><a class="toctree-l4" href="#widgets">Widgets</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#design-decisions">Design decisions</a></li>
+                
+                    <li><a class="toctree-l4" href="#no-nested-categories">No nested categories</a></li>
+                
+                    <li><a class="toctree-l4" href="#no-embeded-multimedia-models">No embeded multimedia models</a></li>
+                
+                    <li><a class="toctree-l4" href="#multiple-audios-per-podcast">Multiple audios per podcast</a></li>
+                
+                    <li><a class="toctree-l4" href="#only-radioshows-have-the-featured-boolean">Only RadioShows have the "featured" boolean</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#user-views">User views</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Antxetamedia</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Garatzaileak &raquo;</li>
+        
+      
+    
+    <li>Architecture</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="layout">Layout</h2>
+<p><img alt="Design" src="../structure.png" /></p>
+<h3 id="news">News</h3>
+<p>Each podcast has a category and a producer.</p>
+<h3 id="radio">Radio</h3>
+<p>Each podcast has a show. Each show has a category and a producer.</p>
+<h3 id="projects">Projects</h3>
+<p>Each podcast has a project. Each project has a producer.</p>
+<h3 id="blobs">Blobs</h3>
+<p>Each blob has a GFK to a podcast.</p>
+<h3 id="events">Events</h3>
+<h3 id="archives">Archives</h3>
+<h3 id="schedule">Schedule</h3>
+<h3 id="flat-pages">Flat pages</h3>
+<h3 id="widgets">Widgets</h3>
+<h2 id="design-decisions">Design decisions</h2>
+<h3 id="no-nested-categories">No nested categories</h3>
+<p>They do not use them currently.</p>
+<ul>
+<li>NewsShows do not need to be categorized.</li>
+<li>RadioShows can be categorized in RadioCategories and RadioProducers.</li>
+<li>ProjectShows can be categorized in ProjectProducers.</li>
+</ul>
+<h3 id="no-embeded-multimedia-models">No embeded multimedia models</h3>
+<p>If they want to use some external embed code, they can use the description text.</p>
+<h3 id="multiple-audios-per-podcast">Multiple audios per podcast</h3>
+<p>They use this feature nowadays. It's true that it makes it somewhat more
+difficult to manage the playlist buttons but this can be solved by:</p>
+<ul>
+<li>making the add button add all the audios of the podcast to the playlist.</li>
+<li>making the play button play all the adios of the podcast.</li>
+<li>making the share button share the podcast link.</li>
+</ul>
+<h3 id="only-radioshows-have-the-featured-boolean">Only RadioShows have the "featured" boolean</h3>
+<h2 id="user-views">User views</h2>
+<ul>
+<li>frontpage</li>
+<li>frontpage configuration</li>
+<li>news<ul>
+<li>newspodcast_list: filtered by NewsShow and NewsCategory</li>
+<li>newspodcast_detail</li>
+</ul>
+</li>
+<li>radio<ul>
+<li>radioshow_list: filtered by RadioProducer and RadioCategory</li>
+<li>radiopodcast_list</li>
+<li>radiopodcast_detail</li>
+</ul>
+</li>
+<li>projects<ul>
+<li>projectproducer_list</li>
+<li>projectshow_detail</li>
+</ul>
+</li>
+<li>archive</li>
+<li>events<ul>
+<li>event_list</li>
+<li>event_detail</li>
+</ul>
+</li>
+<li>schedule<ul>
+<li>broadcast_list</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../description/" class="btn btn-neutral" title="Description"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../description/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

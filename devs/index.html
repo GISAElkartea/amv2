@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Garatzaileak - Antxetamedia</title>
+  <title>Setup - Antxetamedia</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Garatzaileak";
+    var mkdocs_page_name = "Setup";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -64,12 +64,19 @@
 <li>
           
             <li>
+    <ul class="subnav">
+    <li><span>Garatzaileak</span></li>
+
+        
+            
     <li class="toctree-l1 current">
-        <a class="current" href="./">Garatzaileak</a>
+        <a class="current" href="./">Setup</a>
         
             <ul>
             
                 <li class="toctree-l3"><a href="#development-setup">Development setup</a></li>
+                
+                    <li><a class="toctree-l4" href="#sample-data">Sample data</a></li>
                 
             
                 <li class="toctree-l3"><a href="#running-tests">Running tests</a></li>
@@ -80,31 +87,26 @@
                     <li><a class="toctree-l4" href="#checklist">Checklist</a></li>
                 
             
-                <li class="toctree-l3"><a href="#general-features">General features</a></li>
-                
-                    <li><a class="toctree-l4" href="#frontpage">Frontpage</a></li>
-                
-                    <li><a class="toctree-l4" href="#player">Player</a></li>
-                
-                    <li><a class="toctree-l4" href="#navigation">Navigation</a></li>
-                
-                    <li><a class="toctree-l4" href="#integration-with-archiveorg">Integration with archive.org</a></li>
-                
-                    <li><a class="toctree-l4" href="#other-things">Other things</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#architecture">Architecture</a></li>
-                
-                    <li><a class="toctree-l4" href="#layout">Layout</a></li>
-                
-                    <li><a class="toctree-l4" href="#design-decisions">Design decisions</a></li>
-                
-                    <li><a class="toctree-l4" href="#user-views">User views</a></li>
-                
-            
             </ul>
         
     </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="description/">Description</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="architecture/">Architecture</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
         </ul>
@@ -128,8 +130,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Garatzaileak &raquo;</li>
+        
+      
     
-    <li>Garatzaileak</li>
+    <li>Setup</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -155,10 +161,15 @@ python manage.py migrate
 python manage.py runserver
 </code></pre>
 
+<h2 id="sample-data">Sample data</h2>
 <p>Additionally, if you want some sample data, you can get it by checking out the
 <code>sample_data</code> branch and loading the <code>sample_data.json</code> json file into the
 database:</p>
 <pre><code>python manage.py loaddata sample_data.json
+</code></pre>
+
+<p>You may want to index this data into the search engine with:</p>
+<pre><code>python manage.py buildwatson
 </code></pre>
 
 <p>To get the media files (images mainly) while working on the <code>master</code> branch, you
@@ -187,115 +198,14 @@ git reset HEAD .media
 <li>User docs</li>
 <li>CI</li>
 </ul>
-<h1 id="general-features">General features</h1>
-<h2 id="frontpage">Frontpage</h2>
-<ul>
-<li>customized frontpage</li>
-<li>user selects favourite news categories and radio shows</li>
-<li>user selections stored as cookies</li>
-</ul>
-<h2 id="player">Player</h2>
-<ul>
-<li>single playlist per user</li>
-<li>playlist stored in local storage</li>
-<li>download entire playlist</li>
-<li>add, move and delete podcasts from playlist</li>
-<li>share podcasts</li>
-<li>integration with the radio stream</li>
-</ul>
-<h2 id="navigation">Navigation</h2>
-<ul>
-<li>news podcast searcher (per category, per producer)</li>
-<li>radio show searcher (per category, per producer)</li>
-</ul>
-<h2 id="integration-with-archiveorg">Integration with archive.org</h2>
-<ul>
-<li>asynchronous uploads</li>
-<li>queue visualization system</li>
-</ul>
-<h3 id="test-account">Test account</h3>
-<pre><code>username: archive.org-test
-password: archive.org-test
-access key: VSh9SgRkxTYIaZUs
-secret key: GsQjQ6KLtx63Sktr
-</code></pre>
-
-<h2 id="other-things">Other things</h2>
-<ul>
-<li>licenses should be easy to see</li>
-</ul>
-<h1 id="architecture">Architecture</h1>
-<h2 id="layout">Layout</h2>
-<p><img alt="Design" src="./structure.png" /></p>
-<h3 id="news">News</h3>
-<p>Each podcast has a category and a producer.</p>
-<h3 id="radio">Radio</h3>
-<p>Each podcast has a show. Each show has a category and a producer.</p>
-<h3 id="projects">Projects</h3>
-<p>Each podcast has a project. Each project has a producer.</p>
-<h3 id="blobs">Blobs</h3>
-<p>Each blob has a GFK to a podcast.</p>
-<h3 id="events">Events</h3>
-<h3 id="archives">Archives</h3>
-<h3 id="schedule">Schedule</h3>
-<h3 id="flat-pages">Flat pages</h3>
-<h3 id="widgets">Widgets</h3>
-<h2 id="design-decisions">Design decisions</h2>
-<h3 id="no-nested-categories">No nested categories</h3>
-<p>They do not use them currently.</p>
-<ul>
-<li>NewsShows do not need to be categorized.</li>
-<li>RadioShows can be categorized in RadioCategories and RadioProducers.</li>
-<li>ProjectShows can be categorized in ProjectProducers.</li>
-</ul>
-<h3 id="no-embeded-multimedia-models">No embeded multimedia models</h3>
-<p>If they want to use some external embed code, they can use the description text.</p>
-<h3 id="multiple-audios-per-podcast">Multiple audios per podcast</h3>
-<p>They use this feature nowadays. It's true that it makes it somewhat more
-difficult to manage the playlist buttons but this can be solved by:</p>
-<ul>
-<li>making the add button add all the audios of the podcast to the playlist.</li>
-<li>making the play button play all the adios of the podcast.</li>
-<li>making the share button share the podcast link.</li>
-</ul>
-<h3 id="only-radioshows-have-the-featured-boolean">Only RadioShows have the "featured" boolean</h3>
-<h2 id="user-views">User views</h2>
-<ul>
-<li>frontpage</li>
-<li>frontpage configuration</li>
-<li>news<ul>
-<li>newspodcast_list: filtered by NewsShow and NewsCategory</li>
-<li>newspodcast_detail</li>
-</ul>
-</li>
-<li>radio<ul>
-<li>radioshow_list: filtered by RadioProducer and RadioCategory</li>
-<li>radiopodcast_list</li>
-<li>radiopodcast_detail</li>
-</ul>
-</li>
-<li>projects<ul>
-<li>projectproducer_list</li>
-<li>projectshow_detail</li>
-</ul>
-</li>
-<li>archive</li>
-<li>events<ul>
-<li>event_list</li>
-<li>event_detail</li>
-</ul>
-</li>
-<li>schedule<ul>
-<li>broadcast_list</li>
-</ul>
-</li>
-</ul>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="description/" class="btn btn-neutral float-right" title="Description"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../users/" class="btn btn-neutral" title="Erabiltzaileak"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -326,6 +236,8 @@ difficult to manage the playlist buttons but this can be solved by:</p>
       
         <span><a href="../users/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="description/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
