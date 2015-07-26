@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^radio/', include('antxetamedia.radio.urls')),
     url(r'^projects/', include('antxetamedia.projects.urls')),
     url(r'^f/', include('antxetamedia.flatpages.urls')),
+    url(r'^archive/', include('antxetamedia.archive.urls')),
     url(r'^feed/$', BlobFeed(), name='feed'),
 
     url(r'^grappelli/', include('grappelli.urls')),

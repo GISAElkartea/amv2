@@ -1,11 +1,10 @@
 from django.apps import AppConfig
 
-import watson
+from antxetamedia import archive
 
 
 class EventsConfig(AppConfig):
     name = 'antxetamedia.events'
 
     def ready(self):
-        Event = self.get_model('Event')
-        watson.register(Event)
+        archive.register(self.get_model('Event'))
