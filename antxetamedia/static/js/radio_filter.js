@@ -23,6 +23,23 @@ function filterShows() {
   });
 }
 
+function filterShowGroups() {
+  var showGroups = document.querySelectorAll('#radioShows li.radio.list');
+  Array.forEach(showGroups, function(showGroup) {
+    var shows = showGroup.querySelectorAll('li.show');
+    var isHidden = Array.map(shows, function(show) {
+      return (show.getAttribute('data-producer-is-hidden') === "true" &&
+              show.getAttribute('data-category-is-hidden') === "true");
+    });
+    if (Array.indexOf(isHidden, false) === -1) {
+      console.log("Should hide ", showGroup);
+      showGroup.style.display = 'none';
+    } else {
+      showGroup.style.display = 'block';
+    }
+  });
+}
+
 
 var checkboxes = document.querySelectorAll('form li input');
 Array.forEach(checkboxes, function(checkbox) {
@@ -31,5 +48,7 @@ Array.forEach(checkboxes, function(checkbox) {
   checkbox.onclick = function(event) {
     toggleLabel.apply(this);
     filterShows.apply(this);
+    filterShowGroups.apply(this);
   };
 });
+filterShowGroups.apply();
