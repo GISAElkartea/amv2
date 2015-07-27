@@ -20,17 +20,21 @@ class NewsPodcastList(NewsPodcastMixin, ListView):
         return super(NewsPodcastList, self).get_queryset().filter(query).distinct()
 
     def get_initial_data(self):
-        shows = NewsShow.objects.all()
-        categories = NewsCategory.objects.all()
+        """
+        By default, no shows or categories are preselected. If any selection is
+        made for any of them, set the selection.
+        """
+        shows = categories = []
+
         selected_shows = self.request.GET.getlist('show')
+        if selected_shows:
+            shows = NewsShow.objects.filter(slug__in=selected_shows).values_list('slug', flat=True)
+
         selected_categories = self.request.GET.getlist('category')
-        if selected_shows or selected_categories:
-            shows = shows.filter(slug__in=selected_shows)
-            categories = categories.filter(slug__in=selected_categories)
-        return {
-            'show': shows.values_list('slug', flat=True),
-            'category': categories.values_list('slug', flat=True),
-        }
+        if selected_categories:
+            categories = NewsCategory.objects.filter(slug__in=selected_categories).values_list('slug', flat=True)
+
+        return {'show': shows, 'category': categories}
 
     def get_context_data(self, *args, **kwargs):
         kwargs['form'] = NewsPodcastFilter(initial=self.get_initial_data())
