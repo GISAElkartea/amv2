@@ -24,4 +24,4 @@ boto
 # Tests
 hypothesis
 hypothesis-django
-hypothesis-fakefactory
+fake-factory
