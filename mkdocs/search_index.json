@@ -37,12 +37,12 @@
         }, 
         {
             "location": "/devs/", 
-            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI", 
+            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI\n\n\nSite\n\n\nGroups\n\n\nUsers", 
             "title": "Setup"
         }, 
         {
             "location": "/devs/#development-setup", 
-            "text": "# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Start development server\npython manage.py runserver", 
+            "text": "# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver", 
             "title": "Development setup"
         }, 
         {
@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/devs/#checklist", 
-            "text": "Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI", 
+            "text": "Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI  Site  Groups  Users", 
             "title": "Checklist"
         }, 
         {
