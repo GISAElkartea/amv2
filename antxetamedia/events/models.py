@@ -3,6 +3,7 @@ from Queue import PriorityQueue
 
 from django.db import models
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext as _
 from django.utils.six import python_2_unicode_compatible
@@ -64,7 +65,10 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
-    def upcoming(self):
+    def get_absolute_url(self):
+        return reverse('events:detail', kwargs={'slug': self.slug})
+
+    def upcoming(self, count=None):
         """
         Generator of all the future occurrences of this event.
         """
@@ -72,8 +76,10 @@ class Event(models.Model):
         tz = pytz.timezone(settings.TIME_ZONE)
         naive = utc.replace(tzinfo=None)
         upcoming = naive
-        while True:
+        while count is None or count > 0:
             upcoming = self.recurrences.after(upcoming)
             if upcoming is None:
                 return
             yield tz.localize(upcoming)
+            if count is not None:
+                count -= 1

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block title %}{% trans 'Events' %}{% endblock title %}
+
+{% block content %}
+<ul class="list">
+  {% for date, event in event_list %}
+  <li class="flag event">
+    <div class="detail" {% if event.image %} style="background-image: url('{{ event.image.url }}');"{% endif %}/>
+    </div>
+    <div class="text">
+      <h2 class="category">{{ event.location }}</h2>
+      <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
+      <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
+      <p>{{ event.description | striptags | truncatewords:25 }}</p>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

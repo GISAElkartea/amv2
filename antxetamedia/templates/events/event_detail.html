@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ event }}{% endblock title %}
+
+{% block content %}
+<article>
+  <div class="eventDetails">
+    {% if event.image %}
+    <img src="{{ event.image.url }}"/>
+    {% endif %}
+  </div>
+  <div class="text">
+    <h2 class="category">{{ event.location }}</h2>
+    <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
+    <p>{% trans 'Future occurrences:' %}</p>
+    <ul>
+      {% for date in event.upcoming|slice:":5" %} 
+      <li><time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time></li>
+      {% endfor %}
+    </ul>
+    {% if event.link %}
+    <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
+    {% endif %}
+    <p>{{ event.description | striptags | truncatewords:25 }}</p>
+  </div>
+{% endblock content %}
