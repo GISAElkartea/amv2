@@ -12,6 +12,9 @@ cd ../..
 # Setup the database
 python manage.py migrate
 
+# Compile messages
+python manage.py compilemessages
+
 # Start development server
 python manage.py runserver
 ```
