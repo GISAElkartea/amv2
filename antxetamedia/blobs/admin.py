@@ -51,10 +51,6 @@ class BlobUploadAdmin(admin.ModelAdmin):
         return instance.get_state_display()
     get_state_display.short_description = _('State')
 
-    def get_traceback_display(self, instance):
-        return instance.get_traceback_display()
-    get_traceback_display.short_description = _('Traceback')
-
     # Remove the delete Admin Action for this Model
     actions = None
 

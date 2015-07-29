@@ -2,8 +2,6 @@
 
 from __future__ import unicode_literals
 
-import pickle
-
 from django.db import models, transaction
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.six import python_2_unicode_compatible
@@ -105,14 +103,6 @@ class BlobUpload(models.Model):
         if self.state in (self.SUCCEEDED, self.FAILED):
             return self.state == self.SUCCEEDED
         return None
-
-    def get_traceback_display(self):
-        try:
-            loaded = pickle.loads(self.traceback)
-        except pickle.UnpicklingError:
-            return self.traceback
-        else:
-            return repr(loaded)
 
     def is_uploading(self):
         self.started = timezone.now()
