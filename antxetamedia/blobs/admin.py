@@ -31,14 +31,15 @@ class BlobAdmin(admin.ModelAdmin):
 
 class BlobUploadAdmin(admin.ModelAdmin):
     list_display_links = ['get_content_object']
-    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'get_traceback_display']
+    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'traceback']
     list_filter = ['state']
 
     def get_content_object(self, instance):
         content_object = instance.blob.content_object
-        change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=content_object._meta)
-        change_url = reverse(change_name, args=(content_object.pk,))
-        return '<a href="{}">{}</a>'.format(change_url, content_object)
+        if content_object:
+            change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=content_object._meta)
+            change_url = reverse(change_name, args=(content_object.pk,))
+            return '<a href="{}">{}</a>'.format(change_url, content_object)
     get_content_object.short_description = _('Podcast')
     get_content_object.allow_tags = True
 
