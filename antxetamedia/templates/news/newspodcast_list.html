@@ -27,8 +27,8 @@
       </div>
     </div>
     <div class="text">
-      <p class="date">{{ newspodcast.pub_date }}</p>
       <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
+      <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
       <p>{{ newspodcast.description | striptags | truncatewords:25 }}</p>
     </div>
