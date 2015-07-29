@@ -15,8 +15,8 @@
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
     <p>{% trans 'Future occurrences:' %}</p>
     <ul>
-      {% for date in event.upcoming|slice:":5" %} 
-      <li><time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time></li>
+      {% for date in event.upcoming|slice:":5" %}
+      <li><time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} {{ event.time|time:"H:i" }}</time></li>
       {% endfor %}
     </ul>
     {% if event.link %}
