@@ -9,13 +9,1201 @@
 },
 {
     "fields": {
+        "codename": "add_logentry",
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 1
+},
+{
+    "fields": {
+        "codename": "change_logentry",
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 2
+},
+{
+    "fields": {
+        "codename": "delete_logentry",
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 3
+},
+{
+    "fields": {
+        "codename": "add_site",
+        "name": "Can add site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 4
+},
+{
+    "fields": {
+        "codename": "change_site",
+        "name": "Can change site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 5
+},
+{
+    "fields": {
+        "codename": "delete_site",
+        "name": "Can delete site",
+        "content_type": [
+            "sites",
+            "site"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 6
+},
+{
+    "fields": {
+        "codename": "add_permission",
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 7
+},
+{
+    "fields": {
+        "codename": "change_permission",
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 8
+},
+{
+    "fields": {
+        "codename": "delete_permission",
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 9
+},
+{
+    "fields": {
+        "codename": "add_group",
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 10
+},
+{
+    "fields": {
+        "codename": "change_group",
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 11
+},
+{
+    "fields": {
+        "codename": "delete_group",
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 12
+},
+{
+    "fields": {
+        "codename": "add_user",
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 13
+},
+{
+    "fields": {
+        "codename": "change_user",
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 14
+},
+{
+    "fields": {
+        "codename": "delete_user",
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 15
+},
+{
+    "fields": {
+        "codename": "add_contenttype",
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 16
+},
+{
+    "fields": {
+        "codename": "change_contenttype",
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 17
+},
+{
+    "fields": {
+        "codename": "delete_contenttype",
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 18
+},
+{
+    "fields": {
+        "codename": "add_session",
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 19
+},
+{
+    "fields": {
+        "codename": "change_session",
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 20
+},
+{
+    "fields": {
+        "codename": "delete_session",
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 21
+},
+{
+    "fields": {
+        "codename": "add_recurrence",
+        "name": "Can add recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 22
+},
+{
+    "fields": {
+        "codename": "change_recurrence",
+        "name": "Can change recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 23
+},
+{
+    "fields": {
+        "codename": "delete_recurrence",
+        "name": "Can delete recurrence",
+        "content_type": [
+            "recurrence",
+            "recurrence"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 24
+},
+{
+    "fields": {
+        "codename": "add_rule",
+        "name": "Can add rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 25
+},
+{
+    "fields": {
+        "codename": "change_rule",
+        "name": "Can change rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 26
+},
+{
+    "fields": {
+        "codename": "delete_rule",
+        "name": "Can delete rule",
+        "content_type": [
+            "recurrence",
+            "rule"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 27
+},
+{
+    "fields": {
+        "codename": "add_date",
+        "name": "Can add date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 28
+},
+{
+    "fields": {
+        "codename": "change_date",
+        "name": "Can change date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 29
+},
+{
+    "fields": {
+        "codename": "delete_date",
+        "name": "Can delete date",
+        "content_type": [
+            "recurrence",
+            "date"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 30
+},
+{
+    "fields": {
+        "codename": "add_param",
+        "name": "Can add param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 31
+},
+{
+    "fields": {
+        "codename": "change_param",
+        "name": "Can change param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 32
+},
+{
+    "fields": {
+        "codename": "delete_param",
+        "name": "Can delete param",
+        "content_type": [
+            "recurrence",
+            "param"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 33
+},
+{
+    "fields": {
+        "codename": "add_queue",
+        "name": "Can add queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 34
+},
+{
+    "fields": {
+        "codename": "change_queue",
+        "name": "Can change queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 35
+},
+{
+    "fields": {
+        "codename": "delete_queue",
+        "name": "Can delete queue",
+        "content_type": [
+            "kombu_transport_django",
+            "queue"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 36
+},
+{
+    "fields": {
+        "codename": "add_message",
+        "name": "Can add message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 37
+},
+{
+    "fields": {
+        "codename": "change_message",
+        "name": "Can change message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 38
+},
+{
+    "fields": {
+        "codename": "delete_message",
+        "name": "Can delete message",
+        "content_type": [
+            "kombu_transport_django",
+            "message"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 39
+},
+{
+    "fields": {
+        "codename": "add_account",
+        "name": "Can add Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 40
+},
+{
+    "fields": {
+        "codename": "change_account",
+        "name": "Can change Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 41
+},
+{
+    "fields": {
+        "codename": "delete_account",
+        "name": "Can delete Account",
+        "content_type": [
+            "blobs",
+            "account"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 42
+},
+{
+    "fields": {
+        "codename": "add_license",
+        "name": "Can add License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 43
+},
+{
+    "fields": {
+        "codename": "change_license",
+        "name": "Can change License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 44
+},
+{
+    "fields": {
+        "codename": "delete_license",
+        "name": "Can delete License",
+        "content_type": [
+            "blobs",
+            "license"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 45
+},
+{
+    "fields": {
+        "codename": "add_blob",
+        "name": "Can add Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 46
+},
+{
+    "fields": {
+        "codename": "change_blob",
+        "name": "Can change Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 47
+},
+{
+    "fields": {
+        "codename": "delete_blob",
+        "name": "Can delete Blob",
+        "content_type": [
+            "blobs",
+            "blob"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 48
+},
+{
+    "fields": {
+        "codename": "add_blobupload",
+        "name": "Can add Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 49
+},
+{
+    "fields": {
+        "codename": "change_blobupload",
+        "name": "Can change Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 50
+},
+{
+    "fields": {
+        "codename": "delete_blobupload",
+        "name": "Can delete Blob upload",
+        "content_type": [
+            "blobs",
+            "blobupload"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 51
+},
+{
+    "fields": {
+        "codename": "add_newscategory",
+        "name": "Can add News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 52
+},
+{
+    "fields": {
+        "codename": "change_newscategory",
+        "name": "Can change News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 53
+},
+{
+    "fields": {
+        "codename": "delete_newscategory",
+        "name": "Can delete News category",
+        "content_type": [
+            "news",
+            "newscategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 54
+},
+{
+    "fields": {
+        "codename": "add_newsshow",
+        "name": "Can add News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 55
+},
+{
+    "fields": {
+        "codename": "change_newsshow",
+        "name": "Can change News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 56
+},
+{
+    "fields": {
+        "codename": "delete_newsshow",
+        "name": "Can delete News show",
+        "content_type": [
+            "news",
+            "newsshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 57
+},
+{
+    "fields": {
+        "codename": "add_newspodcast",
+        "name": "Can add News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 58
+},
+{
+    "fields": {
+        "codename": "change_newspodcast",
+        "name": "Can change News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 59
+},
+{
+    "fields": {
+        "codename": "delete_newspodcast",
+        "name": "Can delete News podcast",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 60
+},
+{
+    "fields": {
+        "codename": "add_radiocategory",
+        "name": "Can add Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 61
+},
+{
+    "fields": {
+        "codename": "change_radiocategory",
+        "name": "Can change Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 62
+},
+{
+    "fields": {
+        "codename": "delete_radiocategory",
+        "name": "Can delete Radio category",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 63
+},
+{
+    "fields": {
+        "codename": "add_radioproducer",
+        "name": "Can add Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 64
+},
+{
+    "fields": {
+        "codename": "change_radioproducer",
+        "name": "Can change Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 65
+},
+{
+    "fields": {
+        "codename": "delete_radioproducer",
+        "name": "Can delete Radio producer",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 66
+},
+{
+    "fields": {
+        "codename": "add_radioshow",
+        "name": "Can add Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 67
+},
+{
+    "fields": {
+        "codename": "change_radioshow",
+        "name": "Can change Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 68
+},
+{
+    "fields": {
+        "codename": "delete_radioshow",
+        "name": "Can delete Radio show",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 69
+},
+{
+    "fields": {
+        "codename": "add_radiopodcast",
+        "name": "Can add Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 70
+},
+{
+    "fields": {
+        "codename": "change_radiopodcast",
+        "name": "Can change Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 71
+},
+{
+    "fields": {
+        "codename": "delete_radiopodcast",
+        "name": "Can delete Radio podcast",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 72
+},
+{
+    "fields": {
+        "codename": "add_projectproducer",
+        "name": "Can add Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 73
+},
+{
+    "fields": {
+        "codename": "change_projectproducer",
+        "name": "Can change Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 74
+},
+{
+    "fields": {
+        "codename": "delete_projectproducer",
+        "name": "Can delete Project producer",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 75
+},
+{
+    "fields": {
+        "codename": "add_projectshow",
+        "name": "Can add Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 76
+},
+{
+    "fields": {
+        "codename": "change_projectshow",
+        "name": "Can change Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 77
+},
+{
+    "fields": {
+        "codename": "delete_projectshow",
+        "name": "Can delete Project show",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 78
+},
+{
+    "fields": {
+        "codename": "add_projectpodcast",
+        "name": "Can add Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 79
+},
+{
+    "fields": {
+        "codename": "change_projectpodcast",
+        "name": "Can change Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 80
+},
+{
+    "fields": {
+        "codename": "delete_projectpodcast",
+        "name": "Can delete Project podcast",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 81
+},
+{
+    "fields": {
+        "codename": "add_label",
+        "name": "Can add Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 82
+},
+{
+    "fields": {
+        "codename": "change_label",
+        "name": "Can change Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 83
+},
+{
+    "fields": {
+        "codename": "delete_label",
+        "name": "Can delete Label",
+        "content_type": [
+            "schedule",
+            "label"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 84
+},
+{
+    "fields": {
+        "codename": "add_broadcast",
+        "name": "Can add Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 85
+},
+{
+    "fields": {
+        "codename": "change_broadcast",
+        "name": "Can change Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 86
+},
+{
+    "fields": {
+        "codename": "delete_broadcast",
+        "name": "Can delete Broadcast",
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 87
+},
+{
+    "fields": {
+        "codename": "add_widget",
+        "name": "Can add Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 88
+},
+{
+    "fields": {
+        "codename": "change_widget",
+        "name": "Can change Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 89
+},
+{
+    "fields": {
+        "codename": "delete_widget",
+        "name": "Can delete Widget",
+        "content_type": [
+            "widgets",
+            "widget"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 90
+},
+{
+    "fields": {
+        "codename": "add_event",
+        "name": "Can add Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 91
+},
+{
+    "fields": {
+        "codename": "change_event",
+        "name": "Can change Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 92
+},
+{
+    "fields": {
+        "codename": "delete_event",
+        "name": "Can delete Event",
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 93
+},
+{
+    "fields": {
+        "codename": "add_flatpage",
+        "name": "Can add Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 94
+},
+{
+    "fields": {
+        "codename": "change_flatpage",
+        "name": "Can change Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 95
+},
+{
+    "fields": {
+        "codename": "delete_flatpage",
+        "name": "Can delete Flatpage",
+        "content_type": [
+            "flatpages",
+            "flatpage"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 96
+},
+{
+    "fields": {
+        "codename": "add_searchentry",
+        "name": "Can add search entry",
+        "content_type": [
+            "watson",
+            "searchentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 97
+},
+{
+    "fields": {
+        "codename": "change_searchentry",
+        "name": "Can change search entry",
+        "content_type": [
+            "watson",
+            "searchentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 98
+},
+{
+    "fields": {
+        "codename": "delete_searchentry",
+        "name": "Can delete search entry",
+        "content_type": [
+            "watson",
+            "searchentry"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 99
+},
+{
+    "fields": {
         "username": "admin",
         "first_name": "",
         "last_name": "",
         "is_active": true,
         "is_superuser": true,
         "is_staff": true,
-        "last_login": "2015-07-23T15:58:12.458Z",
+        "last_login": "2015-07-29T17:31:44.461Z",
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$20000$dEIpCZPm3qNo$9dzc5slCGY1aXU1UJ++TKCmFgdj6OSG/bHpn3QY1fqI=",
@@ -32,6 +1220,14 @@
     },
     "model": "sessions.session",
     "pk": "5fkycs2urerqzwyt5z86srzai9nujaqj"
+},
+{
+    "fields": {
+        "expire_date": "2015-08-12T17:31:44.618Z",
+        "session_data": "OTE1YjQyYmZiYzkzNjViYWNjNWE3NWYxODUwZWVjODA0ZTlhZGI0ZTp7Il9hdXRoX3VzZXJfaGFzaCI6IjJkMWYyNmRiMDU5ZjliZmZkODE1YTQ3NGY2MjFlMWYyYjNhNGZjOTAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "f9e522sgjp25tat9xeddei2845ue2tiy"
 },
 {
     "fields": {
@@ -1771,6 +2967,1338 @@
 },
 {
     "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:46:17.938Z",
+        "object_repr": "Pausumedia",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 97
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:46:22.130Z",
+        "object_repr": "Bidasoan elkarbizitza",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 98
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:49:29.206Z",
+        "object_repr": "Bidasoan elkarbizitza lehenengo saioa",
+        "object_id": "1",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 99
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:50:57.168Z",
+        "object_repr": "Bidasoan elkarbizitza bigarren saioa",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 100
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:54:00.310Z",
+        "object_repr": "Antxetamedia",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 101
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:54:09.826Z",
+        "object_repr": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak.",
+        "object_id": "2",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 102
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T08:58:03.877Z",
+        "object_repr": "NEAR FM",
+        "object_id": "3",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 103
+},
+{
+    "fields": {
+        "action_flag": 1,
+        "action_time": "2015-07-27T09:00:02.456Z",
+        "object_repr": "West Dublin Access Radio",
+        "object_id": "4",
+        "change_message": "",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 104
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-27T09:26:30.813Z",
+        "object_repr": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak",
+        "object_id": "2",
+        "change_message": "name aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "projects",
+            "projectshow"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 105
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T17:38:20.033Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 106
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T17:39:03.324Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 107
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T17:57:15.966Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 108
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T17:57:47.267Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 109
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T17:59:02.840Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 110
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T18:00:33.688Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 111
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T18:01:13.550Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 112
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T18:06:13.610Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 113
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T18:06:26.494Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 114
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-07-29T18:07:00.755Z",
+        "object_repr": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "object_id": "2",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "newspodcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 115
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Etiam sed fermentum velit. Donec cursus justo sit amet dolor dapibus, non cursus libero ultrices. Donec eget porttitor sem. Phasellus tristique, nunc vitae sagittis maximus, ligula risus faucibus elit, a mattis ligula lectus eget dui. Maecenas sed pulvinar est. Nulla gravida volutpat nunc, quis placerat arcu faucibus vel. Proin volutpat ligula vitae dictum faucibus. Integer volutpat pellentesque faucibus. Aliquam gravida mauris id justo elementum placerat. Maecenas laoreet mattis scelerisque. Donec tempus justo eu ligula molestie, quis placerat felis convallis. Nullam vel mauris volutpat, vulputate orci vitae, consequat mauris. Nulla semper mauris a mollis sodales. Quisque turpis orci, blandit eu laoreet ac, tempor et odio.</p>\r\n",
+        "title": "Aitzurra",
+        "url": "/radio/aitzurra/",
+        "object_id": "4",
+        "content": "Aitzurra aitzurra Etiam sed fermentum velit. Donec cursus justo sit amet dolor dapibus, non cursus libero ultrices. Donec eget porttitor sem. Phasellus tristique, nunc vitae sagittis maximus, ligula risus faucibus elit, a mattis ligula lectus eget dui. Maecenas sed pulvinar est. Nulla gravida volutpat nunc, quis placerat arcu faucibus vel. Proin volutpat ligula vitae dictum faucibus. Integer volutpat pellentesque faucibus. Aliquam gravida mauris id justo elementum placerat. Maecenas laoreet mattis scelerisque. Donec tempus justo eu ligula molestie, quis placerat felis convallis. Nullam vel mauris volutpat, vulputate orci vitae, consequat mauris. Nulla semper mauris a mollis sodales. Quisque turpis orci, blandit eu laoreet ac, tempor et odio.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 1
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/coiled_by_suicidebysafetypin-d5gau51.jpg\"}",
+        "description": "<p>Suspendisse turpis risus, tempus ut dapibus sed, commodo et felis. Donec tempus nisl a dolor dapibus bibendum. Nam pharetra porttitor magna et vestibulum. Mauris accumsan magna vel blandit placerat. Etiam et tempus mauris. Quisque in magna in massa dapibus lacinia. Curabitur ipsum enim, egestas nec leo sed, molestie viverra odio. Integer ornare eleifend augue, ac congue est finibus et. Mauris vel imperdiet sem. In hendrerit blandit mauris, sed tempus tortor luctus non. Nulla eget sollicitudin felis. Nulla ultrices congue magna porta cursus. Sed suscipit nec metus in auctor.</p>\r\n",
+        "title": "Amapola morea",
+        "url": "/radio/amapola/",
+        "object_id": "5",
+        "content": "Amapola morea amapola Suspendisse turpis risus, tempus ut dapibus sed, commodo et felis. Donec tempus nisl a dolor dapibus bibendum. Nam pharetra porttitor magna et vestibulum. Mauris accumsan magna vel blandit placerat. Etiam et tempus mauris. Quisque in magna in massa dapibus lacinia. Curabitur ipsum enim, egestas nec leo sed, molestie viverra odio. Integer ornare eleifend augue, ac congue est finibus et. Mauris vel imperdiet sem. In hendrerit blandit mauris, sed tempus tortor luctus non. Nulla eget sollicitudin felis. Nulla ultrices congue magna porta cursus. Sed suscipit nec metus in auctor.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 2
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/dragon_egg_by_c_91-d65nq7w_P83AINt.png\"}",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, auctor vitae sem ac, efficitur aliquam magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare et mauris non ullamcorper. Nullam sit amet aliquam nisi. Curabitur porta, elit vel hendrerit luctus, lectus leo ornare justo, a sagittis leo nulla in ex. Ut sed nibh eu lectus pulvinar varius at sit amet lacus. Integer sit amet nibh lacus. Mauris mattis mi risus, congue pulvinar nibh pulvinar eu.</p>\r\n\r\n<ul>\r\n\t<li>Nulla vel varius tellus, lobortis pharetra nunc.\r\n\t<ul>\r\n\t\t<li>Nullam tempor augue augue,</li>\r\n\t</ul>\r\n\t</li>\r\n\t<li>sit amet interdum tellus elementum sit amet.</li>\r\n</ul>\r\n",
+        "title": "Ezker gantxoa",
+        "url": "/radio/ezker_gantxoa/",
+        "object_id": "8",
+        "content": "Ezker gantxoa ezker_gantxoa Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, auctor vitae sem ac, efficitur aliquam magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare et mauris non ullamcorper. Nullam sit amet aliquam nisi. Curabitur porta, elit vel hendrerit luctus, lectus leo ornare justo, a sagittis leo nulla in ex. Ut sed nibh eu lectus pulvinar varius at sit amet lacus. Integer sit amet nibh lacus. Mauris mattis mi risus, congue pulvinar nibh pulvinar eu.\r\n\r\n\r\n\tNulla vel varius tellus, lobortis pharetra nunc.\r\n\t\r\n\t\tNullam tempor augue augue,\r\n\t\r\n\t\r\n\tsit amet interdum tellus elementum sit amet.\r\n\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 8
+    },
+    "model": "watson.searchentry",
+    "pk": 3
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/gonekin_1_4.jpg\"}",
+        "description": "<p>Nulla commodo dui tristique viverra fermentum. Vestibulum aliquam, nisi vel aliquet tempor, mauris diam euismod turpis, eget luctus diam massa at velit. Aliquam sodales justo eros, a rhoncus ligula elementum sit amet. Curabitur tincidunt sem in sem sagittis euismod. Nam a arcu nec neque semper facilisis. Quisque non eros ipsum. Cras quis fringilla dolor, in laoreet ligula. Aliquam maximus sagittis magna ut condimentum.</p>\r\n",
+        "title": "Gonekin ero bero",
+        "url": "/radio/gonekin/",
+        "object_id": "3",
+        "content": "Gonekin ero bero gonekin Nulla commodo dui tristique viverra fermentum. Vestibulum aliquam, nisi vel aliquet tempor, mauris diam euismod turpis, eget luctus diam massa at velit. Aliquam sodales justo eros, a rhoncus ligula elementum sit amet. Curabitur tincidunt sem in sem sagittis euismod. Nam a arcu nec neque semper facilisis. Quisque non eros ipsum. Cras quis fringilla dolor, in laoreet ligula. Aliquam maximus sagittis magna ut condimentum.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 4
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/martxoa8emankizun2014.jpg\"}",
+        "description": "<p>Nulla porta felis ut iaculis ornare. Donec eu eros nibh. Vestibulum ultrices tincidunt aliquet. Vestibulum sed mattis ante, vitae semper lorem. Sed varius posuere elit. Curabitur porttitor velit odio, vulputate cursus ligula commodo eget. Nam vehicula, velit aliquet euismod tincidunt, nunc lectus iaculis ex, quis blandit risus sem quis quam. Quisque iaculis urna vel diam congue, eu varius urna luctus. Ut vel efficitur nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>\r\n",
+        "title": "Hari gorria",
+        "url": "/radio/hari_gorria/",
+        "object_id": "7",
+        "content": "Hari gorria hari_gorria Nulla porta felis ut iaculis ornare. Donec eu eros nibh. Vestibulum ultrices tincidunt aliquet. Vestibulum sed mattis ante, vitae semper lorem. Sed varius posuere elit. Curabitur porttitor velit odio, vulputate cursus ligula commodo eget. Nam vehicula, velit aliquet euismod tincidunt, nunc lectus iaculis ex, quis blandit risus sem quis quam. Quisque iaculis urna vel diam congue, eu varius urna luctus. Ut vel efficitur nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 7
+    },
+    "model": "watson.searchentry",
+    "pk": 5
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/sokatira.jpg\"}",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a sem sem. Suspendisse tellus augue, tempor sit amet vestibulum non, elementum a augue. Proin finibus maximus metus sed bibendum. Fusce feugiat orci vel eros feugiat, eget tempor mi porttitor. Donec ut tortor sit amet risus dignissim auctor. Donec iaculis feugiat quam vitae bibendum. Aliquam erat volutpat. Donec ac enim in augue condimentum varius a congue tortor. In gravida nec lectus a venenatis.</p>\r\n\r\n<h2>In hac habitasse platea dictumst</h2>\r\n\r\n<p>Aliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vehicula orci ac mi posuere ultrices. Proin at nunc erat. Fusce enim nulla, mollis at tempor ac, dictum aliquet erat. Nulla pellentesque bibendum mi, sed rutrum nunc congue scelerisque. Nullam laoreet risus at imperdiet porta. In hac habitasse platea dictumst. In cursus ac mi vitae semper. Quisque consequat luctus felis, eget auctor ex imperdiet id. Etiam tempus quis augue eu tincidunt. Praesent eget interdum nunc. Nunc viverra vel ligula sit amet faucibus. Maecenas aliquam, nulla pulvinar lacinia mollis, justo quam eleifend lorem, et tempus lorem turpis ac risus.</p>\r\n",
+        "title": "Kiroletik",
+        "url": "/radio/kiroletik/",
+        "object_id": "1",
+        "content": "Kiroletik kiroletik Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a sem sem. Suspendisse tellus augue, tempor sit amet vestibulum non, elementum a augue. Proin finibus maximus metus sed bibendum. Fusce feugiat orci vel eros feugiat, eget tempor mi porttitor. Donec ut tortor sit amet risus dignissim auctor. Donec iaculis feugiat quam vitae bibendum. Aliquam erat volutpat. Donec ac enim in augue condimentum varius a congue tortor. In gravida nec lectus a venenatis.\r\n\r\nIn hac habitasse platea dictumst\r\n\r\nAliquam erat volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vehicula orci ac mi posuere ultrices. Proin at nunc erat. Fusce enim nulla, mollis at tempor ac, dictum aliquet erat. Nulla pellentesque bibendum mi, sed rutrum nunc congue scelerisque. Nullam laoreet risus at imperdiet porta. In hac habitasse platea dictumst. In cursus ac mi vitae semper. Quisque consequat luctus felis, eget auctor ex imperdiet id. Etiam tempus quis augue eu tincidunt. Praesent eget interdum nunc. Nunc viverra vel ligula sit amet faucibus. Maecenas aliquam, nulla pulvinar lacinia mollis, justo quam eleifend lorem, et tempus lorem turpis ac risus.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 6
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/4f16cc1ae39ad32b1cb12039a3f02557-d66nfvh_w7jae62.png\"}",
+        "description": "<p>Nulla porta felis ut iaculis ornare. Donec eu eros nibh. Vestibulum ultrices tincidunt aliquet. Vestibulum sed mattis ante, vitae semper lorem. Sed varius posuere elit. Curabitur porttitor velit odio, vulputate cursus ligula commodo eget. Nam vehicula, velit aliquet euismod tincidunt, nunc lectus iaculis ex, quis blandit risus sem quis quam. Quisque iaculis urna vel diam congue, eu varius urna luctus. Ut vel efficitur nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>\r\n",
+        "title": "Txingurri hotsak",
+        "url": "/radio/txingurri_hotsak/",
+        "object_id": "2",
+        "content": "Txingurri hotsak txingurri_hotsak Nulla porta felis ut iaculis ornare. Donec eu eros nibh. Vestibulum ultrices tincidunt aliquet. Vestibulum sed mattis ante, vitae semper lorem. Sed varius posuere elit. Curabitur porttitor velit odio, vulputate cursus ligula commodo eget. Nam vehicula, velit aliquet euismod tincidunt, nunc lectus iaculis ex, quis blandit risus sem quis quam. Quisque iaculis urna vel diam congue, eu varius urna luctus. Ut vel efficitur nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 7
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Nulla commodo dui tristique viverra fermentum. Vestibulum aliquam, nisi vel aliquet tempor, mauris diam euismod turpis, eget luctus diam massa at velit. Aliquam sodales justo eros, a rhoncus ligula elementum sit amet. Curabitur tincidunt sem in sem sagittis euismod. Nam a arcu nec neque semper facilisis. Quisque non eros ipsum. Cras quis fringilla dolor, in laoreet ligula. Aliquam maximus sagittis magna ut condimentum.</p>\r\n",
+        "title": "Zebra bidea",
+        "url": "/radio/zebra_bidea/",
+        "object_id": "6",
+        "content": "Zebra bidea zebra_bidea Nulla commodo dui tristique viverra fermentum. Vestibulum aliquam, nisi vel aliquet tempor, mauris diam euismod turpis, eget luctus diam massa at velit. Aliquam sodales justo eros, a rhoncus ligula elementum sit amet. Curabitur tincidunt sem in sem sagittis euismod. Nam a arcu nec neque semper facilisis. Quisque non eros ipsum. Cras quis fringilla dolor, in laoreet ligula. Aliquam maximus sagittis magna ut condimentum.\r\n",
+        "content_type": [
+            "radio",
+            "radioshow"
+        ],
+        "object_id_int": 6
+    },
+    "model": "watson.searchentry",
+    "pk": 8
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Antxetamedia",
+        "url": "",
+        "object_id": "2",
+        "content": "Antxetamedia antxetamedia",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 9
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Pausumedia",
+        "url": "",
+        "object_id": "1",
+        "content": "Pausumedia pausumedia",
+        "content_type": [
+            "radio",
+            "radioproducer"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 10
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/anari_9xuEfrN.jpg\"}",
+        "description": "",
+        "title": "Kaixo",
+        "url": "/news/kaixo/",
+        "object_id": "9",
+        "content": "Kaixo kaixo ",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 9
+    },
+    "model": "watson.searchentry",
+    "pk": 11
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Larunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.</p>\r\n\r\n<p style=\"text-align: center;\">Larunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.</p>\r\n\r\n<p style=\"text-align: right;\">Larunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.</p>\r\n\r\n<p style=\"text-align: justify;\">Larunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.</p>\r\n",
+        "title": "EHan bakea lortzearen aldeko giza konferentzia",
+        "url": "/news/ehan-bakea-lortzearen-aldeko-giza-konferentzia/",
+        "object_id": "8",
+        "content": "EHan bakea lortzearen aldeko giza konferentzia ehan-bakea-lortzearen-aldeko-giza-konferentzia Larunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.\r\n\r\nLarunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.\r\n\r\nLarunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.\r\n\r\nLarunbatean dugu hitzordua Ficoba erakustazokan. Bertan izango dira Anaiz Funosas eta Peio Ospital Ipar Euskal Herrian orain arte eman diren urratsak azaleratzeko. Otsailan &quot;Bidasoan elkarbizitza&quot; jardunaldiak antolatu eta, bizikidetzaren alde lanean segitu nahi dugu Antxeta Irratian. Bake Bidean eragileko Anaiz Funosasek gaia sakonean aipatzen digu.\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 8
+    },
+    "model": "watson.searchentry",
+    "pk": 12
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/Ficoba.jpg\"}",
+        "description": "<p><strong>Errespetutik,</strong> <em>aitortzatik</em>, <u>baketik,</u> konponbideti, elkarbizitzatik... eta aurrera. Hauxe izan da larunbata honetan Ficoban nagusitu den ideia. Elkarrizketarako espazioak sortzeko beharra argi gelditu da, eta prestutasuna ere bai. Anais Funosas, Teresa Toda eta</p>\r\n\r\n<ul>\r\n\t<li>Peio Ospitalekin\r\n\t<ul>\r\n\t\t<li>hitz egiteko aukera\r\n\t\t<ul>\r\n\t\t\t<li>izan dugu, debatea\r\n\t\t\t<ul>\r\n\t\t\t\t<li>amaitu eta berehala</li>\r\n\t\t\t</ul>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t\t</li>\r\n\t</ul>\r\n\t</li>\r\n</ul>\r\n",
+        "title": "Herria eraikitzeko konpromisoa berritsi da Ficoban",
+        "url": "/news/herria-eraikitzeko-konpromisoa-berritsi-da-ficoban/",
+        "object_id": "7",
+        "content": "Herria eraikitzeko konpromisoa berritsi da Ficoban herria-eraikitzeko-konpromisoa-berritsi-da-ficoban Errespetutik, aitortzatik, baketik, konponbideti, elkarbizitzatik... eta aurrera. Hauxe izan da larunbata honetan Ficoban nagusitu den ideia. Elkarrizketarako espazioak sortzeko beharra argi gelditu da, eta prestutasuna ere bai. Anais Funosas, Teresa Toda eta\r\n\r\n\r\n\tPeio Ospitalekin\r\n\t\r\n\t\thitz egiteko aukera\r\n\t\t\r\n\t\t\tizan dugu, debatea\r\n\t\t\t\r\n\t\t\t\tamaitu eta berehala\r\n\t\t\t\r\n\t\t\t\r\n\t\t\r\n\t\t\r\n\t\r\n\t\r\n\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 7
+    },
+    "model": "watson.searchentry",
+    "pk": 13
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/kiki.jpg\"}",
+        "description": "<p>Jon Bikendik eta Iban Gartzia Irundarrak osorik egingo dute ibilbidea, eta beste bost txirrindulari izango dituzte ondoan: Oinatz Mitxelena (Irundarra), Iban Ruiperez, Eduard Sadurni, Eugeni Serret eta Josep Negre. Entzun solasaldia!</p>\r\n",
+        "title": "Kataluniatik Euskal Herrira txirrindan, kirola eta aldarrikapena!",
+        "url": "/news/kataluniatik-euskal-herrira-txirrindan-kirola-eta-/",
+        "object_id": "5",
+        "content": "Kataluniatik Euskal Herrira txirrindan, kirola eta aldarrikapena! kataluniatik-euskal-herrira-txirrindan-kirola-eta- Jon Bikendik eta Iban Gartzia Irundarrak osorik egingo dute ibilbidea, eta beste bost txirrindulari izango dituzte ondoan: Oinatz Mitxelena (Irundarra), Iban Ruiperez, Eduard Sadurni, Eugeni Serret eta Josep Negre. Entzun solasaldia!\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 14
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Hondarribia Blues festibala hasiko da ostegun honetan. Hamargarren edizioa izango da aurtengoa. Txomin Sagarzazu alkatearekin hitz egiteko aukera izan dugu luze eta zabal</p>\r\n",
+        "title": "Dena prest Hondarribian, Blues doinuak hartzeko",
+        "url": "/news/dena-prest-hondarribian-blues-doinuak-hartzeko/",
+        "object_id": "6",
+        "content": "Dena prest Hondarribian, Blues doinuak hartzeko dena-prest-hondarribian-blues-doinuak-hartzeko Hondarribia Blues festibala hasiko da ostegun honetan. Hamargarren edizioa izango da aurtengoa. Txomin Sagarzazu alkatearekin hitz egiteko aukera izan dugu luze eta zabal\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 6
+    },
+    "model": "watson.searchentry",
+    "pk": 15
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/abentura.jpg\"}",
+        "description": "<p>Urru&ntilde;ara jo dugu, bertako Oihana parkea ezagutzeko. Sekulako adrenalina gunea izan daiteke partea, hala nahi izanez gero noski. Gotzon Buduagirre bertako kideak azalpen oro eskaintzen digu.</p>\r\n",
+        "title": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu",
+        "url": "/news/urrunako-oihana-abentura-parkea-ezagutzeko-aukera-/",
+        "object_id": "1",
+        "content": "Urru\u00f1ako Oihana abentura parkea ezagutzeko aukera izan dugu urrunako-oihana-abentura-parkea-ezagutzeko-aukera- Urru&ntilde;ara jo dugu, bertako Oihana parkea ezagutzeko. Sekulako adrenalina gunea izan daiteke partea, hala nahi izanez gero noski. Gotzon Buduagirre bertako kideak azalpen oro eskaintzen digu.\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 16
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Pausu auzoko bestak hastear daude, eta Xaia ostatuak urteroko egitarau alaia antolatu du auzoa are gehiago girotzeko. Be&ntilde;at Elizondorekin mintzatu gara</p>\r\n",
+        "title": "Pausu auzoko bestak martxan",
+        "url": "/news/pausu-auzoko-bestak-martxan/",
+        "object_id": "3",
+        "content": "Pausu auzoko bestak martxan pausu-auzoko-bestak-martxan Pausu auzoko bestak hastear daude, eta Xaia ostatuak urteroko egitarau alaia antolatu du auzoa are gehiago girotzeko. Be&ntilde;at Elizondorekin mintzatu gara\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 17
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<address><a href=\"http://lakaxita.org\">Asteburu berezia heldu da</a></address>\r\n\r\n<p>Irungo Oiasso Errmatar museora. Dies Oiassonis jarduerarekin aitzina segitzen dute eta horrez gain, bertako jardueren arduradunak azaldu digunez, Mariajo Noainek berak, inoiz ukan duten erakusketarik ederrenetarikoa dute martxan uda garai honetan, eta azaroa bitarte: &quot;Apain mahaiko Istorioak&quot;. Mariajo Noainekin hitz egiteko aukera izan dugu.</p>\r\n\r\n<div>\r\n<div>\r\n<div>\r\n<p><img alt=\"\" src=\"/media/ckeditor/2015/07/29/a_thousand_promises_by_symmetrybox-d5ots3w.png\" style=\"float:right; height:140px; width:200px\" />Los cazas F16 de la Fuerza A&eacute;rea turca han atacado seis objetivos en el norte de Irak, tras haber sido desplegados de urgencia desde una base a&eacute;rea de Diyarbakir, en Kurdist&aacute;n Norte, seg&uacute;n ha confirmado la oficina del primer ministro turco, Ahmet Davutoglu, en la mayor ofensiva desde que comenzaron los ataques la semana pasada.</p>\r\n\r\n<p>El PKK ha informado de la muerte de al menos nueve milicianos en los bombardeos.</p>\r\n\r\n<p>Adem&aacute;s, las autoridades turcas han detenido a un total de 1.302 personas&nbsp;en una operaci&oacute;n contra el Estado Isl&aacute;mico, el PKK y &laquo;otros grupos ilegales&raquo;, seg&uacute;n ha informado en un comunicado.</p>\r\n\r\n<p>El <a href=\"http://www.naiz.eus/eu/actualidad/noticia/20150725/el-pkk-declara-que-la-tregua-carece-de-sentido-tras-los-bombardeos-turcos\">Gobierno turco comenz&oacute; a bombardear los campos de milicianos del PKK</a> en el norte de Irak el pasado 24 de julio tras una serie de ataques contra agentes de Polic&iacute;a que el Ejecutivo atribuy&oacute; a la guerrilla kurda.</p>\r\n\r\n<p>El martes, los cazas bombardearon posiciones del PKK en la provincia turca de Sirnak, en el sureste del pa&iacute;s, tras un ataque contra un grupo de gendarmes turcos.</p>\r\n\r\n<p>El presidente turco, Recep Tayyip Erdogan, <a href=\"http://www.naiz.eus/eu/actualidad/noticia/20150728/erdogan-da-por-terminado-el-proceso-de-paz-iniciado-con-la-guerrilla-kurda\">dio por finiquitado ayer el proceso de di&aacute;logo con la guerrilla kurda</a>. El Parlamento de Ankara tiene previsto discutir hoy en una sesi&oacute;n a puerta cerrada la petici&oacute;n del mandatario turco para retirar la inmunidad a los pol&iacute;ticos que vincula con los milicianos del PKK.</p>\r\n</div>\r\n</div>\r\n</div>\r\n",
+        "title": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
+        "url": "/news/dies-oiassonis-eta-itzelezko-erakusketa-oiasso-mus/",
+        "object_id": "2",
+        "content": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan dies-oiassonis-eta-itzelezko-erakusketa-oiasso-mus Asteburu berezia heldu da\r\n\r\nIrungo Oiasso Errmatar museora. Dies Oiassonis jarduerarekin aitzina segitzen dute eta horrez gain, bertako jardueren arduradunak azaldu digunez, Mariajo Noainek berak, inoiz ukan duten erakusketarik ederrenetarikoa dute martxan uda garai honetan, eta azaroa bitarte: &quot;Apain mahaiko Istorioak&quot;. Mariajo Noainekin hitz egiteko aukera izan dugu.\r\n\r\n\r\n\r\n\r\nLos cazas F16 de la Fuerza A&eacute;rea turca han atacado seis objetivos en el norte de Irak, tras haber sido desplegados de urgencia desde una base a&eacute;rea de Diyarbakir, en Kurdist&aacute;n Norte, seg&uacute;n ha confirmado la oficina del primer ministro turco, Ahmet Davutoglu, en la mayor ofensiva desde que comenzaron los ataques la semana pasada.\r\n\r\nEl PKK ha informado de la muerte de al menos nueve milicianos en los bombardeos.\r\n\r\nAdem&aacute;s, las autoridades turcas han detenido a un total de 1.302 personas&nbsp;en una operaci&oacute;n contra el Estado Isl&aacute;mico, el PKK y &laquo;otros grupos ilegales&raquo;, seg&uacute;n ha informado en un comunicado.\r\n\r\nEl Gobierno turco comenz&oacute; a bombardear los campos de milicianos del PKK en el norte de Irak el pasado 24 de julio tras una serie de ataques contra agentes de Polic&iacute;a que el Ejecutivo atribuy&oacute; a la guerrilla kurda.\r\n\r\nEl martes, los cazas bombardearon posiciones del PKK en la provincia turca de Sirnak, en el sureste del pa&iacute;s, tras un ataque contra un grupo de gendarmes turcos.\r\n\r\nEl presidente turco, Recep Tayyip Erdogan, dio por finiquitado ayer el proceso de di&aacute;logo con la guerrilla kurda. El Parlamento de Ankara tiene previsto discutir hoy en una sesi&oacute;n a puerta cerrada la petici&oacute;n del mandatario turco para retirar la inmunidad a los pol&iacute;ticos que vincula con los milicianos del PKK.\r\n\r\n\r\n\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 18
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/5j2mg-Pedro_002.jpg\"}",
+        "description": "<p>Hendaiako beheko auzoko hainbat bizilagun, antolatu egin dira, bertako mugikortasun arazoak indentifikatu eta aldatzeko helburuarekin. Gaur, arratsaldeko 18:00etan da hitzordua Beltzenia aitzinean. Miguel Gimenezek azaltzen digu dena</p>\r\n",
+        "title": "Beheko auzoko hainbat arazo konpontzeko zita",
+        "url": "/news/beheko-auzoko-hainbat-arazo-konpontzeko-zita/",
+        "object_id": "4",
+        "content": "Beheko auzoko hainbat arazo konpontzeko zita beheko-auzoko-hainbat-arazo-konpontzeko-zita Hendaiako beheko auzoko hainbat bizilagun, antolatu egin dira, bertako mugikortasun arazoak indentifikatu eta aldatzeko helburuarekin. Gaur, arratsaldeko 18:00etan da hitzordua Beltzenia aitzinean. Miguel Gimenezek azaltzen digu dena\r\n",
+        "content_type": [
+            "news",
+            "newspodcast"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 19
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<h1>Martxoan, emakumeon eskubideen aldeko hilabetea,</h1>\r\n\r\n<p>Antxeta Irratian. Martxoaren 8ko egunaren karietara, ekoiztutako irratsaio berezia entzuteko aukera duzue.</p>\r\n",
+        "title": "Martxoak 8rako saio berezia",
+        "url": "/radio/martxoak-8rako-saio-berezia/",
+        "object_id": "7",
+        "content": "Martxoak 8rako saio berezia martxoak-8rako-saio-berezia Martxoan, emakumeon eskubideen aldeko hilabetea,\r\n\r\nAntxeta Irratian. Martxoaren 8ko egunaren karietara, ekoiztutako irratsaio berezia entzuteko aukera duzue.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 7
+    },
+    "model": "watson.searchentry",
+    "pk": 20
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/Mikel-Martins_H%C3%A9rcules.jpg\"}",
+        "description": "<p>Mikel Martins Das Neves fitxatu du Real Unionek. 32 urteko donostiarra da, arbaso portugaldarrak dituena. Erdilaria da, defentsako lanean espezialista. Esperientzia handia du 2.Bn, baita Bigarren Mailan ere. Athleticeko harrobian hazi ondoren, Espanyol Bn, Bazan, Guijuelon, Benidormen, Mirandesen, Cadizen eta Herculesen aritu da. 2011-2012 denboraldian, Bigarren Mailara igo eta Errege Kopako finalerdietara iritsi zen Mirandesekin.</p>\r\n",
+        "title": "Real Unionen zelai erdia indartuko du Martinsek",
+        "url": "/radio/real-unionen-zelai-erdia-indartuko-du-martinsek/",
+        "object_id": "1",
+        "content": "Real Unionen zelai erdia indartuko du Martinsek real-unionen-zelai-erdia-indartuko-du-martinsek Mikel Martins Das Neves fitxatu du Real Unionek. 32 urteko donostiarra da, arbaso portugaldarrak dituena. Erdilaria da, defentsako lanean espezialista. Esperientzia handia du 2.Bn, baita Bigarren Mailan ere. Athleticeko harrobian hazi ondoren, Espanyol Bn, Bazan, Guijuelon, Benidormen, Mirandesen, Cadizen eta Herculesen aritu da. 2011-2012 denboraldian, Bigarren Mailara igo eta Errege Kopako finalerdietara iritsi zen Mirandesekin.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 21
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/atxondo15.jpg\"}",
+        "description": "<p>Atxondon iragnadako AHT proiektuaren kontrako mendi martxa aipatu dugu gaurkoan.</p>\r\n",
+        "title": "Saio osoa",
+        "url": "/radio/saio-osoa/",
+        "object_id": "2",
+        "content": "Saio osoa saio-osoa Atxondon iragnadako AHT proiektuaren kontrako mendi martxa aipatu dugu gaurkoan.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 22
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/anari.jpg\"}",
+        "description": "<p>Hemen duzue ikasturte honetan azken Amapola Morea saioa. Anari abeslari, sortzaile eta erakaslea eragutzeko aukera izan dugu besteak beste. Sekulako plazerra. Eskerrikasko Anari !</p>\r\n",
+        "title": "Anarirekin elkarrizketa",
+        "url": "/radio/anarirekin-elkarrizketa/",
+        "object_id": "5",
+        "content": "Anarirekin elkarrizketa anarirekin-elkarrizketa Hemen duzue ikasturte honetan azken Amapola Morea saioa. Anari abeslari, sortzaile eta erakaslea eragutzeko aukera izan dugu besteak beste. Sekulako plazerra. Eskerrikasko Anari !\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 23
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Kaixo!! Gaurkoan zuekin <strong>Gure Esku Dago</strong>-ren antolakuntzan dabilen Jexux elkarrizketatu dugu, nola doa dena? Lan ugari?. Bestetik <strong>Aratz</strong> ekarri dugu gurera <strong>Irungo jai alternatiboen</strong> inguruan mintzatu gara. 30 bakarrik ez delako jai eguna!!</p>\r\n\r\n<p>Hau izan da kurtsoko azken irratsaioa, udara bukatzean itzuliko gara. JAIA ETA BORROKA!! Aio!!</p>\r\n",
+        "title": "Saio osoa",
+        "url": "/radio/saio-osoa/",
+        "object_id": "8",
+        "content": "Saio osoa saio-osoa Kaixo!! Gaurkoan zuekin Gure Esku Dago-ren antolakuntzan dabilen Jexux elkarrizketatu dugu, nola doa dena? Lan ugari?. Bestetik Aratz ekarri dugu gurera Irungo jai alternatiboen inguruan mintzatu gara. 30 bakarrik ez delako jai eguna!!\r\n\r\nHau izan da kurtsoko azken irratsaioa, udara bukatzean itzuliko gara. JAIA ETA BORROKA!! Aio!!\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 8
+    },
+    "model": "watson.searchentry",
+    "pk": 24
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/guz_ehkz_03.jpg\"}",
+        "description": "<p>EHKZ Ipar Euskal Herriko gazte mugimenduaren kazeta digitala da. Bere ibilbide, izaera eta asmoaren inguruan aritu zaigu Ekhi, proiektuko kidea.</p>\r\n",
+        "title": "EHKZ",
+        "url": "/radio/ehkz/",
+        "object_id": "6",
+        "content": "EHKZ ehkz EHKZ Ipar Euskal Herriko gazte mugimenduaren kazeta digitala da. Bere ibilbide, izaera eta asmoaren inguruan aritu zaigu Ekhi, proiektuko kidea.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 6
+    },
+    "model": "watson.searchentry",
+    "pk": 25
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/13feb-dop-cebolla5.jpg\"}",
+        "description": "<p><strong>Aste honetan urteko tipula </strong><em>landatzeko eman beharreko urratsak esplikatu </em>dizkigu Miguelek. Bestalde, Hendaiako asteazkenetako azokan egon gara, eta Biriatuko Patrick Larrondo laborariarekin mintzatu gara, hiru hilabete ondotik bere azokako postura bueltatu baita barazki biologikoekin.</p>\r\n\r\n<p>Horrez gain, Europako Batasunak aste honetan hartu duen behi-esne kuoten kentzeko erabakiaz xehetasunak bildu ditugu ELB sindikatuaren eskutik. 1986. urtean behi-esne prezioen kontrolatzeko indarrean ezarritako kuoten neurria desagertaraztearekin, ekoizle handiek abantaila izanen baitute, ekoizle txikien aldean.</p>\r\n",
+        "title": "Saio osoa",
+        "url": "/radio/saio-osoa/",
+        "object_id": "4",
+        "content": "Saio osoa saio-osoa Aste honetan urteko tipula landatzeko eman beharreko urratsak esplikatu dizkigu Miguelek. Bestalde, Hendaiako asteazkenetako azokan egon gara, eta Biriatuko Patrick Larrondo laborariarekin mintzatu gara, hiru hilabete ondotik bere azokako postura bueltatu baita barazki biologikoekin.\r\n\r\nHorrez gain, Europako Batasunak aste honetan hartu duen behi-esne kuoten kentzeko erabakiaz xehetasunak bildu ditugu ELB sindikatuaren eskutik. 1986. urtean behi-esne prezioen kontrolatzeko indarrean ezarritako kuoten neurria desagertaraztearekin, ekoizle handiek abantaila izanen baitute, ekoizle txikien aldean.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 26
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/gonekin_1_4_y2w4PiJ.jpg\"}",
+        "description": "<p>Hemen duzue aste honetako Gonekin Ero Bero saio!</p>\r\n",
+        "title": "Saio osoa",
+        "url": "/radio/saio-osoa/",
+        "object_id": "3",
+        "content": "Saio osoa saio-osoa Hemen duzue aste honetako Gonekin Ero Bero saio!\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 27
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/p006_f01.jpg\"}",
+        "description": "<p>Kaixo entzuleok!! Gaurkoan zuekin <strong>Mikel Button</strong> izango dugu, bera madrilen epaitua izaten hari den gazteetako bat dugu eta bere egoera eta sentsazioak azalduko dizkigu. Ondoren <strong>hauteskundeen</strong> inguruko analisi bat egingo digu Bixargorrik. <strong>9ak LIBRE!!</strong></p>\r\n",
+        "title": "Saio osoa",
+        "url": "/radio/saio-osoa-2/",
+        "object_id": "9",
+        "content": "Saio osoa saio-osoa-2 Kaixo entzuleok!! Gaurkoan zuekin Mikel Button izango dugu, bera madrilen epaitua izaten hari den gazteetako bat dugu eta bere egoera eta sentsazioak azalduko dizkigu. Ondoren hauteskundeen inguruko analisi bat egingo digu Bixargorrik. 9ak LIBRE!!\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 9
+    },
+    "model": "watson.searchentry",
+    "pk": 28
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/p006_f01_XWLdng2.jpg\"}",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas rhoncus. Morbi porta velit iaculis nisi convallis, non accumsan nisi egestas. Mauris nisl nisl, ullamcorper ut turpis vel, sollicitudin rutrum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras eleifend ornare pharetra. Quisque nec egestas ligula, a maximus neque. Sed sapien arcu, feugiat et ipsum id, gravida laoreet sem. Nullam at justo turpis. Vestibulum nec maximus neque. Donec nisl elit, scelerisque sit amet lectus sed, lobortis vulputate ipsum. Aenean dignissim erat vitae metus venenatis, tempus sagittis sapien sollicitudin. Suspendisse potenti. Duis ultrices eros id ligula malesuada tristique. Nunc sed lectus sed justo commodo vehicula. Fusce ornare nunc quam, eget sagittis massa cursus egestas.</p>\r\n",
+        "title": "Button libre ekimenari buruzko saioa",
+        "url": "/radio/button-libre-ekimenari-buruzko-saioa/",
+        "object_id": "10",
+        "content": "Button libre ekimenari buruzko saioa button-libre-ekimenari-buruzko-saioa Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus egestas rhoncus. Morbi porta velit iaculis nisi convallis, non accumsan nisi egestas. Mauris nisl nisl, ullamcorper ut turpis vel, sollicitudin rutrum mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras eleifend ornare pharetra. Quisque nec egestas ligula, a maximus neque. Sed sapien arcu, feugiat et ipsum id, gravida laoreet sem. Nullam at justo turpis. Vestibulum nec maximus neque. Donec nisl elit, scelerisque sit amet lectus sed, lobortis vulputate ipsum. Aenean dignissim erat vitae metus venenatis, tempus sagittis sapien sollicitudin. Suspendisse potenti. Duis ultrices eros id ligula malesuada tristique. Nunc sed lectus sed justo commodo vehicula. Fusce ornare nunc quam, eget sagittis massa cursus egestas.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 10
+    },
+    "model": "watson.searchentry",
+    "pk": 29
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/mosaikoa.jpg\"}",
+        "description": "<p>Kaixo!! Gaurkoan Herri harresian egondako erasoaren inguruan mintzatu gara, analisi eta guzti.</p>\r\n",
+        "title": "Herri harresian egondako erasoei buruzko saioa",
+        "url": "/radio/herri-harresian-egondako-erasoei-buruzko-saioa/",
+        "object_id": "11",
+        "content": "Herri harresian egondako erasoei buruzko saioa herri-harresian-egondako-erasoei-buruzko-saioa Kaixo!! Gaurkoan Herri harresian egondako erasoaren inguruan mintzatu gara, analisi eta guzti.\r\n",
+        "content_type": [
+            "radio",
+            "radiopodcast"
+        ],
+        "object_id_int": 11
+    },
+    "model": "watson.searchentry",
+    "pk": 30
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Aisialdia",
+        "url": "/news/?category=aisialdia",
+        "object_id": "2",
+        "content": "Aisialdia aisialdia",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 31
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Aldarrikapenak",
+        "url": "/news/?category=aldarrikapenak",
+        "object_id": "5",
+        "content": "Aldarrikapenak aldarrikapenak",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 32
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Ingurugiroa",
+        "url": "/news/?category=ingurugiro",
+        "object_id": "4",
+        "content": "Ingurugiroa ingurugiro",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 33
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Kirola",
+        "url": "/news/?category=kirola",
+        "object_id": "1",
+        "content": "Kirola kirola",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 34
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Kultura",
+        "url": "/news/?category=kultura",
+        "object_id": "3",
+        "content": "Kultura kultura",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 35
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Politika",
+        "url": "/news/?category=politika",
+        "object_id": "6",
+        "content": "Politika politika",
+        "content_type": [
+            "news",
+            "newscategory"
+        ],
+        "object_id_int": 6
+    },
+    "model": "watson.searchentry",
+    "pk": 36
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Feminismoa",
+        "url": "",
+        "object_id": "3",
+        "content": "Feminismoa feminismoa",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 37
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Gazteak",
+        "url": "",
+        "object_id": "5",
+        "content": "Gazteak gazteak",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 38
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Kazeta",
+        "url": "",
+        "object_id": "4",
+        "content": "Kazeta kazeta",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 39
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Kirolak",
+        "url": "",
+        "object_id": "1",
+        "content": "Kirolak kirolak",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 40
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Lurra",
+        "url": "",
+        "object_id": "2",
+        "content": "Lurra lurra",
+        "content_type": [
+            "radio",
+            "radiocategory"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 41
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, auctor vitae sem ac, efficitur aliquam magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare et mauris non ullamcorper. Nullam sit amet aliquam nisi. Curabitur porta, elit vel hendrerit luctus, lectus leo ornare justo, a sagittis leo nulla in ex. Ut sed nibh eu lectus pulvinar varius at sit amet lacus. Integer sit amet nibh lacus. Mauris mattis mi risus, congue pulvinar nibh pulvinar eu. Nulla vel varius tellus, lobortis pharetra nunc. Nullam tempor augue augue, sit amet interdum tellus elementum sit amet.</p>\r\n",
+        "title": "Berriak",
+        "url": "/news/?show=berriak",
+        "object_id": "1",
+        "content": "Berriak berriak Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor turpis, auctor vitae sem ac, efficitur aliquam magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare et mauris non ullamcorper. Nullam sit amet aliquam nisi. Curabitur porta, elit vel hendrerit luctus, lectus leo ornare justo, a sagittis leo nulla in ex. Ut sed nibh eu lectus pulvinar varius at sit amet lacus. Integer sit amet nibh lacus. Mauris mattis mi risus, congue pulvinar nibh pulvinar eu. Nulla vel varius tellus, lobortis pharetra nunc. Nullam tempor augue augue, sit amet interdum tellus elementum sit amet.\r\n",
+        "content_type": [
+            "news",
+            "newsshow"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 42
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/events/lakaxita.jpg\"}",
+        "description": "<p>Laburmetrai baten proiekzioa: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz? gaiari buruz eztabaidatuko dugu ondoren</p>\r\n",
+        "title": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz?",
+        "url": "",
+        "object_id": "1",
+        "content": "Asteazken kuturalak: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz? asteazken-kuturalak-eta-zu-gizonezkoa-bazina-eta-n Laburmetrai baten proiekzioa: Eta zu gizonezkoa bazina eta ni emakumezkoa? edo alderantziz? gaiari buruz eztabaidatuko dugu ondoren\r\n Lakaxita http://lakaxita.org/",
+        "content_type": [
+            "events",
+            "event"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 43
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/events/d052ce56b6ddbf188adaa227aa037ad8-d5yfxi2.png\"}",
+        "description": "<p>&quot;Arthur y los Minimoys&quot;</p>\r\n",
+        "title": "Kale zinema",
+        "url": "",
+        "object_id": "2",
+        "content": "Kale zinema kale-zinema &quot;Arthur y los Minimoys&quot;\r\n Urdanibia plaza ",
+        "content_type": [
+            "events",
+            "event"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 44
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": null}",
+        "description": "<p>Finalaren kontzertua</p>\r\n",
+        "title": "Musikirun maketa lehiaketa",
+        "url": "",
+        "object_id": "3",
+        "content": "Musikirun maketa lehiaketa musikirun-maketa-lehiaketa Finalaren kontzertua\r\n Urdanibia plaza http://irun.org/",
+        "content_type": [
+            "events",
+            "event"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 45
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/events/directional_device_by_suicidebysafetypin-d5ayksp.jpg\"}",
+        "description": "<p>&quot;Junkal Andre Mariaren Omenezkoa&quot;, Irun Hiria Musika Banda</p>\r\n",
+        "title": "Kontzertua",
+        "url": "",
+        "object_id": "4",
+        "content": "Kontzertua kontzertua &quot;Junkal Andre Mariaren Omenezkoa&quot;, Irun Hiria Musika Banda\r\n Junkal plazatxoa ",
+        "content_type": [
+            "events",
+            "event"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 46
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/events/for_the_sake_of_color_by_suicidebysafetypin-d5gkkz2.jpg\"}",
+        "description": "<p>&quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.</p>\r\n",
+        "title": "Dantza ikuskizuna",
+        "url": "",
+        "object_id": "5",
+        "content": "Dantza ikuskizuna dantza-ikuskizuna &quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.\r\n Amaia ",
+        "content_type": [
+            "events",
+            "event"
+        ],
+        "object_id_int": 5
+    },
+    "model": "watson.searchentry",
+    "pk": 47
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Pausumedia",
+        "url": "",
+        "object_id": "1",
+        "content": "Pausumedia pausumedia",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 48
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/biziki01.jpg\"}",
+        "description": "<p>Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.</p>\r\n\r\n<p>Beraz gaur aurkeztuko ditugun jardunaldiak, Antxeta Irratiak eginiko apustu baten emaitza dira. Informatzeaz gain, hedabide bezala, herri honek beharrezkoak dituen aldaketen aktore zein eragile ere izan behar dugula uste baitugu.</p>\r\n\r\n<p>Hilabeteak daramatzagu, gure herriko gatazka politikoari begira, herri mailan zer egin de-zakegun pentsatzen. Aieteko Adierazpena izenpetu orduko, argi ukan baitugu, goiz ala berandu une hau helduko zela.</p>\r\n",
+        "title": "Bidasoan elkarbizitza",
+        "url": "/projects/elkarbizitza/",
+        "object_id": "1",
+        "content": "Bidasoan elkarbizitza elkarbizitza Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.\r\n\r\nBeraz gaur aurkeztuko ditugun jardunaldiak, Antxeta Irratiak eginiko apustu baten emaitza dira. Informatzeaz gain, hedabide bezala, herri honek beharrezkoak dituen aldaketen aktore zein eragile ere izan behar dugula uste baitugu.\r\n\r\nHilabeteak daramatzagu, gure herriko gatazka politikoari begira, herri mailan zer egin de-zakegun pentsatzen. Aieteko Adierazpena izenpetu orduko, argi ukan baitugu, goiz ala berandu une hau helduko zela.\r\n",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 49
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/biziki01_nV40Wcb.jpg\"}",
+        "description": "<p>Gogoeta askoren ostean, Bidasoa eremuan, Irun, Hendaia, Biriatu eta Hondarribia kontu-tan harturik, eztabaidarako gune batzuk antolatzea erabaki dugu, Lokarrirekin elkarlanean. Biharko egunari begira, etorkizuna elkar entzunez eta ekinez, bizi zein eraikitzen has gaitezen. Euskal Herriko gatazka politikoaren harira, oraindik ere esateko asko dagoela uste baitugu. Nazio eraikuntza, tokian tokian egiten dela iruditzen zaigu, eta herritar oro dela horren motore. Hala gure asmoa, lekukotzak eskaintzea da, jendeari hitza ematea, &ldquo;Bidasoan elkarbizitzen&rdquo; hasi gaitezen. Norbera bere eremutik, bere bizipen eta esperientziekin eta aurrera begira. Iraganeko gertakariak, etorkizunean errepika ez daitezen.</p>\r\n\r\n<p>Eztabaidak antolatzen hasi orduko ohartu ginen, asko direla gure eskualde honetan gertatutakoak. Eta gehienak ez direla aipatu ere egiten. Memoria edo memoriak kolektiboak eraikitzen ari garen garai honetan, belaunaldi berriekiko transmisio lan handia egin behar dela iruditzen zaigu, eta dudarik gabe irratia bada horretarako tresna ere.</p>\r\n\r\n<p><strong>Orotara hiru dira antolaturiko eztabaidak.</strong></p>\r\n\r\n<p><strong>1/ Otsailaren 5ean izango da lehena, Hondarribiako Itsas Etxean, arratsaldeko 19:00etan. Hauek dira parte hartzaileak : </strong></p>\r\n\r\n<p>Belen Zabala, Josu Zabala zenaren hilobak hartuko du parte. 1976an, irailaren 8an hil zuen Josu Zabala Guardia Zibilak.</p>\r\n\r\n<p>Cristina Sagarzazu, ETAk 1996.urteko martxoaren 4an, erahil zuen Montxo Doral Ertzainaren alarguna.</p>\r\n\r\n<p>Jose Miguel Gomez Elosegui, Francisco Javier Gomez Elosegi Martutene espetxeko psikologoa zenaren anaia da. 1997.urtean erahil zuen ETAk</p>\r\n\r\n<p>Fermin Urtizberea, Hondarribian zinegotzi zela, bahitu egin zuen GANE (Grupo Antite-rrorista Nacional Espa&ntilde;ol) taldeak. 1988.urtean. Hiru egunez ukan zuten bahitua. Tortura gogorrak jasan zituen besteak beste.</p>\r\n\r\n<p>Morederatzailea, Lokarriko Aitziber Blanco izango da.</p>\r\n\r\n<p><strong>2/ Otsailaren 12an izango da bigarrena. Hau ere arratsaldeko 19:00etan Hendaiako Anto-ine d&acute;Abbadie Aretoan.</strong> Hona parte hartzaileak</p>\r\n\r\n<p>Joserra Trebi&ntilde;o Apaiza. Juanra Rojo, preso politiko ohia Jokin Etxebarria, iheslari politiko ohia Miren Illarreta abokatua</p>\r\n\r\n<p>Moderatzaileak Ellande Boutin eta Goizeder Taberna izango dira.</p>\r\n\r\n<p><strong>3/ Otsailaren 19an izango da azkena, hemen bertan, Ficoban, arratsaldeok 19:00etan</strong></p>\r\n\r\n<p>Jose Antonio Santano Irungo alkatea Aitor Kerejeta Hondarribiako alkatea Kotte Ecenarro Hendaiako alkatea</p>\r\n\r\n<p>Moderatzaileak Martxelo Otamendi eta Aitziber Zapirain.</p>\r\n\r\n<p><strong>Hainbat gauza azpimarratu nahiko genituzke, garrantzitsuak iruditzen baitzaizkigu:</strong></p>\r\n\r\n<p>Alde batetik, parte hartzaile orok, bere hizkuntzan hitz egiteko aukera izanen du eta bere-ziki publikoak itzulpena jasoko du frantsesera, gaztelerara eta euskarara. Eta hau hitzordu guztietan.</p>\r\n\r\n<p>Bigarrenik eta batez ere, benetan eskertu parte hartzera ausartu direnei. Zauri askok za-balik segitzen baitute oraindik ere, eta jakin badakigu indar berezi bat egiten dutela beren esperientzia, bizipen, sentsazio eta iritziak jende aurrean kontatzearekin. Beraz benetan milesker.</p>\r\n\r\n<p>Eta bukatzeko, eskerrak eman nahi dizkiet Santano, Ezenarro eta Kerejetari, eskualdeok hiru alkateei, guztia gauzatu dadin bide lagun izan baitira. Baita Ficoba ere.</p>\r\n\r\n<p>Horrez gain, publikoari parte hartzeko aukera emanen zaio. Txartelak banatuak izango dira eta galderak idatziz helaraziko zaizkio moderatzaileari. Jendea animatu nahi dugu hitzaldietara etorri daitezen parte hartzera, eta bereziki entzutera. Komunikazioaren parte garrantzitsu bat entzumena baita. Entzuten jakitea. Antxeta irrati bezala, garrantzia handia ematen diogu azken honi. Entzuten jakiteari esker, ikasten baita hitz egiten, komunikatzen. Eta hori da gure bete beharra komunikatzea. Kasu honetan beraz, &ldquo;Bidasoan Elkabizitza&rdquo; jardunaldiekin, bizikidetzaren ildoa lantzen hasi nahi dugu. Elkar entzunez, eta elkar biziz.</p>\r\n",
+        "title": "Bidasoan elkarbizitza lehenengo saioa",
+        "url": "/projects/bidasoan-elkarbizitza-lehenengo-saioa/",
+        "object_id": "1",
+        "content": "Bidasoan elkarbizitza lehenengo saioa bidasoan-elkarbizitza-lehenengo-saioa Gogoeta askoren ostean, Bidasoa eremuan, Irun, Hendaia, Biriatu eta Hondarribia kontu-tan harturik, eztabaidarako gune batzuk antolatzea erabaki dugu, Lokarrirekin elkarlanean. Biharko egunari begira, etorkizuna elkar entzunez eta ekinez, bizi zein eraikitzen has gaitezen. Euskal Herriko gatazka politikoaren harira, oraindik ere esateko asko dagoela uste baitugu. Nazio eraikuntza, tokian tokian egiten dela iruditzen zaigu, eta herritar oro dela horren motore. Hala gure asmoa, lekukotzak eskaintzea da, jendeari hitza ematea, &ldquo;Bidasoan elkarbizitzen&rdquo; hasi gaitezen. Norbera bere eremutik, bere bizipen eta esperientziekin eta aurrera begira. Iraganeko gertakariak, etorkizunean errepika ez daitezen.\r\n\r\nEztabaidak antolatzen hasi orduko ohartu ginen, asko direla gure eskualde honetan gertatutakoak. Eta gehienak ez direla aipatu ere egiten. Memoria edo memoriak kolektiboak eraikitzen ari garen garai honetan, belaunaldi berriekiko transmisio lan handia egin behar dela iruditzen zaigu, eta dudarik gabe irratia bada horretarako tresna ere.\r\n\r\nOrotara hiru dira antolaturiko eztabaidak.\r\n\r\n1/ Otsailaren 5ean izango da lehena, Hondarribiako Itsas Etxean, arratsaldeko 19:00etan. Hauek dira parte hartzaileak : \r\n\r\nBelen Zabala, Josu Zabala zenaren hilobak hartuko du parte. 1976an, irailaren 8an hil zuen Josu Zabala Guardia Zibilak.\r\n\r\nCristina Sagarzazu, ETAk 1996.urteko martxoaren 4an, erahil zuen Montxo Doral Ertzainaren alarguna.\r\n\r\nJose Miguel Gomez Elosegui, Francisco Javier Gomez Elosegi Martutene espetxeko psikologoa zenaren anaia da. 1997.urtean erahil zuen ETAk\r\n\r\nFermin Urtizberea, Hondarribian zinegotzi zela, bahitu egin zuen GANE (Grupo Antite-rrorista Nacional Espa&ntilde;ol) taldeak. 1988.urtean. Hiru egunez ukan zuten bahitua. Tortura gogorrak jasan zituen besteak beste.\r\n\r\nMorederatzailea, Lokarriko Aitziber Blanco izango da.\r\n\r\n2/ Otsailaren 12an izango da bigarrena. Hau ere arratsaldeko 19:00etan Hendaiako Anto-ine d&acute;Abbadie Aretoan. Hona parte hartzaileak\r\n\r\nJoserra Trebi&ntilde;o Apaiza. Juanra Rojo, preso politiko ohia Jokin Etxebarria, iheslari politiko ohia Miren Illarreta abokatua\r\n\r\nModeratzaileak Ellande Boutin eta Goizeder Taberna izango dira.\r\n\r\n3/ Otsailaren 19an izango da azkena, hemen bertan, Ficoban, arratsaldeok 19:00etan\r\n\r\nJose Antonio Santano Irungo alkatea Aitor Kerejeta Hondarribiako alkatea Kotte Ecenarro Hendaiako alkatea\r\n\r\nModeratzaileak Martxelo Otamendi eta Aitziber Zapirain.\r\n\r\nHainbat gauza azpimarratu nahiko genituzke, garrantzitsuak iruditzen baitzaizkigu:\r\n\r\nAlde batetik, parte hartzaile orok, bere hizkuntzan hitz egiteko aukera izanen du eta bere-ziki publikoak itzulpena jasoko du frantsesera, gaztelerara eta euskarara. Eta hau hitzordu guztietan.\r\n\r\nBigarrenik eta batez ere, benetan eskertu parte hartzera ausartu direnei. Zauri askok za-balik segitzen baitute oraindik ere, eta jakin badakigu indar berezi bat egiten dutela beren esperientzia, bizipen, sentsazio eta iritziak jende aurrean kontatzearekin. Beraz benetan milesker.\r\n\r\nEta bukatzeko, eskerrak eman nahi dizkiet Santano, Ezenarro eta Kerejetari, eskualdeok hiru alkateei, guztia gauzatu dadin bide lagun izan baitira. Baita Ficoba ere.\r\n\r\nHorrez gain, publikoari parte hartzeko aukera emanen zaio. Txartelak banatuak izango dira eta galderak idatziz helaraziko zaizkio moderatzaileari. Jendea animatu nahi dugu hitzaldietara etorri daitezen parte hartzera, eta bereziki entzutera. Komunikazioaren parte garrantzitsu bat entzumena baita. Entzuten jakitea. Antxeta irrati bezala, garrantzia handia ematen diogu azken honi. Entzuten jakiteari esker, ikasten baita hitz egiten, komunikatzen. Eta hori da gure bete beharra komunikatzea. Kasu honetan beraz, &ldquo;Bidasoan Elkabizitza&rdquo; jardunaldiekin, bizikidetzaren ildoa lantzen hasi nahi dugu. Elkar entzunez, eta elkar biziz.\r\n",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "object_id_int": 1
+    },
+    "model": "watson.searchentry",
+    "pk": 50
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/Ficoba_6IDVNDL.jpg\"}",
+        "description": "<p>Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.</p>\r\n",
+        "title": "Bidasoan elkarbizitza bigarren saioa",
+        "url": "/projects/bidasoan-elkarbizitza-bigarren-saioa/",
+        "object_id": "2",
+        "content": "Bidasoan elkarbizitza bigarren saioa bidasoan-elkarbizitza-bigarren-saioa Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.\r\n",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 51
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{}",
+        "description": "",
+        "title": "Antxetamedia",
+        "url": "",
+        "object_id": "2",
+        "content": "Antxetamedia antxetamedia",
+        "content_type": [
+            "projects",
+            "projectproducer"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 52
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/gonekin_1_4_Zv8s8XH.jpg\"}",
+        "description": "<p><img alt=\"Jeneussact\" src=\"https://archive.org/download/jeunessact14/jeunessact14.jpg\" title=\"jenessact\" /></p>\r\n\r\n<p>Youth in Action is the Programme the European Union has set up for young people. It aims to inspire a sense of active European citizenship, solidarity and tolerance among young Europeans and to involve them in shaping the Union&rsquo;s future. Four organisations have developed a partnership called Voice of Women in Europe to facilitate access of young women to media. The partners are Antxeta Irratia, (Basque Country), Radio Oloron (France), West Dublin Access Radio WDAR (Ireland) and nearfm (Ireland) and we have chosen the Sub-Action 1.3. Youth Democracy Projects Youth, which support young people&rsquo;s participation in the democratic life of their local, regional or national community, and at international level.</p>\r\n\r\n<h2>Radio Oloron</h2>\r\n\r\n<p><img alt=\"oloron\" src=\"https://ia601404.us.archive.org/24/items/LogoRadioOloron/logo%20radio_oloron.jpg\" title=\"oloron\" /></p>\r\n\r\n<p>Nous sommes un groupe de 6 jeunes filles lyc&eacute;ennes, &eacute;tudiantes ou jeunes travailleuses sur Oloron (64). Nous participons &agrave; la r&eacute;alisation du journal du Lyc&eacute;e. Nous avons &eacute;galement organis&eacute; un concert et avons r&eacute;alis&eacute; un rapprochement avec des jeunes d&rsquo;un lyc&eacute;e d&rsquo;un pays europ&eacute;en qui s&rsquo;occupe &eacute;galement d&rsquo;un journal. Radio Oloron a pour sa part l&#39;exp&eacute;rience, le savoir faire et la capacit&eacute; technique et financi&egrave;re pour nous accompagner sur ce projet. Situ&eacute;e dans les Pyr&eacute;n&eacute;es-Atlantiques, Radio Oloron est une radio associative locale qui vise &agrave; valoriser les initiatives personnelles, associatives, culturelles, sociales de notre territoire&hellip; Elle r&eacute;alise de nombreux projets et essaye au maximum, par le biais de son antenne, de ses reportages et de sa programmation musicale, d&rsquo;ouvrir ses auditeurs au monde, et de leur faire d&eacute;couvrir la richesse d&rsquo;Oloron et des alentours &agrave; travers les personnes qui sont interview&eacute;es.</p>\r\n\r\n<p><img alt=\"dublin\" src=\"https://archive.org/download/dublin01/dublin01.jpg\" title=\"dublin\" />En compl&eacute;ment de cette activit&eacute; nous pensons que la radio est un outil formidable afin de communiquer nos pr&eacute;occupations, initiatives, informations et nous permettra d&rsquo;avoir des contacts ext&eacute;rieurs &agrave; l&rsquo;&eacute;tablissement afin d&rsquo;aller &agrave; la rencontre des habitants d&rsquo;Oloron. Dans ce but nous nous sommes rapproch&eacute;es de la seule radio associative locale de la ville -Radio Oloron- que nous connaissions car nous l&rsquo;&eacute;coutions chez nous.Nous leur avons propos&eacute; notre projet ; faire une &eacute;mission radio r&eacute;alis&eacute;e par des jeunes et pour les jeunes. Petit &agrave; petit nous avons construit un projet qui int&eacute;grait les formations de r&eacute;alisateur radio de proximit&eacute;, techniques d&rsquo;expression radiophonique, les r&egrave;gles &agrave; respecter devant un microphone (prodigu&eacute;es par le CSA) et les techniques journalistiques de construction d&rsquo;un programme.Le tout combin&eacute; avec une exp&eacute;rience mixte d&rsquo;apprentissage et d&rsquo;autonomie afin de finaliser la mise en &oelig;uvre du projet d&rsquo;&eacute;mission radio. De cet &eacute;change naquit l&rsquo;id&eacute;e de pr&eacute;senter ce projet PEJA qui nous permettrait au final d&rsquo;acqu&eacute;rir les comp&eacute;tences n&eacute;cessaires. En outre Radio Oloron nous a offert l&rsquo;opportunit&eacute; de conna&icirc;tre des jeunes filles d&rsquo;autres pays europ&eacute;ens- Irlande, Espagne et France- &agrave; travers leur participation au projet europ&eacute;en PEJA-Transnational &ldquo;Voix des femmes&rdquo;. Depuis le d&eacute;but, nous avons eu comme objectif que chaque jeune femme impliqu&eacute;e dans le projet ait un m&ecirc;me niveau de participation. Nous avons mis en place une dynamique collective.</p>\r\n",
+        "title": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak",
+        "url": "/projects/ahotsak/",
+        "object_id": "2",
+        "content": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak ahotsak \r\n\r\nYouth in Action is the Programme the European Union has set up for young people. It aims to inspire a sense of active European citizenship, solidarity and tolerance among young Europeans and to involve them in shaping the Union&rsquo;s future. Four organisations have developed a partnership called Voice of Women in Europe to facilitate access of young women to media. The partners are Antxeta Irratia, (Basque Country), Radio Oloron (France), West Dublin Access Radio WDAR (Ireland) and nearfm (Ireland) and we have chosen the Sub-Action 1.3. Youth Democracy Projects Youth, which support young people&rsquo;s participation in the democratic life of their local, regional or national community, and at international level.\r\n\r\nRadio Oloron\r\n\r\n\r\n\r\nNous sommes un groupe de 6 jeunes filles lyc&eacute;ennes, &eacute;tudiantes ou jeunes travailleuses sur Oloron (64). Nous participons &agrave; la r&eacute;alisation du journal du Lyc&eacute;e. Nous avons &eacute;galement organis&eacute; un concert et avons r&eacute;alis&eacute; un rapprochement avec des jeunes d&rsquo;un lyc&eacute;e d&rsquo;un pays europ&eacute;en qui s&rsquo;occupe &eacute;galement d&rsquo;un journal. Radio Oloron a pour sa part l&#39;exp&eacute;rience, le savoir faire et la capacit&eacute; technique et financi&egrave;re pour nous accompagner sur ce projet. Situ&eacute;e dans les Pyr&eacute;n&eacute;es-Atlantiques, Radio Oloron est une radio associative locale qui vise &agrave; valoriser les initiatives personnelles, associatives, culturelles, sociales de notre territoire&hellip; Elle r&eacute;alise de nombreux projets et essaye au maximum, par le biais de son antenne, de ses reportages et de sa programmation musicale, d&rsquo;ouvrir ses auditeurs au monde, et de leur faire d&eacute;couvrir la richesse d&rsquo;Oloron et des alentours &agrave; travers les personnes qui sont interview&eacute;es.\r\n\r\nEn compl&eacute;ment de cette activit&eacute; nous pensons que la radio est un outil formidable afin de communiquer nos pr&eacute;occupations, initiatives, informations et nous permettra d&rsquo;avoir des contacts ext&eacute;rieurs &agrave; l&rsquo;&eacute;tablissement afin d&rsquo;aller &agrave; la rencontre des habitants d&rsquo;Oloron. Dans ce but nous nous sommes rapproch&eacute;es de la seule radio associative locale de la ville -Radio Oloron- que nous connaissions car nous l&rsquo;&eacute;coutions chez nous.Nous leur avons propos&eacute; notre projet ; faire une &eacute;mission radio r&eacute;alis&eacute;e par des jeunes et pour les jeunes. Petit &agrave; petit nous avons construit un projet qui int&eacute;grait les formations de r&eacute;alisateur radio de proximit&eacute;, techniques d&rsquo;expression radiophonique, les r&egrave;gles &agrave; respecter devant un microphone (prodigu&eacute;es par le CSA) et les techniques journalistiques de construction d&rsquo;un programme.Le tout combin&eacute; avec une exp&eacute;rience mixte d&rsquo;apprentissage et d&rsquo;autonomie afin de finaliser la mise en &oelig;uvre du projet d&rsquo;&eacute;mission radio. De cet &eacute;change naquit l&rsquo;id&eacute;e de pr&eacute;senter ce projet PEJA qui nous permettrait au final d&rsquo;acqu&eacute;rir les comp&eacute;tences n&eacute;cessaires. En outre Radio Oloron nous a offert l&rsquo;opportunit&eacute; de conna&icirc;tre des jeunes filles d&rsquo;autres pays europ&eacute;ens- Irlande, Espagne et France- &agrave; travers leur participation au projet europ&eacute;en PEJA-Transnational &ldquo;Voix des femmes&rdquo;. Depuis le d&eacute;but, nous avons eu comme objectif que chaque jeune femme impliqu&eacute;e dans le projet ait un m&ecirc;me niveau de participation. Nous avons mis en place une dynamique collective.\r\n",
+        "content_type": [
+            "projects",
+            "projectshow"
+        ],
+        "object_id_int": 2
+    },
+    "model": "watson.searchentry",
+    "pk": 53
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/nearfmlog.jpg\"}",
+        "description": "<p>The Project involves two partners meetings, the first of which took place in Dublin on 30 January 2013 and a final evaluation meeting. There was national training plan, and sixteen women got involved in the QQI Level 3 on Media Expression training delivered by WDAR and NEARfm , and fifteen of them obtained their certification.</p>\r\n\r\n<p>The training involved 30 hours training, and specific training on Audio Digital Editing, sound engineering, interviewing and research&hellip; and it took place in the Exchange Dublin, the Collective Art Centre in Temple Bar, Dublin, and in the studios of WDAR and nearfm.</p>\r\n\r\n<p>There has also been a partnership training workshop, where four of the participant women by partners received training on a specific methodology used by the women organisation La Morada, in Santiago de Chile, to empower women and training them in the use of media. <strong>Final evaluation of the project</strong></p>\r\n",
+        "title": "NEAR FM",
+        "url": "/projects/near-fm/",
+        "object_id": "3",
+        "content": "NEAR FM near-fm The Project involves two partners meetings, the first of which took place in Dublin on 30 January 2013 and a final evaluation meeting. There was national training plan, and sixteen women got involved in the QQI Level 3 on Media Expression training delivered by WDAR and NEARfm , and fifteen of them obtained their certification.\r\n\r\nThe training involved 30 hours training, and specific training on Audio Digital Editing, sound engineering, interviewing and research&hellip; and it took place in the Exchange Dublin, the Collective Art Centre in Temple Bar, Dublin, and in the studios of WDAR and nearfm.\r\n\r\nThere has also been a partnership training workshop, where four of the participant women by partners received training on a specific methodology used by the women organisation La Morada, in Santiago de Chile, to empower women and training them in the use of media. Final evaluation of the project\r\n",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "object_id_int": 3
+    },
+    "model": "watson.searchentry",
+    "pk": 54
+},
+{
+    "fields": {
+        "engine_slug": "default",
+        "meta_encoded": "{\"image\": \"/media/shows/wdar_log02.jpg\"}",
+        "description": "<p>In February 2013 West Dublin access Radio got together with Near FM and some young female participants of two radio stations, one from the Basque country in France and the other from the Basque country in Spain. The initial meeting took place in Dublin where it was decided how, when and where the training would take place. Originally West Dublin started out with five young women but after putting out a call to women between the ages of sixteen to thirty interested in availing of training in &lsquo;Express yourself through Media&rsquo; a course specifically aimed at empowering young women using media as the tool with which to do so, the final number was 17 young women. The training took place over ten weeks, three hours a week, one evening a week, thirty hours in total. The training was located in the West Dublin. . The participants ranged in age youngest being sixteen, oldest being thirty.</p>\r\n",
+        "title": "West Dublin Access Radio",
+        "url": "/projects/west-dublin-access-radio/",
+        "object_id": "4",
+        "content": "West Dublin Access Radio west-dublin-access-radio In February 2013 West Dublin access Radio got together with Near FM and some young female participants of two radio stations, one from the Basque country in France and the other from the Basque country in Spain. The initial meeting took place in Dublin where it was decided how, when and where the training would take place. Originally West Dublin started out with five young women but after putting out a call to women between the ages of sixteen to thirty interested in availing of training in &lsquo;Express yourself through Media&rsquo; a course specifically aimed at empowering young women using media as the tool with which to do so, the final number was 17 young women. The training took place over ten weeks, three hours a week, one evening a week, thirty hours in total. The training was located in the West Dublin. . The participants ranged in age youngest being sixteen, oldest being thirty.\r\n",
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "object_id_int": 4
+    },
+    "model": "watson.searchentry",
+    "pk": 55
+},
+{
+    "fields": {
         "username": "VSh9SgRkxTYIaZUs",
         "password": "GsQjQ6KLtx63Sktr",
         "name": "Antxeta"
@@ -2196,6 +4724,134 @@
 },
 {
     "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 1,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-18-33_J1vJyCR.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 26
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 2,
+        "counter": 2,
+        "object_id": 1,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-20-23.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 27
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 3,
+        "object_id": 1,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-20-09.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 28
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 2,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-19-11.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 29
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 3,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-18-33_9WKuTrg.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 30
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 1,
+        "object_id": 4,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-19-39_XLBbuKd.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 31
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 1,
+        "counter": 2,
+        "object_id": 4,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-20-23_tLm3N0o.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 32
+},
+{
+    "fields": {
+        "account": 2,
+        "remote": null,
+        "license": 2,
+        "counter": 3,
+        "object_id": 4,
+        "content_type": [
+            "projects",
+            "projectpodcast"
+        ],
+        "local": "podcasts/2013-02-19_20-20-14_bwnrtfT.3gpp"
+    },
+    "model": "blobs.blob",
+    "pk": 33
+},
+{
+    "fields": {
         "started": "2015-07-22T12:16:31.849Z",
         "ended": "2015-07-22T12:16:31.850Z",
         "state": 3,
@@ -2460,6 +5116,94 @@
 },
 {
     "fields": {
+        "started": "2015-07-27T08:49:24.784Z",
+        "ended": "2015-07-27T08:49:27.895Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 26
+    },
+    "model": "blobs.blobupload",
+    "pk": 25
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:49:27.899Z",
+        "ended": "2015-07-27T08:49:28.550Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 27
+    },
+    "model": "blobs.blobupload",
+    "pk": 26
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:49:28.553Z",
+        "ended": "2015-07-27T08:49:29.205Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 28
+    },
+    "model": "blobs.blobupload",
+    "pk": 27
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:50:54.284Z",
+        "ended": "2015-07-27T08:50:57.167Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 29
+    },
+    "model": "blobs.blobupload",
+    "pk": 28
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:58:00.344Z",
+        "ended": "2015-07-27T08:58:03.876Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 30
+    },
+    "model": "blobs.blobupload",
+    "pk": 29
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:59:50.650Z",
+        "ended": "2015-07-27T08:59:53.549Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 31
+    },
+    "model": "blobs.blobupload",
+    "pk": 30
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:59:53.553Z",
+        "ended": "2015-07-27T08:59:54.366Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 32
+    },
+    "model": "blobs.blobupload",
+    "pk": 31
+},
+{
+    "fields": {
+        "started": "2015-07-27T08:59:54.370Z",
+        "ended": "2015-07-27T09:00:02.455Z",
+        "state": 3,
+        "traceback": "Traceback (most recent call last):\n  File \"/home/iune/proiektuak/antxetamedia/berria/amv2/antxetamedia/blobs/tasks.py\", line 45, in upload_blob\n    bucket = connection.create_bucket(bucket, metadata=metadata)\nTypeError: create_bucket() got an unexpected keyword argument 'metadata'\n",
+        "blob": 33
+    },
+    "model": "blobs.blobupload",
+    "pk": 32
+},
+{
+    "fields": {
         "name": "Kirola",
         "slug": "kirola"
     },
@@ -2534,7 +5278,7 @@
 },
 {
     "fields": {
-        "description": "<p>Asteburu berezia heldu da Irungo Oiasso Errmatar museora. Dies Oiassonis jarduerarekin aitzina segitzen dute eta horrez gain, bertako jardueren arduradunak azaldu digunez, Mariajo Noainek berak, inoiz ukan duten erakusketarik ederrenetarikoa dute martxan uda garai honetan, eta azaroa bitarte: &quot;Apain mahaiko Istorioak&quot;. Mariajo Noainekin hitz egiteko aukera izan dugu.</p>\r\n",
+        "description": "<address><a href=\"http://lakaxita.org\">Asteburu berezia heldu da</a></address>\r\n\r\n<p>Irungo Oiasso Errmatar museora. Dies Oiassonis jarduerarekin aitzina segitzen dute eta horrez gain, bertako jardueren arduradunak azaldu digunez, Mariajo Noainek berak, inoiz ukan duten erakusketarik ederrenetarikoa dute martxan uda garai honetan, eta azaroa bitarte: &quot;Apain mahaiko Istorioak&quot;. Mariajo Noainekin hitz egiteko aukera izan dugu.</p>\r\n\r\n<div>\r\n<div>\r\n<div>\r\n<p><img alt=\"\" src=\"/media/ckeditor/2015/07/29/a_thousand_promises_by_symmetrybox-d5ots3w.png\" style=\"float:right; height:140px; width:200px\" />Los cazas F16 de la Fuerza A&eacute;rea turca han atacado seis objetivos en el norte de Irak, tras haber sido desplegados de urgencia desde una base a&eacute;rea de Diyarbakir, en Kurdist&aacute;n Norte, seg&uacute;n ha confirmado la oficina del primer ministro turco, Ahmet Davutoglu, en la mayor ofensiva desde que comenzaron los ataques la semana pasada.</p>\r\n\r\n<p>El PKK ha informado de la muerte de al menos nueve milicianos en los bombardeos.</p>\r\n\r\n<p>Adem&aacute;s, las autoridades turcas han detenido a un total de 1.302 personas&nbsp;en una operaci&oacute;n contra el Estado Isl&aacute;mico, el PKK y &laquo;otros grupos ilegales&raquo;, seg&uacute;n ha informado en un comunicado.</p>\r\n\r\n<p>El <a href=\"http://www.naiz.eus/eu/actualidad/noticia/20150725/el-pkk-declara-que-la-tregua-carece-de-sentido-tras-los-bombardeos-turcos\">Gobierno turco comenz&oacute; a bombardear los campos de milicianos del PKK</a> en el norte de Irak el pasado 24 de julio tras una serie de ataques contra agentes de Polic&iacute;a que el Ejecutivo atribuy&oacute; a la guerrilla kurda.</p>\r\n\r\n<p>El martes, los cazas bombardearon posiciones del PKK en la provincia turca de Sirnak, en el sureste del pa&iacute;s, tras un ataque contra un grupo de gendarmes turcos.</p>\r\n\r\n<p>El presidente turco, Recep Tayyip Erdogan, <a href=\"http://www.naiz.eus/eu/actualidad/noticia/20150728/erdogan-da-por-terminado-el-proceso-de-paz-iniciado-con-la-guerrilla-kurda\">dio por finiquitado ayer el proceso de di&aacute;logo con la guerrilla kurda</a>. El Parlamento de Ankara tiene previsto discutir hoy en una sesi&oacute;n a puerta cerrada la petici&oacute;n del mandatario turco para retirar la inmunidad a los pol&iacute;ticos que vincula con los milicianos del PKK.</p>\r\n</div>\r\n</div>\r\n</div>\r\n",
         "show": 1,
         "image": "",
         "title": "Dies Oiassonis eta itzelezko erakusketa Oiasso Museoan",
@@ -2945,6 +5689,92 @@
     },
     "model": "radio.radiopodcast",
     "pk": 11
+},
+{
+    "fields": {
+        "name": "Pausumedia",
+        "slug": "pausumedia"
+    },
+    "model": "projects.projectproducer",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Antxetamedia",
+        "slug": "antxetamedia"
+    },
+    "model": "projects.projectproducer",
+    "pk": 2
+},
+{
+    "fields": {
+        "producer": 1,
+        "description": "<p>Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.</p>\r\n\r\n<p>Beraz gaur aurkeztuko ditugun jardunaldiak, Antxeta Irratiak eginiko apustu baten emaitza dira. Informatzeaz gain, hedabide bezala, herri honek beharrezkoak dituen aldaketen aktore zein eragile ere izan behar dugula uste baitugu.</p>\r\n\r\n<p>Hilabeteak daramatzagu, gure herriko gatazka politikoari begira, herri mailan zer egin de-zakegun pentsatzen. Aieteko Adierazpena izenpetu orduko, argi ukan baitugu, goiz ala berandu une hau helduko zela.</p>\r\n",
+        "name": "Bidasoan elkarbizitza",
+        "image": "shows/biziki01.jpg",
+        "slug": "elkarbizitza"
+    },
+    "model": "projects.projectshow",
+    "pk": 1
+},
+{
+    "fields": {
+        "producer": 2,
+        "description": "<p><img alt=\"Jeneussact\" src=\"https://archive.org/download/jeunessact14/jeunessact14.jpg\" title=\"jenessact\" /></p>\r\n\r\n<p>Youth in Action is the Programme the European Union has set up for young people. It aims to inspire a sense of active European citizenship, solidarity and tolerance among young Europeans and to involve them in shaping the Union&rsquo;s future. Four organisations have developed a partnership called Voice of Women in Europe to facilitate access of young women to media. The partners are Antxeta Irratia, (Basque Country), Radio Oloron (France), West Dublin Access Radio WDAR (Ireland) and nearfm (Ireland) and we have chosen the Sub-Action 1.3. Youth Democracy Projects Youth, which support young people&rsquo;s participation in the democratic life of their local, regional or national community, and at international level.</p>\r\n\r\n<h2>Radio Oloron</h2>\r\n\r\n<p><img alt=\"oloron\" src=\"https://ia601404.us.archive.org/24/items/LogoRadioOloron/logo%20radio_oloron.jpg\" title=\"oloron\" /></p>\r\n\r\n<p>Nous sommes un groupe de 6 jeunes filles lyc&eacute;ennes, &eacute;tudiantes ou jeunes travailleuses sur Oloron (64). Nous participons &agrave; la r&eacute;alisation du journal du Lyc&eacute;e. Nous avons &eacute;galement organis&eacute; un concert et avons r&eacute;alis&eacute; un rapprochement avec des jeunes d&rsquo;un lyc&eacute;e d&rsquo;un pays europ&eacute;en qui s&rsquo;occupe &eacute;galement d&rsquo;un journal. Radio Oloron a pour sa part l&#39;exp&eacute;rience, le savoir faire et la capacit&eacute; technique et financi&egrave;re pour nous accompagner sur ce projet. Situ&eacute;e dans les Pyr&eacute;n&eacute;es-Atlantiques, Radio Oloron est une radio associative locale qui vise &agrave; valoriser les initiatives personnelles, associatives, culturelles, sociales de notre territoire&hellip; Elle r&eacute;alise de nombreux projets et essaye au maximum, par le biais de son antenne, de ses reportages et de sa programmation musicale, d&rsquo;ouvrir ses auditeurs au monde, et de leur faire d&eacute;couvrir la richesse d&rsquo;Oloron et des alentours &agrave; travers les personnes qui sont interview&eacute;es.</p>\r\n\r\n<p><img alt=\"dublin\" src=\"https://archive.org/download/dublin01/dublin01.jpg\" title=\"dublin\" />En compl&eacute;ment de cette activit&eacute; nous pensons que la radio est un outil formidable afin de communiquer nos pr&eacute;occupations, initiatives, informations et nous permettra d&rsquo;avoir des contacts ext&eacute;rieurs &agrave; l&rsquo;&eacute;tablissement afin d&rsquo;aller &agrave; la rencontre des habitants d&rsquo;Oloron. Dans ce but nous nous sommes rapproch&eacute;es de la seule radio associative locale de la ville -Radio Oloron- que nous connaissions car nous l&rsquo;&eacute;coutions chez nous.Nous leur avons propos&eacute; notre projet ; faire une &eacute;mission radio r&eacute;alis&eacute;e par des jeunes et pour les jeunes. Petit &agrave; petit nous avons construit un projet qui int&eacute;grait les formations de r&eacute;alisateur radio de proximit&eacute;, techniques d&rsquo;expression radiophonique, les r&egrave;gles &agrave; respecter devant un microphone (prodigu&eacute;es par le CSA) et les techniques journalistiques de construction d&rsquo;un programme.Le tout combin&eacute; avec une exp&eacute;rience mixte d&rsquo;apprentissage et d&rsquo;autonomie afin de finaliser la mise en &oelig;uvre du projet d&rsquo;&eacute;mission radio. De cet &eacute;change naquit l&rsquo;id&eacute;e de pr&eacute;senter ce projet PEJA qui nous permettrait au final d&rsquo;acqu&eacute;rir les comp&eacute;tences n&eacute;cessaires. En outre Radio Oloron nous a offert l&rsquo;opportunit&eacute; de conna&icirc;tre des jeunes filles d&rsquo;autres pays europ&eacute;ens- Irlande, Espagne et France- &agrave; travers leur participation au projet europ&eacute;en PEJA-Transnational &ldquo;Voix des femmes&rdquo;. Depuis le d&eacute;but, nous avons eu comme objectif que chaque jeune femme impliqu&eacute;e dans le projet ait un m&ecirc;me niveau de participation. Nous avons mis en place une dynamique collective.</p>\r\n",
+        "name": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak",
+        "image": "shows/gonekin_1_4_Zv8s8XH.jpg",
+        "slug": "ahotsak"
+    },
+    "model": "projects.projectshow",
+    "pk": 2
+},
+{
+    "fields": {
+        "description": "<p>Gogoeta askoren ostean, Bidasoa eremuan, Irun, Hendaia, Biriatu eta Hondarribia kontu-tan harturik, eztabaidarako gune batzuk antolatzea erabaki dugu, Lokarrirekin elkarlanean. Biharko egunari begira, etorkizuna elkar entzunez eta ekinez, bizi zein eraikitzen has gaitezen. Euskal Herriko gatazka politikoaren harira, oraindik ere esateko asko dagoela uste baitugu. Nazio eraikuntza, tokian tokian egiten dela iruditzen zaigu, eta herritar oro dela horren motore. Hala gure asmoa, lekukotzak eskaintzea da, jendeari hitza ematea, &ldquo;Bidasoan elkarbizitzen&rdquo; hasi gaitezen. Norbera bere eremutik, bere bizipen eta esperientziekin eta aurrera begira. Iraganeko gertakariak, etorkizunean errepika ez daitezen.</p>\r\n\r\n<p>Eztabaidak antolatzen hasi orduko ohartu ginen, asko direla gure eskualde honetan gertatutakoak. Eta gehienak ez direla aipatu ere egiten. Memoria edo memoriak kolektiboak eraikitzen ari garen garai honetan, belaunaldi berriekiko transmisio lan handia egin behar dela iruditzen zaigu, eta dudarik gabe irratia bada horretarako tresna ere.</p>\r\n\r\n<p><strong>Orotara hiru dira antolaturiko eztabaidak.</strong></p>\r\n\r\n<p><strong>1/ Otsailaren 5ean izango da lehena, Hondarribiako Itsas Etxean, arratsaldeko 19:00etan. Hauek dira parte hartzaileak : </strong></p>\r\n\r\n<p>Belen Zabala, Josu Zabala zenaren hilobak hartuko du parte. 1976an, irailaren 8an hil zuen Josu Zabala Guardia Zibilak.</p>\r\n\r\n<p>Cristina Sagarzazu, ETAk 1996.urteko martxoaren 4an, erahil zuen Montxo Doral Ertzainaren alarguna.</p>\r\n\r\n<p>Jose Miguel Gomez Elosegui, Francisco Javier Gomez Elosegi Martutene espetxeko psikologoa zenaren anaia da. 1997.urtean erahil zuen ETAk</p>\r\n\r\n<p>Fermin Urtizberea, Hondarribian zinegotzi zela, bahitu egin zuen GANE (Grupo Antite-rrorista Nacional Espa&ntilde;ol) taldeak. 1988.urtean. Hiru egunez ukan zuten bahitua. Tortura gogorrak jasan zituen besteak beste.</p>\r\n\r\n<p>Morederatzailea, Lokarriko Aitziber Blanco izango da.</p>\r\n\r\n<p><strong>2/ Otsailaren 12an izango da bigarrena. Hau ere arratsaldeko 19:00etan Hendaiako Anto-ine d&acute;Abbadie Aretoan.</strong> Hona parte hartzaileak</p>\r\n\r\n<p>Joserra Trebi&ntilde;o Apaiza. Juanra Rojo, preso politiko ohia Jokin Etxebarria, iheslari politiko ohia Miren Illarreta abokatua</p>\r\n\r\n<p>Moderatzaileak Ellande Boutin eta Goizeder Taberna izango dira.</p>\r\n\r\n<p><strong>3/ Otsailaren 19an izango da azkena, hemen bertan, Ficoban, arratsaldeok 19:00etan</strong></p>\r\n\r\n<p>Jose Antonio Santano Irungo alkatea Aitor Kerejeta Hondarribiako alkatea Kotte Ecenarro Hendaiako alkatea</p>\r\n\r\n<p>Moderatzaileak Martxelo Otamendi eta Aitziber Zapirain.</p>\r\n\r\n<p><strong>Hainbat gauza azpimarratu nahiko genituzke, garrantzitsuak iruditzen baitzaizkigu:</strong></p>\r\n\r\n<p>Alde batetik, parte hartzaile orok, bere hizkuntzan hitz egiteko aukera izanen du eta bere-ziki publikoak itzulpena jasoko du frantsesera, gaztelerara eta euskarara. Eta hau hitzordu guztietan.</p>\r\n\r\n<p>Bigarrenik eta batez ere, benetan eskertu parte hartzera ausartu direnei. Zauri askok za-balik segitzen baitute oraindik ere, eta jakin badakigu indar berezi bat egiten dutela beren esperientzia, bizipen, sentsazio eta iritziak jende aurrean kontatzearekin. Beraz benetan milesker.</p>\r\n\r\n<p>Eta bukatzeko, eskerrak eman nahi dizkiet Santano, Ezenarro eta Kerejetari, eskualdeok hiru alkateei, guztia gauzatu dadin bide lagun izan baitira. Baita Ficoba ere.</p>\r\n\r\n<p>Horrez gain, publikoari parte hartzeko aukera emanen zaio. Txartelak banatuak izango dira eta galderak idatziz helaraziko zaizkio moderatzaileari. Jendea animatu nahi dugu hitzaldietara etorri daitezen parte hartzera, eta bereziki entzutera. Komunikazioaren parte garrantzitsu bat entzumena baita. Entzuten jakitea. Antxeta irrati bezala, garrantzia handia ematen diogu azken honi. Entzuten jakiteari esker, ikasten baita hitz egiten, komunikatzen. Eta hori da gure bete beharra komunikatzea. Kasu honetan beraz, &ldquo;Bidasoan Elkabizitza&rdquo; jardunaldiekin, bizikidetzaren ildoa lantzen hasi nahi dugu. Elkar entzunez, eta elkar biziz.</p>\r\n",
+        "show": 1,
+        "image": "shows/biziki01_nV40Wcb.jpg",
+        "title": "Bidasoan elkarbizitza lehenengo saioa",
+        "pub_date": "2015-07-27T08:47:08Z",
+        "slug": "bidasoan-elkarbizitza-lehenengo-saioa"
+    },
+    "model": "projects.projectpodcast",
+    "pk": 1
+},
+{
+    "fields": {
+        "description": "<p>Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.</p>\r\n",
+        "show": 1,
+        "image": "shows/Ficoba_6IDVNDL.jpg",
+        "title": "Bidasoan elkarbizitza bigarren saioa",
+        "pub_date": "2015-07-23T08:49:33Z",
+        "slug": "bidasoan-elkarbizitza-bigarren-saioa"
+    },
+    "model": "projects.projectpodcast",
+    "pk": 2
+},
+{
+    "fields": {
+        "description": "<p>The Project involves two partners meetings, the first of which took place in Dublin on 30 January 2013 and a final evaluation meeting. There was national training plan, and sixteen women got involved in the QQI Level 3 on Media Expression training delivered by WDAR and NEARfm , and fifteen of them obtained their certification.</p>\r\n\r\n<p>The training involved 30 hours training, and specific training on Audio Digital Editing, sound engineering, interviewing and research&hellip; and it took place in the Exchange Dublin, the Collective Art Centre in Temple Bar, Dublin, and in the studios of WDAR and nearfm.</p>\r\n\r\n<p>There has also been a partnership training workshop, where four of the participant women by partners received training on a specific methodology used by the women organisation La Morada, in Santiago de Chile, to empower women and training them in the use of media. <strong>Final evaluation of the project</strong></p>\r\n",
+        "show": 2,
+        "image": "shows/nearfmlog.jpg",
+        "title": "NEAR FM",
+        "pub_date": "2015-07-24T08:54:24Z",
+        "slug": "near-fm"
+    },
+    "model": "projects.projectpodcast",
+    "pk": 3
+},
+{
+    "fields": {
+        "description": "<p>In February 2013 West Dublin access Radio got together with Near FM and some young female participants of two radio stations, one from the Basque country in France and the other from the Basque country in Spain. The initial meeting took place in Dublin where it was decided how, when and where the training would take place. Originally West Dublin started out with five young women but after putting out a call to women between the ages of sixteen to thirty interested in availing of training in &lsquo;Express yourself through Media&rsquo; a course specifically aimed at empowering young women using media as the tool with which to do so, the final number was 17 young women. The training took place over ten weeks, three hours a week, one evening a week, thirty hours in total. The training was located in the West Dublin. . The participants ranged in age youngest being sixteen, oldest being thirty.</p>\r\n",
+        "show": 2,
+        "image": "shows/wdar_log02.jpg",
+        "title": "West Dublin Access Radio",
+        "pub_date": "2015-07-27T08:58:16Z",
+        "slug": "west-dublin-access-radio"
+    },
+    "model": "projects.projectpodcast",
+    "pk": 4
 },
 {
     "fields": {
@@ -3375,15 +6205,5 @@
     },
     "model": "events.event",
     "pk": 5
-},
-{
-    "fields": {
-        "on_menu": true,
-        "path": "about",
-        "content": "<p>Antxetamedia Antxeta Irratiak ekoiztutako gunea da.</p>\r\n",
-        "name": "Gure inguruan"
-    },
-    "model": "flatpages.flatpage",
-    "pk": 1
 }
 ]
