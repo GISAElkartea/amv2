@@ -1,7 +1,29 @@
-div.articleDetails
-  position: relative
-  width: 30%
-  float: left
-  margin: 0 1em 1em 0
+article
+  +outer-container
+  div.articleDetails
+    +span-columns(3)
+    img
+      width: 100%
+    .downloadShare
+      position: static
+  div.text
+    +span-columns(9)
   img
-    width: 100%
+    max-width: 100%
+    height: auto !important
+  img[style*="float:left"]
+    margin: .5rem 1rem .5rem 0
+  img[style*="float:right"]
+    margin: .5rem 0 .5rem 1rem
+  h3
+    font-size: 1.1rem
+    color: tint(black, 20%)
+  h4
+    font-size: 1rem
+    color: tint(black, 20%)
+  h5
+    font-size: .9rem
+    color: tint(black, 20%)
+  h6
+    font-size: .8rem
+    color: tint(black, 20%)

@@ -15,9 +15,11 @@
       <i class="fa fa-download"></i>
     </div>
   </div>
-  <p class="date">{{ newspodcast.pub_date }}</p>
-  <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
-  <h1>{{ newspodcast }}</h1>
-  <p>{{ newspodcast.description | striptags }}</p>
+  <div class="text">
+    <p class="date">{{ newspodcast.pub_date }}</p>
+    <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
+    <h1>{{ newspodcast }}</h1>
+    <p>{{ newspodcast.description | safe }}</p>
+  </div>
 </article>
 {% endblock content %}
