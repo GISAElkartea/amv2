@@ -20,7 +20,7 @@
       <th></th>
       <th>{% trans 'Date' %}</th>
     </tr>
-    {% for radiopodcast in radioshow.radiopodcast_set.select_related %}
+    {% for radiopodcast in radiopodcast_list %}
     <tr>
       <td>{{ radiopodcast }}</td>
       <td id="podcastPlay">
@@ -38,4 +38,6 @@
     </tr>
     {% endfor %}
   </table>
+  {% include 'pagination.html' with object_list=radiopodcast_list %}
+</article>
 {% endblock content %}

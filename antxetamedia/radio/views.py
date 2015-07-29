@@ -1,15 +1,14 @@
 from django.db.models import Q
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
+from django.shortcuts import get_object_or_404
 
-from .models import RadioShow, RadioCategory, RadioProducer
+from .models import RadioShow, RadioCategory, RadioProducer, RadioPodcast
 from .forms import RadioShowFilter
 
 
-class RadioShowMixin(object):
+class RadioShowList(ListView):
     model = RadioShow
 
-
-class RadioShowList(RadioShowMixin, ListView):
     def get_queryset(self):
         query = Q()
         categories = self.request.GET.getlist('category')
@@ -36,5 +35,17 @@ class RadioShowList(RadioShowMixin, ListView):
         return super(RadioShowList, self).get_context_data(*args, **kwargs)
 
 
-class RadioShowDetail(RadioShowMixin, DetailView):
-    pass
+class RadioShowPodcastList(ListView):
+    model = RadioPodcast
+    paginate_by = 25
+
+    def dispatch(self, request, *args, **kwargs):
+        self.radioshow = get_object_or_404(RadioShow, slug=self.kwargs['slug'])
+        return super(RadioShowPodcastList, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, *args, **kwargs):
+        kwargs['radioshow'] = self.radioshow
+        return super(RadioShowPodcastList, self).get_context_data(*args, **kwargs)
+
+    def get_queryset(self):
+        return super(RadioShowPodcastList, self).get_queryset().filter(show=self.radioshow)

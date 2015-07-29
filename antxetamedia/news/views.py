@@ -11,6 +11,8 @@ class NewsPodcastMixin(object):
 
 
 class NewsPodcastList(NewsPodcastMixin, ListView):
+    paginate_by = 10
+
     def get_queryset(self):
         query = Q()
         shows = self.request.GET.getlist('show')

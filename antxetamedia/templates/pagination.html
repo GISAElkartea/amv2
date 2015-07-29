@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% if is_paginated %}
+<div class="pagination">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+    <a href="?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING }}&{% endif %}page={{ page_obj.previous_page_number }}">{% trans 'Previous' %}</a>
+    {% endif %}
+    <span class="current">
+      {% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}
+      {{ current }} of {{ total }}
+      {% endblocktrans %}
+    </span>
+    {% if page_obj.has_next %}
+    <a href="?{% if request.META.QUERY_STRING %}{{ request.META.QUERY_STRING }}&{% endif %}page={{ page_obj.next_page_number }}">{% trans 'Next' %}</a>
+    {% endif %}
+  </span>
+</div>
+{% endif %}

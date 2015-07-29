@@ -40,7 +40,7 @@ class RadioShow(AbstractShow):
     featured = models.BooleanField(_('Featured'), default=False)
 
     def get_absolute_url(self):
-        return reverse('radio:detail', kwargs={'slug': self.slug})
+        return reverse('radio:podcasts', kwargs={'slug': self.slug})
 
 
 class RadioPodcastQuerySet(PodcastQuerySet):
@@ -64,4 +64,4 @@ class RadioPodcast(AbstractPodcast):
     show = models.ForeignKey(RadioShow, verbose_name=_('Show'))
 
     def get_absolute_url(self):
-        return reverse('radio:detail', kwargs={'slug': self.slug})
+        return reverse('radio:podcasts', kwargs={'slug': self.show.slug})

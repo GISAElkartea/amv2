@@ -10,9 +10,11 @@ class EventMixin(object):
 class EventList(EventMixin, ListView):
     template_name = 'events/event_list.html'
     context_object_name = 'event_list'
+    paginate_by = 10
 
     def get_queryset(self):
-        return Event.objects.upcoming()
+        # NOTE: Little hack, event generator can be infinite, limit it to 10 pages
+        return list(Event.objects.upcoming(self.paginate_by * 10))
 
 
 class EventDetail(EventMixin, DetailView):

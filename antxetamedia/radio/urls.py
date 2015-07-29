@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 
-from .views import RadioShowList, RadioShowDetail
+from .views import RadioShowList, RadioShowPodcastList
 
 
 expressions = {
@@ -13,7 +13,7 @@ radio = [
     url(r'^$', RadioShowList.as_view(), name='list'),
     url(r'^\?category={category}$'.format(**expressions), RadioShowList.as_view(), name='category'),
     url(r'^\?producer={producer}$'.format(**expressions), RadioShowList.as_view(), name='producer'),
-    url(r'^{radioshow}/$'.format(**expressions), RadioShowDetail.as_view(), name='detail'),
+    url(r'^{radioshow}/$'.format(**expressions), RadioShowPodcastList.as_view(), name='podcasts'),
 ]
 
 urlpatterns = [url(r'^', include(radio, namespace='radio'))]
