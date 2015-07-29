@@ -9,6 +9,7 @@ from autoslug.fields import AutoSlugField
 from ckeditor.fields import RichTextField
 import recurrence
 from recurrence.fields import RecurrenceField
+from sorl.thumbnail.fields import ImageField as SorlImageField
 
 from antxetamedia.news.models import NewsPodcast, NewsShow
 from antxetamedia.radio.models import RadioPodcast, RadioShow, RadioCategory, RadioProducer
@@ -21,6 +22,7 @@ Settings.default.max_examples = getattr(settings, 'HYPOTHESIS_MAX_EXAMPLES', 10)
 
 add_default_field_mapping(AutoSlugField, st.just('some-slug'))
 add_default_field_mapping(ImageField, st.just(''))
+add_default_field_mapping(SorlImageField, st.just(''))
 add_default_field_mapping(RichTextField, st.just(''))
 add_default_field_mapping(URLField, st.just('http://example.com/'))
 add_default_field_mapping(RecurrenceField, st.just(recurrence.Recurrence(rrules=[recurrence.Rule(recurrence.DAILY)])))
