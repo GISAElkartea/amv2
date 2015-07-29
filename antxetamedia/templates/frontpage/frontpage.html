@@ -24,7 +24,6 @@
         {% if not forloop.last %}, {% endif %}
         {% endfor %}
       </h2>
-      <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
       {{ newspodcast.description | truncatewords_html:25 | safe }}
     </div>
@@ -46,7 +45,7 @@
       </div>
       <div class="text">
         <h2 class="category">{{ event.location }}</h2>
-        <time class="date" datetime="{{ date|date:"Y M d" }}">{{ date|date:"Y M d" }} {{ event.time|time:"H:i" }}</time>
+        <time class="date" datetime="{{ date|date:"M d" }}">{{ date|date:"M d" }} {{ event.time|time:"H:i" }}</time>
         <h1><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h1>
       </div>
     </li>
