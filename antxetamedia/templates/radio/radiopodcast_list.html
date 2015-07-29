@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n thumbnail %}
 
 {% block title %}{{ radioshow }}{% endblock title %}
 
 {% block content %}
 <article>
   <div class="articleDetails">
-    {% if radioshow.image %}
-    <img src="{{ radioshow.image.url }}"/>
-    {% endif %}
+    {% thumbnail radioshow.image "500" as image %}
+    <img src="{{ image.url }}"/>
+    {% endthumbnail %}
   </div>
   <p class="date">{{ radioshow.producer }}</p>
   <h2 class="category">{{ radioshow.category }}</h2>
@@ -32,9 +32,12 @@
       <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
     </tr>
     <tr id="podcastDescription">
-      <td colspan="3">{% if radiopodcast.image %}<img id="podcastImage"
-        src="{{ radiopodcast.image.ul }}"/>{% endif %}
-        <span id="podcastText">{{ radiopodcast.description | safe }}</span></td>
+      <td colspan="3">
+        {% thumbnail radiopodcast.image "500" as image %}
+        <img id="podcastImage" src="{{ image.url }}" />
+        {% endthumbnail %}
+        <span id="podcastText">{{ radiopodcast.description | safe }}</span>
+      </td>
     </tr>
     {% endfor %}
   </table>

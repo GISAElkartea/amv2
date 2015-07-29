@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n static %}
+{% load i18n static thumbnail %}
 
 {% block title %}{% trans 'Events' %}{% endblock title %}
 
@@ -7,8 +7,11 @@
 <ul class="list">
   {% for date, event in event_list %}
   <li class="flag event">
-    <div class="detail" {% if event.image %} style="background-image: url('{{ event.image.url }}');"{% endif %}/>
-    </div>
+    {% thumbnail event.image "500" as image %}
+    <div class="detail" style="background-image: url('{{ image.url }}');"></div>
+    {% empty %}
+    <div class="detail"></div>
+    {% endthumbnail %}
     <div class="text">
       <h2 class="category">{{ event.location }}</h2>
       <time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }}

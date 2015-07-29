@@ -7,6 +7,7 @@ from django.utils.timezone import now
 
 from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
+from sorl.thumbnail import ImageField
 
 from antxetamedia.blobs.models import Blob
 
@@ -69,7 +70,7 @@ class AbstractShow(models.Model):
     name = models.CharField(_('Name'), max_length=256)
     slug = AutoSlugField(_('Slug'), unique=True, populate_from='name', editable=True)
     description = RichTextField(_('Description'), blank=True)
-    image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
+    image = ImageField(_('Image'), upload_to='shows', blank=True)
 
     def __str__(self):
         return self.name
@@ -97,7 +98,7 @@ class AbstractPodcast(models.Model):
     slug = AutoSlugField(_('Slug'), populate_from='title', editable=False, unique_with='show')
     description = RichTextField(_('Description'), blank=True)
     pub_date = models.DateTimeField(_('Publication date'), default=now)
-    image = models.ImageField(_('Image'), upload_to='shows', blank=True)  # TODO: something fancier?
+    image = ImageField(_('Image'), upload_to='shows', blank=True)
     blob_set = GenericRelation(Blob, content_type_field='content_type', object_id_field='object_id')
 
     def __str__(self):

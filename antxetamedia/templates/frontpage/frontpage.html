@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n static compress %}
+{% load i18n static compress thumbnail %}
 
 {% block title %}{% trans 'Frontpage' %}{% endblock title %}
 
@@ -9,7 +9,11 @@
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    <div class="detail" {% if newspodcast.image %} style="background-image: url('{{ newspodcast.image.url }}');"{% endif %}/>
+    {% thumbnail newspodcast.image "500" as image %}
+    <div class="detail" style="background-image: url('{{ image.url }}');">
+    {% empty %}
+    <div class="detail">
+    {% endthumbnail %}
       <div class="downloadShare">
         <i class="fa fa-play"></i>
         <i class="fa fa-plus"></i>
@@ -35,7 +39,11 @@
   <ul id="eventFront">
     {% for date, event in event_list %}
     <li class="flag event">
-      <div class="detail" {% if event.image %} style="background-image: url('{{ event.image.url }}');"{% endif %} />
+      {% thumbnail event.image "500" as image %}
+      <div class="detail" style="background-image: url('{{ image.url }}');">
+      {% empty %}
+      <div class="detail">
+      {% endthumbnail %}
         <div class="downloadShare">
           <i class="fa fa-play"></i>
           <i class="fa fa-plus"></i>

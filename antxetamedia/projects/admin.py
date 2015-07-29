@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
+from sorl.thumbnail.admin import AdminImageMixin
+
 from antxetamedia.blobs.admin import BlobInline
 from .models import ProjectProducer, ProjectShow, ProjectPodcast
 
@@ -11,7 +13,7 @@ class ProjectProducerAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug']
 
 
-class ProjectShowAdmin(admin.ModelAdmin):
+class ProjectShowAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['name', 'slug', 'producer']
     list_display_links = ['name', 'producer']
     list_filter = ['producer']
@@ -24,7 +26,7 @@ class ProjectShowAdmin(admin.ModelAdmin):
     ]
 
 
-class ProjectPodcastAdmin(admin.ModelAdmin):
+class ProjectPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
     inlines = [BlobInline]
     date_hierarchy = 'pub_date'
     list_display = ['title', 'show', 'pub_date']

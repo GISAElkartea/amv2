@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.utils.text import ugettext_lazy as _
 
+from sorl.thumbnail.admin import AdminImageMixin
+
 from .models import Event
 
 
-class EventAdmin(admin.ModelAdmin):
+class EventAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['title', 'location']
     list_filter = ['time', 'location']
     search_fields = ['title', 'description', 'location']

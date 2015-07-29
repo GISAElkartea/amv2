@@ -11,6 +11,7 @@ from django.utils.six import python_2_unicode_compatible
 from autoslug.fields import AutoSlugField
 from ckeditor.fields import RichTextField
 from recurrence.fields import RecurrenceField
+from sorl.thumbnail import ImageField
 
 
 class EventQuerySet(models.QuerySet):
@@ -59,7 +60,7 @@ class Event(models.Model):
 
     description = RichTextField(_('Description'), blank=True)
     location = models.CharField(_('Location'), max_length=256, blank=True)
-    image = models.ImageField(_('Image'), blank=True, upload_to='events')
+    image = ImageField(_('Image'), blank=True, upload_to='events')
     link = models.URLField(_('Link'), blank=True)
 
     def __str__(self):

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n %}
+{% load static i18n thumbnail absolute_urls %}
 
 {% block title %}
 {% trans 'Archive' %}
@@ -28,9 +28,10 @@
         {% endif %}
       </h1>
 
-      {% if result.meta.image %}
-      <img src="{{ result.meta.image }}" />
-      {% endif %}
+      {% build_absolute_uri result.meta.image as image_url %}
+      {% thumbnail image_url "500" as image %}
+      <img src="{{ image.url }}" />
+      {% endthumbnail %}
 
       {% if result.description %}
       {{ result.description | truncatewords_html:25 | safe }}

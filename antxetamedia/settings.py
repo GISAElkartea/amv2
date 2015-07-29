@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     'recurrence',
     'kombu.transport.django',
     'watson',
+    'sorl.thumbnail',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',

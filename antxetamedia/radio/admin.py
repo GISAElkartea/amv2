@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
+from sorl.thumbnail.admin import AdminImageMixin
+
 from antxetamedia.blobs.admin import BlobInline
 from .models import RadioCategory, RadioProducer, RadioShow, RadioPodcast
 
@@ -17,7 +19,7 @@ class RadioProducerAdmin(admin.ModelAdmin):
     search_fields = ['name', 'slug']
 
 
-class RadioShowAdmin(admin.ModelAdmin):
+class RadioShowAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['name', 'slug', 'producer', 'category', 'featured']
     list_display_links = ['name', 'producer', 'category']
     list_editable = ['featured']
@@ -31,7 +33,7 @@ class RadioShowAdmin(admin.ModelAdmin):
     ]
 
 
-class RadioPodcastAdmin(admin.ModelAdmin):
+class RadioPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
     inlines = [BlobInline]
     date_hierarchy = 'pub_date'
     list_display = ['title', 'show', 'pub_date']

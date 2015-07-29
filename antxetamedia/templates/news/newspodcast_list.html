@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n static %}
+{% load i18n static thumbnail %}
 
 {% block title %}{% trans 'News' %}{% endblock title %}
 
@@ -18,7 +18,10 @@
 <ul class="list">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    <div class="detail" {% if newspodcast.image %} style="background-image: url('{{ newspodcast.image.url }}');"{% endif %}/>
+    {% thumbnail newspodcast.image "500" as image %}
+    <div class="detail" style="background-image: url('{{ image.url }}');">
+    {% empty %}
+    <div class="detail">
       <div class="downloadShare">
         <i class="fa fa-play"></i>
         <i class="fa fa-plus"></i>
