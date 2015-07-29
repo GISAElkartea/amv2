@@ -290,11 +290,11 @@ msgstr "Sailak"
 
 #: antxetamedia/news/models.py:19
 msgid "News category"
-msgstr "Berri Saila"
+msgstr "Berri saila"
 
 #: antxetamedia/news/models.py:20
 msgid "News categories"
-msgstr "Berrien Sailak"
+msgstr "Berrien sailak"
 
 #: antxetamedia/news/models.py:30
 msgid "News show"
@@ -306,11 +306,11 @@ msgstr "Albistegiak"
 
 #: antxetamedia/news/models.py:52
 msgid "News podcast"
-msgstr "Berri emankizuna"
+msgstr "Albistea"
 
 #: antxetamedia/news/models.py:53
 msgid "News podcasts"
-msgstr "Berri emankizunak"
+msgstr "Albisteak"
 
 #: antxetamedia/news/models.py:55 antxetamedia/projects/models.py:38
 #: antxetamedia/radio/models.py:64
