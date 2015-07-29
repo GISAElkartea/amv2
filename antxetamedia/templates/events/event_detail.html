@@ -16,7 +16,7 @@
     <p>{% trans 'Future occurrences:' %}</p>
     <ul>
       {% for date in event.upcoming|slice:":5" %}
-      <li><time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} {{ event.time|time:"H:i" }}</time></li>
+      <li><time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
       {% endfor %}
     </ul>
     {% if event.link %}
