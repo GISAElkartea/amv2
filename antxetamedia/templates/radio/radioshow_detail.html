@@ -13,7 +13,7 @@
   <p class="date">{{ radioshow.producer }}</p>
   <h2 class="category">{{ radioshow.category }}</h2>
   <h1>{{ radioshow }}</h1>
-  {{ radioshow.description | striptags }}
+  {{ radioshow.description | safe }}
   <table class="podcastList">
     <tr>
       <th>{% trans 'Podcast' %}</th>
