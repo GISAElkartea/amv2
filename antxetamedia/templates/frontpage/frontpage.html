@@ -33,9 +33,9 @@
 </ul>
 
 <div id="right">
-  <ul id="agendaFront">
+  <ul id="eventFront">
     {% for date, event in event_list %}
-    <li class="flag agenda">
+    <li class="flag event">
       <div class="detail" {% if event.image %} style="background-image: url('{{ event.image.url }}');"{% endif %} />
         <div class="downloadShare">
           <i class="fa fa-play"></i>
