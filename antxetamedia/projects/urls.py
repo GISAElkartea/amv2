@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 
-from .views import ProjectProducerList, ProjectShowDetail
+from .views import ProjectShowList, ProjectShowDetail
 
 
 expressions = {
@@ -8,7 +8,7 @@ expressions = {
 }
 
 radio = [
-    url(r'^$', ProjectProducerList.as_view(), name='list'),
+    url(r'^$', ProjectShowList.as_view(), name='list'),
     url(r'^{projectshow}/$'.format(**expressions), ProjectShowDetail.as_view(), name='detail'),
 ]
 

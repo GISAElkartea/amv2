@@ -1,11 +1,15 @@
 from django.views.generic import ListView, DetailView
 
-from .models import ProjectProducer, ProjectShow
+from .models import ProjectShow
 
 
-class ProjectProducerList(ListView):
-    model = ProjectProducer
+class ProjectShowMixin(object):
+    queryset = ProjectShow.objects.order_by('-creation_date')
 
 
-class ProjectShowDetail(DetailView):
-    model = ProjectShow
+class ProjectShowList(ProjectShowMixin, ListView):
+    paginate_by = 20
+
+
+class ProjectShowDetail(ProjectShowMixin, DetailView):
+    pass

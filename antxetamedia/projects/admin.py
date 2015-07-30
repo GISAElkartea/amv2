@@ -14,13 +14,14 @@ class ProjectProducerAdmin(admin.ModelAdmin):
 
 
 class ProjectShowAdmin(AdminImageMixin, admin.ModelAdmin):
-    list_display = ['name', 'slug', 'producer']
+    date_hierarchy = 'creation_date'
+    list_display = ['name', 'slug', 'producer', 'creation_date']
     list_display_links = ['name', 'producer']
-    list_filter = ['producer']
+    list_filter = ['producer', 'creation_date']
     search_fields = ['name', 'description']
     fieldsets = [
         (None, {
-            'fields': [('name', 'slug'), 'producer']}),
+            'fields': [('name', 'slug'), 'creation_date', 'producer']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]
@@ -41,6 +42,6 @@ class ProjectPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
     ]
 
 
-admin.site.register(ProjectProducer)
-admin.site.register(ProjectShow)
+admin.site.register(ProjectProducer, ProjectProducerAdmin)
+admin.site.register(ProjectShow, ProjectShowAdmin)
 admin.site.register(ProjectPodcast, ProjectPodcastAdmin)

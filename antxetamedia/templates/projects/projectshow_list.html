@@ -5,11 +5,12 @@
 
 {% block content %}
 <ul id="projectShows">
-  {% for projectproducer in projectproducer_list %}
+  {% regroup projectshow_list by creation_date.year as projectshow_list_by_year %}
+  {% for year in projectshow_list_by_year %}
   <li>
-    <h1>{{ projectproducer }}</h1>
+    <h1>{{ year.grouper }}</h1>
     <ul>
-      {% for projectshow in projectproducer.projectshow_set.select_related %}
+      {% for projectshow in year.list %}
       <li>
         <h2><a href="{{ projectshow.get_absolute_url }}">{{ projectshow }}</a></h2>
       </li>
@@ -18,4 +19,6 @@
   </li>
   {% endfor %}
 </ul>
+
+{% include 'pagination.html' with object_list=projectshow_list %}
 {% endblock content %}
