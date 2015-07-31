@@ -10,37 +10,39 @@
     <img src="{{ image.url }}"/>
     {% endthumbnail %}
   </div>
-  <p class="date">{{ radioshow.producer }}</p>
-  <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
-  <h1>{{ radioshow }}</h1>
-  {{ radioshow.description | safe }}
-  <table class="podcastList">
-    <tr>
-      <th>{% trans 'Podcast' %}</th>
-      <th></th>
-      <th>{% trans 'Date' %}</th>
-    </tr>
-    {% for radiopodcast in radiopodcast_list %}
-    <tr>
-      <td>{{ radiopodcast }}</td>
-      <td id="podcastPlay">
-        <i class="fa fa-play"></i>
-        <i class="fa fa-plus"></i>
-        <i class="fa fa-share"></i>
-        <i class="fa fa-download"></i>
-      </td>
-      <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
-    </tr>
-    <tr id="podcastDescription">
-      <td colspan="3">
-        {% thumbnail radiopodcast.image "500" as image %}
-        <img id="podcastImage" src="{{ image.url }}" />
-        {% endthumbnail %}
-        <span id="podcastText">{{ radiopodcast.description | safe }}</span>
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
-  {% include 'pagination.html' with object_list=radiopodcast_list %}
+  <div class="text">
+    <p class="date">{{ radioshow.producer }}</p>
+    <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
+    <h1>{{ radioshow }}</h1>
+    {{ radioshow.description | safe }}
+    <table class="podcastList">
+      <tr>
+        <th>{% trans 'Podcast' %}</th>
+        <th></th>
+        <th>{% trans 'Date' %}</th>
+      </tr>
+      {% for radiopodcast in radiopodcast_list %}
+      <tr>
+        <td>{{ radiopodcast }}</td>
+        <td id="podcastPlay">
+          <i class="fa fa-play"></i>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-share"></i>
+          <i class="fa fa-download"></i>
+        </td>
+        <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
+      </tr>
+      <tr id="podcastDescription">
+        <td colspan="3">
+          {% thumbnail radiopodcast.image "500" as image %}
+          <img id="podcastImage" src="{{ image.url }}" />
+          {% endthumbnail %}
+          <span id="podcastText">{{ radiopodcast.description | safe }}</span>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% include 'pagination.html' with object_list=radiopodcast_list %}
+  </div>
 </article>
 {% endblock content %}
