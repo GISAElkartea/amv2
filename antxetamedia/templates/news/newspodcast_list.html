@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="text">
-      <h2 class="category">{{ newspodcast.categories.all | join:", " }}</h2>
+      <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ newspodcast.categories.all | join:", " }}</a></h2>
       <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
       <p>{{ newspodcast.description | striptags | truncatewords:25 }}</p>
