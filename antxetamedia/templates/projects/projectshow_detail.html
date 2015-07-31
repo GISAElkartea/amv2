@@ -10,31 +10,34 @@
     <img src="{{ projectshow.image.url }}"/>
     {% endif %}
   </div>
-  <h2 class="category">{{ projectshow.producer }}</p>
-  <h1>{{ projectshow }}</h1>
-  {{ projectshow.description | safe }}
-  <table class="podcastList">
-    <tr>
-      <th>{% trans 'Podcast' %}</th>
-      <th></th>
-      <th>{% trans 'Date' %}</th>
-    </tr>
-    {% for projectpodcast in projectshow.projectpodcast_set.select_related %}
-    <tr>
-      <td>{{ projectpodcast }}</td>
-      <td id="podcastPlay">
-        <i class="fa fa-play"></i>
-        <i class="fa fa-plus"></i>
-        <i class="fa fa-share"></i>
-        <i class="fa fa-download"></i>
-      </td>
-      <td id="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
-    </tr>
-    <tr id="podcastDescription">
-      <td colspan="3">{% if projectpodcast.image %}<img id="podcastImage"
-        src="{{ projectpodcast.image.url }}"/>{% endif %}
-        <span id="podcastText">{{ projectpodcast.description | safe }}</span></td>
-    </tr>
-    {% endfor %}
-  </table>
+  <div class="text">
+    <h2 class="category">{{ projectshow.producer }}</p>
+    <h1>{{ projectshow }}</h1>
+    {{ projectshow.description | safe }}
+    <table class="podcastList">
+      <tr>
+        <th>{% trans 'Podcast' %}</th>
+        <th></th>
+        <th>{% trans 'Date' %}</th>
+      </tr>
+      {% for projectpodcast in projectshow.projectpodcast_set.select_related %}
+      <tr>
+        <td>{{ projectpodcast }}</td>
+        <td id="podcastPlay">
+          <i class="fa fa-play"></i>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-share"></i>
+          <i class="fa fa-download"></i>
+        </td>
+        <td id="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
+      </tr>
+      <tr id="podcastDescription">
+        <td colspan="3">{% if projectpodcast.image %}<img id="podcastImage"
+          src="{{ projectpodcast.image.url }}"/>{% endif %}
+          <span id="podcastText">{{ projectpodcast.description | safe }}</span></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</article>
 {% endblock content %}
