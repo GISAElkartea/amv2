@@ -22,6 +22,6 @@
     {% if event.link %}
     <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
     {% endif %}
-    <p>{{ event.description | striptags | truncatewords:25 }}</p>
+    <p>{{ event.description | safe }}</p>
   </div>
 {% endblock content %}
