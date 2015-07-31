@@ -6,18 +6,30 @@
 {% endblock title %}
 
 {% block aside %}
+<nav>
+  <ul>
+    <li><a href="{% url 'archive:search' %}">{% trans 'Gune osoa' %}</a></li>
+    <li><a href="{% url 'archive:news' %}">{% trans 'News podcasts' %}</a></li>
+    <li><a href="{% url 'archive:radio' %}">{% trans 'Radio podcasts' %}</a></li>
+    <li><a href="{% url 'archive:projects' %}">{% trans 'Projects' %}</a></li>
+  </ul>
+</nav>
 {% endblock aside %}
 
 {% block content %}
-
 <ul class="tabs">
   <li>
     <input type="radio" name="tabs" id="tab1" checked />
     <label for="tab1">{% trans 'Site-wide search' %}</label>
     <div id="tab-content1" class="tab-content">
-      <form class="search" method="get" action=".">
-        <input name="q" value="{{ request.GET.q }}" />
+      <form method="get" action=".">
+        <label for="id_q">{% trans 'Term' %}:</label>
+        <input id="id_q" name="q" value="{{ request.GET.q }}" />
         <input type="submit" value="{% trans 'Search' %}" />
+        {% if form %}
+        <h2>{% trans 'Details' %}</h2>
+        {{ form }}
+        {% endif %}
       </form>
     </div>
   </li>
@@ -29,8 +41,6 @@
     </div>
   </li>
 </ul>
-
-
 
 <ul>
   {% for result in search_results %}

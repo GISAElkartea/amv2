@@ -2,9 +2,9 @@ django==1.8.3
 
 Pillow
 celery
-django-watson
 
 # Static files
+django-compressor
 django-libsass
 
 # Admin
@@ -21,6 +21,10 @@ sorl-thumbnail
 
 # External APIs
 boto
+
+# Archive
+django-watson
+django-filter
 
 # Tests
 hypothesis

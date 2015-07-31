@@ -27,6 +27,7 @@ INSTALLED_APPS = (
     'kombu.transport.django',
     'watson',
     'sorl.thumbnail',
+    'django_filters',
 
     'antxetamedia.frontpage',
     'antxetamedia.blobs',
