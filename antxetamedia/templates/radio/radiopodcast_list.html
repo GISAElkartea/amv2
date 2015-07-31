@@ -11,7 +11,7 @@
     {% endthumbnail %}
   </div>
   <p class="date">{{ radioshow.producer }}</p>
-  <h2 class="category">{{ radioshow.category }}</h2>
+  <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
   <h1>{{ radioshow }}</h1>
   {{ radioshow.description | safe }}
   <table class="podcastList">

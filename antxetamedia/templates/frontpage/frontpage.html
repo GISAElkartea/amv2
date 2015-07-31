@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="text">
-        <h2 class="category">{{ radiopodcast.show }}</h2>
+        <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>
         <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
         <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
       </div>
