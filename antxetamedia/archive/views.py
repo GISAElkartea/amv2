@@ -1,9 +1,12 @@
 from django.views.generic import ListView
+from django.views.generic.edit import FormMixin
 
 import watson
 from watson.views import SearchMixin as WatsonSearchView
 
+from antxetamedia.events.models import Event
 from .filtersets import NewsPodcastFilterSet, RadioPodcastFilterSet, ProjectShowFilterSet
+from .forms import EventForm
 
 
 class SearchMixin(WatsonSearchView):
@@ -45,3 +48,20 @@ class RadioPodcastSearchView(FilterSetSeachMixin, ListView):
 
 class ProjectShowSearchView(FilterSetSeachMixin, ListView):
     filterset_class = ProjectShowFilterSet
+
+
+class EventSearchView(SingleModelSearchMixin, FormMixin, ListView):
+    form_class = EventForm
+
+    def get_queryset(self):
+        return Event.objects.all()
+
+    def get_context_data(self, **kwargs):
+        kwargs['form'] = self.get_form()
+        return super(EventSearchView, self).get_context_data(**kwargs)
+
+    def get_initial(self):
+        return self.request.GET
+
+    def form_valid(self, form):
+        pass

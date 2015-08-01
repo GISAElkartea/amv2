@@ -3,7 +3,6 @@ from django_filters import FilterSet
 from antxetamedia.news.models import NewsPodcast
 from antxetamedia.radio.models import RadioPodcast
 from antxetamedia.projects.models import ProjectShow
-from antxetamedia.events.models import Event
 
 
 # We do not want to accidentally discard anything, so be inclusive and always
@@ -38,8 +37,3 @@ class ProjectShowFilterSet(FilterSet):
             'producer': ['exact'],
             'creation_date': ['year__exact'],
         }
-
-
-class EventFilterSet(FilterSet):
-    class Meta:
-        model = Event
