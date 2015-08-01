@@ -1,4 +1,7 @@
-from urllib import quote
+try:
+    from urllib.parse import quote
+except ImportError:
+    from urllib import quote
 import traceback
 
 from django.db.models.signals import post_save

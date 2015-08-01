@@ -1,5 +1,8 @@
 import pytz
-from Queue import PriorityQueue
+try:
+    from queue import PriorityQueue
+except ImportError:
+    from Queue import PriorityQueue
 
 from django.db import models
 from django.conf import settings
