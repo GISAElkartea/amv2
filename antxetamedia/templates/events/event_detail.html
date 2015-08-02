@@ -13,15 +13,24 @@
   <div class="text">
     <h2 class="category">{{ event.location }}</h2>
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
-    <p>{% trans 'Future occurrences:' %}</p>
-    <ul>
-      {% for date in event.upcoming|slice:":5" %}
-      <li><time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
-      {% endfor %}
-    </ul>
+    <section id="occurrences">
+      {% with occurrences=event.upcoming|slice:":5" %}
+      {{ occurrences }}
+      {% if occurrences|length == 1 %}
+      <time class="date" datetime="{{ occurrences.0|date:"Y M j" }}>{{ occurrences.0|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
+      {% else %}
+      <h4>{% trans 'Future occurrences:' %}</h4>
+      <ul>
+        {% for date in event.upcoming|slice:":5" %}
+        <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </section>
+    <p>{{ event.description | safe }}</p>
     {% if event.link %}
     <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
     {% endif %}
-    <p>{{ event.description | safe }}</p>
   </div>
 {% endblock content %}
