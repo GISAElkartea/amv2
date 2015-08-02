@@ -9,12 +9,28 @@
 {% endblock aside %}
 
 {% block content %}
-<h2>{% trans 'Site-wide search' %}</h2>
 
-<form method="get" action=".">
-  <input name="q" value="{{ request.GET.q }}" />
-  <input type="submit" value="{% trans 'Search' %}" />
-</form>
+<ul class="tabs">
+  <li>
+    <input type="radio" name="tabs" id="tab1" checked />
+    <label for="tab1">{% trans 'Site-wide search' %}</label>
+    <div id="tab-content1" class="tab-content">
+      <form class="search" method="get" action=".">
+        <input name="q" value="{{ request.GET.q }}" />
+        <input type="submit" value="{% trans 'Search' %}" />
+      </form>
+    </div>
+  </li>
+  <li>
+    <input type="radio" name="tabs" id="tab2" checked />
+    <label for="tab2">Bigarrena</label>
+    <div id="tab-content2" class="tab-content">
+      <p>Hau bigarrena da</p>
+    </div>
+  </li>
+</ul>
+
+
 
 <ul>
   {% for result in search_results %}
