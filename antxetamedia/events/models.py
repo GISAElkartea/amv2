@@ -1,11 +1,12 @@
 import pytz
+from itertools import islice
+from functools import wraps
 try:
     from queue import PriorityQueue
 except ImportError:
     from Queue import PriorityQueue
 
 from django.db import models
-from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext as _
@@ -17,34 +18,91 @@ from recurrence.fields import RecurrenceField
 from sorl.thumbnail import ImageField
 
 
+def sliceable(generator):
+    @wraps(generator)
+    def wrapper(self, *args, **kwargs):
+        count = kwargs.pop('count', None)
+        iterator = generator(self, *args, **kwargs)
+        return iterator if count is None else islice(iterator, count)
+    return wrapper
+
+
+class Naive(object):
+    def __init__(self, dt):
+        self.dt = dt
+
+    def __enter__(self):
+        tz = self.dt.tzinfo
+        naive = pytz.UTC.normalize(self.dt).replace(tzinfo=None)
+        return naive, tz.localize
+
+    def __exit__(self, *exc):
+        pass
+
+
 class EventQuerySet(models.QuerySet):
-    def upcoming(self, count=None):
+    @sliceable
+    def after(self, dtstart):
+        with Naive(dtstart) as (naive, localize):
+            # automatically ordered by date
+            queue = PriorityQueue()
+
+            # for every event, get its recurrence after the given datetime
+            for e in self.iterator():
+                day = e.recurrences.after(naive)
+                if day is not None:
+                    queue.put((day, e))
+
+            # for every recurrence, get its event and add the next recurrence to the queue
+            while not queue.empty():
+                day, event = queue.get()
+                yield localize(day), event
+                day = event.recurrences.after(day)
+                if day is not None:
+                    queue.put((day, event))
+
+    @sliceable
+    def before(self, dtend):
+        with Naive(dtend) as (naive, localize):
+            # automatically ordered by date
+            queue = PriorityQueue()
+
+            # for every event, get its recurrence before the given datetime
+            for e in self.iterator():
+                day = e.recurrences.before(naive)
+                if day is not None:
+                    queue.put((day, e))
+
+            # for every recurrence, get its event and add the next recurrence to the queue
+            while not queue.empty():
+                day, event = queue.get()
+                yield localize(day), event
+                day = event.recurrences.before(day)
+                if day is not None:
+                    queue.put((day, event))
+
+    @sliceable
+    def between(self, dtstart, dtend):
+        with Naive(dtstart) as (naive_start, localize), Naive(dtend) as (naive_end, localize):
+            # automatically ordered by date
+            queue = PriorityQueue()
+
+            # for every event, get its recurrences between the given datetimes
+            for e in self.iterator():
+                for day in e.recurrences.between(naive_start, naive_end, inc=True):
+                    queue.put((day, e))
+
+            # for every recurrence, get its event and add the next recurrences to the queue
+            while not queue.empty():
+                day, event = queue.get()
+                yield localize(day), event
+
+    @sliceable
+    def upcoming(self):
         """
         Get the upcoming event recurrences.
         """
-        # django-recurrence is not tz aware
-        tz = pytz.timezone(settings.TIME_ZONE)
-        timezone.activate(tz)
-        today = timezone.now().replace(hour=0, minute=0, second=0, tzinfo=None)
-
-        # automatically ordered by date
-        upcoming = PriorityQueue()
-
-        # for every event, get its upcoming recurrence
-        for e in self.iterator():
-            day = e.recurrences.after(today)
-            if day is not None:
-                upcoming.put((day, e))
-
-        # for every recurrence, get its event and add the next recurrence to the queue
-        while (count is None or count > 0) and not upcoming.empty():
-            day, event = upcoming.get()
-            yield day, event
-            if count is not None:
-                count -= 1
-            day = event.recurrences.after(day)
-            if day is not None:
-                upcoming.put((day, event))
+        return self.after(timezone.now().replace(hour=0, minute=0, second=0))
 
 
 @python_2_unicode_compatible
@@ -72,18 +130,15 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('events:detail', kwargs={'slug': self.slug})
 
-    def upcoming(self, count=None):
+    @sliceable
+    def upcoming(self):
         """
         Generator of all the future occurrences of this event.
         """
-        utc = timezone.now()
-        tz = pytz.timezone(settings.TIME_ZONE)
-        naive = utc.replace(tzinfo=None)
-        upcoming = naive
-        while count is None or count > 0:
-            upcoming = self.recurrences.after(upcoming)
-            if upcoming is None:
-                return
-            yield tz.localize(upcoming)
-            if count is not None:
-                count -= 1
+        with Naive(timezone.now()) as (naive, localize):
+            upcoming = naive
+            while True:
+                upcoming = self.recurrences.after(upcoming)
+                if upcoming is None:
+                    return
+                yield localize(upcoming)

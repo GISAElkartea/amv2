@@ -14,7 +14,7 @@ class EventList(EventMixin, ListView):
 
     def get_queryset(self):
         # NOTE: Little hack, event generator can be infinite, limit it to 10 pages
-        return list(Event.objects.upcoming(self.paginate_by * 10))
+        return list(Event.objects.upcoming(count=(self.paginate_by * 10)))
 
 
 class EventDetail(EventMixin, DetailView):

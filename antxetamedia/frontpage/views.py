@@ -21,7 +21,7 @@ class FrontPage(TemplateView):
         EVENTS = getattr(settings, 'FRONTPAGE_EVENTS', 5)
         kwargs['newspodcast_list'] = NewsPodcast.objects.favourites(self.request)[:NEWSPODCASTS]
         kwargs['radiopodcast_list'] = RadioPodcast.objects.favourites(self.request)[:RADIOPODCASTS]
-        kwargs['event_list'] = Event.objects.upcoming(EVENTS)
+        kwargs['event_list'] = Event.objects.upcoming(count=EVENTS)
         kwargs['widget_list'] = Widget.objects.all()
         return super(FrontPage, self).get_context_data(*args, **kwargs)
 

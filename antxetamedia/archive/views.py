@@ -50,18 +50,42 @@ class ProjectShowSearchView(FilterSetSeachMixin, ListView):
     filterset_class = ProjectShowFilterSet
 
 
-class EventSearchView(SingleModelSearchMixin, FormMixin, ListView):
+class EventSearchView(FormMixin, SingleModelSearchMixin, ListView):
     form_class = EventForm
 
-    def get_queryset(self):
-        return Event.objects.all()
+    def get(self, request, *args, **kwargs):
+        self.query = self.get_query(request)
+        self.object_list = self.get_queryset()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
-    def get_context_data(self, **kwargs):
-        kwargs['form'] = self.get_form()
-        return super(EventSearchView, self).get_context_data(**kwargs)
+    def get_base_queryset(self):
+        return Event.objects.all()
 
     def get_initial(self):
         return self.request.GET
 
+    def get_form_kwargs(self):
+        kwargs = super(EventSearchView, self).get_form_kwargs()
+        kwargs['data'] = self.request.GET
+        return kwargs
+
     def form_valid(self, form):
-        pass
+        after = form.cleaned_data.get('after')
+        before = form.cleaned_data.get('before')
+        # NOTE: Little hack, event generator can be infinite, limit it to 10 pages
+        count = self.paginate_by * 10
+        qs = self.get_queryset()
+        if (after, before) != (None, None):
+            if None not in (after, before):
+                qs = qs.between(after, before, count=count)
+            elif after is not None:
+                qs = qs.after(after, count=count)
+            elif before is not None:
+                qs = qs.before(before, count=count)
+            qs = list({event for date, event in qs})
+        self.object_list = qs
+        return self.render_to_response(self.get_context_data(form=self.get_form()))
