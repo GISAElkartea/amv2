@@ -1,0 +1,54 @@
+.tabs
+  width: 50%
+  list-style: none
+  position: relative
+  margin: 0
+  padding: 0
+  li
+    display: inline-block
+  input[type="radio"]
+    position: absolute
+    display: none
+  label
+    color: white
+    display: block
+    padding: .3em 1em
+    border-radius: .2em .2em 0 0
+    font-size: 1.2rem
+    font-weight: normal
+    cursor: pointer
+    position: relative
+    background: tint($green, 60%)
+    +transition(all 0.2s ease-in-out)
+    &:hover
+      background: tint($green, 30%)
+  .tab-content
+    z-index: 2
+    display: none
+    overflow: hidden
+    width: 100%
+    padding: 1em
+    position: absolute
+    left: 0
+    background: $green
+  //The Magic
+  [id^="tab"]:checked + label
+    top: 0
+    padding-top: .5em
+    background: $green
+  [id^="tab"]:checked ~ [id^="tab-content"]
+    display: block
+
+form.search
+  margin: 0
+  font-size: 0
+  input[name="q"]
+    border: none
+    padding: .5rem
+    width: 85%
+    font-size: 1rem
+    margin-right: 2%
+  input[type="submit"]
+    width: 13%
+
+
