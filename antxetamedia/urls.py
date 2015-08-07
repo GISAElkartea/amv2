@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^projects/', include('antxetamedia.projects.urls')),
     url(r'^f/', include('antxetamedia.flatpages.urls')),
     url(r'^events/', include('antxetamedia.events.urls')),
+    url(r'^schedule/', include('antxetamedia.schedule.urls')),
     url(r'^archive/', include('antxetamedia.archive.urls')),
     url(r'^feed/$', BlobFeed(), name='feed'),
 

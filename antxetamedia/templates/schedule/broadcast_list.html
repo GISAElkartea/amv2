@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+{% block content %}
+{% regroup broadcast_list by get_weekday_display as broadcast_list_by_weekday %}
+{% for weekday in broadcast_list_by_weekday %}
+<h1>{{ weekday.grouper }}</h1>
+<ul>
+  {% for broadcast in weekday.list %}
+  <li>
+    {{ broadcast }}
+    {{ broadcast.link }}
+    {{ broadcast.beginning }}
+    {{ broadcast.endinf }}
+    {{ broadcast.description }}
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endblock content %}
