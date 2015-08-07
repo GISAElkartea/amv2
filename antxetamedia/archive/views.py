@@ -1,5 +1,7 @@
+from django.core.urlresolvers import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
+from django.utils.translation import ugettext as _
 
 import watson
 from watson.views import SearchMixin as WatsonSearchView
@@ -12,6 +14,19 @@ from .forms import EventForm
 class SearchMixin(WatsonSearchView):
     template_name = 'archive/search.html'
     paginate_by = 10
+
+    def get_tabs(self):
+        return [
+            (_('Site-wide'), reverse('archive:search'), None),
+            (_('News podcasts'), reverse('archive:news'), NewsPodcastFilterSet(self.request.GET).form),
+            (_('Radio podcasts'), reverse('archive:radio'), RadioPodcastFilterSet(self.request.GET).form),
+            (_('Projects'), reverse('archive:projects'), ProjectShowFilterSet(self.request.GET).form),
+            (_('Events'), reverse('archive:events'), EventForm(self.request.GET)),
+        ]
+
+    def get_context_data(self, **kwargs):
+        kwargs['tabs'] = self.get_tabs()
+        return super(SearchMixin, self).get_context_data(**kwargs)
 
 
 class SingleModelSearchMixin(SearchMixin):

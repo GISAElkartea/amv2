@@ -5,25 +5,15 @@
 {% trans 'Archive' %}
 {% endblock title %}
 
-{% block aside %}
-<nav>
-  <ul>
-    <li><a href="{% url 'archive:search' %}">{% trans 'Gune osoa' %}</a></li>
-    <li><a href="{% url 'archive:news' %}">{% trans 'News podcasts' %}</a></li>
-    <li><a href="{% url 'archive:radio' %}">{% trans 'Radio podcasts' %}</a></li>
-    <li><a href="{% url 'archive:projects' %}">{% trans 'Projects' %}</a></li>
-    <li><a href="{% url 'archive:events' %}">{% trans 'Events' %}</a></li>
-  </ul>
-</nav>
-{% endblock aside %}
 
 {% block content %}
 <ul class="tabs">
+  {% for title, reverseurl, form in tabs %}
   <li>
-    <input type="radio" name="tabs" id="tab1" checked />
-    <label for="tab1">{% trans 'Site-wide search' %}</label>
-    <div id="tab-content1" class="tab-content">
-      <form method="get" action=".">
+    <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
+    <label for="tab{{ forloop.counter }}">{{ title }}</label>
+    <div id="tab-content{{ forloop.counter }}" class="tab-content">
+      <form method="get" action="{{ reverseurl }}">
         <label for="id_q">{% trans 'Term' %}:</label>
         <input id="id_q" name="q" value="{{ request.GET.q }}" />
         <input type="submit" value="{% trans 'Search' %}" />
@@ -34,13 +24,7 @@
       </form>
     </div>
   </li>
-  <li>
-    <input type="radio" name="tabs" id="tab2" checked />
-    <label for="tab2">Bigarrena</label>
-    <div id="tab-content2" class="tab-content">
-      <p>Hau bigarrena da</p>
-    </div>
-  </li>
+{% endfor %}
 </ul>
 
 <ul>
@@ -49,7 +33,7 @@
     <article>
       <h1>
         {% if result.url %}
-        <a href="{{ result.url }}">{{ result }}</a>
+        <a href="{{ result.url }}">{{ result.title }}</a>
         {% else %}
         {{ result }}
         {% endif %}
