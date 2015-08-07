@@ -146,3 +146,16 @@ class Event(models.Model):
                 if upcoming is None:
                     return
                 yield localize(upcoming)
+
+    @sliceable
+    def past(self):
+        """
+        Generator of all the past occurrences of this event.
+        """
+        with Naive(timezone.now()) as (naive, localize):
+            past = naive
+            while True:
+                past = self.recurrences.before(past)
+                if past is None:
+                    return
+                yield localize(past)
