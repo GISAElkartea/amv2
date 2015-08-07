@@ -1,6 +1,6 @@
 import pytz
 from itertools import islice
-from functools import wraps
+from functools import wraps, total_ordering
 try:
     from queue import PriorityQueue
 except ImportError:
@@ -105,6 +105,7 @@ class EventQuerySet(models.QuerySet):
         return self.after(timezone.now().replace(hour=0, minute=0, second=0))
 
 
+@total_ordering
 @python_2_unicode_compatible
 class Event(models.Model):
     objects = EventQuerySet.as_manager()
@@ -126,6 +127,9 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    def __lt__(self, other):
+        return (self.time, self.pk) < (other.time, other.pk)
 
     def get_absolute_url(self):
         return reverse('events:detail', kwargs={'slug': self.slug})
