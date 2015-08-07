@@ -1,4 +1,6 @@
-from django_filters import FilterSet
+from django.utils.translation import ugettext_lazy as _
+
+from django_filters import FilterSet, DateTimeFilter
 
 from antxetamedia.news.models import NewsPodcast
 from antxetamedia.radio.models import RadioPodcast
@@ -10,24 +12,21 @@ from antxetamedia.projects.models import ProjectShow
 
 
 class NewsPodcastFilterSet(FilterSet):
+    pub_date_after = DateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
+    pub_date_before = DateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
+
     class Meta:
         model = NewsPodcast
-        fields = {
-            'show': ['exact'],
-            'categories': ['exact'],
-            'pub_date': ['gte', 'lte'],
-        }
+        fields = ['show', 'categories', 'pub_date_after', 'pub_date_before']
 
 
 class RadioPodcastFilterSet(FilterSet):
+    pub_date_after = DateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
+    pub_date_before = DateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
+
     class Meta:
         model = RadioPodcast
-        fields = {
-            'show': ['exact'],
-            'show__category': ['exact'],
-            'show__producer': ['exact'],
-            'pub_date': ['gte', 'lte'],
-        }
+        fields = ['show', 'show__category', 'show__producer', 'pub_date_after', 'pub_date_before']
 
 
 class ProjectShowFilterSet(FilterSet):
