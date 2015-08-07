@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-27 19:35+0000\n"
+"POT-Creation-Date: 2015-08-07 08:09+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -17,73 +17,101 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: antxetamedia/blobs/admin.py:28 antxetamedia/blobs/admin.py:42
-#: antxetamedia/templates/radio/radioshow_detail.html:19
+#: antxetamedia/archive/filtersets.py:15 antxetamedia/archive/filtersets.py:24
+msgid "Published after"
+msgstr "Geroztik argitaratua"
+
+#: antxetamedia/archive/filtersets.py:16 antxetamedia/archive/filtersets.py:25
+msgid "Published before"
+msgstr "Aurretik argitaratua"
+
+#: antxetamedia/archive/views.py:20
+msgid "Site-wide"
+msgstr "Gune osokoa"
+
+#: antxetamedia/archive/views.py:21 antxetamedia/news/models.py:53
+msgid "News podcasts"
+msgstr "Albisteak"
+
+#: antxetamedia/archive/views.py:22 antxetamedia/radio/models.py:62
+msgid "Radio podcasts"
+msgstr "Irrati emankizunak"
+
+#: antxetamedia/archive/views.py:23 antxetamedia/dashboard.py:28
+#: antxetamedia/projects/models.py:29 antxetamedia/templates/base.html:25
+#: antxetamedia/templates/projects/projectshow_list.html:4
+msgid "Projects"
+msgstr "Proiektuak"
+
+#: antxetamedia/archive/views.py:24 antxetamedia/dashboard.py:35
+#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:26
+#: antxetamedia/templates/events/event_list.html:4
+msgid "Events"
+msgstr "Gertakariak"
+
+#: antxetamedia/blobs/admin.py:28 antxetamedia/blobs/admin.py:43
+#: antxetamedia/templates/projects/projectshow_detail.html:19
+#: antxetamedia/templates/radio/radiopodcast_list.html:20
 msgid "Podcast"
 msgstr "Emankizuna"
 
-#: antxetamedia/blobs/admin.py:47
+#: antxetamedia/blobs/admin.py:48
 msgid "Has succeeded"
 msgstr "Arrakasta izan du"
 
-#: antxetamedia/blobs/admin.py:52 antxetamedia/blobs/models.py:96
+#: antxetamedia/blobs/admin.py:53 antxetamedia/blobs/models.py:94
 msgid "State"
 msgstr "Egoera"
 
-#: antxetamedia/blobs/admin.py:56 antxetamedia/blobs/models.py:99
-msgid "Traceback"
-msgstr "Errorea"
-
-#: antxetamedia/blobs/models.py:17 antxetamedia/blobs/models.py:58
+#: antxetamedia/blobs/models.py:15 antxetamedia/blobs/models.py:56
 msgid "Account"
 msgstr "Kontua"
 
-#: antxetamedia/blobs/models.py:18
+#: antxetamedia/blobs/models.py:16
 msgid "Accounts"
 msgstr "Kontuak"
 
-#: antxetamedia/blobs/models.py:20 antxetamedia/blobs/models.py:35
-#: antxetamedia/flatpages/models.py:23 antxetamedia/schedule/models.py:15
-#: antxetamedia/schedule/models.py:32 antxetamedia/shows/models.py:26
-#: antxetamedia/shows/models.py:45 antxetamedia/shows/models.py:69
-#: antxetamedia/widgets/models.py:15
+#: antxetamedia/blobs/models.py:18 antxetamedia/blobs/models.py:33
+#: antxetamedia/flatpages/models.py:23 antxetamedia/schedule/models.py:18
+#: antxetamedia/shows/models.py:27 antxetamedia/shows/models.py:46
+#: antxetamedia/shows/models.py:70 antxetamedia/widgets/models.py:15
 msgid "Name"
 msgstr "Izena"
 
-#: antxetamedia/blobs/models.py:21
+#: antxetamedia/blobs/models.py:19
 msgid "Username"
 msgstr "Erabiltzailea"
 
-#: antxetamedia/blobs/models.py:22
+#: antxetamedia/blobs/models.py:20
 msgid "Password"
 msgstr "Pasahitza"
 
-#: antxetamedia/blobs/models.py:32 antxetamedia/blobs/models.py:59
+#: antxetamedia/blobs/models.py:30 antxetamedia/blobs/models.py:57
 msgid "License"
 msgstr "Lizentzia"
 
-#: antxetamedia/blobs/models.py:33
+#: antxetamedia/blobs/models.py:31
 msgid "Licenses"
 msgstr "Lizentziak"
 
-#: antxetamedia/blobs/models.py:36 antxetamedia/events/models.py:63
-#: antxetamedia/schedule/admin.py:32 antxetamedia/schedule/models.py:33
+#: antxetamedia/blobs/models.py:34 antxetamedia/events/models.py:126
+#: antxetamedia/schedule/admin.py:25 antxetamedia/schedule/models.py:20
 msgid "Link"
 msgstr "Esteka"
 
-#: antxetamedia/blobs/models.py:46
+#: antxetamedia/blobs/models.py:44
 msgid "Audio blob"
 msgstr "Audioa"
 
-#: antxetamedia/blobs/models.py:47
+#: antxetamedia/blobs/models.py:45
 msgid "Audio blobs"
 msgstr "Audioak"
 
-#: antxetamedia/blobs/models.py:54
+#: antxetamedia/blobs/models.py:52
 msgid "Local file"
 msgstr "Fitxategi lokala"
 
-#: antxetamedia/blobs/models.py:55
+#: antxetamedia/blobs/models.py:53
 msgid ""
 "If set, the file will be uploaded to the remote storage and the link will be "
 "set at the remote field."
@@ -91,47 +119,51 @@ msgstr ""
 "Ezarria bada, fitxategia hurruneko biltegira igoko da hurruneko eremua "
 "bertakoestekara ezarriko da."
 
-#: antxetamedia/blobs/models.py:57
+#: antxetamedia/blobs/models.py:55
 msgid "Remote file"
 msgstr "Hurruneko fitxategia"
 
-#: antxetamedia/blobs/models.py:85
+#: antxetamedia/blobs/models.py:83
 msgid "Pending"
 msgstr "Igotzeke"
 
-#: antxetamedia/blobs/models.py:86
+#: antxetamedia/blobs/models.py:84
 msgid "Uploading"
 msgstr "Igotzen"
 
-#: antxetamedia/blobs/models.py:87
+#: antxetamedia/blobs/models.py:85
 msgid "Succeeded"
 msgstr "Arrakastatsua"
 
-#: antxetamedia/blobs/models.py:88
+#: antxetamedia/blobs/models.py:86
 msgid "Failed"
 msgstr "Huts eginda"
 
-#: antxetamedia/blobs/models.py:92
+#: antxetamedia/blobs/models.py:90
 msgid "Blob upload"
 msgstr "Audio igoera"
 
-#: antxetamedia/blobs/models.py:93
+#: antxetamedia/blobs/models.py:91
 msgid "Blob uploads"
 msgstr "Audio igoerak"
 
-#: antxetamedia/blobs/models.py:95
+#: antxetamedia/blobs/models.py:93
 msgid "Blob"
 msgstr "Audioa"
 
-#: antxetamedia/blobs/models.py:97
+#: antxetamedia/blobs/models.py:95
 msgid "Start time"
 msgstr "Hasieratze data"
 
-#: antxetamedia/blobs/models.py:98
+#: antxetamedia/blobs/models.py:96
 msgid "End time"
 msgstr "Bukatze data"
 
-#: antxetamedia/blobs/models.py:102
+#: antxetamedia/blobs/models.py:97
+msgid "Traceback"
+msgstr "Errorea"
+
+#: antxetamedia/blobs/models.py:100
 #, python-brace-format
 msgid "{blob} upload"
 msgstr "{blob} igoera"
@@ -149,23 +181,12 @@ msgstr "Berriak"
 msgid "Radio"
 msgstr "Irratia"
 
-#: antxetamedia/dashboard.py:28 antxetamedia/projects/models.py:22
-#: antxetamedia/templates/base.html:25
-#: antxetamedia/templates/projects/projectproducer_list.html:4
-msgid "Projects"
-msgstr "Proiektuak"
-
-#: antxetamedia/dashboard.py:35 antxetamedia/events/models.py:52
-#: antxetamedia/templates/base.html:26
-#: antxetamedia/templates/events/event_list.html:4
-msgid "Events"
-msgstr "Gertakariak"
-
 #: antxetamedia/dashboard.py:42 antxetamedia/flatpages/models.py:20
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: antxetamedia/dashboard.py:52
+#: antxetamedia/dashboard.py:52 antxetamedia/templates/base.html:28
+#: antxetamedia/templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
 
@@ -201,54 +222,55 @@ msgstr "Azkeneko garapen aldaketak"
 msgid "Recent Actions"
 msgstr "Azkeneko aldaketak"
 
-#: antxetamedia/events/admin.py:12
+#: antxetamedia/events/admin.py:14
 msgid "Date & Time"
 msgstr "Data eta Ordua"
 
-#: antxetamedia/events/admin.py:14 antxetamedia/news/admin.py:20
-#: antxetamedia/news/admin.py:35 antxetamedia/projects/admin.py:22
-#: antxetamedia/projects/admin.py:37 antxetamedia/radio/admin.py:29
-#: antxetamedia/radio/admin.py:44
+#: antxetamedia/events/admin.py:16 antxetamedia/news/admin.py:22
+#: antxetamedia/news/admin.py:37 antxetamedia/projects/admin.py:25
+#: antxetamedia/projects/admin.py:40 antxetamedia/radio/admin.py:31
+#: antxetamedia/radio/admin.py:46
+#: antxetamedia/templates/archive/search.html:21
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: antxetamedia/events/models.py:51
+#: antxetamedia/events/models.py:114
 msgid "Event"
 msgstr "Gertakaria"
 
-#: antxetamedia/events/models.py:54 antxetamedia/shows/models.py:96
+#: antxetamedia/events/models.py:117 antxetamedia/shows/models.py:97
 msgid "Title"
 msgstr "Izenburua"
 
-#: antxetamedia/events/models.py:58
+#: antxetamedia/events/models.py:121
 msgid "Time"
 msgstr "Ordua"
 
-#: antxetamedia/events/models.py:58
+#: antxetamedia/events/models.py:121
 msgid "Leave blank if all day event."
 msgstr "Utzi hutsik egun osoko gertakaria bada."
 
-#: antxetamedia/events/models.py:60 antxetamedia/shows/models.py:71
-#: antxetamedia/shows/models.py:98
+#: antxetamedia/events/models.py:123 antxetamedia/schedule/models.py:19
+#: antxetamedia/shows/models.py:72 antxetamedia/shows/models.py:99
 msgid "Description"
 msgstr "Deskribapena"
 
-#: antxetamedia/events/models.py:61
+#: antxetamedia/events/models.py:124
 msgid "Location"
 msgstr "Kokapena"
 
-#: antxetamedia/events/models.py:62 antxetamedia/shows/models.py:72
-#: antxetamedia/shows/models.py:100
+#: antxetamedia/events/models.py:125 antxetamedia/shows/models.py:73
+#: antxetamedia/shows/models.py:101
 msgid "Image"
 msgstr "Irudia"
 
-#: antxetamedia/feeds.py:13
+#: antxetamedia/feeds/views.py:13
 msgid "Latest podcasts from Antxetamedia"
 msgstr "Antxetamediako azken emankizunak"
 
-#: antxetamedia/feeds.py:14
+#: antxetamedia/feeds/views.py:14
 msgid "Latest news and radio podcasts from Antxetamedia"
-msgstr "Antxetamediako azkeneko berri eta irratsaioen emankizunak"
+msgstr "Antxetamediako azken albiste eta irrati emankizunak"
 
 #: antxetamedia/flatpages/models.py:19
 msgid "Flatpage"
@@ -308,40 +330,44 @@ msgstr "Albistegiak"
 msgid "News podcast"
 msgstr "Albistea"
 
-#: antxetamedia/news/models.py:53
-msgid "News podcasts"
-msgstr "Albisteak"
-
-#: antxetamedia/news/models.py:55 antxetamedia/projects/models.py:38
+#: antxetamedia/news/models.py:55 antxetamedia/projects/models.py:47
 #: antxetamedia/radio/models.py:64
 msgid "Show"
 msgstr "Saioa"
 
-#: antxetamedia/projects/models.py:13
+#: antxetamedia/projects/models.py:14
 msgid "Project producer"
 msgstr "Proiektuaren ekoizlea"
 
-#: antxetamedia/projects/models.py:14
+#: antxetamedia/projects/models.py:15
 msgid "Project producers"
 msgstr "Proiektuen ekoizleak"
 
-#: antxetamedia/projects/models.py:21
+#: antxetamedia/projects/models.py:28
 msgid "Project"
 msgstr "Proiektua"
 
-#: antxetamedia/projects/models.py:24 antxetamedia/radio/models.py:39
+#: antxetamedia/projects/models.py:31 antxetamedia/radio/models.py:39
 msgid "Producer"
 msgstr "Ekoizlea"
 
-#: antxetamedia/projects/models.py:35
+#: antxetamedia/projects/models.py:32
+msgid "Creation date"
+msgstr "Sortze data"
+
+#: antxetamedia/projects/models.py:33
+msgid "Only the year is taken into account"
+msgstr "Bakarrik urte hartzen da kontuan"
+
+#: antxetamedia/projects/models.py:44
 msgid "Project podcast"
 msgstr "Proiektu emankizuna"
 
-#: antxetamedia/projects/models.py:36
+#: antxetamedia/projects/models.py:45
 msgid "Project podcasts"
 msgstr "Proiektu emankizunak"
 
-#: antxetamedia/radio/admin.py:49
+#: antxetamedia/radio/admin.py:51
 msgid "Complete program"
 msgstr "Emankizun osoa"
 
@@ -385,47 +411,31 @@ msgstr "Nabarmendua"
 msgid "Radio podcast"
 msgstr "Irrati emankizuna"
 
-#: antxetamedia/radio/models.py:62
-msgid "Radio podcasts"
-msgstr "Irrati emankizunak"
-
-#: antxetamedia/schedule/admin.py:23
+#: antxetamedia/schedule/admin.py:16
 msgid "When"
 msgstr "Noiz"
 
-#: antxetamedia/schedule/models.py:12
-msgid "Label"
-msgstr "Etiketa"
-
-#: antxetamedia/schedule/models.py:13
-msgid "Labels"
-msgstr "Etiketak"
-
-#: antxetamedia/schedule/models.py:16
-msgid "Colour"
-msgstr "Kolorea"
-
-#: antxetamedia/schedule/models.py:25
+#: antxetamedia/schedule/models.py:11
 msgid "Broadcast"
 msgstr "Saioa"
 
-#: antxetamedia/schedule/models.py:26
+#: antxetamedia/schedule/models.py:12
 msgid "Broadcasts"
 msgstr "Saioak"
 
-#: antxetamedia/schedule/models.py:28
+#: antxetamedia/schedule/models.py:14
 msgid "Weekday"
 msgstr "Asteko eguna"
 
-#: antxetamedia/schedule/models.py:29
+#: antxetamedia/schedule/models.py:15
 msgid "Beginning"
 msgstr "Hasiera"
 
-#: antxetamedia/schedule/models.py:30
+#: antxetamedia/schedule/models.py:16
 msgid "Ending"
 msgstr "Bukaera"
 
-#: antxetamedia/schedule/models.py:34
+#: antxetamedia/schedule/models.py:21
 msgid ""
 "If the link is local, do not prepend the schema and the domain: use /some/"
 "path instead of https://domain.tld/some/path"
@@ -433,20 +443,12 @@ msgstr ""
 "Esteka lokala bada, ez jarri haren protokoloa eta domeinua: erabili/"
 "helbideren/bat https://domain.tld/helbideren/bat beharrean"
 
-#: antxetamedia/schedule/models.py:37
-msgid "Foreground label"
-msgstr "Lehen planoko etiketa"
-
-#: antxetamedia/schedule/models.py:38
-msgid "Background label"
-msgstr "Bigarren planoko etiketa"
-
-#: antxetamedia/shows/models.py:27 antxetamedia/shows/models.py:46
-#: antxetamedia/shows/models.py:70 antxetamedia/shows/models.py:97
+#: antxetamedia/shows/models.py:28 antxetamedia/shows/models.py:47
+#: antxetamedia/shows/models.py:71 antxetamedia/shows/models.py:98
 msgid "Slug"
 msgstr "Helbide izena"
 
-#: antxetamedia/shows/models.py:99
+#: antxetamedia/shows/models.py:100
 msgid "Publication date"
 msgstr "Argitarapen data"
 
@@ -455,11 +457,11 @@ msgstr "Argitarapen data"
 msgid "Archive"
 msgstr "Hemeroteka"
 
-#: antxetamedia/templates/archive/search.html:12
-msgid "Site-wide search"
-msgstr "Gune osoko bilaketa"
+#: antxetamedia/templates/archive/search.html:17
+msgid "Term"
+msgstr "Hitzak"
 
-#: antxetamedia/templates/archive/search.html:16
+#: antxetamedia/templates/archive/search.html:19
 msgid "Search"
 msgstr "Bilatu"
 
@@ -468,15 +470,19 @@ msgstr "Bilatu"
 msgid "Frontpage"
 msgstr "Azala"
 
-#: antxetamedia/templates/base.html:41
+#: antxetamedia/templates/base.html:42
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: antxetamedia/templates/events/event_detail.html:16
-msgid "Future occurrences:"
-msgstr "Etorkizunean"
+#: antxetamedia/templates/events/event_detail.html:17
+msgid "Future occurrences"
+msgstr "Iraganean"
 
 #: antxetamedia/templates/events/event_detail.html:23
+msgid "Past occurrences"
+msgstr "Iraganean"
+
+#: antxetamedia/templates/events/event_detail.html:32
 msgid "More info"
 msgstr "Info gehiago"
 
@@ -497,13 +503,29 @@ msgstr "Garbitu"
 msgid "Refresh"
 msgstr "Eguneratu"
 
-#: antxetamedia/templates/radio/radioshow_detail.html:21
+#: antxetamedia/templates/pagination.html:7
+msgid "Previous"
+msgstr "Aurrekoa"
+
+#: antxetamedia/templates/pagination.html:10
+#, python-format
+msgid ""
+"\n"
+"      %(current)s of %(total)s\n"
+"      "
+msgstr ""
+"\n"
+"      %(current)s %(total)stil\n"
+"      "
+
+#: antxetamedia/templates/pagination.html:15
+msgid "Next"
+msgstr "Ondorengoa"
+
+#: antxetamedia/templates/projects/projectshow_detail.html:21
+#: antxetamedia/templates/radio/radiopodcast_list.html:22
 msgid "Date"
 msgstr "Data"
-
-#: antxetamedia/templates/radio/radioshow_list.html:19
-msgid "Featured shows"
-msgstr "Nabarmendutako irratsaioak"
 
 #: antxetamedia/widgets/models.py:12
 msgid "Widget"
@@ -512,3 +534,21 @@ msgstr "Widgeta"
 #: antxetamedia/widgets/models.py:16
 msgid "Position"
 msgstr "Kokapena"
+
+#~ msgid "Label"
+#~ msgstr "Etiketa"
+
+#~ msgid "Labels"
+#~ msgstr "Etiketak"
+
+#~ msgid "Colour"
+#~ msgstr "Kolorea"
+
+#~ msgid "Foreground label"
+#~ msgstr "Lehen planoko etiketa"
+
+#~ msgid "Background label"
+#~ msgstr "Bigarren planoko etiketa"
+
+#~ msgid "Featured shows"
+#~ msgstr "Nabarmendutako irratsaioak"

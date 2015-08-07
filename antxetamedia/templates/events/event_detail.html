@@ -14,13 +14,13 @@
     <h2 class="category">{{ event.location }}</h2>
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
     <section id="occurrences">
-      <h4>{% trans 'Future occurrences:' %}</h4>
+      <h4>{% trans 'Future occurrences' %}:</h4>
       <ul>
         {% for date in event.upcoming|slice:":5" %}
         <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
         {% endfor %}
       </ul>
-      <h4>{% trans 'Past occurrences:' %}</h4>
+      <h4>{% trans 'Past occurrences' %}:</h4>
       <ul>
         {% for date in event.past|slice:":5" %}
         <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
