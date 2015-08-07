@@ -17,6 +17,7 @@ django-autoslug
 django-ckeditor
 django-recurrence
 sorl-thumbnail
+django-colorful
 
 # External APIs
 boto
