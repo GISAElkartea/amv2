@@ -16,7 +16,6 @@ feedparser
 django-autoslug
 django-ckeditor
 django-recurrence
-django-colorful
 sorl-thumbnail
 
 # External APIs

@@ -3,23 +3,16 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from django.utils.translation import ugettext as _
 
-from .models import Label, Broadcast
-
-
-class LabelAdmin(admin.ModelAdmin):
-    list_display = ['name', 'colour']
-    fields = [('name', 'colour')]
-    search_fields = ['name']
+from .models import Broadcast
 
 
 class BroadcastAdmin(admin.ModelAdmin):
-    list_display = ['name', 'get_link', 'weekday', 'beginning', 'ending', 'foreground', 'background']
-    list_display_links = ['name', 'foreground', 'background']
-    list_filter = ['weekday', 'beginning', 'ending', 'foreground', 'background']
-    search_fields = ['name']
+    list_display = ['name', 'get_link', 'weekday', 'beginning', 'ending']
+    list_filter = ['weekday', 'beginning', 'ending']
+    search_fields = ['name', 'description']
     fieldsets = [
         (None, {
-            'fields': [('name', 'link'), ('foreground', 'background')]}),
+            'fields': [('name', 'link'), 'description']}),
         (_('When'), {
             'fields': [('weekday', 'beginning', 'ending')]}),
     ]
@@ -32,5 +25,4 @@ class BroadcastAdmin(admin.ModelAdmin):
     get_link.short_description = _('Link')
 
 
-admin.site.register(Label, LabelAdmin)
 admin.site.register(Broadcast, BroadcastAdmin)
