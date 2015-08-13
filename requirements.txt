@@ -27,6 +27,5 @@ django-watson
 django-filter
 
 # Tests
-hypothesis
-hypothesis-django
+hypothesis[django]
 fake-factory
