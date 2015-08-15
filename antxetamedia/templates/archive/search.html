@@ -7,7 +7,7 @@
 
 
 {% block content %}
-<ul class="tabs">
+<ul class="tabs" id="archive">
   {% for title, reverseurl, form in tabs %}
   <li>
     <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
@@ -27,7 +27,7 @@
 {% endfor %}
 </ul>
 
-<ul>
+<ul id="archiveResults">
   {% for result in search_results %}
   <li>
     <article>
@@ -41,12 +41,17 @@
 
       {% build_absolute_uri result.meta.image as image_url %}
       {% thumbnail image_url "500" as image %}
-      <img src="{{ image.url }}" />
+      <div class="detail" style="background-image: url('{{ image.url }}');">
+      {% empty %}
+      <div class="detail">
       {% endthumbnail %}
+      </div>
 
-      {% if result.description %}
-      {{ result.description | truncatewords_html:25 | safe }}
-      {% endif %}
+      <div class="text">
+        {% if result.description %}
+        {{ result.description | truncatewords_html:25 | safe }}
+        {% endif %}
+      </div>
     </article>
   </li>
   {% endfor %}
