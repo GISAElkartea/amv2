@@ -51,6 +51,7 @@ python manage.py test
 
 ## Checklist
 
+- Tests
 - Database
 - Security
 - I18N
@@ -65,3 +66,12 @@ python manage.py test
 - Site
 - Groups
 - Users
+
+## Deployment
+
+- Initial beta deploy
+- Initial data
+- Use and development cycle
+- Public release
+    - Site name and allowed domains change
+
