@@ -1,119 +1,119 @@
 {
     "docs": [
         {
-            "location": "/", 
-            "text": "Aurrean duzun dokumentazio hau \nantxetamedia.info\n\nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.\n\n\nKudeaketa\n\n\nantxetamedia.info/admin\n helbidean aurkitu\ndaiteken kudeaketa gunearen \ndokumentazioa hemen duzu\n.\n\n\nGarapena\n\n\nGarapenaren inguruko \ndokumentazioa hemen duzu\n.", 
+            "location": "/",
+            "text": "Aurrean duzun dokumentazio hau \nantxetamedia.info\n\nwebgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.\n\n\nKudeaketa\n\n\nantxetamedia.info/admin\n helbidean aurkitu\ndaiteken kudeaketa gunearen \ndokumentazioa hemen duzu\n.\n\n\nGarapena\n\n\nGarapenaren inguruko \ndokumentazioa hemen duzu\n.",
             "title": "Ongietorri"
-        }, 
+        },
         {
-            "location": "/#kudeaketa", 
-            "text": "antxetamedia.info/admin  helbidean aurkitu\ndaiteken kudeaketa gunearen  dokumentazioa hemen duzu .", 
+            "location": "/#kudeaketa",
+            "text": "antxetamedia.info/admin  helbidean aurkitu\ndaiteken kudeaketa gunearen  dokumentazioa hemen duzu .",
             "title": "Kudeaketa"
-        }, 
+        },
         {
-            "location": "/#garapena", 
-            "text": "Garapenaren inguruko  dokumentazioa hemen duzu .", 
+            "location": "/#garapena",
+            "text": "Garapenaren inguruko  dokumentazioa hemen duzu .",
             "title": "Garapena"
-        }, 
+        },
         {
-            "location": "/users/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "location": "/users/",
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
             "title": "Erabiltzaileak"
-        }, 
+        },
         {
-            "location": "/users/#welcome-to-mkdocs", 
-            "text": "For full documentation visit  mkdocs.org .", 
+            "location": "/users/#welcome-to-mkdocs",
+            "text": "For full documentation visit  mkdocs.org .",
             "title": "Welcome to MkDocs"
-        }, 
+        },
         {
-            "location": "/users/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "location": "/users/#commands",
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
             "title": "Commands"
-        }, 
+        },
         {
-            "location": "/users/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "location": "/users/#project-layout",
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
             "title": "Project layout"
-        }, 
+        },
         {
-            "location": "/devs/", 
-            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI\n\n\nSite\n\n\nGroups\n\n\nUsers", 
+            "location": "/devs/",
+            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nTests\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI\n\n\nSite\n\n\nGroups\n\n\nUsers\n\n\n\n\nDeployment\n\n\n\n\nInitial beta deploy\n\n\nInitial data\n\n\nUse and development cycle\n\n\nPublic release\n\n\nSite name and allowed domains change",
             "title": "Setup"
-        }, 
+        },
         {
-            "location": "/devs/#development-setup", 
-            "text": "# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver", 
+            "location": "/devs/#development-setup",
+            "text": "# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver",
             "title": "Development setup"
-        }, 
+        },
         {
-            "location": "/devs/#sample-data", 
-            "text": "Additionally, if you want some sample data, you can import it from the sample_data  branch:  git checkout sample_data -- sample_data.json .media\ngit reset HEAD  Then you can load it into the database:  python manage.py loaddata sample_data.json  You may want to index this data into the search engine too:  python manage.py buildwatson", 
+            "location": "/devs/#sample-data",
+            "text": "Additionally, if you want some sample data, you can import it from the sample_data  branch:  git checkout sample_data -- sample_data.json .media\ngit reset HEAD  Then you can load it into the database:  python manage.py loaddata sample_data.json  You may want to index this data into the search engine too:  python manage.py buildwatson",
             "title": "Sample data"
-        }, 
+        },
         {
-            "location": "/devs/#running-tests", 
-            "text": "python manage.py test", 
+            "location": "/devs/#running-tests",
+            "text": "python manage.py test",
             "title": "Running tests"
-        }, 
+        },
         {
-            "location": "/devs/#production", 
-            "text": "", 
+            "location": "/devs/#production",
+            "text": "",
             "title": "Production"
-        }, 
+        },
         {
-            "location": "/devs/#checklist", 
-            "text": "Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI  Site  Groups  Users", 
+            "location": "/devs/#checklist",
+            "text": "Tests  Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI  Site  Groups  Users",
             "title": "Checklist"
-        }, 
+        },
         {
-            "location": "/devs/description/", 
-            "text": "Frontpage\n\n\n\n\ncustomized frontpage\n\n\nuser selects favourite news categories and radio shows\n\n\nuser selections stored as cookies\n\n\n\n\nPlayer\n\n\n\n\nsingle playlist per user\n\n\nplaylist stored in local storage\n\n\ndownload entire playlist\n\n\nadd, move and delete podcasts from playlist\n\n\nshare podcasts\n\n\nintegration with the radio stream\n\n\n\n\nNavigation\n\n\n\n\nnews podcast searcher (per category, per producer)\n\n\nradio show searcher (per category, per producer)\n\n\n\n\nIntegration with archive.org\n\n\n\n\nasynchronous uploads\n\n\nqueue visualization system\n\n\n\n\nTest account\n\n\nusername: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr\n\n\n\n\nOther things\n\n\n\n\nlicenses should be easy to see", 
-            "title": "Description"
-        }, 
+            "location": "/devs/#deployment",
+            "text": "Initial beta deploy  Initial data  Use and development cycle  Public release  Site name and allowed domains change",
+            "title": "Deployment"
+        },
         {
-            "location": "/devs/description/#frontpage", 
-            "text": "customized frontpage  user selects favourite news categories and radio shows  user selections stored as cookies", 
+            "location": "/devs/requirements/",
+            "text": "Frontpage\n\n\n\n\ncustomized frontpage\n\n\nuser selects favourite news categories and radio shows\n\n\nuser selections stored as cookies\n\n\n\n\nPlayer\n\n\n\n\nsingle playlist per user\n\n\nplaylist stored in local storage\n\n\ndownload entire playlist\n\n\nadd, move and delete podcasts from playlist\n\n\nshare podcasts\n\n\nintegration with the radio stream\n\n\n\n\nNavigation\n\n\n\n\nnews podcast searcher (per category, per producer)\n\n\nradio show searcher (per category, per producer)\n\n\n\n\nIntegration with archive.org\n\n\n\n\nasynchronous uploads\n\n\nqueue visualization system\n\n\n\n\nTest account\n\n\nusername: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr\n\n\n\n\nOther things\n\n\n\n\nlicenses should be easy to see",
+            "title": "Requirements"
+        },
+        {
+            "location": "/devs/requirements/#frontpage",
+            "text": "customized frontpage  user selects favourite news categories and radio shows  user selections stored as cookies",
             "title": "Frontpage"
-        }, 
+        },
         {
-            "location": "/devs/description/#player", 
-            "text": "single playlist per user  playlist stored in local storage  download entire playlist  add, move and delete podcasts from playlist  share podcasts  integration with the radio stream", 
+            "location": "/devs/requirements/#player",
+            "text": "single playlist per user  playlist stored in local storage  download entire playlist  add, move and delete podcasts from playlist  share podcasts  integration with the radio stream",
             "title": "Player"
-        }, 
+        },
         {
-            "location": "/devs/description/#navigation", 
-            "text": "news podcast searcher (per category, per producer)  radio show searcher (per category, per producer)", 
+            "location": "/devs/requirements/#navigation",
+            "text": "news podcast searcher (per category, per producer)  radio show searcher (per category, per producer)",
             "title": "Navigation"
-        }, 
+        },
         {
-            "location": "/devs/description/#integration-with-archiveorg", 
-            "text": "asynchronous uploads  queue visualization system   Test account  username: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr", 
+            "location": "/devs/requirements/#integration-with-archiveorg",
+            "text": "asynchronous uploads  queue visualization system   Test account  username: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr",
             "title": "Integration with archive.org"
-        }, 
+        },
         {
-            "location": "/devs/description/#other-things", 
-            "text": "licenses should be easy to see", 
+            "location": "/devs/requirements/#other-things",
+            "text": "licenses should be easy to see",
             "title": "Other things"
-        }, 
+        },
         {
-            "location": "/devs/architecture/", 
-            "text": "Layout\n\n\n\n\nNews\n\n\nEach podcast has a category and a producer.\n\n\nRadio\n\n\nEach podcast has a show. Each show has a category and a producer.\n\n\nProjects\n\n\nEach podcast has a project. Each project has a producer.\n\n\nBlobs\n\n\nEach blob has a GFK to a podcast.\n\n\nEvents\n\n\nArchives\n\n\nSchedule\n\n\nFlat pages\n\n\nWidgets\n\n\nDesign decisions\n\n\nNo nested categories\n\n\nThey do not use them currently.\n\n\n\n\nNewsShows do not need to be categorized.\n\n\nRadioShows can be categorized in RadioCategories and RadioProducers.\n\n\nProjectShows can be categorized in ProjectProducers.\n\n\n\n\nNo embeded multimedia models\n\n\nIf they want to use some external embed code, they can use the description text.\n\n\nMultiple audios per podcast\n\n\nThey use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:\n\n\n\n\nmaking the add button add all the audios of the podcast to the playlist.\n\n\nmaking the play button play all the adios of the podcast.\n\n\nmaking the share button share the podcast link.\n\n\n\n\nOnly RadioShows have the \"featured\" boolean\n\n\nUser views\n\n\n\n\nfrontpage\n\n\nfrontpage configuration\n\n\nnews\n\n\nnewspodcast_list: filtered by NewsShow and NewsCategory\n\n\nnewspodcast_detail\n\n\n\n\n\n\nradio\n\n\nradioshow_list: filtered by RadioProducer and RadioCategory\n\n\nradiopodcast_list\n\n\nradiopodcast_detail\n\n\n\n\n\n\nprojects\n\n\nprojectproducer_list\n\n\nprojectshow_detail\n\n\n\n\n\n\narchive\n\n\nevents\n\n\nevent_list\n\n\nevent_detail\n\n\n\n\n\n\nschedule\n\n\nbroadcast_list", 
+            "location": "/devs/architecture/",
+            "text": "Layout\n\n\n\n\nNews\n\n\nEach podcast has a category and a producer.\n\n\nRadio\n\n\nEach podcast has a show. Each show has a category and a producer.\n\n\nProjects\n\n\nEach podcast has a project. Each project has a producer.\n\n\nBlobs\n\n\nEach blob has a GFK to a podcast.\n\n\nDesign decisions\n\n\nNo nested categories\n\n\nThey do not use them currently.\n\n\n\n\nNewsShows do not need to be categorized.\n\n\nRadioShows can be categorized in RadioCategories and RadioProducers.\n\n\nProjectShows can be categorized in ProjectProducers.\n\n\n\n\nNo embeded multimedia models\n\n\nIf they want to use some external embed code, they can use the description text.\n\n\nMultiple audios per podcast\n\n\nThey use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:\n\n\n\n\nmaking the add button add all the audios of the podcast to the playlist.\n\n\nmaking the play button play all the adios of the podcast.\n\n\nmaking the share button share the podcast link.\n\n\n\n\nOnly RadioShows have the \"featured\" boolean",
             "title": "Architecture"
-        }, 
+        },
         {
-            "location": "/devs/architecture/#layout", 
-            "text": "News  Each podcast has a category and a producer.  Radio  Each podcast has a show. Each show has a category and a producer.  Projects  Each podcast has a project. Each project has a producer.  Blobs  Each blob has a GFK to a podcast.  Events  Archives  Schedule  Flat pages  Widgets", 
+            "location": "/devs/architecture/#layout",
+            "text": "News  Each podcast has a category and a producer.  Radio  Each podcast has a show. Each show has a category and a producer.  Projects  Each podcast has a project. Each project has a producer.  Blobs  Each blob has a GFK to a podcast.",
             "title": "Layout"
-        }, 
+        },
         {
-            "location": "/devs/architecture/#design-decisions", 
-            "text": "No nested categories  They do not use them currently.   NewsShows do not need to be categorized.  RadioShows can be categorized in RadioCategories and RadioProducers.  ProjectShows can be categorized in ProjectProducers.   No embeded multimedia models  If they want to use some external embed code, they can use the description text.  Multiple audios per podcast  They use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:   making the add button add all the audios of the podcast to the playlist.  making the play button play all the adios of the podcast.  making the share button share the podcast link.   Only RadioShows have the \"featured\" boolean", 
+            "location": "/devs/architecture/#design-decisions",
+            "text": "No nested categories  They do not use them currently.   NewsShows do not need to be categorized.  RadioShows can be categorized in RadioCategories and RadioProducers.  ProjectShows can be categorized in ProjectProducers.   No embeded multimedia models  If they want to use some external embed code, they can use the description text.  Multiple audios per podcast  They use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:   making the add button add all the audios of the podcast to the playlist.  making the play button play all the adios of the podcast.  making the share button share the podcast link.   Only RadioShows have the \"featured\" boolean",
             "title": "Design decisions"
-        }, 
-        {
-            "location": "/devs/architecture/#user-views", 
-            "text": "frontpage  frontpage configuration  news  newspodcast_list: filtered by NewsShow and NewsCategory  newspodcast_detail    radio  radioshow_list: filtered by RadioProducer and RadioCategory  radiopodcast_list  radiopodcast_detail    projects  projectproducer_list  projectshow_detail    archive  events  event_list  event_detail    schedule  broadcast_list", 
-            "title": "User views"
         }
     ]
 }
