@@ -25,18 +25,27 @@ class AntxetamediaDashboard(Dashboard):
                     models=('antxetamedia.radio.*',),
                 ),
                 modules.ModelList(
-                    _('Projects'),
-                    collapsible=True,
-                    column=1,
-                    css_classes=('grp-collapse grp-closed',),
-                    models=('antxetamedia.projects.*',),
-                ),
-                modules.ModelList(
                     _('Events'),
                     collapsible=True,
                     column=1,
                     css_classes=('grp-collapse grp-closed',),
                     models=('antxetamedia.events.*',),
+                ),
+            ]
+        ))
+
+        self.children.append(modules.Group(
+            title=_('Others'),
+            column=1,
+            collapsible=True,
+            css_classes=('grp-collapse',),
+            children=[
+                modules.ModelList(
+                    _('Projects'),
+                    collapsible=True,
+                    column=1,
+                    css_classes=('grp-collapse grp-closed',),
+                    models=('antxetamedia.projects.*',),
                 ),
                 modules.ModelList(
                     _('Flatpages'),
@@ -45,31 +54,29 @@ class AntxetamediaDashboard(Dashboard):
                     css_classes=('grp-collapse grp-closed',),
                     models=('antxetamedia.flatpages.*',),
                 ),
+                modules.ModelList(
+                    _('Schedule'),
+                    collapsible=True,
+                    column=1,
+                    css_classes=('grp-collapse grp-closed',),
+                    models=('antxetamedia.schedule.*',),
+                ),
+                modules.ModelList(
+                    _('Widgets'),
+                    collapsible=True,
+                    column=1,
+                    css_classes=('grp-collapse grp-closed',),
+                    models=('antxetamedia.widgets.*',),
+                ),
             ]
-        ))
-
-        self.children.append(modules.ModelList(
-            _('Schedule'),
-            collapsible=True,
-            column=1,
-            css_classes=('grp-collapse grp-closed',),
-            models=('antxetamedia.schedule.*',),
         ))
 
         self.children.append(modules.ModelList(
             _('Blobs'),
             collapsible=True,
             column=1,
-            css_classes=('grp-collapse grp-closed',),
+            css_classes=('grp-collapse',),
             models=('antxetamedia.blobs.*',),
-        ))
-
-        self.children.append(modules.ModelList(
-            _('Widgets'),
-            collapsible=True,
-            column=1,
-            css_classes=('grp-collapse grp-closed',),
-            models=('antxetamedia.widgets.*',),
         ))
 
         self.children.append(modules.ModelList(
