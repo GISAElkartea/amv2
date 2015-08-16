@@ -19,12 +19,16 @@ class SearchMixin(WatsonSearchView):
     paginate_by = 10
 
     def get_tabs(self):
+        newspodcast_filterset = NewsPodcastFilterSet(self.request.GET, prefix='news')
+        radiopodcast_filterset = RadioPodcastFilterSet(self.request.GET, prefix='radio')
+        projectshow_filterset = ProjectShowFilterSet(self.request.GET, prefix='projects')
+        event_form = EventForm(self.request.GET, prefix='events')
         return [
             (_('Site-wide'), reverse('archive:search'), None),
-            (_('News podcasts'), reverse('archive:news'), NewsPodcastFilterSet(self.request.GET).form),
-            (_('Radio podcasts'), reverse('archive:radio'), RadioPodcastFilterSet(self.request.GET).form),
-            (_('Projects'), reverse('archive:projects'), ProjectShowFilterSet(self.request.GET).form),
-            (_('Events'), reverse('archive:events'), EventForm(self.request.GET)),
+            (_('News podcasts'), reverse('archive:news'), newspodcast_filterset.form),
+            (_('Radio podcasts'), reverse('archive:radio'), radiopodcast_filterset.form),
+            (_('Projects'), reverse('archive:projects'), projectshow_filterset.form),
+            (_('Events'), reverse('archive:events'), event_form),
         ]
 
     def get_context_data(self, **kwargs):

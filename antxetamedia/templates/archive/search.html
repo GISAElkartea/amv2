@@ -29,11 +29,11 @@
       <form method="get" action="{{ reverseurl }}">
         <label for="id_q">{% trans 'Term' %}:</label>
         <input id="id_q" name="q" value="{{ request.GET.q }}" />
-        <input type="submit" value="{% trans 'Search' %}" />
         {% if form %}
         <h2>{% trans 'Details' %}</h2>
         {{ form }}
         {% endif %}
+        <input type="submit" value="{% trans 'Search' %}" />
       </form>
     </div>
   </li>
