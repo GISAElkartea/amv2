@@ -13,3 +13,7 @@ app = Celery('antxetamedia')
 
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+
+# Set default socket timeout for workers
+import socket
+socket.setdefaulttimeout(30)
