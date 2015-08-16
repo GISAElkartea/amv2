@@ -3,7 +3,7 @@ theme: readthedocs
 pages:
     - Ongietorri: index.md
     - Erabiltzaileak: users/index.md
-    - Garatzaileak:
+    - Developers:
         - Setup: devs/index.md
-        - Description: devs/description.md
+        - Requirements: devs/requirements.md
         - Architecture: devs/architecture.md

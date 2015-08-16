@@ -18,16 +18,6 @@ Each podcast has a project. Each project has a producer.
 
 Each blob has a GFK to a podcast.
 
-### Events
-
-### Archives
-
-### Schedule
-
-### Flat pages
-
-### Widgets
-
 ## Design decisions
 
 ### No nested categories
@@ -52,24 +42,3 @@ difficult to manage the playlist buttons but this can be solved by:
 - making the share button share the podcast link.
 
 ### Only RadioShows have the "featured" boolean
-
-## User views
-
-- frontpage
-- frontpage configuration
-- news
-    - newspodcast_list: filtered by NewsShow and NewsCategory
-    - newspodcast_detail
-- radio
-    - radioshow_list: filtered by RadioProducer and RadioCategory
-    - radiopodcast_list
-    - radiopodcast_detail
-- projects
-    - projectproducer_list
-    - projectshow_detail
-- archive
-- events
-    - event_list
-    - event_detail
-- schedule
-    - broadcast_list
