@@ -84,7 +84,7 @@ class AntxetamediaDashboard(Dashboard):
             collapsible=True,
             column=1,
             css_classes=('grp-collapse grp-closed',),
-            models=('django.contrib.auth.*',),
+            models=('django.contrib.auth.*', 'django.contrib.sites.*'),
         ))
 
         self.children.append(modules.LinkList(
