@@ -1,10 +1,19 @@
 from django.utils.translation import ugettext_lazy as _
 
-from django_filters import FilterSet, DateTimeFilter
+from django_filters import FilterSet, DateFilter, DateTimeFilter
 
 from antxetamedia.news.models import NewsPodcast
 from antxetamedia.radio.models import RadioPodcast
 from antxetamedia.projects.models import ProjectShow
+from .forms import PikadayDateField, PikadayDateTimeHiddenTimeField
+
+
+class PikadayDateFilter(DateFilter):
+    field_class = PikadayDateField
+
+
+class PikadayDateTimeFilter(DateTimeFilter):
+    field_class = PikadayDateTimeHiddenTimeField
 
 
 # We do not want to accidentally discard anything, so be inclusive and always
@@ -12,8 +21,8 @@ from antxetamedia.projects.models import ProjectShow
 
 
 class NewsPodcastFilterSet(FilterSet):
-    pub_date_after = DateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
-    pub_date_before = DateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
+    pub_date_after = PikadayDateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
+    pub_date_before = PikadayDateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
 
     class Meta:
         model = NewsPodcast
@@ -21,8 +30,8 @@ class NewsPodcastFilterSet(FilterSet):
 
 
 class RadioPodcastFilterSet(FilterSet):
-    pub_date_after = DateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
-    pub_date_before = DateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
+    pub_date_after = PikadayDateTimeFilter('pub_date', lookup_type='gte', label=_('Published after'))
+    pub_date_before = PikadayDateTimeFilter('pub_date', lookup_type='lte', label=_('Published before'))
 
     class Meta:
         model = RadioPodcast
@@ -30,9 +39,8 @@ class RadioPodcastFilterSet(FilterSet):
 
 
 class ProjectShowFilterSet(FilterSet):
+    creation_date = PikadayDateFilter('creation_date', lookup_type='year__exact')
+
     class Meta:
         model = ProjectShow
-        fields = {
-            'producer': ['exact'],
-            'creation_date': ['year__exact'],
-        }
+        fields = ['producer', 'creation_date']

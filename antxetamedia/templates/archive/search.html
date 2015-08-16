@@ -6,11 +6,21 @@
 {% endblock title %}
 
 
+{% block extra_js %}
+{{ tab_media.render_js | join:"" }}
+{% endblock extra_js %}
+
+
+{% block extra_css %}
+{{ tab_media.render_css | join:"" }}
+{% endblock extra_css %}
+
+
 {% block content %}
 <ul class="tabs" id="archive">
   {% for title, reverseurl, form in tabs %}
   <li>
-    <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
+    <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if request.path == reverseurl %}checked{% endif %} />
     <label for="tab{{ forloop.counter }}">{{ title }}</label>
     <div id="tab-content{{ forloop.counter }}" class="tab-content">
       <form method="get" action="{{ reverseurl }}">

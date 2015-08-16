@@ -1,3 +1,6 @@
+from functools import reduce
+from operator import add
+
 from django.core.urlresolvers import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
@@ -25,7 +28,10 @@ class SearchMixin(WatsonSearchView):
         ]
 
     def get_context_data(self, **kwargs):
-        kwargs['tabs'] = self.get_tabs()
+        tabs = self.get_tabs()
+        kwargs['tabs'] = tabs
+        # Union of all media files
+        kwargs['tab_media'] = reduce(add, [form.media for name, url, form in tabs if form is not None])
         return super(SearchMixin, self).get_context_data(**kwargs)
 
 
