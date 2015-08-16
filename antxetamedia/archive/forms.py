@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django import forms
+from django.core.urlresolvers import reverse_lazy
 from django.utils import timezone, formats
 from django.utils.translation import ugettext as _
 
@@ -9,6 +10,7 @@ class PikadayWidget(forms.DateInput):
     class Media:
         js = [
             'bower_components/momentjs/moment.js',
+            reverse_lazy('jsi18n'),
             'bower_components/pikaday/pikaday.js',
             'js/pikaday.js',
         ]

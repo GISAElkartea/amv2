@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-16 18:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: static/js/pikaday.js:2
+msgid "Previous Month"
+msgstr "Aurreko Hilabetea"
+
+#: static/js/pikaday.js:3
+msgid "Next Month"
+msgstr "Hurrengo Hilabetea"
+
+#: static/js/pikaday.js:5
+msgid "January"
+msgstr "Urtarrila"
+
+#: static/js/pikaday.js:6
+msgid "February"
+msgstr "Otsaila"
+
+#: static/js/pikaday.js:7
+msgid "March"
+msgstr "Martxoa"
+
+#: static/js/pikaday.js:8
+msgid "April"
+msgstr "Apirila"
+
+#: static/js/pikaday.js:9
+msgid "May"
+msgstr "Maiatza"
+
+#: static/js/pikaday.js:10
+msgid "June"
+msgstr "Ekaina"
+
+#: static/js/pikaday.js:11
+msgid "July"
+msgstr "Uztaila"
+
+#: static/js/pikaday.js:12
+msgid "August"
+msgstr "Abuztua"
+
+#: static/js/pikaday.js:13
+msgid "September"
+msgstr "Iraila"
+
+#: static/js/pikaday.js:14
+msgid "October"
+msgstr "Urria"
+
+#: static/js/pikaday.js:15
+msgid "November"
+msgstr "Azaroa"
+
+#: static/js/pikaday.js:16
+msgid "December"
+msgstr "Abendua"
+
+#: static/js/pikaday.js:19
+msgid "Sunday"
+msgstr "Igandea"
+
+#: static/js/pikaday.js:20
+msgid "Monday"
+msgstr "Astelehena"
+
+#: static/js/pikaday.js:21
+msgid "Tuesday"
+msgstr "Asteartea"
+
+#: static/js/pikaday.js:22
+msgid "Wednesday"
+msgstr "Asteazkena"
+
+#: static/js/pikaday.js:23
+msgid "Thursday"
+msgstr "Osteguna"
+
+#: static/js/pikaday.js:24
+msgid "Friday"
+msgstr "Ostirala"
+
+#: static/js/pikaday.js:25
+msgid "Saturday"
+msgstr "Larunbata"
+
+#: static/js/pikaday.js:28
+msgid "Sun"
+msgstr "Igan"
+
+#: static/js/pikaday.js:29
+msgid "Mon"
+msgstr "Astl"
+
+#: static/js/pikaday.js:30
+msgid "Tue"
+msgstr "Astr"
+
+#: static/js/pikaday.js:31
+msgid "Wed"
+msgstr "Astz"
+
+#: static/js/pikaday.js:32
+msgid "Thu"
+msgstr "Ostg"
+
+#: static/js/pikaday.js:33
+msgid "Fri"
+msgstr "Osti"
+
+#: static/js/pikaday.js:34
+msgid "Sat"
+msgstr "Laru"

@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
-{% load i18n static thumbnail %}
+{% load i18n static compress thumbnail %}
 
 {% block title %}{% trans 'News' %}{% endblock title %}
 
 {% block extra_js %}
+{% compress js %}
 <script src="{% static 'js/news_filter.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endcompress js %}
 {% endblock extra_js %}
 
 {% block aside %}

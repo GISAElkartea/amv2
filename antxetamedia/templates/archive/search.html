@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n thumbnail absolute_urls %}
+{% load static i18n compress thumbnail absolute_urls %}
 
 {% block title %}
 {% trans 'Archive' %}
@@ -7,12 +7,15 @@
 
 
 {% block extra_js %}
+{# Cannot compress this because it includes the JS I18N catalogue #}
 {{ tab_media.render_js | join:"" }}
 {% endblock extra_js %}
 
 
 {% block extra_css %}
+{% compress css %}
 {{ tab_media.render_css | join:"" }}
+{% endcompress css %}
 {% endblock extra_css %}
 
 

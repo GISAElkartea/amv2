@@ -6,7 +6,7 @@ from django.contrib import admin
 from .feeds.views import BlobFeed
 
 
-js_info_dict = {'packages': ['recurrence']}
+js_info_dict = {'packages': ['recurrence', 'antxetamedia']}
 
 urlpatterns = [
     url(r'^', include('antxetamedia.frontpage.urls')),
@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
-    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),  # needed by django-recurrence
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict, name='jsi18n'),
 ]
 
 

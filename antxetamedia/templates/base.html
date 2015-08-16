@@ -12,9 +12,9 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="{% static 'css/main.sass' %}" />
+    {% endcompress css %}
     {% block extra_css %}
     {% endblock extra_css %}
-    {% endcompress css %}
   </head>
   <body>
     <section id="mainNav">
@@ -87,9 +87,7 @@
       </div>
     </footer>
 
-    {% compress js %}
     {% block extra_js %}
     {% endblock extra_js %}
-    {% endcompress js %}
   </body>
 </html>
