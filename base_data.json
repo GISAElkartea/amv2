@@ -1,0 +1,428 @@
+[
+{
+    "fields": {
+        "domain": "beta.antxetamedia.eus",
+        "name": "Antxetamedia [BETA]"
+    },
+    "pk": 1,
+    "model": "sites.site"
+},
+{
+    "fields": {
+        "domain": "www.antxetamedia.eus",
+        "name": "Antxetamedia"
+    },
+    "pk": 2,
+    "model": "sites.site"
+},
+{
+    "fields": {
+        "permissions": [
+            [
+                "add_account",
+                "blobs",
+                "account"
+            ],
+            [
+                "change_account",
+                "blobs",
+                "account"
+            ],
+            [
+                "delete_account",
+                "blobs",
+                "account"
+            ],
+            [
+                "add_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "change_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "delete_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "add_blobupload",
+                "blobs",
+                "blobupload"
+            ],
+            [
+                "change_blobupload",
+                "blobs",
+                "blobupload"
+            ],
+            [
+                "delete_blobupload",
+                "blobs",
+                "blobupload"
+            ],
+            [
+                "add_license",
+                "blobs",
+                "license"
+            ],
+            [
+                "change_license",
+                "blobs",
+                "license"
+            ],
+            [
+                "delete_license",
+                "blobs",
+                "license"
+            ],
+            [
+                "add_event",
+                "events",
+                "event"
+            ],
+            [
+                "change_event",
+                "events",
+                "event"
+            ],
+            [
+                "delete_event",
+                "events",
+                "event"
+            ],
+            [
+                "add_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "change_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "delete_flatpage",
+                "flatpages",
+                "flatpage"
+            ],
+            [
+                "add_newscategory",
+                "news",
+                "newscategory"
+            ],
+            [
+                "change_newscategory",
+                "news",
+                "newscategory"
+            ],
+            [
+                "delete_newscategory",
+                "news",
+                "newscategory"
+            ],
+            [
+                "add_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "change_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "delete_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "add_newsshow",
+                "news",
+                "newsshow"
+            ],
+            [
+                "change_newsshow",
+                "news",
+                "newsshow"
+            ],
+            [
+                "delete_newsshow",
+                "news",
+                "newsshow"
+            ],
+            [
+                "add_projectpodcast",
+                "projects",
+                "projectpodcast"
+            ],
+            [
+                "change_projectpodcast",
+                "projects",
+                "projectpodcast"
+            ],
+            [
+                "delete_projectpodcast",
+                "projects",
+                "projectpodcast"
+            ],
+            [
+                "add_projectproducer",
+                "projects",
+                "projectproducer"
+            ],
+            [
+                "change_projectproducer",
+                "projects",
+                "projectproducer"
+            ],
+            [
+                "delete_projectproducer",
+                "projects",
+                "projectproducer"
+            ],
+            [
+                "add_projectshow",
+                "projects",
+                "projectshow"
+            ],
+            [
+                "change_projectshow",
+                "projects",
+                "projectshow"
+            ],
+            [
+                "delete_projectshow",
+                "projects",
+                "projectshow"
+            ],
+            [
+                "add_radiocategory",
+                "radio",
+                "radiocategory"
+            ],
+            [
+                "change_radiocategory",
+                "radio",
+                "radiocategory"
+            ],
+            [
+                "delete_radiocategory",
+                "radio",
+                "radiocategory"
+            ],
+            [
+                "add_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ],
+            [
+                "change_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ],
+            [
+                "delete_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ],
+            [
+                "add_radioproducer",
+                "radio",
+                "radioproducer"
+            ],
+            [
+                "change_radioproducer",
+                "radio",
+                "radioproducer"
+            ],
+            [
+                "delete_radioproducer",
+                "radio",
+                "radioproducer"
+            ],
+            [
+                "add_radioshow",
+                "radio",
+                "radioshow"
+            ],
+            [
+                "change_radioshow",
+                "radio",
+                "radioshow"
+            ],
+            [
+                "delete_radioshow",
+                "radio",
+                "radioshow"
+            ],
+            [
+                "add_broadcast",
+                "schedule",
+                "broadcast"
+            ],
+            [
+                "change_broadcast",
+                "schedule",
+                "broadcast"
+            ],
+            [
+                "delete_broadcast",
+                "schedule",
+                "broadcast"
+            ],
+            [
+                "add_widget",
+                "widgets",
+                "widget"
+            ],
+            [
+                "change_widget",
+                "widgets",
+                "widget"
+            ],
+            [
+                "delete_widget",
+                "widgets",
+                "widget"
+            ]
+        ],
+        "name": "Erabatekoa"
+    },
+    "pk": 1,
+    "model": "auth.group"
+},
+{
+    "fields": {
+        "permissions": [
+            [
+                "add_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "change_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "delete_blob",
+                "blobs",
+                "blob"
+            ],
+            [
+                "add_event",
+                "events",
+                "event"
+            ],
+            [
+                "change_event",
+                "events",
+                "event"
+            ],
+            [
+                "delete_event",
+                "events",
+                "event"
+            ],
+            [
+                "add_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "change_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "delete_newspodcast",
+                "news",
+                "newspodcast"
+            ],
+            [
+                "add_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ],
+            [
+                "change_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ],
+            [
+                "delete_radiopodcast",
+                "radio",
+                "radiopodcast"
+            ]
+        ],
+        "name": "Mugatua"
+    },
+    "pk": 2,
+    "model": "auth.group"
+},
+{
+    "fields": {
+        "email": "unai@gisa-elkartea.org",
+        "is_superuser": true,
+        "username": "unai",
+        "last_login": "2015-08-16T20:17:21.089Z",
+        "date_joined": "2015-08-16T20:17:12.124Z",
+        "last_name": "",
+        "is_active": true,
+        "user_permissions": [],
+        "first_name": "",
+        "groups": [],
+        "is_staff": true,
+        "password": "pbkdf2_sha256$20000$2ee4cbXdkCpR$cne28M2PMX0Fdnh9QIuhoZObcv0gxKPkVIhonx7/Ynk="
+    },
+    "pk": 1,
+    "model": "auth.user"
+},
+{
+    "fields": {
+        "email": "",
+        "is_superuser": false,
+        "username": "mugatua",
+        "last_login": null,
+        "date_joined": "2015-08-16T20:24:01Z",
+        "last_name": "",
+        "is_active": true,
+        "user_permissions": [],
+        "first_name": "",
+        "groups": [
+            [
+                "Mugatua"
+            ]
+        ],
+        "is_staff": true,
+        "password": "pbkdf2_sha256$20000$R6LaEnIYM9qF$mOjoBcRpjPddhP+G/Wgyr0D1cv0szZeYHnJF5aK+WRY="
+    },
+    "pk": 2,
+    "model": "auth.user"
+},
+{
+    "fields": {
+        "email": "",
+        "is_superuser": false,
+        "username": "erabatekoa",
+        "last_login": null,
+        "date_joined": "2015-08-16T20:24:43Z",
+        "last_name": "",
+        "is_active": true,
+        "user_permissions": [],
+        "first_name": "",
+        "groups": [
+            [
+                "Erabatekoa"
+            ]
+        ],
+        "is_staff": true,
+        "password": "pbkdf2_sha256$20000$eTaVcGScVuMM$ORpCnqUlNCRT1cr38ymXdfYF355g8V1m/rsaQDg49Fs="
+    },
+    "pk": 3,
+    "model": "auth.user"
+}
+]
