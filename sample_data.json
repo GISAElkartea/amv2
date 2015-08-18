@@ -981,42 +981,6 @@
 },
 {
     "fields": {
-        "codename": "add_label",
-        "name": "Can add Label",
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "auth.permission",
-    "pk": 82
-},
-{
-    "fields": {
-        "codename": "change_label",
-        "name": "Can change Label",
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "auth.permission",
-    "pk": 83
-},
-{
-    "fields": {
-        "codename": "delete_label",
-        "name": "Can delete Label",
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "auth.permission",
-    "pk": 84
-},
-{
-    "fields": {
         "codename": "add_broadcast",
         "name": "Can add Broadcast",
         "content_type": [
@@ -1197,13 +1161,49 @@
 },
 {
     "fields": {
+        "codename": "add_kvstore",
+        "name": "Can add kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 100
+},
+{
+    "fields": {
+        "codename": "change_kvstore",
+        "name": "Can change kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 101
+},
+{
+    "fields": {
+        "codename": "delete_kvstore",
+        "name": "Can delete kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ]
+    },
+    "model": "auth.permission",
+    "pk": 102
+},
+{
+    "fields": {
         "username": "admin",
         "first_name": "",
         "last_name": "",
         "is_active": true,
         "is_superuser": true,
         "is_staff": true,
-        "last_login": "2015-07-29T17:31:44.461Z",
+        "last_login": "2015-08-15T11:46:22.029Z",
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$20000$dEIpCZPm3qNo$9dzc5slCGY1aXU1UJ++TKCmFgdj6OSG/bHpn3QY1fqI=",
@@ -1220,6 +1220,14 @@
     },
     "model": "sessions.session",
     "pk": "5fkycs2urerqzwyt5z86srzai9nujaqj"
+},
+{
+    "fields": {
+        "expire_date": "2015-08-29T11:46:22.152Z",
+        "session_data": "OTE1YjQyYmZiYzkzNjViYWNjNWE3NWYxODUwZWVjODA0ZTlhZGI0ZTp7Il9hdXRoX3VzZXJfaGFzaCI6IjJkMWYyNmRiMDU5ZjliZmZkODE1YTQ3NGY2MjFlMWYyYjNhNGZjOTAiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0="
+    },
+    "model": "sessions.session",
+    "pk": "8pai4acx4npwi389uyy709njye45k5jg"
 },
 {
     "fields": {
@@ -2248,78 +2256,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T10:48:59.438Z",
-        "object_repr": "Gorria",
-        "object_id": "1",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 57
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:15.381Z",
-        "object_repr": "Beltza",
-        "object_id": "2",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 58
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:24.965Z",
-        "object_repr": "Beltza",
-        "object_id": "3",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 59
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:49:36.971Z",
-        "object_repr": "Gorria",
-        "object_id": "4",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 60
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T10:49:42.002Z",
         "object_repr": "Kiroletik",
         "object_id": "1",
@@ -2334,24 +2270,6 @@
     },
     "model": "admin.logentry",
     "pk": 61
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:52:23.365Z",
-        "object_repr": "Berdea",
-        "object_id": "5",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 62
 },
 {
     "fields": {
@@ -2374,24 +2292,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T10:53:07.355Z",
-        "object_repr": "Morea",
-        "object_id": "6",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 64
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T10:53:21.174Z",
         "object_repr": "Gonekin ero bero",
         "object_id": "3",
@@ -2410,42 +2310,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T10:53:47.721Z",
-        "object_repr": "Txuria",
-        "object_id": "7",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 66
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:54:09.578Z",
-        "object_repr": "Berde iluna",
-        "object_id": "8",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 67
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T10:54:27.283Z",
         "object_repr": "Aitzurra",
         "object_id": "4",
@@ -2460,24 +2324,6 @@
     },
     "model": "admin.logentry",
     "pk": 68
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:55:03.751Z",
-        "object_repr": "More iluna",
-        "object_id": "9",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 69
 },
 {
     "fields": {
@@ -2554,24 +2400,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T10:58:48.988Z",
-        "object_repr": "Arroxa",
-        "object_id": "10",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 74
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T10:59:00.617Z",
         "object_repr": "Aiako harrikada",
         "object_id": "9",
@@ -2586,24 +2414,6 @@
     },
     "model": "admin.logentry",
     "pk": 75
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T10:59:28.443Z",
-        "object_repr": "Horia",
-        "object_id": "11",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 76
 },
 {
     "fields": {
@@ -2626,24 +2436,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T11:00:11.440Z",
-        "object_repr": "urdina",
-        "object_id": "12",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 78
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T11:00:20.879Z",
         "object_repr": "Bidasoaldeko Efemerideak",
         "object_id": "11",
@@ -2662,24 +2454,6 @@
 {
     "fields": {
         "action_flag": 1,
-        "action_time": "2015-07-23T11:00:54.502Z",
-        "object_repr": "Urdin iluna",
-        "object_id": "13",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 80
-},
-{
-    "fields": {
-        "action_flag": 1,
         "action_time": "2015-07-23T11:01:05.918Z",
         "object_repr": "Donostiko 59. Zinemaldia",
         "object_id": "12",
@@ -2694,24 +2468,6 @@
     },
     "model": "admin.logentry",
     "pk": 81
-},
-{
-    "fields": {
-        "action_flag": 1,
-        "action_time": "2015-07-23T11:01:37.294Z",
-        "object_repr": "Urdin fosfi",
-        "object_id": "14",
-        "change_message": "",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 82
 },
 {
     "fields": {
@@ -2802,24 +2558,6 @@
     },
     "model": "admin.logentry",
     "pk": 87
-},
-{
-    "fields": {
-        "action_flag": 2,
-        "action_time": "2015-07-23T12:38:01.416Z",
-        "object_repr": "Urdin fosfi",
-        "object_id": "14",
-        "change_message": "No fields changed.",
-        "user": [
-            "admin"
-        ],
-        "content_type": [
-            "schedule",
-            "label"
-        ]
-    },
-    "model": "admin.logentry",
-    "pk": 88
 },
 {
     "fields": {
@@ -3306,6 +3044,78 @@
     },
     "model": "admin.logentry",
     "pk": 115
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-08-01T21:17:10.733Z",
+        "object_repr": "Dantza ikuskizuna",
+        "object_id": "5",
+        "change_message": "recurrences eta link aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "events",
+            "event"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 116
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-08-15T11:48:10.366Z",
+        "object_repr": "Zebra bidea",
+        "object_id": "6",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 117
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-08-15T16:01:19.951Z",
+        "object_repr": "Zebra bidea",
+        "object_id": "6",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 118
+},
+{
+    "fields": {
+        "action_flag": 2,
+        "action_time": "2015-08-15T16:02:30.095Z",
+        "object_repr": "Zebra bidea",
+        "object_id": "6",
+        "change_message": "description aldatuta.",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "schedule",
+            "broadcast"
+        ]
+    },
+    "model": "admin.logentry",
+    "pk": 119
 },
 {
     "fields": {
@@ -4141,9 +3951,9 @@
         "meta_encoded": "{\"image\": \"/media/events/for_the_sake_of_color_by_suicidebysafetypin-d5gkkz2.jpg\"}",
         "description": "<p>&quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.</p>\r\n",
         "title": "Dantza ikuskizuna",
-        "url": "",
+        "url": "/events/dantza-ikuskizuna/",
         "object_id": "5",
-        "content": "Dantza ikuskizuna dantza-ikuskizuna &quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.\r\n Amaia ",
+        "content": "Dantza ikuskizuna dantza-ikuskizuna &quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.\r\n Amaia http://lakaxita.org",
         "content_type": [
             "events",
             "event"
@@ -4296,6 +4106,314 @@
     },
     "model": "watson.searchentry",
     "pk": 55
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/Ficoba.jpg\", \"size\": [600, 450]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||03be0137b056ba3250d86e663009d9a6"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/87/f7/87f741a3f8d08fe4e58147d90e0387c7.jpg\", \"size\": [107, 80]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||044c5a073b0a118d7dbbfee05c288c49"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/2f/77/2f77788c582e8fe8bd6b281c3810f253.jpg\", \"size\": [500, 352]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||05ded61ac3db9cd559b2be6ff3fc6d00"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"sorl.thumbnail.images.UrlStorage\", \"name\": \"http://localhost:8000/media/shows/biziki01_nV40Wcb.jpg\", \"size\": [768, 1280]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||09ab374c5aef6f2b7df3bba4ef9273d9"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/0e/9e/0e9eac0c4665db758aadc160dabc597f.jpg\", \"size\": [500, 313]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||161a6a54e819d7c6db336f825ca2560a"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/anari_9xuEfrN.jpg\", \"size\": [2592, 1944]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||2a612b3691a80d51733ddb4e399df90f"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/d6/e9/d6e9b268c131b76f6a77ba39c494c57f.jpg\", \"size\": [500, 334]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||2db10cee9abcb2b4b51b8f6a7804300a"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/7b/e3/7be3251e3504219c3a5d84cb113f738a.jpg\", \"size\": [500, 375]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||46db406f726833127f8a53fd8f37c067"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/84/06/8406a6fe977ca6ff8562b06dfdebbfbb.jpg\", \"size\": [500, 833]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||51e712753924bbfb4b5c11ba28ce5315"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/ff/db/ffdb056e77683a424310e3ca44d1a3a2.jpg\", \"size\": [500, 375]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||562d854f3dde131f5d4172be35dc588b"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/68/85/6885de2e180de99b57fb07041edad514.jpg\", \"size\": [500, 667]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||57222a5d07189837961c487597550ddc"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"events/directional_device_by_suicidebysafetypin-d5ayksp.jpg\", \"size\": [1600, 1000]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||5aa556cfc55f2bd70cdb2e2584aaa86d"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/kiki.jpg\", \"size\": [700, 420]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||5b71b24b9a8ecaedf90bf1ca539cafb5"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"sorl.thumbnail.images.UrlStorage\", \"name\": \"http://localhost:8000/media/shows/coiled_by_suicidebysafetypin-d5gau51.jpg\", \"size\": [1280, 1707]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||61ca1ab7955d8170a10c48894164b605"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/74/f7/74f7ab7e43d3068579f136a1117be001.jpg\", \"size\": [500, 616]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||645b5674cceaa3f18cf5f8264e7fd3f1"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/a8/4e/a84e255eb57e8dab0defb7ef764e525f.jpg\", \"size\": [128, 80]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||710a35b5cb22276f2f7a22caf3a5cb3d"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/03/c3/03c339cb86a8ee6f18b1a262a2bcde88.jpg\", \"size\": [499, 277]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||803c82fb74aa2e680542aea10a070f25"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"events/lakaxita.jpg\", \"size\": [2362, 1575]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||860b3021871b93cb700ddd00536766a5"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/62/ba/62bad6f3d6dc7816af7c2cee9ffc4b38.jpg\", \"size\": [500, 616]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||988bc3d7acbc934aad4061de8d962e6c"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/78/2a/782a01063ad867482c93663f5cc637a7.jpg\", \"size\": [500, 375]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||a28cd32917eb9af2c0be488b2f070d71"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/abentura.jpg\", \"size\": [467, 259]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||abe35f92f863989dfaed186ba817901d"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/5j2mg-Pedro_002.jpg\", \"size\": [1000, 667]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||b6537989ff6419b54a09c1af377df653"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/56/62/56629ddb5190b63bc630456a43101035.jpg\", \"size\": [499, 333]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||cf75e0d2c235ddca1228b0f61839286f"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"events/for_the_sake_of_color_by_suicidebysafetypin-d5gkkz2.jpg\", \"size\": [1600, 1200]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||d2ea7bb721f2f2506d89d826ab6b43e2"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/guz_ehkz_03.jpg\", \"size\": [3780, 2662]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||d601324c1f5ea40009aa21d792186c56"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"sorl.thumbnail.images.UrlStorage\", \"name\": \"http://localhost:8000/media/shows/4f16cc1ae39ad32b1cb12039a3f02557-d66nfvh_w7jae62.png\", \"size\": [2048, 1042]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||e0b76ba4fa5203f18c2903c6ce193b54"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"sorl.thumbnail.images.UrlStorage\", \"name\": \"http://localhost:8000/media/shows/martxoa8emankizun2014.jpg\", \"size\": [202, 249]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||e111d454a208235599908731b70ad258"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/d4/a3/d4a38e5eb0b84cb128cc1b03f8b7e320.jpg\", \"size\": [499, 254]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||f5bfadb0f075f2a9004041e2f0890e2b"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"shows/martxoa8emankizun2014.jpg\", \"size\": [202, 249]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||fc67fbf4eaf4dda6da021bb919ae2505"
+},
+{
+    "fields": {
+        "value": "{\"storage\": \"django.core.files.storage.FileSystemStorage\", \"name\": \"cache/9b/b2/9bb296e292a03638b3570ffa36796462.jpg\", \"size\": [500, 300]}"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||image||fed53fabbe8d3b48a0aec79226a29c86"
+},
+{
+    "fields": {
+        "value": "[\"562d854f3dde131f5d4172be35dc588b\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||03be0137b056ba3250d86e663009d9a6"
+},
+{
+    "fields": {
+        "value": "[\"51e712753924bbfb4b5c11ba28ce5315\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||09ab374c5aef6f2b7df3bba4ef9273d9"
+},
+{
+    "fields": {
+        "value": "[\"46db406f726833127f8a53fd8f37c067\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||2a612b3691a80d51733ddb4e399df90f"
+},
+{
+    "fields": {
+        "value": "[\"161a6a54e819d7c6db336f825ca2560a\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||5aa556cfc55f2bd70cdb2e2584aaa86d"
+},
+{
+    "fields": {
+        "value": "[\"fed53fabbe8d3b48a0aec79226a29c86\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||5b71b24b9a8ecaedf90bf1ca539cafb5"
+},
+{
+    "fields": {
+        "value": "[\"57222a5d07189837961c487597550ddc\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||61ca1ab7955d8170a10c48894164b605"
+},
+{
+    "fields": {
+        "value": "[\"cf75e0d2c235ddca1228b0f61839286f\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||860b3021871b93cb700ddd00536766a5"
+},
+{
+    "fields": {
+        "value": "[\"803c82fb74aa2e680542aea10a070f25\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||abe35f92f863989dfaed186ba817901d"
+},
+{
+    "fields": {
+        "value": "[\"2db10cee9abcb2b4b51b8f6a7804300a\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||b6537989ff6419b54a09c1af377df653"
+},
+{
+    "fields": {
+        "value": "[\"a28cd32917eb9af2c0be488b2f070d71\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||d2ea7bb721f2f2506d89d826ab6b43e2"
+},
+{
+    "fields": {
+        "value": "[\"05ded61ac3db9cd559b2be6ff3fc6d00\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||d601324c1f5ea40009aa21d792186c56"
+},
+{
+    "fields": {
+        "value": "[\"f5bfadb0f075f2a9004041e2f0890e2b\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||e0b76ba4fa5203f18c2903c6ce193b54"
+},
+{
+    "fields": {
+        "value": "[\"988bc3d7acbc934aad4061de8d962e6c\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||e111d454a208235599908731b70ad258"
+},
+{
+    "fields": {
+        "value": "[\"645b5674cceaa3f18cf5f8264e7fd3f1\"]"
+    },
+    "model": "thumbnail.kvstore",
+    "pk": "sorl-thumbnail||thumbnails||fc67fbf4eaf4dda6da021bb919ae2505"
 },
 {
     "fields": {
@@ -5708,22 +5826,24 @@
 },
 {
     "fields": {
-        "producer": 1,
         "description": "<p>Elkarbizitza, bizikidetza eta aitortza bilduko dituen jardunaldi batzuen berri emateko anto-latu dugu gaurko prentsaurreko hau. Dakizuenez, irrati elkarte bat da Antxeta irratia. Irrati komunutario bat. Hori dela eta, funtzio sozial bat badu bere baitan. Eta funtzioak aipatuz, bizikidetzarena da hoietako bat. Euskal Herrian pairatu diren bortizkeria asko asko bizi izan baitira Bidasoa eskualde honetan. Irrati gisa beraz, gure ekarpena egin nahi dugu bidea eraikitzeko. Nazioarte mailako hainbat gatazka politiko aipatzen ditugu egunerokoan gure programa-zioan, eta mahain inguru zein hitzaldiak ere antolatu ditugu berriki, Kolonbiaren inguruan, Irunen eta Hondarribian. Donostian aldiz, gatazka egoeran dauden hainbat herriren errealitearen berri emateko foro bat antolatu genuen joan den azaro amaieran, Mundu Bat GKErekin batera. Hauek aitzin, 2013.urtean hizkuntza gutxituen inguruko bi foro antolatu genituen, herri Maputxeen inguruan eta Ipar Irladan gaelikoak bizi duen egoeraren inguruan. Ahotsak mugimenduarekin ere, mahain inguru bat antolatu genuen 2011.urtean.</p>\r\n\r\n<p>Beraz gaur aurkeztuko ditugun jardunaldiak, Antxeta Irratiak eginiko apustu baten emaitza dira. Informatzeaz gain, hedabide bezala, herri honek beharrezkoak dituen aldaketen aktore zein eragile ere izan behar dugula uste baitugu.</p>\r\n\r\n<p>Hilabeteak daramatzagu, gure herriko gatazka politikoari begira, herri mailan zer egin de-zakegun pentsatzen. Aieteko Adierazpena izenpetu orduko, argi ukan baitugu, goiz ala berandu une hau helduko zela.</p>\r\n",
-        "name": "Bidasoan elkarbizitza",
+        "producer": 1,
         "image": "shows/biziki01.jpg",
-        "slug": "elkarbizitza"
+        "creation_date": "2015-07-31",
+        "slug": "elkarbizitza",
+        "name": "Bidasoan elkarbizitza"
     },
     "model": "projects.projectshow",
     "pk": 1
 },
 {
     "fields": {
-        "producer": 2,
         "description": "<p><img alt=\"Jeneussact\" src=\"https://archive.org/download/jeunessact14/jeunessact14.jpg\" title=\"jenessact\" /></p>\r\n\r\n<p>Youth in Action is the Programme the European Union has set up for young people. It aims to inspire a sense of active European citizenship, solidarity and tolerance among young Europeans and to involve them in shaping the Union&rsquo;s future. Four organisations have developed a partnership called Voice of Women in Europe to facilitate access of young women to media. The partners are Antxeta Irratia, (Basque Country), Radio Oloron (France), West Dublin Access Radio WDAR (Ireland) and nearfm (Ireland) and we have chosen the Sub-Action 1.3. Youth Democracy Projects Youth, which support young people&rsquo;s participation in the democratic life of their local, regional or national community, and at international level.</p>\r\n\r\n<h2>Radio Oloron</h2>\r\n\r\n<p><img alt=\"oloron\" src=\"https://ia601404.us.archive.org/24/items/LogoRadioOloron/logo%20radio_oloron.jpg\" title=\"oloron\" /></p>\r\n\r\n<p>Nous sommes un groupe de 6 jeunes filles lyc&eacute;ennes, &eacute;tudiantes ou jeunes travailleuses sur Oloron (64). Nous participons &agrave; la r&eacute;alisation du journal du Lyc&eacute;e. Nous avons &eacute;galement organis&eacute; un concert et avons r&eacute;alis&eacute; un rapprochement avec des jeunes d&rsquo;un lyc&eacute;e d&rsquo;un pays europ&eacute;en qui s&rsquo;occupe &eacute;galement d&rsquo;un journal. Radio Oloron a pour sa part l&#39;exp&eacute;rience, le savoir faire et la capacit&eacute; technique et financi&egrave;re pour nous accompagner sur ce projet. Situ&eacute;e dans les Pyr&eacute;n&eacute;es-Atlantiques, Radio Oloron est une radio associative locale qui vise &agrave; valoriser les initiatives personnelles, associatives, culturelles, sociales de notre territoire&hellip; Elle r&eacute;alise de nombreux projets et essaye au maximum, par le biais de son antenne, de ses reportages et de sa programmation musicale, d&rsquo;ouvrir ses auditeurs au monde, et de leur faire d&eacute;couvrir la richesse d&rsquo;Oloron et des alentours &agrave; travers les personnes qui sont interview&eacute;es.</p>\r\n\r\n<p><img alt=\"dublin\" src=\"https://archive.org/download/dublin01/dublin01.jpg\" title=\"dublin\" />En compl&eacute;ment de cette activit&eacute; nous pensons que la radio est un outil formidable afin de communiquer nos pr&eacute;occupations, initiatives, informations et nous permettra d&rsquo;avoir des contacts ext&eacute;rieurs &agrave; l&rsquo;&eacute;tablissement afin d&rsquo;aller &agrave; la rencontre des habitants d&rsquo;Oloron. Dans ce but nous nous sommes rapproch&eacute;es de la seule radio associative locale de la ville -Radio Oloron- que nous connaissions car nous l&rsquo;&eacute;coutions chez nous.Nous leur avons propos&eacute; notre projet ; faire une &eacute;mission radio r&eacute;alis&eacute;e par des jeunes et pour les jeunes. Petit &agrave; petit nous avons construit un projet qui int&eacute;grait les formations de r&eacute;alisateur radio de proximit&eacute;, techniques d&rsquo;expression radiophonique, les r&egrave;gles &agrave; respecter devant un microphone (prodigu&eacute;es par le CSA) et les techniques journalistiques de construction d&rsquo;un programme.Le tout combin&eacute; avec une exp&eacute;rience mixte d&rsquo;apprentissage et d&rsquo;autonomie afin de finaliser la mise en &oelig;uvre du projet d&rsquo;&eacute;mission radio. De cet &eacute;change naquit l&rsquo;id&eacute;e de pr&eacute;senter ce projet PEJA qui nous permettrait au final d&rsquo;acqu&eacute;rir les comp&eacute;tences n&eacute;cessaires. En outre Radio Oloron nous a offert l&rsquo;opportunit&eacute; de conna&icirc;tre des jeunes filles d&rsquo;autres pays europ&eacute;ens- Irlande, Espagne et France- &agrave; travers leur participation au projet europ&eacute;en PEJA-Transnational &ldquo;Voix des femmes&rdquo;. Depuis le d&eacute;but, nous avons eu comme objectif que chaque jeune femme impliqu&eacute;e dans le projet ait un m&ecirc;me niveau de participation. Nous avons mis en place une dynamique collective.</p>\r\n",
-        "name": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak",
+        "producer": 2,
         "image": "shows/gonekin_1_4_Zv8s8XH.jpg",
-        "slug": "ahotsak"
+        "creation_date": "2015-07-31",
+        "slug": "ahotsak",
+        "name": "Voix de femmen-Voice of Women in Europe-Emakumen ahotsak"
     },
     "model": "projects.projectshow",
     "pk": 2
@@ -5778,333 +5898,204 @@
 },
 {
     "fields": {
-        "colour": "#ff0000",
-        "name": "Gorria"
-    },
-    "model": "schedule.label",
-    "pk": 1
-},
-{
-    "fields": {
-        "colour": "#000000",
-        "name": "Beltza"
-    },
-    "model": "schedule.label",
-    "pk": 2
-},
-{
-    "fields": {
-        "colour": "#000000",
-        "name": "Beltza"
-    },
-    "model": "schedule.label",
-    "pk": 3
-},
-{
-    "fields": {
-        "colour": "#ff0000",
-        "name": "Gorria"
-    },
-    "model": "schedule.label",
-    "pk": 4
-},
-{
-    "fields": {
-        "colour": "#00ff15",
-        "name": "Berdea"
-    },
-    "model": "schedule.label",
-    "pk": 5
-},
-{
-    "fields": {
-        "colour": "#ff00d9",
-        "name": "Morea"
-    },
-    "model": "schedule.label",
-    "pk": 6
-},
-{
-    "fields": {
-        "colour": "#000000",
-        "name": "Txuria"
-    },
-    "model": "schedule.label",
-    "pk": 7
-},
-{
-    "fields": {
-        "colour": "#5aaf47",
-        "name": "Berde iluna"
-    },
-    "model": "schedule.label",
-    "pk": 8
-},
-{
-    "fields": {
-        "colour": "#630051",
-        "name": "More iluna"
-    },
-    "model": "schedule.label",
-    "pk": 9
-},
-{
-    "fields": {
-        "colour": "#ffacf0",
-        "name": "Arroxa"
-    },
-    "model": "schedule.label",
-    "pk": 10
-},
-{
-    "fields": {
-        "colour": "#fff300",
-        "name": "Horia"
-    },
-    "model": "schedule.label",
-    "pk": 11
-},
-{
-    "fields": {
-        "colour": "#00daff",
-        "name": "urdina"
-    },
-    "model": "schedule.label",
-    "pk": 12
-},
-{
-    "fields": {
-        "colour": "#0051ff",
-        "name": "Urdin iluna"
-    },
-    "model": "schedule.label",
-    "pk": 13
-},
-{
-    "fields": {
-        "colour": "#00ffe7",
-        "name": "Urdin fosfi"
-    },
-    "model": "schedule.label",
-    "pk": 14
-},
-{
-    "fields": {
-        "foreground": 3,
-        "name": "Kiroletik",
+        "description": "",
         "ending": "10:00:00",
         "link": "/kiroletik",
         "weekday": 0,
-        "background": 4,
-        "beginning": "09:00:00"
+        "beginning": "09:00:00",
+        "name": "Kiroletik"
     },
     "model": "schedule.broadcast",
     "pk": 1
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Txingurri hotsak",
+        "description": "",
         "ending": "12:00:00",
         "link": "/txingurri_hotsak",
         "weekday": 0,
-        "background": 5,
-        "beginning": "10:00:00"
+        "beginning": "10:00:00",
+        "name": "Txingurri hotsak"
     },
     "model": "schedule.broadcast",
     "pk": 2
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Gonekin ero bero",
+        "description": "",
         "ending": "13:30:00",
         "link": "/gonekin",
         "weekday": 0,
-        "background": 6,
-        "beginning": "12:00:00"
+        "beginning": "12:00:00",
+        "name": "Gonekin ero bero"
     },
     "model": "schedule.broadcast",
     "pk": 3
 },
 {
     "fields": {
-        "foreground": 7,
-        "name": "Aitzurra",
+        "description": "",
         "ending": "17:00:00",
         "link": "",
         "weekday": 0,
-        "background": 8,
-        "beginning": "13:30:00"
+        "beginning": "13:30:00",
+        "name": "Aitzurra"
     },
     "model": "schedule.broadcast",
     "pk": 4
 },
 {
     "fields": {
-        "foreground": 7,
-        "name": "Amapola morea",
+        "description": "",
         "ending": "18:00:00",
         "link": "/amapola_morea",
         "weekday": 0,
-        "background": 9,
-        "beginning": "17:00:00"
+        "beginning": "17:00:00",
+        "name": "Amapola morea"
     },
     "model": "schedule.broadcast",
     "pk": 5
 },
 {
     "fields": {
-        "foreground": 7,
-        "name": "Zebra bidea",
+        "description": "Zebra Bidea Antxeta, Tas Tas eta Halabedi irratiek elkar ekoizten dugun magazina da. Atsaldero entzungaia duzue Antxeta Irratiaren sintonian 16.00tatik 18.00ak arte. Bertan, gai ezberdinen inguruan, hainbat kolaboratzaile ditugu, eta, antxetamedia.info-n entzungai izango dituzue.",
         "ending": "20:30:00",
         "link": "/zebra_bidea",
         "weekday": 0,
-        "background": 2,
-        "beginning": "18:00:00"
+        "beginning": "18:00:00",
+        "name": "Zebra bidea"
     },
     "model": "schedule.broadcast",
     "pk": 6
 },
 {
     "fields": {
-        "foreground": 7,
-        "name": "Hari gorria",
+        "description": "",
         "ending": "12:00:00",
         "link": "",
         "weekday": 1,
-        "background": 1,
-        "beginning": "10:00:00"
+        "beginning": "10:00:00",
+        "name": "Hari gorria"
     },
     "model": "schedule.broadcast",
     "pk": 7
 },
 {
     "fields": {
-        "foreground": 1,
-        "name": "Ezker gantxoa",
+        "description": "",
         "ending": "13:00:00",
         "link": "/ezker_gantxoa",
         "weekday": 1,
-        "background": 2,
-        "beginning": "12:00:00"
+        "beginning": "12:00:00",
+        "name": "Ezker gantxoa"
     },
     "model": "schedule.broadcast",
     "pk": 8
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Aiako harrikada",
+        "description": "",
         "ending": "17:30:00",
         "link": "/aiako_harrikada",
         "weekday": 1,
-        "background": 10,
-        "beginning": "15:00:00"
+        "beginning": "15:00:00",
+        "name": "Aiako harrikada"
     },
     "model": "schedule.broadcast",
     "pk": 9
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Bazkalaurrekoa",
+        "description": "",
         "ending": "18:00:00",
         "link": "/bazkalaurrekoa",
         "weekday": 1,
-        "background": 11,
-        "beginning": "17:00:00"
+        "beginning": "17:00:00",
+        "name": "Bazkalaurrekoa"
     },
     "model": "schedule.broadcast",
     "pk": 10
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Bidasoaldeko Efemerideak",
+        "description": "",
         "ending": "22:00:00",
         "link": "/bidasoaldeko_efemerideak",
         "weekday": 1,
-        "background": 12,
-        "beginning": "20:00:00"
+        "beginning": "20:00:00",
+        "name": "Bidasoaldeko Efemerideak"
     },
     "model": "schedule.broadcast",
     "pk": 11
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Donostiko 59. Zinemaldia",
+        "description": "",
         "ending": "15:00:00",
         "link": "",
         "weekday": 2,
-        "background": 13,
-        "beginning": "13:00:00"
+        "beginning": "13:00:00",
+        "name": "Donostiko 59. Zinemaldia"
     },
     "model": "schedule.broadcast",
     "pk": 12
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Elkarrizketak / Erreportaiak / Kolaborazioak",
+        "description": "",
         "ending": "14:00:00",
         "link": "",
         "weekday": 1,
-        "background": 14,
-        "beginning": "08:00:00"
+        "beginning": "08:00:00",
+        "name": "Elkarrizketak / Erreportaiak / Kolaborazioak"
     },
     "model": "schedule.broadcast",
     "pk": 13
 },
 {
     "fields": {
-        "foreground": 3,
-        "name": "Herri pilulak",
+        "description": "",
         "ending": "20:00:00",
         "link": "/herri_pilulak",
         "weekday": 3,
-        "background": 9,
-        "beginning": "15:00:00"
+        "beginning": "15:00:00",
+        "name": "Herri pilulak"
     },
     "model": "schedule.broadcast",
     "pk": 14
 },
 {
     "fields": {
-        "foreground": 3,
-        "name": "Kale kantoian",
+        "description": "",
         "ending": "20:00:00",
         "link": "/kale_kantoian",
         "weekday": 4,
-        "background": 9,
-        "beginning": "08:00:00"
+        "beginning": "08:00:00",
+        "name": "Kale kantoian"
     },
     "model": "schedule.broadcast",
     "pk": 15
 },
 {
     "fields": {
-        "foreground": 2,
-        "name": "Musika klik",
+        "description": "",
         "ending": "13:00:00",
         "link": "/musika_klik",
         "weekday": 5,
-        "background": 1,
-        "beginning": "12:00:00"
+        "beginning": "12:00:00",
+        "name": "Musika klik"
     },
     "model": "schedule.broadcast",
     "pk": 16
 },
 {
     "fields": {
-        "foreground": 3,
-        "name": "Gure kunka",
+        "description": "",
         "ending": "20:00:00",
         "link": "/gure_kunka",
         "weekday": 6,
-        "background": 10,
-        "beginning": "16:00:00"
+        "beginning": "16:00:00",
+        "name": "Gure kunka"
     },
     "model": "schedule.broadcast",
     "pk": 17
@@ -6197,7 +6188,7 @@
         "description": "<p>&quot; 12 Musicales&quot; izeneko dantza ikuskizun honetan honako dantza eskolek parte hartuko dute: Teresa Tejedor (Errenteria), Carmen Garmendia (Donostia), Marisa Merino (Zarautz), Jose Maria Orbegozo (Beasain), Carlos Zapirain (Hondarribia) eta Irungo Tatiana eta Ainhoa dantza akademiak.</p>\r\n",
         "title": "Dantza ikuskizuna",
         "image": "events/for_the_sake_of_color_by_suicidebysafetypin-d5gkkz2.jpg",
-        "link": "",
+        "link": "http://lakaxita.org",
         "location": "Amaia",
         "recurrences": "RRULE:FREQ=MONTHLY;COUNT=3;BYMONTHDAY=2",
         "time": "14:08:29",
