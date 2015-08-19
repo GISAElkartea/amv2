@@ -13,7 +13,6 @@ class Broadcast(models.Model):
 
     weekday = models.PositiveSmallIntegerField(_('Weekday'), choices=WEEKDAYS.items())
     beginning = models.TimeField(_('Beginning'))
-    ending = models.TimeField(_('Ending'))
 
     name = models.CharField(_('Name'), max_length=64)
     description = models.CharField(_('Description'), max_length=512, blank=True)

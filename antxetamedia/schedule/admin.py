@@ -7,14 +7,14 @@ from .models import Broadcast
 
 
 class BroadcastAdmin(admin.ModelAdmin):
-    list_display = ['name', 'get_link', 'weekday', 'beginning', 'ending']
-    list_filter = ['weekday', 'beginning', 'ending']
+    list_display = ['name', 'get_link', 'weekday', 'beginning']
+    list_filter = ['weekday', 'beginning']
     search_fields = ['name', 'description']
     fieldsets = [
         (None, {
             'fields': [('name', 'link'), 'description']}),
         (_('When'), {
-            'fields': [('weekday', 'beginning', 'ending')]}),
+            'fields': [('weekday', 'beginning')]}),
     ]
 
     def get_link(self, obj):
