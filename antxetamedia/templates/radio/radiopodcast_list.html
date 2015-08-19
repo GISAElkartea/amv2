@@ -24,11 +24,8 @@
       {% for radiopodcast in radiopodcast_list %}
       <tr>
         <td>{{ radiopodcast }}</td>
-        <td id="podcastPlay">
-          <i class="fa fa-play"></i>
-          <i class="fa fa-plus"></i>
-          <i class="fa fa-share"></i>
-          <i class="fa fa-download"></i>
+        <td>
+          {% include 'podcast_control.html' with podcast=projectpodcast %}
         </td>
         <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
       </tr>

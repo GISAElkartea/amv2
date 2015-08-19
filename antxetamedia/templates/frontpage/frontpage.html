@@ -14,12 +14,7 @@
     {% empty %}
     <div class="detail">
     {% endthumbnail %}
-      <div class="downloadShare">
-        <i class="fa fa-play"></i>
-        <i class="fa fa-plus"></i>
-        <i class="fa fa-share"></i>
-        <i class="fa fa-download"></i>
-      </div>
+      {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
     <div class="text">
       <h2 class="category">
@@ -58,12 +53,7 @@
     {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
       <div class="detail" {% if radiopodcast.image %} style="background-image: url('{{ radiopodcast.image.url }}');"{% endif %}/>
-        <div class="downloadShare">
-          <i class="fa fa-play"></i>
-          <i class="fa fa-plus"></i>
-          <i class="fa fa-share"></i>
-          <i class="fa fa-download"></i>
-        </div>
+      {% include 'podcast_control.html' with podcast=radiopodcast %}
       </div>
       <div class="text">
         <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>

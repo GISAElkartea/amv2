@@ -1,0 +1,7 @@
+<td class="podcastControl">
+  {% if podcast.blob_set.exists %}
+  <a class="play" data-podcast="{{ podcast.pk }}"><i class="fa fa-play"></i></a>
+  <a class="append" data-podcast="{{ podcast.pk }}"><i class="fa fa-plus"></i></a>
+  <a class="download" href="{# {% url 'blobs:download' %} #}?{% for blob in podcast.blob_set.all %}b={{ blob.pk }}{% endfor %}"><i class="fa fa-download"></i></a>
+  {% endif %}
+</td>

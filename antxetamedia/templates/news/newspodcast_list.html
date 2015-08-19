@@ -25,12 +25,7 @@
     {% empty %}
     <div class="detail">
     {% endthumbnail %}
-      <div class="downloadShare">
-        <i class="fa fa-play"></i>
-        <i class="fa fa-plus"></i>
-        <i class="fa fa-share"></i>
-        <i class="fa fa-download"></i>
-      </div>
+      {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
     <div class="text">
       <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ newspodcast.categories.all | join:", " }}</a></h2>
