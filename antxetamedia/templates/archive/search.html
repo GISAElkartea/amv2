@@ -27,13 +27,18 @@
     <label for="tab{{ forloop.counter }}">{{ title }}</label>
     <div id="tab-content{{ forloop.counter }}" class="tab-content">
       <form method="get" action="{{ reverseurl }}">
-        <label for="id_q">{% trans 'Term' %}:</label>
-        <input id="id_q" name="q" value="{{ request.GET.q }}" />
-        {% if form %}
-        <h2>{% trans 'Details' %}</h2>
-        {{ form }}
-        {% endif %}
-        <input type="submit" value="{% trans 'Search' %}" />
+        <ul>
+          <li>
+            <label for="id_q">{% trans 'Term' %}:</label>
+            <input id="id_q" name="q" value="{{ request.GET.q }}" />
+          </li>
+          {% if form %}
+          {{ form.as_ul }}
+          {% endif %}
+          <li>
+            <input type="submit" value="{% trans 'Search' %}" />
+          </li>
+        </ul>
       </form>
     </div>
   </li>
