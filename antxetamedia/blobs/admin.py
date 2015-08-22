@@ -3,12 +3,15 @@ from django.contrib.contenttypes.admin import GenericTabularInline
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
+from grappelli.forms import GrappelliSortableHiddenMixin
+
 from .models import Account, License, Blob, BlobUpload
 
 
-class BlobInline(GenericTabularInline):
+class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     model = Blob
-    fields = ['account', 'license', 'local', 'remote']
+    fields = ['position', 'account', 'license', 'local', 'remote']
+    sortable_field_name = 'position'
     readonly_fields = ['remote']
     ct_field = 'content_type'
     ct_fk_field = 'object_id'

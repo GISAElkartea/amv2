@@ -40,14 +40,15 @@ class License(models.Model):
 @python_2_unicode_compatible
 class Blob(models.Model):
     class Meta:
-        unique_together = [('content_type', 'object_id', 'counter')]
+        ordering = ['position']
+        unique_together = [('content_type', 'object_id', 'position')]
         verbose_name = _('Audio blob')
         verbose_name_plural = _('Audio blobs')
 
     content_type = models.ForeignKey('contenttypes.contenttype')
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
-    counter = models.PositiveIntegerField(default=0, editable=False)
+    position = models.PositiveIntegerField(_('Position'), default=0)
 
     local = models.FileField(_('Local file'), upload_to='podcasts', null=True, blank=True,
                              help_text=_("If set, the file will be uploaded to the remote storage and the link will "
@@ -57,14 +58,7 @@ class Blob(models.Model):
     license = models.ForeignKey(License, verbose_name=_('License'))
 
     def __str__(self):
-        return '{self.content_object} - #{self.counter}'.format(self=self)
-
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            qs = Blob.objects.filter(content_type=self.content_type, object_id=self.object_id)
-            latest = qs.aggregate(latest=models.Max('counter'))['latest'] or 0
-            self.counter = latest + 1
-        return super(Blob, self).save(*args, **kwargs)
+        return '{self.content_object} - #{self.position}'.format(self=self)
 
     @property
     def link(self):
