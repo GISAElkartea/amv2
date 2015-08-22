@@ -51,8 +51,8 @@ class BlobFeed(Feed):
         return item.content_object.show.get_absolute_url()
 
     def item_enclosure_url(self, item):
-        if item.blob:
-            return add_domain(self.request.get_host(), item.blob, self.request.is_secure())
+        if item.link:
+            return add_domain(self.request.get_host(), item.link, self.request.is_secure())
 
     def item_enclosure_length(self, item):
         # Is this really needed?

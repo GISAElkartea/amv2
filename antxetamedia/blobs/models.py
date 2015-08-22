@@ -67,7 +67,7 @@ class Blob(models.Model):
         return super(Blob, self).save(*args, **kwargs)
 
     @property
-    def blob(self):
+    def link(self):
         if self.local:
             return self.local.url
         return self.remote

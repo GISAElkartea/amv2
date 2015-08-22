@@ -16,7 +16,7 @@ class BlobInline(GenericTabularInline):
 
 
 class BlobAdmin(admin.ModelAdmin):
-    list_display = ['blob', ]
+    list_display = ['link', ]
     readonly_fields = ['get_content_object', 'remote']
     fields = ['get_content_object', 'account', 'license', 'local', 'remote']
 
