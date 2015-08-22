@@ -52,11 +52,12 @@ class BlobFeed(Feed):
 
     def item_enclosure_url(self, item):
         if item.link:
+            # add_domain adds the domain only if the url doesn't already have one
             return add_domain(self.request.get_host(), item.link, self.request.is_secure())
 
     def item_enclosure_length(self, item):
-        # Is this really needed?
-        pass
+        # When an enclosure's size cannot be determined, a publisher should use a length of 0.
+        return 0  #
 
     def item_enclosure_mime_type(self, item):
         return "audio/mpeg"
