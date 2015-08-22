@@ -3,6 +3,7 @@
   position: relative
   margin: 0
   padding: 0
+  font-size: 0
   li
     display: inline-block
   input[type="radio"]
@@ -10,8 +11,7 @@
     display: none
   label
     display: block
-    padding: .3em 1em
-    border-radius: .2em .2em 0 0
+    padding: .3rem 1rem
     font-size: 1.2rem
     font-weight: normal
     cursor: pointer
@@ -22,7 +22,7 @@
     display: none
     overflow: hidden
     width: 100%
-    padding: 1em
+    padding: 0 1rem
     position: absolute
     left: 0
   //The Magic
@@ -33,21 +33,64 @@
     display: block
 
 #archive
-  width: 50%
-  label
-    color: white
-    background: tint($green, 60%)
-    &:hover
-      background: tint($green, 30%)
-  .tab-content
-    background: $green
-  [id^="tab"]:checked + label
-    background: $green
+  > li
+    width: 20%
+    > label
+      color: black
+      font-size: 1.1rem
+      text-align: center
+      text-transform: lowercase
+      font-variant: small-caps
+      &:hover
+        background: tint($green, 60%)
+    .tab-content
+      background: $green
+      padding: 1rem
+    [id^="tab"]:checked + label
+      background: $green
+      color: white
+    ul
+      padding: 0
+      li
+        margin: 1rem
+        vertical-align: top
+        &.mainForm
+          border: tint(black, 80%) solid .15rem
+          background: white
+          font-size: 1.1rem
+          border-radius: .3rem
+          font-size: 0
+          width: 100%
+          margin: 0
+      label
+        color: white
+        padding: 0
+        font-size: 1rem
+      select
+        border: none
+      input
+        border: tint(black, 80%) solid .15rem
+        background: white
+        border-radius: .2rem
+      input#id_q
+        padding: .5em
+        width: 90%
+        border: none
+        background: none
+        font-size: 1.1rem
+        color: tint(black, 50%)
+      button[type="submit"]
+        width: 10%
+        font-size: 1.5rem
+        background: none
+        border: none
+        text-align: right
+        color: tint(black, 50%)
+
 
 #schedule
-  width: 100%
   li
-    width: 14%
+    width: 14.2857%
     label
       text-align: center
       text-transform: lowercase
