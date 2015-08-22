@@ -42,6 +42,7 @@
 {% endfor %}
 </ul>
 
+{% if search_results %}
 <ul id="archiveResults">
   {% for result in search_results %}
   <li>
@@ -73,4 +74,12 @@
 </ul>
 
 {% include 'pagination.html' with object_list=search_results %}
+
+{% else %}
+<p id="nothingFound">
+  {% blocktrans %}
+  Your search didn't yield any results.
+  {% endblocktrans %}
+</p>
+{% endif %}
 {% endblock content %}
