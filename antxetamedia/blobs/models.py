@@ -40,7 +40,7 @@ class License(models.Model):
 @python_2_unicode_compatible
 class Blob(models.Model):
     class Meta:
-        ordering = ['position']
+        ordering = ['-created']
         unique_together = [('content_type', 'object_id', 'position')]
         verbose_name = _('Audio blob')
         verbose_name_plural = _('Audio blobs')
@@ -48,6 +48,8 @@ class Blob(models.Model):
     content_type = models.ForeignKey('contenttypes.contenttype')
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
+
+    created = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
     position = models.PositiveIntegerField(_('Position'), default=0)
 
     local = models.FileField(_('Local file'), upload_to='podcasts', null=True, blank=True,

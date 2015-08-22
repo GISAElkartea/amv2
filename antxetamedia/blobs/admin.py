@@ -10,18 +10,18 @@ from .models import Account, License, Blob, BlobUpload
 
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     model = Blob
-    fields = ['position', 'account', 'license', 'local', 'remote']
+    fields = ['position', 'account', 'license', 'created', 'local', 'remote']
     sortable_field_name = 'position'
-    readonly_fields = ['remote']
+    readonly_fields = ['created', 'remote']
     ct_field = 'content_type'
     ct_fk_field = 'object_id'
     extra = 1
 
 
 class BlobAdmin(admin.ModelAdmin):
-    list_display = ['link', ]
-    readonly_fields = ['get_content_object', 'remote']
-    fields = ['get_content_object', 'account', 'license', 'local', 'remote']
+    list_display = ['link', 'created', 'account', 'license']
+    readonly_fields = ['get_content_object', 'remote', 'created']
+    fields = ['get_content_object', 'account', 'license', 'created', 'local', 'remote']
 
     def get_content_object(self, instance):
         content_object = instance.content_object
@@ -30,6 +30,9 @@ class BlobAdmin(admin.ModelAdmin):
         return '<a href="{}">{}</a>'.format(change_url, content_object)
     get_content_object.short_description = _('Podcast')
     get_content_object.allow_tags = True
+
+    def has_add_permission(self, request):
+        return False
 
 
 class BlobUploadAdmin(admin.ModelAdmin):
