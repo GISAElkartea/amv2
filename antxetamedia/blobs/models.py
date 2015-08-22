@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, transaction
+from django.core.exceptions import ValidationError
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
@@ -18,7 +19,6 @@ class Account(models.Model):
     name = models.CharField(_('Name'), max_length=64)
     username = models.CharField(_('Username'), max_length=256)
     password = models.CharField(_('Password'), max_length=256)
-    # metadata goes here
 
     def __str__(self):
         return self.name
@@ -67,6 +67,10 @@ class Blob(models.Model):
         if self.local:
             return self.local.url
         return self.remote
+
+    def clean(self):
+        if not self.local and not self.remote:
+            raise ValidationError(_("Blobs should have either a local or a remote file."))
 
 
 @python_2_unicode_compatible
