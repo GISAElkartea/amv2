@@ -64,6 +64,8 @@ ul#archiveResults
     h1
       a
         color: $green
+p#nothingFound
+  margin-top: 14rem
 
 table.podcastList
   border-collapse: collapse
@@ -79,7 +81,7 @@ table.podcastList
     td
       background: tint($green, 75%)
       padding: .3em 1em
-      &#podcastPlay
+      &.podcastPlay
         width: 30%
         i
           display: none
@@ -91,7 +93,7 @@ table.podcastList
     font-size: 1rem
 
   tr:hover
-    td:podcastPlay
+    td.podcastPlay
       i
         display: inline
   tr.podcastDescription
