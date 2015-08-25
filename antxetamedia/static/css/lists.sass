@@ -54,7 +54,7 @@ ul#projectShows
           font-weight: normal
 
 ul#archiveResults
-  margin: 16rem 0 0 0
+  +span-columns(9 of 9)
   padding: 0
   li
     list-style: none
@@ -82,22 +82,22 @@ table.podcastList
         i
           display: none
           color: tint(black, 30%)
-      &#podcastDate
+      &.podcastDate
         width: 10%
   h1
     color: black
     font-size: 1rem
 
   tr:hover
-    td#podcastPlay
+    td:podcastPlay
       i
         display: inline
-  tr#podcastDescription
+  tr.podcastDescription
     td
       width: 100%
       padding: 1em
       background: tint($green, 90%)
-    img#podcastImage
+    img.podcastImage
       width: 10%
       display: inline-block
       vertical-align: top

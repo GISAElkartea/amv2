@@ -13,7 +13,7 @@
   <div class="text">
     <h2 class="category">{{ event.location }}</h2>
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
-    <section id="occurrences">
+    <section class="occurrences">
       <h4>{% trans 'Future occurrences' %}:</h4>
       <ul>
         {% for date in event.upcoming|slice:":5" %}

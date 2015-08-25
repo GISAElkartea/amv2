@@ -24,12 +24,12 @@
       <tr>
         <td>{{ projectpodcast }}</td>
         {% include 'podcast_control.html' with podcast=projectpodcast %}
-        <td id="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
+        <td class="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
       </tr>
-      <tr id="podcastDescription">
+      <tr class="podcastDescription">
         <td colspan="3">{% if projectpodcast.image %}<img id="podcastImage"
           src="{{ projectpodcast.image.url }}"/>{% endif %}
-          <span id="podcastText">{{ projectpodcast.description | safe }}</span></td>
+          <span class="podcastText">{{ projectpodcast.description | safe }}</span></td>
       </tr>
       {% endfor %}
     </table>

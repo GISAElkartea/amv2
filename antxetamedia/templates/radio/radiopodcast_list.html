@@ -27,14 +27,14 @@
         <td>
           {% include 'podcast_control.html' with podcast=projectpodcast %}
         </td>
-        <td id="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
+        <td class="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
       </tr>
-      <tr id="podcastDescription">
+      <tr class="podcastDescription">
         <td colspan="3">
           {% thumbnail radiopodcast.image "500" as image %}
-          <img id="podcastImage" src="{{ image.url }}" />
+          <img class="podcastImage" src="{{ image.url }}" />
           {% endthumbnail %}
-          <span id="podcastText">{{ radiopodcast.description | safe }}</span>
+          <span class="podcastText">{{ radiopodcast.description | safe }}</span>
         </td>
       </tr>
       {% endfor %}
