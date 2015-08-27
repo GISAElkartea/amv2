@@ -1,27 +1,17 @@
 {% extends 'base.html' %}
-{% load static i18n compress thumbnail absolute_urls %}
+{% load static i18n %}
 
 {% block title %}
-{% trans 'Archive' %}
+{% trans 'You are lost' %}
 {% endblock title %}
-
-{% block extra_js %}
-{# Cannot compress this because it includes the JS I18N catalogue #}
-{{ tab_media.render_js | join:"" }}
-{% endblock extra_js %}
-
-
-{% block extra_css %}
-{% compress css %}
-{{ tab_media.render_css | join:"" }}
-{% endcompress css %}
-{% endblock extra_css %}
 
 
 {% block content %}
 <div id="error404">
-  <p>{% trans 'Do you lose the dial?' %}</p>
-  <p>{% trans 'Go ' %}<a href="/">{% trans 'home' %}</a>{% trans 'again, and listen to the radio!' %}</p>
+  {% blocktrans %}
+  <p>Did you lose the dial?</p>
+  <p>Go <a href="/">home</a> again, and listen to the radio!</p>
+  {% endblocktrans %}
   <img src="{% static 'images/error404.svg' %}" />
 </div>
 {% endblock content %}
