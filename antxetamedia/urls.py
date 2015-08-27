@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^news/', include('antxetamedia.news.urls')),
     url(r'^radio/', include('antxetamedia.radio.urls')),
     url(r'^projects/', include('antxetamedia.projects.urls')),
+    url(r'^blobs/', include('antxetamedia.blobs.urls')),
     url(r'^f/', include('antxetamedia.flatpages.urls')),
     url(r'^events/', include('antxetamedia.events.urls')),
     url(r'^schedule/', include('antxetamedia.schedule.urls')),

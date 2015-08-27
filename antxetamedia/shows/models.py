@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.functions import Lower
 from django.contrib.contenttypes.fields import GenericRelation
+from django.core.urlresolvers import reverse
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext as _
 from django.utils.timezone import now
@@ -103,6 +104,13 @@ class AbstractPodcast(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_blobs_url(self):
+        return reverse('blobs:podcast', kwargs={
+            'app_label': self._meta.app_label,
+            'model': self._meta.model_name,
+            'id': self.pk,
+        })
 
     @property
     def metadata(self):
