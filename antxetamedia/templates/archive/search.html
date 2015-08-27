@@ -74,8 +74,9 @@
 </ul>
 
 {% include 'pagination.html' with object_list=search_results %}
+{% endif %}
 
-{% else %}
+{% if not search_results and request.GET %}
 <p id="nothingFound">
   {% blocktrans %}
   Your search didn't yield any results.
