@@ -30,7 +30,7 @@
         <ul>
           <li class="mainForm">
             <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
-            <button type="submit" value="{% trans 'Search' %}" ><i class="fa fa-search"></i></button>
+            <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
           </li>
           {% if form %}
           {{ form.as_ul }}

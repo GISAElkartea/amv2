@@ -11,15 +11,16 @@
     <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
     <label for="tab{{ forloop.counter }}">{{ weekday.grouper }}</label>
     <div id="tab-content{{ forloop.counter }}" class="tab-content">
-    <ul>
-      {% for broadcast in weekday.list %}
-      <li>
-        <time>{{ broadcast.beginning }}</time>
-        <h1><a href="{{ broadcast.link }}">{{ broadcast }}</a></h1>
-        <p>{{ broadcast.description }}</p>
-      </li>
-      {% endfor %}
-    </ul>
+      <ul>
+        {% for broadcast in weekday.list %}
+        <li>
+          <time>{{ broadcast.beginning }}</time>
+          <h1><a href="{{ broadcast.link }}">{{ broadcast }}</a></h1>
+          <p>{{ broadcast.description }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </li>
   {% endfor %}
 {% endblock content %}
