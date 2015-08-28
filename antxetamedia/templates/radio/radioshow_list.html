@@ -20,7 +20,7 @@
 {% block content %}
 <ul id="featuredShows">
   {% for radioshow in radioshow_list.featured %}
-  <li>{{ radioshow }}</li>
+  <li><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></li>
   {% endfor %}
 </ul>
 
