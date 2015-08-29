@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-16 18:36+0200\n"
+"POT-Creation-Date: 2015-08-29 02:17+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -25,69 +25,69 @@ msgstr "Geroztik argitaratua"
 msgid "Published before"
 msgstr "Aurretik argitaratua"
 
-#: archive/forms.py:32
+#: archive/forms.py:34
 msgid "Enter a valid date."
 msgstr ""
 
-#: archive/views.py:23
+#: archive/views.py:27
 msgid "Site-wide"
 msgstr "Gune osokoa"
 
-#: archive/views.py:24 news/models.py:53
+#: archive/views.py:28 news/models.py:53
 msgid "News podcasts"
 msgstr "Albisteak"
 
-#: archive/views.py:25 radio/models.py:62
+#: archive/views.py:29 radio/models.py:62
 msgid "Radio podcasts"
 msgstr "Irrati emankizunak"
 
-#: archive/views.py:26 dashboard.py:28 projects/models.py:29
-#: templates/base.html:25 templates/projects/projectshow_list.html:4
+#: archive/views.py:30 dashboard.py:44 projects/models.py:29
+#: templates/base.html:26 templates/projects/projectshow_list.html:4
 msgid "Projects"
 msgstr "Proiektuak"
 
-#: archive/views.py:27 dashboard.py:35 events/models.py:115
-#: templates/base.html:26 templates/events/event_list.html:4
+#: archive/views.py:31 dashboard.py:28 events/models.py:115
+#: templates/base.html:27 templates/events/event_list.html:4
 msgid "Events"
 msgstr "Gertakariak"
 
-#: blobs/admin.py:28 blobs/admin.py:43
+#: blobs/admin.py:31 blobs/admin.py:49
 #: templates/projects/projectshow_detail.html:19
 #: templates/radio/radiopodcast_list.html:20
 msgid "Podcast"
 msgstr "Emankizuna"
 
-#: blobs/admin.py:48
+#: blobs/admin.py:54
 msgid "Has succeeded"
 msgstr "Arrakasta izan du"
 
-#: blobs/admin.py:53 blobs/models.py:94
+#: blobs/admin.py:59 blobs/models.py:94
 msgid "State"
 msgstr "Egoera"
 
-#: blobs/models.py:15 blobs/models.py:56
+#: blobs/models.py:16 blobs/models.py:59
 msgid "Account"
 msgstr "Kontua"
 
-#: blobs/models.py:16
+#: blobs/models.py:17
 msgid "Accounts"
 msgstr "Kontuak"
 
-#: blobs/models.py:18 blobs/models.py:33 flatpages/models.py:23
-#: schedule/models.py:18 shows/models.py:27 shows/models.py:46
-#: shows/models.py:70 widgets/models.py:15
+#: blobs/models.py:19 blobs/models.py:33 flatpages/models.py:23
+#: schedule/models.py:17 shows/models.py:28 shows/models.py:47
+#: shows/models.py:71 widgets/models.py:15
 msgid "Name"
 msgstr "Izena"
 
-#: blobs/models.py:19
+#: blobs/models.py:20
 msgid "Username"
 msgstr "Erabiltzailea"
 
-#: blobs/models.py:20
+#: blobs/models.py:21
 msgid "Password"
 msgstr "Pasahitza"
 
-#: blobs/models.py:30 blobs/models.py:57
+#: blobs/models.py:30 blobs/models.py:60
 msgid "License"
 msgstr "Lizentzia"
 
@@ -96,23 +96,31 @@ msgid "Licenses"
 msgstr "Lizentziak"
 
 #: blobs/models.py:34 events/models.py:126 schedule/admin.py:25
-#: schedule/models.py:20
+#: schedule/models.py:19
 msgid "Link"
 msgstr "Esteka"
 
-#: blobs/models.py:44
+#: blobs/models.py:45
 msgid "Audio blob"
 msgstr "Audioa"
 
-#: blobs/models.py:45
+#: blobs/models.py:46
 msgid "Audio blobs"
 msgstr "Audioak"
 
 #: blobs/models.py:52
+msgid "Created"
+msgstr "Sortua"
+
+#: blobs/models.py:53 widgets/models.py:16
+msgid "Position"
+msgstr "Kokapena"
+
+#: blobs/models.py:55
 msgid "Local file"
 msgstr "Fitxategi lokala"
 
-#: blobs/models.py:53
+#: blobs/models.py:56
 msgid ""
 "If set, the file will be uploaded to the remote storage and the link will be "
 "set at the remote field."
@@ -120,9 +128,13 @@ msgstr ""
 "Ezarria bada, fitxategia hurruneko biltegira igoko da hurruneko eremua "
 "bertakoestekara ezarriko da."
 
-#: blobs/models.py:55
+#: blobs/models.py:58
 msgid "Remote file"
 msgstr "Hurruneko fitxategia"
+
+#: blobs/models.py:73
+msgid "Blobs should have either a local or a remote file."
+msgstr ""
 
 #: blobs/models.py:83
 msgid "Pending"
@@ -173,53 +185,57 @@ msgstr "{blob} igoera"
 msgid "Main content"
 msgstr "Eduki nagusia"
 
-#: dashboard.py:14 templates/base.html:23
+#: dashboard.py:14 templates/base.html:24
 #: templates/news/newspodcast_list.html:4
 msgid "News"
 msgstr "Berriak"
 
-#: dashboard.py:21 templates/base.html:24
+#: dashboard.py:21 templates/base.html:25
 msgid "Radio"
 msgstr "Irratia"
 
-#: dashboard.py:42 flatpages/models.py:20
+#: dashboard.py:38
+msgid "Others"
+msgstr ""
+
+#: dashboard.py:51 flatpages/models.py:20
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: dashboard.py:52 templates/base.html:28
+#: dashboard.py:58 templates/base.html:29
 #: templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
 
-#: dashboard.py:60
-msgid "Blobs"
-msgstr "Audioak"
-
-#: dashboard.py:68 widgets/models.py:13
+#: dashboard.py:65 widgets/models.py:13
 msgid "Widgets"
 msgstr "Widgetak"
 
-#: dashboard.py:76
+#: dashboard.py:75
+msgid "Blobs"
+msgstr "Audioak"
+
+#: dashboard.py:83
 msgid "Admin"
 msgstr "Kudeaketa"
 
-#: dashboard.py:84
+#: dashboard.py:91
 msgid "Support"
 msgstr "Laguntza"
 
-#: dashboard.py:88
+#: dashboard.py:95
 msgid "User documentation"
 msgstr "Erabiltzaileentzako dokumentazioa"
 
-#: dashboard.py:93
+#: dashboard.py:100
 msgid "Contact"
 msgstr "Kontaktua"
 
-#: dashboard.py:101
+#: dashboard.py:108
 msgid "Latest development changes"
 msgstr "Azkeneko garapen aldaketak"
 
-#: dashboard.py:108
+#: dashboard.py:115
 msgid "Recent Actions"
 msgstr "Azkeneko aldaketak"
 
@@ -229,7 +245,6 @@ msgstr "Data eta Ordua"
 
 #: events/admin.py:16 news/admin.py:22 news/admin.py:37 projects/admin.py:25
 #: projects/admin.py:40 radio/admin.py:31 radio/admin.py:46
-#: templates/archive/search.html:31
 msgid "Details"
 msgstr "Xehetasunak"
 
@@ -237,7 +252,7 @@ msgstr "Xehetasunak"
 msgid "Event"
 msgstr "Gertakaria"
 
-#: events/models.py:117 shows/models.py:97
+#: events/models.py:117 shows/models.py:98
 msgid "Title"
 msgstr "Izenburua"
 
@@ -249,8 +264,8 @@ msgstr "Ordua"
 msgid "Leave blank if all day event."
 msgstr "Utzi hutsik egun osoko gertakaria bada."
 
-#: events/models.py:123 schedule/models.py:19 shows/models.py:72
-#: shows/models.py:99
+#: events/models.py:123 schedule/models.py:18 shows/models.py:73
+#: shows/models.py:100
 msgid "Description"
 msgstr "Deskribapena"
 
@@ -258,15 +273,15 @@ msgstr "Deskribapena"
 msgid "Location"
 msgstr "Kokapena"
 
-#: events/models.py:125 shows/models.py:73 shows/models.py:101
+#: events/models.py:125 shows/models.py:74 shows/models.py:102
 msgid "Image"
 msgstr "Irudia"
 
-#: feeds/views.py:13
+#: feeds/views.py:17
 msgid "Latest podcasts from Antxetamedia"
 msgstr "Antxetamediako azken emankizunak"
 
-#: feeds/views.py:14
+#: feeds/views.py:18
 msgid "Latest news and radio podcasts from Antxetamedia"
 msgstr "Antxetamediako azken albiste eta irrati emankizunak"
 
@@ -426,11 +441,7 @@ msgstr "Asteko eguna"
 msgid "Beginning"
 msgstr "Hasiera"
 
-#: schedule/models.py:16
-msgid "Ending"
-msgstr "Bukaera"
-
-#: schedule/models.py:21
+#: schedule/models.py:20
 msgid ""
 "If the link is local, do not prepend the schema and the domain: use /some/"
 "path instead of https://domain.tld/some/path"
@@ -438,43 +449,51 @@ msgstr ""
 "Esteka lokala bada, ez jarri haren protokoloa eta domeinua: erabili/"
 "helbideren/bat https://domain.tld/helbideren/bat beharrean"
 
-#: shows/models.py:28 shows/models.py:47 shows/models.py:71 shows/models.py:98
+#: shows/models.py:29 shows/models.py:48 shows/models.py:72 shows/models.py:99
 msgid "Slug"
 msgstr "Helbide izena"
 
-#: shows/models.py:100
+#: shows/models.py:101
 msgid "Publication date"
 msgstr "Argitarapen data"
 
-#: templates/archive/search.html:5 templates/base.html:27
+#: templates/404.html:5
+msgid "You are lost"
+msgstr ""
+
+#: templates/404.html:11
+msgid ""
+"\n"
+"  <p>Did you lose the dial?</p>\n"
+"  <p>Go <a href=\"/\">home</a> again, and listen to the radio!</p>\n"
+"  "
+msgstr ""
+
+#: templates/archive/search.html:5 templates/base.html:28
 msgid "Archive"
 msgstr "Hemeroteka"
 
-#: templates/archive/search.html:27
-msgid "Term"
-msgstr "Hitzak"
-
-#: templates/archive/search.html:29
+#: templates/archive/search.html:32 templates/archive/search.html.py:33
 msgid "Search"
 msgstr "Bilatu"
 
-#: templates/base.html:4 templates/frontpage/frontpage.html:4
+#: templates/archive/search.html:81
+msgid ""
+"\n"
+"  Your search didn't yield any results.\n"
+"  "
+msgstr ""
+
+#: templates/base.html:4 templates/base.html.py:23
+#: templates/frontpage/frontpage.html:4
 msgid "Frontpage"
 msgstr "Azala"
 
-#: templates/base.html:42
+#: templates/base.html:43
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: templates/events/event_detail.html:17
-msgid "Future occurrences"
-msgstr "Iraganean"
-
-#: templates/events/event_detail.html:23
-msgid "Past occurrences"
-msgstr "Iraganean"
-
-#: templates/events/event_detail.html:32
+#: templates/events/event_detail.html:25
 msgid "More info"
 msgstr "Info gehiago"
 
@@ -482,7 +501,7 @@ msgstr "Info gehiago"
 msgid "Configure your frontpage"
 msgstr "Sortu zure azala"
 
-#: templates/frontpage/configure.html:10 templates/frontpage/frontpage.html:7
+#: templates/frontpage/configure.html:10 templates/frontpage/frontpage.html:8
 msgid "Configure"
 msgstr "Pertsonalizatu"
 
@@ -490,7 +509,7 @@ msgstr "Pertsonalizatu"
 msgid "Reset"
 msgstr "Garbitu"
 
-#: templates/news/newspodcast_list.html:13
+#: templates/news/newspodcast_list.html:15
 msgid "Refresh"
 msgstr "Eguneratu"
 
@@ -499,14 +518,13 @@ msgid "Previous"
 msgstr "Aurrekoa"
 
 #: templates/pagination.html:10
-#, python-format
 msgid ""
 "\n"
-"      %(current)s of %(total)s\n"
+"      %(current)s page of %(total)s\n"
 "      "
 msgstr ""
 "\n"
-"      %(current)s %(total)stil\n"
+"      %(current)s. orria %(total)stik\n"
 "      "
 
 #: templates/pagination.html:15
@@ -514,32 +532,10 @@ msgid "Next"
 msgstr "Ondorengoa"
 
 #: templates/projects/projectshow_detail.html:21
-#: templates/radio/radiopodcast_list.html:22
+#: templates/radio/radiopodcast_list.html:21
 msgid "Date"
 msgstr "Data"
 
 #: widgets/models.py:12
 msgid "Widget"
 msgstr "Widgeta"
-
-#: widgets/models.py:16
-msgid "Position"
-msgstr "Kokapena"
-
-#~ msgid "Label"
-#~ msgstr "Etiketa"
-
-#~ msgid "Labels"
-#~ msgstr "Etiketak"
-
-#~ msgid "Colour"
-#~ msgstr "Kolorea"
-
-#~ msgid "Foreground label"
-#~ msgstr "Lehen planoko etiketa"
-
-#~ msgid "Background label"
-#~ msgstr "Bigarren planoko etiketa"
-
-#~ msgid "Featured shows"
-#~ msgstr "Nabarmendutako irratsaioak"
