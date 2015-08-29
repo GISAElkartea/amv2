@@ -4,6 +4,10 @@ p#migrationNotice
   position: absolute
   bottom: 0
   width: 90%
-  margin: 0 1rem
+  padding: 0 1rem
+  margin: 0
+  +media(max-width $small)
+    font-size: .7rem
+    width: 100%
   a
     color: $green

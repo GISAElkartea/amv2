@@ -10,12 +10,14 @@ header
   background-position: center 60%
   position: relative
   +outer-container()
-  +media(max-width 769px)
+  +media(max-width $medium)
     background-size: 100%
   div#logo
     width: 10em
     padding: 3% 0
     margin: 0 auto
+    +media(max-width $small)
+      padding: 10% 0
 
 div#wrap
   background: tint(black, 95%)
@@ -25,9 +27,13 @@ div#wrap
   main
     position: relative
     +span-columns(9)
+    +media(max-width $medium)
+      +span-columns(12)
   aside
     margin: -7% 0
     +span-columns(3)
+    +media(max-width $medium)
+      +span-columns(12)
   a#configureFrontpage
     position: absolute
     top: -2em
