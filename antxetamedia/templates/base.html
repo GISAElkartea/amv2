@@ -49,6 +49,7 @@
         ondorengo helbidean aurkitu ahalko duzu webgune zaharra:
         <a href="http://iragana.antxetamedia.eus/">http://iragana.antxetamedia.eus/</a>
       </p>
+      {% include "player.html" %}
     </header>
 
     <div id="wrap">
@@ -57,7 +58,6 @@
         {% endblock content %}
       </main>
       <aside>
-        {% include "player.html" %}
         {% block aside %}
         {% endblock aside %}
         {% for widget in widget_list %}
