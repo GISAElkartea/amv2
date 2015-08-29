@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<a id="configureFrontpage" href="{% url 'configure-frontpage' %}">{% trans 'Configure' %}<i class="fa fa-cogs"></i></a>
+<a id="configureFrontpage" href="{% url 'configure-frontpage' %}"><i class="fa fa-cogs"></i>{% trans 'Configure' %}</a>
 
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
