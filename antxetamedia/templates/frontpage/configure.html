@@ -6,7 +6,9 @@
 {% block content %}
 <form method="post" action=".">
   {% csrf_token %}
-  {{ form }}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
   <input type="submit" value="{% trans 'Configure' %}" />
 </form>
 <form method="post" action="{% url 'reset-frontpage-configuration' %}">
