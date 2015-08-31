@@ -9,11 +9,12 @@ header
   background-size: 90%
   background-position: center 60%
   position: relative
-  //Will remove when remove the migration notice
-  margin-bottom: 3em
   +outer-container()
   +media(max-width $medium)
     background-size: 100%
+  //Will remove when remove the migration notice
+  +media(max-width $small)
+    margin-bottom: 3em
   div#logo
     width: 10em
     padding: 3% 0
