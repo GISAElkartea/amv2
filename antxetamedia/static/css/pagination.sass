@@ -1,8 +1,15 @@
 .pagination
   +outer-container
   .step-links
+    text-align: center
     +span-columns(4)
     +shift(4)
+    +media(max-width $medium)
+      +span-columns(6)
+      +shift(3)
+    +media(max-width $small)
+      +span-columns(8)
+      +shift(2)
     a
       padding: .5em
       background: tint(black, 60%)
