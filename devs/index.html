@@ -181,6 +181,14 @@ git reset HEAD
 <pre><code>python manage.py buildwatson
 </code></pre>
 
+<p>If you want to update the sample data, you can:</p>
+<pre><code>git checkout sample_data
+git rebase origin/master
+python manage.py dumpdata --indent 4 --natural-foreign --natural-primary &gt;| sample_data.json
+git add sample_data.json
+git add -f .media
+</code></pre>
+
 <h1 id="running-tests">Running tests</h1>
 <pre><code>python manage.py test
 </code></pre>
