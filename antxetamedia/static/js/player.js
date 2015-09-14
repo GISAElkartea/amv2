@@ -55,7 +55,6 @@
 
     document.addEventListener('play', function(event) {
       var podcast = new Podcast(event.detail.podcast);
-      $scope.playlist.clear();
       podcast.getBlobs().then(function(blobs) {
         $scope.playlist.extend(blobs);
         $scope.playlist.play();
