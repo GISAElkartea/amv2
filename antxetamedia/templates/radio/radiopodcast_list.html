@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
-{% load i18n thumbnail static %}
+{% load i18n compress thumbnail static %}
 
 {% block title %}{{ radioshow }}{% endblock title %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/folders.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endcompress js %}
+{% endblock extra_js %}
+
 
 {% block content %}
 <article>
@@ -17,26 +24,29 @@
     <p class="date">{{ radioshow.producer }}</p>
     <h1>{{ radioshow }}</h1>
     {{ radioshow.description | safe }}
-    <ul class="podcastList">
-      <li>
-        <h3>{% trans 'Podcast' %}</h3>
-        <h3>{% trans 'Date' %}</h3>
-      </li>
-      {% for radiopodcast in radiopodcast_list %}
-      <li>
-        <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if request.path == reverseurl %}checked{% endif %} />
-        <label for="tab{{ forloop.counter }}">{{ radiopodcast }}</label>
-        {% include 'podcast_control.html' with podcast=projectpodcast %}
-        <p class="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
-        <div id="tab-content{{ forloop.counter }}" class="tab-content">
-          {% thumbnail radiopodcast.image "500" as image %}
-          <img class="podcastImage" src="{{ image.url }}" />
-          {% endthumbnail %}
-          <span class="podcastText">{{ radiopodcast.description | safe }}</span>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
+    <table class="podcastList">
+      <thead>
+        <th>{% trans 'Podcast' %}</th>
+        <th>{% trans 'Date' %}</th>
+      </thead>
+      <tbody>
+        {% for radiopodcast in radiopodcast_list %}
+        <tr>
+          <td class="folder">
+            <span class="podcastTitle">{{ radiopodcast }}</span>
+            {% include 'podcast_control.html' with podcast=projectpodcast %}
+            <div class="folderContent">
+              <span class="podcastText">{{ radiopodcast.description | safe }}</span>
+              {% thumbnail radiopodcast.image "500" as image %}
+              <img class="podcastImage" src="{{ image.url }}" />
+              {% endthumbnail %}
+            </div>
+          </td>
+          <td class="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     {% include 'pagination.html' with object_list=radiopodcast_list %}
   </div>
 </article>

@@ -33,7 +33,6 @@
                 show.getAttribute('data-category-is-hidden') === "true");
       });
       if (Array.indexOf(isHidden, false) === -1) {
-        console.log("Should hide ", showGroup);
         showGroup.style.display = 'none';
       } else {
         showGroup.style.display = 'block';
