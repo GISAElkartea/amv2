@@ -35,18 +35,19 @@ div#wrap
     +span-columns(3)
     +media(max-width $medium)
       +span-columns(12)
-  a#configureFrontpage
-    position: absolute
-    top: -2em
-    left: 0
-    color: white
-    background: tint($green, 85%)
-    text-decoration: none
-    padding: 0 .5em 0 0
-    font-size: .7rem
-    i
-      background: $green
-      padding: .2em
-      margin-right: .3em
-    &:hover
-      background: $green
+
+a#configureFrontpage
+  position: absolute
+  top: 11em
+  left: 3%
+  text-decoration: none
+  font-size: .7rem
+  padding-right: .5em
+  i
+    background: $green
+    margin-right: .3em
+    color: tint($green, 90%)
+    padding: .3em .2em .25em .3em
+  &:hover
+    background: $green
+    color: tint($green, 90%)

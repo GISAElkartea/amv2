@@ -45,12 +45,11 @@
           <div id="broadcast"><a>90.5/89.7</a></div>
         </div>
       </div>
-      <p id="migrationNotice">
-        Webgune zaharraren datuen migrazioa oraindik ez dugu burutu. Ordurarte,
-        ondorengo helbidean aurkitu ahalko duzu webgune zaharra:
-        <a href="http://iragana.antxetamedia.eus/">http://iragana.antxetamedia.eus/</a>
-      </p>
       {% include "player.html" %}
+
+      {% block configure %}
+      {% endblock configure %}
+
     </header>
 
     <div id="wrap">
@@ -61,6 +60,11 @@
       <aside>
         {% block aside %}
         {% endblock aside %}
+        <p id="migrationNotice">
+          Webgune zaharraren datuen migrazioa oraindik ez dugu burutu. Ordurarte,
+          ondorengo helbidean aurkitu ahalko duzu webgune zaharra:
+          <a href="http://iragana.antxetamedia.eus/">http://iragana.antxetamedia.eus/</a>
+        </p>
         {% for widget in widget_list %}
         <div class="widget">{{ widget.content | safe }}</div>
         {% endfor %}
@@ -99,7 +103,6 @@
     <script src="{% static 'bower_components/angular/angular.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'bower_components/angular-audio/app/angular.audio.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'js/player.js' %}" type="text/javascript" charset="utf-8"></script>
-    <!--<script src="{% static 'js/tabs.js' %}" type="text/javascript" charset="utf-8"></script>--!>
     {% endcompress js %}
     {% block extra_js %}
     {% endblock extra_js %}
