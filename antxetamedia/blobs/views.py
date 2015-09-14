@@ -12,7 +12,7 @@ class PodcastBlobList(ListView):
         qs = qs.filter(content_type__app_label=self.kwargs['app_label'],
                        content_type__model=self.kwargs['model'],
                        object_id=self.kwargs['id'])
-        qs = qs.order_by('-position')
+        qs = qs.order_by('position')
         qs = qs.select_related('content_type').prefetch_related('content_object')
         return qs
 
