@@ -35,7 +35,7 @@ msgstr "Gune osokoa"
 
 #: archive/views.py:28 news/models.py:53
 msgid "News podcasts"
-msgstr "Albisteak"
+msgstr "Berriak"
 
 #: archive/views.py:29 radio/models.py:62
 msgid "Radio podcasts"
@@ -49,7 +49,7 @@ msgstr "Proiektuak"
 #: archive/views.py:31 dashboard.py:28 events/models.py:115
 #: templates/base.html:27 templates/events/event_list.html:4
 msgid "Events"
-msgstr "Gertakariak"
+msgstr "Agenda"
 
 #: blobs/admin.py:31 blobs/admin.py:49
 #: templates/projects/projectshow_detail.html:19
@@ -283,7 +283,7 @@ msgstr "Antxetamediako azken emankizunak"
 
 #: feeds/views.py:18
 msgid "Latest news and radio podcasts from Antxetamedia"
-msgstr "Antxetamediako azken albiste eta irrati emankizunak"
+msgstr "Antxetamediako azken berri eta irrati emankizunak"
 
 #: flatpages/models.py:19
 msgid "Flatpage"
@@ -331,15 +331,15 @@ msgstr "Berrien sailak"
 
 #: news/models.py:30
 msgid "News show"
-msgstr "Albistegia"
+msgstr "Berrien ekoizlea"
 
 #: news/models.py:31
 msgid "News shows"
-msgstr "Albistegiak"
+msgstr "Berrien ekoizleak"
 
 #: news/models.py:52
 msgid "News podcast"
-msgstr "Albistea"
+msgstr "Berria"
 
 #: news/models.py:55 projects/models.py:47 radio/models.py:64
 msgid "Show"
