@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n thumbnail %}
+{% load i18n thumbnail static %}
 
 {% block title %}{{ radioshow }}{% endblock title %}
 
@@ -8,11 +8,13 @@
   <div class="articleDetails">
     {% thumbnail radioshow.image "500" as image %}
     <img src="{{ image.url }}"/>
+    {% empty %}
+    <img src="{% static 'images/radio.svg' %}" alt="radio"/>
     {% endthumbnail %}
   </div>
   <div class="text">
-    <p class="date">{{ radioshow.producer }}</p>
     <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
+    <p class="date">{{ radioshow.producer }}</p>
     <h1>{{ radioshow }}</h1>
     {{ radioshow.description | safe }}
     <ul class="podcastList">
