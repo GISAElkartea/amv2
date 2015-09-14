@@ -23,10 +23,10 @@
         <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
         {% endfor %}
       </ul>
+      {% if event.link %}
+      <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
+      {% endif %}
     </section>
     <p>{{ event.description | safe }}</p>
-    {% if event.link %}
-    <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
-    {% endif %}
   </div>
 {% endblock content %}
