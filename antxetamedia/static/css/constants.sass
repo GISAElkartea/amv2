@@ -44,9 +44,10 @@ div.podcastControl
   width: 100%
   background: tint(black, 20%)
   font-size: 0
-  padding: 0 15%
   text-align: center
   i
     padding: .3em .9em
     font-size: .9rem
     color: tint(black, 80%)
+    +media(min-width $small max-width $medium)
+      font-size: .7rem
