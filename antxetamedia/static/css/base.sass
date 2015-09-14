@@ -38,11 +38,13 @@ div#wrap
 
 a#configureFrontpage
   position: absolute
-  top: 11em
   left: 3%
   text-decoration: none
   font-size: .7rem
   padding-right: .5em
+  top: 12em
+  +media(max-width $small)
+    top: 11em
   i
     background: $green
     margin-right: .3em
