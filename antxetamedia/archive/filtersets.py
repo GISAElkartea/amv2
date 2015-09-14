@@ -39,7 +39,7 @@ class RadioPodcastFilterSet(FilterSet):
 
 
 class ProjectShowFilterSet(FilterSet):
-    creation_date = PikadayDateFilter('creation_date', lookup_type='year__exact')
+    creation_date = PikadayDateFilter('creation_date', lookup_type='year__exact', label=_('Creation date'))
 
     class Meta:
         model = ProjectShow
