@@ -41,6 +41,16 @@ You may want to index this data into the search engine too:
 python manage.py buildwatson
 ```
 
+If you want to update the sample data, you can:
+
+```
+git checkout sample_data
+git rebase origin/master
+python manage.py dumpdata --indent 4 --natural-foreign --natural-primary >| sample_data.json
+git add sample_data.json
+git add -f .media
+```
+
 # Running tests
 
 ```
