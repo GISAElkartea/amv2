@@ -20,7 +20,7 @@ class PodcastBlobList(ListView):
         return {
             'id': blob.pk,
             'podcast': blob.content_object.get_blobs_url(),
-            'title': blob.content_object.title,
+            'title': str(blob),
             'image': blob.content_object.image.url if blob.content_object.image else None,
             'url': blob.link,
         }
