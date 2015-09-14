@@ -11,9 +11,13 @@
     {% endif %}
   </div>
   <div class="text">
-    <h2 class="category">{{ event.location }}</h2>
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
-    <section class="occurrences">
+    <section class="eventDetail">
+      <div class="eventLocation">
+        <h2 class="category">{% trans 'Location' %}</h2>
+        <p>{{ event.location }}</p>
+      </div>
+      <h2 class="category">{% trans 'Dates' %}</h2>
       <ul>
         {% for date in event.upcoming|islice:5 %}
         <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }} <span class="time">{{ event.time|time:"H:i" }}</time></li>
