@@ -1,4 +1,4 @@
-<div id="player">
+<div id="player" ng-app="player" ng-controller="playerController">
   <div id="playerProgress"></div>
   <div class="detail" style="background-image: url('')";/></div>
   <div id="playerDetails">
@@ -20,13 +20,14 @@
       </span>
     </div>
   </div>
-  <div id="playlist">
-    <div class="playlistItem">
+
+  <ul id="playlist">
+    <li class="playlistItem" ng-repeat="blob in playlist.queue">
       <img src="" />
-      <h1>Hau izenburu bat da</h1>
+      <h1>[[ blob.title ]]</h1>
       <span class="controls"><i class="fa fa-play"></i><i class="fa fa-download"></i><i class="fa fa-share"></i><i
           class="fa fa-trash-o"></i></span>
       <span class="moveBlob"><i class="fa fa-arrows"></i></span>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>
