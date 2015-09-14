@@ -1,4 +1,5 @@
 form.aside
+  +outer-container()
   margin: 3em 0
   label
     font-size: 1.2rem
@@ -21,6 +22,8 @@ form.aside
         text-decoration: none
       input
         display: none
+  .widget
+
 input[type="submit"]
   background: #d2d2d2
   border: none
@@ -31,8 +34,14 @@ input[type="submit"]
   padding: .5em
   cursor: pointer !important
 
-div.widget
-  width: 100%
+.widget
+  +span-columns(12)
+  +media(max-width $medium)
+    +span-columns(4)
+    p
+      width: 100%
+  +media(max-width $small)
+    +span-columns(12)
   img
     width: 100% !important
     height: auto !important

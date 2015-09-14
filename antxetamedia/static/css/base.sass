@@ -12,9 +12,6 @@ header
   +outer-container()
   +media(max-width $medium)
     background-size: 100%
-  //Will remove when remove the migration notice
-  +media(max-width $small)
-    margin-bottom: 3em
   div#logo
     width: 10em
     padding: 3% 0
@@ -32,11 +29,11 @@ div#wrap
   main
     position: relative
     +span-columns(9)
-    +media(max-width $small)
+    +media(max-width $medium)
       +span-columns(12)
   aside
     +span-columns(3)
-    +media(max-width $small)
+    +media(max-width $medium)
       +span-columns(12)
   a#configureFrontpage
     position: absolute
