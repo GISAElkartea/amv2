@@ -23,30 +23,32 @@
 
 
 {% block content %}
-<ul class="tabs">
-  {% for title, reverseurl, form in tabs %}
-  <li class="tab{% if request.path == reverseurl %} default{% endif %}"
-    data-tab="tab{{ forloop.counter }}">{{ title }} asdsad</li>
-  {% endfor %}
-</ul>
+<section id="archiveSearch">
+  <ul class="tabs">
+    {% for title, reverseurl, form in tabs %}
+    <li class="tab{% if request.path == reverseurl %} default{% endif %}"
+      data-tab="tab{{ forloop.counter }}">{{ title }}</li>
+    {% endfor %}
+  </ul>
 
-<ul class="tabsContents">
-  {% for title, reverseurl, form in tabs %}
-  <li class="tabContent" data-tab="tab{{ forloop.counter }}">
-    <form method="get" action="{{ reverseurl }}">
-      <ul>
-        <li class="mainForm">
-          <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
-          <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
-        </li>
-        {% if form %}
-        {{ form.as_ul }}
-        {% endif %}
-      </ul>
-    </form>
-  </li>
-  {% endfor %}
-</ul>
+  <ul class="tabsContents">
+    {% for title, reverseurl, form in tabs %}
+    <li class="tabContent" data-tab="tab{{ forloop.counter }}">
+      <form method="get" action="{{ reverseurl }}">
+        <ul>
+          <li class="mainForm">
+            <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
+            <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
+          </li>
+          {% if form %}
+          {{ form.as_ul }}
+          {% endif %}
+        </ul>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
 
 {% if search_results %}
