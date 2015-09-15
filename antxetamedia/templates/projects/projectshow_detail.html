@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n compress thumbnail static %}
 
 {% block title %}{{ projectshow }}{% endblock title %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/folders.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endcompress js %}
+{% endblock extra_js %}
 
 {% block content %}
 <article>
@@ -15,24 +21,34 @@
     <h1>{{ projectshow }}</h1>
     {{ projectshow.description | safe }}
     <table class="podcastList">
-      <tr>
+      <thead>
         <th>{% trans 'Podcast' %}</th>
         <th></th>
         <th>{% trans 'Date' %}</th>
-      </tr>
-      {% for projectpodcast in projectshow.projectpodcast_set.select_related %}
-      <tr>
-        <td>{{ projectpodcast }}</td>
-        {% include 'podcast_control.html' with podcast=projectpodcast %}
-        <td class="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
-      </tr>
-      <tr class="podcastDescription">
-        <td colspan="3">{% if projectpodcast.image %}<img id="podcastImage"
-          src="{{ projectpodcast.image.url }}"/>{% endif %}
-          <span class="podcastText">{{ projectpodcast.description | safe }}</span></td>
-      </tr>
-      {% endfor %}
+      </thead>
+      <tbody>
+        {% for projectpodcast in projectshow.projectpodcast_set.select_related %}
+        <tr>
+          <td class="folder">
+            <span class="podcastTitle">{{ projectpodcast }}</span>
+            <div class="folderContent">
+              <div class="articleDetails">
+                {% thumbnail projectpodcast.image "500" as image %}
+                <img class="podcastImage" src="{{ image.url }}" />
+                {% endthumbnail %}
+              </div>
+              <div class="text">
+                <span class="podcastText">{{ projectpodcast.description | safe }}</span>
+              </div>
+            </div>
+          </td>
+          <td class="podcastControls">{% include 'podcast_control.html' with podcast=projectpodcast %}</td>
+          <td class="podcastDate">{{ projectpodcast.pub_date|date:"Y-m-d" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+    {% include 'pagination.html' with object_list=projectpodcast_list %}
   </div>
 </article>
 {% endblock content %}
