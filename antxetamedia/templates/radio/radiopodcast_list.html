@@ -27,6 +27,7 @@
     <table class="podcastList">
       <thead>
         <th>{% trans 'Podcast' %}</th>
+        <th></th>
         <th>{% trans 'Date' %}</th>
       </thead>
       <tbody>
@@ -34,14 +35,18 @@
         <tr>
           <td class="folder">
             <span class="podcastTitle">{{ radiopodcast }}</span>
-            {% include 'podcast_control.html' with podcast=projectpodcast %}
             <div class="folderContent">
-              <span class="podcastText">{{ radiopodcast.description | safe }}</span>
-              {% thumbnail radiopodcast.image "500" as image %}
-              <img class="podcastImage" src="{{ image.url }}" />
-              {% endthumbnail %}
+              <div class="articleDetails">
+                {% thumbnail radiopodcast.image "500" as image %}
+                <img class="podcastImage" src="{{ image.url }}" />
+                {% endthumbnail %}
+              </div>
+              <div class="text">
+                <span class="podcastText">{{ radiopodcast.description | safe }}</span>
+              </div>
             </div>
           </td>
+          <td class="poscastControls">{% include 'podcast_control.html' with podcast=projectpodcast %}</td>
           <td class="podcastDate">{{ radiopodcast.pub_date|date:"Y-m-d" }}</td>
         </tr>
         {% endfor %}

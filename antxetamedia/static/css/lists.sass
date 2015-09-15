@@ -69,71 +69,45 @@ ul#archiveResults
 p#nothingFound
   margin-top: 14rem
 
-ul.podcastList
+.podcastList
   width: 100%
   padding: 0
   position: relative
-  li
-    border-bottom: .15rem solid tint(black, 95%)
-    font-size: 0
-    list-style: none
-    padding: 0
-    background: tint($green, 75%)
-    &:first-child
+  border-collapse: collapse
+  thead
+    th
+      padding: .2rem 1rem
       background: $green
       text-align: left
-      padding: .2rem 1rem
-      h3
-        color: white
-        font-size: 1rem
-        display: inline-block
-        width: 15%
-        margin: 0
-        &:first-child
-          width: 85%
-    input[name="tabs"]
-      display: none
-    label
-      font-weight: normal
-      font-size: 1.05rem
+      color: white
+      font-size: 1rem
       margin: 0
+  tbody
+    font-size: 0
+    td
+      background: tint($green, 80%)
+      vertical-align: top
+      padding: .5rem
+      border-bottom: tint(black, 95%) solid .15rem
+      &.folder
+        width: 65%
+      &.podcastControls
+        width: 15%
+      &.podcastDate
+        font-size: .8rem
+        width: 20%
+    span.podcastTitle
+      width: 80%
       display: inline-block
-      width: 70%
-      padding: .2rem 1rem
-    .podcastControl
-      width: 15%
+      font-size: 1rem
+    div.podcastControl
+      display: inline-block
       position: static
       background: none
-      padding: 0
-      display: inline-block
       i
-        display: none
-        color: black
-        padding: 0 .5em
-        cursor: pointer
-    &:hover
-      .podcastControl
-        i
-          display: inline-block
-    p.podcastDate
-      display: inline-block
-      width: 15%
-      margin: 0
-      padding: 0 1rem 0 0
-    .tab-content
-      z-index: 2
+        color: tint(black, 60%)
+    div.folderContent
       display: none
-      overflow: hidden
-      background: white
-      padding: 1rem
-      img
-        float: left
-        width: 10%
-        margin: 0 1rem 0 0
-      p
-        margin: 0
-    [id^="tab"]:checked + label
-      top: 0
-      padding-top: .5em
-    [id^="tab"]:checked ~ [id^="tab-content"]
-      display: block
+      font-size: 1rem
+    div.articleDetails
+      margin-top: 1rem
