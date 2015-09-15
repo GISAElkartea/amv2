@@ -9,6 +9,9 @@
 {% block extra_js %}
 {# Cannot compress this because it includes the JS I18N catalogue #}
 {{ tab_media.render_js | join:"" }}
+{% compress js %}
+<script src="{% static 'js/tabs.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endcompress js %}
 {% endblock extra_js %}
 
 
@@ -20,27 +23,31 @@
 
 
 {% block content %}
-<ul class="tabs" id="archive">
+<ul class="tabs">
   {% for title, reverseurl, form in tabs %}
-  <li>
-    <input type="radio" name="tabs" id="tab{{ forloop.counter }}" {% if request.path == reverseurl %}checked{% endif %} />
-    <label for="tab{{ forloop.counter }}">{{ title }}</label>
-    <div id="tab-content{{ forloop.counter }}" class="tab-content">
-      <form method="get" action="{{ reverseurl }}">
-        <ul>
-          <li class="mainForm">
-            <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
-            <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
-          </li>
-          {% if form %}
-          {{ form.as_ul }}
-          {% endif %}
-        </ul>
-      </form>
-    </div>
-  </li>
-{% endfor %}
+  <li class="tab{% if request.path == reverseurl %} default{% endif %}"
+    data-tab="tab{{ forloop.counter }}">{{ title }} asdsad</li>
+  {% endfor %}
 </ul>
+
+<ul class="tabsContents">
+  {% for title, reverseurl, form in tabs %}
+  <li class="tabContent" data-tab="tab{{ forloop.counter }}">
+    <form method="get" action="{{ reverseurl }}">
+      <ul>
+        <li class="mainForm">
+          <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
+          <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
+        </li>
+        {% if form %}
+        {{ form.as_ul }}
+        {% endif %}
+      </ul>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+
 
 {% if search_results %}
 <ul id="archiveResults">
