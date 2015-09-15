@@ -19,7 +19,6 @@
   ul.tabs
     > li
       width: 20%
-      background: $green
       color: black
       font-size: 1.1rem
       text-align: center
@@ -27,6 +26,8 @@
       font-variant: small-caps
       &:hover
         background: tint($green, 60%)
+      &.active
+        background: $green
   ul.tabsContents
     background: $green
     padding: 1rem
