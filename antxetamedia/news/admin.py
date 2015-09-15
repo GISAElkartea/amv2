@@ -27,13 +27,13 @@ class NewsShowAdmin(AdminImageMixin, admin.ModelAdmin):
 class NewsPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
     inlines = [BlobInline]
     date_hierarchy = 'pub_date'
-    list_display = ['title', 'show', 'pub_date']
+    list_display = ['title', 'show', 'pub_date', 'featured']
     list_display_links = ['title', 'show']
-    list_filter = ['show', 'categories', 'pub_date']
+    list_filter = ['show', 'categories', 'pub_date', 'featured']
     search_fields = ['title', 'description']
     fieldsets = [
         (None, {
-            'fields': ['title', 'show', 'categories', 'pub_date']}),
+            'fields': ['title', 'featured', 'show', 'categories', 'pub_date']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]

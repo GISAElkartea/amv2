@@ -5,6 +5,7 @@ from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
+from .fields import UniqueTrueBooleanField
 from antxetamedia.shows.models import (AbstractCategory, AbstractShow, AbstractPodcast,
                                        CategoryManager, ShowManager, PodcastQuerySet)
 
@@ -48,12 +49,13 @@ class NewsPodcast(AbstractPodcast):
     objects = NewsPodcastQuerySet.as_manager()
 
     class Meta:
-        ordering = ['-pub_date']
+        ordering = ['-featured', '-pub_date']
         verbose_name = _('News podcast')
         verbose_name_plural = _('News podcasts')
 
     show = models.ForeignKey(NewsShow, verbose_name=_('Show'))
     categories = models.ManyToManyField(NewsCategory, verbose_name=_('Categories'))
+    featured = UniqueTrueBooleanField(_('Featured'), default=False)
 
     def get_absolute_url(self):
         return reverse('news:detail', kwargs={'slug': self.slug})
