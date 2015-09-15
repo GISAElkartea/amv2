@@ -88,10 +88,10 @@ class WidgetsInFrontPage(TestCase):
     def test_quantity(self, objects):
         view = view_instance(FrontPage, self.request)
         view.get_context_data()
-        objects.all.assert_called_once_with(self.request)
+        objects.all.assert_called_once_with()
 
     def test_correct_order(self):
         view = view_instance(FrontPage, self.request)
         qs = view.get_context_data()['widget_list']
         ordering = qs.model._meta.ordering if qs.query.default_ordering else qs.query.order_by
-        self.assertEqual(ordering, ['-position'])
+        self.assertEqual(ordering, ['position'])

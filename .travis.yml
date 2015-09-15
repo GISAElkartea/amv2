@@ -5,8 +5,4 @@ python:
     - "3.4"
 cache:
     pip: true
-    directories:
-        - .hypothesis
-env:
-    - HYPOTHESIS_MAX_EXAMPLES=500
 script: "python manage.py test"
