@@ -9,12 +9,12 @@ from .models import Event
 class EventAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['title', 'location']
     list_filter = ['time', 'location']
-    search_fields = ['title', 'description', 'location']
+    search_fields = ['title', 'classification', 'location']
     fieldsets = [
         (_('Date & Time'), {
             'fields': ['time', 'recurrences']}),
         (_('Details'), {
-            'fields': ['title', 'location', 'link', 'image', 'description']}),
+            'fields': ['title', 'location', 'link', 'image', 'classification']}),
     ]
 
 
