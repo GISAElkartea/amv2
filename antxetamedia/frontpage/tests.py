@@ -1,4 +1,4 @@
-from unittest import mock
+import mock
 
 from django.core.urlresolvers import reverse
 from django.test import TestCase, RequestFactory, override_settings
