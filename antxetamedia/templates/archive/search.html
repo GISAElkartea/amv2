@@ -57,15 +57,20 @@
   <li>
     <article>
       <h1>
-        {% if result.url %}
-        <a href="{{ result.url }}">{{ result.title }}</a>
+        {% if result.get_absolute_url %}
+        <a href="{{ result.get_absolute_url }}">{{ result.title }}</a>
         {% else %}
         {{ result }}
         {% endif %}
       </h1>
 
-      {% build_absolute_uri result.meta.image as image_url %}
-      {% thumbnail image_url "500" as image %}
+      {% if result.image %}
+      {% build_absolute_uri result.image.url as absolute_image_url %}
+      {% else %}
+      {% build_absolute_uri result.meta.image as absolute_image_url %}
+      {% endif %}
+
+      {% thumbnail absolute_image_url "500" as image %}
       <div class="detail" style="background-image: url('{{ image.url }}');">
       {% empty %}
       <div class="detail">
@@ -74,7 +79,7 @@
 
       <div class="text">
         {% if result.description %}
-        {{ result.description | truncatewords_html:25 | safe }}
+        {{ result.description | truncatewords_html:128 | safe }}
         {% endif %}
       </div>
     </article>
