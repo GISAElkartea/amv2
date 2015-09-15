@@ -1,7 +1,7 @@
 (function() {
   function toggleFold(event) {
     var content = this.querySelector('.folderContent');
-    content.style.display = content.style.display !== 'none' ? 'none' : 'block';
+    content.style.display = window.getComputedStyle(content).display !== 'none' ? 'none' : 'block';
   }
 
   var folders = document.querySelectorAll('.folder');
