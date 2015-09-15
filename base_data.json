@@ -424,5 +424,61 @@
     },
     "pk": 3,
     "model": "auth.user"
+},
+{
+    "pk": 1,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "name": "cc-by-sa"
+    }
+},
+{
+    "pk": 2,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "cc-by"
+    }
+},
+{
+    "pk": 3,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by-nd/4.0/",
+        "name": "cc-by-nd"
+    }
+},
+{
+    "pk": 4,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by-nd/4.0/",
+        "name": "cc-by-nc"
+    }
+},
+{
+    "pk": 5,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "name": "cc-by-nc-nd"
+    }
+},
+{
+    "pk": 6,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "name": "cc-by-nc-sa"
+    }
+},
+{
+    "pk": 7,
+    "model": "blobs.license",
+    "fields": {
+        "link": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "name": "cc-0"
+    }
 }
 ]
