@@ -1,120 +1,97 @@
-from itertools import islice
+from unittest import mock
 
 from django.core.urlresolvers import reverse
-from django.test import override_settings
+from django.test import TestCase, RequestFactory, override_settings
 
-from hypothesis import given
-from hypothesis import strategies as st
-from hypothesis.extra.django import TestCase
+from antxetamedia.frontpage.views import FrontPage
 
-from antxetamedia.news.models import NewsPodcast
-from antxetamedia.radio.models import RadioPodcast
-from antxetamedia.events.models import Event
-from antxetamedia.widgets.models import Widget
-from antxetamedia.tests import newspodcast, radiopodcast, event, widget
+
+def view_instance(ViewClass, request, *args, **kwargs):
+    view = ViewClass()
+    view.request = request
+    view.args = args
+    view.kwargs = kwargs
+    return view
 
 
 class NewsPodcastsInFrontPage(TestCase):
     def setUp(self):
-        self.url = reverse('frontpage')
+        self.request = RequestFactory().get(reverse('frontpage'))
 
     def test_context_present(self):
-        """
-        Test that the frontpage has the news podcast list in its context.
-        """
-        response = self.client.get(self.url)
-        self.assertIn('newspodcast_list', response.context)
+        view = view_instance(FrontPage, self.request)
+        self.assertIn('newspodcast_list', view.get_context_data())
 
-    @given(st.lists(newspodcast), st.integers(min_value=0))
-    def test_correct_number_of_newspodcasts(self, newspodcasts, limit):
-        """
-        Test that the number of news podcasts on the frontpage doesn't exceed
-        the maximum allowed and, if less, equals the number of news podcasts.
-        """
-        with override_settings(FRONTPAGE_NEWSPODCASTS=limit):
-            response = self.client.get(self.url)
-            expected = max(NewsPodcast.objects.published().count(), limit)
-            self.assertLessEqual(response.context['newspodcast_list'].count(), expected)
+    @mock.patch('antxetamedia.news.models.NewsPodcast.objects')
+    def test_quantity(self, objects):
+        view = view_instance(FrontPage, self.request)
+        with override_settings(FRONTPAGE_NEWSPODCASTS=mock.sentinel.quantity):
+            view.get_context_data()
+        objects.favourites.assert_called_once_with(self.request)
+        objects.favourites().__getitem__.assert_called_once_with(slice(None, mock.sentinel.quantity, None))
 
-    @given(st.lists(newspodcast))
-    def test_correct_order_of_newspodcasts(self, newspodcasts):
-        """
-        Test that the podcasts on the frontpage are ordered by their pub date,
-        the most recent first.
-        """
-        response = self.client.get(self.url)
-        newspodcasts = list(response.context['newspodcast_list'])
-        for i in range(len(newspodcasts) - 1):
-            self.assertTrue(newspodcasts[i].pub_date >= newspodcasts[i + 1].pub_date)
+    def test_correct_order(self):
+        view = view_instance(FrontPage, self.request)
+        qs = view.get_context_data()['newspodcast_list']
+        ordering = qs.model._meta.ordering if qs.query.default_ordering else qs.query.order_by
+        self.assertEqual(ordering, ['-featured', '-pub_date'])
 
 
 class RadioPodcastsInFrontPage(TestCase):
     def setUp(self):
-        self.url = reverse('frontpage')
+        self.request = RequestFactory().get(reverse('frontpage'))
 
     def test_context_present(self):
-        response = self.client.get(self.url)
-        self.assertIn('radiopodcast_list', response.context)
+        view = view_instance(FrontPage, self.request)
+        self.assertIn('radiopodcast_list', view.get_context_data())
 
-    @given(st.lists(radiopodcast), st.integers(min_value=0))
-    def test_correct_number_of_radiopodcasts(self, radiopodcasts, limit):
-        with override_settings(FRONTPAGE_RADIOPODCASTS=limit):
-            response = self.client.get(self.url)
-            expected = max(RadioPodcast.objects.published().count(), limit)
-            self.assertLessEqual(response.context['radiopodcast_list'].count(), expected)
+    @mock.patch('antxetamedia.radio.models.RadioPodcast.objects')
+    def test_quantity(self, objects):
+        view = view_instance(FrontPage, self.request)
+        with override_settings(FRONTPAGE_RADIOPODCASTS=mock.sentinel.quantity):
+            view.get_context_data()
+        objects.favourites.assert_called_once_with(self.request)
+        objects.favourites().__getitem__.assert_called_once_with(slice(None, mock.sentinel.quantity, None))
 
-    @given(st.lists(radiopodcast))
-    def test_correct_order_of_radiopodcasts(self, radiopodcasts):
-        response = self.client.get(self.url)
-        radiopodcasts = list(response.context['radiopodcast_list'])
-        for i in range(len(radiopodcasts) - 1):
-            self.assertTrue(radiopodcasts[i].pub_date >= radiopodcasts[i + 1].pub_date)
+    def test_correct_order(self):
+        view = view_instance(FrontPage, self.request)
+        qs = view.get_context_data()['radiopodcast_list']
+        ordering = qs.model._meta.ordering if qs.query.default_ordering else qs.query.order_by
+        self.assertEqual(ordering, ['-pub_date'])
 
 
 class EventsInFrontPage(TestCase):
     def setUp(self):
-        self.url = reverse('frontpage')
+        self.request = RequestFactory().get(reverse('frontpage'))
 
     def test_context_present(self):
-        response = self.client.get(self.url)
-        self.assertIn('event_list', response.context)
+        view = view_instance(FrontPage, self.request)
+        self.assertIn('event_list', view.get_context_data())
 
-    @given(st.lists(event), st.integers(min_value=0))
-    def test_correct_number_of_events(self, events, limit):
-        with override_settings(FRONTPAGE_EVENTS=limit):
-            response = self.client.get(self.url)
-            expected = list(islice(Event.objects.upcoming(), limit))
-            actual = list(response.context['event_list'])
-            self.assertLessEqual(len(actual), len(expected))
-
-    @given(st.lists(event))
-    def test_correct_order_of_events(self, events):
-        response = self.client.get(self.url)
-        events = list(response.context['event_list'])
-        for i in range(len(events) - 1):
-            current = next(events[i].upcoming())
-            following = next(events[i + 1].upcoming())
-            self.assertLessEqual(current, following)
+    @mock.patch('antxetamedia.events.models.Event.objects')
+    def test_quantity(self, objects):
+        view = view_instance(FrontPage, self.request)
+        with override_settings(FRONTPAGE_EVENTS=mock.sentinel.quantity):
+            view.get_context_data()
+        objects.upcoming.assert_called_once_with(count=mock.sentinel.quantity)
 
 
 class WidgetsInFrontPage(TestCase):
     def setUp(self):
-        self.url = reverse('frontpage')
+        self.request = RequestFactory().get(reverse('frontpage'))
 
     def test_context_present(self):
-        response = self.client.get(self.url)
-        self.assertIn('widget_list', response.context)
+        view = view_instance(FrontPage, self.request)
+        self.assertIn('widget_list', view.get_context_data())
 
-    @given(st.lists(widget))
-    def test_all_widgets(self, widgets):
-        response = self.client.get(self.url)
-        expected = Widget.objects.all()
-        actual = response.context['widget_list']
-        self.assertEqual(len(actual), len(expected))
+    @mock.patch('antxetamedia.widgets.models.Widget.objects')
+    def test_quantity(self, objects):
+        view = view_instance(FrontPage, self.request)
+        view.get_context_data()
+        objects.all.assert_called_once_with(self.request)
 
-    @given(st.lists(widget))
-    def test_correct_order_of_widgets(self, widgets):
-        response = self.client.get(self.url)
-        widgets = response.context['widget_list']
-        for i in range(len(widgets) - 1):
-            self.assertLessEqual(widgets[i].position, widgets[i + 1].position)
+    def test_correct_order(self):
+        view = view_instance(FrontPage, self.request)
+        qs = view.get_context_data()['widget_list']
+        ordering = qs.model._meta.ordering if qs.query.default_ordering else qs.query.order_by
+        self.assertEqual(ordering, ['-position'])
