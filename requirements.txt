@@ -14,7 +14,7 @@ feedparser
 
 # Fields
 django-autoslug
-django-ckeditor
+django-ckeditor>=5.0.2
 django-recurrence
 sorl-thumbnail
 django-colorful

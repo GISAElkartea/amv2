@@ -22,6 +22,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'adminsortable2',
     'ckeditor',
+    'ckeditor_uploader',
     'compressor',
     'recurrence',
     'kombu.transport.django',

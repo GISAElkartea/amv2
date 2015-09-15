@@ -22,7 +22,7 @@ urlpatterns = [
 
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^wkeditor/', include('ckeditor_uploader.urls')),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict, name='jsi18n'),
     url(r'^404/$', handler404),
     url(r'^500/$', handler500),
