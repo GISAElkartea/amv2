@@ -56,15 +56,7 @@
   {% for result in search_results %}
   <li>
     <article>
-      <h1>
-        {% if result.get_absolute_url %}
-        <a href="{{ result.get_absolute_url }}">{{ result.title }}</a>
-        {% else %}
-        {{ result }}
-        {% endif %}
-      </h1>
-
-      <div class="text">
+      <div class="articleDetails">
         {% if result.image %}
         {% build_absolute_uri result.image.url as absolute_image_url %}
         {% else %}
@@ -74,6 +66,16 @@
         {% thumbnail absolute_image_url "500" as image %}
         <img src="{{ image.url }}"/>
         {% endthumbnail %}
+      </div>
+
+      <div class="text">
+        <h1>
+          {% if result.get_absolute_url %}
+          <a href="{{ result.get_absolute_url }}">{{ result.title }}</a>
+          {% else %}
+          {{ result }}
+          {% endif %}
+        </h1>
 
         {% if result.description %}
         {{ result.description | truncatewords_html:128 | safe }}
