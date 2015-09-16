@@ -28,7 +28,6 @@
     {% endfor %}
   </ul>
   <ul class="tabsContents">
-    {% for title, reverseurl, form in tabs %}
     <li class="tabContent" data-tab="tab{{ forloop.counter }}">
       <ul>
         {% for broadcast in weekday.list %}
@@ -40,7 +39,6 @@
         {% endfor %}
       </ul>
     </li>
-    {% endfor %}
   </ul>
 </section>
 {% endblock content %}
