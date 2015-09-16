@@ -64,20 +64,17 @@
         {% endif %}
       </h1>
 
-      {% if result.image %}
-      {% build_absolute_uri result.image.url as absolute_image_url %}
-      {% else %}
-      {% build_absolute_uri result.meta.image as absolute_image_url %}
-      {% endif %}
-
-      {% thumbnail absolute_image_url "500" as image %}
-      <div class="detail" style="background-image: url('{{ image.url }}');">
-      {% empty %}
-      <div class="detail">
-      {% endthumbnail %}
-      </div>
-
       <div class="text">
+        {% if result.image %}
+        {% build_absolute_uri result.image.url as absolute_image_url %}
+        {% else %}
+        {% build_absolute_uri result.meta.image as absolute_image_url %}
+        {% endif %}
+
+        {% thumbnail absolute_image_url "500" as image %}
+        <img src="{{ image.url }}"/>
+        {% endthumbnail %}
+
         {% if result.description %}
         {{ result.description | truncatewords_html:128 | safe }}
         {% endif %}
