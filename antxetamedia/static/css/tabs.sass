@@ -75,41 +75,40 @@
 
 
 #schedule
-  li
-    width: 14.2857%
-    label
+  ul.tabs
+    li
+      width: 14.2857%
+      font-size: 1rem
       text-align: center
       text-transform: lowercase
       font-variant: small-caps
       &:hover
         background: tint(black, 90%)
-    .tab-content
-      background: white
-    [id^="tab"]:checked + label
-      background: white
-    ul
-      padding: 0
-      li
-        width: 100%
-        border-bottom: .1rem solid black
-        padding: .5rem
-        font-size: 0
-        &:last-child
-          border: none
-        time
-          display: inline-block
-          width: 8%
-          font-size: 1rem
-        h1
-          font-weight: bold
-          text-transform: lowercase
-          font-variant: small-caps
-          display: inline-block
-          width: 30%
-          a
-            text-decoration: none
-        p
-          display: inline-block
-          width: 62%
-          color: $green
-          vertical-align: top
+      &.archive
+        background: white
+  ul.tabsContents
+    padding: 0
+    li
+      width: 100%
+      border-bottom: .1rem solid black
+      padding: .5rem
+      font-size: 0
+      &:last-child
+        border: none
+      time
+        display: inline-block
+        width: 8%
+        font-size: 1rem
+      h1
+        font-weight: bold
+        text-transform: lowercase
+        font-variant: small-caps
+        display: inline-block
+        width: 30%
+        a
+          text-decoration: none
+      p
+        display: inline-block
+        width: 62%
+        color: $green
+        vertical-align: top
