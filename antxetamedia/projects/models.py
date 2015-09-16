@@ -14,6 +14,9 @@ class ProjectProducer(AbstractProducer):
         verbose_name = _('Project producer')
         verbose_name_plural = _('Project producers')
 
+    def get_absolute_url(self):
+        return reverse('projects:list')
+
 
 class ProjectShowManager(models.Manager):
     def get_queryset(self, *args, **kwargs):

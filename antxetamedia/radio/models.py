@@ -19,6 +19,9 @@ class RadioCategory(AbstractCategory):
         verbose_name = _('Radio category')
         verbose_name_plural = _('Radio categories')
 
+    def get_absolute_url(self):
+        return reverse('radio:category', kwargs={'slug': self.slug})
+
 
 class RadioProducer(AbstractProducer):
     objects = ProducerManager()
@@ -26,6 +29,9 @@ class RadioProducer(AbstractProducer):
     class Meta:
         verbose_name = _('Radio producer')
         verbose_name_plural = _('Radio producers')
+
+    def get_absolute_url(self):
+        return reverse('radio:producer', kwargs={'slug': self.slug})
 
 
 class RadioShow(AbstractShow):
