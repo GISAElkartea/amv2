@@ -82,18 +82,22 @@
       text-align: center
       text-transform: lowercase
       font-variant: small-caps
+      padding: .5em
       &:hover
         background: tint(black, 90%)
-      &.archive
+      &.active
         background: white
   ul.tabsContents
-    padding: 0
+    background: white
+    padding: 0 1rem 1rem 1rem
     li
       width: 100%
       border-bottom: .1rem solid black
       padding: .5rem
       font-size: 0
       &:last-child
+        border: none
+      &.tabContent
         border: none
       time
         display: inline-block
