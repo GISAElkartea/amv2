@@ -1,15 +1,30 @@
 article
   +outer-container
   div.articleDetails
-    height: 1rem
+    height: 10em
     +span-columns(3)
     img
       width: 100%
     .podcastControl
       position: static
       margin: 0
+      background: none
+      a
+        display: block
+        text-align: left
+        margin-top: .5rem
+        background: tint(black, 85%)
+        cursor: pointer
+        i
+          background: $green
+          margin-right: .5rem
+        .controlsCaption
+          display: inline-block
+          font-size: 1rem
   div.text
     +span-columns(9)
+    &.full
+      +span-columns(12)
   img
     max-width: 100%
     height: auto !important

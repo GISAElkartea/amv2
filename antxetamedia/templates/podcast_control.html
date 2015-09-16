@@ -1,10 +1,12 @@
+{% load i18n static compress %}
+
 <div class="podcastControl">
   {% with num_of_podcasts=podcast.blob_set.count %}
   {% if num_of_podcasts > 0 %}
-  <a class="play" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-play"></i></a>
-  <a class="append" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-plus"></i></a>
+  <a class="play" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-play"></i><span class="controlsCaption">{% trans 'Play' %}</span></a>
+  <a class="append" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-plus"></i><span class="controlsCaption">{% trans 'Add' %}</span></a>
   {% if num_of_podcasts == 1 %}
-  <a class="download" href="{{ podcast.blob_set.all.0.link }}"><i class="fa fa-download"></i></a>
+  <a class="download" href="{{ podcast.blob_set.all.0.link }}"><i class="fa fa-download"></i><span class="controlsCaption">{% trans 'Download' %}</span></a>
   {% endif %}
   {% endif %}
   {% endwith %}
