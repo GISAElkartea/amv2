@@ -17,7 +17,7 @@
       <time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }}
         <span class="time">{{ event.time|time:"H:i" }}</time>
       <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
-      <p>{{ event.classification }}</p>
+      <p>{{ event.description | safe | truncatewords:25 }}</p>
     </div>
   </li>
   {% endfor %}

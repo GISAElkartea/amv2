@@ -15,7 +15,7 @@ class Broadcast(models.Model):
     beginning = models.TimeField(_('Beginning'))
 
     name = models.CharField(_('Name'), max_length=64)
-    description = models.CharField(_('Description'), max_length=512, blank=True)
+    classification = models.CharField(_('Classification'), max_length=512, blank=True)
     link = models.CharField(_('Link'), max_length=256, blank=True,
                             help_text=_('If the link is local, do not prepend the schema and the domain: '
                                         'use /some/path instead of https://domain.tld/some/path'))

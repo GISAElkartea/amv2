@@ -9,10 +9,10 @@ from .models import Broadcast
 class BroadcastAdmin(admin.ModelAdmin):
     list_display = ['name', 'get_link', 'weekday', 'beginning']
     list_filter = ['weekday', 'beginning']
-    search_fields = ['name', 'description']
+    search_fields = ['name', 'classification']
     fieldsets = [
         (None, {
-            'fields': [('name', 'link'), 'description']}),
+            'fields': [('name', 'link'), 'classification']}),
         (_('When'), {
             'fields': [('weekday', 'beginning')]}),
     ]

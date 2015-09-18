@@ -13,6 +13,7 @@ from django.utils.translation import ugettext as _
 from django.utils.six import python_2_unicode_compatible
 
 from autoslug.fields import AutoSlugField
+from ckeditor.fields import RichTextField
 from recurrence.fields import RecurrenceField
 from sorl.thumbnail import ImageField
 
@@ -119,7 +120,7 @@ class Event(models.Model):
     recurrences = RecurrenceField()
     time = models.TimeField(_('Time'), null=True, blank=True, help_text=_('Leave blank if all day event.'))
 
-    classification = models.CharField(_('Classification'), max_length=1024, blank=True)
+    description = RichTextField(_('Description'), blank=True)
     location = models.CharField(_('Location'), max_length=256, blank=True)
     image = ImageField(_('Image'), blank=True, upload_to='events')
     link = models.URLField(_('Link'), blank=True)
