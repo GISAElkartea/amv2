@@ -20,7 +20,7 @@
   </form>
   <form method="post" action="{% url 'reset-frontpage-configuration' %}">
     {% csrf_token %}
-    <input type="submit" value="{% trans 'Reset' %}" />
+    <input class="reset" type="submit" value="{% trans 'Reset' %}" />
   </form>
 </section>
 {% endblock content %}
