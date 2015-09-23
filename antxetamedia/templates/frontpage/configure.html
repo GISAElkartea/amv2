@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load static i18n compress %}
 
 {% block title %}{% trans 'Configure your frontpage' %}{% endblock title %}
 
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/radio_filter.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endcompress js %}
+{% endblock extra_js %}
+
 {% block content %}
-<form method="post" action=".">
-  {% csrf_token %}
-  <ul>
-    {{ form.as_ul }}
-  </ul>
-  <input type="submit" value="{% trans 'Configure' %}" />
-</form>
-<form method="post" action="{% url 'reset-frontpage-configuration' %}">
-  {% csrf_token %}
-  <input type="submit" value="{% trans 'Reset' %}" />
-</form>
+<section id="configure">
+  <form class="aside" method="post" action=".">
+    {% csrf_token %}
+    <ul>
+      {{ form.as_ul }}
+    </ul>
+    <input type="submit" value="{% trans 'Configure' %}" />
+  </form>
+  <form method="post" action="{% url 'reset-frontpage-configuration' %}">
+    {% csrf_token %}
+    <input type="submit" value="{% trans 'Reset' %}" />
+  </form>
+</section>
 {% endblock content %}
