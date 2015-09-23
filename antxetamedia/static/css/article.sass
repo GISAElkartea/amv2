@@ -51,12 +51,15 @@ article
     font-size: .8rem
     color: tint(black, 20%)
   .eventDetail
-    float: left
-    margin: 0 2rem 1rem 0
-    padding: 1em 1em 1em 0
-    h2, p
-      display: inline-block
-      margin: 0 .5em 1em 0
+    margin: 0
+    display: inline-block
+    width: 40%
+    +media(max-width $medium)
+      width: 100%
+    td
+      vertical-align: top
+      padding: 1em 1em 0 0
+
     ul
       padding: 0
       margin: 0
@@ -64,7 +67,16 @@ article
       vertical-align: top
     li
       list-style: none
-  a.link
-    color: $green
-    display: block
-    margin-top: 1em
+    a.link
+      color: $green
+      display: block
+      margin-top: 1em
+  .eventDescription
+    padding-left: 1em
+    display: inline-block
+    width: 59%
+    vertical-align: top
+    +media(max-width $medium)
+      display: block
+      padding: 0
+      width: 100%
