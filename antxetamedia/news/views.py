@@ -17,8 +17,10 @@ class NewsPodcastList(NewsPodcastMixin, ListView):
         query = Q()
         shows = self.request.GET.getlist('show')
         categories = self.request.GET.getlist('category')
-        if shows or categories:
-            query = Q(show__slug__in=shows) | Q(categories__slug__in=categories)
+        if shows:
+            query &= Q(show__slug__in=shows)
+        if categories:
+            query &= Q(categories__slug__in=categories)
         return super(NewsPodcastList, self).get_queryset().filter(query).distinct()
 
     def get_initial_data(self):

@@ -13,8 +13,10 @@ class RadioShowList(ListView):
         query = Q()
         categories = self.request.GET.getlist('category')
         producers = self.request.GET.getlist('producer')
-        if categories or producers:
-            query = Q(category__slug__in=categories) | Q(producer__slug__in=producers)
+        if categories:
+            query &= Q(category__slug__in=categories)
+        if producers:
+            query &= Q(producer__slug__in=producers)
         return super(RadioShowList, self).get_queryset().filter(query).distinct()
 
     def get_initial_data(self):

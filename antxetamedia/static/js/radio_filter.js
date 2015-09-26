@@ -15,7 +15,7 @@
     var shows = document.querySelectorAll(selector);
     Array.forEach(shows, function(show) {
       show.setAttribute(tag, !checked);
-      if (show.getAttribute('data-producer-is-hidden') === "true" &&
+      if (show.getAttribute('data-producer-is-hidden') === "true" ||
           show.getAttribute('data-category-is-hidden') === "true") {
         show.style.display = 'none';
       } else {
@@ -29,7 +29,7 @@
     Array.forEach(showGroups, function(showGroup) {
       var shows = showGroup.querySelectorAll('li.show');
       var isHidden = Array.map(shows, function(show) {
-        return (show.getAttribute('data-producer-is-hidden') === "true" &&
+        return (show.getAttribute('data-producer-is-hidden') === "true" ||
                 show.getAttribute('data-category-is-hidden') === "true");
       });
       if (Array.indexOf(isHidden, false) === -1) {
