@@ -1,8 +1,8 @@
 <div id="player" ng-app="player" ng-controller="playerController">
-  <div id="playerProgress"></div>
+  <div id="playerProgress">[[ playlist.currentBlob.currentTime ]]</div>
   <div class="detail" style="background-image: url('')";/></div>
   <div id="playerDetails">
-    <h1>Hau momentuan erreproduzitzen den podcastaren izenburua da</h1>
+    <h1>[[ playlist.currentBlob.title ]]</h1>
     <div id="playerControls">
       <i class="fa fa-step-backward"></i>
       <i class="fa fa-play"></i>
@@ -22,12 +22,18 @@
   </div>
 
   <ul id="playlist">
-    <li class="playlistItem" ng-repeat="blob in playlist.queue">
-      <img src="[[ blob.image ]]" />
+    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index">
+      <img src="[[ blob.image ]]" ng-if="blob.image"/>
       <h1>[[ blob.title ]]</h1>
-      <span class="controls"><i class="fa fa-play"></i><i class="fa fa-download"></i><i class="fa fa-share"></i><i
-          class="fa fa-trash-o"></i></span>
-      <span class="moveBlob"><i class="fa fa-arrows"></i></span>
+      <span class="controls">
+        <i class="fa fa-play" ng-click="playlist.play(blob)"></i>
+        <i class="fa fa-download"></i>
+        <i class="fa fa-share"></i>
+        <i class="fa fa-trash-o"></i>
+      </span>
+      <span class="moveBlob">
+        <i class="fa fa-arrows"></i>
+      </span>
     </li>
   </ul>
 </div>
