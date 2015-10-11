@@ -10,8 +10,8 @@
   });
 
 
-  player.factory('Blob', function(NgAudioObject) {
-    var Blob = function(options) {
+  player.factory('PodcastBlob', function(NgAudioObject) {
+    var PodcastBlob = function(options) {
       this.uuid = options.uuid;
       this.pk = options.pk;
       this.url = options.url;
@@ -20,24 +20,28 @@
       this.podcast = options.podcast;
       NgAudioObject.call(this, this.url);
     };
-    Blob.prototype = NgAudioObject.prototype;
-    Blob.prototype.constructor = Blob;
-    Blob.prototype.toJSON = function() {
+    PodcastBlob.prototype = NgAudioObject.prototype;
+    PodcastBlob.prototype.constructor = Blob;
+    PodcastBlob.prototype.toJSON = function() {
       return {uuid: this.uuid, pk: this.pk, url: this.url, title: this.title,
               image: this.image, podcast: this.podcast};
     };
-    return Blob;
+    return PodcastBlob;
   });
 
 
-  player.factory('Podcast', function($http, Blob) {
+  player.factory('Podcast', function($http, PodcastBlob) {
     var Podcast = function(url) {
       this.url = url;
     };
 
-    Podcast.prototype.getBlobs = function() {
+    Podcast.prototype.getPodcastBlobs = function() {
       return $http.get(this.url).then(function(response) {
-        return response.data;
+        var podcastBlobs = [];
+        Array.forEach(response.data, function(data) {
+          podcastBlobs.push(new PodcastBlob(data));
+        });
+        return podcastBlobs;
       });
     };
 
@@ -45,32 +49,25 @@
   });
 
 
-  player.factory('Playlist', function(Blob) {
+  player.factory('Playlist', function(PodcastBlob) {
     var Playlist = function() {
       this.queue = [];
-      this.currentBlobUUID = null;
+      this.currentPodcastBlob = null;
       this.playing = false;
-      Object.defineProperty(this, "currentBlob", {
-        get: function() {
-          var blob = this.getBlobByUUID(this.currentBlobUUID);
-          return blob ? new Blob(blob) : null;
-        },
-        set: function(blob) { this.currentBlobUUID = blob.uuid; },
-      });
     };
 
-    Playlist.prototype.getBlobByUUID = function(blobUUID) {
+    Playlist.prototype.getPodcastBlobByUUID = function(podcastBlobUUID) {
       for (var i=0; i < this.queue.length; i++) {
-        if (this.queue[i].uuid === blobUUID) {
+        if (this.queue[i].uuid === podcastBlobUUID) {
           return this.queue[i];
         }
       }
       return null;
     };
 
-    Playlist.prototype.play = function(blob) {
-      this.currentBlob = blob;
-      this.currentBlob.play();
+    Playlist.prototype.play = function(podcastBlob) {
+      this.currentPodcastBlob = podcastBlob;
+      this.currentPodcastBlob.play();
     };
 
     Playlist.prototype.next = function() {
@@ -79,8 +76,8 @@
     Playlist.prototype.previous = function() {
     };
 
-    Playlist.prototype.extend = function(blobs) {
-      Array.prototype.push.apply(this.queue, blobs);
+    Playlist.prototype.extend = function(podcastBlobs) {
+      Array.prototype.push.apply(this.queue, podcastBlobs);
     };
 
     Playlist.prototype.clear = function() {
@@ -91,14 +88,14 @@
   });
 
 
-  player.controller('playerController', function($scope, Podcast, Playlist) {
+  player.controller('playerController', function($scope, PodcastBlob, Podcast, Playlist) {
     $scope.playlist = new Playlist();
 
     window.addEventListener('beforeunload', function(event) {
       localStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
-      if ($scope.playlist.currentBlob) {
-        localStorage.setItem('currentBlobUUID', $scope.playlist.currentBlobUUID);
-        localStorage.setItem('currentTime', $scope.playlist.currentBlob.currentTime);
+      if ($scope.playlist.currentPodcastBlob) {
+        localStorage.setItem('currentPodcastBlobUUID', $scope.playlist.currentPodcastBlob.uuid);
+        localStorage.setItem('currentTime', $scope.playlist.currentPodcastBlob.currentTime);
         localStorage.setItem('playing', $scope.playlist.playing);
       }
     });
@@ -106,15 +103,15 @@
     window.addEventListener('load', function(event) {
       var queue = JSON.parse(localStorage.getItem('queue'));
       if (queue) {
-        $scope.playlist.queue = queue;
-        var currentBlobUUID = localStorage.getItem('currentBlobPk');
-        var currentBlob = $scope.playlist.getBlobByUUID(currentBlobUUID);
-        if (currentBlob) {
-          if (localStorage.getItem('playing')) {
-            $scope.playlist.play(currentBlob);
-            var currentTime = parseFloat(localStorage.getItem('currentTime'));
-            $scope.playlist.currentBlob.setCurrentTime(currentTime);
-          }
+        Array.forEach(queue, function(data) {
+          $scope.playlist.queue.push(new PodcastBlob(data));
+        });
+        var currentPodcastBlobUUID = localStorage.getItem('currentPodcastBlobUUID');
+        $scope.playlist.currentPodcastBlob = $scope.playlist.getPodcastBlobByUUID(currentPodcastBlobUUID);
+        if ($scope.playlist.currentPodcastBlob && localStorage.getItem('playing')) {
+          var currentTime = parseFloat(localStorage.getItem('currentTime'));
+          $scope.playlist.currentPodcastBlob.setCurrentTime(currentTime);
+          $scope.playlist.play($scope.playlist.currentPodcastBlob);
         }
         window.theplaylist = $scope.playlist;
         $scope.$apply();
@@ -123,16 +120,16 @@
 
     document.addEventListener('play', function(event) {
       var podcast = new Podcast(event.detail.podcast);
-      podcast.getBlobs().then(function(blobs) {
-        $scope.playlist.extend(blobs);
-        $scope.playlist.play(blobs[0]);
+      podcast.getPodcastBlobs().then(function(podcastBlobs) {
+        $scope.playlist.extend(podcastBlobs);
+        $scope.playlist.play(podcastBlobs[0]);
       });
     });
 
     document.addEventListener('append', function(event) {
       var podcast = new Podcast(event.detail.podcast);
-      podcast.getBlobs().then(function(blobs) {
-        $scope.playlist.extend(blobs);
+      podcast.getPodcastBlobs().then(function(podcastBlobs) {
+        $scope.playlist.extend(podcastBlobs);
       });
     });
   });
