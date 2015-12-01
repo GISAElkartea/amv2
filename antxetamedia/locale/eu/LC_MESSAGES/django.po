@@ -483,6 +483,9 @@ msgid ""
 "  Your search didn't yield any results.\n"
 "  "
 msgstr ""
+"\n"
+"  Zure bilaketak ez du emaitzarik izan.\n"
+"  "
 
 #: templates/base.html:4 templates/base.html.py:23
 #: templates/frontpage/frontpage.html:4
