@@ -1,9 +1,11 @@
 import mock
+import json
 
+from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.test import TestCase, RequestFactory, override_settings
 
-from antxetamedia.frontpage.views import FrontPage
+from antxetamedia.frontpage.views import FrontPage, ConfigureFrontPage
 
 
 def view_instance(ViewClass, request, *args, **kwargs):
@@ -95,3 +97,43 @@ class WidgetsInFrontPage(TestCase):
         qs = view.get_context_data()['widget_list']
         ordering = qs.model._meta.ordering if qs.query.default_ordering else qs.query.order_by
         self.assertEqual(ordering, ['position'])
+
+
+class FrontPageConfigurationTestCase(TestCase):
+    def setUp(self):
+        self.request = RequestFactory().get(reverse('configure-frontpage'))
+        self.newscategories = [6, 102, 23845, 21]
+        self.radioshows = [1, 86, 93]
+
+    def test_cookies_in_form_initial_data(self):
+        self.request.COOKIES[settings.NEWSCATEGORIES_COOKIE] = json.dumps(self.newscategories)
+        self.request.COOKIES[settings.RADIOSHOWS_COOKIE] = json.dumps(self.radioshows)
+        view = view_instance(ConfigureFrontPage, self.request)
+        form = view.get_form()
+        self.assertEqual(form.initial['newscategories'], self.newscategories)
+        self.assertEqual(form.initial['radioshows'], self.radioshows)
+
+    @mock.patch('antxetamedia.radio.models.RadioShow.objects')
+    @mock.patch('antxetamedia.news.models.NewsCategory.objects')
+    def test_form_initial_data_without_cookies(self, NewsCategoryQS, RadioShowQS):
+        NewsCategoryQS.values_list.return_value = self.newscategories
+        RadioShowQS.values_list.return_value = self.radioshows
+        view = view_instance(ConfigureFrontPage, self.request)
+        form = view.get_form()
+        self.assertEqual(form.initial['newscategories'], self.newscategories)
+        self.assertEqual(form.initial['radioshows'], self.radioshows)
+
+    @mock.patch('antxetamedia.radio.models.RadioShow.objects')
+    @mock.patch('antxetamedia.news.models.NewsCategory.objects')
+    def test_form_selection_sets_cookies(self, NewsCategoryQS, RadioShowQS):
+        request = RequestFactory().post(reverse('configure-frontpage'), {
+            'newscategories': self.newscategories,
+            'radioshows': self.radioshows,
+        })
+        NewsCategoryQS.configure_mock(**{'values_list.return_value': self.newscategories,
+                                         'iterator.return_value': self.newscategories})
+        RadioShowQS.configure_mock(**{'values_list.return_value': self.radioshows,
+                                      'iterator.return_value': self.radioshows})
+        response = ConfigureFrontPage.as_view()(request)
+        NewsCategoryQS.values_list.assert_called_once_with('pk', flat=True)
+        RadioShowQS.values_list.assert_called_once_with('pk', flat=True)
