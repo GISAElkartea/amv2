@@ -1,30 +1,32 @@
-django==1.8.4
+Django==1.9.1
 
-Pillow
-celery
+Pillow==3.1.0
+celery==3.1.19
 
 # Static files
-django-compressor
-django-libsass
+django-compressor==2.0
+django-libsass==0.6
 
 # Admin
-django-admin-sortable2
-django-grappelli
-feedparser
+# We have to wait until the branch gets merged
+# django-grappelli
+-e git+https://github.com/michalwerner/django-grappelli.git@4995c733e17a41ccf1dfdd1f2623e93c344d1632#egg=django_grappelli
+django-admin-sortable2==0.6.2
 
 # Fields
-django-autoslug
-django-ckeditor>=5.0.2
-django-recurrence
-sorl-thumbnail
-django-colorful
+django-autoslug==1.9.3
+django-ckeditor==5.0.2
+django-recurrence==1.2.0
+sorl-thumbnail==12.3
+django-colorful==1.1.0
 
 # External APIs
-boto
+boto==2.38.0
+feedparser==5.2.1
 
 # Archive
-django-watson
-django-filter
+django-watson==1.2.0
+django-filter==0.11.0
 
 # Tests
-mock
+mock==1.3.0
