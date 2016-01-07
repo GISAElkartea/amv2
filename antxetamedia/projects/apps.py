@@ -1,12 +1,11 @@
 from django.apps import AppConfig
 
-from antxetamedia import archive
-
 
 class ProjectsConfig(AppConfig):
     name = 'antxetamedia.projects'
 
     def ready(self):
-        archive.register(self.get_model('ProjectProducer'))
-        archive.register(self.get_model('ProjectShow'))
-        archive.register(self.get_model('ProjectPodcast').objects.published())
+        from antxetamedia.archive import adaptor
+        adaptor.register(self.get_model('ProjectProducer'))
+        adaptor.register(self.get_model('ProjectShow'))
+        adaptor.register(self.get_model('ProjectPodcast').objects.published())

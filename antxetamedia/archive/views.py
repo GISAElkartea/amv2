@@ -6,7 +6,7 @@ from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
 from django.utils.translation import ugettext as _
 
-import watson
+from watson import search
 from watson.views import SearchMixin as WatsonSearchView
 
 from antxetamedia.events.models import Event
@@ -44,7 +44,7 @@ class SingleModelSearchMixin(SearchMixin):
         return self.queryset
 
     def get_queryset(self):
-        return watson.filter(self.get_base_queryset(), self.query)
+        return search.filter(self.get_base_queryset(), self.query)
 
 
 class FilterSetSeachMixin(SingleModelSearchMixin):
@@ -56,7 +56,7 @@ class FilterSetSeachMixin(SingleModelSearchMixin):
 
     def get_queryset(self):
         filterset = self.filterset_class(self.request.GET, queryset=self.get_base_queryset())
-        return watson.filter(filterset.qs, self.query)
+        return search.filter(filterset.qs, self.query)
 
 
 class SearchView(SearchMixin, ListView):

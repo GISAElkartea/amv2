@@ -1,10 +1,9 @@
 from django.apps import AppConfig
 
-from antxetamedia import archive
-
 
 class EventsConfig(AppConfig):
     name = 'antxetamedia.events'
 
     def ready(self):
-        archive.register(self.get_model('Event'))
+        from antxetamedia.archive import adaptor
+        adaptor.register(self.get_model('Event'))
