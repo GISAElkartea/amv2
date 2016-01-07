@@ -1,7 +1,9 @@
 from django.conf import settings
-from django.conf.urls import include, url, handler404, handler500
+from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.i18n import javascript_catalog
+from django.views.defaults import page_not_found, server_error
 
 from .feeds.views import BlobFeed
 
@@ -23,9 +25,9 @@ urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^wkeditor/', include('ckeditor_uploader.urls')),
-    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict, name='jsi18n'),
-    url(r'^404/$', handler404),
-    url(r'^500/$', handler500),
+    url(r'^jsi18n/$', javascript_catalog, js_info_dict, name='jsi18n'),
+    url(r'^404/$', page_not_found),
+    url(r'^500/$', server_error),
 ]
 
 
