@@ -36,10 +36,10 @@ class IsUploadedFilter(admin.SimpleListFilter):
 
 
 class BlobAdmin(admin.ModelAdmin):
-    list_display = ['link', 'get_content_object', 'created', 'account', 'license', 'is_uploaded']
+    list_display = ['__str__', 'get_content_object', 'get_last_upload', 'created', 'account', 'license', 'is_uploaded']
     list_filter = [IsUploadedFilter, 'created', 'account', 'license']
-    readonly_fields = ['get_content_object', 'remote', 'created']
-    fields = ['get_content_object', 'account', 'license', 'created', 'local', 'remote']
+    readonly_fields = ['get_content_object', 'get_last_upload', 'remote', 'created']
+    fields = ['get_content_object', 'get_last_upload', 'account', 'license', 'created', 'local', 'remote']
     actions = ['retry_upload']
 
     def get_content_object(self, instance):
@@ -50,6 +50,15 @@ class BlobAdmin(admin.ModelAdmin):
             return '<a href="{}">{}</a>'.format(change_url, obj)
     get_content_object.short_description = _('Podcast')
     get_content_object.allow_tags = True
+
+    def get_last_upload(self, instance):
+        upload = BlobUpload.objects.filter(blob=instance).last()
+        if upload is not None:
+            change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=upload._meta)
+            change_url = reverse(change_name, args=(upload.pk,))
+            return '<a href="{}">{}</a>'.format(change_url, upload)
+    get_last_upload.short_description = _('Last upload')
+    get_last_upload.allow_tags = True
 
     def is_uploaded(self, instance):
         return instance.is_uploaded
@@ -66,19 +75,25 @@ class BlobAdmin(admin.ModelAdmin):
 
 
 class BlobUploadAdmin(admin.ModelAdmin):
-    list_display_links = ['get_content_object']
-    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'started', 'ended',
-                    'get_traceback']
+    list_display = ['started', 'ended', 'get_blob', 'get_state_boolean', 'get_state_display', 'get_traceback']
     list_filter = ['state']
+    fields = ['get_blob', 'state', 'started', 'ended', 'get_link', 'traceback']
+    readonly_fields = ['get_blob', 'state', 'started', 'ended', 'get_link', 'traceback']
 
-    def get_content_object(self, instance):
-        content_object = instance.blob.content_object
-        if content_object:
-            change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=content_object._meta)
-            change_url = reverse(change_name, args=(content_object.pk,))
-            return '<a href="{}">{}</a>'.format(change_url, content_object)
-    get_content_object.short_description = _('Podcast')
-    get_content_object.allow_tags = True
+    def get_blob(self, instance):
+        change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=instance.blob._meta)
+        change_url = reverse(change_name, args=(instance.blob.pk,))
+        return '<a href="{}">{}</a>'.format(change_url, instance.blob)
+    get_blob.short_description = _('Blob')
+    get_blob.allow_tags = True
+
+    def get_link(self, instance):
+        link = instance.blob.remote
+        if link:
+            return '<a href="{link}">{link}</a>'.format(link=link)
+        return ''
+    get_link.short_description = _('Link')
+    get_link.allow_tags = True
 
     def get_state_boolean(self, instance):
         return instance.has_succeeded()
