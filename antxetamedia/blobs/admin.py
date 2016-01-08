@@ -23,10 +23,8 @@ class IsUploadedFilter(admin.SimpleListFilter):
     parameter_name = 'is_uploaded'
 
     def lookups(self, request, model_admin):
-        return (
-            ('1', _('Yes')),
-            ('0', _('No')),
-        )
+        return (('1', _('Yes')),
+                ('0', _('No')))
 
     def queryset(self, request, queryset):
         if self.value() == '1':
@@ -62,7 +60,8 @@ class BlobAdmin(admin.ModelAdmin):
 
 class BlobUploadAdmin(admin.ModelAdmin):
     list_display_links = ['get_content_object']
-    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'traceback']
+    list_display = ['blob', 'get_content_object', 'get_state_boolean', 'get_state_display', 'started', 'ended',
+                    'traceback']
     list_filter = ['state']
 
     def get_content_object(self, instance):
