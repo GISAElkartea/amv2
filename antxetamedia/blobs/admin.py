@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from grappelli.forms import GrappelliSortableHiddenMixin
 
 from .models import Account, License, Blob, BlobUpload
+from .tasks import queue_blob_upload
 
 
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
@@ -39,6 +40,7 @@ class BlobAdmin(admin.ModelAdmin):
     list_filter = [IsUploadedFilter, 'created', 'account', 'license']
     readonly_fields = ['get_content_object', 'remote', 'created']
     fields = ['get_content_object', 'account', 'license', 'created', 'local', 'remote']
+    actions = ['retry_upload']
 
     def get_content_object(self, instance):
         obj = instance.content_object
@@ -53,6 +55,11 @@ class BlobAdmin(admin.ModelAdmin):
         return instance.is_uploaded
     is_uploaded.short_description = _('Has been uploaded')
     is_uploaded.boolean = True
+
+    def retry_upload(self, request, queryset):
+        for blob in queryset.iterator():
+            queue_blob_upload(Blob, blob)
+    retry_upload.short_description = _('Retry upload')
 
     def has_add_permission(self, request):
         return False
