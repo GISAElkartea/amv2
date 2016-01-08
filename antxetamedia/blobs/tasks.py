@@ -46,7 +46,7 @@ def upload_blob(blob):
                 if not exp.status == 404:
                     raise
                 metadata = getattr(blob.content_object, 'metadata', {})
-                bucket = connection.create_bucket(bucket, metadata=metadata)
+                bucket = connection.create_bucket(bucket, headers=metadata)
 
             # Create key
             key = bucket.new_key(str(blob))  # Guaranteed to be unique
