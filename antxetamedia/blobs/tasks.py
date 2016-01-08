@@ -16,12 +16,13 @@ from .models import Blob, BlobUpload
 
 @receiver(post_save, sender=Blob)
 def queue_blob_upload(sender, instance, **kwargs):
-    upload_blob.apply_async([instance], retry_policy={
-        'max_retries': 5,
-        'interval_start': 0,
-        'interval_step': 5*60,
-        'interval_max': 60*60,
-    })
+    if blob.local:
+        upload_blob.apply_async([instance], retry_policy={
+            'max_retries': 5,
+            'interval_start': 0,
+            'interval_step': 5*60,
+            'interval_max': 60*60,
+        })
 
 
 @shared_task
