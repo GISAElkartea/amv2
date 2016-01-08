@@ -18,8 +18,27 @@ class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     extra = 1
 
 
+class IsUploadedFilter(admin.SimpleListFilter):
+    title = _('Is uploaded')
+    parameter_name = 'is_uploaded'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('1', _('Yes')),
+            ('0', _('No')),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == '1':
+            return queryset.filter(local__isnull=True, remote__isnull=False)
+        if self.value() == '0':
+            return queryset.filter(local__isnull=False, remote__isnull=True)
+        return queryset
+
+
 class BlobAdmin(admin.ModelAdmin):
     list_display = ['link', 'get_content_object', 'created', 'account', 'license', 'is_uploaded']
+    list_filter = [IsUploadedFilter, 'created', 'account', 'license']
     readonly_fields = ['get_content_object', 'remote', 'created']
     fields = ['get_content_object', 'account', 'license', 'created', 'local', 'remote']
 
