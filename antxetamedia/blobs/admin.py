@@ -12,6 +12,7 @@ from .tasks import queue_blob_upload
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     model = Blob
     fields = ['position', 'account', 'license', 'created', 'local', 'remote']
+    ordering = ['position']
     sortable_field_name = 'position'
     readonly_fields = ['created', 'remote']
     ct_field = 'content_type'
