@@ -19,17 +19,23 @@ class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
 
 
 class BlobAdmin(admin.ModelAdmin):
-    list_display = ['link', 'created', 'account', 'license']
+    list_display = ['link', 'get_content_object', 'created', 'account', 'license', 'is_uploaded']
     readonly_fields = ['get_content_object', 'remote', 'created']
     fields = ['get_content_object', 'account', 'license', 'created', 'local', 'remote']
 
     def get_content_object(self, instance):
-        content_object = instance.content_object
-        change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=content_object._meta)
-        change_url = reverse(change_name, args=(content_object.pk,))
-        return '<a href="{}">{}</a>'.format(change_url, content_object)
+        obj = instance.content_object
+        if obj is not None:
+            change_name = 'admin:{meta.app_label}_{meta.model_name}_change'.format(meta=obj._meta)
+            change_url = reverse(change_name, args=(obj.pk,))
+            return '<a href="{}">{}</a>'.format(change_url, obj)
     get_content_object.short_description = _('Podcast')
     get_content_object.allow_tags = True
+
+    def is_uploaded(self, instance):
+        return instance.is_uploaded
+    is_uploaded.short_description = _('Has been uploaded')
+    is_uploaded.boolean = True
 
     def has_add_permission(self, request):
         return False

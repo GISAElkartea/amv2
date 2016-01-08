@@ -63,6 +63,10 @@ class Blob(models.Model):
         return '{self.content_object} - #{self.position}'.format(self=self)
 
     @property
+    def is_uploaded(self):
+        return bool(not self.local and self.remote)
+
+    @property
     def link(self):
         if self.local:
             return self.local.url
