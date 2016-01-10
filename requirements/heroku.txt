@@ -8,3 +8,4 @@ django-secure
 django-redis-sessions
 django-redis-cache
 django-herokuify
+pylibmc
