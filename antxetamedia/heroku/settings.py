@@ -38,7 +38,10 @@ CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jqu
 SECRET_KEY = os.environ.get('SECRET_KEY', get_random_string(
     50, 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'))
 
-INSTALLED_APPS += ['djangosecure']
+INSTALLED_APPS += [
+    'djangosecure',
+    'antxetamedia.heroku',
+]
 
 MIDDLEWARE_CLASSES += [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
