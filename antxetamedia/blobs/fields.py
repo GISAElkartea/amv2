@@ -8,8 +8,8 @@ from django.core.files.storage import default_storage
 
 
 class UploadWidget(widgets.TextInput):
-    widget = ('<p>{input}<span><a href="{link}" target="_blank">{view}</a></span><br>'
-              '<input type="file" onchange="{script}" value="upload"></p>')
+    link = '<a href="{link}" target="_blank">{view}</a>'
+    widget = '<p>{input}<span>{link}</span><br><input type="file" onchange="{script}" value="upload"></p>'
     script = "GetBlobUploader('{upload_url}', '{media_url}', '{pending}', '{view}')(this);"
 
     class Media:
@@ -21,10 +21,10 @@ class UploadWidget(widgets.TextInput):
         super(UploadWidget, self).__init__(attrs)
 
     def render(self, name, value, attrs=None):
-        attrs = attrs or {}
-        attrs['class'] = 'vTextField'
+        attrs = {} if attrs is None else attrs.copy()
         input = super(UploadWidget, self).render(name, value, attrs=attrs)
-        link = getattr(value, 'url', None) or value
+        link = getattr(value, 'url', None) if value else None
+        link = '' if link is None else self.link.format(link=link, view=_('Listen'))
         upload_url = reverse('blobs:admin_async_blob_upload', kwargs={'filename': 'filename'})
         media_url = default_storage.url('filename')
         script = self.script.format(upload_url=upload_url, media_url=media_url,
