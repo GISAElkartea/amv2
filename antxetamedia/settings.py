@@ -9,7 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,9 +41,9 @@ INSTALLED_APPS = (
     'antxetamedia.events.apps.EventsConfig',
     'antxetamedia.flatpages',
     'antxetamedia.archive',
-)
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-)
+]
 
 SITE_ID = 1
 ROOT_URLCONF = 'antxetamedia.urls'
@@ -118,7 +118,7 @@ STATICFILES_FINDERS = [
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True
 
-COMPRESS_PRECOMPILERS = (('text/x-sass', 'django_libsass.SassCompiler'),)
+COMPRESS_PRECOMPILERS = [('text/x-sass', 'django_libsass.SassCompiler')]
 
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
