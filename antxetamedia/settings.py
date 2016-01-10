@@ -120,8 +120,7 @@ CELERY_ALWAYS_EAGER = True
 
 COMPRESS_PRECOMPILERS = (('text/x-sass', 'django_libsass.SassCompiler'),)
 
-from django.contrib.staticfiles.templatetags.staticfiles import static
-CKEDITOR_JQUERY_URL = static('bower_components/jquery/dist/jquery.min.js')
+CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {

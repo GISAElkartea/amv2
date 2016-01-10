@@ -28,6 +28,7 @@ COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_OFFLINE = True
 MEDIA_URL = "https://{0}.s3.amazonaws.com/media/".format(AWS_STORAGE_BUCKET_NAME)
 STATIC_URL = "https://{0}.s3.amazonaws.com/static/".format(AWS_STORAGE_BUCKET_NAME)
+CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
 
 
 #####################
