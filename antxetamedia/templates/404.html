@@ -8,10 +8,12 @@
 
 {% block content %}
 <div id="error404">
-  {% blocktrans %}
-  <p>Did you lose the dial?</p>
-  <p>Go <a href="/">home</a> again, and listen to the radio!</p>
-  {% endblocktrans %}
+  <p>{% trans 'Did you lose the dial?' %}</p>
+  <p>
+    {% blocktrans %}
+    Go <a href="/">home</a> again, and listen to the radio!
+    {% endblocktrans %}
+  </p>
   <img src="{% static 'images/error404.svg' %}" />
 </div>
 {% endblock content %}
