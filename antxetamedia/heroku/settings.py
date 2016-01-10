@@ -20,7 +20,7 @@ DATABASES = herokuify.get_db_config()
 # Storage #
 ###########
 
-AWS_STORAGE_BUCKET_NAME = 'antxetamedia'
+AWS_STORAGE_BUCKET_NAME = 'amv2'
 AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
