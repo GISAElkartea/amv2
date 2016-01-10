@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = 'Uploads the cors.xml file to the file storage'
 
     def handle(self, *args, **kwargs):
-        filepath = os.path.join(settings.BASE_DIR, 'heroku/cors.xml')
+        filepath = os.path.join(settings.BASE_DIR, 'antxetamedia/heroku/cors.xml')
         with open(filepath) as c:
             cors = c.read()
         key = default_storage.bucket.new_key('cors')
