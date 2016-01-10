@@ -128,7 +128,8 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
             ['Format', 'Bold', 'Italic', 'Underline', 'StrikeThrough', '-',
-             'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+             'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
+             'JustifyRight', 'JustifyBlock'],
             ['Image', 'Link', 'Source'],
             ['Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Print'],
         ],

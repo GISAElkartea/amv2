@@ -1,0 +1,10 @@
+-r base.txt
+
+psycopg2
+gunicorn
+dj-database-url
+dj-static
+django-secure
+django-redis-sessions
+django-redis-cache
+django-herokuify

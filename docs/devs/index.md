@@ -2,7 +2,7 @@
 
 ```
 # Install python dependencies
-pip install -r requirements.txt
+pip install -r requirements/dev.txt
 
 # Install javascript dependencies
 cd antxetamedia/static
@@ -76,6 +76,7 @@ python manage.py test
 - Site
 - Groups
 - Users
+- Cache
 
 ## Deployment
 
