@@ -1,5 +1,9 @@
 import uuid
 
+from django.contrib.admin.views.decorators import staff_member_required
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
+from django.http import HttpResponse
 from django.http import JsonResponse
 from django.views.generic import ListView
 
@@ -34,3 +38,8 @@ class PodcastBlobList(ListView):
 
     def render_to_response(self, context, **response_kwargs):
         return JsonResponse(context['blob_list'], safe=False)
+
+
+@staff_member_required
+def admin_async_blob_upload(request, filename):
+    return HttpResponse(default_storage.save(filename, ContentFile(request.body)), 'text/plain')
