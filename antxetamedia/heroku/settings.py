@@ -11,6 +11,13 @@ DEBUG = False
 
 DATABASES = herokuify.get_db_config()
 
+INSTALLED_APPS = [
+    'collectfast',
+] + INSTALLED_APPS + [
+    'djangosecure',
+    'antxetamedia.heroku',
+]
+
 
 ###########
 # Storage #
@@ -19,6 +26,8 @@ DATABASES = herokuify.get_db_config()
 AWS_STORAGE_BUCKET_NAME = 'amv2'
 AWS_S3_CUSTOM_DOMAIN = 'amv2.s3-website-eu-west-1.amazonaws.com'
 AWS_QUERYSTRING_AUTH = False
+AWS_PRELOAD_METADATA = True
+
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
@@ -33,11 +42,6 @@ CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jqu
 
 SECRET_KEY = os.environ.get('SECRET_KEY', get_random_string(
     50, 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'))
-
-INSTALLED_APPS += [
-    'djangosecure',
-    'antxetamedia.heroku',
-]
 
 MIDDLEWARE_CLASSES += [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
