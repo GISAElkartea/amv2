@@ -76,7 +76,8 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 # Celery #
 ##########
 
-BROKER_URL = 'redis://' + os.environ.get('REDISCLOUD_URL')
+
+BROKER_URL = os.environ.get('REDISCLOUD_URL')
 CELERY_ALWAYS_EAGER = False
 
 
