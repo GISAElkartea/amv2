@@ -1,8 +1,4 @@
 import os
-try:
-    from urllib.parse import urlparse
-except ImportError:
-    from urlparse import urlparse
 
 from django.utils.crypto import get_random_string
 
@@ -65,30 +61,19 @@ ALLOWED_HOSTS = ['antxetamedia.herokuapp.com',
                  'beta.antxetamedia.info']
 
 #########
-# Redis #
+# Cache #
 #########
 
 
-REDIS_URL = os.environ.get('REDISCLOUD_URL')
-CACHES = {
-    'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': REDIS_URL,
-    }
-}
+CACHES = herokuify.get_cache_config()
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-
-redis_uri = urlparse(REDIS_URL)
-SESSION_ENGINE = 'redis_sessions.session'
-SESSION_REDIS_HOST = redis_uri.hostname
-SESSION_REDIS_PORT = redis_uri.port
-SESSION_REDIS_PASSWORD = redis_uri.password
 
 ##########
 # Celery #
 ##########
 
-BROKER_URL = 'redis://' + REDIS_URL
+BROKER_URL = 'redis://' + os.environ.get('REDISCLOUD_URL')
 CELERY_ALWAYS_EAGER = False
 
 
