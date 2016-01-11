@@ -16,7 +16,7 @@ django-admin-sortable2==0.6.2
 django-autoslug==1.9.3
 django-ckeditor==5.0.2
 django-recurrence==1.2.0
-sorl-thumbnail==12.3
+sorl-thumbnail==12.4a1
 django-colorful==1.1.0
 
 # External APIs
