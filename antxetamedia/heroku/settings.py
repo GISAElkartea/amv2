@@ -24,7 +24,7 @@ INSTALLED_APPS = [
 ###########
 
 AWS_STORAGE_BUCKET_NAME = 'amv2'
-AWS_S3_CUSTOM_DOMAIN = 'amv2.s3-website-eu-west-1.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = '{0}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
 AWS_QUERYSTRING_AUTH = False
 AWS_PRELOAD_METADATA = True
 
