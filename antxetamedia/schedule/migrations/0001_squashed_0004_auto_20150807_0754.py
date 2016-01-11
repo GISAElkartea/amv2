@@ -6,8 +6,6 @@ from django.db import models, migrations
 
 class Migration(migrations.Migration):
 
-    replaces = [('schedule', '0001_initial'), ('schedule', '0002_auto_20150729_1835'), ('schedule', '0003_auto_20150807_0733'), ('schedule', '0004_auto_20150807_0754')]
-
     dependencies = [
     ]
 
