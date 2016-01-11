@@ -3,7 +3,7 @@ from django.db.models.functions import Lower
 from django.contrib.contenttypes.fields import GenericRelation
 from django.core.urlresolvers import reverse
 from django.utils.six import python_2_unicode_compatible
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
 
 from autoslug import AutoSlugField

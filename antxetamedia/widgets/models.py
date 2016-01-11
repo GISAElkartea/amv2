@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.utils.six import python_2_unicode_compatible
 
 from ckeditor.fields import RichTextField
