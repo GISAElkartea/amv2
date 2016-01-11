@@ -69,7 +69,7 @@ ALLOWED_HOSTS = ['antxetamedia.herokuapp.com',
 
 
 CACHES = herokuify.get_cache_config()
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 
 ##########
