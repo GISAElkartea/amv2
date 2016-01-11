@@ -1,3 +1,4 @@
+import os
 import uuid
 
 from django.contrib.admin.views.decorators import staff_member_required
@@ -42,4 +43,5 @@ class PodcastBlobList(ListView):
 
 @staff_member_required
 def admin_async_blob_upload(request, filename):
-    return HttpResponse(default_storage.save(filename, ContentFile(request.body)), 'text/plain')
+    path = os.path.join(Blob._meta.get_field('local').get_directory_name(), filename)
+    return HttpResponse(default_storage.save(path, ContentFile(request.body)), 'text/plain')
