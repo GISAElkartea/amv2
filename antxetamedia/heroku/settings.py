@@ -21,6 +21,7 @@ DATABASES = herokuify.get_db_config()
 ###########
 
 AWS_STORAGE_BUCKET_NAME = 'amv2'
+AWS_S3_CUSTOM_DOMAIN = 'amv2.s3-website-eu-west-1.amazonaws.com'
 AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
