@@ -79,6 +79,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 BROKER_URL = os.environ.get('REDISCLOUD_URL')
 CELERY_ALWAYS_EAGER = False
+CELERYD_TASK_SOFT_TIME_LIMIT = 500
 
 
 ########
