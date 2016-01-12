@@ -1,2 +1,0 @@
-export PATH=$HOME/vendor/gettext/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/vendor/gettext/lib:$LD_LIBRARY_PATH
