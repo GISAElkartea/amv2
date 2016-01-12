@@ -58,7 +58,8 @@ SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['antxetamedia.herokuapp.com',
+ALLOWED_HOSTS = ['localhost',
+                 'antxetamedia.herokuapp.com',
                  'antxetamedia.info',
                  'www.antxetamedia.info',
                  'beta.antxetamedia.info']
@@ -113,3 +114,10 @@ LOGGING = {
         }
     }
 }
+
+MIDDLEWARE_CLASSES += [
+    'raygun_dot_io.middleware.RaygunDotIOMiddleware',
+]
+
+RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
+RAYGUN_API_ENABLED = False

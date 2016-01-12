@@ -10,3 +10,4 @@ django-heroku-memcacheify==1.0.0
 django-herokuify==1.0rc3
 collectfast==0.2.3
 pylibmc==1.5.0
+git+https://github.com/bopfermann/django-raygun-dot-io.git@f1249355f35b5cb9c29f63faec3aa8b4865fa7ba#egg=django_raygun_dot_io
