@@ -47,7 +47,7 @@ MIDDLEWARE_CLASSES += [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
 ]
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'DENY'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 60*60*24
