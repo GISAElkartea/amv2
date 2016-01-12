@@ -1,7 +1,7 @@
 [
 {
     "fields": {
-        "domain": "beta.antxetamedia.eus",
+        "domain": "beta.antxetamedia.info",
         "name": "Antxetamedia [BETA]"
     },
     "pk": 1,
@@ -9,7 +9,7 @@
 },
 {
     "fields": {
-        "domain": "www.antxetamedia.eus",
+        "domain": "www.antxetamedia.info",
         "name": "Antxetamedia"
     },
     "pk": 2,
