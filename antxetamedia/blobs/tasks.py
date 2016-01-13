@@ -1,7 +1,7 @@
 import traceback
 
 from django.db.models.signals import post_save
-from django.dispatch import receiver
+from django.conf import settings
 
 from celery import shared_task
 
@@ -18,7 +18,6 @@ RETRY_POLICY = {
 }
 
 
-@receiver(post_save, sender=Blob)
 def queue_blob_upload(sender, instance, **kwargs):
     if instance.local:  # Only sync if there is something to upload
         update_blob.apply_async([instance], retry_policy=RETRY_POLICY)
@@ -28,8 +27,11 @@ def queue_podcast_update(sender, instance, **kwargs):
     for blob in instance.blob_set.iterator():
         update_blob.apply_async([blob], retry_policy=RETRY_POLICY)
 
-for subclass in AbstractPodcast.__subclasses__():
-    post_save.connect(queue_podcast_update, sender=subclass)
+
+if getattr(settings, 'SYNC_BLOBS', False):
+    post_save.connect(queue_blob_upload, sender=Blob)
+    for subclass in AbstractPodcast.__subclasses__():
+        post_save.connect(queue_podcast_update, sender=subclass)
 
 
 @shared_task
