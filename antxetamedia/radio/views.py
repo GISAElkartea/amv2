@@ -1,4 +1,3 @@
-from django.db.models import Q
 from django.views.generic import ListView
 from django.shortcuts import get_object_or_404
 
@@ -9,23 +8,14 @@ from .forms import RadioShowFilter
 class RadioShowList(ListView):
     model = RadioShow
 
-    def get_queryset(self):
-        query = Q()
-        categories = self.request.GET.getlist('category')
-        producers = self.request.GET.getlist('producer')
-        if categories:
-            query &= Q(category__slug__in=categories)
-        if producers:
-            query &= Q(producer__slug__in=producers)
-        return super(RadioShowList, self).get_queryset().filter(query).distinct()
-
     def get_initial_data(self):
         categories = RadioCategory.objects.all()
         producers = RadioProducer.objects.all()
         selected_categories = self.request.GET.getlist('category')
         selected_producers = self.request.GET.getlist('producer')
-        if selected_categories or selected_producers:
+        if selected_categories:
             categories = categories.filter(slug__in=selected_categories)
+        if selected_producers:
             producers = producers.filter(slug__in=selected_producers)
         return {
             'category': categories.values_list('slug', flat=True),
