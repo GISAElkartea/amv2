@@ -21,7 +21,7 @@
   </div>
   <div class="text">
     <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
-    <p class="date">{{ radioshow.producer }}</p>
+    <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
     <h1>{{ radioshow }}</h1>
     {{ radioshow.description | safe }}
     <table class="podcastList">

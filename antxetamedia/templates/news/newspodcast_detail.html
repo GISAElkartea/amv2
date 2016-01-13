@@ -14,7 +14,7 @@
     <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
     <h2 class="category">
       {% for category in newspodcast.categories.all %}
-      <a href="{{ radioshow.category.get_absolute_url }}">{{ category }}</a>
+      <a href="{{ category.get_absolute_url }}">{{ category }}</a>
       {% if not forloop.last %}, {% endif %}
       {% endfor %}
     </h2>
