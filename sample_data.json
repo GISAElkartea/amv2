@@ -3177,7 +3177,7 @@
         "weekday": 0,
         "beginning": "09:00:00",
         "name": "Kiroletik",
-        "description": ""
+        "classification": ""
     },
     "pk": 1
 },
@@ -3188,7 +3188,7 @@
         "weekday": 0,
         "beginning": "10:00:00",
         "name": "Txingurri hotsak",
-        "description": ""
+        "classification": ""
     },
     "pk": 2
 },
@@ -3199,7 +3199,7 @@
         "weekday": 0,
         "beginning": "12:00:00",
         "name": "Gonekin ero bero",
-        "description": ""
+        "classification": ""
     },
     "pk": 3
 },
@@ -3210,7 +3210,7 @@
         "weekday": 0,
         "beginning": "13:30:00",
         "name": "Aitzurra",
-        "description": ""
+        "classification": ""
     },
     "pk": 4
 },
@@ -3221,7 +3221,7 @@
         "weekday": 0,
         "beginning": "17:00:00",
         "name": "Amapola morea",
-        "description": ""
+        "classification": ""
     },
     "pk": 5
 },
@@ -3232,7 +3232,7 @@
         "weekday": 0,
         "beginning": "18:00:00",
         "name": "Zebra bidea",
-        "description": "Zebra Bidea Antxeta, Tas Tas eta Halabedi irratiek elkar ekoizten dugun magazina da. Atsaldero entzungaia duzue Antxeta Irratiaren sintonian 16.00tatik 18.00ak arte. Bertan, gai ezberdinen inguruan, hainbat kolaboratzaile ditugu, eta, antxetamedia.info-n entzungai izango dituzue."
+        "classification": "Zebra Bidea Antxeta, Tas Tas eta Halabedi irratiek elkar ekoizten dugun magazina da. Atsaldero entzungaia duzue Antxeta Irratiaren sintonian 16.00tatik 18.00ak arte. Bertan, gai ezberdinen inguruan, hainbat kolaboratzaile ditugu, eta, antxetamedia.info-n entzungai izango dituzue."
     },
     "pk": 6
 },
@@ -3243,7 +3243,7 @@
         "weekday": 1,
         "beginning": "10:00:00",
         "name": "Hari gorria",
-        "description": ""
+        "classification": ""
     },
     "pk": 7
 },
@@ -3254,7 +3254,7 @@
         "weekday": 1,
         "beginning": "12:00:00",
         "name": "Ezker gantxoa",
-        "description": ""
+        "classification": ""
     },
     "pk": 8
 },
@@ -3265,7 +3265,7 @@
         "weekday": 1,
         "beginning": "15:00:00",
         "name": "Aiako harrikada",
-        "description": ""
+        "classification": ""
     },
     "pk": 9
 },
@@ -3276,7 +3276,7 @@
         "weekday": 1,
         "beginning": "17:00:00",
         "name": "Bazkalaurrekoa",
-        "description": ""
+        "classification": ""
     },
     "pk": 10
 },
@@ -3287,7 +3287,7 @@
         "weekday": 1,
         "beginning": "20:00:00",
         "name": "Bidasoaldeko Efemerideak",
-        "description": ""
+        "classification": ""
     },
     "pk": 11
 },
@@ -3298,7 +3298,7 @@
         "weekday": 2,
         "beginning": "13:00:00",
         "name": "Donostiko 59. Zinemaldia",
-        "description": ""
+        "classification": ""
     },
     "pk": 12
 },
@@ -3309,7 +3309,7 @@
         "weekday": 1,
         "beginning": "08:00:00",
         "name": "Elkarrizketak / Erreportaiak / Kolaborazioak",
-        "description": ""
+        "classification": ""
     },
     "pk": 13
 },
@@ -3320,7 +3320,7 @@
         "weekday": 3,
         "beginning": "15:00:00",
         "name": "Herri pilulak",
-        "description": ""
+        "classification": ""
     },
     "pk": 14
 },
@@ -3331,7 +3331,7 @@
         "weekday": 4,
         "beginning": "08:00:00",
         "name": "Kale kantoian",
-        "description": ""
+        "classification": ""
     },
     "pk": 15
 },
@@ -3342,7 +3342,7 @@
         "weekday": 5,
         "beginning": "12:00:00",
         "name": "Musika klik",
-        "description": ""
+        "classification": ""
     },
     "pk": 16
 },
@@ -3353,7 +3353,7 @@
         "weekday": 6,
         "beginning": "16:00:00",
         "name": "Gure kunka",
-        "description": ""
+        "classification": ""
     },
     "pk": 17
 },
