@@ -12,7 +12,12 @@
   </div>
   <div class="text">
     <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
-    <h2 class="category"><a href="{{ newspodcast.category.get_absolute_url }}">{{ newspodcast.categories.all | join:", " }}</a></h2>
+    <h2 class="category">
+      {% for category in newspodcast.categories.all %}
+      <a href="{{ radioshow.category.get_absolute_url }}">{{ category }}</a>
+      {% if not forloop.last %}, {% endif %}
+      {% endfor %}
+    </h2>
     <h1>{{ newspodcast }}</h1>
     <p>{{ newspodcast.description | safe }}</p>
   </div>
