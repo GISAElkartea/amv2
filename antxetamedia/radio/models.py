@@ -20,7 +20,7 @@ class RadioCategory(AbstractCategory):
         verbose_name_plural = _('Radio categories')
 
     def get_absolute_url(self):
-        return reverse('radio:category', kwargs={'slug': self.slug})
+        return reverse('radio:list') + '?category=' + self.slug
 
 
 class RadioProducer(AbstractProducer):
@@ -31,7 +31,7 @@ class RadioProducer(AbstractProducer):
         verbose_name_plural = _('Radio producers')
 
     def get_absolute_url(self):
-        return reverse('radio:producer', kwargs={'slug': self.slug})
+        return reverse('radio:list') + '?producer=' + self.slug
 
 
 class RadioShow(AbstractShow):

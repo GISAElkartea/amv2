@@ -21,7 +21,7 @@ class NewsCategory(AbstractCategory):
         verbose_name_plural = _('News categories')
 
     def get_absolute_url(self):
-        return reverse('news:category', kwargs={'slug': self.slug})
+        return reverse('news:list') + '?category=' + self.slug
 
 
 class NewsShow(AbstractShow):
@@ -32,7 +32,7 @@ class NewsShow(AbstractShow):
         verbose_name_plural = _('News shows')
 
     def get_absolute_url(self):
-        return reverse('news:show', kwargs={'slug': self.slug})
+        return reverse('news:list') + '?show=' + self.slug
 
 
 class NewsPodcastQuerySet(PodcastQuerySet):
