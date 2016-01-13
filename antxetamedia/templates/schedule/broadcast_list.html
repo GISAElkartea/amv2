@@ -36,7 +36,7 @@
         <li>
           <time>{{ broadcast.beginning }}</time>
           <h1><a href="{{ broadcast.link }}">{{ broadcast }}</a></h1>
-          <p>{{ broadcast.classification }}</p>
+          <p>{{ broadcast.classification | safe }}</p>
         </li>
         {% endfor %}
       </ul>
