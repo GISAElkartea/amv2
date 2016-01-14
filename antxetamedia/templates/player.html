@@ -23,7 +23,7 @@
 
   <ul id="playlist">
     <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index">
-      <img src="[[ blob.image ]]" ng-if="blob.image"/>
+      <img ng-src="[[ blob.image ]]" ng-if="blob.image"/>
       <h1>[[ blob.title ]]</h1>
       <span class="controls">
         <i class="fa fa-play" ng-click="playlist.play(blob)"></i>
