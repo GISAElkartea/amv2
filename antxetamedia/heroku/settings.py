@@ -100,22 +100,6 @@ EMAIL_SUBJECT_PREFIX = '[antxetamedia] '
 # Logging #
 ###########
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "console": {
-            "level": "INFO",
-            "class": "logging.StreamHandler",
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["console"],
-        }
-    }
-}
-
 MIDDLEWARE_CLASSES += [
     'raygun_dot_io.middleware.RaygunDotIOMiddleware',
 ]
