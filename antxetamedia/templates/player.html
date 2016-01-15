@@ -22,7 +22,7 @@
   </div>
 
   <ul id="playlist">
-    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index">
+    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{current: $index == playlist.current }">
       <img ng-src="[[ blob.image ]]" ng-if="blob.image"/>
       <h1>[[ blob.title ]]</h1>
       <span class="controls">
