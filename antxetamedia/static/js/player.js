@@ -1,16 +1,14 @@
 (function() {
   'use strict';
 
-  var player = angular.module('player', ['ngAudio']);
-
-
+  var player = angular.module('player', []);
   player.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
   });
 
 
-  player.factory('Podcast', function($http, ngAudio) {
+  player.factory('Podcast', function($http) {
     var Podcast = function(url) {
       this.url = url;
     };
@@ -25,8 +23,9 @@
   });
 
 
-  player.factory('Playlist', function(ngAudio) {
+  player.factory('Playlist', function($document) {
     var Playlist = function() {
+      this.audio = $document[0].createElement('audio');
       this.queue = [];
       this.currentBlob = null;
       this.playing = false;
@@ -42,16 +41,23 @@
     };
 
     Playlist.prototype.load = function(blob) {
-      blob.audio = ngAudio.load(blob.url);
-      return blob;
+      this.currentBlob = blob;
+      this.audio.src = blob.url;
     };
 
-    Playlist.prototype.play = function(blob) {
-      if (blob.audio === undefined) {
-        blob = this.load(blob);
+    Playlist.prototype.seek = function(time) {
+      var self = this;
+      function seek(event) {
+        if (!isNaN(time)) { this.fastSeek(time); }
+        // Only execute once
+        this.removeEventListener('canplay', seek);
       }
-      this.currentBlob = blob;
-      this.currentBlob.audio.play();
+      this.audio.addEventListener('canplay', seek);
+    };
+
+    Playlist.prototype.play = function() {
+      this.audio.play();
+      this.playing = true;
     };
 
     Playlist.prototype.next = function() {
@@ -68,6 +74,11 @@
       this.queue.splice(0, this.queue.length);
     };
 
+    Playlist.prototype.resume = function(currentBlobUUID, currentTime, playing) {
+      this.load(this.getBlobByUUID(currentBlobUUID));
+      if (!isNaN(currentTime)) { this.seek(currentTime); }
+      if (playing) { this.audio.autoplay = true; }
+    };
     return Playlist;
   });
 
@@ -78,17 +89,11 @@
     var queue = JSON.parse(localStorage.getItem('queue'));
     if (queue) {
       $scope.playlist.queue = queue;
-      var currentBlobUUID = localStorage.getItem('currentBlobUUID');
+      var currentBlobUUID = localStorage.getItem('currentBlobUUID'),
+          currentTime = parseFloat(localStorage.getItem('currentTime')),
+          playing = localStorage.getItem('playing');
       if (currentBlobUUID) {
-        var blob = $scope.playlist.getBlobByUUID(currentBlobUUID);
-        var currentTime = parseFloat(localStorage.getItem('currentTime'));
-        blob = $scope.playlist.load(blob);
-        $scope.playlist.play(blob);
-        window.theplaylist = $scope.playlist;
-        console.log(currentTime);
-        window.theplaylist.currentBlob.audio.setCurrentTime(currentTime);
-        if (localStorage.getItem('playing')) {
-        }
+        $scope.playlist.resume(currentBlobUUID, currentTime, playing);
       }
     }
 
@@ -96,7 +101,7 @@
       localStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
       if ($scope.playlist.currentBlob) {
         localStorage.setItem('currentBlobUUID', $scope.playlist.currentBlob.uuid);
-        localStorage.setItem('currentTime', $scope.playlist.currentBlob.audio.currentTime);
+        localStorage.setItem('currentTime', $scope.playlist.audio.currentTime);
         localStorage.setItem('playing', $scope.playlist.playing);
       }
     });
@@ -105,7 +110,8 @@
       var podcast = new Podcast(event.detail.podcast);
       podcast.getBlobs().then(function(blobs) {
         $scope.playlist.extend(blobs);
-        $scope.playlist.play(blobs[0]);
+        $scope.playlist.load(blobs[0]);
+        $scope.playlist.play();
       });
     });
 
