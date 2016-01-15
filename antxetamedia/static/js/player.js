@@ -27,22 +27,13 @@
     var Playlist = function() {
       this.audio = $document[0].createElement('audio');
       this.queue = [];
-      this.currentBlob = null;
+      this.current = null;
       this.playing = false;
     };
 
-    Playlist.prototype.getBlobByUUID = function(blobUUID) {
-      for (var i=0; i < this.queue.length; i++) {
-        if (this.queue[i].uuid === blobUUID) {
-          return this.queue[i];
-        }
-      }
-      return null;
-    };
-
-    Playlist.prototype.load = function(blob) {
-      this.currentBlob = blob;
-      this.audio.src = blob.url;
+    Playlist.prototype.load = function(position) {
+      this.current = position;
+      this.audio.src = this.queue[position].url;
     };
 
     Playlist.prototype.seek = function(time) {
@@ -55,15 +46,27 @@
       this.audio.addEventListener('canplay', seek);
     };
 
-    Playlist.prototype.play = function() {
+    Playlist.prototype.play = function(position) {
+      if (typeof position !== 'undefined') {
+        this.load(position);
+      } else if (this.current === null) {
+        this.load(0);
+      }
       this.audio.play();
       this.playing = true;
     };
 
+    Playlist.prototype.pause = function() {
+      this.audio.pause();
+      this.playing = false;
+    };
+
     Playlist.prototype.next = function() {
+      this.play((this.current + 1) % this.queue.length);
     };
 
     Playlist.prototype.previous = function() {
+      this.play((this.queue.length + this.current - 1) % this.queue.length);
     };
 
     Playlist.prototype.extend = function(blobs) {
@@ -74,10 +77,10 @@
       this.queue.splice(0, this.queue.length);
     };
 
-    Playlist.prototype.resume = function(currentBlobUUID, currentTime, playing) {
-      this.load(this.getBlobByUUID(currentBlobUUID));
+    Playlist.prototype.resume = function(position, currentTime, playing) {
+      this.load(position);
       if (!isNaN(currentTime)) { this.seek(currentTime); }
-      if (playing) { this.audio.autoplay = true; }
+      if (playing) { this.audio.autoplay = true; this.playing = true; }
     };
     return Playlist;
   });
@@ -89,18 +92,18 @@
     var queue = JSON.parse(localStorage.getItem('queue'));
     if (queue) {
       $scope.playlist.queue = queue;
-      var currentBlobUUID = localStorage.getItem('currentBlobUUID'),
+      var currentPosition = localStorage.getItem('currentPosition'),
           currentTime = parseFloat(localStorage.getItem('currentTime')),
           playing = localStorage.getItem('playing');
-      if (currentBlobUUID) {
-        $scope.playlist.resume(currentBlobUUID, currentTime, playing);
+      if (currentPosition !== null) {
+        $scope.playlist.resume(currentPosition, currentTime, playing);
       }
     }
 
     window.addEventListener('beforeunload', function(event) {
       localStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
-      if ($scope.playlist.currentBlob) {
-        localStorage.setItem('currentBlobUUID', $scope.playlist.currentBlob.uuid);
+      if ($scope.playlist.current !== null) {
+        localStorage.setItem('currentPosition', $scope.playlist.current);
         localStorage.setItem('currentTime', $scope.playlist.audio.currentTime);
         localStorage.setItem('playing', $scope.playlist.playing);
       }
@@ -110,8 +113,7 @@
       var podcast = new Podcast(event.detail.podcast);
       podcast.getBlobs().then(function(blobs) {
         $scope.playlist.extend(blobs);
-        $scope.playlist.load(blobs[0]);
-        $scope.playlist.play();
+        $scope.playlist.play($scope.playlist.queue.length);
       });
     });
 
