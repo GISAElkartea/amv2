@@ -78,9 +78,9 @@
     };
 
     Playlist.prototype.resume = function(position, currentTime, playing) {
+      this.audio.autoplay = this.playing = playing;
       this.load(position);
       if (!isNaN(currentTime)) { this.seek(currentTime); }
-      if (playing) { this.audio.autoplay = true; this.playing = true; }
     };
     return Playlist;
   });
@@ -94,7 +94,7 @@
       $scope.playlist.queue = queue;
       var currentPosition = localStorage.getItem('currentPosition'),
           currentTime = parseFloat(localStorage.getItem('currentTime')),
-          playing = localStorage.getItem('playing');
+          playing = (localStorage.getItem('playing') === 'true');
       if (currentPosition !== null) {
         $scope.playlist.resume(currentPosition, currentTime, playing);
       }
