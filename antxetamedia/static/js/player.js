@@ -25,10 +25,12 @@
 
   player.factory('Playlist', function($document) {
     var Playlist = function() {
+      var self = this;
       this.audio = $document[0].createElement('audio');
       this.queue = [];
       this.current = null;
       this.playing = false;
+      this.audio.addEventListener('ended', function(event) { self.next(); });
     };
 
     Playlist.prototype.load = function(position) {
