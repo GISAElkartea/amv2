@@ -71,6 +71,13 @@
       this.play((this.queue.length + this.current - 1) % this.queue.length);
     };
 
+    Playlist.prototype.remove = function(position) {
+      if (position === this.current) {
+        this.pause();
+      }
+      this.queue.splice(position, 1);
+    };
+
     Playlist.prototype.extend = function(blobs) {
       Array.prototype.push.apply(this.queue, blobs);
     };
@@ -92,7 +99,7 @@
     $scope.playlist = new Playlist();
 
     var queue = JSON.parse(localStorage.getItem('queue'));
-    if (queue) {
+    if (queue && queue.length !== 0) {
       $scope.playlist.queue = queue;
       var currentPosition = localStorage.getItem('currentPosition'),
           currentTime = parseFloat(localStorage.getItem('currentTime')),
