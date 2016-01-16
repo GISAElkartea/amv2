@@ -1,5 +1,4 @@
 import os
-import uuid
 
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.files.base import ContentFile
@@ -25,7 +24,6 @@ class PodcastBlobList(ListView):
 
     def get_blob_data(self, blob):
         return {
-            'uuid': str(uuid.uuid4()),
             'pk': blob.pk,
             'podcast': blob.content_object.get_blobs_url(),
             'title': str(blob),
