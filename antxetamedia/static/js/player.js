@@ -98,6 +98,9 @@
       if (currentPosition !== null) {
         $scope.playlist.resume(currentPosition, currentTime, playing);
       }
+    } else {
+      $scope.playlist.queue.push(STREAMING_BLOB);
+      $scope.playlist.load(0);
     }
 
     window.addEventListener('beforeunload', function(event) {
