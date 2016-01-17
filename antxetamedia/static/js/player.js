@@ -8,6 +8,15 @@
   });
 
 
+  player.constant('STREAMING_BLOB', {
+      'pk': 0,
+      'podcast': '/',
+      'title': 'Antxeta Irratia zuzenean',
+      'image': '/favicon.ico',
+      'url': 'http://streaming.antxetamedia.info:8000/antxetairratia.mp3'
+  });
+
+
   player.factory('Podcast', function($http) {
     var Podcast = function(url) {
       this.url = url;
@@ -95,7 +104,7 @@
   });
 
 
-  player.controller('playerController', function($scope, Podcast, Playlist) {
+  player.controller('playerController', function($scope, Podcast, Playlist, STREAMING_BLOB) {
     $scope.playlist = new Playlist();
 
     var queue = JSON.parse(localStorage.getItem('queue'));
