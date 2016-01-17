@@ -1,7 +1,8 @@
 <CORSConfiguration>
- <CORSRule>
-   <AllowedOrigin>*</AllowedOrigin>
-   <AllowedMethod>GET</AllowedMethod>
-   <AllowedHeader>*</AllowedHeader>
- </CORSRule>
+  <CORSRule>
+    <AllowedOrigin>http://*</AllowedOrigin>
+    <AllowedOrigin>https://*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+  </CORSRule>
 </CORSConfiguration>
