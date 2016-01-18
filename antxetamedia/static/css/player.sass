@@ -30,6 +30,7 @@ div#player
     width: 80%
     display: inline-block
     padding: .5rem
+    position: relative
     h1
       font-size: .9rem
       font-weight: normal
@@ -53,12 +54,23 @@ div#player
     span#playerShare
       i
         font-size: .6rem
+  #playlistDown
+    text-align: right
+    position: absolute
+    bottom: -.6em
+    right: 0
+    padding: 0 .5rem
+    color: $green
+    font-size: 1.5rem
+    z-index: 1
+    color: tint(black, 5%)
 
 #playlist
   background: tint(black, 90%)
   padding: 0
   font-size: 0
-  .playlistItem
+  padding-top: 1rem
+  li.playlistItem
     font-size: 0
     border-bottom: .03rem solid tint(black, 60%)
     & > *
@@ -72,7 +84,7 @@ div#player
       font-weight: normal
       font-size: .9rem
     i
-      font-size: .8rem
+      font-size: .6rem
     .playlistControls
       width: 35%
       text-align: right
