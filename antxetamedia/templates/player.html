@@ -1,8 +1,8 @@
 <div id="player" ng-app="player" ng-controller="playerController">
   <div id="playerProgress">[[ playlist.currentBlob.currentTime ]]</div>
-  <div class="detail" style="background-image: url('')";/></div>
+  <div class="detail playerImage" style="background-image: url('[[ playlist.currentBlob.image ]]')";/></div>
   <div id="playerDetails">
-    <h1>[[ playlist.currentBlob.title ]]</h1>
+    <h1>bla[[ playlist.currentBlob.title ]]</h1>
     <div id="playerControls">
       <i class="fa fa-step-backward" ng-click="playlist.previous()"></i>
       <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing"></i>
@@ -23,15 +23,13 @@
 
   <ul id="playlist">
     <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{current: $index == playlist.current }">
-      <img ng-src="[[ blob.image ]]" ng-if="blob.image"/>
+      <div class="detail" style="background-image: url:('[[ blob.image ]]')"></div>
       <h1>[[ blob.title ]]</h1>
-      <span class="controls">
+      <span class="playlistControls">
         <i class="fa fa-play" ng-click="playlist.play($index);"></i>
         <i class="fa fa-download"></i>
         <i class="fa fa-share"></i>
         <i class="fa fa-trash-o" ng-click="playlist.remove($index);"></i>
-      </span>
-      <span class="moveBlob">
         <i class="fa fa-arrows"></i>
       </span>
     </li>
