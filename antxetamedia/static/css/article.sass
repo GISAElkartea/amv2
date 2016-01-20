@@ -16,7 +16,7 @@ article
         padding: .5rem
         cursor: pointer
         color: white
-        font-family: "Lobster 1.4"
+        font-family: $script
         i
           margin-right: .5rem
           color: white
@@ -56,11 +56,13 @@ article
     margin: 0
     display: inline-block
     width: 40%
+    background: tint(black, 80%)
+    padding: 0 1rem 1rem 1rem
     +media(max-width $medium)
       width: 100%
     td
       vertical-align: top
-      padding: 1em 1em 0 0
+      padding: 1rem 1rem 0 0
 
     ul
       padding: 0
@@ -72,9 +74,8 @@ article
     a.link
       color: $green
       display: block
-      margin-top: 1em
   .eventDescription
-    padding-left: 1em
+    padding-right: 1em
     display: inline-block
     width: 59%
     vertical-align: top

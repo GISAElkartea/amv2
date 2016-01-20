@@ -12,6 +12,7 @@
   </div>
   <div class="text">
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
+    <div class="eventDescription">{{ event.description | safe }}</div>
     <table class="eventDetail">
       <tr class="eventLocation">
         <td><h2 class="category">{% trans 'Location' %}</td>
@@ -35,6 +36,5 @@
         </td>
       </tr>
     </table>
-    <div class="eventDescription">{{ event.description | safe }}</div>
   </div>
 {% endblock content %}
