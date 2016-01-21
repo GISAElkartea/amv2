@@ -68,7 +68,7 @@
         {% endthumbnail %}
       </div>
 
-      <div class="text">
+      <div class="text {% if not result.image %}full{% endif %}">
         <h1>
           {% if result.get_absolute_url %}
           <a href="{{ result.get_absolute_url }}">{{ result.title }}</a>
