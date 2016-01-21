@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3534466"
-     inkscape:cx="-7.1288985"
-     inkscape:cy="81.864299"
+     inkscape:zoom="3.7008305"
+     inkscape:cx="93.287226"
+     inkscape:cy="91.812331"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:window-width="1598"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,19 +70,19 @@
        y="309.70248" />
     <text
        xml:space="preserve"
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:125%;font-family:Lato;-inkscape-font-specification:Lato;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;enable-background:accumulate"
-       x="225.44649"
-       y="402.16092"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.35287571px;line-height:125%;font-family:Lato;-inkscape-font-specification:Lato;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;enable-background:accumulate"
+       x="230.33768"
+       y="395.48679"
        id="text4354"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4356"
-         x="225.44649"
-         y="402.16092"
+         x="230.33768"
+         y="395.48679"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Lobster 1.4';-inkscape-font-specification:'Lobster 1.4, ';fill:#ffffff">Zuzenean</tspan></text>
     <g
        id="g5230"
-       transform="matrix(1.4158414,0,0,1.4158414,-227.40166,-79.908406)">
+       transform="matrix(1.1815971,0,0,1.1815971,-147.58888,-6.8264365)">
       <g
          transform="matrix(0.89740428,0,0,0.89740428,311.55889,275.31784)"
          id="g4882">
