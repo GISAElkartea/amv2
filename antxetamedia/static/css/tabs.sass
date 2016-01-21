@@ -13,7 +13,7 @@
     +transition(all 0.2s ease-in-out)
 
 .tabsContents
-  margin-bottom: 5.5rem
+  margin-bottom: 1rem
 
 #archiveSearch
   ul.tabs
@@ -29,6 +29,10 @@
       &.active
         background: $green
         color: white
+      +media(max-width $medium)
+        font-size: 1rem
+      +media(max-width $small)
+        font-size: .8rem
   ul.tabsContents
     background: $green
     padding: 1rem
