@@ -47,15 +47,14 @@ azalduko dira, lehen datorrena lehen.
 Widgetak kudeaketa gunetik sortu ahalko dira HTML pertsonalizatua txertatzeko.
 Widget hauek nahi den eran ordenatu ahalko dira.
 
-Erabiltzailea erregistratua badago, albiste eta irratsaio hauek zer albistegi
-eta programetatik hartuko diren aukeratu ahalko dezake eta "Nire Antxetamedia"
-sortuko du.
+Erabiltzaileek, nahiz eta erregistratua ez egon, albiste eta irratsaio hauek zer
+albistegi eta programetatik hartuko diren aukeratu ahalko dezake.
 
 .. image:: sketches/azala_nireantxetamedia.png
    :width: 100%
 
-Erabiltzaile erregistratuek ere azal estandarrera itzuli ahalko dute logoaren
-ondoan dagoen botoia sakatuz.
+Erabiltzaileek haien aukeraketa deuzestu eta azal estandarrera bueltatu
+daitezke:
 
 .. image:: sketches/azala_erabiltzailea.png
    :width: 100%
@@ -117,22 +116,10 @@ Erreproduktorea
 .. image:: sketches/azala_erreproduzitzailea.png
    :width: 100%
 
-Erabiltzaileek show bakoitzeko hiru aukera izango dituzte:
-
-- showaren podcast guztiak entzun.
-- showaren podcast guztiak erreprodukzio zerrenda batera gehitu:
-  - momentuan entzuten ari den zerrendara (baten bat entzuten ari bada).
-  - bere podcast gogokoen zerrendara (erregistratua badago).
-  - gordeta dituen beste zerrendetako batera (erregistratua badago).
-- showaren podcast guztiak jaitsi.
-
 Erabiltzaileek podcast bakoitzeko lau aukera izango dituzte:
 
 - podcasta erreproduzitu.
-- podcasta erreprodukzio zerrenda batera gehitu:
-  - momentuan entzuten ari den zerrendara (baten bat entzuten ari bada).
-  - bere podcast gogokoen zerrendara (erregistratua badago).
-  - gordeta dituen beste zerrendetako batera (erregistratua badago).
+- podcasta erreprodukzio zerrendara gehitu.
 - podcastaren partekatze kodea kopiatu
 - podcasta jaitsi.
 
@@ -144,33 +131,13 @@ eta bai gunean erregistratu direnak. Erreprodukzio zerrenda honek erabiltzaileei
 aukera eta kontrol ezberdinak emango dizkie:
 
 - zerrendako podcast bat entzutera pasa.
-- zerrendako podcast baten embed kodea kopiatu.
+- zerrendako podcast baten helbidea kopiatu.
 - zerrendako podcast bat jaitsi.
 - zerrendako podcast bat ezabatu.
-- zerrendako podcast bat erreprodukzio zerrenda batean gorde.
+- zerrendako podcast bat erreprodukzio zerrendan gorde.
 - zerrendako podcast bat mugitu.
 - zerrenda erreproduzitu.
 - zerrenda pausatu.
-- zerrendako podcast guztiak jaitsi.
-- zerrenda gorde (erabiltzailea erregistratua badago).
-
-Erreprodukzio zerrendak
------------------------
-
-Erabiltzaile erregistratuek beraien erreprodukzio zerrendak gorde ahal izango
-dituzte. Horrela, menu nagagusian esteka bat edukiko dute non haien
-erreprodukzio zerrenda guztiak ikusi ahalko dituzten. Horiek entzun, jaitsi,
-partekatu edota ezabatu ahal izango dituzte.
-
-HTTP REST APIa
---------------
-
-Aplikazio honek nabigatzaileei alde batetik datu gordinak eta bestetik datu
-horiek kudeatzeko logika bidaliko die. Horrela, nabigatzailearen aldeko logika
-behin bakarrik bidalia izango da nahiz eta eskaera ezberdinak gauzatu. Horrek
-nabigatzeko garaian abiadura azkarragoa edukitzea eta aurrerantzean beste
-aplikazio motak (mugikorretarako esaterako) egiteko erraztasun handiagoa izateak
-ekarriko du.
 
 Archive.org-ekin sinkronizazioa
 -------------------------------
@@ -249,60 +216,35 @@ dute.
 Diseinua
 ========
 
-Antxetamediaren webgune berriaren diseinua egiterako garaian, diseinu laua hartu dut oinarritzat (Flat design). Diseinu
-laua elementu sinpleak, tipografia eta kolore lauak erabiltzen ditu diseinu minimalista da, hirugarren dimentsioaren
-ilusioa sortzen duten elementurik erabili gabe (gradienteak, texturak eta itzalak). Diseinu mota honek, informazioaren
-garrantzia eta irakurtzeko erraztasuna du helburu. Antxetamediaren kasuan, informazioak du garrantzi argia eta gainera,
-informazio honek orrian duen banaketa argi ikustea zen nire helburu garrantzitsuena, hau da diseinu laua aukeratzeko
-arrazoi nagusia.
+Antxetamediaren webgune berriaren diseinua egiterako garaian, diseinu laua hartu
+dut oinarritzat (Flat design). Diseinu laua elementu sinpleak, tipografia eta
+kolore lauak erabiltzen ditu diseinu minimalista da, hirugarren dimentsioaren
+ilusioa sortzen duten elementurik erabili gabe (gradienteak, texturak eta
+itzalak). Diseinu mota honek, informazioaren garrantzia eta irakurtzeko
+erraztasuna du helburu. Antxetamediaren kasuan, informazioak du garrantzi argia
+eta gainera, informazio honek orrian duen banaketa argi ikustea zen nire helburu
+garrantzitsuena, hau da diseinu laua aukeratzeko arrazoi nagusia.
 
-Gainera, gaur egun modu guztietako gailuak erabiltzen ditugunez nabigatzeko, Responsive design-aren filosofia erabili
-dut, eta diseinu lauak filosofia hau ezartzeko erraztasuna ematen du. Antxetamediaren webgunean edozein gailuetan ondo
-ikustea ahalbideratzen da, gailu bakoitzean dauden beharrak kontuan hartuz.
+Gainera, gaur egun modu guztietako gailuak erabiltzen ditugunez nabigatzeko,
+Responsive design-aren filosofia erabili dut, eta diseinu lauak filosofia hau
+ezartzeko erraztasuna ematen du. Antxetamediaren webgunean edozein gailuetan
+ondo ikustea ahalbideratzen da, gailu bakoitzean dauden beharrak kontuan hartuz.
 
-Edukiaren egiturak sare sistema aintzat hartzen du, 12ko zutabearekin. Sare sistemak Responsive design-a errazten du
-jariakortasunaren bitartez, eta 12 izatearen arrazoia, konposizioaren herenen erregela erabiltzea da, herenenen
-erregelaren arabera, orriaren edukia hiru zatitan banatzen da, garrantzia handiagoa izan dezan. Honela, ordenagailuetan
-edukia hiru zutabetan banatuko da, tabletetan bitan eta mobilean batean.
+Edukiaren egiturak sare sistema aintzat hartzen du, 12ko zutabearekin. Sare
+sistemak Responsive design-a errazten du jariakortasunaren bitartez, eta 12
+izatearen arrazoia, konposizioaren herenen erregela erabiltzea da, herenenen
+erregelaren arabera, orriaren edukia hiru zatitan banatzen da, garrantzia
+handiagoa izan dezan. Honela, ordenagailuetan edukia hiru zutabetan banatuko da,
+tabletetan bitan eta mobilean batean.
 
-Edukia banderetan sartu det, bata bestearen artean ondo bereizteko. Banderen banaketa hau ia web orri guztian jarraitzen
-du, bai listetan bai artikuluen irudia eta erreprodukziorako botoiak ezartzerako garaian. Baina sekzio batzuetan,
-diseinu hau ez dut aplikatu, sekzioaren bereiztasuna adierazteko.
+Edukia banderetan sartu det, bata bestearen artean ondo bereizteko. Banderen
+banaketa hau ia web orri guztian jarraitzen du, bai listetan bai artikuluen
+irudia eta erreprodukziorako botoiak ezartzerako garaian. Baina sekzio
+batzuetan, diseinu hau ez dut aplikatu, sekzioaren bereiztasuna adierazteko.
 
-Koloreei dagokienez, gris eskala erabili dut Antxeta irratiaren logoaren kolore berdearekin batera. Gris eskala
-erabiltzearen arrazoia, webgunearen diseinuaren helburua betetzen jarraitzea da, hau da, edukiak izan dezala garrantzia,
-eta era berean, elegantzia ematea web orriari. Gainera, irudiek garrantzia berezia dutenez, kolore grisek ez diete
-irudiei garrantziarik kentzen. Baina sosoegia ez izateko, logoaren kolore berdearen ikutu alaiak sartu ditut.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Koloreei dagokienez, gris eskala erabili dut Antxeta irratiaren logoaren kolore
+berdearekin batera. Gris eskala erabiltzearen arrazoia, webgunearen diseinuaren
+helburua betetzen jarraitzea da, hau da, edukiak izan dezala garrantzia, eta era
+berean, elegantzia ematea web orriari. Gainera, irudiek garrantzia berezia
+dutenez, kolore grisek ez diete irudiei garrantziarik kentzen. Baina sosoegia ez
+izateko, logoaren kolore berdearen ikutu alaiak sartu ditut.
