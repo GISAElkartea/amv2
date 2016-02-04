@@ -22,27 +22,13 @@ hobetzeko asmoz, webgunetik mugitzeko modua aldatu egingo da guztiz eta pantaila
 konfigurazio ezberdinetara zuzendutako diseinua (*responsive design*) garatuko
 da.
 
-Haien harteko antzekotasuna dela eta, albisteen, irratsaioen eta proiektuen
+Haien arteko antzekotasuna dela eta, albisteen, irratsaioen eta proiektuen
 atalak bat egingo dira "irratia" deituko diogun atalean.
-
-Ongietorria
-===========
-
-.. image:: sketches/ongietorria.png
-   :width: 100%
-
-Erabiltzaile bat gunera lehenengo aldiz sartzean, pantaila osora zabaldutako
-ongietorri orri bat ikusiko du. Bertan, Antxetamediaren azalerako logoa,
-zuzenean entzuteko aukera eta erregistratu edo saioa hasteko aukera emango
-dizkioten estekak edukiko ditu.
-
-Erabiltzailea jada saioa hasita badu edo gunera aurretik sartu dela detektatzen
-bada ez da ongietorri orririk azalduko eta zuzenean azalera bidaliko zaio.
 
 Azala
 =====
 
-Azalean lau multzo ikusi ahal izango ditugu:
+Azalean lau multzo ikusi ahal ditzazkegu:
 
 - ezkerreko zutabe nagusian, albisteak.
 - erdiko zutabearen goialdean, agendako gertakariak.
@@ -259,3 +245,64 @@ ahal izango dute.
 
 Orri estatiko hauek irudiak, estekak eta embed kodeak txertatzeko aukera emango
 dute.
+
+Diseinua
+========
+
+Antxetamediaren webgune berriaren diseinua egiterako garaian, diseinu laua hartu dut oinarritzat (Flat design). Diseinu
+laua elementu sinpleak, tipografia eta kolore lauak erabiltzen ditu diseinu minimalista da, hirugarren dimentsioaren
+ilusioa sortzen duten elementurik erabili gabe (gradienteak, texturak eta itzalak). Diseinu mota honek, informazioaren
+garrantzia eta irakurtzeko erraztasuna du helburu. Antxetamediaren kasuan, informazioak du garrantzi argia eta gainera,
+informazio honek orrian duen banaketa argi ikustea zen nire helburu garrantzitsuena, hau da diseinu laua aukeratzeko
+arrazoi nagusia.
+
+Gainera, gaur egun modu guztietako gailuak erabiltzen ditugunez nabigatzeko, Responsive design-aren filosofia erabili
+dut, eta diseinu lauak filosofia hau ezartzeko erraztasuna ematen du. Antxetamediaren webgunean edozein gailuetan ondo
+ikustea ahalbideratzen da, gailu bakoitzean dauden beharrak kontuan hartuz.
+
+Edukiaren egiturak sare sistema aintzat hartzen du, 12ko zutabearekin. Sare sistemak Responsive design-a errazten du
+jariakortasunaren bitartez, eta 12 izatearen arrazoia, konposizioaren herenen erregela erabiltzea da, herenenen
+erregelaren arabera, orriaren edukia hiru zatitan banatzen da, garrantzia handiagoa izan dezan. Honela, ordenagailuetan
+edukia hiru zutabetan banatuko da, tabletetan bitan eta mobilean batean.
+
+Edukia banderetan sartu det, bata bestearen artean ondo bereizteko. Banderen banaketa hau ia web orri guztian jarraitzen
+du, bai listetan bai artikuluen irudia eta erreprodukziorako botoiak ezartzerako garaian. Baina sekzio batzuetan,
+diseinu hau ez dut aplikatu, sekzioaren bereiztasuna adierazteko.
+
+Koloreei dagokienez, gris eskala erabili dut Antxeta irratiaren logoaren kolore berdearekin batera. Gris eskala
+erabiltzearen arrazoia, webgunearen diseinuaren helburua betetzen jarraitzea da, hau da, edukiak izan dezala garrantzia,
+eta era berean, elegantzia ematea web orriari. Gainera, irudiek garrantzia berezia dutenez, kolore grisek ez diete
+irudiei garrantziarik kentzen. Baina sosoegia ez izateko, logoaren kolore berdearen ikutu alaiak sartu ditut.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
