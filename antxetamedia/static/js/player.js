@@ -113,8 +113,10 @@
       var currentPosition = localStorage.getItem('currentPosition'),
           currentTime = parseFloat(localStorage.getItem('currentTime')),
           playing = (localStorage.getItem('playing') === 'true');
-      if (currentPosition !== null) {
+      if (currentPosition !== null && 0 <= currentPosition && currentPosition < queue.length) {
         $scope.playlist.resume(currentPosition, currentTime, playing);
+      } else {
+        $scope.playlist.resume(0, 0, false);
       }
     } else {
       $scope.playlist.queue.push(STREAMING_BLOB);
