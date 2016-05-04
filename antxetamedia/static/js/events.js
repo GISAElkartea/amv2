@@ -8,7 +8,7 @@
   }
 
   var playButtons = document.querySelectorAll('.podcastControl .play');
-  Array.forEach(playButtons, function(playButton) {
+  Array.from(playButtons).forEach(function(playButton) {
     playButton.onclick = sendPlayEvent;
   });
 })();
@@ -23,7 +23,7 @@
   }
 
   var appendButtons = document.querySelectorAll('.podcastControl .append');
-  Array.forEach(appendButtons, function(appendButton) {
+  Array.from(appendButtons).forEach(function(appendButton) {
     appendButton.onclick = sendAppendEvent;
   });
 })();
