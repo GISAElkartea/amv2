@@ -24,4 +24,4 @@ feedparser==5.2.1
 
 # Archive
 django-watson==1.2.0
-django-filter==0.12.0
+django-filter==0.13.0
