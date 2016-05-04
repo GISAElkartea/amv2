@@ -21,12 +21,12 @@
           <i class="fa fa-download"></i>
         </span>
       </div>
-      <i id="playlistDown" class="fa fa-chevron-down"></i>
+      <i id="playlistDown" class="fa fa-chevron-down" ng-click="playlistDown = !playlistDown" ng-class="{'fa-chevron-up': playlistDown, 'fa-chevron-down': !playlistDown}"></i>
     </div>
   </div>
 
-  <ul id="playlist">
-    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{current: $index == playlist.current }">
+  <ul id="playlist" ng-init="playlistDown = false" ng-show="playlistDown">
+    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{'current': $index == playlist.current}">
       <div class="detail" style="background-image: url('[[ blob.image ]]');" ng-if="blob.image"/></div>
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
