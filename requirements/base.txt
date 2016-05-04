@@ -8,8 +8,7 @@ django-compressor==2.0
 django-libsass==0.6
 
 # Admin
-# We have to wait until the 2.8.x branch gets on pypi
--e git+https://github.com/sehmaschine/django-grappelli.git@stable/2.8.x#egg=django_grappelli
+django-grappelli==2.8.1
 django-admin-sortable2==0.6.2
 
 # Fields
