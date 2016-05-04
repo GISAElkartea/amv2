@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-10 18:23+0100\n"
+"POT-Creation-Date: 2016-05-04 10:42+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -33,6 +33,14 @@ msgstr "Sortze data"
 msgid "Enter a valid date."
 msgstr "Baliozko data bat sartu."
 
+#: antxetamedia/archive/forms.py:39
+msgid "After"
+msgstr "Aurretik"
+
+#: antxetamedia/archive/forms.py:40
+msgid "Before"
+msgstr "Ondoren"
+
 #: antxetamedia/archive/views.py:27
 msgid "Site-wide"
 msgstr "Gune osokoa"
@@ -46,13 +54,13 @@ msgid "Radio podcasts"
 msgstr "Irrati emankizunak"
 
 #: antxetamedia/archive/views.py:30 antxetamedia/dashboard.py:44
-#: antxetamedia/projects/models.py:32 antxetamedia/templates/base.html.py:27
+#: antxetamedia/projects/models.py:32 antxetamedia/templates/base.html:27
 #: antxetamedia/templates/projects/projectshow_list.html:4
 msgid "Projects"
 msgstr "Proiektuak"
 
 #: antxetamedia/archive/views.py:31 antxetamedia/dashboard.py:28
-#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html.py:28
+#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:28
 #: antxetamedia/templates/events/event_list.html:4
 msgid "Events"
 msgstr "Agenda"
@@ -227,12 +235,12 @@ msgstr "{blob} igoera"
 msgid "Main content"
 msgstr "Eduki nagusia"
 
-#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html.py:25
+#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html:25
 #: antxetamedia/templates/news/newspodcast_list.html:4
 msgid "News"
 msgstr "Berriak"
 
-#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html.py:26
+#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html:26
 msgid "Radio"
 msgstr "Irratia"
 
@@ -244,7 +252,7 @@ msgstr "Bestelakoak"
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html.py:30
+#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:30
 #: antxetamedia/templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
@@ -314,7 +322,7 @@ msgid "Description"
 msgstr "Deskribapena"
 
 #: antxetamedia/events/models.py:124
-#: antxetamedia/templates/events/event_detail.html:17
+#: antxetamedia/templates/events/event_detail.html:18
 msgid "Location"
 msgstr "Kokapena"
 
@@ -511,20 +519,6 @@ msgstr "Argitarapen data"
 msgid "You are lost"
 msgstr "Galdua zaude"
 
-#: antxetamedia/templates/404.html:11
-msgid "Did you lose the dial?"
-msgstr "Diala galdu al duzu?"
-
-#: antxetamedia/templates/404.html:13
-msgid ""
-"\n"
-"    Go <a href=\"/\">home</a> again, and listen to the radio!\n"
-"    "
-msgstr ""
-"\n"
-"    Joan zaitez <a href=\"/\">etxeta</a> irratia entzutera!\n"
-"    "
-
 #: antxetamedia/templates/archive/search.html:5
 #: antxetamedia/templates/base.html:29
 msgid "Archive"
@@ -545,7 +539,7 @@ msgstr ""
 "  Zure bilaketak ez du emaitzarik izan.\n"
 "  "
 
-#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html.py:24
+#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html:24
 #: antxetamedia/templates/frontpage/frontpage.html:4
 msgid "Frontpage"
 msgstr "Azala"
@@ -554,11 +548,11 @@ msgstr "Azala"
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: antxetamedia/templates/events/event_detail.html:21
+#: antxetamedia/templates/events/event_detail.html:22
 msgid "Dates"
 msgstr "Datak"
 
-#: antxetamedia/templates/events/event_detail.html:33
+#: antxetamedia/templates/events/event_detail.html:34
 msgid "More info"
 msgstr "Info gehiago"
 
@@ -618,3 +612,15 @@ msgstr "Data"
 #: antxetamedia/widgets/models.py:12
 msgid "Widget"
 msgstr "Widgeta"
+
+#~ msgid "Did you lose the dial?"
+#~ msgstr "Diala galdu al duzu?"
+
+#~ msgid ""
+#~ "\n"
+#~ "    Go <a href=\"/\">home</a> again, and listen to the radio!\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "    Joan zaitez <a href=\"/\">etxeta</a> irratia entzutera!\n"
+#~ "    "

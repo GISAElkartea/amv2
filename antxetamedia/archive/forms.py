@@ -36,8 +36,8 @@ class PikadayDateTimeHiddenTimeField(forms.DateTimeField):
 
 
 class EventForm(forms.Form):
-    after = PikadayDateField(required=False)
-    before = PikadayDateField(required=False)
+    after = PikadayDateField(required=False, label=_('After'))
+    before = PikadayDateField(required=False, label=_('Before'))
 
     def clean(self):
         data = super(EventForm, self).clean()
