@@ -1,6 +1,6 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <div id="playerProgress">[[ currentTime | number : 0 ]]</div>
+  <div id="playerProgress">[[ currentTime | secondsToDate ]]</div>
   <div id="playerWrap">
     <div class="detail playerImage" style="background-image: url('[[ currentBlob.image ]]');"/></div>
     <div id="playerDetails">
@@ -10,7 +10,7 @@
         <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing"></i>
         <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing"></i>
         <i class="fa fa-step-forward" ng-click="playlist.next()"></i>
-        <p id="playerTimer">[[ currentTime | number : 0 ]]</p>
+        <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
         <span id="playerVolume">
           <i class="fa fa-volume-up"></i>
           <i class="fa fa-volume-off"></i>

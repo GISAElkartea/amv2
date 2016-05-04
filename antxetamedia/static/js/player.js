@@ -18,6 +18,15 @@
   });
 
 
+  player.filter('secondsToDate', function() {
+    return function(seconds) {
+      var date = new Date(0, 0, 0, 0, 0, 0, 0);
+      date.setSeconds(seconds);
+      return date;
+    };
+  });
+
+
   player.factory('Podcast', function($http) {
     var Podcast = function(url) {
       this.url = url;
