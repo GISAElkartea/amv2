@@ -13,7 +13,8 @@
       'podcast': '/',
       'title': 'Antxeta Irratia zuzenean',
       'image': '/static/images/antxeta.png',
-      'url': 'http://streaming.antxetamedia.info:8000/antxetairratia.mp3'
+      'url': 'http://streaming.antxetamedia.info:8000/antxetairratia.mp3',
+      'isStream': true
   });
 
 
@@ -45,16 +46,6 @@
     Playlist.prototype.load = function(position) {
       this.current = position;
       this.audio.src = this.queue[position].url;
-    };
-
-    Playlist.prototype.seek = function(time) {
-      var self = this;
-      function seek(event) {
-        if (!isNaN(time)) { this.fastSeek(time); }
-        // Only execute once
-        this.removeEventListener('canplay', seek);
-      }
-      this.audio.addEventListener('canplay', seek);
     };
 
     Playlist.prototype.play = function(position) {
@@ -95,11 +86,6 @@
       this.queue.splice(0, this.queue.length);
     };
 
-    Playlist.prototype.resume = function(position, currentTime, playing) {
-      this.audio.autoplay = this.playing = playing;
-      this.load(position);
-      if (!isNaN(currentTime)) { this.seek(currentTime); }
-    };
     return Playlist;
   });
 
@@ -107,21 +93,41 @@
   player.controller('playerController', function($scope, Podcast, Playlist, STREAMING_BLOB) {
     $scope.playlist = new Playlist();
 
+    // Restore queue or create new one
     var queue = JSON.parse(localStorage.getItem('queue'));
     if (queue && queue.length !== 0) {
       $scope.playlist.queue = queue;
-      var currentPosition = localStorage.getItem('currentPosition'),
-          currentTime = parseFloat(localStorage.getItem('currentTime')),
-          playing = (localStorage.getItem('playing') === 'true');
-      if (currentPosition !== null && 0 <= currentPosition && currentPosition < queue.length) {
-        $scope.playlist.resume(currentPosition, currentTime, playing);
-      } else {
-        $scope.playlist.resume(0, 0, false);
-      }
     } else {
       $scope.playlist.queue.push(STREAMING_BLOB);
-      $scope.playlist.load(0);
     }
+
+    // Get ready to resume if needed when the audio is loaded
+    var currentTime = parseFloat(localStorage.getItem('currentTime')),
+        playing = (localStorage.getItem('playing') === 'true');
+    function resume(event) {
+      if (playing) {
+        $scope.playlist.play();
+      }
+      if (!isNaN(currentTime)) {
+        event.target.fastSeek(currentTime);
+      }
+      $scope.playlist.audio.removeEventListener('loadeddata', resume);
+      $scope.$apply();
+    }
+    $scope.playlist.audio.addEventListener('loadeddata', resume);
+
+    // Load the audio
+    var currentPosition = localStorage.getItem('currentPosition');
+    if (!currentPosition || 0 > currentPosition || currentPosition >= queue.length) {
+      currentPosition = 0;
+    }
+    $scope.playlist.load(currentPosition);
+
+    setInterval(function() {
+      $scope.currentBlob = $scope.playlist.queue[$scope.playlist.current];
+      $scope.currentTime = $scope.playlist.audio.currentTime;
+      $scope.$apply();
+    }, 500);
 
     window.addEventListener('beforeunload', function(event) {
       localStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
@@ -136,7 +142,7 @@
       var podcast = new Podcast(event.detail.podcast);
       podcast.getBlobs().then(function(blobs) {
         $scope.playlist.extend(blobs);
-        $scope.playlist.play($scope.playlist.queue.length);
+        $scope.playlist.play($scope.playlist.queue.length - 1);
       });
     });
 

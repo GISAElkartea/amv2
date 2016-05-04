@@ -1,16 +1,16 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <div id="playerProgress">[[ playlist.currentTime ]]</div>
+  <div id="playerProgress">[[ currentTime | number : 0 ]]</div>
   <div id="playerWrap">
-    <div class="detail playerImage" style="background-image: url('[[ playlist.currentBlob.image ]]');"/></div>
+    <div class="detail playerImage" style="background-image: url('[[ currentBlob.image ]]');"/></div>
     <div id="playerDetails">
-      <h1>[[ playlist.queue[playlist.current].title ]]</h1>
+      <h1>[[ currentBlob.title ]]</h1>
       <div id="playerControls">
         <i class="fa fa-step-backward" ng-click="playlist.previous()"></i>
         <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing"></i>
         <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing"></i>
         <i class="fa fa-step-forward" ng-click="playlist.next()"></i>
-        <p id="playerTimer">01:34</p>
+        <p id="playerTimer">[[ currentTime | number : 0 ]]</p>
         <span id="playerVolume">
           <i class="fa fa-volume-up"></i>
           <i class="fa fa-volume-off"></i>
@@ -27,7 +27,7 @@
 
   <ul id="playlist">
     <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{current: $index == playlist.current }">
-      <div class="detail" style="background-image: url('[[ blob.image ]] ng-if="blob.image"');"/></div>
+      <div class="detail" style="background-image: url('[[ blob.image ]]');" ng-if="blob.image"/></div>
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
         <i class="fa fa-play" ng-click="playlist.play($index);"></i>
