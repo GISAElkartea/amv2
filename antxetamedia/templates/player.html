@@ -1,10 +1,10 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <div id="playerProgress">[[ playlist.currentBlob.currentTime ]]</div>
+  <div id="playerProgress">[[ playlist.currentTime ]]</div>
   <div id="playerWrap">
     <div class="detail playerImage" style="background-image: url('[[ playlist.currentBlob.image ]]');"/></div>
     <div id="playerDetails">
-      <h1>bla[[ playlist.currentBlob.title ]]</h1>
+      <h1>[[ playlist.queue[playlist.current].title ]]</h1>
       <div id="playerControls">
         <i class="fa fa-step-backward" ng-click="playlist.previous()"></i>
         <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing"></i>
