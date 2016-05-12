@@ -81,7 +81,10 @@
     };
 
     Playlist.prototype.remove = function(position) {
-      if (position === this.current) {
+      if (position < this.current) {
+        this.current -= 1;
+      }
+      else if (position === this.current) {
         this.pause();
       }
       this.queue.splice(position, 1);
