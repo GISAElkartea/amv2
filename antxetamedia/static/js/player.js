@@ -12,7 +12,7 @@
       'pk': 0,
       'podcast': '/',
       'title': 'Antxeta Irratia zuzenean',
-      'image': window.STATIC_URL + 'static/images/antxeta.png',
+      'image': window.STATIC_URL + 'static/images/radio.svg',
       'url': 'http://streaming.antxetamedia.info:8000/antxetairratia.mp3',
       'isStream': true
   });
