@@ -138,6 +138,7 @@
     setInterval(function() {
       $scope.currentBlob = $scope.playlist.queue[$scope.playlist.current];
       $scope.currentTime = $scope.playlist.audio.currentTime;
+      $scope.currentDuration = $scope.playlist.audio.duration;
       $scope.$apply();
     }, 500);
 
