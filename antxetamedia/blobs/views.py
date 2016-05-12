@@ -25,7 +25,7 @@ class PodcastBlobList(ListView):
     def get_blob_data(self, blob):
         return {
             'pk': blob.pk,
-            'podcast': blob.content_object.get_blobs_url(),
+            'podcast': blob.content_object.get_absolute_url(),
             'title': str(blob),
             'image': blob.content_object.image.url if blob.content_object.image else None,
             'url': blob.link,

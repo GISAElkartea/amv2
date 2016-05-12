@@ -31,8 +31,8 @@
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
         <i class="fa fa-play" ng-click="playlist.play($index);"></i>
-        <i class="fa fa-download"></i>
-        <i class="fa fa-share"></i>
+        <a ng-href="[[ blob.url ]]"><i class="fa fa-download"></i></a>
+        <a ng-href="[[ blob.podcast ]]"><i class="fa fa-share"></i></a>
         <i class="fa fa-trash-o" ng-click="playlist.remove($index);"></i>
         <i class="fa fa-arrows"></i>
       </span>
