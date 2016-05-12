@@ -11,11 +11,7 @@
         <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing"></i>
         <i class="fa fa-step-forward" ng-click="playlist.next()"></i>
         <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
-        <span id="playerVolume">
-          <i class="fa fa-volume-up"></i>
-          <i class="fa fa-volume-off"></i>
-          <div id="volumeSlide"></div>
-        </span>
+        <progress id="volumeSlide" max="100" value="100"></progress>
         <span id="playerShare">
           <i class="fa fa-share"></i>
           <i class="fa fa-download"></i>
