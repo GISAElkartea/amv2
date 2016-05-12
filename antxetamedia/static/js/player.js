@@ -130,7 +130,7 @@
 
     // Load the audio
     var currentPosition = localStorage.getItem('currentPosition');
-    if (!currentPosition || 0 > currentPosition || currentPosition >= queue.length) {
+    if (isNaN(currentPosition) || 0 > currentPosition || currentPosition >= queue.length) {
       currentPosition = 0;
     }
     $scope.playlist.load(currentPosition);
