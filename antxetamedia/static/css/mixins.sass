@@ -13,9 +13,9 @@
   border-bottom: $bottom solid transparent
   border-left: $left solid $color
 
-+font-face("Lato", "../fonts/lato/Lato-Regular.ttf")
-+font-face("Lato", "../fonts/lato/Lato-Bold.ttf", bold)
-+font-face("Lato", "../fonts/lato/Lato-Italic.ttf", normal, italic)
-+font-face("Lato", "../fonts/lato/Lato-BoldItalic.ttf", bold, italic)
++font-face("Lato", "../fonts/lato/Lato-Regular", $file-formats: ttf)
++font-face("Lato", "../fonts/lato/Lato-Bold", bold, $file-formats: ttf)
++font-face("Lato", "../fonts/lato/Lato-Italic", normal, italic, $file-formats: ttf)
++font-face("Lato", "../fonts/lato/Lato-BoldItalic", bold, italic, $file-formats: ttf)
 
-+font-face("Lobster", "../fonts/lobster/Lobster.otf")
++font-face("Lobster", "../fonts/lobster/Lobster", null, null, $file-formats: otf)
