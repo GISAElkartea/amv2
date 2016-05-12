@@ -2,7 +2,7 @@
 <div id="player" ng-app="player" ng-controller="playerController">
   <div id="playerProgress">[[ currentTime / currentDuration ]]</div>
   <div id="playerWrap">
-    <div class="detail playerImage" style="background-image: url('[[ currentBlob.image ]]');"/></div>
+    <div class="detail playerImage" ng-if="currentBlob.image" ng-style="{'background-image': 'url([[ currentBlob.image ]])'}"/></div>
     <div id="playerDetails">
       <h1>[[ currentBlob.title ]]</h1>
       <div id="playerControls">
@@ -27,7 +27,7 @@
 
   <ul id="playlist" ng-init="playlistDown = false" ng-show="playlistDown">
     <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{'current': $index == playlist.current}">
-      <div class="detail" style="background-image: url('[[ blob.image ]]');" ng-if="blob.image"/></div>
+      <div class="detail" ng-if="blob.image" ng-style="{'background-image': 'url([[ blob.image ]])'}" ng-if="blob.image"/></div>
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
         <i class="fa fa-play" ng-click="playlist.play($index);"></i>
