@@ -4,7 +4,7 @@
   }
 
   var checkboxes = document.querySelectorAll('form li input');
-  Array.forEach(checkboxes, function(checkbox) {
+  Array.from(checkboxes).forEach(function(checkbox) {
     toggleLabel.apply(checkbox);
     checkbox.onclick = toggleLabel;
   });

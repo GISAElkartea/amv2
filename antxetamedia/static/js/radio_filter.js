@@ -13,7 +13,7 @@
     selector = selector.replace('{value}', value);
     tag = tag.replace('{filter}', filter);
     var shows = document.querySelectorAll(selector);
-    Array.forEach(shows, function(show) {
+    Array.from(shows).forEach(function(show) {
       show.setAttribute(tag, !checked);
       if (show.getAttribute('data-producer-is-hidden') === "true" ||
           show.getAttribute('data-category-is-hidden') === "true") {
@@ -26,7 +26,7 @@
 
   function filterShowGroups() {
     var showGroups = document.querySelectorAll('#radioShows li.radio.list');
-    Array.forEach(showGroups, function(showGroup) {
+    Array.from(showGroups).forEach(function(showGroup) {
       var shows = showGroup.querySelectorAll('li.show');
       var isHidden = Array.map(shows, function(show) {
         return (show.getAttribute('data-producer-is-hidden') === "true" ||
@@ -41,7 +41,7 @@
   }
 
   var checkboxes = document.querySelectorAll('form li input');
-  Array.forEach(checkboxes, function(checkbox) {
+  Array.from(checkboxes).forEach(function(checkbox) {
     toggleLabel.apply(checkbox);
     filterShows.apply(checkbox);
     checkbox.onclick = function(event) {

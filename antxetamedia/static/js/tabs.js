@@ -1,12 +1,12 @@
 (function() {
   function hideAllTabContent() {
     var tabs = document.querySelectorAll('.tab');
-    Array.forEach(tabs, function(tab) {
+    Array.from(tabs).forEach(function(tab) {
       tab.classList.remove('active');
     });
 
     var tabContents = document.querySelectorAll('.tabContent');
-    Array.forEach(tabContents, function(content) {
+    Array.from(tabContents).forEach(function(content) {
       content.style.display = 'none';
     });
   }
@@ -20,7 +20,7 @@
 
   hideAllTabContent();
   var tabs = document.querySelectorAll('.tab');
-  Array.forEach(tabs, function(tab) {
+  Array.from(tabs).forEach(function(tab) {
     tab.onclick = function() {
       hideAllTabContent();
       showTabContent.apply(tab);

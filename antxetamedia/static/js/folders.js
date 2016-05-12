@@ -5,7 +5,7 @@
   }
 
   var folders = document.querySelectorAll('.folder');
-  Array.forEach(folders, function(folder) {
+  Array.from(folders).forEach(function(folder) {
       folder.onclick = toggleFold;
   });
 })();

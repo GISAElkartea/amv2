@@ -37,7 +37,7 @@
   };
 
   var inputBoxes = document.querySelectorAll('input.pikaday');
-  Array.forEach(inputBoxes, function(inputBox) {
+  Array.from(inputBoxes).forEach(function(inputBox) {
     new Pikaday({
       field: inputBox,
       format: 'YYYY-MM-DD',
