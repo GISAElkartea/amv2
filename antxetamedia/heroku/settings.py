@@ -31,8 +31,8 @@ AWS_PRELOAD_METADATA = True
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
-MEDIA_URL = 'https://d2adhpjib913dd.cloudfront.net/media/'
-STATIC_URL = 'https://d2adhpjib913dd.cloudfront.net/static/'
+MEDIA_URL = 'https://static.antxetamedia.info/media/'
+STATIC_URL = 'https://static.antxetamedia.info/static/'
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
 
 
