@@ -49,7 +49,12 @@
       this.queue = [];
       this.current = null;
       this.playing = false;
-      this.audio.addEventListener('ended', function(event) { self.next(); });
+      this.audio.addEventListener('ended', function(event) {
+        // Only jump to next if it's not the last track
+        if (self.current < self.queue.length - 1){
+          self.next();
+        }
+      });
     };
 
     Playlist.prototype.load = function(position) {
@@ -106,7 +111,7 @@
     $scope.playlist = new Playlist();
 
     // Restore queue or create new one
-    var queue = JSON.parse(localStorage.getItem('queue'));
+    var queue = JSON.parse(sessionStorage.getItem('queue'));
     if (queue && queue.length !== 0) {
       $scope.playlist.queue = queue;
     } else {
@@ -114,8 +119,8 @@
     }
 
     // Get ready to resume if needed when the audio is loaded
-    var currentTime = parseFloat(localStorage.getItem('currentTime')),
-        playing = (localStorage.getItem('playing') === 'true');
+    var currentTime = parseFloat(sessionStorage.getItem('currentTime')),
+        playing = (sessionStorage.getItem('playing') === 'true');
     function resume(event) {
       if (playing) {
         $scope.playlist.play();
@@ -129,8 +134,8 @@
     $scope.playlist.audio.addEventListener('loadeddata', resume);
 
     // Load the audio
-    var currentPosition = localStorage.getItem('currentPosition');
-    if (isNaN(currentPosition) || 0 > currentPosition || currentPosition >= queue.length) {
+    var currentPosition = sessionStorage.getItem('currentPosition');
+    if (isNaN(currentPosition) || 0 > currentPosition || !queue || currentPosition >= queue.length) {
       currentPosition = 0;
     }
     $scope.playlist.load(currentPosition);
@@ -143,11 +148,11 @@
     }, 500);
 
     window.addEventListener('beforeunload', function(event) {
-      localStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
+      sessionStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
       if ($scope.playlist.current !== null) {
-        localStorage.setItem('currentPosition', $scope.playlist.current);
-        localStorage.setItem('currentTime', $scope.playlist.audio.currentTime);
-        localStorage.setItem('playing', $scope.playlist.playing);
+        sessionStorage.setItem('currentPosition', $scope.playlist.current);
+        sessionStorage.setItem('currentTime', $scope.playlist.audio.currentTime);
+        sessionStorage.setItem('playing', $scope.playlist.playing);
       }
     });
 
