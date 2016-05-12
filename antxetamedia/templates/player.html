@@ -12,10 +12,8 @@
         <i class="fa fa-step-forward" ng-click="playlist.next()"></i>
         <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
         <progress id="volumeSlide" max="100" value="100"></progress>
-        <span id="playerShare">
-          <i class="fa fa-share"></i>
-          <i class="fa fa-download"></i>
-        </span>
+        <a ng-if="currentBlob.podcast" href="[[ currentBlob.podcast ]]"><i class="fa fa-share"></i></a>
+        <a ng-if="currentBlob.url" href="[[ currentBlob.url ]]"><i class="fa fa-download"></i></a>
       </div>
       <i id="playlistDown" class="fa fa-chevron-down" ng-click="playlistDown = !playlistDown" ng-class="{'fa-chevron-up': playlistDown, 'fa-chevron-down': !playlistDown}"></i>
     </div>
