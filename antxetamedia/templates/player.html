@@ -1,6 +1,8 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <progress id="playerProgress" max="100" value="[[ currentProgress ]]" title="{% trans 'Progress' %}"></progress>
+  <progress id="playerProgress" max="100" value="[[ currentProgress ]]"
+    ng-click="setProgress($event)"
+    title="{% trans 'Progress' %}"></progress>
   <div id="playerWrap">
     <div class="detail playerImage" ng-if="currentBlob.image"
       ng-style="{'background-image': 'url(' + currentBlob.image + ')'}"/></div>

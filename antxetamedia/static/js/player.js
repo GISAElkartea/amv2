@@ -53,6 +53,8 @@
         // Only jump to next if it's not the last track
         if (self.current < self.queue.length - 1){
           self.next();
+        } else {
+          self.playing = false;
         }
       });
     };
@@ -151,9 +153,18 @@
     }
     $scope.playlist.load(currentPosition);
 
+    $scope.setProgress = function(event) {
+      var progress = (event.pageX - event.target.getBoundingClientRect().x) / event.target.offsetWidth;
+      $scope.playlist.audio.fastSeek(progress * $scope.playlist.audio.duration);
+    };
+
     $scope.setVolume = function(volume) {
       $scope.playlist.audio.volume = volume;
     };
+
+    $scope.playlist.audio.addEventListener('error', function(event) {
+      window.alert("An error occurred trying to play this track.");
+    });
 
     // Update context variables every half a second
     setInterval(function() {
