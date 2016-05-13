@@ -28,16 +28,12 @@
     padding: .6em .3em
     vertical-align: middle
     cursor: pointer
-    color: tint(black, 80%)
     +media(max-width $medium)
       font-size: .7rem
     +media(max-width $small)
       font-size: 1rem
     &:first-child
       padding-left: 0
-    &.fa-share, &.fa-download
-      font-size: .6rem
-      padding-right: .5em
   .playerImage
     width: 25%
   #playerWrap
@@ -71,6 +67,12 @@
         margin-right: .5rem
         &::-moz-progress-bar
           background: tint(black, 80%)
+        &::-webkit-progress-bar
+          background: tint(black, 80%)
+      i.fa-share, i.fa-download
+        font-size: .6rem
+        padding-right: .5em
+        color: tint(black, 80%)
   #playlistDown
     text-align: right
     position: absolute
