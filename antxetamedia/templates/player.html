@@ -2,7 +2,8 @@
 <div id="player" ng-app="player" ng-controller="playerController">
   <progress id="playerProgress" max="100" value="[[ currentProgress ]]" title="{% trans 'Progress' %}"></progress>
   <div id="playerWrap">
-    <div class="detail playerImage" ng-if="currentBlob.image" ng-style="{'background-image': 'url([[ currentBlob.image ]])'}"/></div>
+    <div class="detail playerImage" ng-if="currentBlob.image"
+      ng-style="{'background-image': 'url(' + currentBlob.image + ')'}"/></div>
     <div id="playerDetails">
       <h1>[[ currentBlob.title ]]</h1>
       <div id="playerControls">
