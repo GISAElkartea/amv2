@@ -168,6 +168,7 @@
       var podcast = new Podcast(event.detail.podcast);
       podcast.getBlobs().then(function(blobs) {
         $scope.playlist.extend(blobs);
+        $scope.playlistDown = true;
       });
     });
   });
