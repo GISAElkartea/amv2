@@ -3,10 +3,10 @@ ul.list
   +span-columns(9 of 9)
   li
     margin-bottom: 3%
-  div.text
+  .text
     width: 80%
 
-div#right
+#right
   +span-columns(4 of 9)
   +media(max-width $small)
     +span-columns(12)
@@ -32,13 +32,13 @@ li.flag
   margin-bottom: .7rem
   display: table
   width: 100%
-  div.detail
-    div.podcastControl
+  .detail
+    .podcastControl
       position: absolute
       bottom: 0
       left: 0
       width: 100%
-  div.text
+  .text
     width: 70%
     padding: 3%
     display: table-cell
@@ -73,7 +73,7 @@ li.radio
 
 li.event
   background: tint(black, 90%)
-  div.text
+  .text
     padding: .3rem 3%
     h1
       margin: .1em 0
@@ -98,7 +98,7 @@ ul.list
     h1
       margin: .5em 0
       font-size: 1.1rem
-    div.text
+    .text
       padding: 1rem
     .date
       color: $green
@@ -106,5 +106,5 @@ ul.list
 ul#newsFront
   li.flag.news:first-child
     background: tint(black, 75%)
-    div.detail
+    .detail
       width: 50% !important
