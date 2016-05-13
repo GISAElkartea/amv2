@@ -142,6 +142,7 @@
       currentVolume = 1;
     }
     $scope.playlist.audio.volume = currentVolume;
+    $scope.volume = currentVolume;
 
     // Load the audio
     var currentPosition = sessionStorage.getItem('currentPosition');
