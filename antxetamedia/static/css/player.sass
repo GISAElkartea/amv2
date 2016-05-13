@@ -5,7 +5,7 @@
   background: tint(black, 5%)
   color: tint(black, 80%)
   font-size: 0
-  margin-right: 2.5% !important
+  margin-right: 3% !important
   z-index: 10
   +span-columns(3)
   +media(max-width $medium)
@@ -30,6 +30,10 @@
     cursor: pointer
     +media(max-width 1350px)
       font-size: .7rem
+    +media(max-width 1100px)
+      font-size: .55rem
+    +media(max-width 1050px)
+      font-size: .45rem
     +media(max-width $small)
       font-size: 1rem
     &:first-child
@@ -44,7 +48,7 @@
     #playerDetails
       width: 75%
       display: table-cell
-      padding: .5rem 1rem
+      padding: 2% 5%
       position: relative
       h1
         font-size: .9rem
@@ -113,6 +117,7 @@
       font-size: .9rem
     i
       font-size: .6rem
+      padding: 3%
     .playlistControls
       width: 35%
       text-align: right
