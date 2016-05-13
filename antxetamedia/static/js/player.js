@@ -144,6 +144,7 @@
       $scope.currentBlob = $scope.playlist.queue[$scope.playlist.current];
       $scope.currentTime = $scope.playlist.audio.currentTime;
       $scope.currentDuration = $scope.playlist.audio.duration;
+      $scope.currentProgress = $scope.currentTime * 100 / $scope.currentDuration;
       $scope.$apply();
     }, 500);
 
