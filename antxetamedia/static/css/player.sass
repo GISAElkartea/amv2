@@ -65,10 +65,20 @@
         display: inline-block
         vertical-align: middle
         margin-right: .5rem
-        &::-moz-progress-bar
-          background: tint(black, 80%)
-        &::-webkit-progress-bar
-          background: tint(black, 80%)
+        -moz-appearance: none
+        -webkit-appearance: none
+        &::-moz-range-thumb
+          border: none
+          height: .8em
+          width: .8em
+          background: $green
+        &::-webkit-slide-thumb
+          border: none
+          height: .8em
+          width: .8em
+          background: $green
+          border-radius: 100%
+
       i.fa-share, i.fa-download
         font-size: .6rem
         padding-right: .5em
