@@ -11,7 +11,7 @@
         <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing" title="{% trans 'Pause' %}"></i>
         <i class="fa fa-step-forward" ng-click="playlist.next()" title="{% trans 'Forward' %}"></i>
         <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
-        <progress id="volumeSlide" max="100" value="100" title="{% trans 'Volume' %}"></progress>
+        <input id="volumeSlide" type="range" max="100" value="100" title="{% trans 'Volume' %}"></input>
         <a ng-if="currentBlob.podcast" href="[[ currentBlob.podcast ]]" title="{% trans 'Link' %}"><i class="fa fa-share"></i></a>
         <a ng-if="currentBlob.url" href="[[ currentBlob.url ]]" title="{% trans 'Download' %}"><i class="fa fa-download"></i></a>
       </div>
