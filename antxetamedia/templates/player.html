@@ -1,21 +1,23 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <progress id="playerProgress" max="100" value="[[ currentProgress ]]"></progress>
+  <progress id="playerProgress" max="100" value="[[ currentProgress ]]" title="{% trans 'Progress' %}"></progress>
   <div id="playerWrap">
     <div class="detail playerImage" ng-if="currentBlob.image" ng-style="{'background-image': 'url([[ currentBlob.image ]])'}"/></div>
     <div id="playerDetails">
       <h1>[[ currentBlob.title ]]</h1>
       <div id="playerControls">
-        <i class="fa fa-step-backward" ng-click="playlist.previous()"></i>
-        <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing"></i>
-        <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing"></i>
-        <i class="fa fa-step-forward" ng-click="playlist.next()"></i>
+        <i class="fa fa-step-backward" ng-click="playlist.previous()" title="{% trans 'Backward' %}"></i>
+        <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing" title="{% trans 'Play' %}"></i>
+        <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing" title="{% trans 'Pause' %}"></i>
+        <i class="fa fa-step-forward" ng-click="playlist.next()" title="{% trans 'Forward' %}"></i>
         <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
-        <progress id="volumeSlide" max="100" value="100"></progress>
-        <a ng-if="currentBlob.podcast" href="[[ currentBlob.podcast ]]"><i class="fa fa-share"></i></a>
-        <a ng-if="currentBlob.url" href="[[ currentBlob.url ]]"><i class="fa fa-download"></i></a>
+        <progress id="volumeSlide" max="100" value="100" title="{% trans 'Volume' %}"></progress>
+        <a ng-if="currentBlob.podcast" href="[[ currentBlob.podcast ]]" title="{% trans 'Link' %}><i class="fa fa-share"></i></a>
+        <a ng-if="currentBlob.url" href="[[ currentBlob.url ]]" title="{% trans 'Download' %}><i class="fa fa-download"></i></a>
       </div>
-      <i id="playlistDown" class="fa fa-chevron-down" ng-click="playlistDown = !playlistDown" ng-class="{'fa-chevron-up': playlistDown, 'fa-chevron-down': !playlistDown}"></i>
+      <i id="playlistDown" class="fa fa-chevron-down" title="{% trans 'Playlist' %}"
+        ng-click="playlistDown = !playlistDown"
+        ng-class="{'fa-chevron-up': playlistDown, 'fa-chevron-down': !playlistDown}"></i>
     </div>
   </div>
 
@@ -23,11 +25,11 @@
     <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{'current': $index == playlist.current}">
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
-        <i class="fa fa-play" ng-click="playlist.play($index);"></i>
-        <a ng-href="[[ blob.url ]]"><i class="fa fa-download"></i></a>
-        <a ng-href="[[ blob.podcast ]]"><i class="fa fa-share"></i></a>
-        <i class="fa fa-trash-o" ng-click="playlist.remove($index);"></i>
-        <i class="fa fa-arrows"></i>
+        <i class="fa fa-play" ng-click="playlist.play($index);" title="{% trans 'Play' %}"></i>
+        <a ng-href="[[ blob.url ]]" title="{% trans 'Download' %}"><i class="fa fa-download"></i></a>
+        <a ng-href="[[ blob.podcast ]]" title="{% trans 'Link' %}"><i class="fa fa-share"></i></a>
+        <i class="fa fa-trash-o" ng-click="playlist.remove($index);" title="{% trans 'Remove' %}"></i>
+        <i class="fa fa-arrows" title="{% trans 'Move' %}"></i>
       </span>
     </li>
   </ul>
