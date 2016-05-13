@@ -1,6 +1,6 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController">
-  <div id="playerProgress">[[ currentTime / currentDuration ]]</div>
+  <progress id="playerProgress" max="100" value="50"></progress>
   <div id="playerWrap">
     <div class="detail playerImage" ng-if="currentBlob.image" ng-style="{'background-image': 'url([[ currentBlob.image ]])'}"/></div>
     <div id="playerDetails">
