@@ -51,14 +51,10 @@ class AbstractProducer(models.Model):
         return self.name
 
 
-class ShowQuerySet(models.QuerySet):
-    def featured(self):
-        return self.filter(featured=True)
-
-
 class ShowManager(models.Manager):
     def get_queryset(self, *args, **kwargs):
-        return ShowQuerySet(self.model, using=self._db).order_by(Lower('name'))
+        qs = super(ShowManager, self).get_queryset(*args, **kwargs)
+        return qs.order_by(Lower('name'))
 
 
 @python_2_unicode_compatible

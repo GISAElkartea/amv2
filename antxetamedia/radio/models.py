@@ -34,8 +34,13 @@ class RadioProducer(AbstractProducer):
         return reverse('radio:list') + '?producer=' + self.slug
 
 
+class RadioShowQuerySet(models.QuerySet):
+    def featured(self):
+        return self.filter(featured=True)
+
+
 class RadioShow(AbstractShow):
-    objects = ShowManager()
+    objects = ShowManager.from_queryset(RadioShowQuerySet)()
 
     class Meta:
         verbose_name = _('Radio show')

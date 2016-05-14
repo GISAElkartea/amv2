@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
 
 from antxetamedia.shows.models import (AbstractProducer, AbstractShow, AbstractPodcast,
-                                       ProducerManager, ShowQuerySet, PodcastManager)
+                                       ProducerManager, ShowManager, PodcastManager)
 
 
 class ProjectProducer(AbstractProducer):
@@ -18,13 +18,8 @@ class ProjectProducer(AbstractProducer):
         return reverse('projects:list')
 
 
-class ProjectShowManager(models.Manager):
-    def get_queryset(self, *args, **kwargs):
-        return ShowQuerySet(self.model, using=self._db)
-
-
 class ProjectShow(AbstractShow):
-    objects = ProjectShowManager()
+    objects = ShowManager()
 
     class Meta:
         ordering = ['-creation_date']
