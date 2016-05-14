@@ -14,6 +14,9 @@
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="{% static 'css/main.sass' %}" />
     {% endcompress css %}
+    {% compress js %}
+    <script src="{% static 'bower_components/angular/angular.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% endcompress js %}
     {% block extra_css %}
     {% endblock extra_css %}
   </head>
@@ -92,7 +95,6 @@
 
     {% compress js %}
     <script src="{% static 'js/events.js' %}" type="text/javascript" charset="utf-8"></script>
-    <script src="{% static 'bower_components/angular/angular.js' %}" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset=utf-8">window.STATIC_URL = "{% static '/' %}";</script>
     <script src="{% static 'js/player.js' %}" type="text/javascript" charset="utf-8"></script>
     {% endcompress js %}
