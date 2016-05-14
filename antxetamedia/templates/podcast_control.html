@@ -1,10 +1,11 @@
 {% load i18n static compress %}
 
 <div class="podcastControl">
-  {% with num_of_podcasts=podcast.blob_set.count %}
-  {% if num_of_podcasts > 0 %}
+  {% if podcast.blob_set.exists %}
   <a class="play" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-play"></i><span class="controlsCaption">{% trans 'Play' %}</span></a>
   <a class="append" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-plus"></i><span class="controlsCaption">{% trans 'Add' %}</span></a>
+  {% for blob in podcast.blob_set.select_related %}
+  <a class="download" href="{{ blob.link }}">{% trans 'Download' %}{{ blob }}</a>
+  {% endfor %}
   {% endif %}
-  {% endwith %}
 </div>
