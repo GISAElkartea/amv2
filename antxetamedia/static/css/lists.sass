@@ -10,11 +10,18 @@ ul#featuredShows
       text-decoration: none
       color: white
 ul#radioShows
+  padding: 0
   +outer-container
   li.radio.list
     background: none
-    +span-columns(4)
-    +omega(3n)
+    +span-columns(3)
+    +omega(4n)
+    +media(max-width $medium)
+      +span-columns(4)
+      +omega(3n)
+    +media(max-width $small)
+      +span-columns(6)
+      +omega(2n)
     h1
       color: $green
       text-transform: lowercase
