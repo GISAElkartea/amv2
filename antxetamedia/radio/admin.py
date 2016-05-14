@@ -22,15 +22,23 @@ class RadioProducerAdmin(admin.ModelAdmin):
 class RadioShowAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['name', 'slug', 'producer', 'category', 'featured']
     list_display_links = ['name', 'producer', 'category']
-    list_editable = ['featured']
     list_filter = ['producer', 'category', 'featured']
     search_fields = ['name', 'description']
+    actions = ['mark_featured', 'mark_unfeatured']
     fieldsets = [
         (None, {
             'fields': [('name', 'slug'), 'featured', 'category', 'producer']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]
+
+    def mark_featured(self, request, queryset):
+        queryset.update(featured=True)
+    mark_featured.short_description = _('Mark as featured')
+
+    def mark_unfeatured(self, request, queryset):
+        queryset.update(featured=False)
+    mark_unfeatured.short_description = _('Mark as not featured')
 
 
 class RadioPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
