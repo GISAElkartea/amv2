@@ -117,7 +117,7 @@ class Event(models.Model):
     title = models.CharField(_('Title'), max_length=128)
     slug = AutoSlugField(editable=False, unique=True, populate_from='title')
 
-    recurrences = RecurrenceField()
+    recurrences = RecurrenceField(_('Recurrences'))
     time = models.TimeField(_('Time'), null=True, blank=True, help_text=_('Leave blank if all day event.'))
 
     description = RichTextField(_('Description'), blank=True)
