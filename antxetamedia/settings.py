@@ -125,11 +125,12 @@ CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {
     'default': {
+        'extraPlugins': 'iframe,autoembed',
         'toolbar': [
             ['Format', 'Bold', 'Italic', 'Underline', 'StrikeThrough', '-',
              'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter',
              'JustifyRight', 'JustifyBlock'],
-            ['Image', 'Link', 'Source'],
+            ['Image', 'Link', 'Iframe', 'Source'],
             ['Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'Find', 'Replace', '-', 'Print'],
         ],
     }
