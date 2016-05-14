@@ -2,27 +2,11 @@ article
   +outer-container
   .articleDetails
     min-height: 1em
+    position: relative
     +span-columns(3)
     img
       width: 100%
       margin-bottom: -0.2rem
-    .podcastControl
-      position: static
-      margin: 0
-      background: $green
-      a
-        display: block
-        text-align: left
-        padding: .5rem
-        cursor: pointer
-        color: white
-        font-family: $script
-        i
-          margin-right: .5rem
-          color: white
-        .controlsCaption
-          display: inline-block
-          font-size: 1rem
   .text
     +span-columns(9)
     &.full

@@ -1,6 +1,5 @@
-$text: Lato !default
 $script: "Lobster 1.4"
-//$script: "Lobster"
+$text: Lato !default
 $lightgreen: #5a9503
 $green: #5a9503
 $red: #950303
@@ -44,16 +43,18 @@ p
   background-color: tint(black, 75%)
 .podcastControl
   position: absolute
-  bottom: 0
   width: 100%
-  background: tint(black, 50%)
   font-size: 0
   text-align: center
+  bottom: 0
   i
-    padding: .3em .9em
-    font-size: .9rem
+    background: tint(black, 20%)
+    font-size: 1rem
     color: white
     cursor: pointer
+    padding: .3em .5em .3em 1em
+    &.fa-plus
+      padding: .3em 1em .3em .5em
     +media(min-width $small max-width $medium)
       padding: .3em .6em
   .controlsCaption
