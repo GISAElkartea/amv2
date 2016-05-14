@@ -3,7 +3,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
   
   <title>Erabiltzaileak - Antxetamedia</title>
   
@@ -21,6 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Erabiltzaileak";
+    var mkdocs_page_input_path = "users/index.md";
+    var mkdocs_page_url = "/users/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -62,11 +67,15 @@
         
             <ul>
             
-                <li class="toctree-l3"><a href="#welcome-to-mkdocs">Welcome to MkDocs</a></li>
+                <li class="toctree-l3"><a href="#galderarik-ohikoenak">Galderarik ohikoenak</a></li>
                 
-                    <li><a class="toctree-l4" href="#commands">Commands</a></li>
+                    <li><a class="toctree-l4" href="#nola-egin-dezaket-berri-bat-azalean-agertzeko">Nola egin dezaket berri bat azalean agertzeko?</a></li>
                 
-                    <li><a class="toctree-l4" href="#project-layout">Project layout</a></li>
+                    <li><a class="toctree-l4" href="#nola-nabarmendu-ditzazket-irratsaioak">Nola nabarmendu ditzazket irratsaioak?</a></li>
+                
+                    <li><a class="toctree-l4" href="#nola-gehitu-agendan-errepikatzen-diren-gertakariak">Nola gehitu agendan errepikatzen diren gertakariak?</a></li>
+                
+                    <li><a class="toctree-l4" href="#nola-txertatu-ditzazket-bideoak">Nola txertatu ditzazket bideoak?</a></li>
                 
             
             </ul>
@@ -135,21 +144,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="http://mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <div class="toc">
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
+<li><a href="#galderarik-ohikoenak">Galderarik ohikoenak</a><ul>
+<li><a href="#nola-egin-dezaket-berri-bat-azalean-agertzeko">Nola egin dezaket berri bat azalean agertzeko?</a></li>
+<li><a href="#nola-nabarmendu-ditzazket-irratsaioak">Nola nabarmendu ditzazket irratsaioak?</a></li>
+<li><a href="#nola-gehitu-agendan-errepikatzen-diren-gertakariak">Nola gehitu agendan errepikatzen diren gertakariak?</a></li>
+<li><a href="#nola-txertatu-ditzazket-bideoak">Nola txertatu ditzazket bideoak?</a></li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
+</li>
+</ul>
+</div>
+<h1 id="galderarik-ohikoenak">Galderarik ohikoenak</h1>
+<h2 id="nola-egin-dezaket-berri-bat-azalean-agertzeko">Nola egin dezaket berri bat azalean agertzeko?</h2>
+<p><em>Nabarmendua</em>k bezala markatutako berriek lehentasuna dute azalean argertzeko
+garaian. Nabarmenduak diren berriak azalean agertu daitezkeenak baina gehiago
+baldin badira, berri hauek argitarapen dataren arabera agertuko dira azalean.</p>
+<p>Berri bat gehitu edo aldatzerakoan, <em>Nabarmendua</em> bezala markatu
+daiteke. Gomendagarria da hau desaktibatzea berri bat azalean agertzea
+beharrezkoa ez denean. Hau errazteko, <a href="https://antxetamedia.info/admin/news/newspodcast/?featured__exact=1">nabarmendutako berrien
+zerrendara</a> joan gaitezke berrien zerrendan aurkitzen den
+iragazkien atalaren bidez. Behin hor, behean agertzen den <em>Ez nabarmendua bezala
+markatu</em> ekintza hautatu daiteke.</p>
+<h2 id="nola-nabarmendu-ditzazket-irratsaioak">Nola nabarmendu ditzazket irratsaioak?</h2>
+<p>Berrien antzera, irratsaioak ere nabarmendu daitezke. Nabarmendutako irratsaioak
+[irratsaioen orrialdean][irratsaioak] goian agertuko dira, beti ikusgai.
+Irratsaioak ere sortzerakoan edota eraldatzerakoan markatu daitezke
+<em>Nabarmendua</em>k bezala. Irratsaioen zerrendan ere <a href="http://antxetamedia.info/admin/radio/radioshow/?featured__exact=1">bakarrik
+nabarmenduak</a> daudenak filtratu ditzazkegu, gero <em>Ez
+nabarmendua bezala markatu</em> ekintzaren bidez bertatik kentzeko.</p>
+<h2 id="nola-gehitu-agendan-errepikatzen-diren-gertakariak">Nola gehitu agendan errepikatzen diren gertakariak?</h2>
+<p>Gertakari bat gehitzeko orduan gertakari horren errepikamenak zeintzuk diren
+aukeratu ditzazkegu. Errepikapen bezala data solteak sortu ditzazkegu edo
+erregela batzuk definitu ditzazkegu (bi astero behin asteartero, otsailero,
+etab.).</p>
+<h2 id="nola-txertatu-ditzazket-bideoak">Nola txertatu ditzazket bideoak?</h2>
+<p>Testua onartzen duten eremu guztietan bideoak txertatu daitezke. <code>iframe</code>
+elementu bezala datozten bideo hauek txertatzeko, editorean <em>HTML Iturburua</em>
+sakatu behar dugu, kodea itsatsi eta berriz <em>HTML Iturburua</em> botoian sakatu.
+Sortutako elementuan bi aldiz klikatuz gero, <code>iframe</code> horren xehetasunak aldatu
+ahal izango ditugu.</p>
               
             </div>
           </div>
@@ -157,7 +191,7 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../devs/" class="btn btn-neutral float-right" title="Setup"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../devs/" class="btn btn-neutral float-right" title="Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Ongietorri"><span class="icon icon-circle-arrow-left"></span> Previous</a>

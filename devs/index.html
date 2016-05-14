@@ -3,7 +3,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
   
   <title>Setup - Antxetamedia</title>
   
@@ -21,6 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "Setup";
+    var mkdocs_page_input_path = "devs/index.md";
+    var mkdocs_page_url = "/devs/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -149,7 +154,7 @@
               
                 <h1 id="development-setup">Development setup</h1>
 <pre><code># Install python dependencies
-pip install -r requirements.txt
+pip install -r requirements/dev.txt
 
 # Install javascript dependencies
 cd antxetamedia/static
@@ -211,6 +216,7 @@ git add -f .media
 <li>Site</li>
 <li>Groups</li>
 <li>Users</li>
+<li>Cache</li>
 </ul>
 <h2 id="deployment">Deployment</h2>
 <ul>
@@ -229,7 +235,7 @@ git add -f .media
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="requirements/" class="btn btn-neutral float-right" title="Requirements"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="requirements/" class="btn btn-neutral float-right" title="Requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../users/" class="btn btn-neutral" title="Erabiltzaileak"><span class="icon icon-circle-arrow-left"></span> Previous</a>

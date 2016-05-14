@@ -17,37 +17,47 @@
         },
         {
             "location": "/users/",
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "text": "Galderarik ohikoenak\n\n\nNola egin dezaket berri bat azalean agertzeko?\n\n\nNola nabarmendu ditzazket irratsaioak?\n\n\nNola gehitu agendan errepikatzen diren gertakariak?\n\n\nNola txertatu ditzazket bideoak?\n\n\n\n\n\n\n\n\n\n\nGalderarik ohikoenak\n\n\nNola egin dezaket berri bat azalean agertzeko?\n\n\nNabarmendua\nk bezala markatutako berriek lehentasuna dute azalean argertzeko\ngaraian. Nabarmenduak diren berriak azalean agertu daitezkeenak baina gehiago\nbaldin badira, berri hauek argitarapen dataren arabera agertuko dira azalean.\n\n\nBerri bat gehitu edo aldatzerakoan, \nNabarmendua\n bezala markatu\ndaiteke. Gomendagarria da hau desaktibatzea berri bat azalean agertzea\nbeharrezkoa ez denean. Hau errazteko, \nnabarmendutako berrien\nzerrendara\n joan gaitezke berrien zerrendan aurkitzen den\niragazkien atalaren bidez. Behin hor, behean agertzen den \nEz nabarmendua bezala\nmarkatu\n ekintza hautatu daiteke.\n\n\nNola nabarmendu ditzazket irratsaioak?\n\n\nBerrien antzera, irratsaioak ere nabarmendu daitezke. Nabarmendutako irratsaioak\n[irratsaioen orrialdean][irratsaioak] goian agertuko dira, beti ikusgai.\nIrratsaioak ere sortzerakoan edota eraldatzerakoan markatu daitezke\n\nNabarmendua\nk bezala. Irratsaioen zerrendan ere \nbakarrik\nnabarmenduak\n daudenak filtratu ditzazkegu, gero \nEz\nnabarmendua bezala markatu\n ekintzaren bidez bertatik kentzeko.\n\n\nNola gehitu agendan errepikatzen diren gertakariak?\n\n\nGertakari bat gehitzeko orduan gertakari horren errepikamenak zeintzuk diren\naukeratu ditzazkegu. Errepikapen bezala data solteak sortu ditzazkegu edo\nerregela batzuk definitu ditzazkegu (bi astero behin asteartero, otsailero,\netab.).\n\n\nNola txertatu ditzazket bideoak?\n\n\nTestua onartzen duten eremu guztietan bideoak txertatu daitezke. \niframe\n\nelementu bezala datozten bideo hauek txertatzeko, editorean \nHTML Iturburua\n\nsakatu behar dugu, kodea itsatsi eta berriz \nHTML Iturburua\n botoian sakatu.\nSortutako elementuan bi aldiz klikatuz gero, \niframe\n horren xehetasunak aldatu\nahal izango ditugu.",
             "title": "Erabiltzaileak"
         },
         {
-            "location": "/users/#welcome-to-mkdocs",
-            "text": "For full documentation visit  mkdocs.org .",
-            "title": "Welcome to MkDocs"
+            "location": "/users/#galderarik-ohikoenak",
+            "text": "",
+            "title": "Galderarik ohikoenak"
         },
         {
-            "location": "/users/#commands",
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
-            "title": "Commands"
+            "location": "/users/#nola-egin-dezaket-berri-bat-azalean-agertzeko",
+            "text": "Nabarmendua k bezala markatutako berriek lehentasuna dute azalean argertzeko\ngaraian. Nabarmenduak diren berriak azalean agertu daitezkeenak baina gehiago\nbaldin badira, berri hauek argitarapen dataren arabera agertuko dira azalean.  Berri bat gehitu edo aldatzerakoan,  Nabarmendua  bezala markatu\ndaiteke. Gomendagarria da hau desaktibatzea berri bat azalean agertzea\nbeharrezkoa ez denean. Hau errazteko,  nabarmendutako berrien\nzerrendara  joan gaitezke berrien zerrendan aurkitzen den\niragazkien atalaren bidez. Behin hor, behean agertzen den  Ez nabarmendua bezala\nmarkatu  ekintza hautatu daiteke.",
+            "title": "Nola egin dezaket berri bat azalean agertzeko?"
         },
         {
-            "location": "/users/#project-layout",
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
-            "title": "Project layout"
+            "location": "/users/#nola-nabarmendu-ditzazket-irratsaioak",
+            "text": "Berrien antzera, irratsaioak ere nabarmendu daitezke. Nabarmendutako irratsaioak\n[irratsaioen orrialdean][irratsaioak] goian agertuko dira, beti ikusgai.\nIrratsaioak ere sortzerakoan edota eraldatzerakoan markatu daitezke Nabarmendua k bezala. Irratsaioen zerrendan ere  bakarrik\nnabarmenduak  daudenak filtratu ditzazkegu, gero  Ez\nnabarmendua bezala markatu  ekintzaren bidez bertatik kentzeko.",
+            "title": "Nola nabarmendu ditzazket irratsaioak?"
+        },
+        {
+            "location": "/users/#nola-gehitu-agendan-errepikatzen-diren-gertakariak",
+            "text": "Gertakari bat gehitzeko orduan gertakari horren errepikamenak zeintzuk diren\naukeratu ditzazkegu. Errepikapen bezala data solteak sortu ditzazkegu edo\nerregela batzuk definitu ditzazkegu (bi astero behin asteartero, otsailero,\netab.).",
+            "title": "Nola gehitu agendan errepikatzen diren gertakariak?"
+        },
+        {
+            "location": "/users/#nola-txertatu-ditzazket-bideoak",
+            "text": "Testua onartzen duten eremu guztietan bideoak txertatu daitezke.  iframe \nelementu bezala datozten bideo hauek txertatzeko, editorean  HTML Iturburua \nsakatu behar dugu, kodea itsatsi eta berriz  HTML Iturburua  botoian sakatu.\nSortutako elementuan bi aldiz klikatuz gero,  iframe  horren xehetasunak aldatu\nahal izango ditugu.",
+            "title": "Nola txertatu ditzazket bideoak?"
         },
         {
             "location": "/devs/",
-            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nIf you want to update the sample data, you can:\n\n\ngit checkout sample_data\ngit rebase origin/master\npython manage.py dumpdata --indent 4 --natural-foreign --natural-primary \n| sample_data.json\ngit add sample_data.json\ngit add -f .media\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nTests\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI\n\n\nSite\n\n\nGroups\n\n\nUsers\n\n\n\n\nDeployment\n\n\n\n\nInitial beta deploy\n\n\nInitial data\n\n\nUse and development cycle\n\n\nPublic release\n\n\nSite name and allowed domains change",
+            "text": "Development setup\n\n\n# Install python dependencies\npip install -r requirements/dev.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver\n\n\n\n\nSample data\n\n\nAdditionally, if you want some sample data, you can import it from the\n\nsample_data\n branch:\n\n\ngit checkout sample_data -- sample_data.json .media\ngit reset HEAD\n\n\n\n\nThen you can load it into the database:\n\n\npython manage.py loaddata sample_data.json\n\n\n\n\nYou may want to index this data into the search engine too:\n\n\npython manage.py buildwatson\n\n\n\n\nIf you want to update the sample data, you can:\n\n\ngit checkout sample_data\ngit rebase origin/master\npython manage.py dumpdata --indent 4 --natural-foreign --natural-primary >| sample_data.json\ngit add sample_data.json\ngit add -f .media\n\n\n\n\nRunning tests\n\n\npython manage.py test\n\n\n\n\nProduction\n\n\nChecklist\n\n\n\n\nTests\n\n\nDatabase\n\n\nSecurity\n\n\nI18N\n\n\nStatic files\n\n\nMedia files\n\n\nLogging\n\n\nError reporting\n\n\nInitial data\n\n\nStats\n\n\nUser docs\n\n\nCI\n\n\nSite\n\n\nGroups\n\n\nUsers\n\n\nCache\n\n\n\n\nDeployment\n\n\n\n\nInitial beta deploy\n\n\nInitial data\n\n\nUse and development cycle\n\n\nPublic release\n\n\nSite name and allowed domains change",
             "title": "Setup"
         },
         {
             "location": "/devs/#development-setup",
-            "text": "# Install python dependencies\npip install -r requirements.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver",
+            "text": "# Install python dependencies\npip install -r requirements/dev.txt\n\n# Install javascript dependencies\ncd antxetamedia/static\nbower install\ncd ../..\n\n# Setup the database\npython manage.py migrate\n\n# Compile messages\npython manage.py compilemessages\n\n# Start development server\npython manage.py runserver",
             "title": "Development setup"
         },
         {
             "location": "/devs/#sample-data",
-            "text": "Additionally, if you want some sample data, you can import it from the sample_data  branch:  git checkout sample_data -- sample_data.json .media\ngit reset HEAD  Then you can load it into the database:  python manage.py loaddata sample_data.json  You may want to index this data into the search engine too:  python manage.py buildwatson  If you want to update the sample data, you can:  git checkout sample_data\ngit rebase origin/master\npython manage.py dumpdata --indent 4 --natural-foreign --natural-primary  | sample_data.json\ngit add sample_data.json\ngit add -f .media",
+            "text": "Additionally, if you want some sample data, you can import it from the sample_data  branch:  git checkout sample_data -- sample_data.json .media\ngit reset HEAD  Then you can load it into the database:  python manage.py loaddata sample_data.json  You may want to index this data into the search engine too:  python manage.py buildwatson  If you want to update the sample data, you can:  git checkout sample_data\ngit rebase origin/master\npython manage.py dumpdata --indent 4 --natural-foreign --natural-primary >| sample_data.json\ngit add sample_data.json\ngit add -f .media",
             "title": "Sample data"
         },
         {
@@ -62,7 +72,7 @@
         },
         {
             "location": "/devs/#checklist",
-            "text": "Tests  Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI  Site  Groups  Users",
+            "text": "Tests  Database  Security  I18N  Static files  Media files  Logging  Error reporting  Initial data  Stats  User docs  CI  Site  Groups  Users  Cache",
             "title": "Checklist"
         },
         {
@@ -92,8 +102,13 @@
         },
         {
             "location": "/devs/requirements/#integration-with-archiveorg",
-            "text": "asynchronous uploads  queue visualization system   Test account  username: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr",
+            "text": "asynchronous uploads  queue visualization system",
             "title": "Integration with archive.org"
+        },
+        {
+            "location": "/devs/requirements/#test-account",
+            "text": "username: archive.org-test\npassword: archive.org-test\naccess key: VSh9SgRkxTYIaZUs\nsecret key: GsQjQ6KLtx63Sktr",
+            "title": "Test account"
         },
         {
             "location": "/devs/requirements/#other-things",
@@ -107,13 +122,53 @@
         },
         {
             "location": "/devs/architecture/#layout",
-            "text": "News  Each podcast has a category and a producer.  Radio  Each podcast has a show. Each show has a category and a producer.  Projects  Each podcast has a project. Each project has a producer.  Blobs  Each blob has a GFK to a podcast.",
+            "text": "",
             "title": "Layout"
         },
         {
+            "location": "/devs/architecture/#news",
+            "text": "Each podcast has a category and a producer.",
+            "title": "News"
+        },
+        {
+            "location": "/devs/architecture/#radio",
+            "text": "Each podcast has a show. Each show has a category and a producer.",
+            "title": "Radio"
+        },
+        {
+            "location": "/devs/architecture/#projects",
+            "text": "Each podcast has a project. Each project has a producer.",
+            "title": "Projects"
+        },
+        {
+            "location": "/devs/architecture/#blobs",
+            "text": "Each blob has a GFK to a podcast.",
+            "title": "Blobs"
+        },
+        {
             "location": "/devs/architecture/#design-decisions",
-            "text": "No nested categories  They do not use them currently.   NewsShows do not need to be categorized.  RadioShows can be categorized in RadioCategories and RadioProducers.  ProjectShows can be categorized in ProjectProducers.   No embeded multimedia models  If they want to use some external embed code, they can use the description text.  Multiple audios per podcast  They use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:   making the add button add all the audios of the podcast to the playlist.  making the play button play all the adios of the podcast.  making the share button share the podcast link.   Only RadioShows have the \"featured\" boolean",
+            "text": "",
             "title": "Design decisions"
+        },
+        {
+            "location": "/devs/architecture/#no-nested-categories",
+            "text": "They do not use them currently.   NewsShows do not need to be categorized.  RadioShows can be categorized in RadioCategories and RadioProducers.  ProjectShows can be categorized in ProjectProducers.",
+            "title": "No nested categories"
+        },
+        {
+            "location": "/devs/architecture/#no-embeded-multimedia-models",
+            "text": "If they want to use some external embed code, they can use the description text.",
+            "title": "No embeded multimedia models"
+        },
+        {
+            "location": "/devs/architecture/#multiple-audios-per-podcast",
+            "text": "They use this feature nowadays. It's true that it makes it somewhat more\ndifficult to manage the playlist buttons but this can be solved by:   making the add button add all the audios of the podcast to the playlist.  making the play button play all the adios of the podcast.  making the share button share the podcast link.",
+            "title": "Multiple audios per podcast"
+        },
+        {
+            "location": "/devs/architecture/#only-radioshows-have-the-featured-boolean",
+            "text": "",
+            "title": "Only RadioShows have the \"featured\" boolean"
         }
     ]
 }
