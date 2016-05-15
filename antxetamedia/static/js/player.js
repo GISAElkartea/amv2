@@ -163,7 +163,16 @@
     };
 
     $scope.playlist.audio.addEventListener('error', function(event) {
-      window.alert("An error occurred trying to play this track.");
+      var errno = $scope.playlist.audio.error.code;
+      if (errno === MediaError.MEDIA_ERR_NETWORK) {
+        window.alert("A network error occurred trying to play this track.");
+      }
+      else if (errno === MediaError.MEDIA_ERR_DECODE) {
+        window.alert("A decodification error occurred trying to play this track.");
+      }
+      else if (errno === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+        window.alert("Your browser cannot play this media type.");
+      }
     });
 
     // Update context variables every half a second
