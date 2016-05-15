@@ -140,8 +140,8 @@
 
     // Set volume
     var currentVolume = sessionStorage.getItem('volume');
-    if (isNaN(currentVolume) || currentVolume > 1 || currentVolume < 0) {
-      currentVolume = 1;
+    if (isNaN(currentVolume) || currentVolume === null || currentVolume > 1 || currentVolume < 0) {
+      currentVolume = 0.5;
     }
     $scope.playlist.audio.volume = currentVolume;
     $scope.volume = currentVolume;
