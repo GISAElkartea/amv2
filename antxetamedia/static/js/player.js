@@ -59,16 +59,14 @@
       });
     };
 
-    Playlist.prototype.load = function(position) {
-      this.current = position;
-      this.audio.src = this.queue[position].url;
-    };
-
     Playlist.prototype.play = function(position) {
       if (typeof position !== 'undefined') {
-        this.load(position);
+        this.current = position;
       } else if (this.current === null) {
-        this.load(0);
+        this.current = 0;
+      }
+      if (typeof position !== 'undefined' || !this.audio.src) {
+        this.audio.src = this.queue[this.current].url;
       }
       this.audio.play();
       this.playing = true;
@@ -127,9 +125,6 @@
     // Cannot be anonymous because we need to remove it as an event listener
     // after it's fired the first time
     function resume(event) {
-      if (playing) {
-        $scope.playlist.play();
-      }
       if (!isNaN(currentTime)) {
         event.target.fastSeek(currentTime);
       }
@@ -146,12 +141,17 @@
     $scope.playlist.audio.volume = currentVolume;
     $scope.volume = currentVolume;
 
-    // Load the audio
+    // Set current track
     var currentPosition = sessionStorage.getItem('currentPosition');
     if (isNaN(currentPosition) || 0 > currentPosition || !queue || currentPosition >= queue.length) {
       currentPosition = 0;
     }
-    $scope.playlist.load(currentPosition);
+    $scope.playlist.current = currentPosition;
+
+    // Resume playing
+    if (playing) {
+      $scope.playlist.play();
+    }
 
     $scope.setProgress = function(event) {
       var progress = (event.pageX - event.target.getBoundingClientRect().x) / event.target.offsetWidth;
