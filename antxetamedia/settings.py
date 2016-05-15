@@ -1,4 +1,9 @@
 import os
+
+from django.utils.six import text_type
+from django.template.base import TemplateSyntaxError
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -57,12 +62,20 @@ MIDDLEWARE_CLASSES = [
 SITE_ID = 1
 ROOT_URLCONF = 'antxetamedia.urls'
 
+
+class InvalidString(text_type):
+    def __mod__(self, other):
+        return TemplateSyntaxError("Undefined variable '{}'".format(other))
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join('antxetamedia/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': DEBUG,
+            'string_if_invalid': InvalidString("%s") if DEBUG else '',
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
