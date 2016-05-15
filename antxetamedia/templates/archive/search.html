@@ -78,7 +78,7 @@
         </h1>
 
         {% if result.description %}
-        {{ result.description | truncatewords_html:128 | safe }}
+        {{ result.description | striptags | truncatewords:128 | safe }}
         {% endif %}
       </div>
     </article>
