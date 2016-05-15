@@ -126,7 +126,7 @@
     // after it's fired the first time
     function resume(event) {
       if (!isNaN(currentTime)) {
-        event.target.fastSeek(currentTime);
+        event.target.currentTime = currentTime;
       }
       $scope.playlist.audio.removeEventListener('loadeddata', resume);
       $scope.$apply();
@@ -154,8 +154,11 @@
     }
 
     $scope.setProgress = function(event) {
-      var progress = (event.pageX - event.target.getBoundingClientRect().x) / event.target.offsetWidth;
-      $scope.playlist.audio.fastSeek(progress * $scope.playlist.audio.duration);
+      var progress = (event.pageX - event.target.getBoundingClientRect().left) / event.target.offsetWidth;
+      var currentTime = progress * $scope.playlist.audio.duration;
+      if (!isNaN(currentTime)) {
+        $scope.playlist.audio.currentTime = currentTime;
+      }
     };
 
     $scope.setVolume = function(volume) {
