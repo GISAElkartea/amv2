@@ -59,15 +59,21 @@
       });
     };
 
-    Playlist.prototype.play = function(position) {
+    Playlist.prototype.load = function(position) {
       if (typeof position !== 'undefined') {
         this.current = position;
       } else if (this.current === null) {
         this.current = 0;
       }
-      if (typeof position !== 'undefined' || !this.audio.src) {
-        this.audio.src = this.queue[this.current].url;
+      var newSrc = this.queue[this.current].url;
+      // this.audio.src is always an absolute url, newSrc may be not
+      if (!this.audio.src || !this.audio.src.endsWith(newSrc)) {
+        this.audio.src = newSrc;
       }
+    };
+
+    Playlist.prototype.play = function(position) {
+      this.load(position);
       this.audio.play();
       this.playing = true;
     };
@@ -147,6 +153,9 @@
       currentPosition = 0;
     }
     $scope.playlist.current = currentPosition;
+
+    // Start loading
+    $scope.playlist.load();
 
     // Resume playing
     if (playing) {
