@@ -178,9 +178,9 @@
     // Update context variables every half a second
     setInterval(function() {
       $scope.currentBlob = $scope.playlist.queue[$scope.playlist.current];
-      $scope.currentTime = $scope.playlist.audio.currentTime;
-      $scope.currentDuration = $scope.playlist.audio.duration;
-      $scope.currentProgress = $scope.currentTime * 100 / $scope.currentDuration;
+      $scope.currentTime = $scope.playlist.audio.currentTime || 0;
+      $scope.currentDuration = $scope.playlist.audio.duration || 0;
+      $scope.currentProgress = $scope.currentTime * 100 / $scope.currentDuration || 0;
       $scope.$apply();
     }, 500);
 

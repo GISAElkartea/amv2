@@ -1,6 +1,7 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController" ng-cloak>
-  <progress id="playerProgress" max="100" value="[[ currentProgress ]]"
+  <progress id="playerProgress" max="100"
+    value="[[ currentProgress || 0 ]]"
     ng-click="setProgress($event)"
     title="{% trans 'Progress' %}"></progress>
   <div id="playerWrap">
