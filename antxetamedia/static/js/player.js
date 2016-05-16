@@ -115,7 +115,7 @@
       }
       this.audio.volume = volume;
 
-      if (!isNaN(time)) {
+      if (!isNaN(time) && !this.queue[this.track].isStream) {
         this.audio.currentTime = time;
       }
 
