@@ -1,26 +1,26 @@
 {% load i18n static compress %}
 <div id="player" ng-app="player" ng-controller="playerController" ng-cloak>
   <progress id="playerProgress" max="100"
-    value="[[ currentProgress || 0 ]]"
+    value="[[ progress || 0 ]]"
     ng-click="setProgress($event)"
     title="{% trans 'Progress' %}"></progress>
   <div id="playerWrap">
-    <div class="detail playerImage" ng-if="currentBlob.image"
-      ng-style="{'background-image': 'url(' + currentBlob.image + ')'}"/></div>
+    <div class="detail playerImage" ng-if="blob.image"
+      ng-style="{'background-image': 'url(' + blob.image + ')'}"/></div>
     <div id="playerDetails">
-      <h1>[[ currentBlob.title ]]</h1>
+      <h1>[[ blob.title ]]</h1>
       <div id="playerControls">
         <i class="fa fa-step-backward" ng-click="playlist.previous()" title="{% trans 'Backward' %}"></i>
         <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing" title="{% trans 'Play' %}"></i>
         <i class="fa fa-pause" ng-click="playlist.pause()" ng-if="playlist.playing" title="{% trans 'Pause' %}"></i>
         <i class="fa fa-step-forward" ng-click="playlist.next()" title="{% trans 'Forward' %}"></i>
-        <p id="playerTimer">[[ currentTime | secondsToDate | date: 'HH:mm:ss' ]]</p>
+        <p id="playerTimer">[[ time | secondsToDate | date: 'HH:mm:ss' ]]</p>
         <input id="volumeSlide" type="range" min="0" max="1" step="0.1"
         ng-model="volume"
         ng-change="setVolume(volume)"
         title="{% trans 'Volume' %}"></input>
-        <a ng-if="currentBlob.podcast" href="[[ currentBlob.podcast ]]" title="{% trans 'Link' %}"><i class="fa fa-share"></i></a>
-        <a ng-if="currentBlob.url" href="[[ currentBlob.url ]]" title="{% trans 'Download' %}"><i class="fa fa-download"></i></a>
+        <a ng-if="blob.podcast" href="[[ blob.podcast ]]" title="{% trans 'Link' %}"><i class="fa fa-share"></i></a>
+        <a ng-if="blob.url" href="[[ blob.url ]]" title="{% trans 'Download' %}"><i class="fa fa-download"></i></a>
       </div>
       <i id="playlistDown" class="fa fa-chevron-down" title="{% trans 'Playlist' %}"
         ng-click="playlistDown = !playlistDown"

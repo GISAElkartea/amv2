@@ -22,11 +22,11 @@
       var self = this;
       this.audio = $document[0].createElement('audio');
       this.queue = [];
-      this.current = null;
+      this.track = null;
       this.playing = false;
       this.audio.addEventListener('ended', function(event) {
         // Only jump to next if it's not the last track
-        if (self.current < self.queue.length - 1){
+        if (self.track < self.queue.length - 1){
           self.next();
         } else {
           self.playing = false;
@@ -34,21 +34,21 @@
       });
     };
 
-    Playlist.prototype.load = function(position) {
+    Playlist.prototype.fetch = function(position) {
       if (typeof position !== 'undefined') {
-        this.current = position;
-      } else if (this.current === null) {
-        this.current = 0;
+        this.track = position;
+      } else if (this.track === null) {
+        this.track = 0;
       }
-      var newSrc = this.queue[this.current].url;
+      var newSrc = this.queue[this.track].url;
       // this.audio.src is always an absolute url, newSrc may be not
       if (!this.audio.src || !this.audio.src.endsWith(newSrc)) {
         this.audio.src = newSrc;
       }
-    };
+    }
 
     Playlist.prototype.play = function(position) {
-      this.load(position);
+      this.fetch(position);
       this.audio.play();
       this.playing = true;
     };
@@ -59,18 +59,18 @@
     };
 
     Playlist.prototype.next = function() {
-      this.play((this.current + 1) % this.queue.length);
+      this.play((this.track + 1) % this.queue.length);
     };
 
     Playlist.prototype.previous = function() {
-      this.play((this.queue.length + this.current - 1) % this.queue.length);
+      this.play((this.queue.length + this.track - 1) % this.queue.length);
     };
 
     Playlist.prototype.remove = function(position) {
-      if (position < this.current) {
-        this.current -= 1;
+      if (position < this.track) {
+        this.track -= 1;
       }
-      else if (position === this.current) {
+      else if (position === this.track) {
         this.pause();
       }
       this.queue.splice(position, 1);
@@ -80,8 +80,48 @@
       Array.prototype.push.apply(this.queue, blobs);
     };
 
-    Playlist.prototype.clear = function() {
-      this.queue.splice(0, this.queue.length);
+    Playlist.prototype.save = function() {
+      sessionStorage.setItem('queue', JSON.stringify(this.queue));
+      if (this.track !== null) {
+        sessionStorage.setItem('track', this.track);
+        sessionStorage.setItem('time', this.audio.currentTime);
+        sessionStorage.setItem('playing', this.playing);
+        sessionStorage.setItem('volume', this.audio.volume);
+      }
+    };
+
+    Playlist.prototype.load = function() {
+      var queue = JSON.parse(sessionStorage.getItem('queue')),
+          track = sessionStorage.getItem('track'),
+          time = parseFloat(sessionStorage.getItem('time')),
+          playing = (sessionStorage.getItem('playing') === 'true'),
+          volume = sessionStorage.getItem('volume');
+
+      if (!queue || queue.length === 0) {
+        this.queue.push(window.STREAM_BLOB);
+        this.track = 0;
+        return;
+      }
+      this.queue = queue;
+
+      if (isNaN(track) || 0 > track || track >= queue.length) {
+        track = 0;
+      }
+      this.track = track;
+      this.fetch();
+
+      if (isNaN(volume) || volume === null || volume > 1 || volume < 0) {
+        volume = 0.5;
+      }
+      this.audio.volume = volume;
+
+      if (!isNaN(time)) {
+        this.audio.currentTime = time;
+      }
+
+      if (playing) {
+        this.play();
+      }
     };
 
     return Playlist;
@@ -90,58 +130,13 @@
 
   player.controller('playerController', function($scope, Playlist) {
     $scope.playlist = new Playlist();
-
-    // Restore queue or create new one
-    var queue = JSON.parse(sessionStorage.getItem('queue'));
-    if (queue && queue.length !== 0) {
-      $scope.playlist.queue = queue;
-    } else {
-      $scope.playlist.queue.push(window.STREAM_BLOB);
-    }
-
-    // Get ready to resume if needed when the audio is loaded
-    var currentTime = parseFloat(sessionStorage.getItem('currentTime')),
-        playing = (sessionStorage.getItem('playing') === 'true');
-
-    // Cannot be anonymous because we need to remove it as an event listener
-    // after it's fired the first time
-    function resume(event) {
-      if (!isNaN(currentTime)) {
-        event.target.currentTime = currentTime;
-      }
-      $scope.playlist.audio.removeEventListener('loadeddata', resume);
-      $scope.$apply();
-    }
-    $scope.playlist.audio.addEventListener('loadeddata', resume);
-
-    // Set volume
-    var currentVolume = sessionStorage.getItem('volume');
-    if (isNaN(currentVolume) || currentVolume === null || currentVolume > 1 || currentVolume < 0) {
-      currentVolume = 0.5;
-    }
-    $scope.playlist.audio.volume = currentVolume;
-    $scope.volume = currentVolume;
-
-    // Set current track
-    var currentPosition = sessionStorage.getItem('currentPosition');
-    if (isNaN(currentPosition) || 0 > currentPosition || !queue || currentPosition >= queue.length) {
-      currentPosition = 0;
-    }
-    $scope.playlist.current = currentPosition;
-
-    // Start loading
     $scope.playlist.load();
-
-    // Resume playing
-    if (playing) {
-      $scope.playlist.play();
-    }
 
     $scope.setProgress = function(event) {
       var progress = (event.pageX - event.target.getBoundingClientRect().left) / event.target.offsetWidth;
-      var currentTime = progress * $scope.playlist.audio.duration;
-      if (!isNaN(currentTime)) {
-        $scope.playlist.audio.currentTime = currentTime;
+      var time = progress * $scope.playlist.audio.duration;
+      if (!isNaN(time)) {
+        $scope.playlist.audio.currentTime = time;
       }
     };
 
@@ -164,22 +159,17 @@
 
     // Update context variables every half a second
     setInterval(function() {
-      $scope.currentBlob = $scope.playlist.queue[$scope.playlist.current];
-      $scope.currentTime = $scope.playlist.audio.currentTime || 0;
-      $scope.currentDuration = $scope.playlist.audio.duration || 0;
-      $scope.currentProgress = $scope.currentTime * 100 / $scope.currentDuration || 0;
+      $scope.blob = $scope.playlist.queue[$scope.playlist.track];
+      $scope.time = $scope.playlist.audio.currentTime || 0;
+      $scope.volume = $scope.playlist.audio.volume || 0;
+      $scope.duration = $scope.playlist.audio.duration || 0;
+      $scope.progress = $scope.time * 100 / $scope.duration || 0;
       $scope.$apply();
     }, 500);
 
     // Save current state before unloading
     window.addEventListener('beforeunload', function(event) {
-      sessionStorage.setItem('queue', JSON.stringify($scope.playlist.queue));
-      if ($scope.playlist.current !== null) {
-        sessionStorage.setItem('currentPosition', $scope.playlist.current);
-        sessionStorage.setItem('currentTime', $scope.playlist.audio.currentTime);
-        sessionStorage.setItem('playing', $scope.playlist.playing);
-        sessionStorage.setItem('volume', $scope.playlist.audio.volume);
-      }
+      $scope.playlist.save();
     });
 
     document.addEventListener('play', function(event) {
