@@ -8,16 +8,6 @@
   });
 
 
-  player.constant('STREAMING_BLOB', {
-      'pk': 0,
-      'podcast': '/',
-      'title': 'Antxeta Irratia zuzenean',
-      'image': window.STATIC_URL + 'static/images/radio.svg',
-      'url': 'http://streaming.antxetamedia.info:8000/antxetairratia.mp3',
-      'isStream': true
-  });
-
-
   player.filter('secondsToDate', function() {
     return function(seconds) {
       var date = new Date(0, 0, 0, 0, 0, 0, 0);
@@ -98,7 +88,7 @@
   });
 
 
-  player.controller('playerController', function($scope, Playlist, STREAMING_BLOB) {
+  player.controller('playerController', function($scope, Playlist) {
     $scope.playlist = new Playlist();
 
     // Restore queue or create new one
@@ -106,7 +96,7 @@
     if (queue && queue.length !== 0) {
       $scope.playlist.queue = queue;
     } else {
-      $scope.playlist.queue.push(STREAMING_BLOB);
+      $scope.playlist.queue.push(window.STREAM_BLOB);
     }
 
     // Get ready to resume if needed when the audio is loaded
