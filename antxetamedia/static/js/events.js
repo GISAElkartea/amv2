@@ -23,7 +23,7 @@
     });
   }
 
-  function sendEvent(element, type) {
+  function sendPodcast(element, type) {
     var url = element.getAttribute('data-podcast');
     request('GET', url)
     .then(function(data) {
@@ -35,7 +35,7 @@
   Array.from(playButtons).forEach(function(playButton) {
     playButton.onclick = function(event) {
       event.preventDefault();
-      sendEvent(this, 'play');
+      sendPodcast(this, 'play');
     };
   });
 
@@ -43,7 +43,12 @@
   Array.from(appendButtons).forEach(function(appendButton) {
     appendButton.onclick = function(event) {
       event.preventDefault();
-      sendEvent(this, 'append');
+      sendPodcast(this, 'append');
     };
   });
+
+  document.getElementById('live').onclick = function(event) {
+    event.preventDefault();
+    document.dispatchEvent(new CustomEvent('play', {detail: {blobs: [window.STREAM_BLOB]}}));
+  };
 })();
