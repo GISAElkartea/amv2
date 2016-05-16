@@ -36,7 +36,7 @@ class PodcastBlobList(ListView):
         return super(PodcastBlobList, self).get_context_data(**kwargs)
 
     def render_to_response(self, context, **response_kwargs):
-        return JsonResponse(context['blob_list'], safe=False)
+        return JsonResponse({'blobs': context['blob_list']})
 
 
 @staff_member_required

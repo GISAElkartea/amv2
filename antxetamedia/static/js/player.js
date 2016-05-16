@@ -27,21 +27,6 @@
   });
 
 
-  player.factory('Podcast', function($http) {
-    var Podcast = function(url) {
-      this.url = url;
-    };
-
-    Podcast.prototype.getBlobs = function() {
-      return $http.get(this.url).then(function(response) {
-        return response.data;
-      });
-    };
-
-    return Podcast;
-  });
-
-
   player.factory('Playlist', function($document) {
     var Playlist = function() {
       var self = this;
@@ -113,7 +98,7 @@
   });
 
 
-  player.controller('playerController', function($scope, Podcast, Playlist, STREAMING_BLOB) {
+  player.controller('playerController', function($scope, Playlist, STREAMING_BLOB) {
     $scope.playlist = new Playlist();
 
     // Restore queue or create new one
@@ -208,19 +193,13 @@
     });
 
     document.addEventListener('play', function(event) {
-      var podcast = new Podcast(event.detail.podcast);
-      podcast.getBlobs().then(function(blobs) {
-        $scope.playlist.extend(blobs);
-        $scope.playlist.play($scope.playlist.queue.length - 1);
-      });
+      $scope.playlist.extend(event.detail.blobs);
+      $scope.playlist.play($scope.playlist.queue.length - 1);
     });
 
     document.addEventListener('append', function(event) {
-      var podcast = new Podcast(event.detail.podcast);
-      podcast.getBlobs().then(function(blobs) {
-        $scope.playlist.extend(blobs);
-        $scope.playlistDown = true;
-      });
+      $scope.playlist.extend(event.detail.blobs);
+      $scope.playlistDown = true;
     });
   });
 })();
