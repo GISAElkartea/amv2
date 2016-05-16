@@ -193,8 +193,9 @@
     });
 
     document.addEventListener('play', function(event) {
+      var position = $scope.playlist.queue.length;
       $scope.playlist.extend(event.detail.blobs);
-      $scope.playlist.play($scope.playlist.queue.length - 1);
+      $scope.playlist.play(position);
     });
 
     document.addEventListener('append', function(event) {
