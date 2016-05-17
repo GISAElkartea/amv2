@@ -65,7 +65,7 @@ ROOT_URLCONF = 'antxetamedia.urls'
 
 class InvalidString(text_type):
     def __mod__(self, other):
-        return TemplateSyntaxError("Undefined variable '{}'".format(other))
+        raise TemplateSyntaxError("Undefined variable '{}'".format(other))
 
 
 TEMPLATES = [
