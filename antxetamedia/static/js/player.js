@@ -1,7 +1,8 @@
 (function() {
   'use strict';
 
-  var player = angular.module('player', []);
+  var player = angular.module('player', ['ngDraggable']);
+
   player.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
@@ -80,6 +81,21 @@
       Array.prototype.push.apply(this.queue, blobs);
     };
 
+    Playlist.prototype.move = function(from, to) {
+      var blob = this.queue[from];
+      this.queue.splice(from, 1);
+      this.queue.splice(to, 0, blob);
+      if (this.track == from) {
+        this.track = to;
+      }
+      else if (from < this.track && to >= this.track) {
+        this.track--;
+      }
+      else if (from > this.track && to <= this.track) {
+        this.track++;
+      }
+    };
+
     Playlist.prototype.save = function() {
       sessionStorage.setItem('queue', JSON.stringify(this.queue));
       if (this.track !== null) {
@@ -142,6 +158,10 @@
 
     $scope.setVolume = function(volume) {
       $scope.playlist.audio.volume = volume;
+    };
+
+    $scope.onDropComplete = function(event, source, destination) {
+      $scope.playlist.move(source, destination);
     };
 
     $scope.playlist.audio.addEventListener('error', function(event) {

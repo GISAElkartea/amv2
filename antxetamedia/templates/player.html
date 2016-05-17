@@ -29,14 +29,21 @@
   </div>
 
   <ul id="playlist" ng-init="playlistDown = false" ng-show="playlistDown">
-    <li class="playlistItem" ng-repeat="blob in playlist.queue track by $index" ng-class="{'current': $index == playlist.current}">
+    <li class="playlistItem"
+      ng-repeat="blob in playlist.queue track by $index"
+      ng-class="{'current': $index == playlist.track}"
+      ng-drag="true"
+      ng-drop="true"
+      ng-drag-data="[[ $index ]]"
+      ng-drop-success="onDropComplete($event, $data, $index)"
+      >
       <h1>[[ blob.title ]]</h1>
       <span class="playlistControls">
         <i class="fa fa-play" ng-click="playlist.play($index);" title="{% trans 'Play' %}"></i>
         <a ng-href="[[ blob.url ]]" title="{% trans 'Download' %}"><i class="fa fa-download"></i></a>
         <a ng-href="[[ blob.podcast ]]" title="{% trans 'Link' %}"><i class="fa fa-share"></i></a>
         <i class="fa fa-trash-o" ng-click="playlist.remove($index);" title="{% trans 'Remove' %}"></i>
-        <i class="fa fa-arrows" title="{% trans 'Move' %}"></i>
+        <i ng-drag-handle class="fa fa-arrows" title="{% trans 'Move' %}"></i>
       </span>
     </li>
   </ul>

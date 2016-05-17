@@ -113,6 +113,11 @@
     font-size: 0
     border-bottom: .03rem solid tint(black, 60%)
     padding: 0 3%
+    &.dragging
+      opacity: 0.5
+      background: tint($green, 30%)
+    &.drag-enter
+      background: tint($green, 30%)
     & > *
       display: inline-block
       color: black
