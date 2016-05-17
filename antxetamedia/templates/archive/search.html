@@ -37,7 +37,7 @@
       <form method="get" action="{{ reverseurl }}">
         <ul>
           <li class="mainForm">
-            <input id="id_q" name="q" value="{{ request.GET.q }}" placeholder="{% trans 'Search' %}" />
+            <input id="id_q" name="q" value="{% if 'q' in request.GET %}{{ request.GET.q }}{% endif %}" placeholder="{% trans 'Search' %}" />
             <button type="submit" value="{% trans 'Search' %}"><i class="fa fa-search"></i></button>
           </li>
           {% if form %}
