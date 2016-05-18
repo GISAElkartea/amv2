@@ -2,10 +2,10 @@
 
 <div class="podcastControl">
   {% if podcast.blob_set.exists %}
-  <a class="play" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-play"></i><span class="controlsCaption">{% trans 'Play' %}</span></a>
-  <a class="append" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-plus"></i><span class="controlsCaption">{% trans 'Add' %}</span></a>
+  <a class="play" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-play"></i></a>
+  <a class="append" data-podcast="{{ podcast.get_blobs_url }}"><i class="fa fa-plus"></i></a>
   {% for blob in podcast.blob_set.select_related %}
-  <a class="download" href="{{ blob.link }}">{% trans 'Download' %}{{ blob }}</a>
+  <a class="download" href="{{ blob.link }}"><i class="fa fa-download"></i></a>
   {% endfor %}
   {% endif %}
 </div>
