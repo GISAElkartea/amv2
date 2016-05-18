@@ -25,7 +25,6 @@
     {% empty %}
     <div class="detail">
     {% endthumbnail %}
-      {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
     <div class="text">
       <h2 class="category">
@@ -37,6 +36,7 @@
       <p class="date">{{ newspodcast.pub_date|date:"Y-m-d" }}</p>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
       <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
+      {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
   </li>
   {% endfor %}

@@ -26,7 +26,6 @@
     {% empty %}
     <div class="detail">
     {% endthumbnail %}
-    {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
     <div class="text">
       <h2 class="category">
@@ -37,6 +36,7 @@
       </h2>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
       <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
+      {% include 'podcast_control.html' with podcast=newspodcast %}
     </div>
   </li>
   {% endfor %}
@@ -65,12 +65,12 @@
     {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
       <div class="detail" {% if radiopodcast.image %} style="background-image: url('{{ radiopodcast.image.url }}');"{% endif %}/>
-      {% include 'podcast_control.html' with podcast=radiopodcast %}
       </div>
       <div class="text">
         <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>
         <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
         <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
+        {% include 'podcast_control.html' with podcast=radiopodcast %}
       </div>
     </li>
     {% endfor %}
