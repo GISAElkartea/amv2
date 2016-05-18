@@ -36,7 +36,7 @@
         {% endfor %}
       </h2>
       <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
-      {{ newspodcast.description | striptags | truncatewords:25 | safe }}
+      <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
     </div>
   </li>
   {% endfor %}
