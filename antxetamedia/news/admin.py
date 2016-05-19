@@ -31,21 +31,12 @@ class NewsPodcastAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display_links = ['title', 'show']
     list_filter = ['show', 'categories', 'pub_date', 'featured']
     search_fields = ['title', 'description']
-    actions = ['mark_featured', 'mark_unfeatured']
     fieldsets = [
         (None, {
             'fields': ['title', 'featured', 'show', 'categories', 'pub_date']}),
         (_('Details'), {
             'fields': ['image', 'description']}),
     ]
-
-    def mark_featured(self, request, queryset):
-        queryset.update(featured=True)
-    mark_featured.short_description = _('Mark as featured')
-
-    def mark_unfeatured(self, request, queryset):
-        queryset.update(featured=False)
-    mark_unfeatured.short_description = _('Mark as not featured')
 
 
 admin.site.register(NewsCategory, NewsCategoryAdmin)
