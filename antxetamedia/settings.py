@@ -75,7 +75,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': DEBUG,
-            'string_if_invalid': InvalidString("%s") if DEBUG else '',
+            'string_if_invalid': '',  # InvalidString("%s")
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
