@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n compress %}
+{% load static i18n thumbnail compress %}
 
 {% block title %}
 {% trans 'Radio Shows' %}
@@ -26,9 +26,15 @@
 
 <ul id="radioShows">
   {% for radioshow in radioshow_list %}
-    <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
-      <h2><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h2>
-    </li>
+  <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
+    <h1><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h1>
+    <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
+    <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
+
+    {% thumbnail radioshow.image "500" as image %}
+    <img src="{{ image.url }}"/>
+    {% endthumbnail %}
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}

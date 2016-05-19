@@ -9,39 +9,36 @@ ul#featuredShows
     a
       text-decoration: none
       color: white
+
 ul#radioShows
   padding: 0
-  +outer-container
-  li.radio.list
+  margin: 2% 0
+  li
     background: none
-    +span-columns(3)
-    +omega(4n)
-    +media(max-width $medium)
-      +span-columns(4)
-      +omega(3n)
-    +media(max-width $small)
-      +span-columns(6)
-      +omega(2n)
-    h1
-      color: $green
-      text-transform: lowercase
-      font-size: 2.5rem
-      border-bottom: solid $green .04em
-      display: block
-      width: 40%
-      padding-left: .2em
-  a
-    text-decoration: none
-  ul
-    padding: 0
-    margin-bottom: 2rem
-    li
-      list-style: none
-      padding-left: .5rem
-      h2
-        font-weight: normal
-        font-size: 1rem
-        margin: .8em 0
+    ul
+      padding: 0
+      margin: 0
+      +outer-container
+      li
+        background: $green
+        margin-bottom: 2%
+        padding: .5em 0
+        text-align: center
+        +span-columns(3)
+        +omega(4n)
+        h1
+          font-weight: normal
+          font-variant: small-caps
+          text-transform: lowercase
+          font-size: 1.3rem
+          padding: 0 0 .5em 0
+          margin: 0 .5em .5em .5em
+          border-bottom: .05em solid white
+        img
+          width: 100%
+          margin-top: .5em
+        > * > *
+          color: white
 
 ul#projectShows
   padding: 0
