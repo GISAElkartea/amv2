@@ -13,32 +13,27 @@ ul#featuredShows
 ul#radioShows
   padding: 0
   margin: 2% 0
+  +outer-container
   li
-    background: none
-    ul
-      padding: 0
-      margin: 0
-      +outer-container
-      li
-        background: $green
-        margin-bottom: 2%
-        padding: .5em 0
-        text-align: center
-        +span-columns(3)
-        +omega(4n)
-        h1
-          font-weight: normal
-          font-variant: small-caps
-          text-transform: lowercase
-          font-size: 1.3rem
-          padding: 0 0 .5em 0
-          margin: 0 .5em .5em .5em
-          border-bottom: .05em solid white
-        img
-          width: 100%
-          margin-top: .5em
-        > * > *
-          color: white
+    background: $green
+    margin-bottom: 2%
+    padding: .5em 0
+    text-align: center
+    +span-columns(3)
+    +omega(4n)
+    h1
+      font-weight: normal
+      font-variant: small-caps
+      text-transform: lowercase
+      font-size: 1.3rem
+      padding: 0 0 .5em 0
+      margin: 0 .5em .5em .5em
+      border-bottom: .05em solid white
+    img
+      width: 100%
+      margin-top: .5em
+    > * > *
+      color: white
 
 ul#projectShows
   padding: 0
