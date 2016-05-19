@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load i18n static compress thumbnail %}
 
+{% block extra_js %}
+{% include 'DFP/slots.html' %}
+{% endblock extra_js %}
+
 {% block title %}{% trans 'Frontpage' %}{% endblock title %}
 
 {% block configure %}
@@ -18,6 +22,18 @@
 {% endblock aside %}
 
 {% block content %}
+{% include 'DFP/220_90_down.html' %}
+{% include 'DFP/220_90_up.html' %}
+{% include 'DFP/300_250_mobile.html' %}
+{% include 'DFP/300_250_sidebar_1.html' %}
+{% include 'DFP/300_250_sidebar_2.html' %}
+{% include 'DFP/300_600_sidebar_1.html' %}
+{% include 'DFP/300_600_sidebar_2.html' %}
+{% include 'DFP/320_50_mobile_down.html' %}
+{% include 'DFP/320_50_mobile_up.html' %}
+{% include 'DFP/728_90_down.html' %}
+{% include 'DFP/728_90_up.html' %}
+
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
