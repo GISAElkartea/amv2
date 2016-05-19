@@ -10,7 +10,7 @@ ul#featuredShows
       text-decoration: none
       color: white
 
-ul.radioShows
+ul.cardList
   padding: 0
   margin: 2% 0
   +outer-container
@@ -32,37 +32,25 @@ ul.radioShows
     h2, p.date
       display: inline-block
       margin: 0 .5em .5em .5em
+      color: white
     a
       text-decoration: none
+      color: white
     img
       width: 100%
       margin-top: .5em
-    > * > *
-      color: white
 
 ul#projectShows
   padding: 0
   margin: 0
-  li
+  > li
     list-style: none
     margin-bottom: 2rem
-    h1
-      background: $green
+    > h1
+      background: tint(black, 20%)
       color: white
       display: inline-block
-      padding: .5rem
-      margin-bottom: .5em
-    ul
-      padding-left: 1.5em
-      li
-        list-style: inside square
-        color: $green
-        margin-bottom: 0
-        h2
-          color: black
-          display: inline-block
-          font-weight: normal
-          margin: .5em 0
+      padding: .5em
 
 ul#archiveResults
   padding: 0
@@ -106,6 +94,8 @@ p#nothingFound
         cursor: pointer
       &.podcastControls
         width: 20%
+        .podcastControl
+          background: none
       &.podcastDate
         font-size: .8rem
         padding-top: .6em

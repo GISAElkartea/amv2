@@ -18,7 +18,7 @@
 {% endblock aside %}
 
 {% block content %}
-<ul class="radioShows">
+<ul id="radioShows" class="cardList">
   {% for radioshow in radioshow_list.featured %}
   <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
     <h1><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h1>
