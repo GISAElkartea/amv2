@@ -25,18 +25,10 @@
 </ul>
 
 <ul id="radioShows">
-  {% regroup radioshow_list by name.0.upper as radioshow_list_by_first_letter %}
-  {% for radioshow_first_letter in radioshow_list_by_first_letter %}
-  <li class="radio list">
-    <h1>{{ radioshow_first_letter.grouper }}</h1>
-    <ul>
-      {% for radioshow in radioshow_first_letter.list %}
-      <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
-        <h2><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h2>
-      </li>
-      {% endfor %}
-    </ul>
-  </li>
+  {% for radioshow in radioshow_list %}
+    <li class="show" data-producer="{{ radioshow.producer.slug }}" data-category="{{ radioshow.category.slug }}">
+      <h2><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h2>
+    </li>
   {% endfor %}
 </ul>
 {% endblock content %}
