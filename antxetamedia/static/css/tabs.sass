@@ -35,9 +35,8 @@
         font-size: .8rem
   ul.tabsContents
     background: $green
-    padding: 1rem
+    padding: 1rem 2rem
     li
-      margin: 1rem 1rem 1rem 0
       vertical-align: middle
       display: inline-block
       &.mainForm
@@ -47,27 +46,44 @@
         border-radius: .3rem
         font-size: 0
         width: 100%
-        margin: 0 0 1rem 0
+        margin: 1rem 0 1rem 0
+        padding: .5em
+      ul
+        font-size: 0
+        li
+          padding: 1rem 3% 1rem 0
+          vertical-align: top
+          +media(max-width 1300px)
+          label
+            font-size: 1.2rem
+            display: block
+            +media(max-width 1300px)
+              font-size: 1rem
+          > *
+            font-size: .9rem
+            font-weight: normal
+            +media(max-width 1300px)
+              font-size: .8rem
+          .helptext
+            display: none
     label
       color: white
       padding: 0 1rem 0 0
       font-size: 1rem
-      vertical-align: middle
     select
       border: none
-      vertical-align: middle
     input
       border: tint(black, 80%) solid .15rem
       background: white
       border-radius: .2rem
       vertical-align: middle
-    input#id_q
-      padding: .5em
-      width: 90%
-      border: none
-      background: none
-      font-size: 1.1rem
-      color: tint(black, 50%)
+      &#id_q
+        padding: .5em
+        width: 90%
+        border: none
+        background: none
+        font-size: 1.1rem
+        color: tint(black, 50%)
     button[type="submit"]
       width: 10%
       font-size: 1.5rem
