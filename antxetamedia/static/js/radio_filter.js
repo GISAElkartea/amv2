@@ -13,6 +13,7 @@
     selector = selector.replace('{value}', value);
     tag = tag.replace('{filter}', filter);
     var shows = document.querySelectorAll(selector);
+    console.log(selector);
     Array.from(shows).forEach(function(show) {
       show.setAttribute(tag, !checked);
       if (show.getAttribute('data-producer-is-hidden') === "true" ||
@@ -24,22 +25,6 @@
     });
   }
 
-  function filterShowGroups() {
-    var showGroups = document.querySelectorAll('#radioShows li.radio.list');
-    Array.from(showGroups).forEach(function(showGroup) {
-      var shows = showGroup.querySelectorAll('li.show');
-      var isHidden = Array.map(shows, function(show) {
-        return (show.getAttribute('data-producer-is-hidden') === "true" ||
-                show.getAttribute('data-category-is-hidden') === "true");
-      });
-      if (Array.indexOf(isHidden, false) === -1) {
-        showGroup.style.display = 'none';
-      } else {
-        showGroup.style.display = 'block';
-      }
-    });
-  }
-
   var checkboxes = document.querySelectorAll('form li input');
   Array.from(checkboxes).forEach(function(checkbox) {
     toggleLabel.apply(checkbox);
@@ -47,8 +32,6 @@
     checkbox.onclick = function(event) {
       toggleLabel.apply(this);
       filterShows.apply(this);
-      filterShowGroups.apply(this);
     };
   });
-  filterShowGroups.apply();
 })();

@@ -20,12 +20,12 @@ RETRY_POLICY = {
 
 def queue_blob_upload(sender, instance, **kwargs):
     if instance.local:  # Only sync if there is something to upload
-        update_blob.apply_async([instance], retry_policy=RETRY_POLICY)
+        update_blob.apply_async([instance.pk], retry_policy=RETRY_POLICY)
 
 
 def queue_podcast_update(sender, instance, **kwargs):
     for blob in instance.blob_set.iterator():
-        update_blob.apply_async([blob], retry_policy=RETRY_POLICY)
+        update_blob.apply_async([blob.pk], retry_policy=RETRY_POLICY)
 
 
 if getattr(settings, 'SYNC_BLOBS', False):
@@ -35,7 +35,8 @@ if getattr(settings, 'SYNC_BLOBS', False):
 
 
 @shared_task
-def update_blob(blob):
+def update_blob(blob_pk):
+    blob = Blob.objects.get(pk=blob_pk)
     upload = BlobUpload.objects.create(blob=blob)
     upload.is_uploading()
     try:

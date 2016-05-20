@@ -9,63 +9,48 @@ ul#featuredShows
     a
       text-decoration: none
       color: white
-ul#radioShows
+
+ul.cardList
   padding: 0
+  margin: 2% 0
   +outer-container
-  li.radio.list
-    background: none
+  li
+    background: $green
+    margin-bottom: 2%
+    padding: .5em 0
+    text-align: center
     +span-columns(3)
     +omega(4n)
-    +media(max-width $medium)
-      +span-columns(4)
-      +omega(3n)
-    +media(max-width $small)
-      +span-columns(6)
-      +omega(2n)
     h1
-      color: $green
+      font-weight: normal
+      font-variant: small-caps
       text-transform: lowercase
-      font-size: 2.5rem
-      border-bottom: solid $green .04em
-      display: block
-      width: 40%
-      padding-left: .2em
-  a
-    text-decoration: none
-  ul
-    padding: 0
-    margin-bottom: 2rem
-    li
-      list-style: none
-      padding-left: .5rem
-      h2
-        font-weight: normal
-        font-size: 1rem
-        margin: .8em 0
+      font-size: 1.3rem
+      padding: 0 0 .5em 0
+      margin: 0 .5em .5em .5em
+      border-bottom: .05em solid white
+    h2, p.date
+      display: inline-block
+      margin: 0 .5em .5em .5em
+      color: white
+    a
+      text-decoration: none
+      color: white
+    img
+      width: 100%
+      margin-top: .5em
 
 ul#projectShows
   padding: 0
   margin: 0
-  li
+  > li
     list-style: none
     margin-bottom: 2rem
-    h1
-      background: $green
+    > h1
+      background: tint(black, 20%)
       color: white
       display: inline-block
-      padding: .5rem
-      margin-bottom: .5em
-    ul
-      padding-left: 1.5em
-      li
-        list-style: inside square
-        color: $green
-        margin-bottom: 0
-        h2
-          color: black
-          display: inline-block
-          font-weight: normal
-          margin: .5em 0
+      padding: .5em
 
 ul#archiveResults
   padding: 0
@@ -109,6 +94,8 @@ p#nothingFound
         cursor: pointer
       &.podcastControls
         width: 20%
+        .podcastControl
+          background: none
       &.podcastDate
         font-size: .8rem
         padding-top: .6em

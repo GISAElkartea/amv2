@@ -4,18 +4,8 @@
 
 ## Nola egin dezaket berri bat azalean agertzeko?
 
-*Nabarmendua*k bezala markatutako berriek lehentasuna dute azalean argertzeko
-garaian. Nabarmenduak diren berriak azalean agertu daitezkeenak baina gehiago
-baldin badira, berri hauek argitarapen dataren arabera agertuko dira azalean.
-
-Berri bat gehitu edo aldatzerakoan, *Nabarmendua* bezala markatu
-daiteke. Gomendagarria da hau desaktibatzea berri bat azalean agertzea
-beharrezkoa ez denean. Hau errazteko, [nabarmendutako berrien
-zerrendara][berri-nabarmenduak] joan gaitezke berrien zerrendan aurkitzen den
-iragazkien atalaren bidez. Behin hor, behean agertzen den *Ez nabarmendua bezala
-markatu* ekintza hautatu daiteke.
-
-[berri-nabarmenduak]: https://antxetamedia.info/admin/news/newspodcast/?featured__exact=1
+Berri bat *Nabarmendua* bezala markatzean azalan lehenengoa agertuko da. Berri
+bat nabarmentzean, aurrez nabarmendutako berria nabarmendua egoteari uzten dio.
 
 ## Nola nabarmendu ditzazket irratsaioak?
 

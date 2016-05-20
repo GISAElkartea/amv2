@@ -70,9 +70,24 @@ class InvalidString(text_type):
 
 TEMPLATES = [
     {
+        'NAME': 'All apps but project',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+    {
+        'NAME': 'Only project',
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join('antxetamedia/templates')],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'debug': DEBUG,
             'string_if_invalid': InvalidString("%s") if DEBUG else '',
@@ -130,6 +145,7 @@ STATICFILES_FINDERS = [
 
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True
+CELERY_TASK_SERIALIZER = 'json'
 
 COMPRESS_PRECOMPILERS = [('text/x-sass', 'django_libsass.SassCompiler')]
 
