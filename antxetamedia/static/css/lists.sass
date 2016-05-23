@@ -13,32 +13,35 @@ ul#featuredShows
 ul.cardList
   padding: 0
   margin: 2% 0
-  +outer-container
+  font-size: 0
   li
     background: $green
-    margin-bottom: 2%
-    padding: .5em 0
+    padding: .5rem 0
     text-align: center
-    +span-columns(3)
-    +omega(4n)
+    display: inline-block
+    width: 22%
+    margin: 0 3% 3% 0
     h1
       font-weight: normal
       font-variant: small-caps
       text-transform: lowercase
-      font-size: 1.3rem
-      padding: 0 0 .5em 0
-      margin: 0 .5em .5em .5em
-      border-bottom: .05em solid white
+      font-size: 1.25rem
+      padding: 0 0 .5rem 0
+      margin: 0 .5rem .5rem .5rem
+      border-bottom: .05rem solid white
     h2, p.date
       display: inline-block
-      margin: 0 .5em .5em .5em
+      margin: 0 .5rem .5rem .5rem
       color: white
+    h2
+      font-size: .95rem
     a
       text-decoration: none
       color: white
     img
       width: 100%
-      margin-top: .5em
+      height: 12rem
+      object-fit: cover
 
 ul#projectShows
   padding: 0

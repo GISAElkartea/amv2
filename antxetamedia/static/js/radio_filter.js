@@ -20,7 +20,7 @@
           show.getAttribute('data-category-is-hidden') === "true") {
         show.style.display = 'none';
       } else {
-        show.style.display = 'block';
+        show.style.display = 'inline-block';
       }
     });
   }

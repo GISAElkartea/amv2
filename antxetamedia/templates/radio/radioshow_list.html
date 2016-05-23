@@ -27,6 +27,8 @@
 
     {% thumbnail radioshow.image "500" as image %}
     <img src="{{ image.url }}"/>
+    {% empty %}
+    <img src="{% static 'images/radio.svg' %}" alt="radio"/>
     {% endthumbnail %}
   </li>
   {% endfor %}
@@ -39,6 +41,8 @@
 
     {% thumbnail radioshow.image "500" as image %}
     <img src="{{ image.url }}"/>
+    {% empty %}
+    <img src="{% static 'images/radio.svg' %}" alt="radio"/>
     {% endthumbnail %}
   </li>
   {% endfor %}
