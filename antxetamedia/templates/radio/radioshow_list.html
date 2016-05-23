@@ -20,7 +20,7 @@
 {% block content %}
 <ul id="radioShows" class="cardList">
   {% for radioshow in radioshow_list.featured %}
-  <li class="show">
+  <li class="show featured">
     <h1><a href="{{ radioshow.get_absolute_url }}">{{ radioshow }}</a></h1>
     <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
     <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
