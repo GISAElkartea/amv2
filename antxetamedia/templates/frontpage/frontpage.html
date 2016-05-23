@@ -21,11 +21,8 @@
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    {% thumbnail newspodcast.image "500" as image %}
-    <div class="detail" style="background-image: url('{{ image.url }}');">
-    {% empty %}
     <div class="detail">
-    {% endthumbnail %}
+      <a href="{{ newspodcast.get_absolute_url }}" {% thumbnail newspodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
     </div>
     <div class="text">
       <h2 class="category">
@@ -46,11 +43,8 @@
   <ul id="eventFront">
     {% for date, event in event_list %}
     <li class="flag event">
-      {% thumbnail event.image "500" as image %}
-      <div class="detail" style="background-image: url('{{ image.url }}');">
-      {% empty %}
       <div class="detail">
-      {% endthumbnail %}
+        <a href="{{ event.get_absolute_url }}" {% thumbnail event.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
       </div>
       <div class="text">
         <h2 class="category">{{ event.location }}</h2>
@@ -64,7 +58,8 @@
   <ul id="radioFront">
     {% for radiopodcast in radiopodcast_list %}
     <li class="flag radio">
-      <div class="detail" {% if radiopodcast.image %} style="background-image: url('{{ radiopodcast.image.url }}');"{% endif %}/>
+      <div class="detail">
+        <a href="{{ radiopodcast.get_absolute_url }}" {% thumbnail radiopodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
       </div>
       <div class="text">
         <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>
