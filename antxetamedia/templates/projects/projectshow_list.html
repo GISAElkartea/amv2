@@ -11,7 +11,7 @@
     <h1>{{ year.grouper }}</h1>
     <ul class="cardList">
       {% for projectshow in year.list %}
-      <li>
+      <li class="card">
         <h1><a href="{{ projectshow.get_absolute_url }}">{{ projectshow }}</a></h1>
         <h2 class="category">{{ projectshow.producer }}</h2>
         {% if projectshow.image %}

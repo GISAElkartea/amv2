@@ -5,36 +5,17 @@
 
 {% block content %}
 <article>
-  <div class="articleDetails">
+  <div class="articleDetails card">
+    {% for date in event.upcoming|islice:5 %}
+    <time class="date" datetime="{{ date|date:"Y M j" }}"><h1>{{ date|date:"Y M j" }}, {{ event.time|time:"H:i" }}</h1></time>
+    {% endfor %}
+    <h2 class="category">{{ event.location }}</h2>
     {% if event.image %}
     <img src="{{ event.image.url }}"/>
     {% endif %}
+    <a class="date" href="{{ event.link }}">{% trans 'More info' %}</a>
   </div>
   <div class="text">
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
     <div class="eventDescription">{{ event.description | safe }}</div>
-    <table class="eventDetail">
-      <tr class="eventLocation">
-        <td><h2 class="category">{% trans 'Location' %}</td>
-        <td>{{ event.location }}</td>
-      </tr>
-      <tr>
-        <td><h2 class="category">{% trans 'Dates' %}</td>
-        <td>
-          <ul>
-            {% for date in event.upcoming|islice:5 %}
-            <li><time class="date" datetime="{{ date|date:"Y M j" }}">{{ date|date:"Y M j" }}, <span class="time">{{ event.time|time:"H:i" }}</time></li>
-            {% endfor %}
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td colspan=2>
-          {% if event.link %}
-          <a class="link" href="{{ event.link }}">{% trans 'More info' %}</a>
-          {% endif %}
-        </td>
-      </tr>
-    </table>
-  </div>
 {% endblock content %}

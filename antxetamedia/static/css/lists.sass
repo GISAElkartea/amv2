@@ -1,39 +1,40 @@
 li.featured
   border: .3rem solid tint(black, 20%)
 
-ul.cardList
+.cardList
   padding: 0
   margin: 2% 0
   font-size: 0
-  li
-    background: $green
-    padding: .5rem 0
-    text-align: center
+.card
+  background: $green
+  padding: .5rem 0
+  text-align: center
+  display: inline-block
+  width: 23%
+  margin: 0 2% 2% 0
+  vertical-align: top
+  h1
+    font-weight: normal
+    font-variant: small-caps
+    text-transform: lowercase
+    font-size: 1.25rem
+    padding: 0 0 .5rem 0
+    margin: 0 .5rem .5rem .5rem
+    border-bottom: .05rem solid white
+    color: white
+  h2, p.date
     display: inline-block
-    width: 23%
-    margin: 0 2% 2% 0
-    vertical-align: top
-    h1
-      font-weight: normal
-      font-variant: small-caps
-      text-transform: lowercase
-      font-size: 1.25rem
-      padding: 0 0 .5rem 0
-      margin: 0 .5rem .5rem .5rem
-      border-bottom: .05rem solid white
-    h2, p.date
-      display: inline-block
-      margin: 0 .5rem .5rem .5rem
-      color: white
-    h2
-      font-size: .95rem
-    a
-      text-decoration: none
-      color: white
-    img
-      width: 100%
-      height: 12rem
-      object-fit: cover
+    margin: 0 .5rem .5rem .5rem
+    color: white
+  h2
+    font-size: .95rem
+  a
+    text-decoration: none
+    color: white
+  img
+    width: 100%
+    height: 12rem
+    object-fit: cover
 
 ul#projectShows
   padding: 0
