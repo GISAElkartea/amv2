@@ -15,7 +15,9 @@
         <h1><a href="{{ projectshow.get_absolute_url }}">{{ projectshow }}</a></h1>
         <h2 class="category">{{ projectshow.producer }}</h2>
         {% if projectshow.image %}
-        <img src="{{ projectshow.image.url }}"/>
+        <a href="{{ projectshow.get_absolute_url }}">
+          <img src="{{ projectshow.image.url }}"/>
+        </a>
         {% endif %}
       </li>
       {% endfor %}
