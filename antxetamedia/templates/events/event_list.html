@@ -7,11 +7,9 @@
 <ul class="list">
   {% for date, event in event_list %}
   <li class="flag event">
-    {% thumbnail event.image "500" as image %}
-    <div class="detail" style="background-image: url('{{ image.url }}');"></div>
-    {% empty %}
-    <div class="detail"></div>
-    {% endthumbnail %}
+    <div class="detail">
+      <a href="{{ event.get_absolute_url }}" {% thumbnail event.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
+    </div>
     <div class="text">
       <h2 class="category">{{ event.location }}</h2>
       <time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }}
