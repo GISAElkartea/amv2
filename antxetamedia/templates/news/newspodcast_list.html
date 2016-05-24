@@ -20,11 +20,8 @@
 <ul class="list">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
-    {% thumbnail newspodcast.image "500" as image %}
-    <div class="detail" style="background-image: url('{{ image.url }}');">
-    {% empty %}
     <div class="detail">
-    {% endthumbnail %}
+      <a href="{{ newspodcast.get_absolute_url }}" {% thumbnail newspodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
     </div>
     <div class="text">
       <h2 class="category">
