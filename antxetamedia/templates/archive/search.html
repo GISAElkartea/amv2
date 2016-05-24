@@ -64,7 +64,7 @@
         {% endif %}
 
         {% thumbnail absolute_image_url "500" as image %}
-        <img src="{{ image.url }}"/>
+        <a href="{{ result.get_absolute_url }}"><img src="{{ image.url }}"/></a>
         {% endthumbnail %}
       </div>
 
