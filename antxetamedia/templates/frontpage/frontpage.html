@@ -19,20 +19,17 @@
 {% for widget in widget_list %}
 <div class="widget">{{ widget.content | safe }}</div>
 {% endfor %}
+<div class="dfp">{% include 'DFP/300_250_mobile.html' %}</div>
+<div class="dfp">{% include 'DFP/300_250_sidebar_1.html' %}</div>
+<div class="dfp">{% include 'DFP/300_250_sidebar_2.html' %}</div>
+<div class="dfp">{% include 'DFP/300_600_sidebar_1.html' %}</div>
+<div class="dfp">{% include 'DFP/300_600_sidebar_2.html' %}</div>
 {% endblock aside %}
 
 {% block content %}
-{% include 'DFP/220_90_down.html' %}
-{% include 'DFP/220_90_up.html' %}
-{% include 'DFP/300_250_mobile.html' %}
-{% include 'DFP/300_250_sidebar_1.html' %}
-{% include 'DFP/300_250_sidebar_2.html' %}
-{% include 'DFP/300_600_sidebar_1.html' %}
-{% include 'DFP/300_600_sidebar_2.html' %}
-{% include 'DFP/320_50_mobile_down.html' %}
-{% include 'DFP/320_50_mobile_up.html' %}
-{% include 'DFP/728_90_down.html' %}
-{% include 'DFP/728_90_up.html' %}
+<div class="dfp 728">{% include 'DFP/728_90_up.html' %}</div>
+<div class="dfp 220">{% include 'DFP/220_90_up.html' %}</div>
+<div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_up.html' %}</div>
 
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
