@@ -123,6 +123,7 @@ STATICFILES_FINDERS = [
 BROKER_URL = 'django://'
 CELERY_ALWAYS_EAGER = True
 CELERY_TASK_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
 
 COMPRESS_PRECOMPILERS = [('text/x-sass', 'django_libsass.SassCompiler')]
 
