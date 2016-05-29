@@ -114,5 +114,5 @@ SYNC_BLOBS = True
 # CERTS #
 #########
 
-ACME_TOKEN = os.getenv('ACME_TOKEN')
-ACME_KEY = os.getenv('ACME_KEY')
+challenges = {v for k, v in os.environ.items() if k.startswith('ACME_CHALLENGE')}
+ACME_CHALLENGES = {challenge.split('.')[0]: challenge for challenge in challenges}

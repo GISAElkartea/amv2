@@ -3,12 +3,12 @@ from django.http import HttpResponse, Http404
 from django.views.generic import View
 
 
-KEY = getattr(settings, 'ACME_KEY', None)
-TOKEN = getattr(settings, 'ACME_TOKEN', None)
+CHALLENGES = getattr(settings, 'ACME_CHALLENGES', {})
 
 
 class AcmeChallenge(View):
     def get(self, request, *args, **kwargs):
-        if kwargs['token'] != TOKEN:
-            raise Http404()
-        return HttpResponse(KEY)
+        key = CHALLENGES.get(kwargs['token'])
+        if key is None:
+            raise Http404("Invalid token.")
+        return HttpResponse(key)
