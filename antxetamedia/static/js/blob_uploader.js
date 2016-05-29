@@ -8,12 +8,14 @@ function GetBlobUploader(upload_url, media_url, pending, view) {
     xhr.upload.status = field.parentNode.firstChild.nextElementSibling; // <span>
     xhr.upload.status.innerHTML = pending;
     xhr.upload.onprogress = function(e) { this.status.innerHTML = Math.round(100 * e.loaded / e.total) + '%'; };
-    xhr.send(file);
     xhr.onload = function() {
       media_url = media_url.replace('filename', encodeURI(this.responseText));
       this.upload.status.innerHTML = '<a href=\"' + media_url + '\" target=\"_blank\">' + view + '</a>';
       this.upload.status.previousElementSibling.value = this.responseText; // <input type=hidden>
+      window.onbeforeunload = function() {};
     };
+    window.onbeforeunload = function() { return "Are you sure you want to leave this page?"; };
+    xhr.send(file);
   }
   return UploadBlob;
 }
