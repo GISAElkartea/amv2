@@ -108,3 +108,11 @@ RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
 
 SYNC_BLOBS = True
+
+
+#########
+# CERTS #
+#########
+
+ACME_TOKEN = os.getenv('ACME_TOKEN')
+ACME_KEY = os.getenv('ACME_KEY')
