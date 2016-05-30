@@ -35,14 +35,21 @@ input[type="submit"]
 
 .widget
   p
-      margin: 1rem 0 0 0
+    margin: 1rem 0 0 0
+    font-size: 1rem
   +span-columns(12)
-  +media(max-width $medium)
-    +span-columns(4)
+  +media(min-width $small max-width $medium)
+    width: 30%
+    margin: 2% 2% 0 0 !important
+    vertical-align: top
     p
       width: 100%
-  +media(max-width $small)
-    +span-columns(12)
+      margin-top: 0
   img
     width: 100% !important
     height: auto !important
+
+aside
+  +media(max-width $medium)
+    padding: 0 !important
+    font-size: 0
