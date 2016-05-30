@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load i18n static compress thumbnail %}
 
+{% block extra_js %}
+{% include 'DFP/slots.html' %}
+{% endblock extra_js %}
+
 {% block title %}{% trans 'Frontpage' %}{% endblock title %}
 
 {% block configure %}
@@ -15,9 +19,18 @@
 {% for widget in widget_list %}
 <div class="widget">{{ widget.content | safe }}</div>
 {% endfor %}
+<div class="dfp">{% include 'DFP/300_250_mobile.html' %}</div>
+<div class="dfp">{% include 'DFP/300_250_sidebar_1.html' %}</div>
+<div class="dfp">{% include 'DFP/300_250_sidebar_2.html' %}</div>
+<div class="dfp">{% include 'DFP/300_600_sidebar_1.html' %}</div>
+<div class="dfp">{% include 'DFP/300_600_sidebar_2.html' %}</div>
 {% endblock aside %}
 
 {% block content %}
+<div class="dfp 728">{% include 'DFP/728_90_up.html' %}</div>
+<div class="dfp 220">{% include 'DFP/220_90_up.html' %}</div>
+<div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_up.html' %}</div>
+
 <ul id="newsFront">
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">

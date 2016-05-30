@@ -9,17 +9,20 @@
     duen Bidasoaldeko irratia da, Hendaian egoitza duena.">
     <meta name="keywords" content="antxeta, irratia, euskara, hendaia,
     bidasoaldea">
-
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="{% static 'css/main.sass' %}" />
+    {% block extra_css %}
+    {% endblock extra_css %}
     {% endcompress css %}
+
     {% compress js %}
     <script src="{% static 'bower_components/angular/angular.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'bower_components/ngDraggable/ngDraggable.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% block extra_js %}
+    {% endblock extra_js %}
     {% endcompress js %}
-    {% block extra_css %}
-    {% endblock extra_css %}
   </head>
   <body>
     <section id="mainNav">
@@ -67,7 +70,13 @@
       </aside>
     </div>
 
-    <footer>
+
+    <footer id="mainFooter">
+      <div id="dfpFooter">
+        <div class="dfp 728">{% include 'DFP/728_90_down.html' %}</div>
+        <div class="dfp 220">{% include 'DFP/220_90_down.html' %}</div>
+        <div class="dfp 320">{% include 'DFP/320_50_mobile_down.html' %}</div>
+      </div>
       <div id="license">
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="{% static 'images/by-sa.svg' %}" alt="Creative Commons by" /></a>
         <span xmlns:dct="http://purl.org/dc/terms/"
@@ -108,7 +117,5 @@
     </script>
     <script src="{% static 'js/player.js' %}" type="text/javascript" charset="utf-8"></script>
     {% endcompress js %}
-    {% block extra_js %}
-    {% endblock extra_js %}
   </body>
 </html>
