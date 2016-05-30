@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-14 20:46+0200\n"
+"POT-Creation-Date: 2016-05-30 12:39+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -54,13 +54,13 @@ msgid "Radio podcasts"
 msgstr "Irrati emankizunak"
 
 #: antxetamedia/archive/views.py:30 antxetamedia/dashboard.py:44
-#: antxetamedia/projects/models.py:27 antxetamedia/templates/base.html:30
+#: antxetamedia/projects/models.py:27 antxetamedia/templates/base.html:34
 #: antxetamedia/templates/projects/projectshow_list.html:4
 msgid "Projects"
 msgstr "Proiektuak"
 
 #: antxetamedia/archive/views.py:31 antxetamedia/dashboard.py:28
-#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:31
+#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:35
 #: antxetamedia/templates/events/event_list.html:4
 msgid "Events"
 msgstr "Agenda"
@@ -101,8 +101,8 @@ msgstr "Audioa"
 
 #: antxetamedia/blobs/admin.py:100 antxetamedia/blobs/models.py:34
 #: antxetamedia/events/models.py:126 antxetamedia/schedule/admin.py:25
-#: antxetamedia/schedule/models.py:19 antxetamedia/templates/player.html:21
-#: antxetamedia/templates/player.html:36
+#: antxetamedia/schedule/models.py:19 antxetamedia/templates/player.html:22
+#: antxetamedia/templates/player.html:44
 msgid "Link"
 msgstr "Esteka"
 
@@ -236,12 +236,12 @@ msgstr "{blob} igoera"
 msgid "Main content"
 msgstr "Eduki nagusia"
 
-#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html:28
+#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html:32
 #: antxetamedia/templates/news/newspodcast_list.html:4
 msgid "News"
 msgstr "Berriak"
 
-#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html:29
+#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html:33
 msgid "Radio"
 msgstr "Irratia"
 
@@ -253,7 +253,7 @@ msgstr "Bestelakoak"
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:33
+#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:37
 #: antxetamedia/templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
@@ -295,7 +295,7 @@ msgid "Date & Time"
 msgstr "Data eta Ordua"
 
 #: antxetamedia/events/admin.py:16 antxetamedia/news/admin.py:22
-#: antxetamedia/news/admin.py:38 antxetamedia/projects/admin.py:25
+#: antxetamedia/news/admin.py:37 antxetamedia/projects/admin.py:25
 #: antxetamedia/projects/admin.py:40 antxetamedia/radio/admin.py:31
 #: antxetamedia/radio/admin.py:54
 msgid "Details"
@@ -327,7 +327,6 @@ msgid "Description"
 msgstr "Deskribapena"
 
 #: antxetamedia/events/models.py:124
-#: antxetamedia/templates/events/event_detail.html:18
 msgid "Location"
 msgstr "Kokapena"
 
@@ -372,14 +371,6 @@ msgstr "Berrien Sailak"
 #: antxetamedia/templates/radio/radioshow_list.html:5
 msgid "Radio Shows"
 msgstr "Irratsaioak"
-
-#: antxetamedia/news/admin.py:44 antxetamedia/radio/admin.py:37
-msgid "Mark as featured"
-msgstr "Nabarmendua bezala markatu"
-
-#: antxetamedia/news/admin.py:48 antxetamedia/radio/admin.py:41
-msgid "Mark as not featured"
-msgstr "Ez nabarmendua bezala markatu"
 
 #: antxetamedia/news/forms.py:8
 msgid "Shows"
@@ -446,6 +437,14 @@ msgstr "Proiektu emankizuna"
 #: antxetamedia/projects/models.py:43
 msgid "Project podcasts"
 msgstr "Proiektu emankizunak"
+
+#: antxetamedia/radio/admin.py:37
+msgid "Mark as featured"
+msgstr "Nabarmendua bezala markatu"
+
+#: antxetamedia/radio/admin.py:41
+msgid "Mark as not featured"
+msgstr "Ez nabarmendua bezala markatu"
 
 #: antxetamedia/radio/admin.py:59
 msgid "Complete program"
@@ -533,7 +532,7 @@ msgid "You are lost"
 msgstr "Galdua zaude"
 
 #: antxetamedia/templates/archive/search.html:5
-#: antxetamedia/templates/base.html:32
+#: antxetamedia/templates/base.html:36
 msgid "Archive"
 msgstr "Hemeroteka"
 
@@ -552,20 +551,20 @@ msgstr ""
 "  Zure bilaketak ez du emaitzarik izan.\n"
 "  "
 
-#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html:27
-#: antxetamedia/templates/frontpage/frontpage.html:4
+#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html:31
+#: antxetamedia/templates/frontpage/frontpage.html:8
 msgid "Frontpage"
 msgstr "Azala"
 
-#: antxetamedia/templates/base.html:47
+#: antxetamedia/templates/base.html:51
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: antxetamedia/templates/events/event_detail.html:22
-msgid "Dates"
-msgstr "Datak"
+#: antxetamedia/templates/base.html:112
+msgid "Antxeta Irratia zuzenean"
+msgstr "Antxeta Irratia live"
 
-#: antxetamedia/templates/events/event_detail.html:34
+#: antxetamedia/templates/events/event_detail.html:16
 msgid "More info"
 msgstr "Info gehiago"
 
@@ -574,7 +573,7 @@ msgid "Configure your frontpage"
 msgstr "Sortu zure azala"
 
 #: antxetamedia/templates/frontpage/configure.html:19
-#: antxetamedia/templates/frontpage/frontpage.html:7
+#: antxetamedia/templates/frontpage/frontpage.html:11
 msgid "Configure"
 msgstr "Pertsonalizatu"
 
@@ -605,52 +604,45 @@ msgstr ""
 msgid "Next"
 msgstr "Ondorengoa"
 
-#: antxetamedia/templates/player.html:5
+#: antxetamedia/templates/player.html:6
 msgid "Progress"
 msgstr "Tokia"
 
-#: antxetamedia/templates/player.html:12
+#: antxetamedia/templates/player.html:13
 msgid "Backward"
 msgstr "Atzera"
 
-#: antxetamedia/templates/player.html:13 antxetamedia/templates/player.html:34
-#: antxetamedia/templates/podcast_control.html:5
+#: antxetamedia/templates/player.html:14 antxetamedia/templates/player.html:42
 msgid "Play"
 msgstr "Erreproduzitu"
 
-#: antxetamedia/templates/player.html:14
+#: antxetamedia/templates/player.html:15
 msgid "Pause"
 msgstr "Gelditu"
 
-#: antxetamedia/templates/player.html:15
+#: antxetamedia/templates/player.html:16
 msgid "Forward"
 msgstr "Aurrera"
 
-#: antxetamedia/templates/player.html:20
+#: antxetamedia/templates/player.html:21
 msgid "Volume"
 msgstr "Bolumena"
 
-#: antxetamedia/templates/player.html:22 antxetamedia/templates/player.html:35
-#: antxetamedia/templates/podcast_control.html:8
+#: antxetamedia/templates/player.html:23 antxetamedia/templates/player.html:43
 msgid "Download"
 msgstr "Deskargatu"
 
-#: antxetamedia/templates/player.html:24
-#| msgid "Play"
+#: antxetamedia/templates/player.html:25
 msgid "Playlist"
 msgstr "Erreprodukzio zerrenda"
 
-#: antxetamedia/templates/player.html:37
+#: antxetamedia/templates/player.html:45
 msgid "Remove"
 msgstr "Kendu"
 
-#: antxetamedia/templates/player.html:38
+#: antxetamedia/templates/player.html:46
 msgid "Move"
 msgstr "Mugitu"
-
-#: antxetamedia/templates/podcast_control.html:6
-msgid "Add"
-msgstr "Gehitu"
 
 #: antxetamedia/templates/projects/projectshow_detail.html:27
 #: antxetamedia/templates/radio/radiopodcast_list.html:31
@@ -660,3 +652,9 @@ msgstr "Data"
 #: antxetamedia/widgets/models.py:12
 msgid "Widget"
 msgstr "Widgeta"
+
+#~ msgid "Dates"
+#~ msgstr "Datak"
+
+#~ msgid "Add"
+#~ msgstr "Gehitu"
