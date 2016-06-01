@@ -2,7 +2,9 @@
 {% load i18n static compress thumbnail %}
 
 {% block extra_js %}
+{% compress js %}
 {% include 'DFP/slots.html' %}
+{% endcompress js %}
 {% endblock extra_js %}
 
 {% block title %}{% trans 'Frontpage' %}{% endblock title %}
