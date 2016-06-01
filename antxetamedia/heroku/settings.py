@@ -24,15 +24,15 @@ INSTALLED_APPS = [
 ###########
 
 AWS_STORAGE_BUCKET_NAME = 'amv2'
-AWS_S3_CUSTOM_DOMAIN = '{0}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME)
+AWS_S3_CUSTOM_DOMAIN = 'static.antxetamedia.info'
 AWS_QUERYSTRING_AUTH = False
 AWS_PRELOAD_METADATA = True
 
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
 STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
 COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
-MEDIA_URL = 'https://static.antxetamedia.info/media/'
-STATIC_URL = 'https://static.antxetamedia.info/static/'
+MEDIA_URL = 'https://{}/media/'.format(AWS_S3_CUSTOM_DOMAIN)
+STATIC_URL = 'https://{}/static/'.format(AWS_S3_CUSTOM_DOMAIN)
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
 
 
