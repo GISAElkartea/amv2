@@ -6,14 +6,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from grappelli.forms import GrappelliSortableHiddenMixin
 
-from .models import Account, License, Blob, BlobUpload
+from .models import Account, Blob, BlobUpload
 from .tasks import queue_blob_upload
 from .fields import UploadField
 
 
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     model = Blob
-    fields = ['position', 'account', 'license', 'created', 'local', 'remote']
+    fields = ['position', 'account', 'created', 'local', 'remote']
     ordering = ['position']
     sortable_field_name = 'position'
     readonly_fields = ['created', 'remote']
@@ -40,10 +40,10 @@ class IsUploadedFilter(admin.SimpleListFilter):
 
 
 class BlobAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'get_content_object', 'get_last_upload', 'created', 'account', 'license', 'is_uploaded']
-    list_filter = [IsUploadedFilter, 'created', 'account', 'license']
+    list_display = ['__str__', 'get_content_object', 'get_last_upload', 'created', 'account', 'is_uploaded']
+    list_filter = [IsUploadedFilter, 'created', 'account']
     readonly_fields = ['get_content_object', 'get_last_upload', 'remote', 'created']
-    fields = ['get_content_object', 'get_last_upload', 'account', 'license', 'created', 'local', 'remote']
+    fields = ['get_content_object', 'get_last_upload', 'account', 'created', 'local', 'remote']
     actions = ['retry_upload']
     formfield_overrides = {models.FileField: {'form_class': UploadField}}
 
@@ -127,6 +127,5 @@ class BlobUploadAdmin(admin.ModelAdmin):
         pass
 
 admin.site.register(Account)
-admin.site.register(License)
 admin.site.register(Blob, BlobAdmin)
 admin.site.register(BlobUpload, BlobUploadAdmin)

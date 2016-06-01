@@ -25,19 +25,6 @@ class Account(models.Model):
 
 
 @python_2_unicode_compatible
-class License(models.Model):
-    class Meta:
-        verbose_name = _('License')
-        verbose_name_plural = _('Licenses')
-
-    name = models.CharField(_('Name'), max_length=64)
-    link = models.URLField(_('Link'))
-
-    def __str__(self):
-        return self.name
-
-
-@python_2_unicode_compatible
 class Blob(models.Model):
     class Meta:
         ordering = ['-created']
@@ -57,7 +44,6 @@ class Blob(models.Model):
                                          "be set at the remote field."))
     remote = models.CharField(_('Remote file'), max_length=512, null=True, blank=True)
     account = models.ForeignKey(Account, verbose_name=_('Account'))
-    license = models.ForeignKey(License, verbose_name=_('License'))
 
     def __str__(self):
         return '{self.content_object} - #{self.position}'.format(self=self)
