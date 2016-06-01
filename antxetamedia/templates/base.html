@@ -13,16 +13,16 @@
 
     {% compress css %}
     <link rel="stylesheet" type="text/x-sass" href="{% static 'css/main.sass' %}" />
+    {% endcompress css %}
     {% block extra_css %}
     {% endblock extra_css %}
-    {% endcompress css %}
 
     {% compress js %}
     <script src="{% static 'bower_components/angular/angular.js' %}" type="text/javascript" charset="utf-8"></script>
     <script src="{% static 'bower_components/ngDraggable/ngDraggable.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% endcompress js %}
     {% block extra_js %}
     {% endblock extra_js %}
-    {% endcompress js %}
   </head>
   <body>
     <section id="mainNav">
