@@ -89,7 +89,7 @@ CELERY_ACCEPT_CONTENT = ['json']
 ########
 
 ADMINS = [
-    ('Unai Zalakain', 'unai@gisa-elkartea.org'),
+    ('Unai Zalakain', 'antxetamedia.info@unaizalakain.info'),
 ]
 
 from herokuify.mail.sendgrid import EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT, EMAIL_USE_TLS  # noqa
