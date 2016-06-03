@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.conf import settings
 
 from celery import shared_task
+from celery.exceptions import Retry
 
 from ..shows.models import AbstractPodcast
 from .models import Blob, BlobUpload
@@ -48,5 +49,6 @@ def update_blob(blob_pk):
         url = connection.build_url(blob)
     except Exception:
         upload.is_unsuccessful(traceback.format_exc())
+        raise Retry()
     else:
         upload.is_successful(url)
