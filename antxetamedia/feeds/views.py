@@ -1,5 +1,4 @@
-import itertools
-from operator import attrgetter
+import heapq
 
 from django.contrib.syndication.views import Feed, add_domain
 from django.core.urlresolvers import reverse
@@ -27,10 +26,13 @@ class BlobFeed(Feed):
     def items(self):
         # Blobs do not have a creation timestamp. We must therefore get the
         # podcasts, order them, and get their related blobs
-        newspodcasts = NewsPodcast.objects.published()[:10]
-        radiopodcasts = RadioPodcast.objects.published()[:10]
-        items = itertools.chain(newspodcasts, radiopodcasts)
-        return sorted(items, key=attrgetter('pub_date'))
+        newspodcasts = NewsPodcast.objects.published()[:10].iterator()
+        radiopodcasts = RadioPodcast.objects.published()[:10].iterator()
+        # Respect the order of each queryset, only order them when merging
+        news_dates = ((n.pub_date, n) for n in newspodcasts)
+        radio_dates = ((r.pub_date, r) for r in radiopodcasts)
+        podcast_dates = heapq.merge(news_dates, radio_dates)
+        return (p[1] for p in podcast_dates)
 
     def item_title(self, item):
         return str(item)
