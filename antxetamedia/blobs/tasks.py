@@ -2,6 +2,7 @@ import traceback
 
 from django.db.models.signals import post_save
 from django.conf import settings
+from django.core.files.storage import default_storage
 
 from celery import shared_task
 
@@ -42,10 +43,14 @@ def update_blob(self, blob_pk):
     try:
         connection = ArchiveS3(blob.account)
         connection.create_or_update_bucket(blob.content_object)
-        key = connection.get_or_create_key(blob)
+        # Delete reference to a non-existent filed
+        if blob.local and not default_storage.exists(blob.local.name):
+            blob.local = None
+        url = None
         if blob.local:
+            key = connection.get_or_create_key(blob)
             key.set_contents_from_file(blob.local.file)
-        url = connection.build_url(blob)
+            url = connection.build_url(blob)
     except Exception as exc:
         upload.is_unsuccessful(traceback.format_exc())
         raise self.retry(exc=exc)
