@@ -5,6 +5,7 @@ except ImportError:
 
 from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 from boto.s3.bucket import Bucket
+from boto.exception import S3CreateError
 
 
 class ArchiveS3(object):
@@ -30,7 +31,12 @@ class ArchiveS3(object):
         bucket_name = self.get_bucket_name(podcast)
         update = self.connection.lookup(bucket_name) is not None
         headers = self.get_bucket_headers(podcast, update=update)
-        return self.connection.create_bucket(bucket_name, headers=headers)
+        try:
+            return self.connection.create_bucket(bucket_name, headers=headers)
+        except S3CreateError as e:
+            if e.status == 409:  # Conflict
+                return Bucket(self.connection, bucket_name)
+            raise
 
     def get_key_name(self, blob):
         return str(blob)  # Guaranteed to be unique
