@@ -4,7 +4,6 @@ from django.db.models.signals import post_save
 from django.conf import settings
 
 from celery import shared_task
-from celery.exceptions import Retry
 
 from ..shows.models import AbstractPodcast
 from .models import Blob, BlobUpload
@@ -35,8 +34,8 @@ if getattr(settings, 'SYNC_BLOBS', False):
         post_save.connect(queue_podcast_update, sender=subclass)
 
 
-@shared_task
-def update_blob(blob_pk):
+@shared_task(bind=True)
+def update_blob(self, blob_pk):
     blob = Blob.objects.get(pk=blob_pk)
     upload = BlobUpload.objects.create(blob=blob)
     upload.is_uploading()
@@ -47,8 +46,8 @@ def update_blob(blob_pk):
         if blob.local:
             key.set_contents_from_file(blob.local.file)
         url = connection.build_url(blob)
-    except Exception:
+    except Exception as exc:
         upload.is_unsuccessful(traceback.format_exc())
-        raise Retry()
+        raise self.retry(exc=exc)
     else:
         upload.is_successful(url)
