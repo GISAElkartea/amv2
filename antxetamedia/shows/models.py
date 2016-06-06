@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.utils.six import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
+from django.utils.html import strip_tags
 
 from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
@@ -113,9 +114,9 @@ class AbstractPodcast(models.Model):
         return {
             'x-archive-meta-mediatype': 'audio',
             'x-archive-meta-collection': 'opensource_audio',
-            'x-archive-meta-title': str(self),
-            'x-archive-meta-creator': str(self.show),
-            'x-archive-meta-description': self.description,
+            'x-archive-meta-title': strip_tags(str(self)),
+            'x-archive-meta-creator': strip_tags(str(self.show)),
+            'x-archive-meta-description': strip_tags(self.description),
             'x-archive-meta-date': self.pub_date.strftime('%Y-%m-%d'),
             'x-archive-meta-language': 'eu',
         }
