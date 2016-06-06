@@ -37,7 +37,10 @@ if getattr(settings, 'SYNC_BLOBS', False):
 
 @shared_task(bind=True)
 def update_blob(self, blob_pk):
-    blob = Blob.objects.get(pk=blob_pk)
+    try:
+        blob = Blob.objects.get(pk=blob_pk)
+    except Blob.DoesNotExist:
+        return
     upload = BlobUpload.objects.create(blob=blob)
     upload.is_uploading()
     try:
