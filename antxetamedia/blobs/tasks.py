@@ -46,7 +46,7 @@ def update_blob(self, blob_pk):
         # Delete reference to a non-existent filed
         if blob.local and not default_storage.exists(blob.local.name):
             blob.local = None
-        url = None
+        url = blob.remote
         if blob.local:
             key = connection.get_or_create_key(blob)
             key.set_contents_from_file(blob.local.file)
@@ -55,8 +55,4 @@ def update_blob(self, blob_pk):
         upload.is_unsuccessful(traceback.format_exc())
         raise self.retry(exc=exc)
     else:
-        if url:
-            upload.is_successful(url)
-        else:
-            upload.is_unsuccessful(traceback.format_exc())
-            raise self.retry(exc=exc)
+        upload.is_successful(url)
