@@ -55,4 +55,8 @@ def update_blob(self, blob_pk):
         upload.is_unsuccessful(traceback.format_exc())
         raise self.retry(exc=exc)
     else:
-        upload.is_successful(url)
+        if url:
+            upload.is_successful(url)
+        else:
+            upload.is_unsuccessful(traceback.format_exc())
+            raise self.retry(exc=exc)
