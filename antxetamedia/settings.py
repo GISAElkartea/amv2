@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'django_filters',
 
+    'antxetamedia',
     'antxetamedia.frontpage',
     'antxetamedia.blobs.apps.BlobsConfig',
     'antxetamedia.shows',
