@@ -5,11 +5,11 @@
 {% trans 'Radio Shows' %}
 {% endblock title %}
 
-{% block extra_js %}
+{% block tail_extra_js %}
 {% compress js %}
 <script src="{% static 'js/radio_filter.js' %}" type="text/javascript" charset="utf-8"></script>
 {% endcompress js %}
-{% endblock extra_js %}
+{% endblock tail_extra_js %}
 
 {% block aside %}
 <form class="cross_out" method="get" action=".">
