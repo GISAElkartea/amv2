@@ -24,15 +24,28 @@ header
 #wrap
   background: tint(black, 95%)
   min-height: 75vh
-  padding: 3rem 3%
+  padding: 2rem 3%
   +outer-container
-  main
-    position: relative
+  #mainContent
     +span-columns(9)
     +media(max-width $medium)
       +span-columns(12)
+    .mainDFP
+      overflow: hidden
+      +span-columns(12)
+    main
+      position: relative
+      +span-columns(12)
+      #right
+        +span-columns(4 of 9)
+        +media(max-width $small)
+          +span-columns(12)
+      ul#newsFront
+        +span-columns(5 of 9)
+        +media(max-width $small)
+          +span-columns(12)
   aside
-    padding-left: 1%
+    padding: 1.5rem 0 0 1%
     +span-columns(3)
     +media(max-width $medium)
       +span-columns(12)

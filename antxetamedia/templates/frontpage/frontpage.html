@@ -29,65 +29,71 @@
 {% endblock aside %}
 
 {% block content %}
-<div class="dfp 728">{% include 'DFP/728_90_up.html' %}</div>
-<div class="dfp 220">{% include 'DFP/220_90_up.html' %}</div>
-<div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_up.html' %}</div>
-
-<ul id="newsFront">
-  {% for newspodcast in newspodcast_list %}
-  <li class="flag news">
-    <div class="detail">
-      <a href="{{ newspodcast.get_absolute_url }}" {% thumbnail newspodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
-    </div>
-    <div class="text">
-      <h2 class="category">
-        {% for category in newspodcast.categories.all %}
-        <a href="{{ category.get_absolute_url }}">{{ category }}</a>
-        {% if not forloop.last %}, {% endif %}
-        {% endfor %}
-      </h2>
-      <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
-      <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
-      {% include 'podcast_control.html' with podcast=newspodcast %}
-    </div>
-  </li>
-  {% endfor %}
-</ul>
-
-<div id="right">
-  <ul id="eventFront">
-    {% for date, event in event_list %}
-    <li class="flag event">
-      <div class="detail">
-        <a href="{{ event.get_absolute_url }}" {% thumbnail event.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
-      </div>
-      <div class="text">
-        <h2 class="category">{{ event.location }}</h2>
-        <time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} <span class="time">{{ event.time|time:"H:i" }}</span></time>
-        <h1><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h1>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-
-  <ul id="radioFront">
-    {% for radiopodcast in radiopodcast_list %}
-    <li class="flag radio">
-      <div class="detail">
-        <a href="{{ radiopodcast.get_absolute_url }}" {% thumbnail radiopodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
-      </div>
-      <div class="text">
-        <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>
-        <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
-        <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
-        {% include 'podcast_control.html' with podcast=radiopodcast %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+<div class="mainDFP">
+  <div class="dfp 728">{% include 'DFP/728_90_up.html' %}</div>
+  <div class="dfp 220">{% include 'DFP/220_90_up.html' %}</div>
+  <div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_up.html' %}</div>
 </div>
 
-<div class="dfp 728">{% include 'DFP/728_90_down.html' %}</div>
-<div class="dfp 220">{% include 'DFP/220_90_down.html' %}</div>
-<div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_down.html' %}</div>
+<main>
+  <ul id="newsFront">
+    {% for newspodcast in newspodcast_list %}
+    <li class="flag news">
+      <div class="detail">
+        <a href="{{ newspodcast.get_absolute_url }}" {% thumbnail newspodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
+      </div>
+      <div class="text">
+        <h2 class="category">
+          {% for category in newspodcast.categories.all %}
+          <a href="{{ category.get_absolute_url }}">{{ category }}</a>
+          {% if not forloop.last %}, {% endif %}
+          {% endfor %}
+        </h2>
+        <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
+        <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
+        {% include 'podcast_control.html' with podcast=newspodcast %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div id="right">
+    <ul id="eventFront">
+      {% for date, event in event_list %}
+      <li class="flag event">
+        <div class="detail">
+          <a href="{{ event.get_absolute_url }}" {% thumbnail event.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
+        </div>
+        <div class="text">
+          <h2 class="category">{{ event.location }}</h2>
+          <time class="date" datetime="{{ date|date:"M j" }}">{{ date|date:"M j" }} <span class="time">{{ event.time|time:"H:i" }}</span></time>
+          <h1><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h1>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <ul id="radioFront">
+      {% for radiopodcast in radiopodcast_list %}
+      <li class="flag radio">
+        <div class="detail">
+          <a href="{{ radiopodcast.get_absolute_url }}" {% thumbnail radiopodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
+        </div>
+        <div class="text">
+          <h2 class="category"><a href="{{ radiopodcast.show.get_absolute_url }}">{{ radiopodcast.show }}</a></h2>
+          <p class="date">{{ radiopodcast.pub_date|date:"Y-m-d" }}</p>
+          <h1><a href="{{ radiopodcast.get_absolute_url }}">{{ radiopodcast }}</a></h1>
+          {% include 'podcast_control.html' with podcast=radiopodcast %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+
+<div class="mainDFP">
+  <div class="dfp 728">{% include 'DFP/728_90_down.html' %}</div>
+  <div class="dfp 220">{% include 'DFP/220_90_down.html' %}</div>
+  <div class="dfp 320 mobile">{% include 'DFP/320_50_mobile_down.html' %}</div>
+</div>
 {% endblock content %}
