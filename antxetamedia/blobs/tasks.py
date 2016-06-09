@@ -35,7 +35,7 @@ if getattr(settings, 'SYNC_BLOBS', False):
         post_save.connect(queue_podcast_update, sender=subclass)
 
 
-@shared_task(bind=True)
+@shared_task(bind=True, rate_limit='12/h')
 def update_blob(self, blob_pk):
     try:
         blob = Blob.objects.get(pk=blob_pk)
