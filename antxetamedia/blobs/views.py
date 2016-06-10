@@ -11,10 +11,8 @@ from .models import Blob
 
 
 class PodcastBlobList(ListView):
-    model = Blob
-
     def get_queryset(self):
-        qs = super(PodcastBlobList, self).get_queryset()
+        qs = Blob.objects.with_content()
         qs = qs.filter(content_type__app_label=self.kwargs['app_label'],
                        content_type__model=self.kwargs['model'],
                        object_id=self.kwargs['id'])

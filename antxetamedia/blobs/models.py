@@ -24,8 +24,17 @@ class Account(models.Model):
         return self.name
 
 
+class BlobQuerySet(models.QuerySet):
+    def with_content(self):
+        query = ((models.Q(remote__isnull=False) & ~models.Q(remote='')) |
+                 (models.Q(local__isnull=False) & ~models.Q(local='')))
+        return self.filter(query)
+
+
 @python_2_unicode_compatible
 class Blob(models.Model):
+    objects = BlobQuerySet.as_manager()
+
     class Meta:
         ordering = ['-created']
         unique_together = [('content_type', 'object_id', 'position')]
@@ -56,7 +65,9 @@ class Blob(models.Model):
     def link(self):
         if self.local:
             return self.local.url
-        return self.remote
+        if self.remote:
+            return self.remote
+        return ''
 
     def clean(self):
         if not self.local and not self.remote:
