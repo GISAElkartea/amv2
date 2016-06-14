@@ -3,7 +3,7 @@ function GetBlobUploader(upload_url, media_url, pending, view) {
     file = field.files[0];
     field.value = '';
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', upload_url.replace('filename', file.name), true);
+    xhr.open('POST', upload_url.replace('filename', btoa(file.name)), true);
     xhr.setRequestHeader('X-CSRFToken', field.form.csrfmiddlewaretoken.value);
     xhr.upload.status = field.parentNode.firstChild.nextElementSibling; // <span>
     xhr.upload.status.innerHTML = pending;
