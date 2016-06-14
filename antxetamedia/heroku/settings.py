@@ -1,7 +1,5 @@
 import os
 
-from django.utils.crypto import get_random_string
-
 import herokuify
 
 from antxetamedia.settings import * #noqa
@@ -40,8 +38,7 @@ CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jqu
 # Security settings #
 #####################
 
-SECRET_KEY = os.environ.get('SECRET_KEY', get_random_string(
-    50, 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'))
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 MIDDLEWARE_CLASSES += [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
