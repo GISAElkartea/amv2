@@ -1,1 +1,1 @@
-web: gunicorn antxetamedia.heroku.wsgi --preload --log-file -
+web: gunicorn antxetamedia.heroku.wsgi --worker-class=gevent --preload --log-file -
