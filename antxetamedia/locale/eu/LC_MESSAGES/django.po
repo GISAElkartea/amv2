@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-17 12:09+0200\n"
+"POT-Creation-Date: 2016-06-20 17:47+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -54,13 +54,13 @@ msgid "Radio podcasts"
 msgstr "Irrati emankizunak"
 
 #: antxetamedia/archive/views.py:30 antxetamedia/dashboard.py:44
-#: antxetamedia/projects/models.py:27 antxetamedia/templates/base.html:36
+#: antxetamedia/projects/models.py:27 antxetamedia/templates/base.html:37
 #: antxetamedia/templates/projects/projectshow_list.html:4
 msgid "Projects"
 msgstr "Proiektuak"
 
 #: antxetamedia/archive/views.py:31 antxetamedia/dashboard.py:28
-#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:37
+#: antxetamedia/events/models.py:115 antxetamedia/templates/base.html:38
 #: antxetamedia/templates/events/event_list.html:4
 msgid "Events"
 msgstr "Agenda"
@@ -227,12 +227,12 @@ msgstr "{blob} igoera"
 msgid "Main content"
 msgstr "Eduki nagusia"
 
-#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html:34
+#: antxetamedia/dashboard.py:14 antxetamedia/templates/base.html:35
 #: antxetamedia/templates/news/newspodcast_list.html:4
 msgid "News"
 msgstr "Berriak"
 
-#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html:35
+#: antxetamedia/dashboard.py:21 antxetamedia/templates/base.html:36
 msgid "Radio"
 msgstr "Irratia"
 
@@ -244,7 +244,7 @@ msgstr "Bestelakoak"
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:39
+#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:40
 #: antxetamedia/templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
@@ -537,7 +537,7 @@ msgid "Advertising"
 msgstr "Publizitatea"
 
 #: antxetamedia/templates/archive/search.html:5
-#: antxetamedia/templates/base.html:38
+#: antxetamedia/templates/base.html:39
 msgid "Archive"
 msgstr "Hemeroteka"
 
@@ -556,18 +556,18 @@ msgstr ""
 "  Zure bilaketak ez du emaitzarik izan.\n"
 "  "
 
-#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html:33
+#: antxetamedia/templates/base.html:5 antxetamedia/templates/base.html:34
 #: antxetamedia/templates/frontpage/frontpage.html:10
 msgid "Frontpage"
 msgstr "Azala"
 
-#: antxetamedia/templates/base.html:53
+#: antxetamedia/templates/base.html:54
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: antxetamedia/templates/base.html:108
-msgid "Antxeta Irratia zuzenean"
-msgstr "Antxeta Irratia live"
+#: antxetamedia/templates/base.html:109
+msgid "Antxeta Irratia live"
+msgstr "Antxeta Irratia zuzenean"
 
 #: antxetamedia/templates/events/event_detail.html:16
 msgid "More info"
