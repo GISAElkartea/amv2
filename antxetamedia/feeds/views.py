@@ -11,7 +11,7 @@ from antxetamedia.radio.models import RadioPodcast
 
 class BlobFeed(Feed):
     feed_type = Atom1Feed
-    title = _('Latest podcasts from Antxetamedia')
+    title = _('Antxetamedia')
     description = _('Latest news and radio podcasts from Antxetamedia')
     link = '/'
     author_name = 'Antxeta Irratia'
