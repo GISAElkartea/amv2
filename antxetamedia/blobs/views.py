@@ -40,6 +40,6 @@ class PodcastBlobList(ListView):
 
 @staff_member_required
 def admin_async_blob_upload(request, filename):
-    filename = base64.b64decode(filename).decode('utf-8')
+    filename = base64.b64decode(filename).decode('utf-8', 'ignore')
     path = os.path.join(Blob._meta.get_field('local').get_directory_name(), filename)
     return HttpResponse(default_storage.save(path, ContentFile(request.body)), 'text/plain')
