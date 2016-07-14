@@ -18,6 +18,22 @@
   });
 
 
+  // Taken from https://github.com/sparkalow/angular-truncate/blob/master/src/truncate.js
+  player.filter('words', function () {
+    return function (input, words) {
+      if (isNaN(words)) return input;
+      if (words <= 0) return '';
+      if (input) {
+        var inputWords = input.split(/\s+/);
+        if (inputWords.length > words) {
+            input = inputWords.slice(0, words).join(' ') + '…';
+        }
+      }
+      return input;
+    };
+  });
+
+
   player.factory('Playlist', function($document) {
     var Playlist = function() {
       var self = this;

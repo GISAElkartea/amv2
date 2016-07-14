@@ -8,7 +8,7 @@
     <div class="detail playerImage" ng-if="blob.image"
       ng-style="{'background-image': 'url(' + blob.image + ')'}"/></div>
     <div id="playerDetails">
-      <h1>[[ blob.title ]]</h1>
+      <h1>[[ blob.title | words:5 ]]</h1>
       <div id="playerControls">
         <i class="fa fa-step-backward" ng-click="playlist.previous()" title="{% trans 'Backward' %}"></i>
         <i class="fa fa-play" ng-click="playlist.play()" ng-if="!playlist.playing" title="{% trans 'Play' %}"></i>
