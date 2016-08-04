@@ -92,9 +92,8 @@ EMAIL_SUBJECT_PREFIX = '[antxetamedia] '
 # Logging #
 ###########
 
-MIDDLEWARE_CLASSES += [
-    'raygun_dot_io.middleware.RaygunDotIOMiddleware',
-]
+
+MIDDLEWARE += ['antxetamedia.heroku.middleware.RaygunLoggingMiddleware']
 
 RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
