@@ -44,7 +44,7 @@ def import_news(objects):
     for np in filter_model(objects, 'recordings.news'):
         try:
             news_podcast = NewsPodcast.objects.get(slug=np['fields']['slug'])
-        except NewsPodcast.objects.DoesNotExist:
+        except NewsPodcast.DoesNotExist:
             logging.info("Importing NewsPodcast with slug {}.".format(np['fields']['slug']))
             news_podcast = NewsPodcast.objects.create(title=np['fields']['title'],
                                                       slug=np['fields']['slug'],
