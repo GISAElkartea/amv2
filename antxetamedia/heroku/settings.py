@@ -12,7 +12,6 @@ DATABASES = herokuify.get_db_config()
 INSTALLED_APPS = [
     'collectfast',
 ] + INSTALLED_APPS + [
-    'djangosecure',
     'antxetamedia.heroku',
 ]
 
@@ -40,10 +39,6 @@ CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jqu
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-MIDDLEWARE_CLASSES += [
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'djangosecure.middleware.SecurityMiddleware',
-]
 X_FRAME_OPTIONS = 'DENY'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
