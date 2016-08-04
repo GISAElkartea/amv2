@@ -9,3 +9,4 @@ cache
 .hypothesis
 site
 deploy.sh
+backup.*
