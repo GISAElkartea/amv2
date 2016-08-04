@@ -6,8 +6,6 @@ from dateutil.parser import parse
 
 import django
 
-logging.basicConfig(level=logging.DEBUG)
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "antxetamedia.settings")
 django.setup()
 
@@ -30,7 +28,9 @@ def import_news(objects):
     # Import news categories
 
     for nc in filter_model(objects, 'recordings.newscategory'):
-        if not NewsCategory.objects.filter(slug=nc['fields']['slug']).exists():
+        if NewsCategory.objects.filter(slug=nc['fields']['slug']).exists():
+            logging.debug("Ignoring NewsCategory with slug {}.".format(nc['fields']['slug']))
+        else:
             logging.info("Importing NewsCategory with slug {}.".format(nc['fields']['slug']))
             NewsCategory.objects.create(name=nc['fields']['name'],
                                         slug=nc['fields']['slug'])
@@ -52,6 +52,8 @@ def import_news(objects):
                                                       pub_date=make_aware(parse(np['fields']['pub_date'])),
                                                       image=np['fields']['image'],
                                                       show=default_show)
+        else:
+            logging.debug("Ignoring NewsPodcast with slug {}.".format(np['fields']['slug']))
         news_podcast.categories = np['fields']['categories']
         pk_old_to_new[np['pk']] = news_podcast.pk
 
@@ -62,29 +64,41 @@ def import_news(objects):
 
     for b in filter_model(objects, 'multimedia.media'):
         if all((b['fields']['content_type'] == ['recordings', 'news'],
-                b['fields']['remote'] and b['fields']['remote'].startswith('http'),
-                not Blob.objects.filter(remote=b['fields']['remote']).exists())):
+                b['fields']['remote'] and b['fields']['remote'].startswith('http'))):
+            if Blob.objects.filter(remote=b['fields']['remote']).exists():
+                logging.debug("Ignoring Blob with remote {}.".format(b['fields']['remote']))
+            else:
+                logging.info("Importing Blob with remote {}.".format(b['fields']['remote']))
+                siblings = Blob.objects.filter(content_type=news_content_type,
+                                               object_id=pk_old_to_new[b['fields']['object_id']])
+                position = siblings.aggregate(position=Max('position'))['position']
+                position = 0 if position is None else position + 1
 
-            logging.info("Importing Blob with remote {}.".format(b['fields']['remote']))
-            siblings = Blob.objects.filter(content_type=news_content_type,
-                                           object_id=pk_old_to_new[b['fields']['object_id']])
-            position = siblings.aggregate(position=Max('position'))['position']
-            position = 0 if position is None else position + 1
+                Blob.objects.create(content_type=news_content_type,
+                                    object_id=pk_old_to_new[b['fields']['object_id']],
+                                    position=position,
+                                    remote=b['fields']['remote'],
+                                    account=account)
 
-            Blob.objects.create(content_type=news_content_type,
-                                object_id=pk_old_to_new[b['fields']['object_id']],
-                                position=position,
-                                remote=b['fields']['remote'],
-                                account=account)
+
+def import_radio(objects):
+    pass
 
 
 if __name__ == '__main__':
     import json
     import sys
 
-    with open(sys.argv[1]) as fd:
-        data = fd.read()
+    data = sys.stdin.read()
     objects = json.loads(data)
 
-    models = {obj['model'] for obj in objects}
-    import_news(objects)
+    args = set(sys.argv[1:])
+    level = logging.DEBUG if '-v' in args else logging.INFO
+    logging.basicConfig(level=level)
+    args.discard('-v')
+    if not args:
+        sys.stderr.write('{} [-v] ([news] [radio] [projects] [agenda])\n'.format(sys.argv[0]))
+    if 'news' in sys.argv[1:]:
+        import_news(objects)
+    if 'radio' in sys.argv[1:]:
+        import_radio(objects)

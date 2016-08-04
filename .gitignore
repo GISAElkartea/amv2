@@ -9,4 +9,4 @@ cache
 .hypothesis
 site
 deploy.sh
-backup.*
+migration_data
