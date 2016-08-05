@@ -86,7 +86,7 @@ def import_news_podcasts(news_podcasts, news_category_correspondence):
             logging.info("Importing NewsPodcast with slug {}.".format(np['fields']['slug']))
             news_podcast = NewsPodcast.objects.create(title=np['fields']['title'],
                                                       slug=np['fields']['slug'],
-                                                      description=np['fields']['text'],
+                                                      description=np['fields']['_text_rendered'],
                                                       pub_date=make_aware(parse(np['fields']['pub_date'])),
                                                       image=np['fields']['image'],
                                                       show=default_show)
@@ -121,7 +121,7 @@ def import_project_shows(project_shows):
                                                       slug=ps['fields']['slug'],
                                                       producer=default_producer,
                                                       creation_date=ps['fields']['beginning'],
-                                                      description=ps['fields']['text'],
+                                                      description=ps['fields']['_text_rendered'],
                                                       image=ps['fields']['image'])
         else:
             logging.debug("Ignoring ProjectShow with slug {}.".format(ps['fields']['slug']))
@@ -168,7 +168,7 @@ def import_events(objects):
             Event.objects.create(title=e['fields']['name'],
                                  slug=e['fields']['slug'],
                                  time=e['fields']['time'],
-                                 description=e['fields']['description'],
+                                 description=e['fields']['_description_rendered'],
                                  location=location,
                                  recurrences=recurrences,
                                  link=e['fields']['link'])
