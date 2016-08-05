@@ -14,9 +14,12 @@ from django.db.models import Max
 from django.utils.timezone import make_aware
 from django.contrib.contenttypes.models import ContentType
 
+from recurrence import Recurrence
+
 from antxetamedia.news.models import NewsCategory, NewsPodcast, NewsShow
 from antxetamedia.blobs.models import Blob, Account
 from antxetamedia.projects.models import ProjectProducer, ProjectShow, ProjectPodcast
+from antxetamedia.events.models import Event
 
 
 ACCOUNT_NAME = 'archive.org'
@@ -150,6 +153,29 @@ def import_projects(objects):
     import_blobs(pb, 'projects.ProjectPodcast', pp_correspondence)
 
 
+def import_events(objects):
+    towns = {t['pk']: t['fields']['name'] for t in filter_model(objects, 'agenda.town')}
+    for e in filter_model(objects, 'agenda.happening'):
+        try:
+            Event.objects.get(slug=e['fields']['slug'])
+        except Event.DoesNotExist:
+            logging.info("Importing Event with slug {}.".format(e['fields']['slug']))
+            location = e['fields']['other_town'] if e['fields']['other_town'] else towns.get(e['fields']['town'], '')
+            if location and e['fields']['place']:
+                location += ' - '
+            location += e['fields']['place']
+            recurrences = Recurrence(rdates=[make_aware(parse(e['fields']['date']))])
+            Event.objects.create(title=e['fields']['name'],
+                                 slug=e['fields']['slug'],
+                                 time=e['fields']['time'],
+                                 description=e['fields']['description'],
+                                 location=location,
+                                 recurrences=recurrences,
+                                 link=e['fields']['link'])
+        else:
+            logging.debug("Ignoring Event with slug {}.".format(e['fields']['slug']))
+
+
 def import_radio(objects):
     pass
 
@@ -166,10 +192,12 @@ if __name__ == '__main__':
     logging.basicConfig(level=level)
     args.discard('-v')
     if not args:
-        sys.stderr.write('{} [-v] ([news] [radio] [projects] [agenda])\n'.format(sys.argv[0]))
-    if 'news' in sys.argv[1:]:
+        sys.stderr.write('{} [-v] ([news] [radio] [projects] [events])\n'.format(sys.argv[0]))
+    if 'news' in args:
         import_news(objects)
-    if 'projects' in sys.argv[1:]:
+    if 'projects' in args:
         import_projects(objects)
-    if 'radio' in sys.argv[1:]:
+    if 'events' in args:
+        import_events(objects)
+    if 'radio' in args:
         import_radio(objects)
