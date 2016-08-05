@@ -13,7 +13,9 @@
     {% if event.image %}
     <img src="{{ event.image.url }}"/>
     {% endif %}
+    {% if event.link %}
     <a class="date" href="{{ event.link }}">{% trans 'More info' %}</a>
+    {% endif %}
   </div>
   <div class="text">
     <h1><a href="{{ event.get_absolute_url }}">{{ event }}</a></h1>
