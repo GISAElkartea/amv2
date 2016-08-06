@@ -20,9 +20,20 @@ from antxetamedia.news.models import NewsCategory, NewsPodcast, NewsShow
 from antxetamedia.blobs.models import Blob, Account
 from antxetamedia.projects.models import ProjectProducer, ProjectShow, ProjectPodcast
 from antxetamedia.events.models import Event
+from antxetamedia.radio.models import RadioProducer, RadioCategory, RadioShow, RadioPodcast
 
 
 ACCOUNT_NAME = 'archive.org'
+RADIO_PRODUCERS = {'Antxeta Irratia',
+                   'Herri Pilulak',
+                   'Musika Klik',
+                   'Proiektuak',
+                   'Herrihotsak',
+                   'Hizkuntz eskolak',
+                   'Pausumedia',
+                   'Psilocybe Irratia',
+                   'Kale Kantoian',
+                   }
 
 
 def filter_model(data, model):
@@ -176,8 +187,106 @@ def import_events(objects):
             logging.debug("Ignoring Event with slug {}.".format(e['fields']['slug']))
 
 
+def import_radio_producers(producers):
+    pk_old_to_new = {}
+    for p in producers:
+        try:
+            producer = RadioProducer.objects.get(slug=p['fields']['slug'])
+        except RadioProducer.DoesNotExist:
+            logging.info("Importing RadioProducer with slug {}.".format(p['fields']['slug']))
+            producer = RadioProducer.objects.create(name=p['fields']['name'],
+                                                    slug=p['fields']['slug'])
+        else:
+            logging.debug("Ignoring RadioProducer with slug {}.".format(p['fields']['slug']))
+        pk_old_to_new[p['pk']] = producer.pk
+    return pk_old_to_new
+
+
+def import_radio_categories(categories):
+    pk_old_to_new = {}
+    for c in categories:
+        try:
+            category = RadioCategory.objects.get(slug=c['fields']['slug'])
+        except RadioCategory.DoesNotExist:
+            logging.info("Importing RadioCategory with slug {}.".format(c['fields']['slug']))
+            category = RadioCategory.objects.create(name=c['fields']['name'],
+                                                    slug=c['fields']['slug'])
+        else:
+            logging.debug("Ignoring RadioCategory with slug {}.".format(c['fields']['slug']))
+        pk_old_to_new[c['pk']] = category.pk
+    return pk_old_to_new
+
+
+def resolve_ancestors(pk, nodes):
+    nodes = {n['pk']: n['fields']['parent'] for n in nodes}
+    while pk:
+        yield pk
+        pk = nodes.get(pk)
+
+
+def import_radio_shows(shows, nodes, p_correspondence, c_correspondence):
+    pk_old_to_new = {}
+    for s in shows:
+        try:
+            show = RadioShow.objects.get(slug=s['fields']['slug'])
+        except RadioShow.DoesNotExist:
+            ancestors = list(resolve_ancestors(s['pk'], nodes))
+            producers = [p_correspondence[a] for a in ancestors if a in p_correspondence]
+            producer = RadioProducer.objects.get(pk=producers[0]) if producers else None
+            categories = [c_correspondence[a] for a in ancestors if a in c_correspondence]
+            category = RadioCategory.objects.get(pk=categories[0]) if categories else None
+            logging.info("Importing RadioShow with slug {}.".format(s['fields']['slug']))
+            show = RadioShow.objects.create(name=s['fields']['name'],
+                                            slug=s['fields']['slug'],
+                                            description=s['fields']['_description_rendered'],
+                                            image=s['fields']['image'],
+                                            featured=s['fields']['on_menu'],
+                                            producer=producer,
+                                            category=category)
+        else:
+            logging.debug("Ignoring RadioShow with slug {}.".format(s['fields']['slug']))
+        pk_old_to_new[s['pk']] = show.pk
+    return pk_old_to_new
+
+
+def import_radio_podcasts(recordings, radio_show_correspondence):
+    pk_old_to_new = {}
+    for r in recordings:
+        try:
+            podcast = RadioPodcast.objects.get(slug=r['fields']['slug'])
+        except RadioPodcast.DoesNotExist:
+            logging.info("Importing RadioPodcast with slug {}.".format(r['fields']['slug']))
+            show_id = radio_show_correspondence[r['fields']['program']]
+            podcast = RadioPodcast.objects.create(title=r['fields']['title'],
+                                                  show=RadioShow.objects.get(pk=show_id),
+                                                  slug=r['fields']['slug'],
+                                                  description=r['fields']['_text_rendered'],
+                                                  pub_date=make_aware(parse(r['fields']['pub_date'])),
+                                                  image=r['fields']['image'])
+        else:
+            logging.debug("Ignoring RadioPodcast with slug {}.".format(r['fields']['slug']))
+        pk_old_to_new[r['pk']] = podcast.pk
+    return pk_old_to_new
+
+
 def import_radio(objects):
-    pass
+    nodes = list(filter_model(objects, 'structure.node'))
+    programs = list(filter_model(objects, 'recordings.program'))
+    direct_parents = {p['fields']['program'] for p in programs}
+    direct_parents = [n for n in nodes if n['pk'] in direct_parents]
+    producers_and_categories = {n['fields']['parent'] for n in nodes if n['fields']['parent']}
+    producers = [n for n in nodes
+                 if n['pk'] in producers_and_categories and
+                 n['fields']['name'] in RADIO_PRODUCERS]
+    categories = [n for n in nodes
+                  if n['pk'] in producers_and_categories and
+                  n['fields']['name'] not in RADIO_PRODUCERS]
+    p_correspondence = import_radio_producers(producers)
+    c_correspondence = import_radio_categories(categories)
+    s_correspondence = import_radio_shows(direct_parents, nodes, p_correspondence, c_correspondence)
+    p_correspondence = import_radio_podcasts(programs, s_correspondence)
+    blobs = filter_blobs(objects, 'recordings.program')
+    import_blobs(blobs, 'radio.RadioPodcast', p_correspondence)
 
 
 if __name__ == '__main__':
