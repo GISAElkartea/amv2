@@ -14,10 +14,6 @@
 {% endblock configure %}
 
 {% block aside %}
-<p id="migrationNotice">
-  Webgune zaharraren datuen migrazioa oraindik ez dugu burutu. Ordurarte, hemen duzu
-  <a href="http://iragana.antxetamedia.info/">webgune zaharra</a>.
-</p>
 {% for widget in widget_list %}
 <div class="widget">{{ widget.content | safe }}</div>
 {% endfor %}
