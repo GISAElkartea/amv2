@@ -20,7 +20,9 @@
     {% endthumbnail %}
   </div>
   <div class="text">
+    {% if radioshow.category %}
     <h2 class="category"><a href="{{ radioshow.category.get_absolute_url }}">{{ radioshow.category }}</a></h2>
+    {% endif %}
     <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
     <h1>{{ radioshow }}</h1>
     {{ radioshow.description | safe }}

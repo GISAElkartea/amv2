@@ -46,7 +46,7 @@ class RadioShow(AbstractShow):
         verbose_name = _('Radio show')
         verbose_name_plural = _('Radio shows')
 
-    category = models.ForeignKey(RadioCategory, verbose_name=_('Category'))
+    category = models.ForeignKey(RadioCategory, null=True, blank=True, verbose_name=_('Category'))
     producer = models.ForeignKey(RadioProducer, verbose_name=_('Producer'))
     featured = models.BooleanField(_('Featured'), default=False)
 
