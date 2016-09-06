@@ -1,9 +1,9 @@
-Aurrean duzun dokumentazio hau [antxetamedia.info](https://antxetamedia.info)
+Aurrean duzun dokumentazio hau [antxetamedia.eus](https://antxetamedia.eus)
 webgunearen kudeaketa eta garapenaren xehetasunak azaltzen ditu.
 
 ## Kudeaketa
 
-[antxetamedia.info/admin](https://antxetamedia.info/admin/) helbidean aurkitu
+[antxetamedia.eus/admin](https://antxetamedia.eus/admin/) helbidean aurkitu
 daiteken kudeaketa gunearen [dokumentazioa hemen duzu](users/index.md).
 
 ## Garapena

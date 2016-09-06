@@ -21,7 +21,7 @@ INSTALLED_APPS = [
 ###########
 
 AWS_STORAGE_BUCKET_NAME = 'amv2'
-AWS_S3_CUSTOM_DOMAIN = 'static.antxetamedia.info'
+AWS_S3_CUSTOM_DOMAIN = 'static.antxetamedia.eus'
 AWS_QUERYSTRING_AUTH = False
 AWS_PRELOAD_METADATA = True
 
@@ -83,11 +83,11 @@ CELERY_ACCEPT_CONTENT = ['json']
 ########
 
 ADMINS = [
-    ('Unai Zalakain', 'antxetamedia.info@unaizalakain.info'),
+    ('Unai Zalakain', 'antxetamedia.eus@unaizalakain.info'),
 ]
 
 from herokuify.mail.sendgrid import EMAIL_HOST, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT, EMAIL_USE_TLS  # noqa
-SERVER_EMAIL = 'system@antxetamedia.info'
+SERVER_EMAIL = 'system@antxetamedia.eus'
 EMAIL_SUBJECT_PREFIX = '[antxetamedia] '
 
 ###########

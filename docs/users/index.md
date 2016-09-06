@@ -16,7 +16,7 @@ Irratsaioak ere sortzerakoan edota eraldatzerakoan markatu daitezke
 nabarmenduak][irratsaio-nabarmenduak] daudenak filtratu ditzazkegu, gero *Ez
 nabarmendua bezala markatu* ekintzaren bidez bertatik kentzeko.
 
-[irratsaio-nabarmenduak]: http://antxetamedia.info/admin/radio/radioshow/?featured__exact=1
+[irratsaio-nabarmenduak]: http://antxetamedia.eus/admin/radio/radioshow/?featured__exact=1
 
 ## Nola gehitu agendan errepikatzen diren gertakariak?
 

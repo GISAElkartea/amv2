@@ -1,4 +1,4 @@
-# Basque translations for antxetamedia.info
+# Basque translations for antxetamedia.eus
 # Copyright (C) 2015 Unai Zalakain
 # This file is distributed under the same license as the antxetamedia package.
 # Unai Zalakain <unai@gisa-elkartea.org>, 2015.

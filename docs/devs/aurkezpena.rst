@@ -1,6 +1,6 @@
-=============================
-Antxetamedia.info: aurkezpena
-=============================
+============================
+Antxetamedia.eus: aurkezpena
+============================
 
 Antxetamediako webgune berriak aurreko webgunearen atal berdinak mantenduko
 ditu:
@@ -207,7 +207,7 @@ Orri estatikoak nahi diren haina sortu daitezke. Menuan bakarrik "Guri buruz"
 orria agertuko den arren, besteetara zuzenean URLaren bidez sartu ahalko da.
 Demagun zozketa bat antolatzen dela. Orri estatiko bat sortu daiteke zozketari
 buruzko informazioa emateko eta "/zozketa" URLan eseki. Modu horretan,
-"https://antxetamedia.info/zozketa" URLra sartuta, erabiltzaileek orria ikusi
+"https://antxetamedia.eus/zozketa" URLra sartuta, erabiltzaileek orria ikusi
 ahal izango dute.
 
 Orri estatiko hauek irudiak, estekak eta embed kodeak txertatzeko aukera emango
