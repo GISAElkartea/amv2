@@ -54,7 +54,9 @@ ALLOWED_HOSTS = ['localhost',
                  'antxetamedia.herokuapp.com',
                  'antxetamedia.info',
                  'www.antxetamedia.info',
-                 'beta.antxetamedia.info']
+                 'beta.antxetamedia.info',
+                 'antxetamedia.eus',
+                 'www.antxetamedia.eus']
 
 #########
 # Cache #
