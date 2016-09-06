@@ -17,6 +17,14 @@
 },
 {
     "fields": {
+        "domain": "www.antxetamedia.eus",
+        "name": "Antxetamedia [EUS]"
+    },
+    "pk": 3,
+    "model": "sites.site"
+},
+{
+    "fields": {
         "permissions": [
             [
                 "add_account",
