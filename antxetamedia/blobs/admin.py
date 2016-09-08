@@ -8,19 +8,20 @@ from grappelli.forms import GrappelliSortableHiddenMixin
 
 from .models import Account, Blob, BlobUpload
 from .tasks import queue_blob_upload
+from .forms import BlobForm
 from .fields import UploadWidget
 
 
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
-    model = Blob
+    form = BlobForm
     fields = ['position', 'account', 'created', 'local', 'remote']
+    model = Blob
     ordering = ['position']
     sortable_field_name = 'position'
     readonly_fields = ['created', 'remote']
     ct_field = 'content_type'
     ct_fk_field = 'object_id'
     extra = 1
-    formfield_overrides = {models.FileField: {'widget': UploadWidget}}
 
 
 class IsUploadedFilter(admin.SimpleListFilter):
@@ -40,6 +41,7 @@ class IsUploadedFilter(admin.SimpleListFilter):
 
 
 class BlobAdmin(admin.ModelAdmin):
+    form = BlobForm
     list_display = ['__str__', 'get_content_object', 'get_last_upload', 'created', 'account', 'is_uploaded']
     list_filter = [IsUploadedFilter, 'created', 'account']
     readonly_fields = ['get_content_object', 'get_last_upload', 'remote', 'created']
