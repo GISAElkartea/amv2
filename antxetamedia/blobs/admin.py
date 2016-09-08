@@ -8,7 +8,7 @@ from grappelli.forms import GrappelliSortableHiddenMixin
 
 from .models import Account, Blob, BlobUpload
 from .tasks import queue_blob_upload
-from .fields import UploadField
+from .fields import UploadWidget
 
 
 class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
@@ -20,7 +20,7 @@ class BlobInline(GrappelliSortableHiddenMixin, GenericTabularInline):
     ct_field = 'content_type'
     ct_fk_field = 'object_id'
     extra = 1
-    formfield_overrides = {models.FileField: {'form_class': UploadField}}
+    formfield_overrides = {models.FileField: {'widget': UploadWidget}}
 
 
 class IsUploadedFilter(admin.SimpleListFilter):
@@ -45,7 +45,7 @@ class BlobAdmin(admin.ModelAdmin):
     readonly_fields = ['get_content_object', 'get_last_upload', 'remote', 'created']
     fields = ['get_content_object', 'get_last_upload', 'account', 'created', 'local', 'remote']
     actions = ['retry_upload']
-    formfield_overrides = {models.FileField: {'form_class': UploadField}}
+    formfield_overrides = {models.FileField: {'widget': UploadWidget}}
 
     def get_content_object(self, instance):
         obj = instance.content_object

@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 
-from django.forms import fields, widgets
+from django.forms import widgets
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
@@ -32,7 +32,3 @@ class UploadWidget(widgets.TextInput):
         script = self.script.format(upload_url=upload_url, media_url=media_url,
                                     pending=_('Pending…'), view=_('Listen'))
         return mark_safe(self.widget.format(input=input, link=link, script=script, view=_('Listen')))
-
-
-class UploadField(fields.CharField):
-    widget = UploadWidget
