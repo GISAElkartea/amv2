@@ -8,7 +8,7 @@ django-compressor==2.0
 django-libsass==0.7
 
 # Admin
-django-grappelli==2.8.1
+-e git+https://github.com/unaizalakain/django-grappelli.git@7e08d650319ace7f000e6f2ff51c1c6a636a0158#egg=django-grappelli
 django-admin-sortable2==0.6.3
 
 # Fields
