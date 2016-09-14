@@ -37,7 +37,6 @@ class Blob(models.Model):
 
     class Meta:
         ordering = ['-created']
-        unique_together = [('content_type', 'object_id', 'position')]
         verbose_name = _('Audio blob')
         verbose_name_plural = _('Audio blobs')
 
