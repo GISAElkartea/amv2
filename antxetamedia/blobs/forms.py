@@ -11,5 +11,5 @@ class BlobForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BlobForm, self).__init__(*args, **kwargs)
-        self.fields['local'] = UploadField(null=True, blank=True,
+        self.fields['local'] = UploadField(required=False,
                                            help_text=self.fields['local'].help_text)
