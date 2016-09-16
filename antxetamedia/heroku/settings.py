@@ -5,7 +5,7 @@ import herokuify
 from antxetamedia.settings import * #noqa
 
 
-DEBUG = False
+DEBUG = TEMPLATE_DEBUG = False
 
 DATABASES = herokuify.get_db_config()
 
