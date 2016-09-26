@@ -76,6 +76,7 @@ BROKER_URL = os.environ.get('REDISCLOUD_URL')
 CELERY_ALWAYS_EAGER = False
 CELERYD_TASK_SOFT_TIME_LIMIT = 500
 CELERY_ACCEPT_CONTENT = ['json']
+SYNC_BLOBS = True
 
 
 ########
@@ -100,7 +101,13 @@ MIDDLEWARE += ['antxetamedia.heroku.middleware.RaygunLoggingMiddleware']
 RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
 
-SYNC_BLOBS = True
+# TEMPORARY:
+import logging
+from sorl.thumbnail.log import ThumbnailLogHandler
+
+handler = ThumbnailLogHandler()
+handler.setLevel(logging.DEBUG)
+logging.getLogger('sorl.thumbnail').addHandler(handler)
 
 
 #########
