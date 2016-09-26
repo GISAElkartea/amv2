@@ -113,7 +113,7 @@ LOGGING = {
     'loggers': {
         'sorl.thumbnail': {
             'handlers': ['email-thumbnail'],
-            'level': True,
+            'level': 'DEBUG',
         },
     },
 }
