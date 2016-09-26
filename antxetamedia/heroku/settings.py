@@ -102,6 +102,7 @@ RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
 
 LOGGING = {
+    'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'email-thumbnail': {
