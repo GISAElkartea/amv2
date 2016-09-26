@@ -46,7 +46,11 @@
           {% endfor %}
         </h2>
         <h1><a href="{{ newspodcast.get_absolute_url }}">{{ newspodcast }}</a></h1>
+        {% if forloop.first %}
         <p>{{ newspodcast.description | striptags | truncatewords:25 | safe }}</p>
+        {% else %}
+        <p>{{ newspodcast.description | striptags | truncatewords:15 | safe }}</p>
+        {% endif %}
         {% include 'podcast_control.html' with podcast=newspodcast %}
       </div>
     </li>
