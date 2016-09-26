@@ -106,14 +106,14 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'email-thumbnail': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'sorl.thumbnail.log.ThumbnailLogHandler',
         },
     },
     'loggers': {
         'sorl.thumbnail': {
             'handlers': ['email-thumbnail'],
-            'level': 'DEBUG',
+            'level': 'INFO',
         },
     },
 }
