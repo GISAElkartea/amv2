@@ -101,13 +101,20 @@ MIDDLEWARE += ['antxetamedia.heroku.middleware.RaygunLoggingMiddleware']
 RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
 
-# TEMPORARY:
-import logging
-from sorl.thumbnail.log import ThumbnailLogHandler
-
-handler = ThumbnailLogHandler()
-handler.setLevel(logging.DEBUG)
-logging.getLogger('sorl.thumbnail').addHandler(handler)
+LOGGING = {
+    'handlers': {
+        'email-thumbnail': {
+            'level': 'DEBUG',
+            'class': 'sorl.thumbnail.log.ThumbnailLogHandler',
+        },
+    },
+    'loggers': {
+        'sorl.thumbnail': {
+            'handlers': ['email-thumbnail'],
+            'level': True,
+        },
+    },
+}
 
 
 #########
