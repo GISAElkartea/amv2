@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n thumbnail %}
+{% load static i18n %}
 
 {% block title %}{% trans 'Projects' %}{% endblock title %}
 
@@ -15,11 +15,11 @@
         <h1><a href="{{ projectshow.get_absolute_url }}">{{ projectshow }}</a></h1>
         <h2 class="category">{{ projectshow.producer }}</h2>
         {% if projectshow.image %}
-        {% thumbnail projectshow.image "500" as image %}
+        {% if projectshow.image %}
         <a href="{{ projectshow.get_absolute_url }}">
-          <img src="{{ image.url }}"/>
+          <img src="{{ projectshow.image.url }}"/>
         </a>
-        {% endthumbnail %}
+        {% endif %}
         {% endif %}
       </li>
       {% endfor %}

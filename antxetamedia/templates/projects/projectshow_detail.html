@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n compress thumbnail static %}
+{% load i18n compress static %}
 
 {% block title %}{{ projectshow }}{% endblock title %}
 
@@ -33,9 +33,9 @@
             <span class="podcastTitle">{{ projectpodcast }}</span>
             <div class="folderContent">
               <div class="articleDetails">
-                {% thumbnail projectpodcast.image "500" as image %}
-                <img class="podcastImage" src="{{ image.url }}" />
-                {% endthumbnail %}
+                {% if projectpodcast.image %}
+                <img class="podcastImage" src="{{ projectpodcast.image.url }}" />
+                {% endif %}
               </div>
               <div class="text">
                 <span class="podcastText">{{ projectpodcast.description | safe }}</span>

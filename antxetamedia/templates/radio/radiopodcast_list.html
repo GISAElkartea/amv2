@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n compress thumbnail static %}
+{% load i18n compress static %}
 
 {% block title %}{{ radioshow }}{% endblock title %}
 
@@ -13,11 +13,11 @@
 {% block content %}
 <article>
   <div class="articleDetails">
-    {% thumbnail radioshow.image "500" as image %}
-    <img src="{{ image.url }}"/>
-    {% empty %}
+    {% if radioshow.image %}
+    <img src="{{ radioshow.image.url }}"/>
+    {% else %}
     <img src="{% static 'images/radio.svg' %}" alt="radio"/>
-    {% endthumbnail %}
+    {% endif %}
   </div>
   <div class="text">
     {% if radioshow.category %}
@@ -39,9 +39,9 @@
             <span class="podcastTitle">{{ radiopodcast }}</span>
             <div class="folderContent">
               <div class="articleDetails">
-                {% thumbnail radiopodcast.image "500" as image %}
-                <img class="podcastImage" src="{{ image.url }}" />
-                {% endthumbnail %}
+                {% if radiopodcast.image %}
+                <img class="podcastImage" src="{{ radiopodcast.image.url }}" />
+                {% endif %}
               </div>
               <div class="text">
                 <span class="podcastText">{{ radiopodcast.description | safe }}</span>

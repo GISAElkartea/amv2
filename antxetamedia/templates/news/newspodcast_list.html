@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n static compress thumbnail %}
+{% load i18n static compress %}
 
 {% block title %}{% trans 'News' %}{% endblock title %}
 
@@ -21,7 +21,7 @@
   {% for newspodcast in newspodcast_list %}
   <li class="flag news">
     <div class="detail">
-      <a href="{{ newspodcast.get_absolute_url }}" {% thumbnail newspodcast.image "500" as image %}style="background-image: url('{{ image.url }}');" {% endthumbnail %}></a>
+      <a href="{{ newspodcast.get_absolute_url }}" {% if newspodcast.image %}style="background-image: url('{{ newspodcast.image.url }}');" {% endif %}></a>
     </div>
     <div class="text">
       <h2 class="category">
