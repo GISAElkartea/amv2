@@ -26,8 +26,8 @@ AWS_QUERYSTRING_AUTH = False
 AWS_PRELOAD_METADATA = True
 
 DEFAULT_FILE_STORAGE = 'herokuify.storage.S3MediaStorage'
-STATICFILES_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
-COMPRESS_STORAGE = 'herokuify.storage.CachedS3StaticStorage'
+STATICFILES_STORAGE = 'herokuify.storage.S3StaticStorage'
+COMPRESS_STORAGE = 'herokuify.storage.S3StaticStorage'
 MEDIA_URL = 'https://{}/media/'.format(AWS_S3_CUSTOM_DOMAIN)
 STATIC_URL = 'https://{}/static/'.format(AWS_S3_CUSTOM_DOMAIN)
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'bower_components/jquery/dist/jquery.min.js')
