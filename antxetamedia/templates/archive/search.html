@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n compress absolute_urls %}
+{% load static i18n compress thumbnail absolute_urls %}
 
 {% block title %}
 {% trans 'Archive' %}
@@ -63,9 +63,9 @@
         {% build_absolute_uri result.meta.image as absolute_image_url %}
         {% endif %}
 
-        {% if absolute_image_url %}
-        <a href="{{ result.get_absolute_url }}"><img src="{{ absolute_image_url }}"/></a>
-        {% endif %}
+        {% thumbnail absolute_image_url "500" as image %}
+        <a href="{{ result.get_absolute_url }}"><img src="{{ image.url }}"/></a>
+        {% endthumbnail %}
       </div>
 
       <div class="text {% if not absolute_image_url %}full{% endif %}">

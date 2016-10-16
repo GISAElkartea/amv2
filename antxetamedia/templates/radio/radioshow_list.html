@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n compress %}
+{% load static i18n thumbnail compress %}
 
 {% block title %}
 {% trans 'Radio Shows' %}
@@ -28,11 +28,11 @@
     <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
 
     <a href="{{ radioshow.get_absolute_url }}">
-      {% if radioshow.image %}
-      <img src="{{ radioshow.image.url }}"/>
-      {% else %}
+      {% thumbnail radioshow.image "500" as image %}
+      <img src="{{ image.url }}"/>
+      {% empty %}
       <img src="{% static 'images/radio.svg' %}" alt="radio"/>
-      {% endif %}
+      {% endthumbnail %}
     </a>
   </li>
   {% endfor %}
@@ -46,11 +46,11 @@
     <p class="date"><a href="{{ radioshow.producer.get_absolute_url }}">{{ radioshow.producer }}</a></p>
 
     <a href="{{ radioshow.get_absolute_url }}">
-      {% if radioshow.image %}
-      <img src="{{ radioshow.image.url }}"/>
-      {% else %}
+      {% thumbnail radioshow.image "500" as image %}
+      <img src="{{ image.url }}"/>
+      {% empty %}
       <img src="{% static 'images/radio.svg' %}" alt="radio"/>
-      {% endif %}
+      {% endthumbnail %}
     </a>
   </li>
   {% endfor %}
