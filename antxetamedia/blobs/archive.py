@@ -17,7 +17,7 @@ class ArchiveS3(object):
 
     def get_bucket_name(self, podcast):
         return '{prefix}-{podcast}'.format(prefix=self.account.username.lower(),
-                                           podcast=podcast.slug.lower())
+                                           podcast=podcast.slug.lower())[:100]
 
     def get_bucket_headers(self, podcast, update=False):
         headers = getattr(podcast, 'metadata', {})
