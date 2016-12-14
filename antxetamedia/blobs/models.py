@@ -47,7 +47,7 @@ class Blob(models.Model):
     created = models.DateTimeField(_('Created'), auto_now_add=True, editable=False)
     position = models.PositiveIntegerField(_('Position'), default=0)
 
-    local = models.FileField(_('Local file'), upload_to='blobs', null=True, blank=True,
+    local = models.FileField(_('Local file'), upload_to='blobs', null=True, blank=True, max_length=512,
                              help_text=_("If set, the file will be uploaded to the remote storage and the link will "
                                          "be set at the remote field."))
     remote = models.CharField(_('Remote file'), max_length=512, null=True, blank=True)
