@@ -22,6 +22,7 @@ django-colorful==1.2
 # External APIs
 boto==2.40.0
 feedparser==5.2.1
+-e git+https://github.com/unaizalakain/django-acme.git@master#egg=django-acme
 
 # Archive
 django-watson==1.2.3

@@ -6,7 +6,6 @@ from django.views.generic import TemplateView
 from django.views.i18n import javascript_catalog
 
 from .feeds.views import BlobFeed
-from .heroku.views import AcmeChallenge
 
 
 js_info_dict = {'packages': ['recurrence', 'antxetamedia']}
@@ -29,7 +28,7 @@ urlpatterns = [
     url(r'^jsi18n/$', javascript_catalog, js_info_dict, name='jsi18n'),
     url(r'^404/$', TemplateView.as_view(template_name='404.html')),
     url(r'^500/$', TemplateView.as_view(template_name='500.html')),
-    url(r'^.well-known/acme-challenge/(?P<token>.+)/$', AcmeChallenge.as_view())
+    url(r'^.well-known/acme-challenge/', include('django_acme.urls')),
 ]
 
 
