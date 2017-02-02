@@ -10,3 +10,9 @@ cache
 site
 deploy.sh
 migration_data
+bin/
+lib/
+lib64
+pyvenv.cfg
+share/
+src/
