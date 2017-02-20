@@ -1,4 +1,4 @@
-from os.pathpath import splitext
+from os.path import splitext
 try:
     from urllib.parse import quote
 except ImportError:
