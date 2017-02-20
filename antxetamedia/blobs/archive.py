@@ -39,7 +39,8 @@ class ArchiveS3(object):
             raise
 
     def get_key_name(self, blob):
-        return str(blob) + splitext(blob.local.file.name)  # Guaranteed to be unique
+        _, ext = splitext(blob.local.file.name)
+        return str(blob) + ext  # Guaranteed to be unique
 
     def get_or_create_key(self, blob):
         bucket_name = self.get_bucket_name(blob.content_object)
