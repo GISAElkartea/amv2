@@ -1,3 +1,4 @@
+from os.pathpath import splitext
 try:
     from urllib.parse import quote
 except ImportError:
@@ -38,7 +39,7 @@ class ArchiveS3(object):
             raise
 
     def get_key_name(self, blob):
-        return str(blob)  # Guaranteed to be unique
+        return str(blob) + splitext(blob.local.file.name)  # Guaranteed to be unique
 
     def get_or_create_key(self, blob):
         bucket_name = self.get_bucket_name(blob.content_object)
