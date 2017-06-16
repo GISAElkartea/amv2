@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Antxetamedia v2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-20 17:47+0200\n"
+"POT-Creation-Date: 2017-06-16 23:23+0200\n"
 "PO-Revision-Date: 2015-07-24 13:03+0000\n"
 "Last-Translator: Unai Zalakain <unai@gisa-elkartea.org>\n"
 "Language-Team: eu <unai@gisa-elkartea.org>\n"
@@ -65,55 +65,55 @@ msgstr "Proiektuak"
 msgid "Events"
 msgstr "Agenda"
 
-#: antxetamedia/blobs/admin.py:27
+#: antxetamedia/blobs/admin.py:28
 msgid "Is uploaded"
 msgstr "Igota dago"
 
-#: antxetamedia/blobs/admin.py:31
+#: antxetamedia/blobs/admin.py:32
 msgid "Yes"
 msgstr "Bai"
 
-#: antxetamedia/blobs/admin.py:32
+#: antxetamedia/blobs/admin.py:33
 msgid "No"
 msgstr "Ez"
 
-#: antxetamedia/blobs/admin.py:56
+#: antxetamedia/blobs/admin.py:58
 #: antxetamedia/templates/projects/projectshow_detail.html:25
-#: antxetamedia/templates/radio/radiopodcast_list.html:29
+#: antxetamedia/templates/radio/radiopodcast_list.html:31
 msgid "Podcast"
 msgstr "Emankizuna"
 
-#: antxetamedia/blobs/admin.py:65
+#: antxetamedia/blobs/admin.py:67
 msgid "Last upload"
 msgstr "Azken igoera"
 
-#: antxetamedia/blobs/admin.py:70
+#: antxetamedia/blobs/admin.py:72
 msgid "Has been uploaded"
 msgstr "Igoa izan da"
 
-#: antxetamedia/blobs/admin.py:76
+#: antxetamedia/blobs/admin.py:78
 msgid "Retry upload"
 msgstr "Saiatu berriz igotzen"
 
-#: antxetamedia/blobs/admin.py:92 antxetamedia/blobs/models.py:94
+#: antxetamedia/blobs/admin.py:94 antxetamedia/blobs/models.py:93
 msgid "Blob"
 msgstr "Audioa"
 
-#: antxetamedia/blobs/admin.py:100 antxetamedia/events/models.py:126
+#: antxetamedia/blobs/admin.py:102 antxetamedia/events/models.py:126
 #: antxetamedia/schedule/admin.py:25 antxetamedia/schedule/models.py:19
 #: antxetamedia/templates/player.html:22 antxetamedia/templates/player.html:44
 msgid "Link"
 msgstr "Esteka"
 
-#: antxetamedia/blobs/admin.py:105
+#: antxetamedia/blobs/admin.py:107
 msgid "Has succeeded"
 msgstr "Arrakasta izan du"
 
-#: antxetamedia/blobs/admin.py:110 antxetamedia/blobs/models.py:95
+#: antxetamedia/blobs/admin.py:112 antxetamedia/blobs/models.py:94
 msgid "State"
 msgstr "Egoera"
 
-#: antxetamedia/blobs/admin.py:114 antxetamedia/blobs/models.py:98
+#: antxetamedia/blobs/admin.py:116 antxetamedia/blobs/models.py:97
 msgid "Traceback"
 msgstr "Errorea"
 
@@ -126,7 +126,7 @@ msgstr "Entzun"
 msgid "Pending…"
 msgstr "Zain…"
 
-#: antxetamedia/blobs/models.py:16 antxetamedia/blobs/models.py:55
+#: antxetamedia/blobs/models.py:16 antxetamedia/blobs/models.py:54
 msgid "Account"
 msgstr "Kontua"
 
@@ -138,6 +138,9 @@ msgstr "Kontuak"
 #: antxetamedia/schedule/models.py:17 antxetamedia/shows/models.py:30
 #: antxetamedia/shows/models.py:49 antxetamedia/shows/models.py:69
 #: antxetamedia/widgets/models.py:15
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:70
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:70
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:70
 msgid "Name"
 msgstr "Izena"
 
@@ -149,27 +152,27 @@ msgstr "Erabiltzailea"
 msgid "Password"
 msgstr "Pasahitza"
 
-#: antxetamedia/blobs/models.py:41
+#: antxetamedia/blobs/models.py:40
 msgid "Audio blob"
 msgstr "Audioa"
 
-#: antxetamedia/blobs/models.py:42
+#: antxetamedia/blobs/models.py:41
 msgid "Audio blobs"
 msgstr "Audioak"
 
-#: antxetamedia/blobs/models.py:48
+#: antxetamedia/blobs/models.py:47
 msgid "Created"
 msgstr "Sortua"
 
-#: antxetamedia/blobs/models.py:49 antxetamedia/widgets/models.py:16
+#: antxetamedia/blobs/models.py:48 antxetamedia/widgets/models.py:16
 msgid "Position"
 msgstr "Kokapena"
 
-#: antxetamedia/blobs/models.py:51
+#: antxetamedia/blobs/models.py:50
 msgid "Local file"
 msgstr "Fitxategi lokala"
 
-#: antxetamedia/blobs/models.py:52
+#: antxetamedia/blobs/models.py:51
 msgid ""
 "If set, the file will be uploaded to the remote storage and the link will be "
 "set at the remote field."
@@ -177,48 +180,48 @@ msgstr ""
 "Ezarria bada, fitxategia hurruneko biltegira igoko da hurruneko eremua "
 "bertakoestekara ezarriko da."
 
-#: antxetamedia/blobs/models.py:54
+#: antxetamedia/blobs/models.py:53
 msgid "Remote file"
 msgstr "Hurruneko fitxategia"
 
-#: antxetamedia/blobs/models.py:74
+#: antxetamedia/blobs/models.py:73
 msgid "Blobs should have either a local or a remote file."
 msgstr ""
 "Audioek edo fitxategi lokal bat edo urrutiko fitxategi bat eduki behar dute."
 
-#: antxetamedia/blobs/models.py:84
+#: antxetamedia/blobs/models.py:83
 msgid "Pending"
 msgstr "Igotzeke"
 
-#: antxetamedia/blobs/models.py:85
+#: antxetamedia/blobs/models.py:84
 msgid "Uploading"
 msgstr "Igotzen"
 
-#: antxetamedia/blobs/models.py:86
+#: antxetamedia/blobs/models.py:85
 msgid "Succeeded"
 msgstr "Arrakastatsua"
 
-#: antxetamedia/blobs/models.py:87
+#: antxetamedia/blobs/models.py:86
 msgid "Failed"
 msgstr "Huts eginda"
 
-#: antxetamedia/blobs/models.py:91
+#: antxetamedia/blobs/models.py:90
 msgid "Blob upload"
 msgstr "Audio igoera"
 
-#: antxetamedia/blobs/models.py:92
+#: antxetamedia/blobs/models.py:91
 msgid "Blob uploads"
 msgstr "Audio igoerak"
 
-#: antxetamedia/blobs/models.py:96
+#: antxetamedia/blobs/models.py:95
 msgid "Start time"
 msgstr "Hasieratze data"
 
-#: antxetamedia/blobs/models.py:97
+#: antxetamedia/blobs/models.py:96
 msgid "End time"
 msgstr "Bukatze data"
 
-#: antxetamedia/blobs/models.py:101
+#: antxetamedia/blobs/models.py:100
 #, python-brace-format
 msgid "{blob} upload"
 msgstr "{blob} igoera"
@@ -244,7 +247,7 @@ msgstr "Bestelakoak"
 msgid "Flatpages"
 msgstr "Orri lauak"
 
-#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:40
+#: antxetamedia/dashboard.py:58 antxetamedia/templates/base.html:41
 #: antxetamedia/templates/schedule/broadcast_list.html:4
 msgid "Schedule"
 msgstr "Programazioa"
@@ -262,6 +265,9 @@ msgid "Admin"
 msgstr "Kudeaketa"
 
 #: antxetamedia/dashboard.py:91
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:168
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:168
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:168
 msgid "Support"
 msgstr "Laguntza"
 
@@ -278,6 +284,15 @@ msgid "Latest development changes"
 msgstr "Azkeneko garapen aldaketak"
 
 #: antxetamedia/dashboard.py:115
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:157
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/modules.py:289
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:71
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:157
+#: nix/src/django-grappelli/grappelli/dashboard/modules.py:289
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:71
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:157
+#: src/django-grappelli/grappelli/dashboard/modules.py:289
+#: src/django-grappelli/grappelli/templates/admin/index.html:71
 msgid "Recent Actions"
 msgstr "Azkeneko aldaketak"
 
@@ -327,8 +342,8 @@ msgid "Image"
 msgstr "Irudia"
 
 #: antxetamedia/feeds/views.py:14
-msgid "Latest podcasts from Antxetamedia"
-msgstr "Antxetamediako azken emankizunak"
+msgid "Antxetamedia"
+msgstr ""
 
 #: antxetamedia/feeds/views.py:15
 msgid "Latest news and radio podcasts from Antxetamedia"
@@ -519,6 +534,12 @@ msgid "Publication date"
 msgstr "Argitarapen data"
 
 #: antxetamedia/templates/404.html:5
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/404.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/404.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/404.html:7
+#: nix/src/django-grappelli/grappelli/templates/admin/404.html:11
+#: src/django-grappelli/grappelli/templates/admin/404.html:7
+#: src/django-grappelli/grappelli/templates/admin/404.html:11
 msgid "Page not found"
 msgstr "Orrialdea ez da aurkitu"
 
@@ -561,15 +582,19 @@ msgstr ""
 msgid "Frontpage"
 msgstr "Azala"
 
-#: antxetamedia/templates/base.html:54
+#: antxetamedia/templates/base.html:40
+msgid "Talks"
+msgstr "Hitzaldiak"
+
+#: antxetamedia/templates/base.html:55
 msgid "LIVE"
 msgstr "ZUZENEAN"
 
-#: antxetamedia/templates/base.html:109
+#: antxetamedia/templates/base.html:113
 msgid "Antxeta Irratia live"
 msgstr "Antxeta Irratia zuzenean"
 
-#: antxetamedia/templates/events/event_detail.html:16
+#: antxetamedia/templates/events/event_detail.html:17
 msgid "More info"
 msgstr "Info gehiago"
 
@@ -650,13 +675,1321 @@ msgid "Move"
 msgstr "Mugitu"
 
 #: antxetamedia/templates/projects/projectshow_detail.html:27
-#: antxetamedia/templates/radio/radiopodcast_list.html:31
+#: antxetamedia/templates/radio/radiopodcast_list.html:33
 msgid "Date"
 msgstr "Data"
 
 #: antxetamedia/widgets/models.py:12
 msgid "Widget"
 msgstr "Widgeta"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:90
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:90
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:90
+msgid "Dashboard"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:134
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:134
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:134
+msgid "Quick links"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:137
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:137
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:137
+msgid "Return to site"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:138
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:11
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:57
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/base.html:91
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:138
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:57
+#: nix/src/django-grappelli/grappelli/templates/admin/base.html:91
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:138
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:11
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:57
+#: src/django-grappelli/grappelli/templates/admin/base.html:91
+#, fuzzy
+#| msgid "Password"
+msgid "Change password"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:140
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/base.html:94
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:140
+#: nix/src/django-grappelli/grappelli/templates/admin/base.html:94
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:140
+#: src/django-grappelli/grappelli/templates/admin/base.html:94
+msgid "Log out"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:146
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/modules.py:212
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:146
+#: nix/src/django-grappelli/grappelli/dashboard/modules.py:212
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:146
+#: src/django-grappelli/grappelli/dashboard/modules.py:212
+#, fuzzy
+#| msgid "Classification"
+msgid "Applications"
+msgstr "Klasifikazioa"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:152
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:152
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:152
+msgid "Administration"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:161
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:161
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:161
+msgid "Latest Django News"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:171
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:171
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:171
+#, fuzzy
+#| msgid "User documentation"
+msgid "Django documentation"
+msgstr "Erabiltzaileentzako dokumentazioa"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:176
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:176
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:176
+msgid "Django \"django-users\" mailing list"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/dashboards.py:181
+#: nix/src/django-grappelli/grappelli/dashboard/dashboards.py:181
+#: src/django-grappelli/grappelli/dashboard/dashboards.py:181
+msgid "Django irc channel"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/modules.py:186
+#: nix/src/django-grappelli/grappelli/dashboard/modules.py:186
+#: src/django-grappelli/grappelli/dashboard/modules.py:186
+#, fuzzy
+#| msgid "Link"
+msgid "Links"
+msgstr "Esteka"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/modules.py:350
+#: nix/src/django-grappelli/grappelli/dashboard/modules.py:350
+#: src/django-grappelli/grappelli/dashboard/modules.py:350
+msgid "RSS Feed"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/templates/admin/index.html:25
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/500.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/app_index.html:11
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/base.html:124
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:147
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:150
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_filter_sidebar.html:151
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:43
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:13
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:13
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:18
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/invalid_setup.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:8
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/index.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/missing_docutils.html:8
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/model_detail.html:20
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/model_index.html:23
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/template_filter_index.html:25
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/template_tag_index.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/view_detail.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/view_index.html:23
+#: nix/src/django-grappelli/build/lib/grappelli/templates/grp_doc/basic_page_structure.html:132
+#: nix/src/django-grappelli/build/lib/grappelli/templates/grp_doc/context_navigation.html:55
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_done.html:6
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:6
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_form.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_list.html:6
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/revision_form.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:26
+#: nix/src/django-grappelli/grappelli/dashboard/templates/admin/index.html:25
+#: nix/src/django-grappelli/grappelli/templates/admin/500.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/app_index.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:7
+#: nix/src/django-grappelli/grappelli/templates/admin/base.html:124
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:147
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:150
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:151
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:43
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:18
+#: nix/src/django-grappelli/grappelli/templates/admin/invalid_setup.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:8
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/index.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/missing_docutils.html:8
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/model_detail.html:20
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/model_index.html:23
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/template_filter_index.html:25
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/template_tag_index.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/view_detail.html:7
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/view_index.html:23
+#: nix/src/django-grappelli/grappelli/templates/grp_doc/basic_page_structure.html:132
+#: nix/src/django-grappelli/grappelli/templates/grp_doc/context_navigation.html:55
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_done.html:6
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:6
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_form.html:7
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_list.html:6
+#: nix/src/django-grappelli/grappelli/templates/reversion/revision_form.html:7
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:26
+#: src/django-grappelli/grappelli/dashboard/templates/admin/index.html:25
+#: src/django-grappelli/grappelli/templates/admin/500.html:9
+#: src/django-grappelli/grappelli/templates/admin/app_index.html:11
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:7
+#: src/django-grappelli/grappelli/templates/admin/base.html:124
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:147
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:150
+#: src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:151
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:43
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:9
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:13
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:13
+#: src/django-grappelli/grappelli/templates/admin/index.html:18
+#: src/django-grappelli/grappelli/templates/admin/invalid_setup.html:9
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:9
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:8
+#: src/django-grappelli/grappelli/templates/admin_doc/index.html:9
+#: src/django-grappelli/grappelli/templates/admin_doc/missing_docutils.html:8
+#: src/django-grappelli/grappelli/templates/admin_doc/model_detail.html:20
+#: src/django-grappelli/grappelli/templates/admin_doc/model_index.html:23
+#: src/django-grappelli/grappelli/templates/admin_doc/template_filter_index.html:25
+#: src/django-grappelli/grappelli/templates/admin_doc/template_tag_index.html:27
+#: src/django-grappelli/grappelli/templates/admin_doc/view_detail.html:7
+#: src/django-grappelli/grappelli/templates/admin_doc/view_index.html:23
+#: src/django-grappelli/grappelli/templates/grp_doc/basic_page_structure.html:132
+#: src/django-grappelli/grappelli/templates/grp_doc/context_navigation.html:55
+#: src/django-grappelli/grappelli/templates/registration/password_change_done.html:6
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:6
+#: src/django-grappelli/grappelli/templates/reversion/recover_form.html:7
+#: src/django-grappelli/grappelli/templates/reversion/recover_list.html:6
+#: src/django-grappelli/grappelli/templates/reversion/revision_form.html:7
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:26
+msgid "Home"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/app_index.html:30
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:153
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:45
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:18
+#: nix/src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
+#: nix/src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/app_index.html:30
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:153
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:45
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:18
+#: src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
+#: src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
+#: src/django-grappelli/grappelli/templates/admin/app_index.html:30
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:153
+#: src/django-grappelli/grappelli/templates/admin/index.html:45
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:18
+msgid "Add"
+msgstr "Gehitu"
+
+#: nix/src/django-grappelli/build/lib/grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:18
+#: nix/src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:18
+#: src/django-grappelli/grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:18
+msgid "None Available"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/404.html:12
+#: nix/src/django-grappelli/grappelli/templates/admin/404.html:12
+#: src/django-grappelli/grappelli/templates/admin/404.html:12
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/500.html:10
+#: nix/src/django-grappelli/grappelli/templates/admin/500.html:10
+#: src/django-grappelli/grappelli/templates/admin/500.html:10
+msgid "Server error"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/500.html:15
+#: nix/src/django-grappelli/grappelli/templates/admin/500.html:15
+#: src/django-grappelli/grappelli/templates/admin/500.html:15
+msgid "Server error (500)"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/500.html:19
+#: nix/src/django-grappelli/grappelli/templates/admin/500.html:19
+#: src/django-grappelli/grappelli/templates/admin/500.html:19
+msgid "Server Error <em>(500)</em>"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/500.html:20
+#: nix/src/django-grappelli/grappelli/templates/admin/500.html:20
+#: src/django-grappelli/grappelli/templates/admin/500.html:20
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/actions.html:4
+#: nix/src/django-grappelli/grappelli/templates/admin/actions.html:4
+#: src/django-grappelli/grappelli/templates/admin/actions.html:4
+msgid "Run the selected action"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/actions.html:4
+#: nix/src/django-grappelli/grappelli/templates/admin/actions.html:4
+#: src/django-grappelli/grappelli/templates/admin/actions.html:4
+msgid "Go"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/actions.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/actions.html:11
+#: src/django-grappelli/grappelli/templates/admin/actions.html:11
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/actions.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/actions.html:11
+#: src/django-grappelli/grappelli/templates/admin/actions.html:11
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/actions.html:12
+#: nix/src/django-grappelli/grappelli/templates/admin/actions.html:12
+#: src/django-grappelli/grappelli/templates/admin/actions.html:12
+#, fuzzy
+#| msgid "Classification"
+msgid "Clear selection"
+msgstr "Klasifikazioa"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/app_index.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin/app_index.html:13
+#: src/django-grappelli/grappelli/templates/admin/app_index.html:13
+#, python-format
+msgid "<li>%(name)s</li>"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/app_index.html:37
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:54
+#: nix/src/django-grappelli/grappelli/templates/admin/app_index.html:37
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:54
+#: src/django-grappelli/grappelli/templates/admin/app_index.html:37
+#: src/django-grappelli/grappelli/templates/admin/index.html:54
+msgid "You don´t have permission to edit anything."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:15
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_done.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:7
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:15
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_done.html:7
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:7
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:15
+#: src/django-grappelli/grappelli/templates/registration/password_change_done.html:7
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:7
+#, fuzzy
+#| msgid "Password"
+msgid "Password change"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:24
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:24
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:24
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:184
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:231
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/login.html:31
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:42
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:184
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:231
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: nix/src/django-grappelli/grappelli/templates/admin/login.html:31
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:42
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:27
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:184
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:231
+#: src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: src/django-grappelli/grappelli/templates/admin/login.html:31
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:42
+msgid "Please correct the error below."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:184
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:231
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/login.html:31
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:44
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:184
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:231
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: nix/src/django-grappelli/grappelli/templates/admin/login.html:31
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:44
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:27
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:184
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:231
+#: src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: src/django-grappelli/grappelli/templates/admin/login.html:31
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:44
+msgid "Please correct the errors below."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:34
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:30
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:34
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:30
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:34
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:30
+#, fuzzy
+#| msgid "Password"
+msgid "New password"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:46
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:37
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:46
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:37
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:46
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:37
+#, fuzzy
+#| msgid "Password"
+msgid "Password (again)"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/auth/user/change_password.html:50
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:29
+#: nix/src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:50
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:29
+#: src/django-grappelli/grappelli/templates/admin/auth/user/change_password.html:50
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:29
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/base.html:101
+#: nix/src/django-grappelli/grappelli/templates/admin/base.html:101
+#: src/django-grappelli/grappelli/templates/admin/base.html:101
+msgid "View site"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/base.html:106
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/base.html:106
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:9
+#: src/django-grappelli/grappelli/templates/admin/base.html:106
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:9
+#, fuzzy
+#| msgid "User documentation"
+msgid "Documentation"
+msgstr "Erabiltzaileentzako dokumentazioa"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:137
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:8
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:137
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:8
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:137
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:138
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:9
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:138
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:9
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:138
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:165
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:15
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/revision_form.html:11
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:165
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:15
+#: nix/src/django-grappelli/grappelli/templates/reversion/revision_form.html:11
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:165
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:15
+#: src/django-grappelli/grappelli/templates/reversion/revision_form.html:11
+msgid "History"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_form.html:166
+#: nix/src/django-grappelli/grappelli/templates/admin/change_form.html:166
+#: src/django-grappelli/grappelli/templates/admin/change_form.html:166
+msgid "View on site"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:168
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_filter_sidebar.html:169
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/change_list.html:15
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:168
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:169
+#: nix/src/django-grappelli/grappelli/templates/smuggler/change_list.html:15
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:168
+#: src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:169
+#: src/django-grappelli/grappelli/templates/smuggler/change_list.html:15
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:197
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_filter_sidebar.html:184
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:197
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:184
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:197
+#: src/django-grappelli/grappelli/templates/admin/change_list_filter_sidebar.html:184
+msgid "Filter"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list.html:258
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:123
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/submit_line.html:10
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list.html:258
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:123
+#: nix/src/django-grappelli/grappelli/templates/admin/submit_line.html:10
+#: src/django-grappelli/grappelli/templates/admin/change_list.html:258
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:123
+#: src/django-grappelli/grappelli/templates/admin/submit_line.html:10
+msgid "Save"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_results.html:18
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_results.html:18
+#: src/django-grappelli/grappelli/templates/admin/change_list_results.html:18
+msgid "Toggle sorting"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_results.html:19
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_results.html:19
+#: src/django-grappelli/grappelli/templates/admin/change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/change_list_results.html:20
+#: nix/src/django-grappelli/grappelli/templates/admin/change_list_results.html:20
+#: src/django-grappelli/grappelli/templates/admin/change_list_results.html:20
+msgid "Remove from sorting"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:75
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:75
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:75
+msgid "Default"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:80
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:80
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:80
+msgid "Value"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/constance/change_list.html:85
+#: nix/src/django-grappelli/grappelli/templates/admin/constance/change_list.html:85
+#: src/django-grappelli/grappelli/templates/admin/constance/change_list.html:85
+msgid "Is modified"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:12
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:12
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:12
+msgid "Export selection as CSV"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:31
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:31
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:31
+msgid "Export following fields:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:34
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:34
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:34
+msgid "Select all"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:54
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:54
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:54
+#, fuzzy
+#| msgid "Backward"
+msgid "Back"
+msgstr "Atzera"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/csv_export_selected_confirmation.html:55
+#: nix/src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:55
+#: src/django-grappelli/grappelli/templates/admin/csv_export_selected_confirmation.html:55
+#, fuzzy
+#| msgid "Support"
+msgid "Export"
+msgstr "Laguntza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:19
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/submit_line.html:7
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:26
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:19
+#: nix/src/django-grappelli/grappelli/templates/admin/submit_line.html:7
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:26
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:19
+#: src/django-grappelli/grappelli/templates/admin/submit_line.html:7
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:26
+msgid "Delete"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:29
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:29
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:29
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:37
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:37
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:37
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:47
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:47
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:47
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:55
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:58
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:55
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:58
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:55
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:58
+msgid "Cancel"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_confirmation.html:56
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:59
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:56
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:59
+#: src/django-grappelli/grappelli/templates/admin/delete_confirmation.html:56
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:59
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:16
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:16
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:16
+msgid "Delete multiple objects"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:26
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:26
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:26
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:34
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:34
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:34
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/delete_selected_confirmation.html:44
+#: nix/src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:44
+#: src/django-grappelli/grappelli/templates/admin/delete_selected_confirmation.html:44
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:10
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:58
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:94
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:10
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:58
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:94
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:10
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:58
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:94
+msgid "Add Item"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:67
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:67
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:27
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:67
+msgid "View on Site"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:29
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:69
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:29
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:69
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:29
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:69
+#, fuzzy
+#| msgid "Move"
+msgid "Move Item"
+msgstr "Mugitu"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:33
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:38
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:73
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:78
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:33
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:38
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:73
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:78
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:33
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:38
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:73
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:78
+msgid "Delete Item"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/stacked.html:56
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:92
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:56
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:92
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/stacked.html:56
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:92
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/edit_inline/tabular.html:8
+#: nix/src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:8
+#: src/django-grappelli/grappelli/templates/admin/edit_inline/tabular.html:8
+msgid "Add Another"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/filter.html:4
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/filter_listing.html:3
+#: nix/src/django-grappelli/grappelli/templates/admin/filter.html:4
+#: nix/src/django-grappelli/grappelli/templates/admin/filter_listing.html:3
+#: src/django-grappelli/grappelli/templates/admin/filter.html:4
+#: src/django-grappelli/grappelli/templates/admin/filter_listing.html:3
+#, python-format
+msgid "%(filter_title)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/includes/object_delete_summary.html:3
+#: nix/src/django-grappelli/grappelli/templates/admin/includes/object_delete_summary.html:3
+#: src/django-grappelli/grappelli/templates/admin/includes/object_delete_summary.html:3
+msgid "Summary"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:59
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:59
+#: src/django-grappelli/grappelli/templates/admin/index.html:59
+msgid "Custom Views"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:73
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:73
+#: src/django-grappelli/grappelli/templates/admin/index.html:73
+#, fuzzy
+#| msgid "Recent Actions"
+msgid "My Actions"
+msgstr "Azkeneko aldaketak"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/index.html:76
+#: nix/src/django-grappelli/grappelli/templates/admin/index.html:76
+#: src/django-grappelli/grappelli/templates/admin/index.html:76
+msgid "None available"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/invalid_setup.html:16
+#: nix/src/django-grappelli/grappelli/templates/admin/invalid_setup.html:16
+#: src/django-grappelli/grappelli/templates/admin/invalid_setup.html:16
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/login.html:26
+#: nix/src/django-grappelli/grappelli/templates/admin/login.html:26
+#: src/django-grappelli/grappelli/templates/admin/login.html:26
+msgid "Login"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/login.html:60
+#: nix/src/django-grappelli/grappelli/templates/admin/login.html:60
+#: src/django-grappelli/grappelli/templates/admin/login.html:60
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/login.html:67
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_complete.html:17
+#: nix/src/django-grappelli/grappelli/templates/admin/login.html:67
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_complete.html:17
+#: src/django-grappelli/grappelli/templates/admin/login.html:67
+#: src/django-grappelli/grappelli/templates/registration/password_reset_complete.html:17
+msgid "Log in"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:26
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/object_history.html:13
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_list.html:22
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:26
+#: nix/src/django-grappelli/grappelli/templates/reversion/object_history.html:13
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_list.html:22
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:26
+#: src/django-grappelli/grappelli/templates/reversion/object_history.html:13
+#: src/django-grappelli/grappelli/templates/reversion/recover_list.html:22
+#, fuzzy
+#| msgid "Date & Time"
+msgid "Date/time"
+msgstr "Data eta Ordua"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/object_history.html:14
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:27
+#: nix/src/django-grappelli/grappelli/templates/reversion/object_history.html:14
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:27
+#: src/django-grappelli/grappelli/templates/reversion/object_history.html:14
+#, fuzzy
+#| msgid "Username"
+msgid "User"
+msgstr "Erabiltzailea"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:28
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:28
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:28
+#, fuzzy
+#| msgid "Location"
+msgid "Action"
+msgstr "Kokapena"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:34
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:34
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:34
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/object_history.html:42
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/object_history.html:36
+#: nix/src/django-grappelli/grappelli/templates/admin/object_history.html:42
+#: nix/src/django-grappelli/grappelli/templates/reversion/object_history.html:36
+#: src/django-grappelli/grappelli/templates/admin/object_history.html:42
+#: src/django-grappelli/grappelli/templates/reversion/object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/pagination.html:8
+#: nix/src/django-grappelli/build/lib/grappelli/views/related.py:227
+#: nix/src/django-grappelli/grappelli/templates/admin/pagination.html:8
+#: nix/src/django-grappelli/grappelli/views/related.py:227
+#: src/django-grappelli/grappelli/templates/admin/pagination.html:8
+#: src/django-grappelli/grappelli/views/related.py:227
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/pagination.html:13
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/pagination.html:15
+#: nix/src/django-grappelli/grappelli/templates/admin/pagination.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin/pagination.html:15
+#: src/django-grappelli/grappelli/templates/admin/pagination.html:13
+#: src/django-grappelli/grappelli/templates/admin/pagination.html:15
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/pagination.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin/pagination.html:27
+#: src/django-grappelli/grappelli/templates/admin/pagination.html:27
+#, fuzzy
+#| msgid "Show"
+msgid "Show all"
+msgstr "Saioa"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/popup_response.html:3
+#: nix/src/django-grappelli/grappelli/templates/admin/popup_response.html:3
+#: src/django-grappelli/grappelli/templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/related_widget_wrapper.html:24
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:16
+#: nix/src/django-grappelli/grappelli/templates/admin/related_widget_wrapper.html:24
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:16
+#: src/django-grappelli/grappelli/templates/admin/related_widget_wrapper.html:24
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:16
+#, python-format
+msgid "Add another %(model)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/submit_line.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin/submit_line.html:13
+#: src/django-grappelli/grappelli/templates/admin/submit_line.html:13
+msgid "Save as new"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/submit_line.html:16
+#: nix/src/django-grappelli/grappelli/templates/admin/submit_line.html:16
+#: src/django-grappelli/grappelli/templates/admin/submit_line.html:16
+msgid "Save and add another"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin/submit_line.html:19
+#: nix/src/django-grappelli/grappelli/templates/admin/submit_line.html:19
+#: src/django-grappelli/grappelli/templates/admin/submit_line.html:19
+msgid "Save and continue editing"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:10
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:16
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:10
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:16
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:10
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:16
+msgid "Bookmarklets"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:13
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:13
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:13
+msgid "Documentation bookmarklets"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:18
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:18
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:18
+msgid ""
+"\n"
+"            <p>To install bookmarklets, drag the link to your bookmarks\n"
+"    toolbar, or right-click the link and add it to your bookmarks. Now you "
+"can\n"
+"    select the bookmarklet from any page in the site.  Note that some of "
+"these\n"
+"    bookmarklets require you to be viewing the site from a computer "
+"designated\n"
+"    as \"internal\" (talk to your system administrator if you aren't sure "
+"if\n"
+"    your computer is \"internal\").</p>\n"
+"        "
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:27
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:27
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:27
+msgid "Documentation for this page"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:28
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:28
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:28
+msgid ""
+"Jumps you from any page to the documentation for the view that generates "
+"that page."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:31
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:31
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:31
+msgid "Show object ID"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:32
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:32
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:32
+msgid ""
+"Shows the content-type and unique ID for pages that represent a single "
+"object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:35
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:35
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:35
+msgid "Edit this object (current window)"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:36
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:36
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:36
+msgid "Jumps to the admin page for pages that represent a single object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:39
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:39
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:39
+msgid "Edit this object (new window)"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/bookmarklets.html:40
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:40
+#: src/django-grappelli/grappelli/templates/admin_doc/bookmarklets.html:40
+msgid "As above, but opens the admin page in a new window."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/view_index.html:43
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/view_index.html:43
+#: src/django-grappelli/grappelli/templates/admin_doc/view_index.html:43
+msgid "Empty namespace"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/admin_doc/view_index.html:57
+#: nix/src/django-grappelli/grappelli/templates/admin_doc/view_index.html:57
+#: src/django-grappelli/grappelli/templates/admin_doc/view_index.html:57
+msgid "Views by empty namespace"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/logged_out.html:16
+#: nix/src/django-grappelli/grappelli/templates/registration/logged_out.html:16
+#: src/django-grappelli/grappelli/templates/registration/logged_out.html:16
+msgid "Log in again"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_done.html:16
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_done.html:16
+#: src/django-grappelli/grappelli/templates/registration/password_change_done.html:16
+msgid "Your password was changed."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:18
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:18
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:18
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:23
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:23
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:23
+#, fuzzy
+#| msgid "Password"
+msgid "Old password"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_change_form.html:46
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:35
+#: nix/src/django-grappelli/grappelli/templates/registration/password_change_form.html:46
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:35
+#: src/django-grappelli/grappelli/templates/registration/password_change_form.html:46
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:35
+msgid "Change my password"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_complete.html:16
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_complete.html:16
+#: src/django-grappelli/grappelli/templates/registration/password_reset_complete.html:16
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:18
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:18
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:18
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:21
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:21
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:21
+#, fuzzy
+#| msgid "Password"
+msgid "New password:"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:26
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:26
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:26
+msgid "Confirm password:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_confirm.html:47
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:47
+#: src/django-grappelli/grappelli/templates/registration/password_reset_confirm.html:47
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_done.html:5
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_done.html:5
+#: src/django-grappelli/grappelli/templates/registration/password_reset_done.html:5
+msgid "Password reset successful"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_done.html:16
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_done.html:16
+#: src/django-grappelli/grappelli/templates/registration/password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_done.html:17
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_done.html:17
+#: src/django-grappelli/grappelli/templates/registration/password_reset_done.html:17
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_email.html:2
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_email.html:2
+#: src/django-grappelli/grappelli/templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_email.html:4
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_email.html:4
+#: src/django-grappelli/grappelli/templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_email.html:8
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_email.html:8
+#: src/django-grappelli/grappelli/templates/registration/password_reset_email.html:8
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_email.html:10
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_email.html:10
+#: src/django-grappelli/grappelli/templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_email.html:12
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_email.html:12
+#: src/django-grappelli/grappelli/templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_form.html:5
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_form.html:5
+#: src/django-grappelli/grappelli/templates/registration/password_reset_form.html:5
+#, fuzzy
+#| msgid "Password"
+msgid "Password reset"
+msgstr "Pasahitza"
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_form.html:17
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_form.html:17
+#: src/django-grappelli/grappelli/templates/registration/password_reset_form.html:17
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_form.html:20
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_form.html:20
+#: src/django-grappelli/grappelli/templates/registration/password_reset_form.html:20
+msgid "Email address:"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/registration/password_reset_form.html:28
+#: nix/src/django-grappelli/grappelli/templates/registration/password_reset_form.html:28
+#: src/django-grappelli/grappelli/templates/registration/password_reset_form.html:28
+msgid "Reset my password"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:8
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:8
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:8
+#, python-format
+msgid "Change selected %(model)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:10
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:10
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:10
+msgid "Change"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/related_widget_wrapper.html:24
+#: nix/src/django-grappelli/grappelli/templates/related_widget_wrapper.html:24
+#: src/django-grappelli/grappelli/templates/related_widget_wrapper.html:24
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/change_list.html:6
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_form.html:10
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_list.html:9
+#: nix/src/django-grappelli/grappelli/templates/reversion/change_list.html:6
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_form.html:10
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_list.html:9
+#: src/django-grappelli/grappelli/templates/reversion/change_list.html:6
+#: src/django-grappelli/grappelli/templates/reversion/recover_form.html:10
+#: src/django-grappelli/grappelli/templates/reversion/recover_list.html:9
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/object_history.html:7
+#: nix/src/django-grappelli/grappelli/templates/reversion/object_history.html:7
+#: src/django-grappelli/grappelli/templates/reversion/object_history.html:7
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/object_history.html:15
+#: nix/src/django-grappelli/grappelli/templates/reversion/object_history.html:15
+#: src/django-grappelli/grappelli/templates/reversion/object_history.html:15
+msgid "Comment"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_form.html:20
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_form.html:20
+#: src/django-grappelli/grappelli/templates/reversion/recover_form.html:20
+msgid "Press the save button below to recover this version of the object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_list.html:16
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_list.html:16
+#: src/django-grappelli/grappelli/templates/reversion/recover_list.html:16
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/recover_list.html:36
+#: nix/src/django-grappelli/grappelli/templates/reversion/recover_list.html:36
+#: src/django-grappelli/grappelli/templates/reversion/recover_list.html:36
+msgid "There are no deleted objects to recover."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/revision_form.html:12
+#: nix/src/django-grappelli/grappelli/templates/reversion/revision_form.html:12
+#: src/django-grappelli/grappelli/templates/reversion/revision_form.html:12
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/reversion/revision_form.html:21
+#: nix/src/django-grappelli/grappelli/templates/reversion/revision_form.html:21
+#: src/django-grappelli/grappelli/templates/reversion/revision_form.html:21
+msgid "Press the save button below to revert to this version of the object."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/change_list.html:7
+#: nix/src/django-grappelli/grappelli/templates/smuggler/change_list.html:7
+#: src/django-grappelli/grappelli/templates/smuggler/change_list.html:7
+msgid "Dump data"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/change_list.html:11
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:8
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:27
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:37
+#: nix/src/django-grappelli/grappelli/templates/smuggler/change_list.html:11
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:8
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:27
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:37
+#: src/django-grappelli/grappelli/templates/smuggler/change_list.html:11
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:8
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:27
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:37
+msgid "Load data"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:48
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:48
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:48
+msgid ""
+"Existing items with same <strong>primary key</strong> will be overwritten."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templates/smuggler/load_data_form.html:55
+#: nix/src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:55
+#: src/django-grappelli/grappelli/templates/smuggler/load_data_form.html:55
+msgid "Load"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/templatetags/grp_tags.py:66
+#: nix/src/django-grappelli/grappelli/templatetags/grp_tags.py:66
+#: src/django-grappelli/grappelli/templatetags/grp_tags.py:66
+msgid "Django site admin"
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/tests/test_switch.py:103
+#: nix/src/django-grappelli/build/lib/grappelli/tests/test_switch.py:162
+#: nix/src/django-grappelli/build/lib/grappelli/views/switch.py:37
+#: nix/src/django-grappelli/build/lib/grappelli/views/switch.py:48
+#: nix/src/django-grappelli/grappelli/tests/test_switch.py:103
+#: nix/src/django-grappelli/grappelli/tests/test_switch.py:162
+#: nix/src/django-grappelli/grappelli/views/switch.py:37
+#: nix/src/django-grappelli/grappelli/views/switch.py:48
+#: src/django-grappelli/grappelli/tests/test_switch.py:103
+#: src/django-grappelli/grappelli/tests/test_switch.py:162
+#: src/django-grappelli/grappelli/views/switch.py:37
+#: src/django-grappelli/grappelli/views/switch.py:48
+msgid "Permission denied."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/tests/test_switch.py:146
+#: nix/src/django-grappelli/build/lib/grappelli/views/switch.py:40
+#: nix/src/django-grappelli/build/lib/grappelli/views/switch.py:51
+#: nix/src/django-grappelli/grappelli/tests/test_switch.py:146
+#: nix/src/django-grappelli/grappelli/views/switch.py:40
+#: nix/src/django-grappelli/grappelli/views/switch.py:51
+#: src/django-grappelli/grappelli/tests/test_switch.py:146
+#: src/django-grappelli/grappelli/views/switch.py:40
+#: src/django-grappelli/grappelli/views/switch.py:51
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
+
+#: nix/src/django-grappelli/build/lib/grappelli/views/related.py:99
+#: nix/src/django-grappelli/build/lib/grappelli/views/related.py:129
+#: nix/src/django-grappelli/grappelli/views/related.py:99
+#: nix/src/django-grappelli/grappelli/views/related.py:129
+#: src/django-grappelli/grappelli/views/related.py:99
+#: src/django-grappelli/grappelli/views/related.py:129
+msgid "?"
+msgstr ""
+
+#~ msgid "Latest podcasts from Antxetamedia"
+#~ msgstr "Antxetamediako azken emankizunak"
 
 #~ msgid "License"
 #~ msgstr "Lizentzia"
@@ -669,6 +2002,3 @@ msgstr "Widgeta"
 
 #~ msgid "Dates"
 #~ msgstr "Datak"
-
-#~ msgid "Add"
-#~ msgstr "Gehitu"
