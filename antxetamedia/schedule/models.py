@@ -7,7 +7,7 @@ from django.utils.six import python_2_unicode_compatible
 @python_2_unicode_compatible
 class Broadcast(models.Model):
     class Meta:
-        ordering = ['weekday']
+        ordering = ['weekday', 'beginning']
         verbose_name = _('Broadcast')
         verbose_name_plural = _('Broadcasts')
 
