@@ -20,7 +20,7 @@ sorl-thumbnail==12.4a1
 # External APIs
 boto==2.40.0
 feedparser==5.2.1
--e git+https://github.com/unaizalakain/django-acme.git@master#egg=django-acme
+-e git+https://github.com/unaizalakain/django-acme.git@c2f9865d3d7884143f966621bfe8a6c07c5c787f#egg=django-acme
 
 # Archive
 django-watson==1.2.3
