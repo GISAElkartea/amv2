@@ -47,7 +47,12 @@ class SingleModelSearchMixin(SearchMixin):
         return search.filter(self.get_base_queryset(), self.query)
 
 
+class SearchView(SearchMixin, ListView):
+    pass
+
+
 class FilterSetSeachMixin(SingleModelSearchMixin):
+    prefix = None
     filterset_class = None
 
     def get_context_data(self, *args, **kwargs):
@@ -55,28 +60,30 @@ class FilterSetSeachMixin(SingleModelSearchMixin):
         return super(FilterSetSeachMixin, self).get_context_data(*args, **kwargs)
 
     def get_queryset(self):
-        filterset = self.filterset_class(self.request.GET, queryset=self.get_base_queryset())
+        filterset = self.filterset_class(self.request.GET,
+                queryset=self.get_base_queryset(),
+                prefix=self.prefix)
         return search.filter(filterset.qs, self.query)
-
-
-class SearchView(SearchMixin, ListView):
-    pass
 
 
 class NewsPodcastSearchView(FilterSetSeachMixin, ListView):
     filterset_class = NewsPodcastFilterSet
+    prefix = 'news'
 
 
 class RadioPodcastSearchView(FilterSetSeachMixin, ListView):
     filterset_class = RadioPodcastFilterSet
+    prefix = 'radio'
 
 
 class ProjectShowSearchView(FilterSetSeachMixin, ListView):
     filterset_class = ProjectShowFilterSet
+    prefix = 'projects'
 
 
 class EventSearchView(FormMixin, SingleModelSearchMixin, ListView):
     form_class = EventForm
+    prefix = 'events'
 
     def get(self, request, *args, **kwargs):
         self.query = self.get_query(request)
