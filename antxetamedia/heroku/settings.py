@@ -101,23 +101,6 @@ MIDDLEWARE += ['antxetamedia.heroku.middleware.RaygunLoggingMiddleware']
 RAYGUN_API_KEY = os.getenv('RAYGUN_APIKEY')
 RAYGUN_API_ENABLED = True
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'email-thumbnail': {
-            'level': 'INFO',
-            'class': 'sorl.thumbnail.log.ThumbnailLogHandler',
-        },
-    },
-    'loggers': {
-        'sorl.thumbnail': {
-            'handlers': ['email-thumbnail'],
-            'level': 'INFO',
-        },
-    },
-}
-
 
 #########
 # CERTS #
