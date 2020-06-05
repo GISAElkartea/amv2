@@ -1,4 +1,4 @@
-Django==1.10.1
+Django==1.11.29
 
 celery==3.1.23
 Pillow==4.1.1
